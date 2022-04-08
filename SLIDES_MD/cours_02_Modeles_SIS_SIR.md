@@ -147,9 +147,9 @@ On considère le problème de Cauchy consistant en ce système auquel on adjoint
 
 Les notions de *naissance* et *mort* se réfèrent à la population que l'on considère
 
-E.g., consider a model for human immunodeficiency virus (HIV) in an at-risk population of intravenous drug users. Then 
-- birth is the moment the at-risk behaviour starts
-- death is the moment the at-risk behaviour stops,  whether from "real death" or because the individual stops using drugs
+Par exemple, supposons un modèle pour l'immunodéficience humaine (VIH) dans une population à risque d'utilisateurs de drogue administrées de façon intravéneuse. Dans ce cas 
+- la naissance correspond au moment du début du comportement à risque
+- la mort survient au moment où le comportement à risque cesse, que ce soit parce que l'individu meurt ou parce qu'il/elle cesse d'utiliser de la drogue
 
 ---
 
@@ -157,17 +157,17 @@ E.g., consider a model for human immunodeficiency virus (HIV) in an at-risk popu
 
 Système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est planaire nonlinéaire
 
-Typically, we would use standard planar analysis techniques
+En principe, on devrait appliquer les m\'ethodes usuelles dans le plan. 
 
-However, here we can find an explicit solution
+Toutefois, il est ici possible de trouver une solution explicite
 
-**NB:** while this is useful illustration, this is a rare exception!!
+**NB:** Ceci est une illustration utile, mais est une exception!! Pratiquement aucun autre modèle que nous rencontrerons ne sera intégrable de cette façon
 
 ---
 
-# Dynamics of $N$
+# Dynamique de $N$
 
-We have
+On a
 $$
 \begin{align*}
 N' &= (S+N)' \\
@@ -177,7 +177,7 @@ N' &= (S+N)' \\
 &=0
 \end{align*} 
 $$
-As a consequence, for all $t$, $N(t)\equiv N_0:=S_0+I_0$
+Par conséquent, pour tout $t$, $N(t)\equiv N_0:=S_0+I_0$
 
 ---
 
@@ -186,84 +186,86 @@ As a consequence, for all $t$, $N(t)\equiv N_0:=S_0+I_0$
 $$
 s=\frac{S}{N}\quad\quad i=\frac{I}{N}
 $$
-Remark that $s+i=(S+I)/N=1$. The derivative of $i$ is
+Remarquons que $s+i=(S+I)/N=1$. La dérivée de $i$ est
 $$
 i' = \frac{I'N-IN'}{N^2}=\frac{I'}{N}-\frac{iN'}{N}
 $$
-Since $N'=0$, 
+Puisque $N'=0$, 
 $$
 i'=\frac{I'}{N}
 $$
-Substite the right hand term of \eqref{sysI} in this equation given
+En substituant le coté droit de $\eqref{sys:SIS_base_dI}$ dans cette équation, on obtient
 $$
+\tag{2}\label{eq:SIS_proportion_di}
 i'=\beta\frac{SI}{N^2}-d\frac{I}{N}-\gamma\frac{I}{N}=\beta si-(d+\gamma)i
 $$
 
 ---
 
-# The system in proportions
+# Le système en proportions
 
-Since $s+i=1$, we can use $s=1-i$ in the latter equation, giving $i'=\beta(1-i)i-(d+\gamma)i$. As a consequence, the *system in proportion* is
+Puisque $s+i=1$, on peut utiliser $s=1-i$ dans l'équation $\eqref{eq:SIS_proportion_di}$, ce qui donne $i'=\beta(1-i)i-(d+\gamma)i$. Par conséquent, le **système en proportions** est
 $$
 \begin{align}
-s &= 1-i \tag{17a}\label{sys:SIS_proportion_ds} \\
+s &= 1-i
+\tag{3a}\label{sys:SIS_proportion_ds} \\
 i' &= \beta(1-i)i-(d+\gamma)i 
-\tag{17b}\label{sys:SIS_proportion_di}
+\tag{3b}\label{sys:SIS_proportion_di}
 \end{align}
 $$
 
-Since $N$ constant, solutions of $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ are deduced directly from those of $\eqref{sys:SIS_proportion_ds}$-$\eqref{sys:SIS_proportion_di}$ and we now consider $\eqref{sys:SIS_proportion_ds}$-$\eqref{sys:SIS_proportion_di}$
+Puisque $N$ est constant, les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ sont déduites directement de celles de $\eqref{sys:SIS_proportion_ds}$-$\eqref{sys:SIS_proportion_di}$ et on considère maintenant $\eqref{sys:SIS_proportion_ds}$-$\eqref{sys:SIS_proportion_di}$
 
 ---
 
-Rewrite $\eqref{sys:SIS_proportion_di}$ as
+Réecrivons $\eqref{sys:SIS_proportion_di}$ comme
 $$
 \begin{equation} 
-\tag{18}\label{eq:SIS_i_as_Bernoulli}
+\tag{4}\label{eq:SIS_i_as_Bernoulli}
 i'-(\beta-(d+\gamma))i=-\beta i^2
 \end{equation}
 $$
-This is a Bernoulli equation and the change of variables $u=i^{-1}$ gives the linear equation
+Ceci est une équation de Bernoulli et le changement de variables $u=i^{-1}$ donne l'équation linéaire
 $$
 -u'-(\beta-(d+\gamma))u=-\beta
 $$
-so that finally
+Donc enfin
 $$
 \begin{equation}
-\tag{19}\label{eq:SIS_true_Bernoulli}
+\tag{5}\label{eq:SIS_true_Bernoulli}
 u'+(\beta-(d+\gamma))u=\beta
 \end{equation}
 $$
 
 ---
 
-An integrating factor is 
+Un facteur integrant est 
 $$
 \mu(t)=\exp\left(\int P(t)dt\right)=e^{(\beta-(d+\gamma))t}
 $$
-and thus
+et par conséquent
 $$
 \mu(t)u=\frac{\beta}{\beta-(d+\gamma)}e^{(\beta-(d+\gamma))t}+C
 $$
-for $C\in\mathbb{R}$, so finally
+avec $C\in\mathbb{R}$, donc enfin
 $$
 u=\frac{\beta}{\beta-(d+\gamma)}+Ce^{-(\beta-(d+\gamma))t}
 $$
 
 ---
 
-The initial condition $i_0=I_0/N$ takes the form $u(0)=1/i_0$. Thus,
+La condition initiale $i_0=I_0/N$ prend la forme $u(0)=1/i_0$. Par conséquent,
 $$
 u(0)=\frac{1}{i_0}=\frac{\beta}{\beta-(d+\gamma)}+C
 $$
-which implies that
+ce qui implique que
 $$
 C=\frac{\beta-(d+\gamma)-i_0\beta}{i_0(\beta-(d+\gamma))}
 $$
 
 ---
 
-As a consequence, the solution to the linear equation $\eqref{eq:SIS_true_Bernoulli}$ is
+Par conséquent, la solution de $\eqref{eq:SIS_true_Bernoulli}$ est
 $$
 \begin{aligned}
 u &= \frac{i_0\beta+(\beta-(d+\gamma)-i_0\beta)e^{-(\beta-(d+\gamma))t}}
@@ -272,7 +274,7 @@ u &= \frac{i_0\beta+(\beta-(d+\gamma)-i_0\beta)e^{-(\beta-(d+\gamma))t}}
   +(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}{i_0(\beta-(d+\gamma))}
 \end{aligned}
 $$
-and that of $\eqref{eq:SIS_i_as_Bernoulli}$ is
+et celle de $\eqref{eq:SIS_i_as_Bernoulli}$ est
 $$
 i(t)=\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
   +(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
@@ -280,12 +282,12 @@ $$
 
 ---
 
-In summary, the solution to the system in proportions is given by
+En résumé, la solution du système en proportions est donnée par
 $$
 s(t)=1-\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
   +(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
 $$
-and
+et
 $$
 i(t)=\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
   +(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
@@ -293,85 +295,78 @@ $$
 
 ---
 
-From these solutions, there are two cases: 
+En observant ces solutions, on déduit deux cas: 
  
-- If $\beta-(d+\gamma)<0$, then $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=+\infty$, so $\lim_{t\to\infty}s(t)=1$ and $\lim_{t\to\infty}i(t)=0$
-- If $\beta-(d+\gamma)>0$, then $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=0$; thus, $\lim_{t\to\infty}s(t)=1-(\beta-(d+\gamma))/\beta$ and $\lim_{t\to\infty}i(t)=(\beta-(d+\gamma))/\beta$
+- Si $\beta-(d+\gamma)<0$, alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=+\infty$, donc $\lim_{t\to\infty}s(t)=1$ et $\lim_{t\to\infty}i(t)=0$
+- Si $\beta-(d+\gamma)>0$, alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=0$; donc $\lim_{t\to\infty}s(t)=1-(\beta-(d+\gamma))/\beta$ et $\lim_{t\to\infty}i(t)=(\beta-(d+\gamma))/\beta$
 
 
 
 ---
 
-# The basic reproduction number $\mathcal{R}_0$
+# Le nombre de reproduction élémentaire $\mathcal{R}_0$
 
-Reformulate in epidemiological terms, using the *basic reproduction number*,
+Reformulons le résultat en termes épidémiologiques en utilisant le **nombre de reproduction élémentaire**
 $$
 \mathcal{R}_0=\frac{\beta}{d+\gamma}
 $$
-We have the following equivalencies
+On a alors les équivalences suivantes
 $$
 \begin{gathered}
 \mathcal{R}_0< 1 \Leftrightarrow \beta-(d+\gamma)< 0 \\
 \mathcal{R}_0>1 \Leftrightarrow \beta-(d+\gamma)>0
 \end{gathered}
 $$
-Also,
+Aussi,
 $$
 \frac{\beta-(d+\gamma)}{\beta}=1-\frac{1}{\mathcal{R}_0}
 $$
 
 ---
 
-We have proved the following result
+On a prouvé le résultat suivant
 
 <div class="theorem">
 
-For system $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$, the following alternative holds
+L'alternative suivante a lieu pour le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
  
-- If $\mathcal{R}_0< 1$, then
+- Si $\mathcal{R}_0< 1$, alord
   - $\lim_{t\to\infty}s(t)=1$
-  - $\lim_{t\to\infty}i(t)=0$, the disease **goes extinct**
-- If $\mathcal{R}_0>1$, then
+  - $\lim_{t\to\infty}i(t)=0$, la maladie **s'éteint**
+- Si $\mathcal{R}_0>1$, alors
   - $\lim_{t\to\infty}s(t)={1}/{\mathcal{R}_0}$
-  - $\lim_{t\to\infty}i(t)=1-1/{\mathcal{R}_0}$, the disease becomes **endemic**
+  - $\lim_{t\to\infty}i(t)=1-1/{\mathcal{R}_0}$, la maladie devient **endémique**
 </div>
 
+On dit que le modèle SIS est un *modèle endémique* du fait de la possibilité d'observer ce second équilibre
+
 ---
  
- # Further remarks about $\mathcal{R}_0$
+ # <!--fit-->Quelques remarques additionnelles au sujet de $\mathcal{R}_0$
 
-- $\mathcal{R}_0$ determines the propensity of a disease to become established in a population
-- The aim of control policies is therefore to reduce $\mathcal{R}_0$ to values less than 1
-- The "verbal" definition of $\mathcal{R}_0$ is *the average number of secondary infections produced by the introduction of an infectious individual in a completely naive population 
-- Remark that for our basic model, $1/(d+\gamma)$ is the average time of sojourn in the $I$ compartment before death or recovery and $\beta$ is the probability of infection 
-
----
-
-# Case $\mathcal{R}_0>1$
-
-Remark that the higher $\mathcal{R}_0$, the higher the proportion of infectious individuals in the population
-
-Thus, $\mathcal{R}_0$ is also an indicator of the infectiousness of a pathogen
-
-![width:550px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/R0.png)
+- $\mathcal{R}_0$ determine la propension d'une maladie à s'établir dans une population
+- Les politiques de contrôle ont par conséquent pour objecti de réduire $\mathcal{R}_0$ à des valeurs plus petites que 1
+- La définition "verbale" de $\mathcal{R}_0$ est *le nombre moyen de cas secondaires d'infection produits par l'introduction d'un unique individu infectieux dans une population complètement naïve 
+- Dans notre modèle, $1/(d+\gamma)$ est le temps moyen de séjour dans le compartiment $I$ avant de guérir ou de mourir et $\beta$ est la probabilité d'infection 
 
 ---
 
-# Some values of $\mathcal{R}_0$ (estimated from data)
-| Infection | Place | Period | $\mathcal{R}_0$ |
+# Quelques valeurs de $\mathcal{R}_0$ (estimées)
+
+| Maladie | Lieu | Période | $\mathcal{R}_0$ |
 |:---|:---|:---|:---|
-| Measles | Cirencester, England | 1947-50 | 13-14 |
-|| England & Wales | 1950-68 | 16-18 |
+| Rougeole | Cirencester, Angleterre | 1947-50 | 13-14 |
+|| Angleterre & Pays de Galle | 1950-68 | 16-18 |
 || Kansas, USA | 1918-21 | 5-6 |
 || Ontario, Canada | 1912-3 | 11-12 |
-|| Willesden, England | 1912-3 | 11-12 |
+|| Willesden, Angleterre | 1912-3 | 11-12 |
 || Ghana | 1960-8 | 14-15 |
-|| East Nigeria | 1960-8 | 16-17 |
+|| Est du Nigeria | 1960-8 | 16-17 |
 
 ---
 
-# Classic way to compute $\mathcal{R}_0$
-Take SIS $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ normalised to $N=1$ 
+# Méthode classique de calcul de $\mathcal{R}_0$
+Pour simplifier, normalisons le SIS $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ à $N=1$ 
 $$
 \begin{align*}
 S' &= d-dS-\beta SI+\gamma I \\
@@ -390,49 +385,49 @@ J_{DFE}=\begin{pmatrix}
 0 & \beta-(d+\gamma)
 \end{pmatrix}
 $$
-When eigenvalues $-d$ and $\beta-(d+\gamma)$
+Let valeurs propres sont $-d<0$ et $\beta-(d+\gamma)$
 $\Rightarrow$
-LAS of the DFE is determined by the sign of $\beta-(d+\gamma)$. We find the same $\mathcal{R}_0$ we had found before
+Stabilité asymptotique locale de l'équilibre sans maladie (ESM) est déterminée par le signe de $\beta-(d+\gamma)$. On trouve donc le même $\mathcal{R}_0$ qu'auparavant
 
 ---
 
-# A more efficient way to $\mathcal{R}_0$: next generation matrix
+# Méthode plus efficace de calcul de $\mathcal{R}_0$
 
-Diekmann and Heesterbeek, characterised in ODE case by PvdD & Watmough (2002)
+Diekmann & Heesterbeek, caracterisé dans le cas ODE par PvdD & Watmough (2002)
 
-Consider only compartments $x$ with *infected individuals* and write
+On considère seulement les compartiments $x$ avec des  *individus infectés* et écrivons
 $$
 x'=\mathcal{F}-\mathcal{V}
 $$
  
-- $\mathcal{F}$ flows within infected compartments
-- $\mathcal{V}$ other flows (with $-$ sign)
+- $\mathcal{F}$ entrée au sein des compartiments infectés du fait de nouvelles infections
+- $\mathcal{V}$ contient tous les autres flux (attention au signe $-$)
 
-Compute the (Frechet) derivatives $F=D\mathcal{F}$ and $V=D\mathcal{V}$ with respect to the infected variables $x$ and evaluate at the DFE
+On calcule les dérivées (de Frechet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les Jacobiennes) et on évalue en l'ESM
 
-Then
+Alors
 $$
 \mathcal{R}_0=\rho(FV^{-1})
 $$
-where $\rho$ is the spectral radius
+où $\rho$ est le rayon spectral
 
 
 ---
 
-# The main result of PvdD and Watmough (2002)
+# Résultat de PvdD and Watmough (2002)
 
 <div class="theorem">
 
-Suppose the DFE exists. Let then
+Supposons que l'ESM existe et notons alors
 $$
 \mathcal{R}_0=\rho(FV^{-1})
 $$
-with matrices $F$ and $V$ obtained as indicated. Assume conditions (A1) through (A5) hold. Then
-- if $\mathcal{R}_0<1$, then the DFE is LAS
-- if $\mathcal{R}_0>1$, the DFE is unstable
+où les matrices $F$ et $V$ sont obtainues comme indiqué. Supposons que les conditions (A1) à (A5) soient satisfaites. Alors
+- si $\mathcal{R}_0<1$, alors l'ESM est LAS
+- si $\mathcal{R}_0>1$, alors l'ESM est instable
 </div>
 
-(We make conditions (A1)-(A5) explicit in [Practicum 02](2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html) and discuss why it can be important to check they do hold true in [Lecture 09](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html))
+(Les conditions (A1)-(A5) sont explicitées dans le [TP 02](2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html) et nous discutons de la raison pour il est important de vérifier ces conditions dans le [Cours](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html))
 
 ---
 
@@ -441,13 +436,13 @@ with matrices $F$ and $V$ obtained as indicated. Assume conditions (A1) through 
 
 ---
 
-Before proceeding further, worth spending some time discussing **incidence functions**, which describe how contacts between individuals take place and lead to new cases
+Avant de continuer, discutons un peu les **fonctions d'incidence**, qui décrivent la façon dont les contacts entre individus ont lieu et comment ils se traduisent en transmissions de la maladie
 
-See in particular McCallum, Barlow & Hone, [How should pathogen transmission be modelled?](https://doi.org/10.1016/S0169-5347(01)02144-9), Trends in Ecology & Evolution **16** (2001)
+Voir en particulier McCallum, Barlow & Hone, [How should pathogen transmission be modelled?](https://doi.org/10.1016/S0169-5347(01)02144-9), Trends in Ecology & Evolution **16** (2001)
 
 ---
 
-# <!--fit-->Remark - Incidence function versus force of infection
+# <!--fit-->Remarque - Fonction d'incidence versus force d'infection
 
 Two different forms for the rate of movement of $S$ individuals from $S$ to whatever infected compartment they end up in:
 
