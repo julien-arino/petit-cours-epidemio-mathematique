@@ -30,7 +30,8 @@ math: mathjax
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique - Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
+# <!--fit-->Petit cours d'épidémiologie mathématique
+# <!--fit-->Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -120,11 +121,11 @@ $$
 S' &= \underbrace{bN}_\textrm{naissance}
 -\underbrace{dS}_\textrm{mort} 
 -\underbrace{\beta\frac{SI}{N}}_\textrm{infection}
-+\underbrace{\gamma I}_\textrm{guérison}
++\underbrace{\gamma I}_\textrm{gu\'erison}
 \tag{1a}\label{sys:SIS_base_dS}\\
 I' &= \underbrace{\beta\frac{SI}{N}}_\textrm{infection}
 -\underbrace{dI}_\textrm{mort} 
--\underbrace{\gamma I}_\textrm{guérison} 
+-\underbrace{\gamma I}_\textrm{gu\'erison} 
 \tag{1b}\label{sys:SIS_base_dI}
 \end{align}
 $$
@@ -284,18 +285,20 @@ $$
 
 En résumé, la solution du système en proportions est donnée par
 $$
+\tag{6a}\label{sys:SIS_solution_s}
 s(t)=1-\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
   +(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
 $$
 et
 $$
+\tag{6b}\label{sys:SIS_solution_i}
 i(t)=\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
   +(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
 $$
 
 ---
 
-En observant ces solutions, on déduit deux cas: 
+En observant $\eqref{sys:SIS_solution_s}$-$\eqref{sys:SIS_solution_i}$, on déduit deux cas: 
  
 - Si $\beta-(d+\gamma)<0$, alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=+\infty$, donc $\lim_{t\to\infty}s(t)=1$ et $\lim_{t\to\infty}i(t)=0$
 - Si $\beta-(d+\gamma)>0$, alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=0$; donc $\lim_{t\to\infty}s(t)=1-(\beta-(d+\gamma))/\beta$ et $\lim_{t\to\infty}i(t)=(\beta-(d+\gamma))/\beta$
@@ -308,6 +311,7 @@ En observant ces solutions, on déduit deux cas:
 
 Reformulons le résultat en termes épidémiologiques en utilisant le **nombre de reproduction élémentaire**
 $$
+\tag{7}\label{eq:SIS_R0}
 \mathcal{R}_0=\frac{\beta}{d+\gamma}
 $$
 On a alors les équivalences suivantes
@@ -365,29 +369,124 @@ On dit que le modèle SIS est un *modèle endémique* du fait de la possibilité
 
 ---
 
+# Méthode classique d'analyse du système SIS
+
+On considère le système
+$$
+\begin{align}
+S' &= d(N-S)-\beta\frac{SI}{N}+\gamma I \tag{1a} \\
+I' &= \left(\beta \frac SN-(d+\gamma)\right)I \tag{1b}
+\end{align}
+$$
+
+Puisque $N$ est constant, on pourrait simplifier et étudier le système avec seulement l'une des deux équations. On choisit toutefois de garder le système en l'état
+
+---
+
+# Le système est-il bien posé ?
+
+Dans le cadre d'un modèle épidémiologique:
+- les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ existent-elles et sont-elles uniques ?
+- le cône positif (quadrant ici) est-il invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ ?
+- les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ sont-elles bornées ?
+  - Il peut se trouver des modèles sans bornitude, mais ils sont plutôt rares et devront être considérés à part
+
+---
+
+# Invariance de $\mathbb{R}_+^2$ sous le flot du système
+
+Tout d'abord, remarquons que $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est $C^1$, ce qui implique que les solutions existent et sont uniques
+
+Si $S=0$, alors $\eqref{sys:SIS_base_dS}$ devient
+$$
+S' = dN+\gamma I >0
+$$
+$\implies$ $S$ ne peut jamais devenir nul: si $S(0)>0$, alors $S(t)>0$ pour tout $t$. Si, d'autre part $S(0)=0$, alors $S(t)>0$ pour $t>0$ petit; par ce qui précède, cela est aussi vrai pour tout $t>0$
+
+---
+
+Pour $I$, on remarque que si $I=0$, alors $I'=0$ $\implies$ $\{I=0\}$ est positivement invariant: si $I(0)=0$, alors $I(t)=0$ pour tout $t>0$. 
+
+En pratique, les valeurs de $S(t)$ de toute solution dans $\{I=0\}$ sont "portée" par l'une des 4 solutions suivantes:
+1. $S(0)=0$: reste identiquement nulle
+2. $S(0)\in(0,N)$: augmente vers $S=N$
+3. $S(0)=N$: reste égale à $N$
+4. $S(0)>N$: décroit vers $S=N$
+
+Par conséquent, aucune solution avec $I(0)>0$ ne peut pénétrer dans $\{I=0\}$. Supposons $I(0)>0$ et $\exists t_*>0$ t.q. $I(t_*)=0$ et notons $S(t_*)$ la valeur de $S$ lorsque $I$ devient nul
+
+L'existence de $t_*$ contredit l'unicité des solutions, puisque en $(S(t_*),I(t_*))$, il passe alors deux solutions: celle initiée dans $\{I=0\}$ et celle initiée avec $I(0)>0$
+
+---
+
+# Bornitude
+
+Il suit de ce qui précède que le quadrant positif $\mathbb{R}_+^2$ est (positivement) invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
+
+On pourrait détailler plus (strictement positif $\implies$..) mais c'est suffisant ici
+
+De l'invariance et du fait que la population totale $N$ est bornée (constante, en fait), on déduit que les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ sont bornées
+
+---
+
+# Recherche des équilibres
+
+On cherche les equilibres du système en supposant $S'=I'=0$. $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ devient
+$$
+\begin{align}
+0 &= d(N-S)-\beta\frac{SI}{N}+\gamma I 
+\tag{8a}\label{sys:SIS_DFE_S} \\
+0 &= \left(\beta \frac SN-(d+\gamma)\right)I 
+\tag{8b}\label{sys:SIS_DFE_I}
+\end{align}
+$$
+
+---
+
+$$
+\begin{align}
+0 &= d(N-S)-\beta\frac{SI}{N}+\gamma I 
+\tag{8a} \\
+0 &= \left(\beta \frac SN-(d+\gamma)\right)I 
+\tag{8b}
+\end{align}
+$$
+
+De $\eqref{sys:SIS_DFE_I}$, on déduit que
+$$
+\beta\frac SN -(d+\gamma)=0
+\iff S=\frac{d+\gamma}\beta N
+$$
+ou alors $I=0$. Substituant $I=0$ dans $\eqref{sys:SIS_DFE_S}$, il vient que $d(N-S)=0$, i.e, $S=N$. C'est l'équilibre sans maladie (ESM)
+$$
+E_0 : (S,I)=(N,0)
+$$
+De l'autre relation, on déduit l'équilibre endémique $E_*$, non explicité ici (pour le moment, on s’intéresse seulement à $\mathcal{R}_0$)
+
+---
+
 # Méthode classique de calcul de $\mathcal{R}_0$
-Pour simplifier, normalisons le SIS $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ à $N=1$ 
+
+$\mathcal{R}_0$ est la courbe dans l'espace des paramètres où ESM perd sa stabilité locale. Pour trouver $\mathcal{R}_0$, on étudie donc la stabilité asymptotique locale de ESM
+
+En un point arbitraire $(S,I)$, la matrice Jacobienne de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ prend la forme
 $$
-\begin{align*}
-S' &= d-dS-\beta SI+\gamma I \\
-I' &= \beta SI-(d+\gamma)I 
-\end{align*}
-$$
-DFE: $(\bar S,\bar I)=(1,0)$
-$$
-J_{DFE}=\begin{pmatrix}
--d & \gamma-\beta\bar S \\
-\beta\bar I & \beta\bar S-(d+\gamma)
+\tag{9}\label{eq:SIS_Jacobian_SI}
+J_{(S,I)} =
+\begin{pmatrix}
+-d -\beta \frac IN & \gamma-\beta\frac SN \\
+\beta \frac IN & \beta\frac SN-(d+\gamma)
 \end{pmatrix}
-=
+$$
+La stabilité asymptotique locale de ESM dépend du signe de la partie réelle des valeurs propres de $\eqref{eq:SIS_Jacobian_SI}$ en cet équilibre, donc on évalue
+$$
+J_{E_0} =
 \begin{pmatrix}
 -d & \gamma-\beta \\
 0 & \beta-(d+\gamma)
 \end{pmatrix}
 $$
-Let valeurs propres sont $-d<0$ et $\beta-(d+\gamma)$
-$\Rightarrow$
-Stabilité asymptotique locale de l'équilibre sans maladie (ESM) est déterminée par le signe de $\beta-(d+\gamma)$. On trouve donc le même $\mathcal{R}_0$ qu'auparavant
+Matrice triangulaire $\implies$ valeurs propres sont $-d<0$ et $\beta-(d+\gamma)$ $\implies$ stabilité asymptotique locale ESM déterminée par le signe de $\beta-(d+\gamma)$, donnant $\eqref{eq:SIS_R0}$ 
 
 ---
 
@@ -403,7 +502,7 @@ $$
 - $\mathcal{F}$ entrée au sein des compartiments infectés du fait de nouvelles infections
 - $\mathcal{V}$ contient tous les autres flux (attention au signe $-$)
 
-On calcule les dérivées (de Frechet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les Jacobiennes) et on évalue en l'ESM
+On calcule les dérivées (de Fréchet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les Jacobiennes) et on évalue en l'ESM
 
 Alors
 $$
@@ -431,6 +530,61 @@ où les matrices $F$ et $V$ sont obtainues comme indiqué. Supposons que les con
 
 ---
 
+# <!--fit-->Calcul de $\mathcal{R}_0$ par matrice de prochaine génération
+
+Ce calcul se substitue à celui de la matrice Jacobienne. Lorsque l'on a trouvé l'ESM, on ne considère que les variable infectées de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$, c'est à dire $I$ 
+
+$$
+I' = \beta \frac{SI}N-(d+\gamma)I
+$$
+On écrit cette equation sous la forme
+$$
+x'=\mathcal{F}-\mathcal{V}
+$$
+avec $x=I$, $\mathcal{F}$ les nouvelles infections, i.e.,
+$$
+\mathcal{F}=\beta \frac{SI}N
+$$
+et $\mathcal{V}$ tous les autres flux, en prennant garde au signe $-$:
+$$
+\mathcal{V}=(d+\gamma)I
+$$
+
+---
+
+On calcule les matrices Jacobiennes de $\mathcal{F}$ et $\mathcal{V}$ (ici, des scalaires puisque $\mathcal{F}$ et $\mathcal{V}$ sont scalaires)
+$$
+D\mathcal{F}=\frac{\partial}{\partial I}\mathcal{F}
+=\beta\frac SN
+$$
+et
+$$
+D\mathcal{V}=\frac{\partial}{\partial I}\mathcal{V}
+=d+\gamma
+$$
+On obtient $F$ et $V$ en évaluant ces dérivées en l'ESM,
+$$
+F=D\mathcal{F}_{E_0} = \beta \frac SN=\beta,
+\qquad
+V=D\mathcal{V}_{E_0} = d+\gamma
+$$
+Enfin, on inverse $V$, soit, ici, $V^{-1}=1/(d+\gamma)$
+
+Notons que si les conditions (A1)-(A5) du théorème sont satisfaites, on récupère aussi le fait que ESM est LAS
+
+---
+
+On trouve donc comme $\eqref{eq:SIS_R0}$
+$$
+\mathcal{R}_0 =\rho(FV^{-1})
+=\rho\left(\frac{\beta}{d+\gamma}\right)
+=\frac{\beta}{d+\gamma}
+$$
+
+Intérêt pas forcémment évident ici, mais on verra plus loin à quel point cette méthode peut simplifier les calculs
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->Fonctions d'incidence
 
@@ -444,66 +598,66 @@ Voir en particulier McCallum, Barlow & Hone, [How should pathogen transmission b
 
 # <!--fit-->Remarque - Fonction d'incidence versus force d'infection
 
-Two different forms for the rate of movement of $S$ individuals from $S$ to whatever infected compartment they end up in:
+Deux formes différentes de la fonction représentant le taux de mouvement d'individus du compartiment $S$ vers les compartiments infectés:
 
-- $S'=-f(S,I,N)$ is an **incidence function**
-- $S'=-\lambda(S,I,N)S$ is a **force of infection**
+- $S'=-f(S,I,N)$ est une **fonction d'incidence**
+- $S'=-\lambda(S,I,N)S$ est une **force d'infection**
 
-The two are of course essentially equivalent, the context tends to drive the form used. Advanced PDE models that consider for instance an age-of-infection structure need to integrate over $I(t,a)$ and thus often use force of infection, others are somewhat random..
+Les deux sont équivalentes, c'est le contexte qui tend à conduire au choix de la forme utilisée. Par exemple, les modèles en EDP structurés en âge d'infection doivent intégrer $I(t,a)$ sur l'âge et par conséquent utilisent fréquemment la force d'infection
 
 ---
 
 # Interactions - Infection
 
-- Rate at which new cases appear per unit time is the *incidence function*
+- Le taux auquel des nouveaux cas apparaissent est la **fonction d'incidence**
 $$
-\tag{7}
+\tag{10}
 f(S,I,N)
 $$
-- Depends of the number $S$ of susceptible individuals, $I$ of infectious individuals and, sometimes, of the total population $N$
-- Incidence includes two main components:
-  - a denumeration of the number of contacts taking place
-  - a description of the probability that such a contact, when it takes place, results in the transmission of the pathogen
-- Choosing an appropriate function is hard and probably one of the flunkiest part of epidemic modelling
+- Depend du nombre $S$ de susceptibles, $I$ d'infectieux et parfois, de la population totale $N$
+- Une fonction d'incidence inclut deux composantes:
+  - un décompte du nombre de contacts ayant lieu
+  - une description de la probabilité qu'un tel contact, quand il a lieu, entraîne la transmission du pathogène
+- Le choix d'une bonne fonction est difficile et est probablement l'une des parties les plus "instables" dans la modélisation de la propagation des maladies infectieuses
 
 ---
 
-# Two most frequently used functions
+# Les deux fonctions d'incidence les plus usitées
 
-The two most frequently used incidence functions are  **mass action incidence**
-$$\tag{8}
+Les deux fonctions d'incidence les plus usitées sont   l'**incidence en action de masse**
+$$\tag{11}
 f(S,I)=\beta SI
 $$
-and **standard** (or **proportional**) **incidence**
-$$\tag{9}
+et l'**incidence standard** (ou **proportionnelle**)
+$$\tag{12}
 f(S,I)=\beta\frac{SI}{S+I}
 $$
 
-In both cases, $\beta$ is the *disease transmission coefficient*
+Dans les deux cas, $\beta$ est le **coefficient de transmission de la maladie**, bien que son interprétation exacte varie
 
 ---
 
-# Units of $\beta$
+# Des unités de $\beta$
 
-Recall that if $X(t)$ is the population in compartment $X$ at time $t$, then $X'$ has units $\text{number}/\text{time}$
+Si $X(t)$ est la population du compartiment $X$ au temps $t$, alors $X'$ a pour unités $\text{nombre}/\text{temps}$
 
-In a differential equation, left and right hand side must have same units, so..
+Dans une équation différentielle, les termes à gauche et à droite du signe $=$ doivent avoir les mêmes unités, donc..
 
-### Mass action incidence
+### Incidence en action de masse
 
 $$
 \beta SI \propto 
-\beta\times\text{number}\times\text{number}
+\beta\times\text{nombre}\times\text{nombre}
 $$
-has units number/time if $\beta$ has units $1/(\text{number}\times\text{time})$
+a pour unités nombre/temps si $\beta$ a pour unités $1/(\text{nombre}\times\text{temps})$
 
-### Standard incidence
+### Incidence standard
 
 $$
 \beta SI/N \propto 
-\beta\times\text{number}\times\text{number}/\text{number} \propto \beta \text{number}
+\beta\times\text{nombre}\times\text{nombre}/\text{nombre} \propto \beta \times \text{nombre}
 $$
-has units number/time if $\beta$ has units $1/\text{time}$
+a pour unités nombre/temps si $\beta$ a pour unités $1/\text{temps}$
 
 ---
 
@@ -511,69 +665,69 @@ has units number/time if $\beta$ has units $1/\text{time}$
 
 $$
 \begin{equation}
-\tag{8}\label{eq:incidence_mass_action}
+\tag{11}\label{eq:incidence_mass_action}
 f(S,I)=\beta SI
 \end{equation}
  $$
 
-- There is homogenous mixing of susceptible and infectious individuals 
-- Strong hypothesis: each individual potentially meets every other individual
+- Le mélange des susceptibles et infectieux est homogène 
+- Ceci est une hypothèse forte: le nombre de contacts est le produit du nombre de susceptibles et du nombre d'infectieux, donc chaque individu susceptible peut potentiellement rencontrer chaque individu infectieux
 
-In this case, one of the most widely accepted interpretations is that all susceptible individuals can come across all infectious individuals (hence the name, by analogy with gas dynamics in chemistry/physics) 
+(d'où le nom, par analogie avec la dynamique des gas en chimie/physique) 
 
-When population is large, the hypothesis becomes unrealistic
+Quand la population est grande, cette hypothèse devient irréaliste
 
 ---
 
-# Standard (proportional) incidence 
+# Incidence standard (proportionnelle) 
 
-The other form used frequently:
+Autre forme de fonction d'incidence très utilisée
 $$
 \begin{equation}
-\tag{9}\label{eq:incidence_proportional}
+\tag{12}\label{eq:incidence_proportional}
 f(S,I,N)=\beta\frac{SI}{N}
 \end{equation}
 $$
 
-Each susceptible individual meets a fraction of the infectious individuals
+Chaque susceptible rencontre une fraction des infectieux
 
-Or vice-versa! See, e.g., Hethcote, [Qualitative analyses of communicable disease models](https://doi-org.uml.idm.oclc.org/10.1016/0025-5564(76)90132-2), *Mathematical Biosciences* (1976)
+Ou vice-versa! Voir, p.ex., Hethcote, [Qualitative analyses of communicable disease models](https://doi-org.uml.idm.oclc.org/10.1016/0025-5564(76)90132-2), *Mathematical Biosciences* (1976)
 
-Case of a larger population
+Cas d'une population plus grande
 
 ---
 
-# Constant population $\implies$ $\eqref{eq:incidence_mass_action}$ $\equiv$ $\eqref{eq:incidence_proportional}$
+# Population constante $\implies$ $\eqref{eq:incidence_mass_action}$ $\equiv$ $\eqref{eq:incidence_proportional}$
 
-When the total population is constant, a lot of incidence function are equivalent (to units)
+Quand la population totale est constante, bien des fonctions d'incidence sont équivalentes qualitativement (aux unités près)
 
-Suppose $N(t)\equiv N_0$, then
+Supposons que $N(t)\equiv N_0$, alors
 $$
 \beta SI = \tilde\beta\frac{SI}{N}
 \iff \tilde\beta=N_0\beta
 $$
-and if the right hand side is satisfied, then $\eqref{eq:incidence_mass_action}$ and $\eqref{eq:incidence_proportional}$ identical
+et si le terme de droite est vrai, alors $\eqref{eq:incidence_mass_action}$ et $\eqref{eq:incidence_proportional}$ sont identiques
 
-Keep in mind units are different, though
+Rappelez-vous que les unités diffèrent, toutefois
 
 ---
 
-# General incidence
+# Incidence générale
 
 $$
-\tag{10}
+\tag{13}
 f(S,I,N)=\beta S^q I^p
 $$
-These functions were introduced with data fitting in mind: fitting to data, find the $p,q$ best matching the available data
+Ces fonctions furent introduites avec pour but l'ajustement aux données: pour ajuster, cela ajoute deux paramètres $p,q$. On verra toutefois que bien du travail théorique utilise cette incidence
 
 ---
 
-# Incidence with refuge
+# Incidence avec refuge
 
-The following implements a refuge effect; it assumes that a proportion $0<q<1$ of the population is truly susceptible, because of, e.g., spatial heterogenities
+Effet de refuge; une proportion $0<q<1$ de la population est vraiment susceptible, par exemple du fait d'hétérogénéités spatiales
 
 $$
-\tag{11}
+\tag{14}
 f(S,I,N)=
 \begin{cases}
 \beta I\left(N-\dfrac Iq\right),&\textrm{si }I<qN \\
@@ -585,58 +739,61 @@ $$
 
 ---
 
-# Negative binomial incidence
+# Incidence binomiale négative
 
 $$
-\tag{12}
+\tag{15}
 f(S,I,N)=kS\ln\left(1+\beta\frac Ik\right)
 $$
-For small values of $k$, this function describes a very concentrated infection process, while when $k\to\infty$, this function reduces to a mass action incidence
+Pour des petites valeurs de $k$, ceci décrit un processus d'infection très concentré, tandis que lorsque $k\to\infty$, on tend vers une incidence en action de masse
 
 ---
 
-# Asymptotic contact
+# Contact asymptotique
 
 $$
-\tag{13}
+\tag{16}
 f(S,I,N)
 =\frac{N}{1-\varepsilon+\varepsilon N}
 \frac{F(S,I)}{N}
 $$
-where $F$ is one of the functions we just described
+où $F$ est l'une des fonctions déjà décrites
 
-When $\varepsilon=0$, contacts are proportionnal to $N$, whereas when $\varepsilon=1$, contacts are independent from $N$
+Quand $\varepsilon=0$, les contacts sont proportionnels à $N$, tandis que lorsque $\varepsilon=1$, les contacts sont indépendants de $N$
 
 ---
 
-# Asymptomatic transmission
+# Transmission asymptomatique 
 
 $$
-\tag{14}
+\tag{17}
 f(S,I,N)
 =\beta\frac{SI}{c+S+I}
 $$
-where $c$ is a constant. E.g., 
+où $c$ est une constante. Par ex., 
 $$
 \frac{C(N)}N F(S,I)
 $$
-with $C(N)=N/(1-\varepsilon+\varepsilon N)$ the function describing the contact rate and $F(S,I)$ the function describing disease spread, assumed here to be of negative binomial incidence-type
+avec $C(N)=N/(1-\varepsilon+\varepsilon N)$ la fonction décrivant le taux de contact et $F(S,I)$ la fonction décrivant la propagation de la maladie, que l'on suppose ici être une incidence binomiale négative
 
 ---
 
-# Switching incidence
+# Incidence changeante
 
-Arino & McCluskey, [Effect of a sharp change of the incidence function on the dynamics of a simple disease](https://doi.org/10.1080/17513751003793017), *Journal of Biological Dynamics* (2010)
-
-Scale population so switch occurs at $N=1$ and suppose
 $$
-\tag{15}
+\tag{18}
 F(S,I,N) = 
 \begin{cases}
-\beta SI & \textrm{if }N\leq 1 \\
-\beta \dfrac{SI}{N} & \textrm{if }N> 1
+\beta SI & \textrm{if }N\leq \hat N \\
+\beta \dfrac{SI}{N} & \textrm{if }N> \hat N
 \end{cases}
 $$
+
+<div style = "position: relative; bottom: -40%; font-size:20px;">
+
+Arino & McCluskey, [Effect of a sharp change of the incidence function on the dynamics of a simple disease](https://doi.org/10.1080/17513751003793017), *Journal of Biological Dynamics* (2010)
+</div>
+
 
 ---
 
@@ -645,109 +802,109 @@ $$
 
 ---
 
-# This is a particular case!
+# Ceci est un cas particulier !
 
-K-MK formulated the model that follows in a much more general work
+K-MK ont formulé un modèle beaucoup plus général que le modèle qui suit, qui est un cas particulier
 
-Really worth taking a look at this series of papers!
+Cela vaut vraiment le coup de regarder la série de papiers!
 - Kermack & McKendrick. [A contribution to the mathematical theory of epidemics](https://doi.org/10.1098/rspa.1927.0118) (1927)
 
 ---
 
-# <!--fit-->The underlying question - What is the *size* of an epidemic?
+# <!--fit-->Question sous-jacente: quelle est la *taille* d'une épidémie?
 
-- Suppose we consider the occurrence of an epidemic peak
-  - Does it always take place?
-  - When it occurs, how bad is it?
-  - If an epidemic moves through a population, is everyone infected?
+- Si l'on s'intéresse à la possibilité d'un pic épidémique
+  - A-t-il toujours lieu?
+  - S'il a lieu, quelle est son intensité?
+- Si une épidémie traverse une population, est-ce que tout le monde est infecté?
 
 ---
 
-# The SIR model without demography
+# Le modèle SIR sans démographie
 
-- The time interval under consideration is sufficiently small that demography can be omitted (we say there is *no vital dynamics*)
-- Individuals in the population can be susceptible ($S$) or infected and infectious with the disease ($I$). Upon recovery or death, they are *removed* from the infectious compartment ($R$)
-- Incidence is mass action $\beta SI$
+- La période de temps que l'on considère est suffisamment courte que l'on peut négliger la démographie (on parle aussi de modèle *sans dynamique vitale*)
+- Différent du modèle précédent, qui incorpore la démographie mais la considère constante
+- Les individus dans la populations sont soit *susceptibles* ($S$), soit *infectieux* avec la maladie ($I$). Après guérison ou mort, on les *retire* du compartiment infectieux ($R$)
+- Incidence du type action de masse $\beta SI$
 
-Consider the following model, usually called the Kermack-McKendrick model
+Le modèle que nous considérons maintenant est typiquement appelé modèle SIR de Kermack-McKendrick (KMK)
 $$
 \begin{align}
-S' &= -\beta SI \tag{1a}\label{sys:KMK_dS} \\
-I' &= (\beta S-\gamma)I  \tag{1b}\label{sys:KMK_dI} \\
-R' &= \gamma I  \tag{1c}\label{sys:KMK_dR}
+S' &= -\beta SI \tag{19a}\label{sys:KMK_dS} \\
+I' &= (\beta S-\gamma)I  \tag{19b}\label{sys:KMK_dI} \\
+R' &= \gamma I  \tag{19c}\label{sys:KMK_dR}
 \end{align}
 $$
 
 ---
 
-# Reducing the problem
+# Reduction du problème
 
-3 compartments, but inspection shows that *removed* individuals do not influence the dynamics of $S$ or $I$
+3 compartiments, mais quand on inspecte en détail, on remarque que les *retirés* n'ont pas d'influence directe sur la dynamique de $S$ ou $I$, dans le sens où $R$ n'apparait pas dans $\eqref{sys:KMK_dS}$ ou $\eqref{sys:KMK_dI}$
 
-Furthermore, total population $N=S+I+R$ satisfies
+De plus, la population totale (incluant potentiellement les morts qui sont aussi classés dans $R$) $N=S+I+R$ satisfait
 $$
 N'=(S+I+R)'=0
 $$
-so $N$ is constant and dynamics of $R$ can deduced from that of $R=N-(S+I)$
+Par conséquent, $N$ est constant et la dynamique de $R$ peut être déduite de $R=N-(S+I)$
 
-So now consider
+Donc on considère à présent
 $$
 \begin{align}
-S' &= -\beta SI \tag{2a}\\
-I' &= (\beta S-\gamma)I  \tag{2b}
+S' &= -\beta SI \tag{20a}\\
+I' &= (\beta S-\gamma)I  \tag{20b}
 \end{align}
 $$
 
 ---
 
-# Equilibria
+# Équilibres
 
-
-Consider the equilibia of
+Considérons les équilibres de
 $$
 \begin{align}
-S' &= -\beta SI \tag{2a}\label{sys:KMK_2d_dS} \\
-I' &= (\beta S-\gamma)I  \tag{2b}\label{sys:KMK_2d_dI}
+S' &= -\beta SI \tag{20a}\label{sys:KMK_2d_dS} \\
+I' &= (\beta S-\gamma)I  \tag{20b}\label{sys:KMK_2d_dI}
 \end{align}
 $$
 
-From $\eqref{sys:KMK_2d_dI}$
-- either $\bar S=\gamma/\beta$
-- or $\bar I=0$
+De $\eqref{sys:KMK_2d_dI}$
+- soit $\bar S=\gamma/\beta$
+- ou $\bar I=0$
 
-Substitute into $\eqref{sys:KMK_2d_dS}$
-- in the first case, $(\bar S,\bar I)=(\gamma/\beta,0)$
-- in the second case, any $\bar S\geq 0$ is an equilibrium (*continuum* of EP)
+Substituant dans $\eqref{sys:KMK_2d_dS}$
+- dans le premier cas, $(\bar S,\bar I)=(\gamma/\beta,0)$
+- dans le second cas, n'importe quel $\bar S\geq 0$ est un équilibre (on a un *continuum* d'équilibres)
 
-Second case is a **problem**: usual linearisation does not work as EP are not isolated! (See [Practicum 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html))
+Le second cas est un **problème**: la linéarisation usuelle ne fonctionne pas puisque les équilibres ne sont pas isolés! (Voir [TP 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html))
 
 
 ---
 
-# Workaround - Study $dI/dS$
+# Une autre approche - On étudie $dI/dS$
 
-What is the dynamics of $dI/dS$? We have
+Quelle est la dynamique de $dI/dS$? On a
 $$
-\tag{3}\label{eq:KMK_dI_over_dS}
+\tag{21}\label{eq:KMK_dI_over_dS}
 \frac{dI}{dS}
 =\frac{dI}{dt}\frac{dt}{dS}
 =\frac{I'}{S'}
 =\frac{\beta SI-\gamma I}{-\beta SI}
 =\frac{\gamma}{\beta S}-1
 $$
-provided $S\neq 0$
+pourvu que $S\neq 0$
 
-**Careful!** Remember that $S$ and $I$ are $S(t)$ and $I(t)$.. equation $\eqref{eq:KMK_dI_over_dS}$ thus describes the relationship between $S$ and $I$ along solutions to the original ODE $\eqref{sys:KMK_2d_dS}$-$\eqref{sys:KMK_2d_dI}$
+**Attention!** Il convient de se souvenir que $S$ et $I$ sont $S(t)$ et $I(t)$.. l'équation $\eqref{eq:KMK_dI_over_dS}$ décrit ainsi la relation entre $S$ et $I$ le long de solutions de l'EDO d'origine $\eqref{sys:KMK_2d_dS}$-$\eqref{sys:KMK_2d_dI}$
 
 ---
 
-We can integrate equation $\eqref{eq:KMK_dI_over_dS}$, giving trajectories in phase space
+On intègre $\eqref{eq:KMK_dI_over_dS}$ sans aucun mal et on obtient des trajectoires dans l'espace d'état
 $$
 I(S)=\frac\gamma\beta \ln S-S+C
 $$
-with $C\in\mathbb{R}$
+avec $C\in\mathbb{R}$
 
-The initial condition $I(S_0)=I_0$ gives $C=S_0+I_0-\frac \gamma\beta \ln S_0$, and the solution to $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ is thus, as a function of $S$,
+La condition initiale $I(S_0)=I_0$ donne $C=S_0+I_0-\frac \gamma\beta \ln S_0$, et la solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ est, en tant que fonction de $S$
 $$
 \begin{align*}
 I(S)&=S_0+I_0-S+\frac\gamma\beta \ln \frac S{S_0} \\
@@ -757,19 +914,19 @@ $$
 
 ---
 
-Trajectories in phase plane $(S,I)$ corresponding to IC $(S_0,1-S_0)$ and $\beta/\gamma=2.5$
+Trajectoires dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\gamma=2.5$
 
 ![width:1200px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/KMK_planar_trajectories.png)
 
 ---
 
-# The basic reproduction number $\mathcal{R}_0$
+# Le nombre de reproduction élémentaire $\mathcal{R}_0$
 
-Suppose total population $N$ is normalised, i.e., $N=1$. Then $R=1-(S+I)$
+Supposons que la population totale $N$ soit normalisée, i.e., $N=1$. Alors $R=1-(S+I)$
 
-Define
+Définissons
 $$
-\begin{equation}\label{eq:R0_KMK}\tag{4}
+\begin{equation}\label{eq:R0_KMK}\tag{22}
 \mathcal{R}_0=\frac{\beta}{\gamma}
 \end{equation}
 $$
@@ -779,15 +936,13 @@ $$
 
 <div class="theorem">
 
-Let $(S(t),I(t))$ be a solution to $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ in proportions and $\mathcal{R}_0$ be defined as in $\eqref{eq:R0_KMK}$. If $\mathcal{R}_0
-S_0\leq 1$, then $I(t)$ tends to 0 when $t\to\infty.$ If $\mathcal{R}_0
-S_0>1$, then $I(t)$ first reaches a maximum 
+Soit $(S(t),I(t))$ une solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ en proportions et $\mathcal{R}_0$ défini comme dans $\eqref{eq:R0_KMK}$. Si $\mathcal{R}_0 S_0\leq 1$, alors $I(t)$ tend vers 0 quand $t\to\infty.$ Si $\mathcal{R}_0 S_0>1$, alors $I(t)$ atteint d'abord un maximum
 $$
 1-\frac 1{\mathcal{R}_0}-\frac{\ln(\mathcal{R}_0 S_0)}{\mathcal{R}_0}
 $$
-then tends to 0 when $t\to\infty$
+puis tend vers 0 quand $t\to\infty$
 
-The proportion $S(t)$ of susceptibles is a nonincreasing function and its limit $S(\infty)$ is the unique solution in $(0,1/\mathcal{R}_0)$ of the equation 
+La proportion $S(t)$ de susceptibles est une fonction décroissante et sa limite $S(\infty)$ est l'unique solution dans $(0,1/\mathcal{R}_0)$ de l'équation 
 $$
 1-S(\infty)+\frac{\ln[S(\infty)/S_0]}{\mathcal{R}_0}=0
 $$
@@ -795,12 +950,7 @@ $$
 
 ---
 
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->SLIAR extension of the KMK model
-
----
-
-# Summary thus far
-- An SIS *endemic* model in which the threshold $\mathcal{R}_0=1$ is such that when $\mathcal{R}_0<1$, the disease goes extinct, whereas when $\mathcal{R}_0>1$, the disease becomes established in the population
-- An SIR *epidemic* model (the KMK SIR) in which the presence or absence of an epidemic wave is characterised by the value of $\mathcal{R}_0$
-- Both the KMK SIR and the SIS are integrable in some sense. **This is an exception!!!**
+# Là où nous en sommes
+- Un modèle SIS *endémique* dans lequel le seuil $\mathcal{R}_0=1$ est t.q. quand $\mathcal{R}_0<1$, la maladie s'éteint, tandis que lorsque $\mathcal{R}_0>1$, la maladie s'établit dans la population
+- Un modèle SIR *épidémique* (le KMK SIR) dans lequel la présence ou absence de vague épidémique est caracterisée par la valeur de $\mathcal{R}_0$
+- Le SIS et le KMK SIR sont intégrables dans un certain sens. **C'est une exception!!!**
