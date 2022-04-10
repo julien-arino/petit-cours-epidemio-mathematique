@@ -459,9 +459,51 @@ $$
 $$
 ou alors $I=0$. Substituant $I=0$ dans $\eqref{sys:SIS_DFE_S}$, il vient que $d(N-S)=0$, i.e, $S=N$. C'est l'équilibre sans maladie (ESM)
 $$
+\tag{9}\label{eq:SIS_DFE}
 E_0 : (S,I)=(N,0)
 $$
-De l'autre relation, on déduit l'équilibre endémique $E_*$, non explicité ici (pour le moment, on s’intéresse seulement à $\mathcal{R}_0$)
+
+---
+
+De la relation
+$$
+S=\frac{d+\gamma}\beta N
+$$
+on déduit l'équilibre endémique $E_*$: substituant cette valeur de $S$ dans $\eqref{sys:SIS_DFE_S}$,
+$$
+\begin{aligned}
+0 &= d\left(N-\frac{d+\gamma}\beta N\right)
+-\beta \frac{\frac{d+\gamma}\beta NI}{N}+\gamma I \\
+&=dN\left(1-\frac{d+\gamma}{\beta}\right)
+-(d+\gamma)I+\gamma I \\
+&=dN\left(1-\frac{d+\gamma}{\beta}\right)-dI
+\end{aligned}
+$$
+d'où il suit que
+$$
+I=\left(1-\frac{d+\gamma}{\beta}\right)N
+$$
+
+---
+
+Par conséquent, l'équilibre endémique est
+$$
+E_*:(S,I)
+=\left(
+  \frac{d+\gamma}\beta N, 
+  1-\frac{d+\gamma}\beta N
+\right)
+$$
+
+Notant que $(d+\gamma)/\beta=1/\mathcal{R}_0$, il vient
+$$
+\tag{10}\label{eq:SIS_EEP}
+E_*:(S,I)
+=\left(
+  \frac{1}{\mathcal{R}_0}N, 
+  \left(1-\frac{1}{\mathcal{R}_0}\right)N
+\right)
+$$
 
 ---
 
@@ -471,7 +513,7 @@ $\mathcal{R}_0$ est la courbe dans l'espace des paramètres où ESM perd sa stab
 
 En un point arbitraire $(S,I)$, la matrice Jacobienne de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ prend la forme
 $$
-\tag{9}\label{eq:SIS_Jacobian_SI}
+\tag{11}\label{eq:SIS_Jacobian_SI}
 J_{(S,I)} =
 \begin{pmatrix}
 -d -\beta \frac IN & \gamma-\beta\frac SN \\
@@ -611,7 +653,7 @@ Les deux sont équivalentes, c'est le contexte qui tend à conduire au choix de 
 
 - Le taux auquel des nouveaux cas apparaissent est la **fonction d'incidence**
 $$
-\tag{10}
+\tag{12}
 f(S,I,N)
 $$
 - Depend du nombre $S$ de susceptibles, $I$ d'infectieux et parfois, de la population totale $N$
@@ -625,11 +667,11 @@ $$
 # Les deux fonctions d'incidence les plus usitées
 
 Les deux fonctions d'incidence les plus usitées sont   l'**incidence en action de masse**
-$$\tag{11}
+$$\tag{13}
 f(S,I)=\beta SI
 $$
 et l'**incidence standard** (ou **proportionnelle**)
-$$\tag{12}
+$$\tag{14}
 f(S,I)=\beta\frac{SI}{S+I}
 $$
 
@@ -665,7 +707,7 @@ a pour unités nombre/temps si $\beta$ a pour unités $1/\text{temps}$
 
 $$
 \begin{equation}
-\tag{11}\label{eq:incidence_mass_action}
+\tag{13}\label{eq:incidence_mass_action}
 f(S,I)=\beta SI
 \end{equation}
  $$
@@ -684,7 +726,7 @@ Quand la population est grande, cette hypothèse devient irréaliste
 Autre forme de fonction d'incidence très utilisée
 $$
 \begin{equation}
-\tag{12}\label{eq:incidence_proportional}
+\tag{14}\label{eq:incidence_proportional}
 f(S,I,N)=\beta\frac{SI}{N}
 \end{equation}
 $$
@@ -715,7 +757,7 @@ Rappelez-vous que les unités diffèrent, toutefois
 # Incidence générale
 
 $$
-\tag{13}
+\tag{15}
 f(S,I,N)=\beta S^q I^p
 $$
 Ces fonctions furent introduites avec pour but l'ajustement aux données: pour ajuster, cela ajoute deux paramètres $p,q$. On verra toutefois que bien du travail théorique utilise cette incidence
@@ -727,7 +769,7 @@ Ces fonctions furent introduites avec pour but l'ajustement aux données: pour a
 Effet de refuge; une proportion $0<q<1$ de la population est vraiment susceptible, par exemple du fait d'hétérogénéités spatiales
 
 $$
-\tag{14}
+\tag{16}
 f(S,I,N)=
 \begin{cases}
 \beta I\left(N-\dfrac Iq\right),&\textrm{si }I<qN \\
@@ -742,7 +784,7 @@ $$
 # Incidence binomiale négative
 
 $$
-\tag{15}
+\tag{17}
 f(S,I,N)=kS\ln\left(1+\beta\frac Ik\right)
 $$
 Pour des petites valeurs de $k$, ceci décrit un processus d'infection très concentré, tandis que lorsque $k\to\infty$, on tend vers une incidence en action de masse
@@ -752,7 +794,7 @@ Pour des petites valeurs de $k$, ceci décrit un processus d'infection très con
 # Contact asymptotique
 
 $$
-\tag{16}
+\tag{18}
 f(S,I,N)
 =\frac{N}{1-\varepsilon+\varepsilon N}
 \frac{F(S,I)}{N}
@@ -766,7 +808,7 @@ Quand $\varepsilon=0$, les contacts sont proportionnels à $N$, tandis que lorsq
 # Transmission asymptomatique 
 
 $$
-\tag{17}
+\tag{19}
 f(S,I,N)
 =\beta\frac{SI}{c+S+I}
 $$
@@ -781,7 +823,7 @@ avec $C(N)=N/(1-\varepsilon+\varepsilon N)$ la fonction décrivant le taux de co
 # Incidence changeante
 
 $$
-\tag{18}
+\tag{20}
 F(S,I,N) = 
 \begin{cases}
 \beta SI & \textrm{if }N\leq \hat N \\
@@ -830,9 +872,9 @@ Cela vaut vraiment le coup de regarder la série de papiers!
 Le modèle que nous considérons maintenant est typiquement appelé modèle SIR de Kermack-McKendrick (KMK)
 $$
 \begin{align}
-S' &= -\beta SI \tag{19a}\label{sys:KMK_dS} \\
-I' &= (\beta S-\gamma)I  \tag{19b}\label{sys:KMK_dI} \\
-R' &= \gamma I  \tag{19c}\label{sys:KMK_dR}
+S' &= -\beta SI \tag{21a}\label{sys:KMK_dS} \\
+I' &= (\beta S-\gamma)I  \tag{21b}\label{sys:KMK_dI} \\
+R' &= \gamma I  \tag{21c}\label{sys:KMK_dR}
 \end{align}
 $$
 
@@ -840,7 +882,7 @@ $$
 
 # Reduction du problème
 
-3 compartiments, mais quand on inspecte en détail, on remarque que les *retirés* n'ont pas d'influence directe sur la dynamique de $S$ ou $I$, dans le sens où $R$ n'apparait pas dans $\eqref{sys:KMK_dS}$ ou $\eqref{sys:KMK_dI}$
+3 compartiments, mais quand on inspecte en détail, on remarque que les *retirés* n'ont pas d'influence directe sur la dynamique de $S$ ou $I$, dans le sens où $R$ n'apparaît pas dans $\eqref{sys:KMK_dS}$ ou $\eqref{sys:KMK_dI}$
 
 De plus, la population totale (incluant potentiellement les morts qui sont aussi classés dans $R$) $N=S+I+R$ satisfait
 $$
@@ -851,8 +893,8 @@ Par conséquent, $N$ est constant et la dynamique de $R$ peut être déduite de 
 Donc on considère à présent
 $$
 \begin{align}
-S' &= -\beta SI \tag{20a}\\
-I' &= (\beta S-\gamma)I  \tag{20b}
+S' &= -\beta SI \tag{22a}\\
+I' &= (\beta S-\gamma)I  \tag{22b}
 \end{align}
 $$
 
@@ -863,8 +905,8 @@ $$
 Considérons les équilibres de
 $$
 \begin{align}
-S' &= -\beta SI \tag{20a}\label{sys:KMK_2d_dS} \\
-I' &= (\beta S-\gamma)I  \tag{20b}\label{sys:KMK_2d_dI}
+S' &= -\beta SI \tag{22a}\label{sys:KMK_2d_dS} \\
+I' &= (\beta S-\gamma)I  \tag{22b}\label{sys:KMK_2d_dI}
 \end{align}
 $$
 
@@ -885,7 +927,7 @@ Le second cas est un **problème**: la linéarisation usuelle ne fonctionne pas 
 
 Quelle est la dynamique de $dI/dS$? On a
 $$
-\tag{21}\label{eq:KMK_dI_over_dS}
+\tag{23}\label{eq:KMK_dI_over_dS}
 \frac{dI}{dS}
 =\frac{dI}{dt}\frac{dt}{dS}
 =\frac{I'}{S'}
@@ -904,7 +946,7 @@ I(S)=\frac\gamma\beta \ln S-S+C
 $$
 avec $C\in\mathbb{R}$
 
-La condition initiale $I(S_0)=I_0$ donne $C=S_0+I_0-\frac \gamma\beta \ln S_0$, et la solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ est, en tant que fonction de $S$
+La condition initiale $I(S_0)=I_0$ donne $C=S_0+I_0-\dfrac \gamma\beta \ln S_0$, et la solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ est, en tant que fonction de $S$
 $$
 \begin{align*}
 I(S)&=S_0+I_0-S+\frac\gamma\beta \ln \frac S{S_0} \\
@@ -926,11 +968,79 @@ Supposons que la population totale $N$ soit normalisée, i.e., $N=1$. Alors $R=1
 
 Définissons
 $$
-\begin{equation}\label{eq:R0_KMK}\tag{22}
+\begin{equation}\label{eq:R0_KMK}\tag{24}
 \mathcal{R}_0=\frac{\beta}{\gamma}
 \end{equation}
 $$
 
+---
+
+# Calcul de la taille finale de l'épidémie
+
+Pour la fonction à valeurs positives et intégrable $w(t)$,  notons
+$$
+w_\infty = \lim_{t\to\infty}w(t),\qquad\hat w = \int_0^\infty w(t)\ dt
+$$
+On note aussi $w_0=w(0)$. Dans le sous-système
+$$
+\begin{align}
+S' &= -\beta SI \tag{21a} \\
+I' &= (\beta S-\gamma)I  \tag{21b} 
+\end{align}
+$$
+prennons la somme de $\eqref{sys:KMK_dS}$ et $\eqref{sys:KMK_dI}$, en prennant garde de bien faire apparaître la dépendance en le temps
+$$
+\frac{d}{dt}(S(t)+I(t))=-\gamma I(t)
+$$
+
+---
+
+Intégrons de 0 à $\infty$:
+$$
+\int_0^\infty\frac{d}{dt}(S(t)+I(t))\ dt=-\int_0^\infty\gamma I(t)dt 
+$$
+Le terme de gauche donne
+$$
+\int_0^\infty\frac{d}{dt}(S(t)+I(t))\ dt
+= S_\infty+I_\infty-S_0-I_0 = S_\infty-S_0-I_0
+$$
+car $I_\infty=0$
+
+Le terme de droite prend la forme
+$$
+-\int_0^\infty\gamma I(t)dt = -\gamma \hat I
+$$
+On a donc
+$$
+\tag{22}\label{eq:KMK_final_size_step1}
+S_\infty-S_0-I_0 = -\gamma\hat I
+$$
+
+---
+
+Considérons maintenant $\eqref{sys:KMK_dS}$:
+$$
+S' = -\beta SI
+$$
+Divisons les deux cotés par $S$:
+$$
+\frac{S'(t)}{S(t)} = -\beta I(t)
+$$
+Intégrons de 0 a $\infty$:
+$$
+\tag{23}\label{eq:KMK_final_size_step2}
+\ln S_0-\ln S_\infty = -\beta \hat I
+$$
+Exprimons $\eqref{eq:KMK_final_size_step1}$ et $\eqref{eq:KMK_final_size_step2}$ en termes de $-\hat I$ et égalisons
+$$
+\frac{\ln S_0-\ln S_\infty}{\beta}
+=
+\frac{S_\infty-S_0-I_0}{\gamma}
+$$
+On a donc (**vérifier** $\mathcal{R}_0$ ou avec un $S_0$)
+$$
+S_0+I_0-S_\infty+\frac{\ln S_0-\ln S_\infty}{\mathcal{R}_0} = 0
+$$
 
 ---
 
@@ -950,7 +1060,23 @@ $$
 
 ---
 
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->En conclusion
+
+---
+
+# Normaliser ou pas?
+
+- Dans les deux modèles, puisque la population totale est constante, on aurait pu normaliser à $N=1$
+- Cela simplifie pas mal certains calculs
+- Toutefois, je ne suis pas très fan: je pense qu'il est important de toujours garder en tête les grandeurs biologiques
+- Si vous normalisez, en tout cas, pour un papier à visée biomathématique, pensez à exprimer vos ŕesultats en grandeur réelle
+
+
+---
+
 # Là où nous en sommes
 - Un modèle SIS *endémique* dans lequel le seuil $\mathcal{R}_0=1$ est t.q. quand $\mathcal{R}_0<1$, la maladie s'éteint, tandis que lorsque $\mathcal{R}_0>1$, la maladie s'établit dans la population
 - Un modèle SIR *épidémique* (le KMK SIR) dans lequel la présence ou absence de vague épidémique est caracterisée par la valeur de $\mathcal{R}_0$
 - Le SIS et le KMK SIR sont intégrables dans un certain sens. **C'est une exception!!!**
+
