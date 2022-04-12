@@ -41,7 +41,7 @@ University of Manitoba*
 
 <div style = "font-size:18px; margin-top:-10px; padding-bottom:30px;"></div>
 
-Canadian Centre for Disease Modelling
+Centre canadien de modélisation des maladies (CCDM/CCMM)
 Canadian COVID-19 Mathematical Modelling Task Force
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
@@ -53,11 +53,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ![bg right:40%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/FredBrauer_2007-05-13.jpg)
 # In Memoriam - Fred Brauer
 
-Fred Brauer était un ami et mentor pour beaucoup de gens de par le monde et une *éminence grise* de la biologie mathématique au Canada
+Fred Brauer était un ami et mentor pour nombre de personnes de par le monde et une *éminence grise* de l'épidémiologie mathématique au Canada
 
-J'ai eu le privilège d'apprendre de lui et d'enseigner l'épidémiologie mathématique avec lui dans un grand nombre de lieux et d'occasions
+J'ai eu le privilège d'apprendre de lui et d'enseigner l'épidémiologie mathématique avec lui dans un grand nombre de lieux
 
-Fred est décédé le 2021-10-17. Ce cours est dédié à sa mémoire!
+Fred est décédé le 17 octobre 2021. Ce cours est dédié à sa mémoire!
 
 > When you learn to use a hammer, everything looks like a nail
 
@@ -68,10 +68,19 @@ Fred est décédé le 2021-10-17. Ce cours est dédié à sa mémoire!
 
 ---
 
+# Pour qui, ce cours?
+
+- Étudiants en mathématiques, physique ou ingénierie désireux d'en apprendre plus au sujet de la modélisation mathématique dans le domaine de l'épidémiologie
+- Suppose une certaine connaissance des équations différentielles ordinaires. Je ne vais pas rentrer dans les détails et vais supposer que vous savez pourquoi, par exemple, la stabilité asymptotique locale d'un point d'équilibre est déduite de la localisation dans le plan complexe des valeurs propres de la linéarisation du système
+- Peut être intéressant pour des étudiants moins portés sur les mathématiques mais nécessitera un peu de travail de fond pour comprendre certains concepts
+
+Ce cours reprend et étend les éléments du cours 3MC  .. Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar, Président de l'université de N'Djaména
+
+---
+
 # Répositoire GitHub pour le cours
 
-La plupart du matériel pour le cours est disponible depuis le répositoire GitHub que j´ai mis en place:
-[https://julien-arino.github.io/3MC-course-epidemiological-modelling](https://julien-arino.github.io/3MC-course-epidemiological-modelling)
+La plupart du matériel pour le cours est disponible depuis ce [répositoire GitHub](https://julien-arino.github.io/3MC-course-epidemiological-modelling)
 
 Ceci inclut les transparents, le code et des exemples de données
 
@@ -174,8 +183,8 @@ Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec de
 
 # Organisation du cours
 
-L1: Bref historique: épidémies, épidémiologie et épidémiologie mathématique
-L2: Basic concepts of Mathematical Epidemiology. Models in one population
+L1: Épidémies, épidémiologie et épidémiologie mathématique
+L2: Modèle SIS et modèle SIR de Kermack et McKendrick
 P1: Introduction to R. Collecting data. Solving ODEs in R
 L3: Epidemics spreading among groups. Epidemics spreading in space and time                                     
 L4: Group models

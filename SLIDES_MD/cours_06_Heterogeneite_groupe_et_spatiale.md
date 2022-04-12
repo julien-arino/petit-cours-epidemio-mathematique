@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Epidemics spreading among groups. Epidemics spreading in space and time
-description: 3MC Course Epidemiological Modelling - Julien Arino - Course 03 - Epidemics spreading among groups. Epidemics spreading in space and time
+title: Petit cours d'épidémiologie mathématique - Propagation dans des groupes - Propagation spatio-temporelle
+description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 06 - Propagation dans des groupes et propagation spatio-temporelle des épidémies
 theme: default
 paginate: false
 math: mathjax
@@ -30,9 +30,8 @@ size: 4K
   }
 </style>
 
-# Epidemics spreading among groups. Epidemics spreading in space and time
-
-5 April 2022 
+# <!--fit-->Petit cours d'épidémiologie mathématique
+# Propagation dans des groupes et propagation spatio-temporelle des épidémies
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
@@ -51,73 +50,69 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 --- 
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Outline
-- Heterogeneity of spread within a location
-- Mobility and the spread of infectious diseases
-- Waves of COVID-19
+# Plan de ce cours
+- Hétérogénéité de la propagation au sein d'une population
+- La mobilité et la propagation spatio-temporelle des maladies infectieuses
+- Les vagues de COVID-19
 
 ---
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# Heterogeneity of spread within a location
+# <!--fit-->Hétérogénéité de la propagation au sein d'une population
 
----
-
-<!-- _backgroundImage: "radial-gradient(white, 80%, #156C26)" -->
-# Heterogeneity of spread within a location
-- Age structure
-- Social structure
-- Pathogen heterogeneity
+- Structure d'âge
+- Structure sociale
+- Hétérogénéité des pathogènes
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Age structure
+# <!--fit-->Structure d'âge
 
 ---
 
-# <!-- fit -->Many diseases have different burdens in different age groups
+# <!-- fit -->Bien des maladies affectent différemment des âges différents
 
-- Childhood disease conferring lifelong immunity: measles, mumps, etc.
-- Diseases in which immunity is acquired through repeated exposition: malaria
-- Disease for which repeated contacts are important: kids playing together, adults meeting mostly other adults, adults with kids getting sick from them (WAIFW - who acquires infection from whom)
+- Maladies infantiles conférant une immunité à vie: rougeole (*measles*), mumps, etc.
+- Maladies pour lesquelles une immunité est acquise par exposition répétée à l'agent pathogène: paludisme
+- Maladies pour lesquelles des contacts répétés sont importants: enfants jouant ensemble, adultes rencontrant d'autres adultes, adultes avec jeunes enfants contractant une maladie à l'école (concept important: WAIFW - who acquires infection from whom, qui acquiert la maladie de qui)
 
 ---
 
-![bg left:71%](https://www.cdc.gov/mmwr/preview/mmwrhtml/figures/m6013a1f.gif "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6013a1.htm")
+![bg left:69%](https://www.cdc.gov/mmwr/preview/mmwrhtml/figures/m6013a1f.gif "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6013a1.htm")
 
-# Measles cases among travellers returning to the US
+# Cas de rougeole parmi des voyageurs rentrant aux USA
 
 <!-- Measles cases among travellers returning to the US https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6013a1.htm -->
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/malaria-deaths-by-age.png "Max Roser and Hannah Ritchie (2019) - 'Malaria'. Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/malaria' [Online Resource]")
+![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/malaria-deaths-by-age.png)
 
 <!-- Max Roser and Hannah Ritchie (2019) - 'Malaria'. Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/malaria' [Online Resource] -->
 
 ---
 
-# Population contact patterns in the United States during the COVID-19 pandemic
+# Patterns de contact de la population aux USA pendant la pandémie de COVID-19
 
-![bg right:65%](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-021-20990-2/MediaObjects/41467_2021_20990_Fig3_HTML.png?as=webp "https://doi.org/10.1038/s41467-021-20990-2")
+![bg right:65%](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-021-20990-2/MediaObjects/41467_2021_20990_Fig3_HTML.png?as=webp)
 
 <!-- https://doi.org/10.1038/s41467-021-20990-2 -->
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Social structure
+# <!--fit-->Structure sociale
 
 ---
 
-# Social structure also plays a very important role
+# <!--fit-->La structure sociale joue aussi un rôle prépondérant
 
-- Age is determinant of social structure and thus contacts:
-  - School
-  - Work
-  - Social events
-- In countries with large immigration: newcomers versus more established population, e.g., TB
-- Risk groups: drug users (HIV)
+- L'âge est déterminant de la structure sociale et donc des contacts:
+  - École
+  - Travail
+  - Évènements sociaux
+- Dans les pays à forte immigration: nouveaux immigrants vs population plus établie, p.ex., TB
+- Groupes à risque: utilisateurs de drogue (VIH)
 
 ---
 
@@ -129,7 +124,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ![bg right:71%](https://erj.ersjournals.com/content/erj/38/4/895/F1.large.jpg "https://doi.org/10.1183/09031936.00196610")
 
-# Arrivals to CAN from country groups with incidence per 100K ..
+# Arrivées au CAN depuis des pays dans des groupes ayant une incidence par 100K ..
 
 ---
 
@@ -142,7 +137,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Pathogen heterogeneity
+# <!--fit-->Hétérogénéité des pathogènes
 
 ---
 
@@ -162,37 +157,37 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# Mobility and the spread of infectious diseases
+# La mobilité et la propagation spatio-temporelle des maladies infectieuses
 
 ---
 
-# <!-- fit --> Pathogens have been mobile for a while
+# <!-- fit -->On sait les pathogènes mobile depuis longtemps
 
 <!--<div style = "text-align: justify">-->
-It first began, it is said, in the parts of **Ethiopia** above Egypt, and thence descended into **Egypt** and **Libya** and into most of the King's country [**Persia**]. Suddenly falling upon Athens, it first attacked the population in **Piraeus**—which was the occasion of their saying that the Peloponnesians had poisoned the reservoirs, there being as yet no wells there—and afterwards appeared in the **upper city**, when the deaths became much more frequent.
+Le mal, dit-on, fit son apparition en **Ethiopie**, au-dessus de l'Egypte : de là il descendit en **Egypte** et en **Libye** et se répandit sur la majeure partie des territoires du Roi [de **Perse**]. Il se déclara subitement à **Athènes** et, comme il fit au **Pirée** ses premières victimes, on colporta le bruit que les Péloponnésiens avaient empoisonné les puits ; car au Pirée il n'y avait pas encore de fontaines. Il atteignit ensuite la **ville haute** et c'est là que la mortalité fut de beaucoup la plus élevée.
 <!--</div>-->
 
 <div style = "text-align: right; position: relative; bottom: -10%; ">
-Thucydides (c. 460 BCE - c. 395 BCE)
 
-[History of the Peloponnesian War](https://www.gutenberg.org/files/7142/7142-h/7142-h.htm#link2HCH0007)
+[Thucydide](https://fr.wikipedia.org/wiki/Thucydide) (c. 460 AEC - c. 395 AEC)
+[Histoire de la guerre du Péloponnèse](http://remacle.org/bloodwolf/historiens/thucydide/livre2.htm#XLVIII)
 </div>
 
 ![bg 90% right:30%](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/various/Thucydides-bust-noBG.png)
 
 ---
 
-# <!-- fit -->Mobility is complicated and drives disease spatialisation
+# <!-- fit -->La mobilité est compliquée et induit la spatialisation des maladies
 
-**Mobility is complicated**:
+**La mobilité est compliquée**:
 
-- Multiple modalities: foot, bicycle, personal vehicle, bus, train, boat, airplane
-- Various durations: trip to the corner shop $\neq$ commuting $\neq$ multi-day trip for work or leisure $\neq$ relocation, immigration or refuge seeking
-- Volumes are hard to fathom
+- Nombreuses modalités: marche, vélo, véhicule personnel, bus, train, bateau, avion
+- Durées variées: épicier du coin $\neq$ aller au travail $\neq$ voyages de plusieurs jours (travail ou plaisir) $\neq$ relocalisation, immigration ou demande d'asile
+- Volumes difficiles à appréhender
 
-And yet **mobility drives spatio-temporal spread**:
-- Black Death 1347-1353 arrived in Europe and spread following trade routes
-- SARS-CoV-1 spread out of HKG along the GATN
+Néanmoins, la **mobilité conduit la propagation spatio-temporelle**:
+- La grande peste (1347-1353) est arrivée en Europe et s'est propagée le long des routes commerciales
+- SARS-CoV-1 s'est répandu depuis HKG en suivant le réseau aérien
 - Khan, Arino, Hu *et al*, [Spread of a novel influenza A (H1N1) virus via global airline transportation](https://www.nejm.org/doi/pdf/10.1056/NEJMc0904559), *New England Journal of Medicine* (2009)
 </div>
 
@@ -210,37 +205,37 @@ And yet **mobility drives spatio-temporal spread**:
 
 ---
 
-# The Black Death: quick facts
+# <!--fit-->La grande peste: quelques faits
 
-- First of the middle ages plagues to hit Europe
-- Affected Afro-Eurasia from 1346 to 1353
+- Première des pestes du moyen âge à atteindre l'Europe
+- Affecte l'Afro-Eurasie de 1346 à 1353
 - Europe 1347-1351
-- Killed 75–200M in Eurasia & North Africa
-- Killed 30-60% of European population
+- Tue 75–200M en Eurasie & Afrique du Nord
+- Tue 30-60% de la population Européenne
 
 ![bg right:35%](https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Yersinia_pestis_fluorescent.jpeg/1036px-Yersinia_pestis_fluorescent.jpeg)
 
 ---
 
-# Plague control measures
+# Mesures de contrôle de la peste
 
-- Lazzarettos of Dubrovnik 1377 (30 days)
-- Quarantena of Venice 1448 (40 days)
-- Isolation of known or suspected cases as well as persons who had been in contact with them, at first for 14 days and gradually increased to 40 days
-- Improvement of sanitation: development of pure water supplies, garbage and sewage disposal, food inspection
-- .. Find and kill a snake, chop it into pieces and rub the various parts over swollen buboes. (Snake, synonymous with Satan, was thought to draw the disease out of the body as evil would be drawn to evil)
+- Lazzarettos de Dubrovnik 1377 (30 jours)
+- Quarantena de Venise 1448 (40 jours)
+- Isolation des cas connus ou suspectés et de toute personne ayant été en contact avec eux, d'abord pour 14 jours puis graduellemt augmenté à 40 jours
+- Amélioration des conditions sanitaires: alimentation en eau propre, collecte des déchets, inspection de la nourriture
+- .. Trouvez et tuez un serpent, coupez le en bouts et badigeonnez les bubons avec. (Le serpent, associé à Satan, attire le mal hors du corps, puisque le mal attire le mal)
 
 ![bg left:24%](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nuremberg_chronicles_-_Dance_of_Death_%28CCLXIIIIv%29.jpg/1201px-Nuremberg_chronicles_-_Dance_of_Death_%28CCLXIIIIv%29.jpg)
 
 ---
 
-# Pathogen spread has evolved with mobility
+# La propagation spatio-temporelle des pathogènes a évolué avec la mobilité
 
-- Pathogens travel along trade routes
+- Les pathogènes suivent les routes de commerce
 
-- In ancient times, trade routes were relatively easy to comprehend
+- Jadis, les routes de commerce étaient relativement faciles à appréhender
 
-- With acceleration and globalization of mobility, things change
+- Celà a changé avec l'accélération et la globalisation de la mobilité
 
 ---
 
@@ -265,51 +260,50 @@ And yet **mobility drives spatio-temporal spread**:
 
 ---
 
-# <!--fit-->Fragmented jurisdictional landscape
+# <!--fit-->Un paysage juridictionnel fragmenté
 
-- Political divisions (jurisdictions): nation groups (e.g., EU), nations, provinces/states, regions, counties, cities..
-- Travel between jurisdictions can be complicated or impossible
-- Data is integrated at the jurisdicional level
-- Policy is decided at the jurisdictional level
-- Long range mobility is a bottom $\to$ top $\to$ top $\to$ bottom process
+- Divisions politiques (juridictions): groupes de nations (p.ex., EU), nations, provinces/états, régions, départements, villes..
+- Déplacement entre juridictions peut être compliqué voire impossible
+- Données intégrées au niveau juridictionnel
+- Politique décidée au niveau juridictionnel
 
 ![bg right:40%](https://compote.slate.com/images/af3c1e4a-9ca9-4caa-8cbb-7f4f34c9ac88.jpeg?width=1440&rect=1560x1040&offset=0x0)
 
 ---
 
-# Why mobility is important in the context of health
+# <!--fit-->La mobilité est importante dans le contexte de la santé
 
 ```
-All migrants/travellers carry with them their "health history"
+Tout migrant ou voyageur transporte en lui son "historique de santé"
 ```
 
-- latent and/or active infections (TB, H1N1, polio)
-- immunizations (schedules vary by country)
-- health/nutrition practices (KJv)
-- treatment methods (antivirals)
+- infections latentes et/ou actives (TB, H1N1, polio)
+- immunisations (les programmes varient par pays)
+- pratiques de santé/nutrition practices (KJv)
+- méthodes de traitement (antiviraux)
 
 ```
-Pathogens ignore borders and politics
+Les pathogènes ignorent les frontières et la politique
 ```
 
-- antiviral treatment policies for Canada and USA
-- SARS-CoV-2 anyone?
+- Politiques de traitement antiviral du Canada et des USA
+- SARS-CoV-2, ça vous dit quelque chose?
 
 ---
 
 # SARS-CoV-1 (2002-2003)
 
-## Overall impact
+## Impact global
 
-- Index case for international spread arrives HKG 21 February 2003
+- Cas index pour la propagation internationale arrive à HKG le 21 février 2003
 
-- Last country with local transmission (Taiwan) removed from list 5 July 2003
+- Dernier pays (Taiwan) avec de la transmission locale retiré de la liste le 5 juillet 2003
 
-- 8273 cases in 28 countries	
+- 8273 cas dans 28 pays
 
-- (Of these cases, 1706 were HCW)
+- (De ces cas, 1706 étaient des travailleurs de la santé)
 
-- 775 deaths (CFR 9.4%)
+- 775 morts (CFR 9.4%)
 
 ![bg right:45%](https://www.cdc.gov/sars/lab/images/coronavirus2.gif)
 
@@ -335,12 +329,12 @@ Pathogens ignore borders and politics
 ![bg contain](https://www.nejm.org/na101/home/literatum/publisher/mms/journals/content/nejm/2006/nejm_2006.355.issue-24/nejmp068200/production/images/img_medium/nejmp068200_f1.jpeg)
 
 <div style = "position: relative; bottom: -57%; padding-bottom:0px; font-size:25px; text-align: right;">
-Polio spread 2002-2006. Pallansch & Sandhu, N Engl J Med 2006; 355:2508-2511
+Propagation polio 2002-2006. Pallansch & Sandhu, N Engl J Med 2006; 355:2508-2511
 </div>
 
 ---
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!-- fit -->Waves of COVID-19
+# <!-- fit -->Les vagues de COVID-19
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -349,21 +343,21 @@ JA. [Describing, modelling and forecasting the spatial and temporal spread of CO
 
 ---
 
-# Amplification in Wuhan (Hubei province)
+# Amplification à Wuhan (Province du Hubei)
 
-- Details of emergence and precise timeline before amplification started unknown
-- Amplification in Wuhan
-	- Cluster of pneumonia cases mostly related to the Huanan Seafood Market
-	- 27 December 2019: first report to local government
-	- 31 December 2019: publication
-	- 8 January 2020: identification of SARS-CoV-2 as causative agent
--  $\sim$ 23 January 2020: lockdown Wuhan and Hubei province + face mask mandates
+- Détails de l'émergence et timeline précis avant début de l'amplification inconnus
+- Amplification à Wuhan
+	- Cluster de cas de pneumonie principalement liés auHuanan Seafood Market
+	- 27 décembre 2019: premier rapport au gouvernement local
+	- 31 décembre 2019: publication
+	- 8 janvier 2020: identification du SARS-CoV-2 cmme agent causatif
+-  $\sim$ 23 January 2020: lockdown Wuhan et province du Hubei + mandats de masques
 
-By 29 January, virus was found in all provinces of mainland China
+Le 29 janvier, le virus est présent dans toutes les proinces de Chine
 
 ---
 
-# First detections outside China
+# Premières détections hors de Chine
 
 <style scoped>
 table {
@@ -373,7 +367,7 @@ table {
 }
 </style>
 
-| Date | Location | Note |
+| Date | Lieu | Note |
 |------|----------|------|
 | 13 Jan. | Thailand | Arrived 8 Jan. |
 | 16 Jan. | Japan | Arrived 6 Jan. |
@@ -388,15 +382,15 @@ table {
 
 ---
 
-# Caveat : evidence of earlier spread
+# Un bémol : évidence de propagation plus tôt
 
-- Report to Wuhan authorities on 27 December 2019
-- First export detections in Thailand and Japan on 13 and 16 January 2020 (with actual importations on 8 and 6 January)
+- Rapport aux autorités de Wuhan le 27 décembre 2019
+- Premières exportation détectées en Thailande et au Japon les 13 et 16 janvier 2020 (avec importations les 8 et 6 janvier)
 
-$\implies$ amplification must have been occurring for a while longer
+$\implies$ amplification doit avoir commencé plus tôt
 
-- France: sample taken from 42-year-old male (last foreign travel to Algeria in August 2019) who presented to ICU on 27 December 2019
-- Retrospective studies in United Kingdom and Italy also showed undetected COVID-19 cases in prepandemic period
+- France: échantillon prélevé d'un homme de 42 ans (dernier voyage en Algérie en aout 2019) qui se présente aux urgences le 27 décembre 2019
+- Études rétrospectives en GB et Italie montrent aussi des cas de COVID-19 non détectés dans la période pré-pandémique
 
 ---
 
@@ -404,5 +398,9 @@ $\implies$ amplification must have been occurring for a while longer
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/sars-cov-2/VOC_countries_reporting_since_first_case_2022_02_17.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/sars-cov-2/VOC_countries_reporting_by_date_2022_04_07.png)
+
+---
+
+![bg contain](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/sars-cov-2/VOC_countries_reporting_since_first_case_2022_04_07.png)
 

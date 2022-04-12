@@ -50,24 +50,19 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Épidemiologie
+<!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
+# Plan de ce cours
 
----
-
-# Définition
-
-> **Epidemiology** is the study and analysis of the distribution (who, when, and where), patterns and determinants of health and disease conditions in defined populations [[Wikipedia](https://en.wikipedia.org/wiki/Epidemiology)]
-
-> Epidemiology is the study of how often diseases occur in different groups of people and why. Epidemiological information is used to plan and evaluate strategies to prevent illness and as a guide to the management of patients in whom disease has already developed [[BMJ](https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated/1-what-epidemiology)]
-
-Étymologie: *the study of what is upon the people*, du Grec $\varepsilon\pi\iota$ (*upon, among*), $\delta\varepsilon\mu\omega\sigma$ (*people, district*) and $\lambda\omega\gamma\omega\sigma$ (*study, word, discourse*)
-
+- Épidémies
+- Épidémiologie
+- Épidémiologie mathématique
+- Épidémiologie computationnelle
+- Utilisation de données en épidémiologie
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Histoire des épidémies et épidémies historiques
+# <!--fit-->Épidémies
 
 ---
 
@@ -75,10 +70,6 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - Les épisodes épidémiques sont parmi les premiers évenements rapportés dans l'histoire
 - Mise en garde: je discute peu ici de l'aspect spatio-temporel de la propagation, qui fait l'objet de cours spécifiques [Cours 03](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L03_SpreadInGroups_SpreadInSpace.html) et [Cours 05](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L05_MetapopulationModels.html)
-
----
-
-![bg contain](https://upload.wikimedia.org/wikipedia/commons/c/c1/Difference_between_outbreak%2C_endemic%2C_epidemic_and_pandemic-en.png)
 
 ---
 
@@ -112,27 +103,46 @@ table {
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Qui, quand et où
+# <!--fit-->Épidémiologie
+
+- Qui, quand et où?
+- Lutte contre les infections
 
 ---
 
-# Qui, quand et où
+# Définition
+
+> **Epidemiology** is the study and analysis of the distribution (who, when, and where), patterns and determinants of health and disease conditions in defined populations [[Wikipedia](https://en.wikipedia.org/wiki/Epidemiology)]
+
+> Epidemiology is the study of how often diseases occur in different groups of people and why. Epidemiological information is used to plan and evaluate strategies to prevent illness and as a guide to the management of patients in whom disease has already developed [[BMJ](https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated/1-what-epidemiology)]
+
+Étymologie: *the study of what is upon the people*, du Grec $\varepsilon\pi\iota$ (*upon, among*), $\delta\varepsilon\mu\omega\sigma$ (*people, district*) and $\lambda\omega\gamma\omega\sigma$ (*study, word, discourse*)
+
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Qui, quand et où?
+
+---
+
+# Qui, quand et où?
 
 Recall part of the definition on Wikipedia
 > **Epidemiology** is the study and analysis of the distribution (who, when, and where)
 
 ---
 
-Domain is terminologically heavy. A few pointers:
+Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 - Milwid et al. [Toward standardizing a lexicon of infectious disease modeling terms](https://doi.org/10.3389/fpubh.2016.00213). Frontiers in Public Health 2016
 - Moghadas and Laskowski. [Review of terms used in modelling influenza infection](https://nccid.ca/wp-content/uploads/sites/2/2015/03/ReviewTermsFluWEB.pdf). NCCID 2014
 
 ---
 
-# Who
+# Qui?
 
-- **Epidemiology** typically used when dealing with humans, but sometimes also generically when an easy description is sought; e.g., plant disease epidemiology
-- **Epizootic**: denoting or relating to a disease that is temporarily prevalent and widespread in an animal population
+- **Épidémiologie** est le terme typiquement employé lorsque l'on parle d'humains, bien qu'il soit aussi employé parfois quand on cherche une description simple; p.ex., épidémiologie des maladies des plantes
+- **Épizootique**: denoting or relating to a disease that is temporarily prevalent and widespread in an animal population
 - **Panzootic** is like a pandemic for animals
 - **One Health**: considers health of humans, animals and their environment (including plants)
 
@@ -142,15 +152,15 @@ Domain is terminologically heavy. A few pointers:
 
 ---
 
-# Incidence & Prevalence (when?)
+# Incidence & Prévalence (quand?)
 
-**Incidence**: number of new cases in a population generated within a certain time period
+**Incidence**: nombre de nouveaux cas dans une population générés pendant une certaine période de temps
 
-**Prevalence**: number of cases of a disease at a single time point in a population
+**Prévalence**: nombre de cas d'une maladie présents dans une population à un certain instant
 
 ---
 
-# Epidemic curves
+# Courbes épidémiques
 
 - Used to record the occurrence of new cases as a function of time
 - When not too many cases, usually "individualised" (bar plots)
@@ -166,28 +176,28 @@ Domain is terminologically heavy. A few pointers:
 
 ---
 
-# Some terminology for "where"
+# Un peu de terminologie pour "où?"
 
-- **Epidemic**: diseases that are *visited upon* a population
-- **Pandemic**: (will revisit this later in the course) epidemic that has spread across a large region, e.g., multiple continents or worldwide
-- **Endemic**: diseases that *reside within* a population
-- We don't say "panendemic"
+- **Épidémie**: maladies qui *traversent* une population
+- **Pandémie**: épidémie qui s'est étendue à une grande région, p.ex., plusieurs continents ou le monde entier
+- **Endémie**: maladies qui *résident dans* une population
+- On ne dit pas "panendémie"
 
 ---
 
 ![bg left:50%](https://upload.wikimedia.org/wikipedia/commons/c/c7/Snow-cholera-map.jpg)
 
-# <!--fit--> Where: [1854 cholera outbreak](https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
+# <!--fit-->Où? [Épidémie de cholera de 1854](https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
 
-Cholera outbreak in Broad Street, London (UK)
+Épidémie de cholera près de Broad Street, Londres (GB)
 
-Studied by [John Snow](https://en.wikipedia.org/wiki/John_Snow)
+Étudiée par [John Snow](https://en.wikipedia.org/wiki/John_Snow)
 
 > I found that nearly all the deaths had taken place within a short distance of the [Broad Street] pump
 
 ---
 
-# WHO pandemic (influenza) [phases](https://www.ncbi.nlm.nih.gov/books/NBK143061/)
+# [Phases OMS d'une pandémie (influenza)](https://www.ncbi.nlm.nih.gov/books/NBK143061/)
 
 <style>
     .heatMap {
@@ -206,7 +216,7 @@ Studied by [John Snow](https://en.wikipedia.org/wiki/John_Snow)
 
 <div class="heatMap">
 
-| Period | Phase | Description |
+| Période | Phase | Déscription |
 |:---|:---:|:---|
 | Interpandemic | 1 | No animal influenza virus circulating among animals has been reported to cause infection in humans |
 | | 2 | Animal influenza virus circulating in domesticated or wild animals known to have caused infection in humans and therefore considered a specific potential pandemic threat |
@@ -214,18 +224,20 @@ Studied by [John Snow](https://en.wikipedia.org/wiki/John_Snow)
 | | 4 | Human-to-human transmission of an animal or human-animal influenza reassortant virus able to sustain community-level outbreaks has been verified |
 | | 5 | Same identified virus has caused sustained community-level outbreaks in at least 2 countries in 1 WHO region |
 | Pandemic | 6 | In addition to criteria in Phase 5, same virus has caused sustained community-level outbreaks in at least 1 other country in another WHO region |
-
 </div>
 
+---
+
+![bg contain](https://upload.wikimedia.org/wikipedia/commons/c/c1/Difference_between_outbreak%2C_endemic%2C_epidemic_and_pandemic-en.png)
 
 ---
 
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Fighting against infections
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Lutte contre les infections
 
 ---
 
-# Fighting against infections
+# Lutte contre les infections
 
 > Epidemiological information is used to plan and evaluate **strategies to prevent illness** and as a guide to the **management of patients** in whom disease has already developed
 
@@ -250,8 +262,9 @@ At the time, *herd immunity* was not understood so this was for personal protect
 
 ---
 
-<div style = "position: relative; top: -55%; padding-bottom:60px; font-size:40px">
-Measles cases in the USA
+<div style = "position: relative; top: -54%; padding-bottom:60px; font-size:40px">
+
+Cas de rougeole (*measles*) aux USA
 </div>
 
 ![bg contain](https://julien-arino.github.io/assets/img/measles_US_1944_2019.png)
@@ -259,13 +272,13 @@ Measles cases in the USA
 --- 
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Mathematical Epidemiology
+# <!--fit-->Épidémiologie mathématique
 
 ---
 
-# Domain is quite old ..
+# Un domaine assez ancient ..
 
-.. but has only become a thing in recent years!
+.. mais qui a vraiment émergé seulement assez récemment!
 
 ---
 
@@ -273,38 +286,41 @@ Measles cases in the USA
 
 # Daniel Bernoulli (1760)
 
-- [BNF scan](https://gallica.bnf.fr/ark:/12148/bpt6k3558n/f220.item) or [pdf](https://julien-arino.github.io/assets/pdf/Bernoulli-1760.pdf)
-- Probably the first epidemic model
-- About petite vérole (smallpox) inoculation
+- [BNF scan](https://gallica.bnf.fr/ark:/12148/bpt6k3558n/f220.item) ou [pdf](https://julien-arino.github.io/assets/pdf/Bernoulli-1760.pdf)
+- Probablement le premier modèle épidémique
+- Traite de l'inoculation conre la petite vérole (*smallpox*)
 
 ---
 
 ![bg left:30%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/RonaldRoss_WellcomeCollection.jpg)
-# Ross (early 1900)
+# Ross (début 20ème siècle)
 
-- On 20 August 1897, observed malaria parasites in the gut of a mosquito fed several days earlier on a malaria positive human
-- Nobel Prize for Medicine 1902
-- Started considering malaria eradication using mathematical models; for some history, read [this 2012 paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3320609/pdf/ppat.1002588.pdf)
+- 20 aout 1897: observe des parasites du paludisme (*malaria*) dans le système digestif d'un moustique nourri quelques jours auparavant sur un humain positif au palu
+- Prix Nobel de médicine 1902
+- S'intéresse à des modèles mathématiques pour l'éradication du palu; voir [ce papier de 2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3320609/pdf/ppat.1002588.pdf) pour un peu d'histoire
 
 ---
 
-# Kermack and McKendrick (1927+)
+# Kermack et McKendrick (1927+)
 
-- We spend a lot more time on this in [Lecture 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L02_BasicMathEpi.html)
+- Probablement l'un des plus grands tournants en épi-math
+- Nous passons ceci en détail dans le [Cours 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L02_BasicMathEpi.html)
 - Groundbreaking set of papers starting in 1927
   - We will see one particular case, the most well known, but I point out here and point out in Lecture 02 that this is just the tip of the iceberg of their work
 
 ---
 
-# Some activity later, but not much until 1990s
+# <!--fit-->De l'activité plus tard, mais peu avant les années 1990
 
-- In recent years, explosion
-- Since the beginning of COVID-19: just nuts..
+- Notons toutefois que les grandes lignes directrices ont été déjà mises en évidence depuis les années 1970
+- Une erreur terminologique sur laquelle je reviendrai ($E$ pour *individus exposés* qui devraient être *individus latents*) date de cette première *période héroique* :)
+- Explosion ces dernières années
+- Depuis le début de COVID-19: c'est dingue..!
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Computational epidemiology
+# <!--fit-->Épidémiologie computationnelle
 
 ---
 
@@ -319,15 +335,15 @@ Measles cases in the USA
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Use of data in epidemiology
+# <!--fit-->Utilisation de données en épidémiologie
 
 ---
 
-# <!-- fit -->Has happened all along, undergoind a transformation
+# <!-- fit -->A toujours eu lieu, en cours de transformation
 
-- Epidemiology has long relied on data
-- Many developments in statistics originate there
-- Data has traditionally been better for chronic diseases than for infectious ones
-- Near-real-time surveillance of infectious diseases ongoing since the 1980s (e.g., Réseau Sentinelles)
-- SARS-CoV-1 saw the beginning of a move towards real-time emerging infectious disease data
-- With SARS-CoV-2, the system has really progressed a lot, both in terms of "citizen science" and governmental initiatives
+- L'épidémiologie a depuis longtemps utilisé et nécessité des données
+- Bien des avancées en statistiques y ont leur motivation
+- Les données sont en général meilleures pour les maladies chroniques que pour les maladies infecieuses
+- Surveillance quasi-temps-réel des maladies infectieuses a lieu depuis les années 1980 (p.ex., Réseau Sentinelles)
+- SARS-CoV-1 a vu le début d'un mouvement vers une disponibilité temps-réel des données de maladies infectieuses
+- Avec SARS-CoV-2, le système a vraiment progressé et impliquee maintenant de la "science citoyenne" et des initiatives gouvernementales type Open Data

@@ -30,7 +30,8 @@ size: 4K
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique - Le modèle SLIRS
+# Petit cours d'épidémiologie mathématique 
+# Le modèle SLIRS
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
@@ -48,64 +49,421 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
+<!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
+# Plan du cours
+
+- Durée d'incubation
+- Formulation du modèle SLIRS en population constante
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->SLIRS model with constant population
+# <!--fit-->Durée d'incubation
 
 ---
 
-# Incubation time
+# <!--fit-->Pourquoi prendre en compte la durée de la période d'incubation
 
-- SIS and SIR: instantaneous progression from  S to I
-- Some incubation periods (time from infection to symptoms - often matches beginning of infectiousness):
+- Modèles SIS et SIR: on progresse instantanément de $S$ à $I$
+- Exemple de quelques durées d'incubation:
 
-| Disease | Incubation |
+| Maladie | Durée d'incubation |
 |:----|:----|
-| Yersinia Pestis | 2-6 days |
-| Ebola hemorragic fever (HF) | 2-21 days |
-| Marburg HF | 5-10 days |
-| Lassa HF | 1-3 weeks |
-| Tse-tse | weeks, months |
-| HIV/AIDS | months, years |
+| Yersinia Pestis | 2-6 jours |
+| Fièvre hémorragique Ebola | 2-21 jours |
+| Fièvre hémorragique Marburg | 5-10 jours |
+| Fièvre hémorragique Lassa | 1-3 semaines |
+| Tsé-tsé | semaines, mois |
+| VIH/SIDA | mois, années |
 
 ---
 
-# Hypotheses
-
-- Suppose there is demography. New individuals are born at a rate proportional to the total population
-- Disease is not transmitted to newborns (no *vertical transmission*): all births are to the S compartment
-- Disease does not cause additional mortality
-- New infections occur at the rate $f(S,I,N)$
-- There is an incubation period
-- After recovery, individuals are immune to the disease for some time
+# Plus sur l'incubation
 
 ---
 
-# SLIRS model
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Formulation du modèle SLIRS en population constante
 
-The model takes the form
+- Formulation du modèle général
+- Le modèle SLIRS avec naissance *per capita*
+- Le modèle SLIRS avec naissance constante
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Formulation du modèle général
+
+---
+
+# Hypothèses
+
+- Il y de la démographie
+- On regardera deux cas pour commencer: naissance constante et *per capita*
+- Maladie pas transmise aux nouveaux nés (pas de *transmission verticale*): toutes les naissances sont dans le compartiment $S$
+- La maladie ne cause pas de mortalité additionnelle
+- Nouvelles infections ont lieu au taux $f(S,I,N)$
+- Il y a une période d'incubation
+- Après guérison, les individus sont immunisés à la maladie
+- L'immunité est perdue après un certain temps
+
+---
+
+# Les deux modèles SLIRS
+
+Naissance *per capita*
 $$
 \begin{align}
-S' &= d(N-S)-f(S,I,N)+\nu R
-\tag{20a}\label{sys:SLIR_dS}\\
+S' &= {\color{red}bN}-f(S,I,N)-dS+\nu R
+\tag{1a}\label{sys:SLIR_bN_dS}\\
 L' &= f(S,I,N) -(d+\varepsilon)L 
-\tag{20b}\label{sys:SLIR_dL} \\
+\tag{1b}\label{sys:SLIR_bN_dL} \\
 I' &= \varepsilon L -(d+\gamma)I 
-\tag{20c}\label{sys:SLIR_dI} \\
+\tag{1c}\label{sys:SLIR_bN_dI} \\
 R' &= \gamma I-(d+\nu)R 
-\tag{20d}\label{sys:SLIR_dR}
+\tag{1d}\label{sys:SLIR_bN_dR}
+\end{align}
+$$
+Naissance constante
+$$
+\begin{align}
+S' &= {\color{blue}b}-f(S,I,N)-dS+\nu R
+\tag{2a}\label{sys:SLIR_b_dS}\\
+L' &= f(S,I,N) -(d+\varepsilon)L 
+\tag{2b}\label{sys:SLIR_b_dL} \\
+I' &= \varepsilon L -(d+\gamma)I 
+\tag{2c}\label{sys:SLIR_b_dI} \\
+R' &= \gamma I-(d+\nu)R 
+\tag{2d}\label{sys:SLIR_b_dR}
 \end{align}
 $$
 
-- $1/\varepsilon$ average duration of the incubation period
+---
 
-- $1/\gamma$ average time until recovery
+# Paramètres
 
-- $1/\nu$ average duration of immunity
+- $1/\varepsilon$ durée moyenne de la période d'incubation
+
+- $1/\gamma$ durée moyenne de la période infectieuse
+
+- $1/\nu$ durée moyenne de la période d'immunité
+
+- $1/d$ espérance de vie moyenne
+
+## Selon le modèle
+
+- $\color{red}b$ taux *per capita* de naissance
+- $\color{blue}b$ taux de naissance
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Le modèle SLIRS avec naissance *per capita*
+
+---
+
+$$
+\begin{align}
+S' &= bN-f(S,I,N)-dS+\nu R
+\tag{1a} \\
+L' &= f(S,I,N) -(d+\varepsilon)L 
+\tag{1b} \\
+I' &= \varepsilon L -(d+\gamma)I 
+\tag{1c} \\
+R' &= \gamma I-(d+\nu)R 
+\tag{1d}
+\end{align}
+$$
+
+Sommant les équations $\eqref{sys:SLIR_bN_dS}$-$\eqref{sys:SLIR_bN_dR}$, on obtient la dynamique de la population totale $N=S+L+I+R$ 
+$$
+\tag{3}\label{eq:birth_death}
+N´ = bN-dN
+$$
+C'est un processus de naissance et mort
+
+---
+
+# Le processus de naissance et mort
+$$
+\tag{3}
+N´ = bN-dN
+$$
+Clairement
+- Si $b>d$, $N(t)\to\infty$, la population totale explose
+- Si $b=d$, $N(t)$ reste constant pour tout $t$
+- Si $b<d$, $N(t)\to 0$, la population s'éteint
+
+On peut considérer le modèle en proportions comme on a fait pour le SIS, dans les deux cas non constants ($b\neq d$)
+
+---
+
+# Modèle en proportions (cas $b\neq d$)
+
+Si $X=\{S,L,I,R\}$, alors, notant $x=X/N$,
+$$
+x^\prime=\left(\frac{X}{N}\right)^\prime
+=\frac{X^\prime N-XN^\prime}{N^2}
+=\frac{X^\prime}{N}-x\frac{N^\prime}{N}
+=\frac{X^\prime}{N}-(b-d)x
+$$
+où on a utilisé $\eqref{eq:birth_death}$ pour obtenir la dernière égalité
+
+Ainsi
+$$
+\tag{4}\label{eq:birth_death_dx}
+x^\prime = \frac{X^\prime}{N}-(b-d)x
+$$
+que l'on utilise pour les équations du système
+
+---
+
+# Équation pour $S'$
+$$
+\tag{1a}
+S' = bN-f(S,I,N)-dS+\nu R
+$$
+donne, en utilisant $\eqref{eq:birth_death_dx}$
+$$
+\begin{align}
+s' &= b-\frac{f(S,I,N)}{N}-d+\nu+(b-d)s \\
+&= (b-d)(1+s)-\frac{f(S,I,N)}{N}+\nu
+\end{align}
+$$
+On reviendra plus tard sur le terme $f(S,I,N)/N$
+
+---
+
+De la même manière, on obtient
+$$
+\begin{align}
+\ell' &= \frac{f(S,I,N)}{N} -(d+\varepsilon)\ell+(b-d)\ell \\
+i' &= \varepsilon\ell -(d+\gamma)i+(b-d)i \\
+r' &= \gamma i-(d+\nu)r+(b-d)r 
+\end{align}
+$$
+
+---
+
+# Fonctions d'incidence classiques en proportion
+
+Si $f(S,I,N)=\beta SI$, alors
+$$
+\frac{f(S,I,N)}{N} = \beta sI = \beta siN
+$$
+en se souvenant que $i=I/N$ et donc $I=iN$. On devra donc conserver l'équation en $N$ (mais on pourra oublier une autre équation, puisque $s+\ell+i+r=1$)
+
+Si $f(S,I,N)=\beta\dfrac{SI}N$, alors
+$$
+\frac{f(S,I,N)}{N} = \beta si
+$$
+On garde alors les équations pour $s,\ell,i,r$ et omet celle pour $N$
+
+---
+
+On a donc les systèmes suivants. Incidence en action de masse
+$$
+\begin{align}
+N' &= (b-d)N \\
+\ell' &= \beta (1-\ell-i-r)iN -(d+\varepsilon)\ell+(b-d)\ell \\
+i' &= \varepsilon\ell -(d+\gamma)i+(b-d)i \\
+r' &= \gamma i-(d+\nu)r+(b-d)r 
+\end{align}
+$$
+Incidence proportionnelle
+$$
+\begin{align}
+s' &= (b-d)(1+s)-\beta si+\nu \\
+\ell' &= \beta si -(d+\varepsilon)\ell+(b-d)\ell \\
+i' &= \varepsilon\ell -(d+\gamma)i+(b-d)i \\
+r' &= \gamma i-(d+\nu)r+(b-d)r 
+\end{align}
+$$
+On n'étudiera pas ces systèmes ici!
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Le modèle SLIRS avec naissance constante
+
+---
+
+$$
+\begin{align}
+S' &= b-f(S,I,N)-dS+\nu R
+\tag{2a} \\
+L' &= f(S,I,N) -(d+\varepsilon)L 
+\tag{2b} \\
+I' &= \varepsilon L -(d+\gamma)I 
+\tag{2c} \\
+R' &= \gamma I-(d+\nu)R 
+\tag{2d}
+\end{align}
+$$
+
+En sommant $\eqref{sys:SLIR_b_dS}$-$\eqref{sys:SLIR_b_dR}$, on obtient que la dynamique de $N=S+L+I+R$ est donnée par
+$$
+\tag{5}\label{eq:SLIRS_b_dN}
+N'=b-dN
+$$
+
+---
+
+L'équation
+$$
+\tag{5}
+N'=b-dN
+$$
+est facile à intégrer ou à étudier qualitativement. Qualitativement: $\eqref{eq:SLIRS_b_dN}$ est scalaire autonome, ses solutions sont donc monotones. Les solutions sont strictement positives pour des conditions initiales positives et toutes tendent vers $N^\star = b/d$
+
+Notons que cette convergence est indépendante du comportement de $\eqref{sys:SLIR_b_dS}$-$\eqref{sys:SLIR_b_dR}$. On peut donc remplacer $N(t)$ par sa limite $N^\star$
+
+Cela permet également d'envisager une approche numérique s'abstrayant des variations dues à la démographie: en choisissant une condition initiale $(S(0),L(0),I(0),R(0))$ t.q. $N(0)=N^\star$, on est assuré que les variations dans les variables d'état sont uniquement dues aux facteurs épidémiologiques, puisque $N(t)$ reste constant
+
+---
+
+Dans la suite, on étudie donc le système
+$$
+\begin{align}
+S' &= b-f(S,I,N^\star)-dS+\nu R \\
+L' &= f(S,I,N^\star) -(d+\varepsilon)L \\
+I' &= \varepsilon L -(d+\gamma)I \\
+R' &= \gamma I-(d+\nu)R 
+\end{align}
+$$
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# Classic computation of $\mathcal{R}_0$
+# <!--fit-->Étude mathématique du modèle SLIRS
+
+- Début de l'analyse
+- Calcul des équilibres
+- Calcul classique de $\mathcal{R}_0$
+- $\mathcal{R}_0$ par la matrice de prochaine génération
+
+---
+
+On étudie le système
+$$
+\begin{align}
+S' &= b-f(S,I,N^\star)-dS+\nu R
+\tag{6a}\label{sys:SLIRS_dS} \\
+L' &= f(S,I,N^\star) -(d+\varepsilon)L 
+\tag{6b}\label{sys:SLIRS_dL}  \\
+I' &= \varepsilon L -(d+\gamma)I 
+\tag{6c}\label{sys:SLIRS_dI}  \\
+R' &= \gamma I-(d+\nu)R 
+\tag{6d}\label{sys:SLIRS_dR} 
+\end{align}
+$$
+
+On rappelle que la population totale $N$ est asymptotiquement constante avec limite $N^\star=b/d$
+
+On choisit en général une condition initiale t.q. $L(0)+I(0)>0$ pour éviter le cas trivial, et pour simplifier, on suppose que 
+$$
+N(0)=S(0)+L(0)+I(0)+R(0)=N^\star=\dfrac bd
+$$
+
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Début de l'analyse
+
+---
+
+Le même genre de raisonement que l'on a conduit lors de l'étude du modèle SIS dans le [Cours 02]() permet de conclure que le système est bien posé, en ce que
+
+- il y a existence et unicité des solutions de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$
+- le cône positif $\mathbb{R}_+^4$ est positivement invariant sous le flot de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$
+- les solutions de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$ sont bornées
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Calcul des équilibres
+
+---
+
+$$
+\begin{align}
+0 &= b-f(S,I,N^\star)-dS+\nu R
+\tag{7a}\label{sys:SIRS_EP_S} \\
+0 &= f(S,I,N^\star) -(d+\varepsilon)L 
+\tag{7b}\label{sys:SIRS_EP_L} \\
+0 &= \varepsilon L -(d+\gamma)I 
+\tag{7c}\label{sys:SIRS_EP_I} \\
+0 &= \gamma I-(d+\nu)R 
+\tag{7d}\label{sys:SIRS_EP_R}
+\end{align}
+$$
+
+De $\eqref{sys:SIRS_EP_I}$, $L=(d+\gamma)I/\varepsilon$, et de $\eqref{sys:SIRS_EP_R}$, $R=\gamma I/(d+\nu)$. On en déduit en particulier qu'en un équilibre sans maladie (ESM), $L=I=R=0$
+
+Considérons d'abord ESM, où, comme on vient de voir $L=I=R=0$. L'équation $\eqref{sys:SIRS_EP_L}$ n'est pas utile, elle dit seulement que la maladie ne se transmet pas en ESM. On considère donc $\eqref{sys:SIRS_EP_S}$, qui s'écrit
+$$
+f(S,0,N^\star)=b-dS
+$$
+On obtient la valeur de $S$ en ESM en résolvant cette équation. Mais, *en général*, $f(S,0,N^\star)=0$ (il n'y a pas transmission sans infectieux) et donc $S=b/d=N^\star$ à ESM. On aurait aussi pu raisonner que puisque $N\equiv N^\star$ et que $L=I=R=0$, alors nécessairement, $S=N^\star$
+
+---
+
+On a donc ESM
+$$
+\tag{8}\label{eq:SLIRS_DFE}
+E_0:(S,L,I,R)=(N^\star,0,0,0)
+$$
+Trouver l'équilibre ou les équilibres endémiques (EE) est impossible sans plus d'information sur la forme de la fonction d'incidence $f$, mais on peut quand même faire quelques inférences
+
+---
+
+Les relationsdéduites de $\eqref{sys:SIRS_EP_I}$ et $\eqref{sys:SIRS_EP_R}$ permettent d'écrire $\eqref{sys:SIRS_EP_S}$-$\eqref{sys:SIRS_EP_R}$ sous la forme d'un système nonlinéaire à deux inconnues, $S$ et $I$
+$$
+\begin{align}
+0 &= b-f(S,I,N^\star)-dS+\frac{\nu\gamma}{d+\nu} I
+\tag{8a}\label{sys:SIRS_EEP_S} \\
+0 &= f(S,I,N^\star) -\frac{(d+\varepsilon)(d+\gamma)}{\varepsilon}I
+\tag{8b}\label{sys:SIRS_EEP_L}
+\end{align}
+$$
+
+De $\eqref{sys:SIRS_EEP_L}$
+$$
+\tag{9}\label{eq:SIRS_EEP_f_eq_I}
+f(S,I,N^\star)=\frac{(d+\varepsilon)(d+\gamma)}{\varepsilon}I
+$$
+Substituant $\eqref{eq:SIRS_EEP_f_eq_I}$ dans $\eqref{sys:SIRS_EEP_S}$,
+$$
+\begin{align}
+& b-\frac{(d+\varepsilon)(d+\gamma)}\varepsilon I-dS+\frac{\nu\gamma}{d+\nu}I = 0 \\
+\iff & 
+dS+\left(
+\frac{(d+\varepsilon)(d+\gamma)}\varepsilon
+-\frac{\nu\gamma}{d+\nu}
+\right)I = b
+\tag{10}\label{eq:SIRS_EEP_dS_plus_kI}
+\end{align}
+$$
+
+
+---
+
+On sait du reste que la population totale satisfait
+$$
+\begin{align}
+N^\star &= S+\frac{d+\gamma}{\varepsilon}I+I+\frac{\gamma}{d+\nu}I \\
+&= S+\frac{(d+\gamma)(d+\nu)+\varepsilon(d+\nu)+\gamma\varepsilon}{\varepsilon(d+\nu)} I
+\tag{11}\label{eq:SIRS_EEP_lineSI}
+\end{align}
+$$
+
+On a donc deux équations de droite, $\eqref{eq:SIRS_EEP_dS_plus_kI}$ et $\eqref{eq:SIRS_EEP_lineSI}$, dont l'intersection détermine l'équilibre, et donc on confirmera la valeur en utilisant la relation $\eqref{eq:SIRS_EEP_f_eq_I}$
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Calcul classique de $\mathcal{R}_0$
 
 ---
 
@@ -115,8 +473,7 @@ Indicator often used in epidemiology. Verbally
 
 > average number of new cases generated when an infectious individual is introduced in a completely susceptible population
  
-- If $\mathcal{R}_0<1$, then each infectious individual infects on average less than 1 person and the epidemic is quite likely to go extinct
-- If $\mathcal{R}_0>1$, then each infectious individual infects on average more than 1 person and an epidemic is quite likely to occur
+$- If $\mathcal{R}_0>1$, then each infectious individual infects on average more than 1 person and an epidemic is quite likely to occur
 
 
 ---
@@ -132,8 +489,8 @@ Mathematically
 
 ---
 
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# Computation of $\mathcal{R}_0$ using the next generation matrix method
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# $\mathcal{R}_0$ par la matrice de prochaine génération
 
 ---
 
