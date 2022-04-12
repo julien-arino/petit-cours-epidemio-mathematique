@@ -198,6 +198,15 @@ L9: Some recent mathematical models for COVID-19, HIV/AIDS, TB, Malaria, etc.
 
 ---
 
+# Note - durée et organisation des unités
+
+- J'ai essayé de construire des unités relativement équilibrées en terme de contenu, mais n'ai pas réussi particulièrement bien
+- Certaines unités sont donc plus longues que d'autres
+- Les durées des vidéos, postées sur le site web, sont indicatives du poids d'une unité
+- Dans le cours d'origine ([lien]()), les unités étaient entre unités de cours et unités de travaux pratiques. J'ai décidé ici de ne faire que des unités de cours, mais certaines de ces unités de cours doivent être comprises comme relevant plutôt du TP/TD
+
+---
+
 # <!--fit-->Code couleur de l'organisation du cours
 
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_red.png) 

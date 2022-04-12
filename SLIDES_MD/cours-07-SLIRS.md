@@ -54,6 +54,8 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - Durée d'incubation
 - Formulation du modèle SLIRS en population constante
+- Effet de la vaccination - Immunité de groupe
+- Propriétés globales du modèle SLIRS
 
 ---
 
@@ -341,6 +343,7 @@ $$
 - Calcul des équilibres
 - Calcul classique de $\mathcal{R}_0$
 - $\mathcal{R}_0$ par la matrice de prochaine génération
+- Hiérarchie de modèles
 
 ---
 
@@ -418,7 +421,7 @@ Trouver l'équilibre ou les équilibres endémiques (EE) est impossible sans plu
 
 ---
 
-Les relationsdéduites de $\eqref{sys:SIRS_EP_I}$ et $\eqref{sys:SIRS_EP_R}$ permettent d'écrire $\eqref{sys:SIRS_EP_S}$-$\eqref{sys:SIRS_EP_R}$ sous la forme d'un système nonlinéaire à deux inconnues, $S$ et $I$
+Les relations déduites de $\eqref{sys:SIRS_EP_I}$ et $\eqref{sys:SIRS_EP_R}$ permettent d'écrire $\eqref{sys:SIRS_EP_S}$-$\eqref{sys:SIRS_EP_R}$ sous la forme d'un système nonlinéaire à deux inconnues, $S$ et $I$
 $$
 \begin{align}
 0 &= b-f(S,I,N^\star)-dS+\frac{\nu\gamma}{d+\nu} I
@@ -460,6 +463,8 @@ $$
 
 On a donc deux équations de droite, $\eqref{eq:SIRS_EEP_dS_plus_kI}$ et $\eqref{eq:SIRS_EEP_lineSI}$, dont l'intersection détermine l'équilibre, et donc on confirmera la valeur en utilisant la relation $\eqref{eq:SIRS_EEP_f_eq_I}$
 
+**NB -** On a déjà remarqué que dans le cas d'une population totale constante, bien des fonctions d'incidence sont similaires; en absence de $\eqref{eq:SIRS_EEP_lineSI}$, on cherche l'intersection de $\eqref{eq:SIRS_EEP_f_eq_I}$ et $\eqref{eq:SIRS_EEP_dS_plus_kI}$, ce qui est plus compliqué
+
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
@@ -490,20 +495,18 @@ Mathematically
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# $\mathcal{R}_0$ par la matrice de prochaine génération
+# <!--fit-->$\mathcal{R}_0$ par la matrice de prochaine génération
 
 ---
 
-# Example of the SLIRS model
-
-Variations of the infected variables described by
+Les variations des variables infectées sont données par
 $$
 \begin{align*}
-L' &= f(S,I,N)-(\varepsilon+d) L \\
+L' &= f(S,I,N^\star)-(\varepsilon+d) L \\
 I' &= \varepsilon L -(d+\gamma) I
 \end{align*}
 $$
-Thus
+Donc on écrit le système en les variables infectées sous la forme
 $$
 \left(
 \begin{matrix}
@@ -513,7 +516,7 @@ I
 \right)'
 =\left(
 \begin{matrix}
-f(S,I,N) \\
+f(S,I,N^\star) \\
 0
 \end{matrix}
 \right)
@@ -528,7 +531,7 @@ $$
 
 ---
 
-Then compute the Jacobian matrices of vectors $\mathcal{F}$ and $\mathcal{V}$
+On calcule les matrices Jacobiennes associées aux vecteurs $\mathcal{F}$ et $\mathcal{V}$
 $$
 F=\left(
 \begin{matrix}
@@ -544,19 +547,19 @@ V=\left(
 \end{matrix}
 \right)
 $$
-where
+où
 $$
 \dfrac{\partial\overline{f}}{\partial I}:=
-\dfrac{\partial f}{\partial I}(\bar
-S,\bar I,\bar N)\quad\quad 
+\left.\dfrac{\partial f}{\partial I}\right|_{E_0}
+\quad\quad 
 \dfrac{\partial\overline{f}}{\partial L}:=
-\dfrac{\partial f}{\partial L}(\bar
-S,\bar I,\bar N)
+\left.\dfrac{\partial f}{\partial L}
+\right|_{E_0}
 $$
 
 ---
 
-We have
+On a
 $$
 V^{-1}=\frac{1}{(d+\varepsilon)(d+\gamma)}
 \left(
@@ -567,8 +570,8 @@ d+\gamma & 0 \\
 \right)
 $$
 
-Also, when $N$ constant, $\partial f/\partial
-L=0$, then
+Aussi, puisque $N$ est constant, $\partial f/\partial
+L=0$. Par conséquent
 $$
 FV^{-1}=\frac{{\partial\overline{f}}/{\partial I}}
 {(d+\varepsilon)(d+\gamma)}
@@ -580,7 +583,7 @@ FV^{-1}=\frac{{\partial\overline{f}}/{\partial I}}
 \end{matrix}
 \right)
 $$
-and thus,
+et donc
 $$
 \mathcal{R}_0=\varepsilon
 \frac{{\partial\overline{f}}/{\partial I}}
@@ -591,35 +594,30 @@ $$
 
 <div class="theorem">
 
-Let
+Soit
 $$
 \mathcal{R}_0=
 \dfrac{\varepsilon\dfrac{\partial\overline{f}}{\partial I}}
 {(d+\varepsilon)(d+\gamma)}
 $$
 
-Then 
-- if $\mathcal{R}_0<1$, the DFE is LAS
-- if $\mathcal{R}_0>1$, the DFE is unstable
+Alors 
+- si $\mathcal{R}_0<1$, ESM est LAS
+- si $\mathcal{R}_0>1$, ESM est instable
 </div>
 
-Important to stress *local* nature of stability that is deduced from this result. We will see later that even when $\mathcal{R}_0<1$, there can be several positive equilibria
+Important d'insister sur la nature *locale* de la stabilité qui est déduite de ce résultat. On verra un exemple où lorsque $\mathcal{R}_0<1$, il peut y avoir plusieurs équilibres strictement positifs, et un autre où plusieurs ESM ont lieu en même temps
 
 ---
 
 # Application
 
-The DFE takes the form
-$$
-(\bar S,\bar L,\bar I,\bar R)=(N,0,0,0)
-$$
- 
-- Frequency-dependent contacts (mass action incidence)
+- Incidence en action de masse
 $$
 \frac{\partial\overline{f}}{\partial I}=\beta\bar S \Rightarrow\mathcal{R}_0 =
 \frac{\varepsilon\beta N}{(\varepsilon+d)(\gamma+d)} 
 $$
-- Proportion-dependent contacts (standard incidence)
+- Incidence standard
 $$
 \frac{\partial\overline{f}}{\partial I}=\frac{\beta\bar S}{N}
 \Rightarrow\mathcal{R}_0 = \frac{\varepsilon\beta}{(\varepsilon+d)(\gamma+d)}
@@ -627,15 +625,20 @@ $$
 
 ---
 
-# Remark
+# Remarques
 
-Method shown here is easily applied to more complex models
+- N'utilisez pas les deux méthodes!
 
-We will see some cases later
+- La méthode de matrice de prochaine génération s'applique facilement à des modèles plus complexes, comme on le verra dans le reste du cours
 
 ---
 
-# Links between model types
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Hiérarchie de modèles
+
+---
+
+# On dérive beaucoup de modèles du SLIRS
 
 <style scoped>
 @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
@@ -644,34 +647,34 @@ We will see some cases later
 <div>
 
 $$
-\begin{align*}
-S'&=d(1-S)-f(S,I)+\nu R \\
-L'&=f(S,I)-(d+\varepsilon) L \\
-I'&=\varepsilon L-(d+\gamma)I \\
-R'&=\gamma I-(d+\nu)R
-\end{align*}
+\begin{align}
+S' &= b-f(S,I,N)-dS+\nu R \\
+L' &= f(S,I,N) -(d+\varepsilon)L \\
+I' &= \varepsilon L -(d+\gamma)I \\
+R' &= \gamma I-(d+\nu)R 
+\end{align}
 $$
 </div>
 
 <div>
 
-- SLIR is SLIRS where $\nu=0$
-- SLIS limit of an SLIRS when $\nu\to\infty$
-- SLI is SLIR where $\gamma=0$
-- SIRS limit of an SLIRS when $\varepsilon\to\infty$
-- SIR is SIRS where $\nu=0$
-- SIS limit of an SIRS when $\nu\to\infty$
-- SIS limit of an SLIS when $\varepsilon\to\infty$
-- SI is SIS where $\nu=0$ 
+- SLIR: SLIRS où $\nu=0$
+- SLIS: limite SLIRS quand $\nu\to\infty$
+- SLI: SLIR où $\gamma=0$
+- SIRS: limite SLIRS quand $\varepsilon\to\infty$
+- SIR: SIRS où $\nu=0$
+- SIS: limite SIRS quand $\nu\to\infty$
+- SIS: limite SLIS quand $\varepsilon\to\infty$
+- SI: SIS où $\nu=0$ 
 </div>
 
 ---
 
-# Expressions of $\mathcal{R}_0$
+# Expressions de $\mathcal{R}_0$
 
-$(\bar S,\bar I)$ the DFE, denote $\overline{f}_I=\partial f/\partial I(\bar S,\bar I)$
+$(\bar S,\bar I)$ ESM, notons $\overline{f}_I=\partial f/\partial I(\bar S,\bar I)$
 
-| Model | $\mathcal{R}_0$ | Model | $\mathcal{R}_0$ | Model | $\mathcal{R}_0$ |
+| Modèle | $\mathcal{R}_0$ | Modèle | $\mathcal{R}_0$ | Modèle | $\mathcal{R}_0$ |
 |:---|:---:|:---|:---:|:---|:---:|
 | SLIRS | $\dfrac{\varepsilon\overline{f}_I}{(d+\varepsilon)(d+\gamma)}$ | SIRS | $\dfrac{\varepsilon\overline{f}_I}{d+\gamma}$ | SIS | $\dfrac{\overline{f}_I}{d+\gamma}$ |
 | SIR | $\dfrac{\overline{f}_I}{d+\gamma}$ | SLIS | $\dfrac{\varepsilon\overline{f}_I}{(d+\varepsilon)(d+\gamma)}$ | SI | $\dfrac{\overline{f}_I}{d+\gamma}$ | 
@@ -680,67 +683,76 @@ $(\bar S,\bar I)$ the DFE, denote $\overline{f}_I=\partial f/\partial I(\bar S,\
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Effect of vaccination - Herd immunity
+# <!--fit-->Effet de la vaccination - Immunité de groupe
 
 ---
 
-Take the simple case of an SIR model but assume the following
-- Vaccination takes susceptible individuals and moves them directly into the recovered compartment, without them ever becoming infected/infectious
-- A fraction $p$ is vaccinated at birth
+On reprend le modèle SLIRS de tantôt, mais on le modifie comme suit:
+- Il n'y a pas de perte d'immunité, c'est un modèle SLIR, i.e., $\nu = 0$
+- La vaccination prend une proportion $p$ des nouveaux susceptibles et les place directement dans le compartiment $R$ des guéris, sans jamais les laisser devenir infectés
+- Une fraction $1-p$ des nouveaux nés n'est pas vaccinée à la naissance
 - $f(S,I,N)=\beta SI$
+
+On a donc le modèle qui suit
 
 $$
 \begin{align}
-S' &= d((1-p)N-S)-\beta SI \tag{21a} \\
-I' &= \beta SI -(d+\gamma)I \tag{21b} \\
-R' &= dpN+\gamma I-dR \tag{21c}
+S' &= (1-p)b-f(S,I,N)-dS \\
+L' &= f(S,I,N) -(d+\varepsilon)L \\
+I' &= \varepsilon L -(d+\gamma)I \\
+R' &= pb+\gamma I-dR 
 \end{align}
 $$
 
 ---
 
-# Computation of $\mathcal{R}_0$
+# Calcul de $\mathcal{R}_0$
  
-- DFE, SIR: 
+- Pour rappel, ESM du SLIR (comme SLIRS):
 $$
-(\bar S,\bar I,\bar R)=(N,0,0)
+(\bar S,\bar L, \bar I,\bar R)=(N,0,0,0)
 $$
-- DFE, SIR with vaccination
+- ESM du SLIR avec vaccination
 $$
-(\bar S,\bar I,\bar R)=
-\left((1-p)N,0,pN\right)
+(\bar S,\bar L, \bar I,\bar R)=
+\left((1-p)\frac bd,0,p\frac bd\right)
+=\left((1-p)N^\star,0,0,pN^\star\right)
 $$
 
-Thus,
-- In SIR case
+Donc
+- dans le cas SLIR
 $$
-\mathcal{R}_0=\frac{\beta N}{d+\gamma}
+\mathcal{R}_0=\frac{\varepsilon\beta N^\star}{(d+\gamma)(d+\varepsilon)}
 $$
-- In SIR with vaccination case, denote $\mathcal{R}_0^\textrm{v}$ and
+- dans le cas SLIR avec vaccination case, notons $\mathcal{R}_0^\textrm{v}$ et
 $$
 \mathcal{R}_0^\textrm{v}=(1-p)\mathcal{R}_0
 $$
 
 ---
 
-# Herd immunity
+# Immunité de groupe
 
-Therefore 
-- $\mathcal{R}_0^\textrm{v}<\mathcal{R}_0$ if $p>0$
-- To control the disease, $\mathcal{R}_0^\text{v}$ must take a value less than 1, i.e.,
+Par conséquent 
+- $\mathcal{R}_0^\textrm{v}<\mathcal{R}_0$ si $p>0$: le nombre de reproduction avec vaccination est toujours meilleur (plus petit) que celui sans vaccination
+- Pour contrôler la maladie, $\mathcal{R}_0^\text{v}$ doit prendre une valeur inférieure à 1, i.e.,
 $$
-\tag{22}
+\tag{12}
 \mathcal{R}_0^\text{v}<1 \iff p> 1-\frac{1}{\mathcal{R}_0}
 $$
 
-By vaccinating a fraction $p>1-1/\mathcal{R}_0$ of newborns, we thus are in a situation where the disease is eventually eradicated
+En vaccinant une fraction $p>1-1/\mathcal{R}_0$ de nouveaux nés, on se place dans une situation dans laquelle la maladie est éradicable
 
-This is *herd immunity*
+C'est l'**immunité de groupe**
+
+---
+
+On verra ailleurs ([Cours ]()) une autre façon de modéliser la vaccination, ainsi que des conséquences inattendues de la vaccination
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->SLIRS model - Global properties
+# <!--fit-->Propriétés globales du modèle SLIRS
 
 ---
 
