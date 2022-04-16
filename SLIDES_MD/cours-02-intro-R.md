@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Practicum - Introduction to R. Collecting data. Solving ODEs in R
-description: 3MC Course Epidemiological Modelling - Julien Arino - Practicum 01 - Introduction to R. Collecting data. Solving ODEs in R
+title: Petit cours d'épidémiologie mathématique - Introduction à R
+description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 01 - Introduction à R
 theme: default
 paginate: false
 math: mathjax
@@ -30,9 +30,8 @@ size: 4K
   }
 </style>
 
-# Practicum 01 - Introduction to R. Collecting data. Solving ODEs in R
-
-4 April 2022
+# Petit cours d'épidémiologie mathématique
+# Introduction à R
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
@@ -51,57 +50,54 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Outline
+# Plan du cours
 
-- Foreword: the R language
-- Programming in R
-- Dealing with data
-- Solving ODE numerically
+- Avant propos: le langage R
+- Programmer en R
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Foreword: the R language
+# <!--fit-->Avant propos: le langage R
 
 ---
 
-# R was originally for stats but is now more
+# R vient des statistiques, mais est maintenant bien plus
 
-- Open source version of S
-- Appeared in 1993
-- Now version 4.1
-- One major advantage in my view: uses a lot of C and Fortran code. E.g., `deSolve`:
+- Version Open Source de S
+- Apparu en 1993
+- On en est à la version 4.1
+- Un avantage majeur à mon sens: pour bien des fonctions, `R` est en fait une interface pour du code `C` et `Fortran`. E.g., `deSolve`:
 > The functions provide an interface to the FORTRAN functions 'lsoda', 'lsodar', 'lsode', 'lsodes' of the 'ODEPACK' collection, to the FORTRAN functions 'dvode', 'zvode' and 'daspk' and a C-implementation of solvers of the 'Runge-Kutta' family with fixed or variable time steps
-- Very active community on the web, easy to find solutions (same true of Python, I just prefer R)
+- Communauté très active sur la toile, facile de trouver des solutions (vrai aussi de `Python`, je préfère juste `R`)
 
 ---
 
-# Development environments
-
-- Terminal version, not very friendly
-- Nicer terminal: [radian](https://github.com/randy3k/radian)
-- Execute R scripts by using `Rscript name_of_script.R`. Useful to run code in `cron`, for instance
-- Use IDEs:
-    - [RStudio](https://www.rstudio.com/products/rstudio/) has become the reference
-    - [RKWard](https://invent.kde.org/education/rkward) is useful if you are for instance using an ARM processor (Raspberry Pi, some Chromebooks..)
-- Integrate into jupyter notebooks
+# Environments de dévelopement 
+- Version en terminal, pas très sympa
+- Une version terminal plus agréable: [radian](https://github.com/randy3k/radian)
+- Exécute des scripts R en utilisant `Rscript name_of_script.R`. Utile pour certains tests (voir plus loin) ou faire tourner du code en `cron`, par exemple
+- Utiliser des EDI (environnements de développemen intégrés):
+    - [RStudio](https://www.rstudio.com/products/rstudio/) est devenu la référence
+    - [RKWard](https://invent.kde.org/education/rkward) est utile si vous utilisez par exemple un processeur ARM non Mac (Raspberry Pi, certains Chromebooks..)
+- S'intègre dans un `jupyter notebook`
 
 ---
 
 # Going further
 
-- [RStudio server](https://www.rstudio.com/products/rstudio/#rstudio-server): run RStudio on a Linux server and connect via a web interface
-- Shiny: easily create an interactive web site running R code
-- [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/): run Shiny apps on a Linux server
-- Rmarkdown: markdown that incorporates R commands. Useful for generating reports in html or pdf, can make slides as well..
-- RSweave: LaTeX incorporating R commands. Useful for generating reports. Not used as much as Rmarkdown these days
+- [RStudio server](https://www.rstudio.com/products/rstudio/#rstudio-server): fait tourner RStudio sur un serveur Linux, permet une connection depuis la toile en utilisant un navigateur web
+- Shiny: créer facilement un site web interactif avec du `R` tournant en tâche de fond
+- [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/): fait tourner des applis Shiny sur un serveur Linux, accessible depuis la toile
+- Rmarkdown: `markdown` qui incorpore des commandes `R`. Utile pour générer des rapports en html ou pdf, permet aussi de faire des transparents.. Très utile pour générer des rapports incorporant des données dynamiques
+- RSweave: Code LaTeX incorporant des commandes `R`. Comme Rmarkdown, utile pour générer des rapports. A perdu un peu de popularité depuis l'avènement de Rmarkdown
 
 ---
 
-# R is a scripted language
+# R est un langage scripté
 
-- Interactive
-- Allows you to work in real time
+- Interactif
+- Permet de travailler en temps réel, d'évaluer directement l'effet d'une commande
     - Be careful: what is in memory might involve steps not written down in a script
     - If you want to reproduce your steps, it is good to write all the steps down in a script and to test from time to time running using `Rscript`: this will ensure that all that is required to run is indeed loaded to memory when it needs to, i.e., that it is not already there..
 
@@ -361,387 +357,3 @@ for (i in 1:dim(tmp)[1]) {
 
 There is still a loop, but you can split this list, use it on different machines, etc. And can use `parLapply`
 
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Dealing with data
-
-
-<div style = "position: relative; bottom: -40%; font-size:20px;">
-
-- JA. [Mathematical epidemiology in a data-rich world](http://dx.doi.org/10.1016/j.idm.2019.12.008). *Infectious Disease Modelling* **5**:161-188 (2020)
-- See also [GitHub repo](https://github.com/julien-arino/modelling-with-data) for that paper
-
-</div>
-
----
-
-# It is important to be "data aware"
-
-- Using R (or Python), it is really easy to grab data from the web, e.g., from Open Data sources
-- More and more locations have an open data policy
-- As a modeller, you do not need to have data everywhere, but you should be aware of the context
-- If you want your work to have an impact, for instance in public health, you cannot be completely disconnected from reality
-
----
-
-# Data is everywhere 
-
-## Closed data
-
-- Often generated by companies, governments or research labs
-- When available, come with multiple restrictions
-
-## Open data
-
-- Often generated by the same entities but "liberated" after a certain period
-- More and more frequent with governments/public entities
-- Wide variety of licenses, so beware
-- Wide variety of qualities, so beware
-
----
-
-# Open Data initiatives
-
-Recent movement (5-10 years): governments (local or higher) create portals where data are centralised and published
-
-- [Winnipeg](https://data.winnipeg.ca/)
-- [Alberta](https://open.alberta.ca/opendata)
-- [Canada](https://open.canada.ca/en/open-data)
-- [Europe](https://data.europa.eu/euodp/data/)
-- [UN](http://data.un.org/)
-- [World Bank](https://data.worldbank.org/)
-- [WHO](https://www.who.int/gho/database/en/)
-
----
-
-# Data gathering methods
-
-- By hand
-- Using programs such as [Engauge Digitizer](http://markummitchell.github.io/engauge-digitizer/) or [g3data](https://github.com/pn2200/g3data)
-- Using APIs
-- Using natural language processing and other web scraping methods
-- Using R or Python packages
-
----
-
-# Example: population of South Africa
-
-```
-library(wbstats)
-pop_data_CTRY <- wb_data(country = "ZAF", indicator = "SP.POP.TOTL",
-                         mrv = 100, return_wide = FALSE)
-y_range = range(pop_data_CTRY$value)
-y_axis <- make_y_axis(y_range)
-png(file = "https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//pop_ZAF.png", width = 800, height = 400)
-plot(pop_data_CTRY$date, pop_data_CTRY$value * y_axis$factor,
-     xlab = "Year", ylab = "Population", type = "b", lwd = 2,
-     yaxt = "n")
-axis(2, at = y_axis$ticks, labels = y_axis$labels, las = 1)
-dev.off()
-crop_figure("https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//pop_ZAF.png")
-```
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/pop_ZAF.png)
-
----
-
-# Dutch Elm Disease
-
-- Fungal disease that affects Elms
-- Caused by the fungus *Ophiostoma ulmi* 
-- Transmitted by the Elm bark beetle (*Scolytus scolytus*)
-- Has decimated North American urban elm forests
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/WinnipegOpenDataPortal.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/WODTreeMap.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/WODTreeMapZoom.png)
-
----
-
-# Getting the tree data
-
-```
-allTrees = read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/ro
-```
-
-After this,
-
-```
-dim(allTrees)
-## [1] 300846
-15
-```
-
----
-
-# Let us clean things a little
-
-```
-elms_idx = grep("American Elm", allTrees$Common.Name, ignore.case = TRUE)
-elms = allTrees[elms_idx, ]
-```
-
-We are left with 54,036 American elms
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Recap_Diagram.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/temperature_phase.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/flow_diagram_DED_beetles.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/flow_diagram_DED_trees.png)
-
----
-
-# Computation of root systems interactions
-
-(Needs a relatively large machine here - about 50GB RAM)
-
-- If roots of an infected tree touch roots of a susceptible tree, fungus is transmitted
-- Spread of a tree's root system depends on its height (we have diametre at breast height, DBH, for all trees)
-- The way roadways are built, there cannot be contacts between root systems of trees on opposite sides of a street
-
----
-
-# Distances between all trees
-
-```
-elms_xy = cbind(elms$X, elms$Y)
-D = dist(elms_xy)
-idx_D = which(D<50)
-```
-
-`indices_LT` is a large $N(N-1)/2\times 2$ matrix with indices (orig,dest) of trees in the pairs of elms, so `indices_LT[idx_D]` are the pairs under consideration
-
-Keep a little more..
-
-```
-indices_LT_kept = as.data.frame(cbind(indices_LT[idx_D,],
-                                D[idx_D]))
-colnames(indices_LT_kept) = c("i","j","dist")
-```
-
----
-
-# Create line segments between all pairs of trees
-
-```
-tree_locs_orig = cbind(elms_latlon$lon[indices_LT_kept$i],
-                       elms_latlon$lat[indices_LT_kept$i])
-tree_locs_dest = cbind(elms_latlon$lon[indices_LT_kept$j],
-                       elms_latlon$lat[indices_LT_kept$j])
-tree_pairs = do.call(
-  sf::st_sfc,
-  lapply(
-    1:nrow(tree_locs_orig),
-    function(i){
-      sf::st_linestring(
-        matrix(
-          c(tree_locs_orig[i,],
-            tree_locs_dest[i,]), 
-          ncol=2,
-          byrow=TRUE)
-      )
-    }
-  )
-)
-```
-
----
-
-# A bit of mapping
-
-```
-library(tidyverse)
-# Get bounding polygon for Winnipeg
-bb_poly = osmdata::getbb(place_name = "winnipeg", 
-                         format_out = "polygon")
-# Get roads
-roads <- osmdata::opq(bbox = bb_poly) %>%
-  osmdata::add_osm_feature(key = 'highway', 
-                           value = 'residential') %>%
-  osmdata::osmdata_sf () %>%
-  osmdata::trim_osmdata (bb_poly)
-# Get rivers
-rivers <- osmdata::opq(bbox = bb_poly) %>%
-  osmdata::add_osm_feature(key = 'waterway', 
-                           value = "river") %>%
-  osmdata::osmdata_sf () %>%
-  osmdata::trim_osmdata (bb_poly)
-```
-
----
-
-# And we finish easily
-
-- We have the pairs of trees potentially in contact with each other
-- We have the roads and rivers of the city, which is a collection of line segments
-- If there is an intersection between a tree pair and a road/river, then we can forget this tree pair as their root systems cannot come into contact
-
-```
-st_crs(tree_pairs) = sf::st_crs(roads$osm_lines$geometry)
-iroads = sf::st_intersects(x = roads$osm_lines$geometry,
-                           y = tree_pairs)
-irivers = sf::st_intersects(x = rivers$osm_lines$geometry,
-                            y = tree_pairs)
-```
-
----
-
-```
-tree_pairs_roads_intersect = c()
-for (i in 1:length(iroads)) {
-  if (length(iroads[[i]])>0) {
-    tree_pairs_roads_intersect = c(tree_pairs_roads_intersect,
-                                   iroads[[i]])
-  }
-}
-tree_pairs_roads_intersect = sort(tree_pairs_roads_intersect)
-to_keep = 1:dim(tree_locs_orig)[1]
-to_keep = setdiff(to_keep,tree_pairs_roads_intersect)
-```
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/pairs_postproc_zoom.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/selected_trees.png)
-
----
-
-# Data wrangling: `dplyr` vs `sqldf`
-
-`dplyr` is part of the `tidyverse` set of libraries. Load `magrittr` and its pipe `%>%`
-
-`sqldf` allows to use SQL on dataframes.. interesting alternative if you know SQL
-
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Solving ODE numerically
-
----
-
-# The deSolve library
-
-- As I have already pointed out, [`deSolve`](https://cran.r-project.org/web/packages/deSolve/index.html):
-> The functions provide an interface to the FORTRAN functions 'lsoda', 'lsodar', 'lsode', 'lsodes' of the 'ODEPACK' collection, to the FORTRAN functions 'dvode', 'zvode' and 'daspk' and a C-implementation of solvers of the 'Runge-Kutta' family with fixed or variable time steps
-
-- So you are benefiting from years and year of experience: [ODEPACK](https://computing.llnl.gov/projects/odepack) is a set of Fortran (77!) solvers developed at Lawrence Livermore National Laboratory (LLNL) starting in the late 70s
-
-- Other good solvers are also included, those written in C
-
-- Refer to the [package help](https://cran.r-project.org/web/packages/deSolve/deSolve.pdf) for details
-
----
-
-# Using deSolve for simple ODEs
-
-As with more numerical solvers, you need to write a function returning the value of the right hand side of your equation (the vector field) at a given point in phase space, then call this function from the solver
-
-```
-library(deSolve)
-rhs_logistic <- function(t, x, p) {
-  with(as.list(x), {
-    dN <- p$r * N *(1-N/p$K)
-    return(list(dN))
-  })
-}
-params = list(r = 0.1, K = 100)
-IC = c(N = 50)
-times = seq(0, 100, 1)
-sol <- ode(IC, times, rhs_logistic, params)
-```
-
----
-
-This also works: add `p` to arguments of `as.list` and thus use without `p$` prefix
-
-```
-library(deSolve)
-rhs_logistic <- function(t, x, p) {
-  with(as.list(c(x, p)), {
-    dN <- r * N *(1-N/K)
-    return(list(dN))
-  })
-}
-params = list(r = 0.1, K = 100)
-IC = c(N = 50)
-times = seq(0, 100, 1)
-sol <- ode(IC, times, rhs_logistic, params)
-```
-
-In this case, beware of not having a variable and a parameter with the same name..
-
----
-
-# Default method: `lsoda`
-
-- `lsoda` switches automatically between stiff and nonstiff methods
-
-- You can also specify other methods: "lsode", "lsodes", "lsodar", "vode", "daspk", "euler", "rk4", "ode23", "ode45", "radau", "bdf", "bdf_d", "adams", "impAdams" or "impAdams_d" ,"iteration" (the latter for discrete-time systems)
-
-```
-ode(y, times, func, parms, 
-    method = "ode45")
-```
-
-- You can even implement your own integration method
-
----
-
-# Example - Fitting to data
-
-- Note that this is a super simplified version of what to do
-- Much more elaborate procedures exist
-  - Roda. [Bayesian inference for dynamical systems](https://doi.org/10.1016/j.idm.2019.12.007)
-  - Portet. [A primer on model selection using the Akaike Information Criterion](https://doi.org/10.1016/j.idm.2019.12.010)
-- Let us grab some epi data online and fit an SIR model to it
-- Don't expect anything funky, as I said, this is the baby version
-- Also, keep in mind that any identification procedure is subject to risks due to *identifiability issues*; see, e.g., Roda et al, [Why is it difficult to accurately predict the COVID-19 epidemic?](https://doi.org/10.1016/j.idm.2020.03.001)
-
----
-
-# Principle
-
-- Data is a set $(t_i,y_i)$, $i=1,\ldots,N$, where $t_i\in\mathcal{I}$, some interval
-- Solution to SIR is $(t,x(t))$ for $t\in\mathcal{I}$
-- Suppose parameters of the model are $p$
-- We want to minimise the error function
-$$
-E(p) = \sum_{i=1}^N \|x(t_i)-y_i\|
-$$
-- Norm is typically Euclidean, but could be different depending on objectives
-- So given a point $p$ in (admissible) parameter space, we compute the solution to the ODE, compute $E(p)$
-- Using some minimisation algorithm, we seek a minimum of $E(p)$ by varying $p$
-
----
-
-# What are $y_i$ and $x(t_i)$ here?
-
-- In epi data for infectious diseases, we typically have incidence, i.e., number of new cases per unit time
-- In SIR model, this is $\beta SI$, so, if using incidence and Euclidean norm
-$$
-E(p)=\sum_{i=1}^N(\beta S(t_i)I(t_i)-y_i)^2
-$$
