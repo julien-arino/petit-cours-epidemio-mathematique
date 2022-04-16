@@ -74,6 +74,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 # Environments de dévelopement 
+
 - Version en terminal, pas très sympa
 - Une version terminal plus agréable: [radian](https://github.com/randy3k/radian)
 - Exécute des scripts R en utilisant `Rscript name_of_script.R`. Utile pour certains tests (voir plus loin) ou faire tourner du code en `cron`, par exemple
@@ -84,7 +85,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Going further
+#  Pour aller plus loin..
 
 - [RStudio server](https://www.rstudio.com/products/rstudio/#rstudio-server): fait tourner RStudio sur un serveur Linux, permet une connection depuis la toile en utilisant un navigateur web
 - Shiny: créer facilement un site web interactif avec du `R` tournant en tâche de fond
@@ -98,49 +99,49 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - Interactif
 - Permet de travailler en temps réel, d'évaluer directement l'effet d'une commande
-    - Be careful: what is in memory might involve steps not written down in a script
-    - If you want to reproduce your steps, it is good to write all the steps down in a script and to test from time to time running using `Rscript`: this will ensure that all that is required to run is indeed loaded to memory when it needs to, i.e., that it is not already there..
+    - Attention! Ce qui est en mémoire peut avoir été généré par des étapes pas notées dans le script
+    - Pour que les étapes d'un calcul soient reproductibles, il est bien de noter toutes les étapes dans un script et de tester ce script de temps en temps en utilisant `Rscript`: ceci assure que tout ce qui est requis pour faire tourner le script est chargé en mémoire quand celà doit l'être..
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Programming in R
+# <!--fit-->Programmation en R
 
 ---
 
-# Similar to matlab..
+# Similaire à matlab..
 
-.. with some differences, of course! Otherwise, where would the fun be? ;)
+.. avec des différences, bien sûr! Sinon, où serait l'intérêt? ;)
 
 ---
 
-# Assignment
+# Assignation
 
-Two ways:
+Deux façons d'écrire:
 
 ```
 X <- 10
 ```
 
-or
+ou
 
 ```
 X = 10
 ```
 
-First version is preferred by R purists.. I don't really care
+La première version est préférrée par les puristes R.. Personnellement, je m'en fiche un peu
 
 ---
 
-# Lists
+# Listes
 
-A very useful data structure, quite flexible and versatile. Empty list: `L <- list()`. Convenient for things like parameters. For instance
+Structure de données très utile, flexible et versatile. Liste vide: `L <- list()`. Très pratique pour stocker des choses comme des paramètres. Par exemple:
 
 ```
 L <- list()
 L$a <- 10
 L$b <- 3
-L[["another_name"]] <- "Plouf plouf"
+L[["autre_nom"]] <- "Plouf plouf"
 ```
 
 ```
@@ -153,38 +154,38 @@ $a
 [1] 10
 > L[["b"]]
 [1] 3
-> L$another_name
+> L$autre_nom
 [1] "Plouf plouf"
 ```
 
 ---
 
-# Vectors
+# Vecteurs
 
 ```
 x = 1:10
 y <- c(x, 12)
 > y
  [1]  1  2  3  4  5  6  7  8  9 10 12
-z = c("red", "blue")
+z = c("rouge", "bleu")
 > z
-[1] "red"  "blue"
+[1] "rouge"  "bleu"
 z = c(z, 1)
 > z
-[1] "red"  "blue" "1"
+[1] "rouge"  "bleu" "1"
 ```
-Note that in `z`, since the first two entries are characters, the added entry is also a character. Contrary to lists, vectors have all entries of the same type
+Remarquez que dans `z`, puisque les deux premières entrées sont des caractères, l'entrée que nous ajoutons après est aussi un caractère. Contrairement aux listes, les vecteurs ont toutes leurs entrées du même type. La même chose est vraie avec les matrices. Attention, ceci est une source d'erreur!!
 
 ---
 
 # Matrices
 
-Matrix (or vector) of zeros
+Matrice (ou vecteur) de zéros
 ```
 A <- mat.or.vec(nr = 2, nc = 3)
 ```
 
-Matrix with prescribed entries
+Matrice avec entrées assignées
 
 ```
 B <- matrix(c(1,2,3,4), nr = 2, nc = 2)
@@ -199,41 +200,93 @@ C <- matrix(c(1,2,3,4), nr = 2, nc = 2, byrow = TRUE)
 [2,]    3    4
 ```
 
-Remark that here and elsewhere, naming the arguments (e.g., `nr = 2`) allows to use arguments in any order
+Remarquez qu'ici et ailleurs, nommer les arguments (e.g., `nr = 2`) permet de les utiliser dans n'importe quel ordre
 
 ---
 
-# Matrix operations
+# Opérations matricielles
 
-Probably the biggest annoyance in R compared to other languages
+Probablement la chose la plus ennuyeuse en R comparé à d'autres langages
 
-- The notation `A*B` is the *Hadamard product* $A\circ B$ (what would be denoted `A.*B` in matlab), not the standard matrix multiplication
-- Matrix multiplication is written `A %*% B`
+- La notation `A*B` est le *produit de Hadamard* $A\circ B$ (qui serait noté `A.*B` en matlab), pas la multiplication matricielle standard
+- La multiplication matricielle s'écrit `A %*% B`
+
+Par ailleurs
+- Concaténer deux matrices de tailles compatibles avec `rbind(A,B)` (B sous A) et `cbind(A,B)` (B à droite de A) 
 
 ---
 
-# Vector operations
+# Opérations vectorielles
 
-Vector addition is also frustrating. Say you write `x=1:10`, i.e., make the vector
+L'addition vectorielle est aussi un peu frustrante. Mettons que vous écriviez `x=1:10`, i.e., implémentiez le vecteur
+
 ```
 > x
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
-Then `x+1` gives
+Alors `x+1` donne
 ```
 > x+1
  [1]  2  3  4  5  6  7  8  9 10 11
  ```
- i.e., adds 1 to all entries in the vector
+ i.e., ajoute 1 à tous les éléments du vecteur
 
- Beware of this in particular when addressing sets of indices in lists, vectors or matrices
+Attention en particulier lorsque l'on cherche à accéder à un ensemble d'indices dans une liste, un vecteur ou une matrice
 
 ---
 
-# For the matlab-ers here
+# Pour les matlab-eux dans le public
 
-- R does not have the keyword `end` to access the last entry in a matrix/vector/list..
-- Use `length` (lists or vectors), `nchar` (character chains), `dim` (matrices.. careful, of course returns 2 values)
+- R n'a pas le mot clé `end` pour accéder au dernier élément d'une matrice/liste/vecteur..
+- Utilisez `length` (listes ou vecteurs), `nchar` (chaînes de caractères), `dim` (matrices.. attention, renvoie 2 valeurs), `nrow` et `ncol` (matrices)
+
+---
+
+# Data frames
+
+- Spécifiques à R
+- Comme des matrices sous stéroïdes
+
+---
+
+# Nommage des positions/lignes/colonnes/etc.
+
+Une capacité très attrayante de R: il est possible de nommber les entrées dans toute liste (on a déjà vu ça), mais aussi tout vecteur, toute matrice ou data frame
+
+```
+r$> v = c(alpha = 2, beta = 3, gamma = 4, delta = 5)
+r$> v
+alpha  beta gamma delta 
+    2     3     4     5 
+```
+est un vecteur, et `v["beta"]` renvoie 3..
+
+---
+
+# Assigner un nom *a posteriori*
+
+```
+r$> v = c(1,2,3)
+r$> names(v) = c("alpha", "beta", "gamme")
+r$> v
+alpha   beta  gamme 
+     1      2      3 
+```
+Ou encore, pour une matrice
+```
+r$> A = matrix(c(1,2,3,4), nrow = 2, byrow = TRUE)
+r$> rownames(A) = c("alpha","beta")
+r$> colnames(A) = c("chose","truc")
+r$> A
+      chose truc
+alpha     1    2
+beta      3    4
+r$> A[1,2]
+[1] 2
+r$> A["alpha","truc"]
+[1] 2
+```
+
 
 ---
 
