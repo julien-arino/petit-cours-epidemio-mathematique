@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Petit cours d'épidémiologie mathématique - Introduction à R
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 01 - Introduction à R
+description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 02 - Introduction à R
 theme: default
 paginate: false
 math: mathjax
@@ -290,20 +290,20 @@ r$> A["alpha","truc"]
 
 ---
 
-# Flow control
+# Contrôle du flot
 
 ```
-if (condition is true) {
-  list of stuff to do
+if (condition est vraie) {
+  liste de choses à faire
 }
 ```
 
-Even if `list of stuff to do` is a single instruction, best to use curly braces
+Même si `liste de choses à faire` est une seule chose, il vaut mieux utiliser des accolades { }
 
 ```
-if (condition is true) {
-  list of stuff to do
-} else if (another condition) {
+if (condition est vraie) {
+  liste de choses à faire
+} else if (une autre condition est vraie) {
   ...
 } else {
   ...
@@ -312,22 +312,22 @@ if (condition is true) {
 
 ---
 
-# For loops
+# Boucles for
 
-`for` applies to lists or vectors
+`for` s'applique à des listes ou des vecteurs
 
 ```
 for (i in 1:10) {
-  something using integer i
+  quelque chose utilisant l'entier i
 }
 for (j in c(1,3,4)) {
-  something using integer j
+  quelque chose utilisant l'entier j
 }
 for (n in c("truc", "muche", "chose")) {
-  something using string n
+  quelque chose utilisant la chaîne n
 }
 for (m in list("truc", "muche", "chose", 1, 2)) {
-  something using string n or integer n, depending
+  quelque chose utilisant la chaîne n ou l'entier n, selon les cas
 }
 ```
 
@@ -335,11 +335,11 @@ for (m in list("truc", "muche", "chose", 1, 2)) {
 
 # lapply
 
-Very useful function (a few others in the same spirit: `sapply`, `vapply`, `mapply`)
+Fonction très utile (d'autres dans la même veine: `sapply`, `vapply`, `mapply`)
 
-Applies a function to each entry in a list/vector/matrix
+Applique une fonction à chaque élément d'une liste,d'un vecteur  ou d'une matrice
 
-Because there is a parallel version (`parLapply`) that we will see later, worth learning
+Il existe des versions parallèles (p. ex., `parLapply`) que nous verrons plus tard
 
 ```
 l = list()
@@ -349,13 +349,13 @@ for (i in 1:10) {
 lapply(X = l, FUN = mean)
 ```
 
-or, to make a vector
+ou, pour renvoyer un vecteur
 
 ```
 unlist(lapply(X = l, FUN = mean))
 ```
 
-or
+ou
 
 ```
 sapply(X = l, FUN = mean)
@@ -363,9 +363,9 @@ sapply(X = l, FUN = mean)
 
 ---
 
-# "Advanced" lapply
+# lapply "avancé"
 
-Can "pick up" nontrivial list entries
+On peut choisir des éléments non évidents dans une liste
 
 ```
 l = list()
@@ -377,27 +377,27 @@ for (i in 1:10) {
 sapply(X = l, FUN = function(x) length(x$b))
 ```
 
-gives
+donne
 
 ```
 [1]  2  4  6  8 10 12 14 16 18 20
 ```
 
-Just recall: the argument to the function you define is a list entry (`l[[1]]`, `l[[2]]`, etc., here)
+Il suffit de se souvenir que l'argument de la fonction est un élément de la liste (`l[[1]]`, `l[[2]]`, etc., ici)
 
 ---
 
-# Avoid parameter variation loops with expand.grid
+# <!--fit-->Éviter les boucles de variation de paramètres avec expand.grid
 
 ```
-# Suppose we want to vary 3 parameters
+# Supposon qu'on veuille faire varier 3 paramètres
 variations = list(
     p1 = seq(1, 10, length.out = 10),
     p2 = seq(0, 1, length.out = 10),
     p3 = seq(-1, 1, length.out = 10)
 )
 
-# Create the list
+# Créons la liste
 tmp = expand.grid(variations)
 PARAMS = list()
 for (i in 1:dim(tmp)[1]) {
@@ -408,5 +408,5 @@ for (i in 1:dim(tmp)[1]) {
 }
 ```
 
-There is still a loop, but you can split this list, use it on different machines, etc. And can use `parLapply`
+Il reste une boucle, mais une fois la liste constituée, on peut la découper pour la distribuer entre machines, ou l'utiliser avec `parLapply`
 

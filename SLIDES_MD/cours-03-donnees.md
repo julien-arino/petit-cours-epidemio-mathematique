@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Practicum - Introduction to R. Collecting data. Solving ODEs in R
-description: 3MC Course Epidemiological Modelling - Julien Arino - Practicum 01 - Introduction to R. Collecting data. Solving ODEs in R
+title: Petit cours d'épidémiologie mathématique - Collecte et utilisation des données
+description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 03 - Collecte et utilisation des données
 theme: default
 paginate: false
 math: mathjax
@@ -30,9 +30,8 @@ size: 4K
   }
 </style>
 
-# Practicum 01 - Introduction to R. Collecting data. Solving ODEs in R
-
-4 April 2022
+# Petit cours d'épidémiologie mathématique
+# Collecte et utilisation des données
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
@@ -51,409 +50,104 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Outline
+# Plan du cours
 
-- Foreword: the R language
-- Programming in R
-- Dealing with data
-- Solving ODE numerically
+- Les données..
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Foreword: the R language
-
----
-
-# R was originally for stats but is now more
-
-- Open source version of S
-- Appeared in 1993
-- Now version 4.1
-- One major advantage in my view: uses a lot of C and Fortran code. E.g., `deSolve`:
-> The functions provide an interface to the FORTRAN functions 'lsoda', 'lsodar', 'lsode', 'lsodes' of the 'ODEPACK' collection, to the FORTRAN functions 'dvode', 'zvode' and 'daspk' and a C-implementation of solvers of the 'Runge-Kutta' family with fixed or variable time steps
-- Very active community on the web, easy to find solutions (same true of Python, I just prefer R)
-
----
-
-# Development environments
-
-- Terminal version, not very friendly
-- Nicer terminal: [radian](https://github.com/randy3k/radian)
-- Execute R scripts by using `Rscript name_of_script.R`. Useful to run code in `cron`, for instance
-- Use IDEs:
-    - [RStudio](https://www.rstudio.com/products/rstudio/) has become the reference
-    - [RKWard](https://invent.kde.org/education/rkward) is useful if you are for instance using an ARM processor (Raspberry Pi, some Chromebooks..)
-- Integrate into jupyter notebooks
-
----
-
-# Going further
-
-- [RStudio server](https://www.rstudio.com/products/rstudio/#rstudio-server): run RStudio on a Linux server and connect via a web interface
-- Shiny: easily create an interactive web site running R code
-- [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/): run Shiny apps on a Linux server
-- Rmarkdown: markdown that incorporates R commands. Useful for generating reports in html or pdf, can make slides as well..
-- RSweave: LaTeX incorporating R commands. Useful for generating reports. Not used as much as Rmarkdown these days
-
----
-
-# R is a scripted language
-
-- Interactive
-- Allows you to work in real time
-    - Be careful: what is in memory might involve steps not written down in a script
-    - If you want to reproduce your steps, it is good to write all the steps down in a script and to test from time to time running using `Rscript`: this will ensure that all that is required to run is indeed loaded to memory when it needs to, i.e., that it is not already there..
-
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Programming in R
-
----
-
-# Similar to matlab..
-
-.. with some differences, of course! Otherwise, where would the fun be? ;)
-
----
-
-# Assignment
-
-Two ways:
-
-```
-X <- 10
-```
-
-or
-
-```
-X = 10
-```
-
-First version is preferred by R purists.. I don't really care
-
----
-
-# Lists
-
-A very useful data structure, quite flexible and versatile. Empty list: `L <- list()`. Convenient for things like parameters. For instance
-
-```
-L <- list()
-L$a <- 10
-L$b <- 3
-L[["another_name"]] <- "Plouf plouf"
-```
-
-```
-> L[1]
-$a
-[1] 10
-> L[[2]]
-[1] 3
-> L$a
-[1] 10
-> L[["b"]]
-[1] 3
-> L$another_name
-[1] "Plouf plouf"
-```
-
----
-
-# Vectors
-
-```
-x = 1:10
-y <- c(x, 12)
-> y
- [1]  1  2  3  4  5  6  7  8  9 10 12
-z = c("red", "blue")
-> z
-[1] "red"  "blue"
-z = c(z, 1)
-> z
-[1] "red"  "blue" "1"
-```
-Note that in `z`, since the first two entries are characters, the added entry is also a character. Contrary to lists, vectors have all entries of the same type
-
----
-
-# Matrices
-
-Matrix (or vector) of zeros
-```
-A <- mat.or.vec(nr = 2, nc = 3)
-```
-
-Matrix with prescribed entries
-
-```
-B <- matrix(c(1,2,3,4), nr = 2, nc = 2)
-> B
-     [,1] [,2]
-[1,]    1    3
-[2,]    2    4
-C <- matrix(c(1,2,3,4), nr = 2, nc = 2, byrow = TRUE)
-> C
-     [,1] [,2]
-[1,]    1    2
-[2,]    3    4
-```
-
-Remark that here and elsewhere, naming the arguments (e.g., `nr = 2`) allows to use arguments in any order
-
----
-
-# Matrix operations
-
-Probably the biggest annoyance in R compared to other languages
-
-- The notation `A*B` is the *Hadamard product* $A\circ B$ (what would be denoted `A.*B` in matlab), not the standard matrix multiplication
-- Matrix multiplication is written `A %*% B`
-
----
-
-# Vector operations
-
-Vector addition is also frustrating. Say you write `x=1:10`, i.e., make the vector
-```
-> x
- [1]  1  2  3  4  5  6  7  8  9 10
-```
-Then `x+1` gives
-```
-> x+1
- [1]  2  3  4  5  6  7  8  9 10 11
- ```
- i.e., adds 1 to all entries in the vector
-
- Beware of this in particular when addressing sets of indices in lists, vectors or matrices
-
----
-
-# For the matlab-ers here
-
-- R does not have the keyword `end` to access the last entry in a matrix/vector/list..
-- Use `length` (lists or vectors), `nchar` (character chains), `dim` (matrices.. careful, of course returns 2 values)
-
----
-
-# Flow control
-
-```
-if (condition is true) {
-  list of stuff to do
-}
-```
-
-Even if `list of stuff to do` is a single instruction, best to use curly braces
-
-```
-if (condition is true) {
-  list of stuff to do
-} else if (another condition) {
-  ...
-} else {
-  ...
-}
-```
-
----
-
-# For loops
-
-`for` applies to lists or vectors
-
-```
-for (i in 1:10) {
-  something using integer i
-}
-for (j in c(1,3,4)) {
-  something using integer j
-}
-for (n in c("truc", "muche", "chose")) {
-  something using string n
-}
-for (m in list("truc", "muche", "chose", 1, 2)) {
-  something using string n or integer n, depending
-}
-```
-
----
-
-# lapply
-
-Very useful function (a few others in the same spirit: `sapply`, `vapply`, `mapply`)
-
-Applies a function to each entry in a list/vector/matrix
-
-Because there is a parallel version (`parLapply`) that we will see later, worth learning
-
-```
-l = list()
-for (i in 1:10) {
-        l[[i]] = runif(i)
-}
-lapply(X = l, FUN = mean)
-```
-
-or, to make a vector
-
-```
-unlist(lapply(X = l, FUN = mean))
-```
-
-or
-
-```
-sapply(X = l, FUN = mean)
-```
-
----
-
-# "Advanced" lapply
-
-Can "pick up" nontrivial list entries
-
-```
-l = list()
-for (i in 1:10) {
-        l[[i]] = list()
-        l[[i]]$a = runif(i)
-        l[[i]]$b = runif(2*i)
-}
-sapply(X = l, FUN = function(x) length(x$b))
-```
-
-gives
-
-```
-[1]  2  4  6  8 10 12 14 16 18 20
-```
-
-Just recall: the argument to the function you define is a list entry (`l[[1]]`, `l[[2]]`, etc., here)
-
----
-
-# Avoid parameter variation loops with expand.grid
-
-```
-# Suppose we want to vary 3 parameters
-variations = list(
-    p1 = seq(1, 10, length.out = 10),
-    p2 = seq(0, 1, length.out = 10),
-    p3 = seq(-1, 1, length.out = 10)
-)
-
-# Create the list
-tmp = expand.grid(variations)
-PARAMS = list()
-for (i in 1:dim(tmp)[1]) {
-    PARAMS[[i]] = list()
-    for (k in 1:length(variations)) {
-        PARAMS[[i]][[names(variations)[k]]] = tmp[i, k]     
-    }
-}
-```
-
-There is still a loop, but you can split this list, use it on different machines, etc. And can use `parLapply`
-
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Dealing with data
+# <!--fit-->Les données
 
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
 - JA. [Mathematical epidemiology in a data-rich world](http://dx.doi.org/10.1016/j.idm.2019.12.008). *Infectious Disease Modelling* **5**:161-188 (2020)
-- See also [GitHub repo](https://github.com/julien-arino/modelling-with-data) for that paper
+- Voir aussi le [répo GitHub](https://github.com/julien-arino/modelling-with-data) pour ce papier..
 
 </div>
 
 ---
 
-# It is important to be "data aware"
+# Il est important d'être au courant des données
 
-- Using R (or Python), it is really easy to grab data from the web, e.g., from Open Data sources
-- More and more locations have an open data policy
-- As a modeller, you do not need to have data everywhere, but you should be aware of the context
-- If you want your work to have an impact, for instance in public health, you cannot be completely disconnected from reality
-
----
-
-# Data is everywhere 
-
-## Closed data
-
-- Often generated by companies, governments or research labs
-- When available, come with multiple restrictions
-
-## Open data
-
-- Often generated by the same entities but "liberated" after a certain period
-- More and more frequent with governments/public entities
-- Wide variety of licenses, so beware
-- Wide variety of qualities, so beware
+- Avec R (ou Python), il est très facile de récupérer des données sur le web, e.g., depuis des sources Open Data
+- De plus en plus d'endroits ont une politique Open Data
+- En tant que modélisateur, il n'est pas nécessaire d'avoir des données partout, mais il est très important d'être au minimum conscient du domaine dans lequel on opère
+- Si vous voulez que votre travail ait un impact, par exemple en santé publique, vous ne pouvez pas être complètement déconnecté de la réalité
 
 ---
 
-# Open Data initiatives
+# Les données sont partout
 
-Recent movement (5-10 years): governments (local or higher) create portals where data are centralised and published
+## Données fermées (a.k.a. données propriétaires)
+
+- Générées par des compagnies, gouvernements, laboratoires de recherche
+- Quand elles sont disponibles, sont utilisables avec de multiples restrictions
+
+## Données ouvertes ou libres (Open Data)
+
+- Souvent générées par les mêmes entités mais "libérées" après une certaine période
+- De plus en plus fréquent avec les gouvernements/entités publiques
+- Grande variété de licenses, attention! (Libre $\neq$ utilisables n'importe comment)
+- La qualité varie beaucoup, attention!
+
+---
+
+# Initiatives Open Data
+
+Mouvement récent (5-10 years): gouvernements (locaux ou plus haut) créent des portails où les données sont centralisées et publiées
 
 - [Winnipeg](https://data.winnipeg.ca/)
 - [Alberta](https://open.alberta.ca/opendata)
-- [Canada](https://open.canada.ca/en/open-data)
+- [Canada](https://ouvert.canada.ca/fr/donnees-ouvertes)
 - [Europe](https://data.europa.eu/euodp/data/)
-- [UN](http://data.un.org/)
-- [World Bank](https://data.worldbank.org/)
-- [WHO](https://www.who.int/gho/database/en/)
+- [ONU](http://data.un.org/)
+- [Banque Mondiale](https://data.worldbank.org/)
+- [OMS](https://www.who.int/gho/database/en/)
 
 ---
 
-# Data gathering methods
+# Méthode de collecte des données
 
-- By hand
-- Using programs such as [Engauge Digitizer](http://markummitchell.github.io/engauge-digitizer/) or [g3data](https://github.com/pn2200/g3data)
-- Using APIs
-- Using natural language processing and other web scraping methods
-- Using R or Python packages
+- "À la main"
+- En utilisant des programmes tels que [Engauge Digitizer](http://markummitchell.github.io/engauge-digitizer/) ou [g3data](https://github.com/pn2200/g3data)
+- En utilisant des APIs
+- En utilisant des méthodes de traitement du langage naturel (NLP) ou d'autres méthodes de web scraping
+- En utilisant des packages R ou Python
 
 ---
 
-# Example: population of South Africa
+# Exemple: population du Tchad
 
 ```
 library(wbstats)
-pop_data_CTRY <- wb_data(country = "ZAF", indicator = "SP.POP.TOTL",
+pop_data_CTRY <- wb_data(country = "TCD", indicator = "SP.POP.TOTL",
                          mrv = 100, return_wide = FALSE)
 y_range = range(pop_data_CTRY$value)
 y_axis <- make_y_axis(y_range)
-png(file = "https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//pop_ZAF.png", width = 800, height = 400)
+png(file = "pop_TCD.png", width = 800, height = 400)
 plot(pop_data_CTRY$date, pop_data_CTRY$value * y_axis$factor,
      xlab = "Year", ylab = "Population", type = "b", lwd = 2,
      yaxt = "n")
 axis(2, at = y_axis$ticks, labels = y_axis$labels, las = 1)
 dev.off()
-crop_figure("https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//pop_ZAF.png")
+crop_figure("pop_TCD.png")
 ```
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/pop_ZAF.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/pop_TCD.png)
 
 ---
 
-# Dutch Elm Disease
+![bg right:35%](https://upload.wikimedia.org/wikipedia/commons/f/f4/Eastern_forest_insects_%281175%29_%2820946246870%29.jpg)
+# Graphiose de l'orme 
 
-- Fungal disease that affects Elms
-- Caused by the fungus *Ophiostoma ulmi* 
-- Transmitted by the Elm bark beetle (*Scolytus scolytus*)
-- Has decimated North American urban elm forests
+- Maladie fungique qui affecte les ormes
+- Causée par le fungus *Ophiostoma ulmi* 
+- Transmise par le scolyte américain de l'orme (*Hylurgopinus rufipes*) et d'autres espèces (*Scolytus schevyrewi*)
+- A décimé les forêts urbaines d'ormes en Amérique du Nord
 
 ---
 
@@ -469,13 +163,13 @@ crop_figure("https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiol
 
 ---
 
-# Getting the tree data
+# Obtenir les données des arbres
 
 ```
 allTrees = read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/ro
 ```
 
-After this,
+Après ça, on a
 
 ```
 dim(allTrees)
@@ -485,14 +179,14 @@ dim(allTrees)
 
 ---
 
-# Let us clean things a little
+# Nettoyons un petit peu
 
 ```
 elms_idx = grep("American Elm", allTrees$Common.Name, ignore.case = TRUE)
 elms = allTrees[elms_idx, ]
 ```
 
-We are left with 54,036 American elms
+Il nous reste 54,036 ormes américains
 
 ---
 
@@ -512,17 +206,17 @@ We are left with 54,036 American elms
 
 ---
 
-# Computation of root systems interactions
+# Calcul des interactions des systèmes racinaires
 
-(Needs a relatively large machine here - about 50GB RAM)
+(Nécessite une machine relativement grosse - environ 50GB RAM)
 
-- If roots of an infected tree touch roots of a susceptible tree, fungus is transmitted
-- Spread of a tree's root system depends on its height (we have diametre at breast height, DBH, for all trees)
-- The way roadways are built, there cannot be contacts between root systems of trees on opposite sides of a street
+- Si les racines d'un arbre infecté touchent les racines d'un arbre susceptible, le fungus est transmis
+- L'étendue du système racinaire d'un arbre dépend de sa hauteur (dans les données, on a le diamètre à hauteur de poitrine - diameter at breast height, DBH - pour tous les arbres)
+- La façon dont sont construites les routes interdit le contact des systèmes racinaires d'arbres séparés par une route
 
 ---
 
-# Distances between all trees
+# Distances entre tous les arbres
 
 ```
 elms_xy = cbind(elms$X, elms$Y)
@@ -530,9 +224,9 @@ D = dist(elms_xy)
 idx_D = which(D<50)
 ```
 
-`indices_LT` is a large $N(N-1)/2\times 2$ matrix with indices (orig,dest) of trees in the pairs of elms, so `indices_LT[idx_D]` are the pairs under consideration
+`indices_LT` est une grosse matrice de taille $N(N-1)/2\times 2$ avec indices (orig,dest) les arbres dans une paire d'orme, donc `indices_LT[idx_D]` sont les paires que l'on considère
 
-Keep a little more..
+On garde un peu plus..
 
 ```
 indices_LT_kept = as.data.frame(cbind(indices_LT[idx_D,],
@@ -542,7 +236,7 @@ colnames(indices_LT_kept) = c("i","j","dist")
 
 ---
 
-# Create line segments between all pairs of trees
+# <!--fit-->Créons des segments de droite entre toutes les paires d'arbres
 
 ```
 tree_locs_orig = cbind(elms_latlon$lon[indices_LT_kept$i],
@@ -568,20 +262,20 @@ tree_pairs = do.call(
 
 ---
 
-# A bit of mapping
+# Un peu de carto(graphie)
 
 ```
 library(tidyverse)
-# Get bounding polygon for Winnipeg
+# Polygone envelope de Winnipeg
 bb_poly = osmdata::getbb(place_name = "winnipeg", 
                          format_out = "polygon")
-# Get roads
+# On récupère les routes
 roads <- osmdata::opq(bbox = bb_poly) %>%
   osmdata::add_osm_feature(key = 'highway', 
                            value = 'residential') %>%
   osmdata::osmdata_sf () %>%
   osmdata::trim_osmdata (bb_poly)
-# Get rivers
+# Et les rivières
 rivers <- osmdata::opq(bbox = bb_poly) %>%
   osmdata::add_osm_feature(key = 'waterway', 
                            value = "river") %>%
@@ -591,11 +285,11 @@ rivers <- osmdata::opq(bbox = bb_poly) %>%
 
 ---
 
-# And we finish easily
+# En on finit tranquillement
 
-- We have the pairs of trees potentially in contact with each other
-- We have the roads and rivers of the city, which is a collection of line segments
-- If there is an intersection between a tree pair and a road/river, then we can forget this tree pair as their root systems cannot come into contact
+- On a les paires d'arbres potentiellement en contact
+- On a les routes et les rivières dans la ville, qui forme un ensemble de segments de droite
+- Si il y a intersection entre une paire d'arbre et une route/rivière, alors on peut oublier cette paire d'arbre, leurs racines ne peuvent être en contact
 
 ```
 st_crs(tree_pairs) = sf::st_crs(roads$osm_lines$geometry)
@@ -636,112 +330,3 @@ to_keep = setdiff(to_keep,tree_pairs_roads_intersect)
 
 `sqldf` allows to use SQL on dataframes.. interesting alternative if you know SQL
 
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Solving ODE numerically
-
----
-
-# The deSolve library
-
-- As I have already pointed out, [`deSolve`](https://cran.r-project.org/web/packages/deSolve/index.html):
-> The functions provide an interface to the FORTRAN functions 'lsoda', 'lsodar', 'lsode', 'lsodes' of the 'ODEPACK' collection, to the FORTRAN functions 'dvode', 'zvode' and 'daspk' and a C-implementation of solvers of the 'Runge-Kutta' family with fixed or variable time steps
-
-- So you are benefiting from years and year of experience: [ODEPACK](https://computing.llnl.gov/projects/odepack) is a set of Fortran (77!) solvers developed at Lawrence Livermore National Laboratory (LLNL) starting in the late 70s
-
-- Other good solvers are also included, those written in C
-
-- Refer to the [package help](https://cran.r-project.org/web/packages/deSolve/deSolve.pdf) for details
-
----
-
-# Using deSolve for simple ODEs
-
-As with more numerical solvers, you need to write a function returning the value of the right hand side of your equation (the vector field) at a given point in phase space, then call this function from the solver
-
-```
-library(deSolve)
-rhs_logistic <- function(t, x, p) {
-  with(as.list(x), {
-    dN <- p$r * N *(1-N/p$K)
-    return(list(dN))
-  })
-}
-params = list(r = 0.1, K = 100)
-IC = c(N = 50)
-times = seq(0, 100, 1)
-sol <- ode(IC, times, rhs_logistic, params)
-```
-
----
-
-This also works: add `p` to arguments of `as.list` and thus use without `p$` prefix
-
-```
-library(deSolve)
-rhs_logistic <- function(t, x, p) {
-  with(as.list(c(x, p)), {
-    dN <- r * N *(1-N/K)
-    return(list(dN))
-  })
-}
-params = list(r = 0.1, K = 100)
-IC = c(N = 50)
-times = seq(0, 100, 1)
-sol <- ode(IC, times, rhs_logistic, params)
-```
-
-In this case, beware of not having a variable and a parameter with the same name..
-
----
-
-# Default method: `lsoda`
-
-- `lsoda` switches automatically between stiff and nonstiff methods
-
-- You can also specify other methods: "lsode", "lsodes", "lsodar", "vode", "daspk", "euler", "rk4", "ode23", "ode45", "radau", "bdf", "bdf_d", "adams", "impAdams" or "impAdams_d" ,"iteration" (the latter for discrete-time systems)
-
-```
-ode(y, times, func, parms, 
-    method = "ode45")
-```
-
-- You can even implement your own integration method
-
----
-
-# Example - Fitting to data
-
-- Note that this is a super simplified version of what to do
-- Much more elaborate procedures exist
-  - Roda. [Bayesian inference for dynamical systems](https://doi.org/10.1016/j.idm.2019.12.007)
-  - Portet. [A primer on model selection using the Akaike Information Criterion](https://doi.org/10.1016/j.idm.2019.12.010)
-- Let us grab some epi data online and fit an SIR model to it
-- Don't expect anything funky, as I said, this is the baby version
-- Also, keep in mind that any identification procedure is subject to risks due to *identifiability issues*; see, e.g., Roda et al, [Why is it difficult to accurately predict the COVID-19 epidemic?](https://doi.org/10.1016/j.idm.2020.03.001)
-
----
-
-# Principle
-
-- Data is a set $(t_i,y_i)$, $i=1,\ldots,N$, where $t_i\in\mathcal{I}$, some interval
-- Solution to SIR is $(t,x(t))$ for $t\in\mathcal{I}$
-- Suppose parameters of the model are $p$
-- We want to minimise the error function
-$$
-E(p) = \sum_{i=1}^N \|x(t_i)-y_i\|
-$$
-- Norm is typically Euclidean, but could be different depending on objectives
-- So given a point $p$ in (admissible) parameter space, we compute the solution to the ODE, compute $E(p)$
-- Using some minimisation algorithm, we seek a minimum of $E(p)$ by varying $p$
-
----
-
-# What are $y_i$ and $x(t_i)$ here?
-
-- In epi data for infectious diseases, we typically have incidence, i.e., number of new cases per unit time
-- In SIR model, this is $\beta SI$, so, if using incidence and Euclidean norm
-$$
-E(p)=\sum_{i=1}^N(\beta S(t_i)I(t_i)-y_i)^2
-$$
