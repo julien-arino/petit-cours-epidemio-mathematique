@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Petit cours d'épidémiologie mathématique - Introduction à R
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 02 - Introduction à R
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 02 - Introduction à R
 theme: default
 paginate: false
 math: mathjax
@@ -31,6 +31,10 @@ size: 4K
 </style>
 
 # Petit cours d'épidémiologie mathématique
+<<<<<<< HEAD
+
+=======
+>>>>>>> 83f66b45a7bf1e17a5f1552d3ba6d9e99750e2a3
 # Introduction à R
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)

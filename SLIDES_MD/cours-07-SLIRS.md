@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Le modèle SLIRS - Incorporation de la période d'incubation et analyse plus avancée
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 03 - Le modèle SLIRS - Incorporation de la période d'incubation et analyse plus avancée
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 07 - Le modèle SLIRS - Incorporation de la période d'incubation et analyse plus avancée
 theme: default
 math: mathjax
 paginate: false

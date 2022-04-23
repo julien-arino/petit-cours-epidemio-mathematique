@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Organisation du Petit cours d'épidémiologie mathématique
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 00 - Organisation du cours
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 00 - Organisation du cours
 theme: default
 math: mathjax
 paginate: false
@@ -183,27 +183,39 @@ Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec de
 
 # Organisation du cours
 
-L1: Épidémies, épidémiologie et épidémiologie mathématique
-L2: Modèle SIS et modèle SIR de Kermack et McKendrick
-P1: Introduction to R. Collecting data. Solving ODEs in R
-L3: Epidemics spreading among groups. Epidemics spreading in space and time                                     
-L4: Group models
-L5: Metapopulation models
-P2: Model analysis, studying large-scale models in R
-L6: Stochastic aspects in the spread of epidemics
-L7: Stochastic epidemic models
-L8: Agent-based models
-P3: Analysis, studying stochastic models in R. Simulating agent-based models                   
-L9: Some recent mathematical models for COVID-19, HIV/AIDS, TB, Malaria, etc.
+- C01: Introduction - Épidémies, épidémiologie et épidémiologie mathématique
+- C02: Introduction au langage `R`
+- C03: Récupération et utilisation des données
+- C04: Modèle SIS et modèle SIR de Kermack et McKendrick
+- C05: Résolution numérique des EDO en `R`
+- C06: $\mathcal{R}_0$, son calcul et son rôle
+- C07: Le modèle SLIRS
+- C08: Le modèle SLIAR et autres variations sur KMK
+- C09: Plus de modélisation
+- C10: Analyse mathématique des modèles
+
+---
+
+# Organisation du cours (suite)
+
+- C11: Hétérogénéité de groupe et spatiale
+- C12: Modèles de groupes
+- C13: Modèles en métapopulations
+- C14: Stochasticité
+- C15: Modèles stochastiques
+- C16: Simulations stochastiques
+- C17: Modèles en réseaux
+- C18: Modèles agents
+- C19: Ajustement des paramètres
 
 ---
 
 # Note - durée et organisation des unités
 
-- J'ai essayé de construire des unités relativement équilibrées en terme de contenu, mais n'ai pas réussi particulièrement bien
+- J'ai essayé de construire des unités relativement équilibrées en terme de contenu, mais n'ai pas particulièrement bien réussi 
 - Certaines unités sont donc plus longues que d'autres
 - Les durées des vidéos, postées sur le site web, sont indicatives du poids d'une unité
-- Dans le cours d'origine ([lien]()), les unités étaient entre unités de cours et unités de travaux pratiques. J'ai décidé ici de ne faire que des unités de cours, mais certaines de ces unités de cours doivent être comprises comme relevant plutôt du TP/TD
+- Dans le cours d'origine ([lien](https://julien-arino.github.io/3MC-course-epidemiological-modelling/)), les unités étaient divisées entre unités de cours et unités de travaux pratiques. J'ai décidé ici de ne faire que des unités de cours, mais certaines de ces unités de cours doivent être comprises comme relevant plutôt du TP/TD
 
 ---
 

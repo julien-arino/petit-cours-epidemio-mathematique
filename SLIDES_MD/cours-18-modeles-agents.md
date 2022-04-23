@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Agent-based models
-description: 3MC Course Epidemiological Modelling - Julien Arino - Course 08 - Agent-based models
+title: Petit cours d'épidémiologie mathématique - Modèles agents
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 18 - Modèles agents
 theme: default
 paginate: false
 math: mathjax
@@ -30,9 +30,8 @@ size: 4K
   }
 </style>
 
-# Agent-based models
-
-6 April 2022 
+# Petit cours d'épidémiologie mathématique
+# Modèles agents
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
@@ -53,15 +52,15 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
 # Outline
 
-- What are agent-based models (ABM)
-- When to use ABM
-- When not to use ABM
-- Some examples
+- Qu'est-ce qu'un modèle agent (ABM)
+- Quand utiliser un ABM
+- Quand ne pas utiliser un ABM
+- Quelques exemples
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->What are agent-based models (ABM)
+# <!--fit-->Qu'est-ce qu'un modèle agent (ABM)
 
 ---
 
@@ -83,7 +82,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->When to use ABM
+# <!--fit-->Quand utiliser un ABM
 
 ---
 
@@ -100,7 +99,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->When not to use ABM
+# <!--fit-->Quand ne pas utiliser un ABM
 
 ---
 
@@ -115,20 +114,16 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Some examples
+# <!--fit-->Quelques exemples
 
----
-
-<!-- _backgroundImage: "radial-gradient(white, 80%, #156C26)" -->
-# Some examples
-- Antibiotic resistance in hospitals
-- Effectiveness of contact tracing
-- Contacts during Hajj
+- Résistance aux antibiotiques dans un hôpital
+- Efficacité du suivi des contacts (contact tracing)
+- Contacts pendant le Hajj
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Antibiotic resistance in hospitals
+# Résistance aux antibiotiques dans un hôpital
 
 <div style = "position: relative; bottom: -30%; font-size:20px;">
 
@@ -171,7 +166,7 @@ D’Agata, Magal, Olivier, Ruand & Webb. [Modeling antibiotic resistance in hosp
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Effectiveness of contact tracing
+# Efficacité du suivi des contacts (contact tracing)
 
 <div style = "position: relative; bottom: -30%; font-size:20px;">
 
@@ -210,7 +205,7 @@ They then run these scenarios and compare results
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Contacts during Hajj
+# Contacts pendant le Hajj
 
 <div style = "position: relative; bottom: -20%; font-size:20px;">
 

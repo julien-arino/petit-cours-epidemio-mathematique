@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Petit cours d'épidémiologie mathématique - Collecte et utilisation des données
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 03 - Collecte et utilisation des données
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 03 - Collecte et utilisation des données
 theme: default
 paginate: false
 math: mathjax

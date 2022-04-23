@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Some recent mathematical models for Covid-19, HIV/AIDS, TB, Hepatitis, Malaria
-description: 3MC Course Epidemiological Modelling - Julien Arino - Course 09 - Some (recent?) mathematical models for HIV/AIDS, TB, Hepatitis, Malaria
+title: Petit cours d'épidémiologie mathématique - Plus de modélisation
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 09 - Plus de modélisation
 theme: default
 paginate: false
 math: mathjax
@@ -30,9 +30,8 @@ size: 4K
   }
 </style>
 
-# Some (recent?) mathematical models for HIV/AIDS, TB, Hepatitis, Malaria, etc.
-
-7 April 2022 
+# Petit cours d'épidémiologie mathématique
+# Plus de modélisation
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
