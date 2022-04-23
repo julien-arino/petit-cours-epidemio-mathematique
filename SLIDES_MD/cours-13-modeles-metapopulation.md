@@ -91,65 +91,65 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# General principles (1)
+# Principes généraux (1)
 
-- $|\mathcal{P}|$ geographical locations (*patches*) in a set $\mathcal{P}$  (city, region, country..)
-- Patches are vertices in a graph
-- Each patch $p\in\mathcal{P}$ contains **compartments** $\mathcal{C}_p\subseteq\mathcal{C}$
-  - individuals susceptible to the disease
-	- individuals infected by the disease
-	- different species affected by the disease
+- $|\mathcal{P}|$ lieux géographiques (*patchs*) dans un ensemble $\mathcal{P}$  (ville, région, pays..)
+- Les patchs sont les noeuds d'un graphe
+- Each patch $p\in\mathcal{P}$ contient des  **compartiments** $\mathcal{C}_p\subseteq\mathcal{C}$
+  - individus susceptibles à la maladie
+	- individus infectés par la maladie
+	- différentes espèces affectées par la maladie
 	- etc.
 
 ![bg right:32%](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/metapopulations/simple_graph.svg)
 
 ---
 
-# General principles (2)
+# Principes généraux (2)
 
-- Compartments *may* move between patches, with $m_{cqp}$ rate of movement of individuals from compartment $c\in\mathcal{C}$ from patch $p\in\mathcal{P}$ to patch $q\in\mathcal{P}\setminus\{p\}$
-- Movement instantaneous and no death during movement
-- $\forall c\in\mathcal{C}$, defines a digraph $\mathcal{G}^c$ with arcs $\mathcal{A}^c$
-- Arc from $p$ to $q$ if $m_{cqp}>0$, absent otherwise
-- $|\mathcal{C}|$ compartments, so each $(p,q)$ can have at most $|\mathcal{C}|$ arrows $\rightarrow$ multi-digraph
+- Les compartiments *peuvent* se déplacer entre patchs, vaec $m_{cqp}$ taux de mouvement des individus du compartiment $c\in\mathcal{C}$ depuis le patch $p\in\mathcal{P}$ vers le patch $q\in\mathcal{P}\setminus\{p\}$
+- Mouvement instantané et pas de mortalité pendant le mouvement
+- $\forall c\in\mathcal{C}$, définit un digraphe $\mathcal{G}^c$ avec arcs $\mathcal{A}^c$
+- Arc de $p$ à $q$ si $m_{cqp}>0$, absent sinon
+- $|\mathcal{C}|$ compartiments, donc tout $(p,q)$ peut avoir au plus $|\mathcal{C}|$ flèches $\rightarrow$ multi-digraphe
 
 
 ---
 
-# The underlying mobility model
+# Le modèle de mobilité sous-jacent
 
-$N_{cp}$ population of compartment $c\in\mathcal{C}$ in patch $p\in\mathcal{P}$
+$N_{cp}$ population du compartiment $c\in\mathcal{C}$ dans le patch $p\in\mathcal{P}$
 
-Assume no birth or death. Balance inflow and outflow
+Supposons pas de naissance ni de mort. Balançons les flux entrants et sortants
 
 $$
 \begin{align}
 N_{cp}' &= \left(\sum_{q\in\mathcal{P}\setminus\{p\}} m_{cpq}N_{cq}\right)-\left(\sum_{q\in\mathcal{P}\setminus\{p\}} m_{cqp}\right)N_{cp} \\
 &\\
-\text{or} & \\
+\text{ou} & \\
 &\\
 N_{cp}' &=  \sum_{q\in\mathcal{P}} m_{cpq}N_{cq} 
 \qquad \tag{1}\label{eq:dNcp}
 \end{align}
 $$
-when we write
+si l'on écrit
 $$
 m_{cpp}=-\sum_{q\in\mathcal{P}\setminus\{p\}} m_{cqp}
 $$
 
 ---
 
-# The toy SLIRS model in patches
+# Le modèle SLIRS dans les patchs
 
 ![width:800px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/flow-diagrams/SLIRS.svg)
 
-$B(N)$ is the birth rate (typically $b$ or $bN$)
+$B(N)$ est le taux de naissance (typiquement $b$ ou $bN$)
 
-$L$ = latently infected ($\simeq E$ exposed, although the latter term is ambiguous)
+$L$ = infectés de façon latente ($\simeq E$ exposés, bien que ce terme soit ambigu)
 
 ---
 
-# $|\mathcal{P}|$-SLIRS model
+# Modèle $|\mathcal{P}|$-SLIRS
 
 $$
 \begin{align}
@@ -164,7 +164,7 @@ R_{p}' &=\gamma _{p}I_{p}-\left(\nu_{p}+d_{p}\right)R_{p}
 \end{align}
 $$
 
-with incidence 
+avec incidence 
 $$
 \Phi_p=\beta_p\frac{S_pI_p}{N_p^{q_p}},\qquad q_p\in\{0,1\}
 \tag{2e}\label{sys:pSLIRS_incidence} 
