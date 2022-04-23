@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Petit cours d'épidémiologie mathématique - Le modèle SLIAR
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 04 - Le modèle SLIAR, la taille finale d'une épidémie
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 08 - Le modèle SLIAR, la taille finale d'une épidémie
 theme: default
 paginate: false
 size: 4K
@@ -30,7 +30,8 @@ math: mathjax
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique - Le modèle SLIAR, la taille finale d'une épidémie
+# Petit cours d'épidémiologie mathématique
+# Le modèle SLIAR, la taille finale d'une épidémie
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 

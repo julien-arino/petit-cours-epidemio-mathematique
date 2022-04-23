@@ -1,7 +1,7 @@
 ---
 marp: true
 title: R0
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours  - R0
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 06 - R0
 theme: default
 math: mathjax
 paginate: false

@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Petit cours d'épidémiologie mathématique - Le modèle SLIRS
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 02 - Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 04 - Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
 theme: default
 paginate: false
 size: 4K

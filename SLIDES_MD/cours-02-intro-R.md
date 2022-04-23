@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Practicum - Introduction to R. Collecting data. Solving ODEs in R
-description: 3MC Course Epidemiological Modelling - Julien Arino - Practicum 01 - Introduction to R. Collecting data. Solving ODEs in R
+title: Petit cours d'épidémiologie mathématique - Introduction à R
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 02 - Introduction à R
 theme: default
 paginate: false
 math: mathjax
@@ -30,9 +30,9 @@ size: 4K
   }
 </style>
 
-# Practicum 01 - Introduction to R. Collecting data. Solving ODEs in R
+# Petit cours d'épidémiologie mathématique
 
-4 April 2022
+# Introduction à R
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 

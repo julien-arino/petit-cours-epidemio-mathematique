@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Practicum 02 - Model analysis, studying large-scale models in R
-description: 3MC Course Epidemiological Modelling - Julien Arino - Practicum 02 - Model analysis, studying large-scale models in R
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 10 -
 theme: default
 paginate: false
 math: mathjax
@@ -30,9 +30,8 @@ size: 4K
   }
 </style>
 
-# Practicum 02 - Model analysis, studying large-scale models in R
-
-5 April 2022 
+# Petit cours d'épidémiologie mathématique
+# Analyse mathématique des modèles 
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 

@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Introduction au Petit cours d'épidémiologie mathématique
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 01 - Introduction
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 01 - Introduction
 theme: default
 math: mathjax
 paginate: false

@@ -30,9 +30,8 @@ size: 4K
   }
 </style>
 
-# Lecture 06 - Stochastic aspects in the spread of epidemics
-
-6 April 2022 
+# Petit cours d'épidémiologie mathématique
+# Aspects stochastiques dans la propagation des épidémies
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
