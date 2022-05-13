@@ -80,7 +80,7 @@ Ce cours reprend et étend les éléments du cours 3MC  .. Cette amélioration e
 
 # Répositoire GitHub pour le cours
 
-La plupart du matériel pour le cours est disponible depuis ce [répositoire GitHub](https://julien-arino.github.io/3MC-course-epidemiological-modelling)
+La plupart du matériel pour le cours est disponible depuis ce [répositoire GitHub]()
 
 Ceci inclut les transparents, le code et des exemples de données
 
@@ -162,7 +162,7 @@ Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec de
 
 # Au sujet du numérique
 
-- Le travail numérique doit complémenter le travail mathématique, pas le confirmer
+- Le travail numérique doit complémenter le travail mathématique, pas le confirmer 
 
 - Si vous avez prouvé la stabilité globale d'un point d'équilibre, il n'est pas nécessaire d'illustrer cela par une simulation dans laquelle on voit une ou plusieurs solutions converger vers ce point d'équilibre
 
@@ -174,7 +174,7 @@ Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec de
 
 ---
 
-# Au sujet des données
+# Au sujet des données  
 
 - Obtenir des données est bien plus facile que même il y a 20 ans
 - En tant que modélisateur, il n'est pas nécessaire que tous les travaux soient conduits par les données (data-driven), mais il est nécessaire d'être conscient du contexte dans lequel le modèle est formulé (il est de bon ton de savoir quel est l'ordre de magnitude des grandeurs que vous considérez, par exemple)
@@ -224,3 +224,4 @@ Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec de
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_red.png) 
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_yellow.png) 
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_green.png)
+

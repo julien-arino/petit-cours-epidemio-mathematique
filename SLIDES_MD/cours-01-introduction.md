@@ -216,9 +216,9 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 <div class="heatMap">
 
-| Période | Phase | Déscription |
+| Période | Phase | Description |
 |:---|:---:|:---|
-| Interpandemic | 1 | No animal influenza virus circulating among animals has been reported to cause infection in humans |
+| Interpandémie | 1 | No animal influenza virus circulating among animals has been reported to cause infection in humans |
 | | 2 | Animal influenza virus circulating in domesticated or wild animals known to have caused infection in humans and therefore considered a specific potential pandemic threat |
 | Pandemic alert | 3 | Animal or human-animal influenza reassortant virus has caused sporadic cases or small clusters of disease in people, but has not resulted in H2H transmission sufficient to sustain community-level outbreaks |
 | | 4 | Human-to-human transmission of an animal or human-animal influenza reassortant virus able to sustain community-level outbreaks has been verified |

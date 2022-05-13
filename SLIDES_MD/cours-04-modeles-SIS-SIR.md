@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Petit cours d'épidémiologie mathématique - Le modèle SLIRS
-description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 04 - Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
+title: Petit cours d'épidémiologie mathématique - Les modèle SIS et SIR
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 04 - Le modèle SIS, le modèle de Kermack et McKendrick
 theme: default
 paginate: false
 size: 4K
@@ -81,12 +81,12 @@ $\implies$ il y a deux **compartiments** et le but de la modélisation est de d�
 --- 
  
 - $S(t)$ nombre de susceptibles au temps $t$
-- $I(t)$ nombre d'infectieux/infectés au temps $t$
+- $I(t)$ nombre d'infectieux au temps $t$
 - $N(t)=S(t)+I(t)$ la population totale
 
 Les hypothèses qui suivent décrivent une maladie pour laquelle la durée de la période d'incubation est très courte voire inexistante
 
-On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitot après s'être remis, les individus sont de nouveau susceptibles
+On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitôt après s'être remis, les individus sont de nouveau susceptibles
 
 ---
 
@@ -94,7 +94,7 @@ On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitot
 
 ## Individus susceptibles
 
-- Nés au taux *per capita* $d$ proportionnel à la population totale $N$
+- Naissent au taux *per capita* $d$ proportionnel à la population totale $N$
 - Meurent au taux *per capita* $d$, proportionnel à la population susceptible $S$
 - Les nouveaux nés sont susceptibles (on ignore la *transmission verticale*)
 
@@ -108,17 +108,19 @@ On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitot
 
 # Diagramme de flot du modèle
 
-![width:1000px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SIS.png)
+![width:600px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/figure_SIS_base_prop_incidence_birthdN.png)
 
 ---
 
 # Le modèle
 
+![bg right:34% width:400px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/figure_SIS_base_prop_incidence_birthdN_vertical.png)
+
 On utilise une fonction d'incidence standard (voir plus loin) et en balançant les flux entrant et sortant dans les deux compartiments, on obtient
 
 $$
 \begin{align}
-S' &= \underbrace{bN}_\textrm{naissance}
+S' &= \underbrace{dN}_\textrm{naissance}
 -\underbrace{dS}_\textrm{mort} 
 -\underbrace{\beta\frac{SI}{N}}_\textrm{infection}
 +\underbrace{\gamma I}_\textrm{gu\'erison}
@@ -136,7 +138,6 @@ On considère le problème de Cauchy consistant en ce système auquel on adjoint
 
 # Remarques
  
-- Dans ce qui suit, on suppose que $b=d$ pour que la population totale reste constante
 - $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est un modèle SIS (Susceptible-Infectieux-Susceptible)
 - Si $\gamma=0$ (pas de guérison), le modèle est un modèle SI
   - Dans ce cas, un individu infectieux reste infectieux toute sa vie
@@ -148,7 +149,7 @@ On considère le problème de Cauchy consistant en ce système auquel on adjoint
 
 Les notions de *naissance* et *mort* se réfèrent à la population que l'on considère
 
-Par exemple, supposons un modèle pour l'immunodéficience humaine (VIH) dans une population à risque d'utilisateurs de drogue administrées de façon intravéneuse. Dans ce cas 
+Par exemple, supposons un modèle pour l'immunodéficience humaine (VIH) dans une population à risque d'utilisateurs de drogue administrées de façon intraveineuse. Dans ce cas 
 - la naissance correspond au moment du début du comportement à risque
 - la mort survient au moment où le comportement à risque cesse, que ce soit parce que l'individu meurt ou parce qu'il/elle cesse d'utiliser de la drogue
 
@@ -156,13 +157,20 @@ Par exemple, supposons un modèle pour l'immunodéficience humaine (VIH) dans un
 
 # Analyse du système
 
-Système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est planaire nonlinéaire
+Le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est planaire non-linéaire
 
-En principe, on devrait appliquer les m\'ethodes usuelles dans le plan. 
+En principe, on devrait appliquer les méthodes usuelles dans le plan. 
 
 Toutefois, il est ici possible de trouver une solution explicite
 
 **NB:** Ceci est une illustration utile, mais est une exception!! Pratiquement aucun autre modèle que nous rencontrerons ne sera intégrable de cette façon
+
+---
+
+# Le système est-il bien posé?
+
+- Normalement, on devrait commencer par vérifier que le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est bien posé
+- On note toutefois que l'on a une fonction de la forme $\beta SI/N$, donc voyons tout d'abord si cela peut poser problème
 
 ---
 
@@ -182,7 +190,52 @@ Par conséquent, pour tout $t$, $N(t)\equiv N_0:=S_0+I_0$
 
 ---
 
-# Proportions
+# Le système est-il bien posé? (bis)
+
+- On va éviter le cas $N\equiv 0$, qui ne sert à rien
+- Donc le champ de vecteur est toujours $C^1$, ce qui entraîne que les solutions existent et sont uniques
+- Vérifions maintenant que le cône positif est invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
+
+---
+
+# Invariance sous le flot (1)
+
+Supposons pour commencer que $I=0$. Alors le système se réduit à l'équation scalaire
+$$
+S' = bN-dS=0
+$$
+puisque $N=S$ ici. Il suit que l'axe $\{I=0\}$ est invariant et toute solution initiée dans cet ensemble est constante. Cela implique qu'une solution avec $S(0)>0$ et $I(0)>0$ ne peut atteindre l'axe $\{I=0\}$
+
+En effet, supposons que $S(0)=S_0>0$ et $I(0)=I_0>0$, et qu'il existe $t_*>0$ tel que $S(t_*)=S_*$ et $I(t_*)=0$
+
+Mais en S=S_*$ et $I=0$, il passe une autre solution, celle telle que $S(0)=S_*$ et $I(0)=0$, puisqu'avec ces conditions initiales, on a $S(t)=S_*$ et $I(t)=0$ pour tout $t\geq 0$
+
+Cela contredit l'unicité des solutions $\implies$ $I(t)>0$ si $I(0)>0$
+
+---
+
+# Invariance sous le flot (2)
+
+On a vu que $I(t)>0$ si $I(0)>0$
+
+Supposons alors que $S=0$. L'équation $\eqref{sys:SIS_base_dS}$ est alors
+$$
+S' = \gamma I>0
+$$
+
+$\implies$ $S$ ne peut pas devenir nul
+
+---
+
+# Remarque
+
+Ce genre de raisonnement a toute sa place dans une thèse de MSc ou de PhD: il faut montrer que vous savez faire
+
+Dans un papier de recherche, cela n'est pas vraiment nécessaire, c'est souvent même superflu
+
+---
+
+# Les variables en proportions
 
 $$
 s=\frac{S}{N}\quad\quad i=\frac{I}{N}
@@ -240,7 +293,7 @@ $$
 
 ---
 
-Un facteur integrant est 
+Un facteur intégrant est 
 $$
 \mu(t)=\exp\left(\int P(t)dt\right)=e^{(\beta-(d+\gamma))t}
 $$
@@ -334,7 +387,7 @@ On a prouvé le résultat suivant
 
 L'alternative suivante a lieu pour le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
  
-- Si $\mathcal{R}_0< 1$, alord
+- Si $\mathcal{R}_0< 1$, alors
   - $\lim_{t\to\infty}s(t)=1$
   - $\lim_{t\to\infty}i(t)=0$, la maladie **s'éteint**
 - Si $\mathcal{R}_0>1$, alors
@@ -342,7 +395,7 @@ L'alternative suivante a lieu pour le système $\eqref{sys:SIS_base_dS}$-$\eqref
   - $\lim_{t\to\infty}i(t)=1-1/{\mathcal{R}_0}$, la maladie devient **endémique**
 </div>
 
-On dit que le modèle SIS est un *modèle endémique* du fait de la possibilité d'observer ce second équilibre
+On dit que le modèle SIS est un **modèle endémique** du fait de la possibilité d'observer ce second équilibre
 
 ---
  

@@ -324,9 +324,54 @@ to_keep = setdiff(to_keep,tree_pairs_roads_intersect)
 
 ---
 
-# Data wrangling: `dplyr` vs `sqldf`
+# ¨Data wrangling¨: `dplyr` vs `sqldf`
 
-`dplyr` is part of the `tidyverse` set of libraries. Load `magrittr` and its pipe `%>%`
+`dplyr` fait partie du `tidyverse` (ensemble de librairies). Charger en particulier `magrittr` et sa pipe `%>%`
 
-`sqldf` allows to use SQL on dataframes.. interesting alternative if you know SQL
+`sqldf` permet de faire tourner des requêtes SQL sur une data frame.. alternative intéressante si vous connaissez le SQL
+
+---
+
+```
+library(sqldf)
+library(dplyr)
+
+SARS = read.csv("../DATA/SARS-CoV-1_data.csv")
+
+## Trois façons de ne garder les données que d'un pays
+ctry = "Canada"
+# L'habituelle
+idx = which(SARS$country == ctry)
+SARS_selected = SARS[idx,]
+# La voie sqldf
+SARS_selected = sqldf(paste0("SELECT * FROM SARS WHERE country = '", 
+                             ctry, "'"))
+# La voie dplyr
+SARS_selected = SARS %>%
+  filter(country == ctry)
+```
+
+---
+
+```
+# Écrivons l'incidence pour le pays choisi. diff fait les différences une à une,
+# donc génère une entrée de moins que le vecteur à laquelle on l'applique, 
+# donc on ajoute un zéro.
+SARS_selected$incidence = c(0, diff(SARS_selected$totalNumberCases))
+# Gardons seulement les incidences strictement positives
+SARS_selected = SARS_selected %>%
+  filter(incidence > 0)
+
+# Représentons graphiquement le résultat.
+# Avant ça, nous devons faire en sorte que les dates soient reconnues comme telles
+SARS_selected$toDate = lubridate::ymd(SARS_selected$toDate)
+EpiCurve(SARS_selected,
+         date = "toDate", period = "day",
+         freq = "incidence",
+         title = "Incidence de la SARS-CoV-1 au Canada en 2003")
+```
+
+---
+
+![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SARS-CoV-1_cases_CAN.png)
 

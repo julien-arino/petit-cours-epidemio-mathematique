@@ -952,3 +952,117 @@ and $\epsilon_0$ defined by (\ref{eq:SEIRS_persist}). Then there is no closed re
 </div>
 
 The proof uses compound matrices (see [Practicum 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html))
+
+
+
+---
+
+# Example of the SLIRS model
+
+Variations of the infected variables described by
+$$
+\begin{align*}
+L' &= f(S,I,N)-(\varepsilon+d) L \\
+I' &= \varepsilon L -(d+\gamma) I
+\end{align*}
+$$
+Thus
+$$
+\left(
+\begin{matrix}
+L \\
+I
+\end{matrix}
+\right)'
+=\left(
+\begin{matrix}
+f(S,I,N) \\
+0
+\end{matrix}
+\right)
+-
+\left(
+\begin{matrix}
+(\varepsilon+d) L \\
+(d+\gamma) I-\varepsilon L
+\end{matrix}
+\right)=\mathcal{F}-\mathcal{V}
+$$
+
+---
+
+Then compute the Jacobian matrices of vectors $\mathcal{F}$ and $\mathcal{V}$
+$$
+F=\left(
+\begin{matrix}
+\dfrac{\partial\overline{f}}{\partial L}
+& \dfrac{\partial\overline{f}}{\partial I} \\
+0 & 0
+\end{matrix}
+\right),\quad
+V=\left(
+\begin{matrix}
+\varepsilon+d & 0 \\
+-\varepsilon & d+\gamma
+\end{matrix}
+\right)
+$$
+where
+$$
+\frac{\partial\overline{f}}{\partial I}:=
+\frac{\partial f}{\partial I}(\bar
+S,\bar I,\bar N)\quad\quad 
+\frac{\partial\overline{f}}{\partial L}:=
+\frac{\partial f}{\partial L}(\bar
+S,\bar I,\bar N)
+$$
+
+---
+
+We have
+$$
+V^{-1}=\dfrac{1}{(d+\varepsilon)(d+\gamma)}
+\left(
+\begin{matrix}
+d+\gamma & 0 \\
+\varepsilon & d+\varepsilon
+\end{matrix}
+\right)
+$$
+
+Also, when $N$ constant, $\partial f/\partial
+L=0$, then
+$$
+FV^{-1}=\dfrac{{\partial\overline{f}}/{\partial I}}
+{(d+\varepsilon)(d+\gamma)}
+\left(
+\begin{matrix}
+\varepsilon 
+& d+\varepsilon  \\
+0 & 0
+\end{matrix}
+\right)
+$$
+and thus,
+$$
+\mathcal{R}_0=\varepsilon
+\dfrac{{\partial\overline{f}}/{\partial I}}
+{(d+\varepsilon)(d+\gamma)}
+$$
+
+---
+
+<div class="theorem">
+
+Let
+$$
+\mathcal{R}_0=
+\dfrac{\varepsilon\dfrac{\partial\overline{f}}{\partial I}}
+{(d+\varepsilon)(d+\gamma)}
+$$
+
+Then 
+- if $\mathcal{R}_0<1$, the DFE is LAS
+- if $\mathcal{R}_0>1$, the DFE is unstable
+</div>
+
