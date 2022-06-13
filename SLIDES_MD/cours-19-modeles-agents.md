@@ -30,8 +30,7 @@ size: 4K
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique
-# Modèles agents
+# Petit cours d'épidémiologie mathématique<br/>Modèles agents-centrés
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
@@ -50,7 +49,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Outline
+# Plan du cours
 
 - Qu'est-ce qu'un modèle agent (ABM)
 - Quand utiliser un ABM

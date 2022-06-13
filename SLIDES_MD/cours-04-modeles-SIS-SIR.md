@@ -30,8 +30,7 @@ math: mathjax
   }
 </style>
 
-# <!--fit-->Petit cours d'épidémiologie mathématique
-# <!--fit-->Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 

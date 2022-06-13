@@ -30,8 +30,7 @@ size: 4K
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique 
-# $\mathcal{R}_0$ et la taille finale d'une épidémie
+# Petit cours d'épidémiologie mathématique<br/>$\mathcal{R}_0$ et la taille finale d'une épidémie
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 

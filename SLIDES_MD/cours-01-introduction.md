@@ -30,9 +30,7 @@ size: 4K
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique
-
-# <!--fit-->Épidémies, épidémiologie et épidémiologie mathématique
+# Petit cours d'épidémiologie mathématique<br/><!--fit-->Épidémies, épidémiologie et épidémiologie mathématique
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 

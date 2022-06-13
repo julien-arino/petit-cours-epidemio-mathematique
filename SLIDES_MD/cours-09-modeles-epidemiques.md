@@ -30,8 +30,7 @@ math: mathjax
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique
-# Quelques modèles épidémiques
+# Petit cours d'épidémiologie mathématique<br/>Quelques modèles épidémiques
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 

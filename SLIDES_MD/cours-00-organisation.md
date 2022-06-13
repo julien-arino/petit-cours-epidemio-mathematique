@@ -30,9 +30,7 @@ size: 4K
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique
-
-# Organisation du cours
+# Petit cours d'épidémiologie mathématique<br/>Organisation du cours
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 
@@ -50,7 +48,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-<!-- _backgroundImage: "linear-gradient(to bottom, #85110d, 20%, white)" -->
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->Au sujet du cours
 
 ---

@@ -6,3 +6,4 @@ logo: /FIGS/plasmodium_entering_RBC.jpg
 google_analytics: UA-1943806-8
 plugins:
   - jekyll-sitemap
+math_engine: mathjax

@@ -30,8 +30,7 @@ size: 4K
   }
 </style>
 
-# Petit cours d'épidémiologie mathématique 
-# Le modèle SLIRS
+# Petit cours d'épidémiologie mathématique<br/>Le modèle SLIRS
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
 

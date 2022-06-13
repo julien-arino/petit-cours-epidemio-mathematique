@@ -4,7 +4,7 @@ Ceci est la version *web* du *Petit cours d'épidémiologie mathématique*, que 
 
 ## Liste des cours
 
-Notez qu'une version plus détaillée, que j'utilise par exemple pour vérifier que je ne duplique pas de contenu, est disponible [ici]()
+Notez qu'une version plus détaillée, que j'utilise par exemple pour vérifier que je ne duplique pas de contenu, est disponible [ici](). Notez aussi que certains cours ne sont pas encore finalisés. Enfin: j'ambitionne d'enregistrer tous les cours; les liens seront disponibles lorsque ces enregistrements seront en ligne.
 
 - Cours 00: [Organisation du cours](cours-00-organisation.html) 
 - Cours 01: [Épidémies, épidémiologie et épidémiologie mathématique](cours-01-introduction.html) 
@@ -21,8 +21,8 @@ Notez qu'une version plus détaillée, que j'utilise par exemple pour vérifier 
 - Cours 12: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-12-heterogeneite-groupe-et-spatiale.html)
 - Cours 13: [Modèles de groupes](cours-13-modeles-groupes.html) 
 - Cours 14: [Modèles dans des métapopulations](cours-14-modeles-metapopulation.html) 
-- Cours 15: [Aspects stochastiques dans la propagation des épidémies](cours-15-stochasticite.html)
-- Cours 16: [Modèles stochastiques des épidémies](cours-16-modeles-stochastiques.html) 
+- Cours 15: [Types de modèles stochastiques utilisés en épidémiologie](cours-15-stochasticite.html)
+- Cours 16: [Modèles en chaînes de Markov](cours-16-modeles-MC.html) 
 - Cours 17: [Analysis and study of stochastic models in R](cours-17-simulation-stochastique.html) 
 - Cours 18: [Modèles en réseaux](cours-18-modeles-reseaux.html)
 - Cours 19: [Modèles agents-centrés](cours-19-modeles-agents.html) 
