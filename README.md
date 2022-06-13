@@ -1,5 +1,5 @@
-# 3MC Course on Epidemiological Modelling
-You will find here material for the [3MC Course on Epidemiological Modelling](http://natural-sciences.nwu.ac.za/paa/3MC-Course-EM) that is to be held in South Africa in April 2022. Most of the material is arranged in 5 main subdirectories. Note that you can also access a web version of this site by following [this link](https://julien-arino.github.io/3MC-course-epidemiological-modelling/). In that version, the slides will open properly in a browser.
+# Petit cours d'épidémiologie mathématique
+Vous trouverez ici le matériel pour un *Petit cours d'épidémiologie mathématique* que je donnerai à N'Djaména en juin et juillet 2022. La majorité du matériel de cours est dans cinq sous-répertoires principaux, qui sont expliqués plus bas. Vous pouvez aussi acccéder à une version *web* de ce site en cliquant sur [ce lien](https://julien-arino.github.io/petit-cours-epidemio-mathematique/). Dans la version web, les transparents du cours seront utilisables dans un navigateur web classique.
 
 - `CODE` contains the `R` code that will be used during the School as well as some additional code that might prove useful. 
 - `DATA` contains a few datasets that will be used. These datasets will also be available online directly, but for the convenience of participants, they are collected here.
