@@ -1,1 +1,8 @@
 theme: jekyll-theme-minimal
+title: Petit cours d'épidémiologie mathématique
+description: Matériel du cours (transparents et code).
+show_downloads: true
+logo: /FIGS/plasmodium_entering_RBC.jpg
+google_analytics: UA-1943806-8
+plugins:
+  - jekyll-sitemap

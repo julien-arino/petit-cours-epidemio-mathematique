@@ -214,3 +214,14 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_yellow.png) 
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_green.png)
 
+---
+
+# Quelques abbréviations
+
+- PÉ: point d'équilibre
+- ESM: équilibre sans maladie
+- ÉÉ: équilibre endémique
+- LAS: localement asymptotiquement stable
+- SAL: stabilité asymptotique locale
+- GAS: globalement asymptotiquement stable
+- SAG: stabilité asymptotique globale

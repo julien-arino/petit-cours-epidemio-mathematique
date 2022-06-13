@@ -61,7 +61,7 @@ img[alt~="center"] {
 
 - Un "problème" avec la méthode de l'opérateur de prochaine génération
 - Modèle de tuberculose (TB) avec comportement non-trivial à l'origine
-- SLIRS avec population non constante
+- SIRS avec population non constante
 - États bistables
 
 ---
@@ -196,49 +196,47 @@ où $B(N)$ satisfait
 
 ---
 
-Since $N=S+E+I$, write the model using $N$, $E$ and $I$ as
+Puisque $N=S+E+I$, on écrit le modèle en utilisant $N$, $E$ et $I$ as
 $$
-\label{sys:SEI_TB}
 \begin{align}
-N' &= B(N)-dN-\delta I \\
-E' &= c\beta\frac{(N-E-I)I}{N}-(\varepsilon+\rho_1+d)E \\
-I' &= \varepsilon E-(\rho_2+\delta+d)I
+N' &= B(N)-dN-\delta I \tag{1a}\label{sys:SEI_TB_dN}\\
+E' &= c\beta\frac{(N-E-I)I}{N}-(\varepsilon+\rho_1+d)E \tag{1b}\label{sys:SEI_TB_dE}\\
+I' &= \varepsilon E-(\rho_2+\delta+d)I \tag{1c}\label{sys:SEI_TB_dI}
 \end{align}
 $$
 
 ---
 
-The issue here is with the DFE: we can have solutions limiting to $(0,0,0)$. Consider the system in proportions
+Le problème ici est en l'ESM: on peut avoir des solutions limitant en $(0,0,0)$. Considérons le système en proportions
 $$
-\label{sys:SEI_TB_prop}
 \begin{align}
-N' &= \left(\frac{B(N)}{N}-d-\delta i\right)N \\
+N' &= \left(\frac{B(N)}{N}-d-\delta i\right)N \tag{2a}\label{sys:SEI_TB_prop_dN} \\
 e' &=
-c\beta(1-e-i)i-\left(\varepsilon+\rho_1+\frac{B(N)}{N}+di\right)e \\
+c\beta(1-e-i)i-\left(\varepsilon+\rho_1+\frac{B(N)}{N}+di\right)e  \tag{2a}\label{sys:SEI_TB_prop_de} \\
 I' &= \varepsilon e-\left(\delta+\rho_2+\frac{B(N)}{N}+\delta
-  i\right)i
+  i\right)i \tag{2a}\label{sys:SEI_TB_prop_di} 
 \end{align}
 $$
-Extend the system at $\{N=0\}$ by replacing $\left.\frac{B(N)}{N}\right|_{N=0}$ by $b_0$ (3rd hypothesis on $B$)
+Étendons le système en $\{N=0\}$ en remplaçant $\left.\frac{B(N)}{N}\right|_{N=0}$ par $b_0$ (3ème hypothèse sur $B$)
 
 ---
 
-Biologically relevant region is the positively invariant compact set 
+Région d'intérêt biologiquement est l'ensemble compact positivement invariant
 $$
 \mathcal{B}=\{(N,e,i)\in\mathbb{R}^3_+: N\leq N_0,e+i\leq 1\}
 $$
-If $b_0=\infty$ ($B(N)=\Lambda$ constant), $N=0$ is unstable, so consider it finite from now on
+Si $b_0=\infty$ ($B(N)=\Lambda$ constant), $N=0$ est instable, donc on le considère fini désormais
 
-Two equilibria with $N=0$:
+Deux équilibres avec $N=0$:
  
 - $A_0=(0,0,0)$
-- $A_*=(0,e_*,i_*)$, with $e_*,i_*>0$
+- $A_*=(0,e_*,i_*)$, avec $e_*,i_*>0$
 
-Thus, at $A_*$, the population goes extinct, but in a "controlled" manner
+Donc, en $A_*$, la population s'éteint, mais de façon "controllée"
 
 ---
 
-Let
+Soit
 $$
 \mathcal{R}_0=\frac{c\beta\varepsilon}
 {(\delta+\rho_2+d)(\varepsilon+\rho_1+d)}
@@ -247,51 +245,51 @@ $$
 \mathcal{R}_1=\frac{c\beta\varepsilon}
 {(\delta+\rho_2+b_0)(\varepsilon+\rho_1+b_0)}
 $$
-and, if $\mathcal{R}_0>1$,
+et, si $\mathcal{R}_0>1$,
 $$
 \mathcal{R}_2=\frac{b_0}{d+\delta i_*}
 $$
 
 ---
 
-# Equilibria
+# Équilibres
 
 $X_0=(N_0,0,0)$, $X_*=(N_*,E_*,I_*)$ (unique)
 
 | | $A_0$ | $X_0$ | $A_*$ | $X_*$ |
 |:---|:---:|:---:|:---:|:---:|
 | $\mathcal{R}_0<1$ | instable | LAS | | |
-| $\mathcal{R}_2<1<\mathcal{R}_0,\mathcal{R}_1$ | unstable | unstable | LAS | |
-| $\mathcal{R}_1<1<\mathcal{R}_0,\mathcal{R}_2$ | unstable | unstable | | LAS |
-| $1<\mathcal{R}_0,\mathcal{R}_1,\mathcal{R}_2$ | unstable | unstable | unstable | LAS |
+| $\mathcal{R}_2<1<\mathcal{R}_0,\mathcal{R}_1$ | instable | instable | LAS | |
+| $\mathcal{R}_1<1<\mathcal{R}_0,\mathcal{R}_2$ | instable | instable | | LAS |
+| $1<\mathcal{R}_0,\mathcal{R}_1,\mathcal{R}_2$ | instable | instable | instable | LAS |
 
 ---
 
-# Global results
+# Résultats globaux
 
 <div class="theorem">
 
-The EP $A_0=(0,0,0)$ is never an omega-limit point of a solution of \eqre{sys:SEI_TB_prop} with initial conditions s.t. $N>0$, $e,i\geq 0$ and $e+i\leq 1$
+L'équilibre $A_0=(0,0,0)$ n'est jamais un point oméga-limite d'une solution de $\eqref{sys:SEI_TB_prop_dN}$-$\eqref{sys:SEI_TB_prop_di}$ avec condition initiale t.q. $N>0$, $e,i\geq 0$ et $e+i\leq 1$
 </div>
 
 <div class="theorem">
 
-If $\mathcal{R}_1<1$, then $(0,0,0)$ is not an omega-limit point for any solution of \eqref{sys:SEI_TB} with initial conditions in $\mathbb{R}^3_+\setminus\{(0,0,0)\}$
+Si $\mathcal{R}_1<1$, alors $(0,0,0)$ n'est pas un point oméga-limite d'une solution de $\eqref{sys:SEI_TB_dN}$-$\eqref{sys:SEI_TB_dI}$ avec condition initiale dans $\mathbb{R}^3_+\setminus\{(0,0,0)\}$
 </div>
 
 <div class="theorem">
 
-For system \eqref{sys:SEI_TB}, if $\mathcal{R}_0\leq 1$ then $X_0=(N_0,0,0)$ is GAS
+Pour le système $\eqref{sys:SEI_TB_dN}$-$\eqref{sys:SEI_TB_dI}$, si $\mathcal{R}_0\leq 1$ alors $X_0=(N_0,0,0)$ est GAS
 </div>
 
-In the case $\mathcal{R}_0,\mathcal{R}_2>1$, global stability of $X_*$ is established in "esoteric" conditions..
+Dans le cas $\mathcal{R}_0,\mathcal{R}_2>1$, la SAG de $X_*$ est établie dans des conditions "ésotériques"..
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->SLIRS with non-constant population
+# <!--fit-->SIRS avec population non constante
 
-# (Some periodic solutions)
+# (Des solutions périodiques)
 
 <div style = "position: relative; bottom: -35%; font-size:20px;">
 
@@ -301,9 +299,9 @@ Liu, Levin & Iwasa. [Influence of nonlinear incidence rates upon the behavior of
 
 ---
 
-# General setting
+# Contexte général
 
-SIRS model of the form
+Modèle SIRS de la forme
 
 $$
 \begin{align*}
@@ -313,30 +311,28 @@ R' &= \gamma I-(d+\nu)R
 \end{align*}
 $$
 
-$f$ differentiable and s.t. $f(0,I)=0$ for all $I$ and $\partial f/\partial S>0$
+$f$ différentiable et t.q. $f(0,I)=0$ pour tout $I$ et $\partial f/\partial S>0$
 
-Assume demographic component of the system
+Supposent que la composante démographique du système 
 $$
 N'=B(N)-dN
 $$
-admits a stable equilibrium $N_0$ s.t. $N_0=dN_0$
+admet un équilibre stable $N_0$ t.q. $N_0=dN_0$
 
-Since $N$ converges, they then reduce the dimension
+Puisque $N$ converge, ils réduisent ensuite la dimension
 
 ---
 
-# Case of incidence $f(S,I)=\beta I^{p-1}S^q$
+# Cas d'une incidence $f(S,I)=\beta I^{p-1}S^q$
 
-They establish generic conditions leading to the existence of a Hopf bifurcation, then consider the system when incidence take the form
+Ils établissent des conditions génériques conduisant à l'existence d'une bifurcation de Hopf, puis considèrent le système lorsque l'incidence est de la forme
 $$
 f(S,I)=\beta I^{p-1}S^q
 $$
 
----
+## Exemple $p=2$ et $q=1$
 
-# Example $p=2$ and $q=1$
-
-Gives the system (after some transformations)
+Après quelques transformations, obtiennent le système
 $$
 \begin{align}
 I' &= aI^2S - I, \tag{9"} \\
@@ -352,9 +348,9 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Bistable states
+# États bistables
 
-# Undesired effect of vaccination
+# (Conséquences indésirées de la vaccination)
 
 <div style = "position: relative; bottom: -35%; font-size:20px;">
 
@@ -364,13 +360,13 @@ Arino, McCluskey & PvdD. [Global results for an epidemic model with vaccination 
 
 ---
 
-# Another SIRS model with vaccination
+# Un autre modèle SIRS avec vaccination
 
 ![width:1000px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SIRV_newborns.png)
 
 ---
 
-# SIRSV epidemic model
+# Modèle SIRSV
 
 $$
 \begin{align}
@@ -384,15 +380,15 @@ V' &= \alpha dN+\phi S-(d+\theta)V
 \end{align}
 $$
 
-- $\alpha$ proportion of newborns vaccinated
-- $\phi$ vaccination rate of susceptibles
-- $\theta$ rate of vaccine efficacy loss
-- $1-\sigma$ vaccine efficacy
+- $\alpha$ proportion des nouveaux nés vaccinés
+- $\phi$ taux de vaccination des susceptibles
+- $\theta$ taux de perte de l'efficacité vaccinale
+- $1-\sigma$ efficacité vaccinale
 
 
 ---
 
-Since the total population is constant, the system in proportions takes the form
+Puisque la population totale est constante, le système en proportions s'écrit
 $$
 \begin{align}
 S' &= (1-\alpha)d-dS-\beta SI-\phi S+\theta
@@ -403,13 +399,13 @@ R' &= \gamma I-(d+\nu)R \tag{14c}\label{sys:vacc_3dR} \\
 V &= 1-(S+I+R)
 \end{align}
 $$
-where $S$, $I$, $R$, $V$ are the proportions of individuals who are in the susceptible, infectious, recovered and vaccinated, respectively
+où $S$, $I$, $R$, $V$ sont les proportions d'individus qui sont susceptibles, infectieux, guéris et vaccinés, respectivement
 
 ---
 
-# Equilibrium and bifurcations
+# Équilibres et bifurcations
 
-The system always has the DFE
+Le système $\eqref{sys:vacc_3dS}$-$\eqref{sys:vacc_3dR}$ a toujours l'ESM
 $$
 (S,I,R,V)=\left(
 \frac{\theta+d(1-\alpha)}{d+\theta+\phi},0,0,
@@ -417,19 +413,19 @@ $$
 \right)
 $$
 
-We now consider endemic equilibria with $I=I^\star >0$
+On considère maintenant le ou les équilibre(s) endémique(s) où $I=I^\star >0$
 
-When $\sigma=0$ (vaccine 100% efficacious), there is at most one endemic equilibrium. From now on, assume (realistic) that $0<\sigma<1$, i.e., vaccine is not 100% efficacious
+Quand le vaccin est 100% efficace ($\sigma=0$), il y a *au plus* un équilibre endémique. On suppose dorénavant que $0<\sigma<1$, i.e., le vaccin n'est pas 100% efficace (réaliste)
 
 ---
 
-# Existence of endemic equilbria
+# Existence d'équilibres endémiques
 
-The existence of endemic equilibria is determined by the number of positive roots of the polynomial
+L'existence d'ÉÉ est déterminé par le nombre de racine positives du polynôme
 $$
 P(I)=AI^2+BI+C
 $$
-where
+où
 $$
 A=-\sigma\beta^2\frac{d+\nu+\gamma}{d+\nu}<0
 $$
@@ -444,38 +440,38 @@ $$
 
 ---
 
-# Case of a forward bifurcation
+# Cas d'une bifurcation *à l'endroit*
 
 ![width:550px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/PI_vs_I_forward.png)  ![width:550px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SIRV_bif_forward.png)
 
 
 ---
 
-# Case of a backward bifurcation
+# Cas d'une bifurcation *à revers*
 
 ![width:550px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/PI_vs_I_backward.png)  ![width:550px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SIRV_bif_backward.png)
 
 ---
 
-# Bistable region
+# Région de bistabilité
  
-- Concavity of the curve is fixed (since $A<0$), so a necessary condition for existence of two endemic equilibria is: 
-  - $P'(0)=B>0$ and $P(0)=C<0$
-  - The roots of $P(I)$ must be real
+- Concavité de la courbe déterminée (puisque $A<0$), donc un condition nécessaire pour l'existence de 2 équilibres endémiques est: 
+  - $P'(0)=B>0$ et $P(0)=C<0$
+  - Les racines de $P(I)$ doivent être réelles
 
-$\implies$ region of bistability is $\Delta=B^2-4AC\geq 0$, $B>0$ and $C<0$
+$\implies$ région de bistabilité est $\Delta=B^2-4AC\geq 0$, $B>0$ et $C<0$
 
 ---
 
-# Bifurcation in the $(\sigma,\phi)$ plane
+# Bifurcation dans le plan $(\sigma,\phi)$
 
 ![width:800px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bif_sigma_vs_phi.png)
 
 ---
 
-# EEP
+# ÉÉ
 
-If there are such solutions $I^\star$ to $P(I)=0$ (potentielly a double root), EEP of \eqref{sys:SIR_vacc_AMV} are $(S,I,R,V)=$
+S'il y a de telles solutions $I^\star$ à $P(I)=0$ (potentiellement une racine double), ÉÉ de $\eqref{sys:SIR_vacc_AMV}$ sont $(S,I,R,V)=$
 
 $$
 \left(
@@ -490,17 +486,17 @@ $$
 
 # $\mathcal{R}_0$
 
-Using the next generation method, the reproduction number (with vaccination) is
+En utilisant la méthode de la matrice de prochaine génération, le nombre de reproduction avec vaccination est
 
 $$
 \mathcal{R}_\phi=\mathcal{R}_0
 \frac{d+\theta+\sigma\phi-d\alpha(1-\sigma)}{d+\theta+\phi}
 $$
-where
+où
 $$
 \mathcal{R}_0=\frac{\beta}{d+\gamma}
 $$
-and as a consequence
+et par conséquent
 $$
 \mathcal{R}
 (\alpha,\phi,1,\theta)=\mathcal{R}_0
@@ -508,27 +504,27 @@ $$
 
 ---
 
-# Stability - DFE
+# Stabilité - ESM
  
-- Using a theorem of PvdD & Watmough (2002), the DFE is
-  - locally asymptotically stable for $\mathcal{R}_\phi<1$
-  - unstable for $\mathcal{R}_\phi>1$
-- Furthermore, when $\mathcal{R}_0<1$, using $I$ as a Lyapunov function, it is easily shown the the DFE is globally asymptotically stable
+- Using a theorem of PvdD & Watmough (2002), l'ESM est
+  - LAS si $\mathcal{R}_\phi<1$
+  - instable si $\mathcal{R}_\phi>1$
+- De plus, lorsque $\mathcal{R}_0<1$, en utilisant $I$ comme fonction de Liapounoff, il est facile de montrer que l'ESM est GAS
 
 ---
 
-# Local stability - EEP
+# SAL - ÉÉ
 
-Linearising $\eqref{sys:vacc_3dS}$-$\eqref{sys:vacc_3dR}$ at the EEP
+En linéarisant $\eqref{sys:vacc_3dS}$-$\eqref{sys:vacc_3dR}$ en l'ÉÉ
  
-- at the smaller $I$, Jacobian matrix has negative trace and positive determinant $\implies$ one of the eigenvalues is positive and the lower bifurcating branch is unstable
-- On the upper branch, conclude from linearisation that there is either one or three eigenvalues with nonpositive real part $\implies$ stability is undetermined. From numerical investigations, the upper branch seems locally stable
+- au plus petit des $I$, la matrice jacobienne a sa trace strictement négative et son déterminant strictement positif $\implies$ une des valeurs propres est strictement positive et la branche basse de la bifurcation est instable
+- Sur la branche haute, on conclut de la linéarisation qu'il y a soit 1 soit 3 valeurs propres à partie réelle négative $\implies$ la stabilité est indéterminée. D'une étude numérique, il semble que la branche supérieure soint LAS
 
 ---
 
-# Spectral abscissa at the EP
+# Abscisse spectrale
 
-Spectral abscissa $s(J)$ (maximum of real parts of eigenvalues) of the linearisation at the DFE and the 2 EEP, when $\theta$ varies
+Abscisse spectrale $s(J)$ (maximum des parties réelles des valeurs propres) de la linéarisation en l'ESM et en les 2 ÉÉ, en fonction de $\theta$
 
 ![width:600px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/evalues_SIRbif.png)
 
@@ -536,11 +532,11 @@ Spectral abscissa $s(J)$ (maximum of real parts of eigenvalues) of the linearisa
 
 ---
 
-# Global behaviour
+# Comportement global
 
 <div class="theorem">
 
-Suppose that in the system \eqref{sys:SIR_vacc}, parameters satisfy
+Supposons que dans $\eqref{sys:SIR_vacc}$, les paramètres vérifient
 $$
 \begin{aligned}
   \theta &< d + 2 \nu                   \\
@@ -548,11 +544,11 @@ $$
   \gamma &< d + \phi + \nu
 \end{aligned}
 $$
-Then all positive semi-trajectories of \eqref{sys3dS}-\eqref{sys3dR} in $\bar D$, where
+Alors toutes les semi-trajectories strictement positives de $\eqref{sys3dS}$-$\eqref{sys3dR}$ dans $\bar D$, où
 $$
 D=\{(S,I,R): S,R\geq 0, I>0, S+I+R\leq 1\}
 $$
-limit to a unique equilibrium point
+limitent en un PE unique
 </div>
 
 ---
