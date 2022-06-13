@@ -78,7 +78,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 **Toutefois**: déterministe ne veut pas dire "aucune prise en compte de la stochasticité".. la stochasticité est juste cachée
 
-Étudier les temps de séjour dans les compartiments permet de réveler cette stochasticité cachée
+Étudier les temps de séjour dans les compartiments permet de révéler cette stochasticité cachée
 
 ---
 
@@ -90,8 +90,8 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # Quelques références
 
 L'objet n'est pas ici de définir "proprement" les choses. Pour cela, on consultera par exemple:
-- Rényi
--
+- [Rényi](https://www.gabay-editeur.com/RENYI-Calcul-des-probabilites-avec-un-appendice-sur-la-Theorie-de-lInformation-1966)
+- [Velenik](http://www.unige.ch/math/folks/velenik/cours.html) (cours pdf en ligne gratuits)
 
 ---
 

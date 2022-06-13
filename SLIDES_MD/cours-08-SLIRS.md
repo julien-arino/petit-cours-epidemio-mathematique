@@ -72,9 +72,9 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 | Maladie | Durée d'incubation |
 |:----|:----|
 | Yersinia Pestis | 2-6 jours |
-| Fièvre hémorragique Ebola | 2-21 jours |
-| Fièvre hémorragique Marburg | 5-10 jours |
-| Fièvre hémorragique Lassa | 1-3 semaines |
+| Fièvre hémorragique virale (FHV) Ebola | 2-21 jours |
+| FHV Marburg | 5-10 jours |
+| FHV Lassa | 1-3 semaines |
 | Tsé-tsé | semaines, mois |
 | VIH/SIDA | mois, années |
 
@@ -756,75 +756,14 @@ On verra ailleurs ([Cours ]()) une autre façon de modéliser la vaccination, ai
 
 ---
 
-# Lyapunov function for SLIR and SLIS
+# SLIRS - Mukherjee, Chattopadhyay & Tapaswi
 
-Andrei Korobeinikov. Considers an SLIR with constant population normalised to 1 and vertical transmission
-
-$$
-\begin{align}
-S' &= d-\beta SI -pdI-qdL-dS 
-\tag{23a}\label{sys:SEIR_vert_transmission_dS} \\
-L' &= \beta SI +pdI-(\varepsilon+d-qd)L 
-\tag{23b}\label{sys:SEIR_vert_transmission_dL} \\
-I' &= \varepsilon L-(\gamma+d)I 
-\tag{23c}\label{sys:SEIR_vert_transmission_dI}
-\end{align}
-$$
-
-- $p$ proportion of newborns from $I$ who are $I$ at birth
-- $q$ proportion of newborns from $L$ who are $L$ at birth
-- $R$ does not influence the dynamics of the system, so not shown
-
----
-
-# Equilibria
- 
-- DFE: $E_0=(1,0,0)$
-- EEP: $E^\star =(S^\star,L^\star,I^\star)$ with
-$$
-S^\star =\frac 1{\mathcal{R}_0^v}\quad L^\star =\frac{d}{\varepsilon+d}\left(1-\frac
-  1{\mathcal{R}_0^v}\right) 
-\quad
-I^\star =\frac{d\varepsilon}{(\varepsilon+d)(\gamma+d)}\left(1-\frac
-  1{\mathcal{R}_0^v}\right) 
-$$
-
-where
-$$
-\tag{24}
-\mathcal{R}_0^v=\frac{\beta\varepsilon}
-{(\gamma+d)(\varepsilon+d)-qd(\varepsilon+d)-pd\varepsilon}
-$$
-is the basic reproduction number with vertical transmission. We have $\mathcal{R}_0=\mathcal{R}_0^v \iff p=q=0$. On the other hand, $\mathcal{R}_0^v=1$ when $\mathcal{R}_0=1$
-
-$E^\star$ is biologically relevant only when $\mathcal{R}_0^v>1$
-
----
-
-
-Use the function
-$$
-\tag{25}
-V=\sum a_i(x_i-x_i^\star  \ln x_i)
-$$
-
-<div class="theorem">
- 
-- If $\mathcal{R}_0>1$, then system $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ has the globally asymptotically stable equilibrium $E^\star$
-- If $\mathcal{R}_0\leq 1$, then system $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ has the globally asymptotically stable DFE $E_0$ and $E^\star$ is not biologically relevant
-</div>
-
-
----
-
-# SEIRS - Mukherjee, Chattopadhyay & Tapaswi
-
-SEIRS with constant birth rate $d$, *per capita* death rate $d$ and incidence function
+SLIRS (SEIRS) avec naissance constante $d$, mortalité *per capita* $d$ et fonction d'incidence
 $$
 f(S,I,N)=\beta S^q I^p
 $$
 
-After establishing uniform boundedness of the system, they define 
+Établissent bornitude uniforme, puis définissent
 $$
 V(S,E,I)=\frac 12\left(
 (S-S^\star )^2+(E-E^\star )^2+(I-I^\star )^2\right)
@@ -837,7 +776,7 @@ Mukherjee, Chattopadhyay & Tapaswi. [Global stability results of epidemiological
 
 ---
 
-Defining matrix
+Définissant
 $$
 A=\left(
 \begin{array}{ccc}
@@ -850,20 +789,20 @@ h(I)+\varepsilon) \\
 \end{array}
 \right)
 $$
-with functions $g$ and $h$ s.t.
+avec fonctions $g$ et $h$ t.q.
 $$
 S^q-S^{*q}=(S-S^\star )g(S),\quad I^p-I^{*p}=(I-I^\star )h(I)
 $$
-they obtain the following result
+ils obtiennent le résultat suivant
 
 <div class="theorem">
 
-Function $V$ is s.t. $V'<0$ if
+La fonction $V$ est t.q. $V'<0$ si
 - $4(\beta I^{*p}g(S)+d+\nu)(\varepsilon+d)>(\nu-\beta I^{*p}g(S))^2$
 - $\det A>0$
 </div>
 
-Clearly, this is hard to use in practice so the system was studied in other ways
+Clairement, dur à verifier en pratique, donc le système est étudié d'autres façons
 
 ---
 
@@ -884,42 +823,40 @@ $$
 
 ---
 
-# Li, Muldowney and PvdD - CAMQ (1999)
+# Li, Muldowney & PvdD - CAMQ (1999)
 
-SEIRS with incidence
+SLIRS (SEIRS) avec incidence
 $$
 f(S,I,N)=\beta g(I)S
 $$
-where $g$ is s.t. $g(0)=0$, $g(I)>0$ for $I\in(0,1]$ and $g\in
+où $g$ t.q. $g(0)=0$, $g(I)>0$ pour $I\in(0,1]$ et $g\in
 C^1(0,1]$
 
-They normalise the total population, so $S+E+I+R=1$. They make an additional hypothesis about $g$:
+Normalisent la population totale à $S+E+I+R=1$. Hypothèse additionnelle sur $g:$
 
-- **(H)** $c=\lim_{I\to 0^+} \frac{g(I)}{I}\leq +\infty$; when $0<c<+\infty$, $g(I)\leq cI$ for sufficiently small $I$
+- **(H)** $c=\lim_{I\to 0^+} \frac{g(I)}{I}\leq +\infty$; quand $0<c<+\infty$, $g(I)\leq cI$ pour $I$ suffisamment petit
 
 ---
 
-We have
+On a
 $$
 \frac{\partial\overline{f}}{\partial I}=\beta\frac{\partial\overline{g}}{\partial I}
 $$
-Since $\dfrac{\partial\overline{g}}{\partial I}=\lim_{I\to 0^+}
+Puisque $\dfrac{\partial\overline{g}}{\partial I}=\lim_{I\to 0^+}
 \dfrac{g(I)}{I}=c$, 
 $$
 \mathcal{R}_0=\frac{c\beta\varepsilon}
 {(d+\varepsilon)(d+\gamma)}
 $$
 
-The local stability results already established are valid here, since $g$ is a particular case of the function $f$ used to establish these results
-
 ---
 
 <div class="theorem">
 
-If $g(I)$ satisfies hypothesis **(H)**, then system $f(S,I,N)=\beta S^q I^p$ with incidence $f(S,I,N)=\beta S^q I^p$ is uniformly persistent if and only if $\mathcal{R}_0>1$
+Si $g(I)$ satisfait **(H)**, alors le système avec incidence $f(S,I,N)=\beta S^q I^p$ est uniformément persistant $\iff\mathcal{R}_0>1$
 </div>
 
-The system is **uniformly persistent** if there exists $0<\epsilon_0<1$ s.t. any solution $(S(t),E(t),I(t),R(t))$ of SEIRS with initial condition $(S(0),E(0),I(0),R(0))\in \overset{\circ}{\Gamma}$ satisfies
+Le système est **uniformément persistant** s'il existe $0<\epsilon_0<1$ t.q. toute solution $(S(t),E(t),I(t),R(t))$ du SEIRS avec conditions initiales $(S(0),E(0),I(0),R(0))\in \overset{\circ}{\Gamma}$ satisfait
 $$
 \begin{array}{c}
 \liminf_{t\to\infty} S(t)\geq \epsilon_0,\quad 
@@ -933,136 +870,82 @@ $$
 
 <div class="theorem">
 
-Suppose that incidence $f(S,I,N)=\beta S^q I^p$ satisfies **(H)** and that
+Supposons que l'incidence $f(S,I,N)=\beta S^q I^p$ satisfait **(H)** et que 
 $$
 |g'(I)|I\leq g(I) \textrm{ pour }I\in(0,1]
 $$
-Suppose additionnally that $\mathcal{R}_0>1$ and that one of the conditions
+Supposons additionnallement que $\mathcal{R}_0>1$ et que l'une des conditions
 $$
 \begin{gather*}
 \gamma\nu<\epsilon_0(\beta\eta_0+\gamma+d)(\beta\eta_0+\nu+d) \\
 \varepsilon-\gamma-d<\nu
 \end{gather*}
 $$
-is satisfied, where 
+soit satisfaite, où
 $$
 \eta_0=\min_{I\in[\epsilon_0,1]}g(I)>0
 $$
-and $\epsilon_0$ defined by (\ref{eq:SEIRS_persist}). Then there is no closed rectifiable curve that is invariant with respect to SEIRS. Furthermore, each semi-trajectory of SEIRS in $\Gamma$ converges to an equilibrium
+et $\epsilon_0$ est défini comme précédemment. Alors il n'y a pas de courbe fermée rectifiable qui soit invariante sous le flot de SEIRS. De plus, toute semi-trajectoire de SEIRS dans $\Gamma$ converge vers un équilibre
 </div>
 
-The proof uses compound matrices (see [Practicum 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html))
-
+La preuve utilise les matrices composées (voir [Cours 11]())
 
 
 ---
 
-# Example of the SLIRS model
+# Fonction de Liapounoff pour SLIR et SLIS
 
-Variations of the infected variables described by
+Andrei Korobeinikov. Considère un SLIR avec population constante normalisée à 1 et avec transmission verticale
+
 $$
-\begin{align*}
-L' &= f(S,I,N)-(\varepsilon+d) L \\
-I' &= \varepsilon L -(d+\gamma) I
-\end{align*}
+\begin{align}
+S' &= d-\beta SI -pdI-qdL-dS 
+\tag{23a}\label{sys:SEIR_vert_transmission_dS} \\
+L' &= \beta SI +pdI-(\varepsilon+d-qd)L 
+\tag{23b}\label{sys:SEIR_vert_transmission_dL} \\
+I' &= \varepsilon L-(\gamma+d)I 
+\tag{23c}\label{sys:SEIR_vert_transmission_dI}
+\end{align}
 $$
-Thus
-$$
-\left(
-\begin{matrix}
-L \\
-I
-\end{matrix}
-\right)'
-=\left(
-\begin{matrix}
-f(S,I,N) \\
-0
-\end{matrix}
-\right)
--
-\left(
-\begin{matrix}
-(\varepsilon+d) L \\
-(d+\gamma) I-\varepsilon L
-\end{matrix}
-\right)=\mathcal{F}-\mathcal{V}
-$$
+
+- $p$ proportion de nouveaux nés de $I$ qui sont $I$ à la naissance
+- $q$ proportion de nouveaux nés de $L$ qui sont $L$ à la naissance
+- $R$ n'influe pas sur la dynamique du système, on ne le montre pas
 
 ---
 
-Then compute the Jacobian matrices of vectors $\mathcal{F}$ and $\mathcal{V}$
+# Équilibres
+ 
+- ESM: $E_0=(1,0,0)$
+- EE: $E^\star =(S^\star,L^\star,I^\star)$ avec
 $$
-F=\left(
-\begin{matrix}
-\dfrac{\partial\overline{f}}{\partial L}
-& \dfrac{\partial\overline{f}}{\partial I} \\
-0 & 0
-\end{matrix}
-\right),\quad
-V=\left(
-\begin{matrix}
-\varepsilon+d & 0 \\
--\varepsilon & d+\gamma
-\end{matrix}
-\right)
+S^\star =\frac 1{\mathcal{R}_0^v}\quad L^\star =\frac{d}{\varepsilon+d}\left(1-\frac
+  1{\mathcal{R}_0^v}\right) 
+\quad
+I^\star =\frac{d\varepsilon}{(\varepsilon+d)(\gamma+d)}\left(1-\frac
+  1{\mathcal{R}_0^v}\right) 
 $$
-where
+où
 $$
-\frac{\partial\overline{f}}{\partial I}:=
-\frac{\partial f}{\partial I}(\bar
-S,\bar I,\bar N)\quad\quad 
-\frac{\partial\overline{f}}{\partial L}:=
-\frac{\partial f}{\partial L}(\bar
-S,\bar I,\bar N)
+\tag{24}
+\mathcal{R}_0^v=\frac{\beta\varepsilon}
+{(\gamma+d)(\varepsilon+d)-qd(\varepsilon+d)-pd\varepsilon}
 $$
+est le nombre de reproduction élémentaire avec transmission verticale. On a $\mathcal{R}_0=\mathcal{R}_0^v \iff p=q=0.$ Par ailleurs, $\mathcal{R}_0^v=1$ lorsque $\mathcal{R}_0=1$
+
+$E^\star$ est biologiquement valide seulement lorsque $\mathcal{R}_0^v>1$
 
 ---
 
-We have
-$$
-V^{-1}=\dfrac{1}{(d+\varepsilon)(d+\gamma)}
-\left(
-\begin{matrix}
-d+\gamma & 0 \\
-\varepsilon & d+\varepsilon
-\end{matrix}
-\right)
-$$
 
-Also, when $N$ constant, $\partial f/\partial
-L=0$, then
+Utilisons la fonction
 $$
-FV^{-1}=\dfrac{{\partial\overline{f}}/{\partial I}}
-{(d+\varepsilon)(d+\gamma)}
-\left(
-\begin{matrix}
-\varepsilon 
-& d+\varepsilon  \\
-0 & 0
-\end{matrix}
-\right)
+\tag{25}
+V=\sum a_i(x_i-x_i^\star  \ln x_i)
 $$
-and thus,
-$$
-\mathcal{R}_0=\varepsilon
-\dfrac{{\partial\overline{f}}/{\partial I}}
-{(d+\varepsilon)(d+\gamma)}
-$$
-
----
 
 <div class="theorem">
-
-Let
-$$
-\mathcal{R}_0=
-\dfrac{\varepsilon\dfrac{\partial\overline{f}}{\partial I}}
-{(d+\varepsilon)(d+\gamma)}
-$$
-
-Then 
-- if $\mathcal{R}_0<1$, the DFE is LAS
-- if $\mathcal{R}_0>1$, the DFE is unstable
+ 
+- Si $\mathcal{R}_0>1$, alors $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ a l'équilibre GAS $E^\star$
+- Si $\mathcal{R}_0\leq 1$, alors $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ a l'ESM $E_0$ GAS et $E^\star$ n'est pas valide biologiquement
 </div>
-

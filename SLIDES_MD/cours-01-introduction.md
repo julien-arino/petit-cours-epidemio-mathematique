@@ -83,22 +83,22 @@ table {
 }
 </style>
 
-| Event | Date | Location | Disease | Death toll (estimate) |
+| Evènement | Date | Lieu | Maladie | Mortalité (estimée) |
 |---|---|---|---|---|
-| Plague of Megiddo | 1350 BCE | Megiddo, land of Canaan | Unknown | Unknown | 
-| [Plague of Athens](https://en.wikipedia.org/wiki/Plague_of_Athens) | 429–426 BCE | Greece, Libya, Egypt, Ethiopia | Possibly typhus, typhoid fever or VHF |  75,000–100,000 |
-| [412 BCE epidemic](https://en.wikipedia.org/wiki/412_BC_epidemic) |412 BCE | Greece, Roman Republic | Possibly influenza | Unknown |
-| [Antonine Plague](https://en.wikipedia.org/wiki/Antonine_Plague) | 165–180 CE (possibly up to 190 CE) | Roman Empire | Possibly smallpox | 5–10 million |
-| Jian'an Plague | 217 CE | Han dynasty | Possibly typhoid fever or VHF | Unknown |
-| [Plague of Cyprian](https://en.wikipedia.org/wiki/Plague_of_Cyprian) | 250–266 CE | Europe | Possibly smallpox | Unknown |
-| [Plague of Justinian](https://en.wikipedia.org/wiki/Plague_of_Justinian) (1st plague pandemic) | 541–549 CE | Europe and West Asia | Bubonic plague | 15–100 million (25–60% of population of Europe) | 
-| [Roman Plague of 590](https://en.wikipedia.org/wiki/Roman_Plague_of_590) (1st plague pandemic) | 590 CE | Rome, Byzantine Empire | Bubonic plague | Unknown |
-| [Plague of Sheroe](https://en.wikipedia.org/wiki/Plague_of_Sheroe) (1st plague pandemic) | 627–628 CE | Bilad al-Sham | Bubonic plague | 25,000+ |
-| [Plague of Amwas](https://en.wikipedia.org/wiki/Plague_of_Amwas) (1st plague pandemic) | 638–639 CE | Byzantine Empire, West Asia, Africa | Bubonic plague | 25,000+ |
-| [Plague of 664](https://en.wikipedia.org/wiki/Plague_of_664) (1st plague pandemic)  | 664–689 CE | British Isles | Bubonic plague | Unknown |
-| Plague of 698–701 (1st plague pandemic) | 698–701 CE | Byzantine Empire, West Asia, Syria, Mesopotamia | Bubonic plague |Unknown |
-| [735–737 Japanese smallpox epidemic](https://en.wikipedia.org/wiki/735%E2%80%93737_Japanese_smallpox_epidemic) | 735–737 CE | Japan | Smallpox | 2 million (approx. 1/3 of Japanese population) | 
-| Plague of 746–747 (1st plague pandemic) | 746–747 CE | Byzantine Empire, West Asia, Africa | Bubonic plague |Unknown |
+| Peste de Megiddo | 1350 AEC | Megiddo, terre de Canaan | ? | ? | 
+| [Peste d'Athène](https://en.wikipedia.org/wiki/Plague_of_Athens) | 429–426 AEC | Grèce, Libye, Égypte, Éthiopie | Typhus, fièvre typhoide ou FHV ? |  75 000–10 000 |
+| [Épidémie 412 AEC](https://en.wikipedia.org/wiki/412_BC_epidemic) |412 AEC | Grèce, République romaine | Influenza ? | ? |
+| [Antonine Plague](https://en.wikipedia.org/wiki/Antonine_Plague) | 165–180 EC (jusqu'à 190 EC ?) | Empire romain | Variole ? | 5–10 million |
+| Peste de Jian'an | 217 EC | Dynastie Han | Fièvre typhoide ou FHV ? | ? |
+| [Plague of Cyprian](https://en.wikipedia.org/wiki/Plague_of_Cyprian) | 250–266 EC | Europe | Variole ? | ? |
+| [Plague of Justinian](https://en.wikipedia.org/wiki/Plague_of_Justinian) (1ère pandémie de peste) | 541–549 EC | Europe et Asie de l'Ouest | Peste bubonique | 15–100 million (25–60% de la population Européenne) | 
+| [Roman Plague of 590](https://en.wikipedia.org/wiki/Roman_Plague_of_590) (1ère pandémie de peste) | 590 EC | Rome, Empire Byzantin | Peste bubonique | ? |
+| [Plague of Sheroe](https://en.wikipedia.org/wiki/Plague_of_Sheroe) (1ère pandémie de peste) | 627–628 EC | Bilad al-Sham | Peste bubonique | 25 000+ |
+| [Plague of Amwas](https://en.wikipedia.org/wiki/Plague_of_Amwas) (1ère pandémie de peste) | 638–639 EC | Empire Byzantin, Asie de l'Ouest, Afrique | Peste bubonique | 25 000+ |
+| [Plague of 664](https://en.wikipedia.org/wiki/Plague_of_664) (1ère pandémie de peste)  | 664–689 EC | Iles Britiniques | Peste bubonique | ? |
+| Peste de 698–701 (1ère pandémie de peste) | 698–701 EC | Empitre Byzantin, Asie de l'Ouest, Syrie, Mésopotamie | Peste bubonique | ? |
+| [Épidémie japonaise de variole de 735–737](https://en.wikipedia.org/wiki/735%E2%80%93737_Japanese_smallpox_epidemic) | 735–737 EC | Japon | Variole | 2 million (approx. 1/3 de la population japonaise) | 
+| Peste de 746–747 (1ère pandémie de peste) | 746–747 EC | Empire Byzantin, Asie de l'Ouest, Afrique | Peste bubonique | ? |
 
 ---
 
@@ -162,9 +162,9 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 # Courbes épidémiques
 
-- Used to record the occurrence of new cases as a function of time
-- When not too many cases, usually "individualised" (bar plots)
-- When number of cases is large, continuous curve
+- Utilisées pour compter les nouveaux cas en fonction du temps
+- Peu de cas: typiquement "individualisées" (diagrammes en batons)
+- Beaucoup de cas: courbe continue
 
 ---
 
@@ -218,12 +218,12 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 | Période | Phase | Description |
 |:---|:---:|:---|
-| Interpandémie | 1 | No animal influenza virus circulating among animals has been reported to cause infection in humans |
-| | 2 | Animal influenza virus circulating in domesticated or wild animals known to have caused infection in humans and therefore considered a specific potential pandemic threat |
-| Pandemic alert | 3 | Animal or human-animal influenza reassortant virus has caused sporadic cases or small clusters of disease in people, but has not resulted in H2H transmission sufficient to sustain community-level outbreaks |
-| | 4 | Human-to-human transmission of an animal or human-animal influenza reassortant virus able to sustain community-level outbreaks has been verified |
-| | 5 | Same identified virus has caused sustained community-level outbreaks in at least 2 countries in 1 WHO region |
-| Pandemic | 6 | In addition to criteria in Phase 5, same virus has caused sustained community-level outbreaks in at least 1 other country in another WHO region |
+| Interpandémie | 1 | Pas de rapports d'infection d'humains par un virus influenza animal circulant dans une population animale |
+| | 2 | Un virus influenza animal circulant dans une population domestiquée ou sauvage a été observé comme causant des infections chez les humains et a par conséquent un potentiel pandémique |
+| Alerte pandémique | 3 | Animal or human-animal influenza reassortant virus has caused sporadic cases or small clusters of disease in people, but has not resulted in H2H transmission sufficient to sustain community-level outbreaks |
+| | 4 | Une transmission humain-à-humain (H2H) d'un virus influenza recombinant animal ou humain-animal capable de propagation soutenue au niveau des communautés, est vérifiée |
+| | 5 | Le virus identifié a provoqué des explosions (*outbreaks*) soutenues au niveau des communautés dans au moins 2 pays dans 1 région OMS |
+| Pandémie | 6 | En plus des critères de la Phase 5, le même virus a provoqué des explosions soutenues au niveau des communautés dans au moins 1 autre pays dans une région OMS différente |
 </div>
 
 ---
@@ -241,24 +241,24 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 > Epidemiological information is used to plan and evaluate **strategies to prevent illness** and as a guide to the **management of patients** in whom disease has already developed
 
-- Preventing illness
-    - Prophylactic measures
+- Prévention des maladies
+    - Mesures prophylactiques
     - Vaccination
-- Managing illness
-    - Prevention of further spread (e.g., in hospital)
-    - Treatment
+- Gestion de la maladie
+    - Prévention de la propagation (e.g., en hôpital)
+    - Traitement
 
 ---
 
 # Immunisation
 
-- Smallpox first disease for which it was known 
-- Mentioned in a 1549 Chinese book
-- China: powdered smallpox scabs blown up noses of the healthy; variolation-induced mortality not negligible (0.5-2%) but lower than normal (20%)
-- 1798:  Edward Jenner introduces safer inoculation with cowpox (vaccination)
-- 1880s: Pasteur extends vaccination to chicken cholera and anthrax in animals and human rabies
+- Variole première maladie pour laquelle le procédé est connu
+- Mentionné dans un livre chinois de 1549
+- Chine: vésicules pulvérisées soufflées dans le nez des individus sains; mortalité induite par la variolation non négligeable (0.5-2%) mais plus bas que normal (20%)
+- 1798:  Edward Jenner introduit une inoculation plus sûre avec la variole de la vache (vaccination)
+- 1880s: Pasteur étend la vaccination au cholera du poulet et l'anthrax chez l'animal et la rage chez l'humain
 
-At the time, *herd immunity* was not understood so this was for personal protection
+L'*immunité de groupe* n'était pas un concept à cette époque, on utilisait donc ça pour la protection individuelle seulement
 
 ---
 
@@ -305,8 +305,8 @@ Cas de rougeole (*measles*) aux USA
 
 - Probablement l'un des plus grands tournants en épi-math
 - Nous passons ceci en détail dans le [Cours 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L02_BasicMathEpi.html)
-- Groundbreaking set of papers starting in 1927
-  - We will see one particular case, the most well known, but I point out here and point out in Lecture 02 that this is just the tip of the iceberg of their work
+- Série de papiers commençant en 1927
+  - On considère un cas particulier, le plus connu, mais c'est juste la partie émergée de l'iceberg de leur travail
 
 ---
 
@@ -324,13 +324,13 @@ Cas de rougeole (*measles*) aux USA
 
 ---
 
-# A more recent trend
+# Une tendance plus récente
 
-- Some rare numerical work $\leq$ 1980s, mostly simulation of math models
+- Quelques travaux numériques $\leq$ 1980s, principalement simulation de modèles mathématiques
   - Baroyan, Rvachev et al. [Computer modelling of influenza epidemics for the whole country (USSR)](https://doi.org/10.2307/1426167). *Advances in Applied Probability* (1971)
   - Rvachev & Longini. [A mathematical model for the global spread of influenza](https://doi.org/10.1016/0025-5564(85)90064-1). *Mathematical Biosciences* (1986)
-  - Flahault, Letrait et al.[Modelling the 1985 influenza epidemic in France](https://doi.org/10.1002/sim.4780071107). *Statistics in Medicine* (1988)
-- More and more frequent now, to the point that some modelling studies are purely simulation-based
+  - Flahault, Letrait et al. [Modelling the 1985 influenza epidemic in France](https://doi.org/10.1002/sim.4780071107). *Statistics in Medicine* (1988)
+- De plus en plus fréquent, au point que maintenant certaines études sont uniquement basées sur les simulations
 
 ---
 

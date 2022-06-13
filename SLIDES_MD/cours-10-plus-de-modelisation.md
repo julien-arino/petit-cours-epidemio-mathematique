@@ -56,45 +56,31 @@ img[alt~="center"] {
 
 ---
 
-<!-- _backgroundImage: "radial-gradient(white,80%,#85110d)" -->
-# Outline
-
-- Additional considerations and a few oddities
-- A few (recent?) models
-- Quick overview of missing topics
-
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #85110d, 20%, white)" -->
-# <!--fit-->Additional considerations and a few oddities
-
----
-
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Outline
+# Plan du cours
 
-- An "issue" with the next generation method for $\mathcal{R}_0$
-- Tuberculosis (TB) model with non-trivial behaviour at the origin
-- SLIRS with non-constant population
-- Bistable states
+- Un "problème" avec la méthode de l'opérateur de prochaine génération
+- Modèle de tuberculose (TB) avec comportement non-trivial à l'origine
+- SLIRS avec population non constante
+- États bistables
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->An "issue" with the next generation method for $\mathcal{R}_0$
+# Un "problème" avec la méthode de l'opérateur de prochaine génération
 
-# (Malaria model with transgenic vectors)
+# (Modèle de malaria avec vecteurs transgéniques)
 
-<div style = "position: relative; bottom: -40%; font-size:20px;">
+<div style = "position: relative; bottom: -35%; font-size:20px;">
 
 JA, Bowman, Gumel & Portet. [Effect of pathogen-resistant vectors on the transmission dynamics of a vector-borne disease](http://dx.doi.org/10.1080/17513750701605614). *Journal of Biological Dynamics* **1**:320-346 (2007)
 </div>
 
 ---
 
-# Foreword
+# Avant-propos
 
-- This is not an issue with the method itself, but an illustration of the reason why it is important to check that (A1)-(A5) are satisfied when using the next generation matrix method of [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6)
+- Ceci n'est pas un problème avec la méthode elle-même, mais une illustration de la raison pour laquelle il est important de vérifier les conditions d'applicabilité (A1)-(A5) quand on utilise la méthode de  [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6)
 
 ---
 
@@ -103,17 +89,17 @@ JA, Bowman, Gumel & Portet. [Effect of pathogen-resistant vectors on the transmi
 ---
 
 
-# Hypotheses about mosquitoes
+# Hypothèses sur les moustiques (vecteurs)
 
-- **H1** Resistant vectors are completely immune to the pathogen
-- **H2-a**  A proportion $p_1$ of the offspring resulting from the interbreeding of wild and resistant vectors are resistant to the pathogen
-- **H2-b**  A proportion $p_2$$ of the offspring resulting from inbreeding within the resistant type are resistant to the pathogen
-- **H3** In the absence of disease, wild vectors are better fitted for competition than resistant vectors
-- **H4** Wild vectors are ill-fitted for competition when they carry the disease
+- **H1** Les vecteurs résistants sont complètement immuns au pathogène
+- **H2-a**  Une proportion $p_1$ de la progéniture résultant de la reproduction d'un parent sauvage et d'un parent resistant sont résistants au pathogène
+- **H2-b**  Une proportion $p_2$ de la progéniture résultant de la reprpduction de deux parents résistants sont résistants
+- **H3** En absence de maladie, les vecteurs sauvages sont mieux adaptés à la compétition que les vecteurs résistants
+- **H4** Les vecteurs sauvages sont moins adaptés à la compétition lorsqu'ils sont infectés par le parasite
 
 ---
 
-# The model
+# Le modèle
 
 $$
 \begin{align}
@@ -128,14 +114,14 @@ $$
 
 - $f_V,f_H\in C^1$
 - $f_V,f_H\geq 0$
-- $f_V=0$ if $S=0$ or $I_H=0$
-- $f_H=0$ if $S_H=0$ or $I=0$
+- $f_V=0$ si $S=0$ ou $I_H=0$
+- $f_H=0$ si $S_H=0$ ou $I=0$
 
 ---
 
-# Coexistence of vectors
+# Coexistence des vecteurs
 
-- Can wild type and transgenic vectors coexist?
+- Est-ce que les vecteurs sauvages peuvent coexister avec les vecteurs transgéniques?
 
 $$
 \begin{align}
@@ -148,7 +134,7 @@ T' &= p_2\frac{\alpha_3}{2}T
 \end{align}
 $$
 
-Fitness (from undetailed assumptions, $\mathbb{F}_S\geq\mathbb{F}_T$):
+Fitness (il suit d'hypothèses non détaillées que $\mathbb{F}_S\geq\mathbb{F}_T$):
 $$
 \mathbb{F}_S=
 \frac{\alpha_1-2d_W}{2\kappa_S}
@@ -157,7 +143,7 @@ $$
 \frac{p_2\alpha_3-2d_T}{2\kappa_T}
 $$
 
-Find 2 boundary EP $\bar E_0=(S,T)=(0,0)$ and $\bar E_W=(S,T)=(\mathbb{F}_S,0)$ and one coexistence EP $\bar E_C$. If there is no loss of resistance in offspring of two resistant parents ($p_2=1$), then there is another boundary EP $\bar E_T=(0,\mathbb{F}_T)$
+On trouve 2 équilibres frontière $\bar E_0=(S,T)=(0,0)$ et $\bar E_W=(S,T)=(\mathbb{F}_S,0)$ et un équilibre de coexistence $\bar E_C$. En absence de perte de résistance chez la progéniture de deux parents résistants ($p_2=1$), il y a un autre equilibre frontière $\bar E_T=(0,\mathbb{F}_T)$
 
 ---
 
@@ -165,44 +151,44 @@ Find 2 boundary EP $\bar E_0=(S,T)=(0,0)$ and $\bar E_W=(S,T)=(\mathbb{F}_S,0)$ 
 
 ---
 
-# Where the problem arises
+# Là où le problème a lieu
 
-There are up to 4 EPs for vectors and these are independent from the host population in the case when disease is absent
+Il y a jusqu'à 4 équilibres pour les vecteurs, qui sont indépendants de la population hôte lorsque la maladie est absente
 
-$\implies$ the whole coupled system with vectors *and* hosts has up to 4 DFE
+$\implies$ le système couplé avec vecteurs *et* hôtes a jusqu'à 4 ESM
 
-We can use the method of [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6) at each of these DFE to get the local stability properties of these DFE
+On peut utiliser la méthode de [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6) en chacun de ces ESM pour déduire les propriétés de stabilité locale de ces ESM
 
-At $\bar E_0$, we find $\mathcal{R}_0=0$, which makes no sense. What's wrong?
+En $\bar E_0$, on trouve $\mathcal{R}_0=0$, ce qui n'a pas de sens. Qu'est-ce qui cloche?
 
-Problem is with (A5): compute Jacobian of $(S,T)$ system and evaluate at $\bar E_0$, we get e-values $\lambda_1=\kappa_S\mathbb{F}_S>0$ and $\lambda_2=\kappa_T\mathbb{F}_T$, so $\bar E_0$ is always unstable $\implies$ (A5) cannot be satisfied at $\bar E_0$ and the LAS condition provided by [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6) is not usable
+Problème avec (A5): si on calcule la Jacobienne du système en $(S,T)$ et qu'on évalue en $\bar E_0$, on trouve les valeurs propres $\lambda_1=\kappa_S\mathbb{F}_S>0$ et $\lambda_2=\kappa_T\mathbb{F}_T$, donc $\bar E_0$ est toujours instable $\implies$ (A5) ne peut jamais être satisfaite en $\bar E_0$ et la condition pour la SAL donnée par [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6) n'est pas utilisable
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# Non-trivial behaviour at the origin
+# Modèle de tuberculose (TB) avec comportement non-trivial à l'origine
 
 
-# <!--fit-->(Tuberculosis model with complicated recruitment)
+# (Modèle avec recrutement compliqué)
 
-<div style = "position: relative; bottom: -40%; font-size:20px;">
+<div style = "position: relative; bottom: -35%; font-size:20px;">
 
 McCluskey & PvdD. [Global Analysis of Two Tuberculosis Models](https://doi.org/10.1023/B:JODY.0000041283.66784.3e). *Journal of Dynamics and Differential Equations* **16**:139–166 (2004)
 </div>
 
 ---
 
-# Demographic model
+# Modèle démographique
 
-In absence of disease, assume total population governed by
+En absence de maladie, supposons que la population totale est gouvernée par
 $$
 N'=B(N)-dN
 $$
-where $B(N)$ satisfies
+où $B(N)$ satisfait
 
-- $\exists$ unique $N_0>0$ s.t. $B(N_0)-dN_0=0$
-- $B'(N)<B(N)/N$ for $N\in ]0,N_0]$
-- $b_0:=\lim_{N\to 0^+}B(N)/N >d$, where $b_0\in\overline{\mathbb{R}}$
+- $\exists$ $N_0>0$ unique t.q. $B(N_0)-dN_0=0$
+- $B'(N)<B(N)/N$ pour $N\in ]0,N_0]$
+- $b_0:=\lim_{N\to 0^+}B(N)/N >d$, où $b_0\in\overline{\mathbb{R}}$
 
 ---
 
@@ -779,17 +765,3 @@ where
 
 ![bg 75% left](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Tchoumi_etal_optimalC_u1.jpg) ![right](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Tchoumi_etal_optimalC_u2.jpg)
 
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #85110d, 20%, white)" -->
-# <!--fit-->Quick overview of missing topics
-
----
-
-# I have left out many topics !
-
-- Already mentioned graph models, which would warrant coverage
-- Immunology, i.e., so-called within-host models
-- Immunono-epidemiology, i.e., interface between within-host dynamics and between-host dynamics
-- Evolutionary dynamics, in particular of viruses
-- And so much more..

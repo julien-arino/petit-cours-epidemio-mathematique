@@ -89,11 +89,13 @@ Arino, Brauer, PvdD, Watmough & Wu. [Simple models for containment of a pandemic
 
 ---
 
+# Modèle SLIAR sans transmission par les latents
+
 ![width:1200px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIAR.png)
 
 ---
 
-## Basic reproduction number
+## Nombre de reproduction élémentaire
 $$
 \tag{5}
 \mathcal{R}_0=S_0\beta
@@ -102,7 +104,7 @@ $$
 \right)
 =\frac{S_0\beta\rho}{\alpha}
 $$
-where 
+où
 $$
 \rho = \alpha
 \left(
@@ -110,7 +112,7 @@ $$
 \right)
 $$
 
-## Final size relation
+## Relation de taille finale
 
 $$\tag{6}
 S_0(\ln S_0-\ln S_\infty) =
@@ -119,11 +121,11 @@ $$
 
 --- 
 
-# The SLIAR model
+# Modèle SLIAR avec transmission par les latents
 
-- Paper we have already seen:
+- On reprend le modèle de:
   - Arino, Brauer, PvdD, Watmough & Wu. [Simple models for containment of a pandemic](http://dx.doi.org/10.1098/rsif.2006.0112) (2006)
-- However, suppose additionally that $L$ are also infectious
+- Toutefois, on suppose de plus que les $L$ sont aussi infectieux (observé par exemple avec COVID-19 pour les individus dans la partie finale de la phase d'incubation)
 
 ---
 
@@ -131,7 +133,7 @@ $$
 
 ---
 
-Here, $\mathbf{S}=S$, $\mathbf{I}=(L,I,A)^T$ and $\mathbf{R}=R$, so $m=1$, $n=3$ and 
+Ici, $\mathbf{S}=S$, $\mathbf{I}=(L,I,A)^T$ et $\mathbf{R}=R$, donc $m=1$, $n=3$ et
 $$
 \mathbf{h}=[\varepsilon\; 1\; \delta],
 \quad
@@ -149,7 +151,7 @@ $$
 -(1-p)\kappa & 0 & \eta
 \end{pmatrix}
 $$
-Incidence is mass action so $\beta(\mathbf{E}_0)=\beta$ and thus
+Incidence en action de masse, donc $\beta(\mathbf{E}_0)=\beta$ et par conséquent
 $$
 \begin{align}
 \mathcal{R}_0
@@ -178,7 +180,7 @@ $$
 
 ---
 
-For final size, since $m=1$, we can use $\eqref{eq:final_size_m1}$:
+Pour la taille finale, puisque $m=1$, on peut utiliser $\eqref{eq:final_size_m1}$:
 $$
 \ln\left(
 \frac{S_0}{S_\infty}
@@ -186,7 +188,7 @@ $$
 =\frac{\mathcal{R}_0}{S_0}
 (S_0-S_\infty)+\beta\mathbf{h}\mathbf{V}^{-1}\mathbf{I}_0
 $$
-Suppose $\mathbf{I}_0=(0,I_0,0)$, then
+Supposons que $\mathbf{I}_0=(0,I_0,0)$, alors
 $$
 \ln\left(
 \frac{S_0}{S_\infty}
@@ -194,7 +196,7 @@ $$
 =\mathcal{R}_0\frac{S_0-S_\infty}{S_0}
 +\frac{\beta}{\alpha}I_0
 $$
-If $\mathbf{I}_0=(L_0,I_0,A_0)$, then
+Si $\mathbf{I}_0=(L_0,I_0,A_0)$, alors
 $$
 \ln\left(
 \frac{S_0}{S_\infty}
@@ -214,10 +216,6 @@ $$
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->Un modèle $SL_1L_2I_1I_2A_1A_2R$ "simple" pour COVID-19
 
----
-
-# <!--fit-->Example - $SL_1L_2I_1I_2A_1A_2R$ "simple" COVID-19 model
-
 - Arino & Portet. [A simple model for COVID-19](http://dx.doi.org/10.1016/j.idm.2020.04.002) (2020)
 
 ---
@@ -227,9 +225,9 @@ $$
 
 ---
 
-# <!--fit-->Un modèle avec vaccination
+# Un modèle avec vaccination
 
-Fraction $\gamma$ of $S_0$ are vaccinated before the epidemic; vaccination reduces probability and duration of infection, infectiousness and reduces mortality
+Fraction $\gamma$ des $S_0$ sont vaccinés avant l'épidémie; la vaccination réduit la probabilité d'être infecté et la durée de la période infectieuse, l'infectiosité et réduit la mortalité
 
 $$
 \begin{align}
@@ -242,7 +240,7 @@ I_V' &= \kappa_VL_V-\alpha_VI_V \\
 R' &= f_U\alpha_UI_I+f_V\alpha_VI_V
 \end{align}
 $$
-with $S_U(0)=(1-\gamma)S_0$ and $S_V(0)=\gamma S_0$
+avec $S_U(0)=(1-\gamma)S_0$ et $S_V(0)=\gamma S_0$
 
 ---
 
@@ -250,7 +248,7 @@ with $S_U(0)=(1-\gamma)S_0$ and $S_V(0)=\gamma S_0$
 
 ---
 
-Here, $m=2$, $n=4$,
+Ici, $m=2$, $n=4$,
 $$
 \mathbf{h} = [0\;0\;1\;\sigma_I],\quad
 \mathbf{D}=\begin{pmatrix}
@@ -269,7 +267,7 @@ $$
 0 & -\kappa_V & 0 & \alpha_V
 \end{pmatrix}
 $$
-So
+Donc
 $$
 \mathbf{\Gamma}=\left[
 \frac{\beta}{\alpha_U}\; \frac{\sigma_I\sigma_S\beta}{\alpha_V}
@@ -279,7 +277,7 @@ $$
 \frac{1-\gamma}{\alpha_U}+\frac{\sigma_I\sigma_S\gamma}{\alpha_V}
 \right)
 $$
-and the final size relation is
+et la relation de taille finale est
 $$
 \begin{align}
 \ln\left(
@@ -297,14 +295,14 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Exemples où la méthode ne marche pas
+# <!--fit-->Exemple où la méthode ne marche pas
 
 ---
 
-# Where things go awry, final size-wise!
+# Un petit exemple simple
 
-- Summer 2021 work of Aaron Shalev (U of M)
-- Consider the very simple 2-patch metapopulation (see [Lecture 05](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L05_MetapopulationModels.html))
+- Travail d'été de Aaron Shalev (U of M)
+- Considère une métapopulation sur 2 patchs (voir [Cours](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L05_MetapopulationModels.html))
 
 $$
 \begin{align*}
@@ -317,6 +315,6 @@ R_2' &= \gamma_2I_2
 \end{align*}
 $$
 
-- Unidirectional movement from patch 1 to patch 2
-- $\mathbf{\beta}$ **cannot** be scalar-valued here!
+- Mouvement unidirectionnel du patch 1 vers le patch 2
+- $\mathbf{\beta}$ **n'est pas** à valeurs scalaires...
 

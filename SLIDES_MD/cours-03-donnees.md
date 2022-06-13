@@ -60,7 +60,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # <!--fit-->Les données
 
 
-<div style = "position: relative; bottom: -40%; font-size:20px;">
+<div style = "position: relative; bottom: -35%; font-size:20px;">
 
 - JA. [Mathematical epidemiology in a data-rich world](http://dx.doi.org/10.1016/j.idm.2019.12.008). *Infectious Disease Modelling* **5**:161-188 (2020)
 - Voir aussi le [répo GitHub](https://github.com/julien-arino/modelling-with-data) pour ce papier..

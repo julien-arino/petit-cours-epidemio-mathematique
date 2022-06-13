@@ -50,19 +50,6 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![bg right:40%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/FredBrauer_2007-05-13.jpg)
-# In Memoriam - Fred Brauer
-
-Fred Brauer était un ami et mentor pour nombre de personnes de par le monde et une *éminence grise* de l'épidémiologie mathématique au Canada
-
-J'ai eu le privilège d'apprendre de lui et d'enseigner l'épidémiologie mathématique avec lui dans un grand nombre de lieux
-
-Fred est décédé le 17 octobre 2021. Ce cours est dédié à sa mémoire!
-
-> When you learn to use a hammer, everything looks like a nail
-
----
-
 <!-- _backgroundImage: "linear-gradient(to bottom, #85110d, 20%, white)" -->
 # <!--fit-->Au sujet du cours
 
@@ -70,11 +57,11 @@ Fred est décédé le 17 octobre 2021. Ce cours est dédié à sa mémoire!
 
 # Pour qui, ce cours?
 
-- Étudiants en mathématiques, physique ou ingénierie désireux d'en apprendre plus au sujet de la modélisation mathématique dans le domaine de l'épidémiologie
+- Étudiants en mathématiques, physique ou ingénierie désireux d'en savoir plus au sujet de la modélisation mathématique dans le domaine de l'épidémiologie
 - Suppose une certaine connaissance des équations différentielles ordinaires. Je ne vais pas rentrer dans les détails et vais supposer que vous savez pourquoi, par exemple, la stabilité asymptotique locale d'un point d'équilibre est déduite de la localisation dans le plan complexe des valeurs propres de la linéarisation du système
 - Peut être intéressant pour des étudiants moins portés sur les mathématiques mais nécessitera un peu de travail de fond pour comprendre certains concepts
 
-Ce cours reprend et étend les éléments du cours 3MC  .. Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar, Président de l'université de N'Djaména
+Ce cours reprend et étend les éléments du cours 3MC  .. Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (université de N'Djaména)
 
 ---
 
@@ -92,7 +79,7 @@ Une remarque: je vais par moment référer à des articles sur Wikipedia. Pour l
 
 # Transparents
 
-- Let transparents sont écrits en `Markdown` et `LaTeX` et sont diffusés en `html`; le code `html` est obtenu en utilisant l'extension [Marp](https://marp.app/) dans l'éditeur [Visual Studio Code](https://code.visualstudio.com/)
+- Les transparents sont écrits en `Markdown` et `LaTeX` et sont diffusés en `html`; le code `html` est obtenu en utilisant l'extension [Marp](https://marp.app/) dans l'éditeur [Visual Studio Code](https://code.visualstudio.com/)
 
 - Les fichiers image sont pour la plupart liés sur le répositoire GitHub et nécessitent par conséquent un accès à Internet. Des copies locales sont toutefois fournies pour la plupart des images, mais demanderont de modifier les chemins 
 
@@ -148,14 +135,16 @@ Il est primordial de conduire ces quatres activités interactivement
 
 # Étape clé: identifiez la question scientifique
 
-Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec des praticiens, c'est ici que le gros du boulot réside. Quelle est leur question? Comment formuler un modèle qui soit à même de répondre à cette question? Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne vendez pas la lune!
+Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec des praticiens, c'est ici que le gros du boulot réside. Quelle est leur question? Comment formuler un modèle qui soit à même de répondre à cette question? 
+
+Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne vendez pas la lune!
 
 ---
 
 # Au sujet de l'analyse mathématique
 
 - Jadis, c'était le seul but de la plupart des papiers
-- Cela reste important, mais évaluez votre audience: prouver la stabilité globale d'un équilibre, cést bien, mais est-ce vraiment ce sur quoi se focaliser si vous voulez présenter vos résultats à quelqu'un travaillant en santé publique?
+- Cela reste important, mais évaluez votre audience: prouver la stabilité globale d'un équilibre, c'est bien, mais est-ce vraiment ce sur quoi se focaliser si vous voulez présenter vos résultats à quelqu'un travaillant en santé publique?
 - Au minimum, toutefois, il convient de conduire une analyse locale. Cela permet par exemple de savoir comment régler les valeurs des paramètres lors d'une étude numérique du problème
 
 ---
@@ -177,7 +166,7 @@ Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec de
 # Au sujet des données  
 
 - Obtenir des données est bien plus facile que même il y a 20 ans
-- En tant que modélisateur, il n'est pas nécessaire que tous les travaux soient conduits par les données (data-driven), mais il est nécessaire d'être conscient du contexte dans lequel le modèle est formulé (il est de bon ton de savoir quel est l'ordre de magnitude des grandeurs que vous considérez, par exemple)
+- En tant que modélisateur, il n'est pas nécessaire que tous les travaux soient conduits par les données (*data-driven*), mais il est nécessaire d'être conscient du contexte dans lequel le modèle est formulé (il est bien de savoir quel est l'ordre de magnitude des grandeurs que vous considérez, par exemple)
 
 ---
 
@@ -213,7 +202,7 @@ Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec de
 # Note - durée et organisation des unités
 
 - J'ai essayé de construire des unités relativement équilibrées en terme de contenu, mais n'ai pas particulièrement bien réussi 
-- Certaines unités sont donc plus longues que d'autres
+- Certaines unités sont plus longues que d'autres
 - Les durées des vidéos, postées sur le site web, sont indicatives du poids d'une unité
 - Dans le cours d'origine ([lien](https://julien-arino.github.io/3MC-course-epidemiological-modelling/)), les unités étaient divisées entre unités de cours et unités de travaux pratiques. J'ai décidé ici de ne faire que des unités de cours, mais certaines de ces unités de cours doivent être comprises comme relevant plutôt du TP/TD
 

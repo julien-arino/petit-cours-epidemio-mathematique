@@ -462,9 +462,9 @@ où $K$ est la population totale initiale
 
 # Extensions
 
-- Dans certains des cas où la méthode ici ne s'applique pas parce que le modèle ne peut pas s'écrire sous la forme standard $\eqref{sys:SIR_epi_dS}$-$\eqref{sys:SIR_epi_dR}$, on consultera les travaux
-- Andreasen
-- Magal
-- Pugliese
-
+- Dans certains des cas où la méthode ici ne s'applique pas parce que le modèle ne peut pas s'écrire sous la forme standard $\eqref{sys:SIR_epi_dS}$-$\eqref{sys:SIR_epi_dR}$, on consultera, e.g.,
+  - Andreasen. [The final size of an epidemic and its relation to the basic reproduction number](https://doi.org/10.1007/s11538-010-9623-3). *Bulletin of Mathematical Biology* **73**(10):2305-2321 (2011)
+  - Lunelli & Pugliese. [Final attack ratio in SIR epidemic models for multigroup populations](https://doi.org/10.1007/s11587-017-0349-5). *Ricerche di Matematica* **67**:49-68 (2017)
+  - Magal, Seydi & Webb. [Final size of a multi-group SIR epidemic model: Irreducible and non-irreducible modes of transmission](https://doi.org/10.1016/j.mbs.2018.03.020). *Mathematical Biosciences* **301**:59-67 (2018)
+  
 

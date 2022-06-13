@@ -402,8 +402,8 @@ On dit que le modèle SIS est un **modèle endémique** du fait de la possibilit
  # <!--fit-->Quelques remarques additionnelles au sujet de $\mathcal{R}_0$
 
 - $\mathcal{R}_0$ determine la propension d'une maladie à s'établir dans une population
-- Les politiques de contrôle ont par conséquent pour objecti de réduire $\mathcal{R}_0$ à des valeurs plus petites que 1
-- La définition "verbale" de $\mathcal{R}_0$ est *le nombre moyen de cas secondaires d'infection produits par l'introduction d'un unique individu infectieux dans une population complètement naïve 
+- Les politiques de contrôle ont par conséquent pour objectif de réduire $\mathcal{R}_0$ à des valeurs plus petites que 1
+- La définition "verbale" de $\mathcal{R}_0$ est *le nombre moyen de cas secondaires d'infection produits par l'introduction d'un unique individu infectieux dans une population complètement naïve*
 - Dans notre modèle, $1/(d+\gamma)$ est le temps moyen de séjour dans le compartiment $I$ avant de guérir ou de mourir et $\beta$ est la probabilité d'infection 
 
 ---
