@@ -23,7 +23,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 08: [Quelques modèles épidémiques](cours-08-modeles-epidemiques.html) &#9989;
 - Cours 09: [Plus de modélisation](cours-09-plus-de-modelisation.html) 
 - Cours 10: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-10-heterogeneite-groupe-et-spatiale.html) &#9989;
-- Cours 11: [Modèles de groupes](cours-11-modeles-groupes.html) 
+- Cours 11: [Modèles de groupes](cours-11-modeles-groupes.html) &#9989;
 - Cours 12: [Modèles dans des métapopulations](cours-12-modeles-metapopulation.html) &#9989;
 - Cours 13: [Résolution numérique des EDO en R](cours-13-EDO-en-R.html) 
 - Cours 14: [Types de modèles stochastiques utilisés en épidémiologie](cours-14-stochasticite.html)

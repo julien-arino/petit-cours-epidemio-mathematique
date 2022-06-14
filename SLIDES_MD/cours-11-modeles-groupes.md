@@ -65,26 +65,26 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Limitations of single population ODE models
+# Limitations des modèles EDO pour une population
 
-- As discussed in [Lecture 03](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L03_SpreadInGroups_SpreadInSpace.html), basic ODE assume that all individuals in a compartment are roughly the same
-- Individuals can spend differing times in a compartment (see [Lecture 09](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html)), but they are all the same
-- As we have seen with COVID-19, different age groups are impacted differently
+- Comme discuté dans le [Cours](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L03_SpreadInGroups_SpreadInSpace.html), les modèles EDO élémentaires supposent que tous les individus dans un compartiment sont grosso modo les mêmes
+- Les individus peuvent passer des temps différents dans un compartiment (voir le [Cours](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html)), mais leurs caractéristiques sont plus ou moins les mêmes
+- On a vu de façon flagrante avec COVID-19 que, par exemple, des groupes d'âge différents sont affectés différemment
 
 ---
 
-# Groups can be used for many things
+# <!--fit-->Les groupes peuvent être utilisés pour bien des choses
 
-Groups allow to introduce structure in a population without using PDEs
+Les groupes permettent d'introduire de la structure sans utiliser des EDP
 
-- Age structure
-- Social structure
-- Pathogen heterogeneity
-- Host heterogeneity (e.g., super spreaders)
+- Structure d'âge
+- Structure sociale
+- Hétérogénéité du pathogène
+- Hétérogénéité des hôtes (e.g., *super spreaders*)
 
-In this lecture, we do not consider *spatial heterogeity*; this is done in [Lecture 05](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L05_MetapopulationModels.html)
+Dans ce cours, on ne considère pas l'*hétérogénéité spatiale*, qui fait l'objet du [Cours 12](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-modeles-metapopulation.html)
 
-We start by considering a few examples
+On décrira peu l'analyse, qui est assez similaire à celle des métapopulations du [Cours 12](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-modeles-metapopulation.html), mais on montrera quelques exemples
 
 ---
 
@@ -93,15 +93,17 @@ We start by considering a few examples
 
 ---
 
-# First, a remark
+# D'abord une remarque
 
-In terms of modelling, ODEs are not the best way to incorporate structure such as age. We will come back to this in [Lecture 09](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html), but give one example here
+En terme de modélisation, les EDO ne sont pas la meilleure façon d'incorporer l'âge, si l'âge doit évoluer pendant l'utilisation du modèle
+
+Ce qui suit est une utilisation "propre" de l'âge en utilisant des EDP 
 
 ---
 
-# <!--fit-->[A multi-group SIS model with age structure](https://doi.org/10.1016/j.jde.2004.10.009), by Feng, Huang & C$^3$
+# <!--fit-->[A multi-group SIS model with age structure](https://doi.org/10.1016/j.jde.2004.10.009), par Feng, Huang & C$^3$
 
-For $i=1,\ldots,n$ different subgroups
+Pour $i=1,\ldots,n$ sous-groupes différents
 $$
 \begin{align*}
 \left(
@@ -116,7 +118,7 @@ $$
 -\mu_i(a)I_i(t,a)+\Lambda_i(a,I(t,\cdot))S_i(t,a)-\gamma_i(a)I_i(t,a)
 \end{align*}
 $$
-where
+où
 $$
 \Lambda_i(a,I(\cdot,t)):=K_i(a)I_i(a,t)+\sum_{j=1}^n
 \int_0^\omega K_{ij}(a,s)I_j(s,t)\ ds
@@ -124,7 +126,7 @@ $$
 
 ---
 
-with boundary and initial conditions, for $i=1,\ldots,n$
+avec des conditions au bord et initiales, pour $i=1,\ldots,n$
 
 $$
 \begin{align*}
@@ -134,9 +136,9 @@ S_i(0,a) &= \psi(a) \\
 I_i(0,a) &= \varphi(a)
 \end{align*}
 $$
-($q_i$ fraction of newborns that is infected)
+($q_i$ fraction des nouveaux nés infectés)
 
-Basic reproduction number in group $i=1,\ldots,n$
+Nombre de reproduction élémentaire dans le groupe $i=1,\ldots,n$
 $$
 \mathcal{R}_i = \int_0^\omega b_i(a)\exp\left(
 -\int_0^a \mu_i(\tau)d\tau
@@ -145,16 +147,16 @@ $$
 
 ---
 
-- Authors obtain some results in terms of global stability
-- Need simplifications to move forward
-- No numerics, because numerics for such models are *hard*
+- Les auteurs obtiennent des résultats de stabilité globale
+- Ont besoin de simplifier pour avancer l'analyse
+- Pas de numérique, le numérique peut être compliqué pour ce type de modèle
 
 ---
 
-# Going the ODE route
+# Prennons la voie EDO
 
-- ODEs are way less satisfactory but can be used as-is and are much easier numerically
-- **Caveat -** ODE models with age structure are *intrinsically wrong*, since sojourn times in an age group is exponentially distributed instead of Dirac distributed! (See [Lecture 09](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html))
+- Les EDO sont moins satisfaisantes que les EDP mais peuvent être utilisées en l'état et sont beaucoup plus faciles numériquement
+- Un **bémol -** Comme discuté plus tôt, les modèles EDO avec structuration en âge sont *intrinsiquement faux*, puisque les temps de séjour dans les classes d'âge sont distribués exponentiellement plutôt que selon une Dirac ! (Voir le [Cours 05](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-05-temps-de-residence.html) sur les temps de résidence)
 
 ---
 
@@ -163,13 +165,13 @@ $$
 
 ---
 
-# TB in foreign-born population of Canada
+# TB dans la population canadienne née à l'étranger
 
 Preventing tuberculosis in the foreign-born population of Canada: a mathematical modelling study.  Varughese, Langlois-Klassen, Long, & Li. [International Journal of Tuberculosis and Lung Disease](https://doi.org/10.5588/ijtld.13.0625) **18** (2014)
 
-- New immigrants from Canada come predominantly from countries in which TB is very active
-- It has been noticed that people develop TB in the first few years of their presence in CAN
-- Want to investigate this, together with effect of various screening measures
+- Les nouveaux immigrants au Canada viennent surtout de pays où la TB est très active
+- Il est observé que les gens développent la TB active pendant les premières années de leur présence au CAN
+- Veulent étudier ça, de même que l'effet de plusieurs politiques de test
 
 ---
 
@@ -182,11 +184,11 @@ Preventing tuberculosis in the foreign-born population of Canada: a mathematical
 
 ---
 
-# Importation of a new SARS-CoV-2 variant
+# Importation d'un nouveau variant de SARS-CoV-2
 
 [Risk of COVID-19 variant importation – How useful are travel control measures?](https://doi.org/10.1016/j.idm.2021.06.006) Arino, Boëlle, Milliken & Portet. *Infectious Disease Modelling* **6** (2021)
 
-- Consider what happens when a new variant N arrives in a situation where another variant O is already circulating
+- Considère ce qui se passe quand un nouveau variant N arrive dans un lieu où un variant O est déjà en circulation
 
 ---
 
@@ -194,24 +196,25 @@ Preventing tuberculosis in the foreign-born population of Canada: a mathematical
 
 ---
 
-# Coupling is through the force of infection
+# Couplage par la force d'infection
 
-- For now, we have discussed *incidence functions* $f(S,I,N)$
-- Here, we use a *force of infection* $\Phi_X$, for $X\in\{O,N\}$
-- Force of infection uses $S$ "outside" of function: it is the pressure that applies to $S$ individuals to make them infected
-- Of course, the two are equivalent, but in some contexts, it makes sense to use this
-- Here, for $X\in\{O,N\}$
+- Pour le moment, on a discuté des *fonctions d'incidence* $f(S,I,N)$
+- Ici, on utilise une *force d'infection* $\Phi_X$, pour $X\in\{O,N\}$
+- Force d'infection met $S$ "hors" de la function: c'est la pression d'infection, qui s'applique aux individus susceptibles $S$ et provoque leur infection
+- Bien entendu, les deux formes sont équivalentes, mais dans certains contextes, cela a plus de sens (e.g., modèles en EDP)
+- Ici, pour $X\in\{O,N\}$
 $$
 \Phi_X = \beta_X(\eta_{X}L_{X_C2}+\xi_X(D_{X_C1}+D_{X_C2})+U_{X_C1}+U_{X_C2})
 $$
 
 ---
 
-# Adding more groups - "Importation layer"
+# Ajoutons des groupes - La "couche d'importation"
 
-- How can we evaluate how much "importations" contribute to propagation within a location?
-- If an individual arrives in a new location while bearing the disease, we put them in a special group, the *importation layer*
-- In importation layer, individuals make contacts with others in the population, but they remain in the importation layer until recovery or death
+- Comment évaluer la contribution des "importations" à la propagation dans un lieu ?
+- Si un individu arrive dans un nouveau lieu en étant porteur de la maladie, on le place dans un groupe spécial, la *couche d'importation*
+- Dans la couche d'importation, les individus sont en contact avec le reste de la population, mais ils restent dans ce groupe jusqu'à leur guérison ou leur mort
+- C'est un artifice comptable utile !
 
 ---
 
