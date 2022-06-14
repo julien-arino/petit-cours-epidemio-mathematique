@@ -6,7 +6,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Certains cours ne sont pas encore finalisés; les cours qui sont finalisés sont suivis d'une marque &#9989;.
 - Tous les cours sont susceptibles de changer (pour corriger des coquilles, améliorer le flux, ajouter du contenu, etc.), même les cours annoncés comme finalisés.
 - J'ambitionne d'enregistrer tous les cours; les liens seront ajoutés ici lorsque ces enregistrements seront en ligne.
-- Une version plus détaillée de la liste, que j'utilise par exemple pour vérifier que je ne duplique pas de contenu, est disponible [ici](). 
+<!--- Une version plus détaillée de la liste, que j'utilise par exemple pour vérifier que je ne duplique pas de contenu, est disponible [ici](). -->
 
 
 ## Liste des cours
@@ -24,7 +24,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 09: [Plus de modélisation](cours-09-plus-de-modelisation.html) 
 - Cours 10: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-10-heterogeneite-groupe-et-spatiale.html) &#9989;
 - Cours 11: [Modèles de groupes](cours-11-modeles-groupes.html) 
-- Cours 12: [Modèles dans des métapopulations](cours-12-modeles-metapopulation.html) 
+- Cours 12: [Modèles dans des métapopulations](cours-12-modeles-metapopulation.html) &#9989;
 - Cours 13: [Résolution numérique des EDO en R](cours-13-EDO-en-R.html) 
 - Cours 14: [Types de modèles stochastiques utilisés en épidémiologie](cours-14-stochasticite.html)
 - Cours 15: [Modèles en chaînes de Markov](cours-15-modeles-MC.html) 

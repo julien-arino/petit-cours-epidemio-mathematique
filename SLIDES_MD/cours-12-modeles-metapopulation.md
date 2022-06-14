@@ -819,7 +819,7 @@ JA & S Portet. [Epidemiological implications of mobility between a large urban c
 
 ---
 
-# <!--fit-->Context de l'étude
+# <!--fit-->Contexte de l'étude
 
 Winnipeg le centre urbain et 3 villes satellites plus petites: Portage la Prairie, Selkirk et Steinbach
 
@@ -952,7 +952,13 @@ i_{\ell p}' &= g_{\ell p}(S_p,I_p)+\textstyle{\sum_{q\in\mathcal{P}}} m_{\ell pq
 $$
 peut exhiber des comportements pas observés dans le unités du système non couplé ?
 
-E.g.: unités ont un comportement $\{\mathcal{R}_0<1\implies$ ESM GAS, $\mathcal{R}_0>1\implies$ 1 ÉÉ GAS\}$, la métapopulation a des solutions périodiques
+E.g.: les unités ont un comportement 
+$$
+\{
+  \mathcal{R}_0<1\implies\text{ ESM GAS},\ \mathcal{R}_0>1\implies 1 \text{ ÉÉ GAS}
+\}
+$$
+tandis que la métapopulation a des solutions périodiques
 
 ---
 
@@ -968,25 +974,25 @@ Ceci est le problème des **équilibres mixtes**
 
 <div class="definition">
 
-**[Patch level]** Patch $p\in\mathcal{P}$ at equilibrium is **empty** if $X_p^\star=0$, at the **disease-free equilibrium** if $X_p^\star=(s_{k_1p}^\star,\ldots,s_{k_up}^\star,0,\ldots,0)$, where $k_1,\ldots,k_u$ are some indices with $1\leq u\leq|\mathcal{U}|$ and $s_{k_1p}^\star,\ldots,s_{k_up}^\star$ are positive, and at an **endemic equilibrium** if $X_p\gg 0$
+**[Niveau du patch]** Un patch $p\in\mathcal{P}$ à l'équilibre est **vide** si $X_p^\star=0$, à l'**équilibre sans maladie** si $X_p^\star=(s_{k_1p}^\star,\ldots,s_{k_up}^\star,0,\ldots,0)$, où $k_1,\ldots,k_u$ sont des indices avec $1\leq u\leq|\mathcal{U}|$ et $s_{k_1p}^\star,\ldots,s_{k_up}^\star$ sont strictement positifs, et à un **équilibre endémique** si $X_p\gg 0$
 </div>
 
 <p style="margin-bottom:1cm;"></p> 
 
 <div class="definition">
 
-**[Metapopulation level]** A **population-free equilibrium** has all patches empty. A **metapopulation disease-free equilibrium** has all patches at the disease-free equilibrium for the same compartments. A **metapopulation endemic equilibrium** has all patches at an endemic equilibrium
+**[Niveau de la métapopulation]** Un **équilibre sans population de métapopulation** corresponds à un équilibre où tous les patchs sont vides. Un **équilibre sans maladie de métapopulation** a tous les patchs en un ESM impliquant les mêmes compartiments pour tous les patchs. Un **équilibre endémique de métapopulation** a tous les patchs à un équilibre endémique
 </div>
 
 --- 
 
-# Mixed equilibria
+# Équilibres mixtes
 
 <div class="definition">
 
-A **mixed equilibrium** is an equilibrium such that
-- all patches are at a disease-free equilibrium but the system is not at a metapopulation disease-free equilibrium
-- or, there are at least two patches that have different types of patch-level equilibrium (empty, disease-free or endemic)
+Un **équilibre mixte** est un équilibre de métapopulation t.q.
+- tous les patchs sont à un ESM mais le système n'est pas à un ESM de métapopulation
+- ou il y a au moins 2 patchs qui sont à un équilibre de type différent (vide, ESM ou ÉÉ)
 </div>
 
 <p style="margin-bottom:1cm;"></p> 
@@ -995,7 +1001,7 @@ E.g.,
 $$
 ((S_1,I_1,R_1),(S_2,I_2,R_2))=((+,0,0),(+,+,+))
 $$
-is mixed, so is
+est mixte, de même que
 $$
 ((S_1,I_1,R_1),(S_2,I_2,R_2))=((+,0,0),(+,0,+))
 $$
@@ -1005,34 +1011,34 @@ $$
 
 <div class="theorem">
 
-Suppose that movement is similar for all compartments (MSAC) and that the system is at equilibrium
+Supposons que le mouvement soit similaire pour tous les compartiments (MSTC) et que le système soit à l'équilibre
 
-- If patch $p\in\mathcal{P}$ is empty, then all patches in $\mathcal{A}(p)$ are empty 
-- If patch $p\in\mathcal{P}$ is at a disease free equilibrium, then the subsystem consisting of all patches in $\{p,\mathcal{A}(p)\}$ is at a metapopulation disease free equilibrium 
-- If patch $p\in\mathcal{P}$ is at an endemic equilibrium, then all patches in $\mathcal{D}(p)$ are also at an endemic equilibrium
-- If $\mathcal{G}^c$ is strongly connected for some compartment $c\in\mathcal{C}$, then there does not exist mixed equilibria
+- Si le patch $p\in\mathcal{P}$ est vide, tous les patchs dans $\mathcal{A}(p)$ (ancêtres de $p$) sont également vides
+- Si le patch $p\in\mathcal{P}$ est en un ESM, alors le sous-système consistant de tous les patchs dans $\{p,\mathcal{A}(p)\}$ est en un ESM de métapopulation
+- Si le patch $p\in\mathcal{P}$ est en un ÉÉ, alors tous les patchs dans $\mathcal{D}(p)$ (descendants de $p$) sont aussi en un ÉÉ
+- Si $\mathcal{G}^c$ est fortement connexe pour un compartiment $c\in\mathcal{C}$, alors il n'existe pas d'équilibres mixtes
 </div>
 
 <p style="margin-bottom:1cm;"></p> 
 
-Note that MSAC $\implies$ $\mathcal{A}^c=\mathcal{A}$ and $\mathcal{D}^c=\mathcal{D}$ for all $c\in\mathcal{C}$
+Notons que MSTC $\implies$ $\mathcal{A}^c=\mathcal{A}$ et $\mathcal{D}^c=\mathcal{D}$ pour tout $c\in\mathcal{C}$
 
 ---
 
-# Interesting (IMHO) problems
+# Problèmes intéressants (AMHA)
 
-More is needed on inheritance problem, in particular GAS part (Li, Shuai, Kamgang, Sallet, and older stuff: Michel & Miller, Šiljak)
+Il faut faire plus sur le problème de l'héritage, et en particulier la SAG (Li, Shuai, Kamgang, Sallet, et des choses plus anciennes: Michel & Miller, Šiljak)
 
-Incorporate travel time (delay) and events (infection, recovery, death ..) during travel
+Incorporer des temps de voyage (retard) et des évenements (infection, guérison, mort) pendant le voyage
 
-What is the minimum complexity of the movement functions $m$ below
+Quelle est la complexité minimale des fonctions de mouvement $m$ ci-dessous 
 $$
 \begin{aligned}
 s_{kp}' &= f_{kp}(S_p,I_p)+\textstyle{\sum_{q\in\mathcal{P}}} m_{kpq}(S,I)s_{kq} \\
 i_{\ell p}' &= g_{\ell p}(S_p,I_p)+\textstyle{\sum_{q\in\mathcal{P}}} m_{\ell pq}(S,I)i_{\ell q}
 \end{aligned}
 $$
-required to observe a metapopulation-induced behaviour?
+requise pour observer des comportements induits par la stucture de métapopulation ?
 
 ---
 
