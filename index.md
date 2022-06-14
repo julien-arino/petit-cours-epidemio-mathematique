@@ -14,8 +14,8 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 
 - Cours 00: [Organisation du cours](cours-00-organisation.html) &#9989;
 - Cours 01: [Épidémies, épidémiologie et épidémiologie mathématique](cours-01-introduction.html) &#9989;
-- Cours 02: [Introduction à R](cours-02-intro-R.html) 
-- Cours 03: [Collecte et utilisation des données](cours-03-donnees.html) 
+- Cours 02: [Introduction à R](cours-02-intro-R.html) &#9989;
+- Cours 03: [Collecte et utilisation des données](cours-03-donnees.html) &#9989;
 - Cours 04: [Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS](cours-04-modeles-SIS-SIR.html) &#9989;
 - Cours 05: [Temps de résidence dans les compartiments](cours-05-temps-de-residence.html) &#9989;
 - Cours 06: [Étapes de l'analyse mathématique des modèles, $R_0$ et la taille finale d'une épidémie](cours-06-etapes-R0-final-size.html) &#9989;
