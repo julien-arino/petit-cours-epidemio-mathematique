@@ -48,6 +48,17 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
+<!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
+# Plan de ce cours
+
+- Étapes de l'analyse
+- $\mathcal{R}_0$
+- $\mathcal{R}_0$ par la méthode de la matrice de prochaine génération
+- Variation sur la méthode de la matrice de prochaine génération
+- Taille finale d'une épidémie dans le cas épidémique
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->Étapes de l'analyse
 
@@ -99,16 +110,6 @@ $x^\star$ est un **point d'équilibre** si $f(x^\star)=0$
 $x^\star$ est LAS si $\exists\mathcal{S}\ni x^\star$ ouvert dans le domaine de $f$ t.q. pour tout $x_0\in\mathcal{S}$, $x(t,x_0)\in\mathcal{S}$ pour tout $t\geq 0$ et, de plus, $\lim_{t\to\infty}x(t,x_0)=x^\star$
 
 S'il y a un continuum de PE, alors $x^\star\in\mathcal{C}$, où $\mathcal{C}$ est une courbe dans le domaine de $f$ t.q. $f(y^\star)=0$ pour tout $y^\star\in\mathcal{C}$. On dit que $x^\star$ n'est **pas isolé**. Mais alors tout voisinage ouvert de $x^\star$ contient des éléments de $\mathcal{C}$ et prendre $x_0\in\mathcal{C}$, $x_0\neq x^\star$, implique que $\lim_{t\to\infty}x(t,x_0)=x_0\neq x^\star$. $x^\star$ est *localement stable* mais pas *localement asymptotiquement stable* !
-
----
-
-<!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
-
-- $\mathcal{R}_0$
-- $\mathcal{R}_0$ par la méthode de la matrice de prochaine génération
-- Variation sur la méthode de la matrice de prochaine génération
-- Taille finale d'une épidémie dans le cas épidémique
 
 ---
 
@@ -513,7 +514,7 @@ où $K$ est la population totale initiale
 
 ---
 
-# Extensions
+# Pour aller plus loins au sujet de la taille finale
 
 - Dans certains des cas où la méthode ici ne s'applique pas parce que le modèle ne peut pas s'écrire sous la forme standard $\eqref{sys:SIR_epi_dS}$-$\eqref{sys:SIR_epi_dR}$, on consultera, e.g.,
   - Andreasen. [The final size of an epidemic and its relation to the basic reproduction number](https://doi.org/10.1007/s11538-010-9623-3). *Bulletin of Mathematical Biology* **73**(10):2305-2321 (2011)
