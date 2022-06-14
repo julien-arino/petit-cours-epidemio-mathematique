@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Group models
-description: 3MC Course Epidemiological Modelling - Julien Arino - Lecture 04 - Group models
+title: Petit cours d'épidémiologie mathématique - Modèles de groupes
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 11 - Modèles de groupes
 theme: default
 paginate: false
 math: mathjax
@@ -49,19 +49,19 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Outline
+# Plan de ce cours
 
-- Formulating group models
-    - Age-structured models
-    - Models incorporating social structure
-    - Model with pathogen heterogeity
-- Analysing group models
-- Simulating group models
+- Formulation de modèles de groupes
+    - Modèles structurés en âge
+    - Modèles incorporant une structure sociale
+    - Modèles avec hétérogénéité du pathogène
+- Analyse des modèles de groupes
+- Simulation des modèles de groupes
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Formulating group models
+# <!--fit-->Formulation de modèles de groupes
 
 ---
 
@@ -89,7 +89,7 @@ We start by considering a few examples
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Age-structured models
+# Modèles structurés en âge
 
 ---
 
@@ -159,7 +159,7 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Models incorporating social structure
+# Modèles incorporant une structure sociale
 
 ---
 
@@ -178,7 +178,7 @@ Preventing tuberculosis in the foreign-born population of Canada: a mathematical
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Models with pathogen heterogeity
+# Modèles avec hétérogénéité du pathogène
 
 ---
 
@@ -219,9 +219,9 @@ $$
 
 ---
 
-# Force of infection with importation layer
+# Force d'infection avec couche d'importation
 
-For $X\in\{O,N\}$
+Pour $X\in\{O,N\}$
 $$
 \Phi_X = \Phi_{X_I}+\Phi_{X_I}
 $$
@@ -235,12 +235,12 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Models with immunological component
+# Modèles avec composante immunologique
 
 Global dynamics of a general class of multistage models for infectious diseases. Guo, Li & Shuai. [SIAM Journal on Applied Mathematics](https://doi.org/10.1137/110827028) **72** (2012)
 
-- Viruses such as HIV reside in the body for a very long time, potentially for life
-- Throughout the course of this residence, virus loads change and with it symptoms and infectiousness
+- Les virus comme le VIH restent dans le corps pendant longtemps, potentiellement la vie entière
+- Pendant le cours de ce séjour, la charge virale change et avec elle, les symptômes et l'infectiosité
 
 ---
 
@@ -249,17 +249,17 @@ Global dynamics of a general class of multistage models for infectious diseases.
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Analysing group models
+# <!--fit-->Analyse des modèles de groupes
 
 ---
 
-# Model of Guo, Li & Shuai
+# Modèle de Guo, Li & Shuai
 
-- For general considerations about a method, see Lu & Shuai, [Global-stability problem for coupled systems of differential equations on networks](https://doi.org/10.1016/j.jde.2009.09.003), *JDE* **248** (2010)
-- Techniques use combination of "classical" ODE stability theory, linear algebra and graph theory
-- They show GAS when $\mathcal{R}_0\leq 1$ and GAS under conditions when $\mathcal{R}_0>1$
-- Use Lyapunov function $L=\sum_{i=1}^nw_iI_i$ for DFE when $\mathcal{R}_0\leq 1$
-- For EEP, use a Goh type Lyapunov function
+- Pour des considérations générales sur une méthodologie, voir Lu & Shuai, [Global-stability problem for coupled systems of differential equations on networks](https://doi.org/10.1016/j.jde.2009.09.003), *JDE* **248** (2010)
+- Techniques utilisent une combinaise de théorie "classique" des EDO, de l'algèbre linéaire et de la théorie des graphes
+- Ils montrent SAG quand $\mathcal{R}_0\leq 1$ et SAG sous conditions lorsque $\mathcal{R}_0>1$
+- Utilisent fonction de Liapounoff $L=\sum_{i=1}^nw_iI_i$ pour l'ESM quand $\mathcal{R}_0\leq 1$
+- Pour l'ÉÉ, utilisent une fonction de Liapounoff de type Goh
 $$
 V=\tau_1
 \int_{S^*}^{S}
@@ -269,14 +269,14 @@ V=\tau_1
 \int_{I_i^*}^{I_i}
 \dfrac{\psi(\xi)-\psi(I_i^*)}{\psi(\xi)}d\xi
 $$
-- Use Kirchhoff’s matrix tree theorem to show that $V'$ is negative definite
+- Utilisent le "Kirchhoff’s matrix tree theorem" pour montrer que $V'$ est définie négative
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Simulating group models
+# <!--fit-->Simulation des modèles de groupes
 
 ---
 
-- This is very similar to metapopulation models which are described in [Practicum 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html)
-- The variant importation model simulations will be discussed in the stochastic lectures
+- Activité similaire à la simulation des modèles en métapopulations. Décrit dans le [Cours 13](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-13-EDO-en-R.html)
+- La simulation du modèle avec importation de variant sera discuté dans le [Cours 16](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-16-simulation-stochastique.html) sur la simulation des modèles stochastiques

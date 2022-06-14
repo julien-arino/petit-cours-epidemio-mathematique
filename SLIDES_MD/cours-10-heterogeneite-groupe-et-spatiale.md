@@ -366,18 +366,18 @@ table {
 }
 </style>
 
-| Date | Lieu | Note |
+| Date | Lieu | Note (date arrivée cas, etc.) |
 |------|----------|------|
-| 13 Jan. | Thailand | Arrived 8 Jan. |
-| 16 Jan. | Japan | Arrived 6 Jan. |
-| 20 Jan. | Republic of Korea | Airport detected on 19 Jan. |
-| 20 Jan. | USA | Arrived Jan. 15 |
-| 23 Jan. | Nepal | Arrived 13 Jan. |
-| 23 Jan. | Singapore | Arrived 20 Jan. |
-| 24 Jan. | France | Arrived 22 Jan. |
-| 24 Jan. | Vietnam | Arrived 13 Jan. |
-| 25 Jan. | Australia | Arrived 19 Jan. |
-| 25 Jan. | Malaysia | Arrived 24 Jan. |
+| 13 Jan. | Thailande | Arrivé 8 Jan. |
+| 16 Jan. | Japon | Arrivé 6 Jan. |
+| 20 Jan. | Republique de Corée | Détecté aéroport le 19 Jan. |
+| 20 Jan. | USA | Arrivé Jan. 15 |
+| 23 Jan. | Népal | Arrivé 13 Jan. |
+| 23 Jan. | Singapour | Arrivé 20 Jan. |
+| 24 Jan. | France | Arrivé 22 Jan. |
+| 24 Jan. | Vietnam | Arrivé 13 Jan. |
+| 25 Jan. | Australie | Arrivé 19 Jan. |
+| 25 Jan. | Malaisie | Arrivé 24 Jan. |
 
 ---
 

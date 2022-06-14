@@ -1,6 +1,6 @@
 ---
 marp: true
-title: Organisation du Petit cours d'épidémiologie mathématique
+title: Petit cours d'épidémiologie mathématique - Organisation du cours
 description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 00 - Organisation du cours
 theme: default
 math: mathjax
