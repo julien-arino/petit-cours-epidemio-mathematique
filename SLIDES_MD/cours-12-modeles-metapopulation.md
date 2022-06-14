@@ -49,17 +49,17 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 --- 
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Outline
-- Formulating metapopulation models
-- Basic mathematical analysis
-- $\mathcal{R}_0$ is not the panacea - An urban centre and satellite cities
-- Problems specific to metapopulations
-- Global stability considerations
+# Plan de ce cours
+- Formulation des modèles en métapopulation
+- Analyse mathématique élémentaire
+- $\mathcal{R}_0$ n'est pas la panacée - Un centre urbain et des villes satellites
+- Problèmes spécifiques aux métapopulations
+- Considérations sur la stabilité globale
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!-- fit -->Formulating metapopulation models
+# <!-- fit -->Formulation des modèles en métapopulation
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -72,7 +72,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 <div style = "position: relative; top: -47%; font-size:40px">
 
-**Disease spread process in a jurisdiction-based world**
+**Propagation des maladies dans un monde juridictionnel**
 </div>
 
 ![bg 90%](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/importations/importation_process3.png)
@@ -177,9 +177,9 @@ $$
 
 ---
 
-# $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS (multiple species)
+# $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS (espèces multiples)
 
-$\mathcal{S}$ a set of species
+$\mathcal{S}$ un ensemble d'espèces
 $$
 \begin{align}
 S_{sp}' &= \mathcal{B}_{sp}(N_{sp})+\nu_{sp}R_{sp}-\Phi_{sp}-d_{sp}S_{sp}
@@ -193,7 +193,7 @@ R_{sp} &= \gamma _{sp}I_{sp}-(\nu_{sp}+d_{sp})R_{sp}
 \end{align}
 $$
 
-with incidence
+avec incidence
 $$
 \Phi_{sp}=\sum_{k\in\mathcal{S}}\beta_{skp}\frac{S_{sp}I_{kp}}{N_p^{q_p}},\qquad q_p\in\{0,1\}
 \tag{3e}\label{sys:spSLIRS_incidence} 
@@ -207,7 +207,7 @@ $$
 
 ---
 
-# $|\mathcal{P}|^2$-SLIRS (residency patch/movers-stayers)
+# $|\mathcal{P}|^2$-SLIRS (résidents-voyageurs)
 
 $$
 \begin{align}
@@ -229,7 +229,7 @@ R_{pq}' =& \gamma_{pq} I_{pq}
 \end{align}
 $$
 
-with incidence
+avec incidence
 $$
 \Phi_{pq}=\sum_{k\in\mathcal{P}}\beta_{pqk}\frac{S_{pq}I_{kq}}{N_p^{q_q}},\qquad q_q=\{0,1\}
 \tag{4e}\label{sys:ppSLIRS_incidence} 
@@ -244,11 +244,11 @@ $$
 
 ---
 
-# General metapopulation epidemic models
+# Modèles généraux en metapopulation
 
-$\mathcal{U}\subsetneq\mathcal{C}$ **uninfected** and $\mathcal{I}\subsetneq\mathcal{C}$ **infected** compartments, $\mathcal{U}\cup\mathcal{I}=\mathcal{C}$ and $\mathcal{U}\cap\mathcal{I}=\emptyset$
+$\mathcal{U}\subsetneq\mathcal{C}$ compartiments **non infectés** et $\mathcal{I}\subsetneq\mathcal{C}$ compartiments **infectés**, $\mathcal{U}\cup\mathcal{I}=\mathcal{C}$ et $\mathcal{U}\cap\mathcal{I}=\emptyset$
 
-For $k\in\mathcal{U}$, $\ell\in\mathcal{I}$ and $p\in\mathcal{P}$,
+Pour $k\in\mathcal{U}$, $\ell\in\mathcal{I}$ et $p\in\mathcal{P}$,
 $$
 \begin{align}
 s_{kp}' &= f_{kp}(S_p,I_p)+\sum_{q\in\mathcal{P}} m_{kpq}s_{kq} 
@@ -257,18 +257,18 @@ i_{\ell p}' &= g_{\ell p}(S_p,I_p)+\sum_{q\in\mathcal{P}} m_{\ell pq}i_{\ell q}
 \tag{5b}\label{sys:general_metapop_di} 
 \end{align}
 $$
-where $S_p=(s_{1p},\ldots,s_{|\mathcal{U}|p})$ and $I_p=(i_{1p},\ldots,i_{|\mathcal{I}|p})$
+où $S_p=(s_{1p},\ldots,s_{|\mathcal{U}|p})$ et $I_p=(i_{1p},\ldots,i_{|\mathcal{I}|p})$
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--- fit --->Basic mathematical analysis
+# <!--- fit --->Analyse mathématique élémentaire
 
 ---
 
-# Analysis - Toy system
+# Analyse - Système illustratif
 
-For simplicity, consider $|\mathcal{P}|$-SLIRS with $\mathcal{B}_p(N_p)=\mathcal{B}_p$
+Par simplicité, considérons $|\mathcal{P}|$-SLIRS avec $\mathcal{B}_p(N_p)=\mathcal{B}_p$
 $$
 \begin{align}
 S_{p}' &=\mathcal{B}_p-\Phi_p-d_pS_p+\nu_pR_p
@@ -286,48 +286,48 @@ R_{p}' &=\gamma _{p}I_{p}-\left(\nu_{p}+d_{p}\right)R_{p}
 \end{align}
 $$
 
-with incidence
+et l'incidence
 $$
 \Phi_p=\beta_p\frac{S_pI_p}{N_p^{q_p}},\qquad q_p\in\{0,1\}
 \tag{6e}\label{sys:pSLIRS_toy_incidence} 
 $$
 
-System of $4|\mathcal{P}|$ equations
+Système de $4|\mathcal{P}|$ équations
 
 ---
 
-# Size is not that bad..
+# La taille n'est pas si gênante ..
 
-System of $4|\mathcal{P}|$ equations !!!
+Système de $4|\mathcal{P}|$ équations !!!
 
-However, a lot of structure: 
-- $|\mathcal{P}|$ *copies* of individual units, each comprising 4 equations
-- Dynamics of individual units well understood
-- Coupling is linear
+Toutefois, beaucoup de structure: 
+- $|\mathcal{P}|$ *copies* d'unités individuelles comprenant chacune 4 équations
+- Dynamique des unités constitutives bien comprise
+- Couplage linéaire
 
-$\implies$ Good case of large-scale system (matrix analysis is your friend)
-
----
-
-# Notation in what follows
-
-- $M\in\mathcal{M}_n(\mathbb{R})=\mathbb{R}^{n\times n}$ a square matrix with entries denoted $m_{ij}$
-
-- $M\geq\mathbf{0}$ if $m_{ij}\geq 0$ for all $i,j$ (could be the zero matrix); $M>\mathbf{0}$ if $M\geq\mathbf{0}$ and $\exists i,j$ with $m_{ij}>0$; $M\gg\mathbf{0}$ if $m_{ij}>0$ $\forall i,j=1,\ldots,n$. Same notation for vectors
-
-- $\sigma(M)=\{\lambda\in\mathbf{C}; M\lambda=\lambda\mathbf{v}, \mathbf{v}\neq\mathbf{0}\}$ **spectrum** of $M$
-
-- $\rho(M)=\max_{\lambda\in\sigma(M)}\{|\lambda|\}$ **spectral radius**
-
-- $s(M)=\max_{\lambda\in\sigma(M)}\{\Re(\lambda)\}$ **spectral abscissa** (or **stability modulus**)
-
-- $M$ is an **M-matrix** if it is a **Z-matrix** ($m_{ij}\leq 0$ for $i\neq j$) and $M = s\mathbb{I}-A$, with $A\geq 0$ and $s\geq \rho(A)$
+$\implies$ Un bon cas de système de grande taille (l'analyse matricielle est très utile ici)
 
 ---
 
-# Behaviour of the total population
+# Notations dans ce qui suit
 
-Consider behaviour of $N_p=S_p+L_p+I_p+R_p$. We have
+- $M\in\mathcal{M}_n(\mathbb{R})=\mathbb{R}^{n\times n}$ une matrice carrée avec éléments notés $m_{ij}$
+
+- $M\geq\mathbf{0}$ si $m_{ij}\geq 0$ pour tout $i,j$ (pourrait être la matrice nulle); $M>\mathbf{0}$ si $M\geq\mathbf{0}$ et $\exists i,j$ avec $m_{ij}>0$; $M\gg\mathbf{0}$ si $m_{ij}>0$ $\forall i,j=1,\ldots,n$. Même notations pour les vecteurs
+
+- $\sigma(M)=\{\lambda\in\mathbf{C}; M\lambda=\lambda\mathbf{v}, \mathbf{v}\neq\mathbf{0}\}$ **spectre** of $M$
+
+- $\rho(M)=\max_{\lambda\in\sigma(M)}\{|\lambda|\}$ **rayon spectral**
+
+- $s(M)=\max_{\lambda\in\sigma(M)}\{\Re(\lambda)\}$ **abscisse spectrale** (ou **module de stabilité**)
+
+- $M$ est une **M-matrice** si c'est une **Z-matrice** ($m_{ij}\leq 0$ pour $i\neq j$) et que $M = s\mathbb{I}-A$, avec $A\geq 0$ et $s\geq \rho(A)$
+
+---
+
+# Comportement de la population totale
+
+Considérons le comportement de $N_p=S_p+L_p+I_p+R_p$. On a
 $$
 \begin{aligned}
 N_p' &=\mathcal{B}_p\cancel{-\Phi_p}-d_pS_p\cancel{+\nu_pR_p}
@@ -343,7 +343,7 @@ N_p' &=\mathcal{B}_p\cancel{-\Phi_p}-d_pS_p\cancel{+\nu_pR_p}
 \end{aligned}
 $$
 
-So
+Donc
 $$
 N_p'=\mathcal{B}_p-d_pN_p
 +\sum_{X\in\{S,L,I,R\}}\sum_{q\in\mathcal{P}} m_{Xpq}X_{q}
@@ -351,26 +351,26 @@ $$
 
 ---
 
-# Vector / matrix form of the equation
+# Forme vectorielle / matricielle de l'équation
 
-We have
+On a
 $$
 N_p'=\mathcal{B}_p-d_pN_p
 +\sum_{X\in\{S,L,I,R\}}\sum_{q\in\mathcal{P}} m_{Xpq}X_{q}
 $$
-Write this in vector form
+En forme vectorielle
 $$
 \tag{7}\label{sys:pSLIRS_dN_general} 
 \mathbf{N}'=\mathbf{b}-\mathbf{d}\mathbf{N}+\sum_{X\in\{S,L,I,R\}}\mathcal{M}^X\mathbf{X}
 $$
-where $\mathbf{b}=(\mathcal{B}_1,\ldots,\mathcal{B}_{|\mathcal{P}|})^T,\mathbf{N}=(N_1,\ldots,N_{|\mathcal{P}|})^T,\mathbf{X}=(X_1,\ldots,X_{|\mathcal{P}|})^T\in\mathbb{R}^{|\mathcal{P}|},$ $\mathbf{d},\mathcal{M}^X$ $|\mathcal{P}|\times|\mathcal{P}|$-matrices with 
+où $\mathbf{b}=(\mathcal{B}_1,\ldots,\mathcal{B}_{|\mathcal{P}|})^T,\mathbf{N}=(N_1,\ldots,N_{|\mathcal{P}|})^T,\mathbf{X}=(X_1,\ldots,X_{|\mathcal{P}|})^T\in\mathbb{R}^{|\mathcal{P}|},$ $\mathbf{d},\mathcal{M}^X$ $|\mathcal{P}|\times|\mathcal{P}|$-matrices avec 
 $$
 \mathbf{d}=\mathsf{diag}\left(d_1,\ldots,d_{|\mathcal{P}|}\right)
 $$
 
 ---
 
-# The movement matrix
+# La matrice de mouvement
 
 $$
 \mathcal{M}^c=
@@ -384,11 +384,11 @@ $$
 
 <div class="theorem">
 
-Consider a compartment $c\in\mathcal{C}$. Then the following hold true:
-1. $0\in\sigma(\mathcal{M}^c)$ and corresponds to left eigenvector $\mathbf{1}^T_{|\mathcal{P}|}=(1,\ldots,1)$
-2. $−\mathcal{M}^c$ singular M-matrix
+Soit un compartiment $c\in\mathcal{C}$. Alors les propriétés suivantes sont vraies:
+1. $0\in\sigma(\mathcal{M}^c)$ et correspond au vecteur propre à gauche $\mathbf{1}^T_{|\mathcal{P}|}=(1,\ldots,1)$
+2. $−\mathcal{M}^c$ M-matrice singulière
 3. $0 = s(\mathcal{M}^c)\in\sigma(\mathcal{M}^c)$
-4. $\mathcal{M}^c$ irreducible $\implies$ $s(\mathcal{M}^c)$ has multiplicity 1
+4. $\mathcal{M}^c$ irréductible $\implies$ $s(\mathcal{M}^c)$ de multiplicité 1
 </div>
 
 <div style = "position: relative; bottom: -6%; font-size:20px;">
@@ -398,19 +398,19 @@ Consider a compartment $c\in\mathcal{C}$. Then the following hold true:
 
 ---
 
-# The nice case
+# Le cas sympa
 
-Recall that
+On rappelle que
 $$
 \tag{7}
 \mathbf{N}'=\mathbf{b}-\mathbf{d}\mathbf{N}+\sum_{X\in\{S,L,I,R\}}\mathcal{M}^X\mathbf{X}
 $$
 
-Suppose movement rates **equal for all compartments**, i.e.,
+Supposons les taux de mouvement **égaux pour tous les compartiments**, i.e.,
 $$
 \mathcal{M}^S=\mathcal{M}^L=\mathcal{M}^I=\mathcal{M}^R=:\mathcal{M}
 $$
-Then
+Alors
 $$
 \begin{align}
 \mathbf{N}' &= \mathbf{b}-\mathbf{d}\mathbf{N}+\mathcal{M}\sum_{X\in\{S,L,I,R\}}\mathbf{X}\\
@@ -425,7 +425,7 @@ $$
 \mathbf{N}'=\mathbf{b}-\mathbf{d}\mathbf{N}+\mathcal{M}\mathbf{N}
 $$
 
-Equilibria
+Équilibres
 $$
 \begin{aligned}
 \mathbf{N}'=\mathbf{0} &\Leftrightarrow \mathbf{b}-\mathbf{d}\mathbf{N}+\mathcal{M}\mathbf{N}=\mathbf{0} \\
@@ -433,20 +433,20 @@ $$
 &\Leftrightarrow \mathbf{N}^\star=(\mathbf{d}-\mathcal{M})^{-1}\mathbf{b}
 \end{aligned}
 $$
-given, of course, that $\mathbf{d}-\mathcal{M}$ (or, equivalently, $\mathcal{M}-\mathbf{d}$) is invertible.. Is it?
+si, bien sur, $\mathbf{d}-\mathcal{M}$ (ou, de façon équivalente, $\mathcal{M}-\mathbf{d}$) est inversible.. L'est-elle ?
 
 
 ---
 
-# Perturbations of movement matrices
+# Perturbations des matrices de mouvement
 
 <div class="theorem">
 
-$\mathcal{M}$ a movement matrix  and $D$ a diagonal matrix. The following hold true:
-1. $s(\mathcal{M}+d\mathbb{I})=d$ for all $d\in\mathbb{R}$
-2. $s(\mathcal{M}+D)\in\sigma(\mathcal{M}+D)$ and is associated with an eigenvector $\mathbf{v}>\mathbf{0}$. If, additionally, $\mathcal{M}$ irreducible, then $s(\mathcal{M}+D)$ has multiplicity 1 and is associated with $\mathbf{v}\gg\mathbf{0}$
-3. $\mathsf{diag}(D)\gg\mathbf{0}$ $\implies$ $D-\mathcal{M}$ nonsingular M-matrix and $(D-\mathcal{M})^{-1}>\mathbf{0}$
-4. $\mathcal{M}$ irreducible and $\mathsf{diag}(D)>\mathbf{0}$ $\implies$ $D-\mathcal{M}$ irreducible nonsingular M-matrix and $(D-\mathcal{M})^{-1}\gg\mathbf{0}$
+$\mathcal{M}$ une matrice de mouvement matrix et $D$ une matrice diagonale. Les résultats suivants sont vrais:
+1. $s(\mathcal{M}+d\mathbb{I})=d$ pour tout $d\in\mathbb{R}$
+2. $s(\mathcal{M}+D)\in\sigma(\mathcal{M}+D)$ et est associé à un vecteur propre $\mathbf{v}>\mathbf{0}$. Si, de plus, $\mathcal{M}$ est irréductible, alors $s(\mathcal{M}+D)$ a multiplicité 1 et est associé à $\mathbf{v}\gg\mathbf{0}$
+3. $\mathsf{diag}(D)\gg\mathbf{0}$ $\implies$ $D-\mathcal{M}$ M-matrice non singulière et $(D-\mathcal{M})^{-1}>\mathbf{0}$
+4. $\mathcal{M}$ irréductible et $\mathsf{diag}(D)>\mathbf{0}$ $\implies$ $D-\mathcal{M}$ M-matrice non singulière irréductible et $(D-\mathcal{M})^{-1}\gg\mathbf{0}$
 </div>
 
 <div style = "position: relative; bottom: -10%; font-size:20px;">
@@ -458,73 +458,70 @@ $\mathcal{M}$ a movement matrix  and $D$ a diagonal matrix. The following hold t
 
 ---
 
-# Nonsingularity of $\mathcal{M}-\mathbf{d}$
+# Non-singularité de $\mathcal{M}-\mathbf{d}$
 
-Using a spectrum shift,
+Utilisons une translation du spectre
 $$
 s(\mathcal{M}-\mathbf{d})=-\min_{p\in\mathcal{P}}d_p
 $$
-This gives a constraint: for total population to behave well (in general, we want this), we must assume all death rates are positive
+Ceci donne une contrainte: pour que la population totale se comporte bien (en général, on veut ça), il faut que tous les taux de mortalité soient strictement positifs
 
-Assume they are (in other words, assume $\mathbf{d}$ nonsingular). Then $\mathcal{M}-\mathbf{d}$ is nonsingular and $\mathbf{N}^\star=(\mathbf{d}-\mathcal{M})^{-1}\mathbf{b}$ unique
+Supposons qu'ils le sont (en d'autres termes, supposons que $\mathbf{d}$ non-singulière). Alors $\mathcal{M}-\mathbf{d}$ non-singulière et $\mathbf{N}^\star=(\mathbf{d}-\mathcal{M})^{-1}\mathbf{b}$ unique
 
 ---
 
-# Behaviour of the total population
-<p style="margin-bottom:-1.5cm;"></p> 
+# Comportement de la population totale<br/>Cas des mouvements égaux
 
-# Equal movement case
-
-$\mathbf{N}^\star=(\mathbf{d}-\mathcal{M})^{-1}\mathbf{b}$ attracts solutions of
+$\mathbf{N}^\star=(\mathbf{d}-\mathcal{M})^{-1}\mathbf{b}$ attire les solutions de
 $$
 \mathbf{N}'=\mathbf{b}-\mathbf{d}\mathbf{N}+\mathcal{M}\mathbf{N}=:f(\mathbf{N})
 $$
 
-Indeed, we have
+En effet, on a
 $$
 Df=\mathcal{M}-\mathbf{d}
 $$
 
-Since we now assume that $\mathbf{d}$ is nonsingular, we have (spectral shift \& properties of $\mathcal{M}$) $s(\mathcal{M}-\mathbf{d})=-\min_{p\in\mathcal{P}}d_p<0$
+Puisqu'on suppose à présent que $\mathbf{d}$ non-singulière, on a (translation du spectre \& propriétés de $\mathcal{M}$) $s(\mathcal{M}-\mathbf{d})=-\min_{p\in\mathcal{P}}d_p<0$
 
-$\mathcal{M}$ irreducible $\rightarrow$ $\mathbf{N}^\star\gg 0$ (provided $\mathbf{b}>\mathbf{0}$, of course)
+$\mathcal{M}$ irréductible $\rightarrow$ $\mathbf{N}^\star\gg 0$ (pourvu que $\mathbf{b}>\mathbf{0}$, bien sur)
 
 ---
 
-# <!--fit-->Behaviour of total population with reducible movement
+# Comportement de la population totale<br>Mouvement réductible
 
 <div class="theorem">
 
-Assume $\mathcal{M}$ reducible. Let $a$ be the number of minimal absorbing sets in the corresponding connection graph $\mathcal{G}(\mathcal{M})$. Then
-1. The spectral abscissa $s(\mathcal{M})=0$ has multiplicity $a$
-2. Associated to $s(\mathcal{M})$ is a nonnegative eigenvector $\mathbf{v}$ s.t.
-	- $v_i>0$ if $i$ is a vertex in a minimal absorbing set
-	- $v_i=0$ if $i$ is a transient vertex
+Supposons $\mathcal{M}$ réductible. Soit $a$ le nombre d'ensembles minimaux absorbants dans le graphe de connection associé $\mathcal{G}(\mathcal{M})$. Alors
+1. L'abscisse spectrale $s(\mathcal{M})=0$ a multiplicité $a$
+2. Associaté à $s(\mathcal{M})$ est un vecteur propre positif $\mathbf{v}$ t.q.
+	- $v_i>0$ si $i$ est un nœud dans un ensemble minimal absorbant
+	- $v_i=0$ si $i$ est un nœud transient (au sens Markov)
 </div>
 
 <div style = "position: relative; bottom: -8%; font-size:20px;">
 
-From Foster and Jacquez, [Multiple zeros for eigenvalues and the multiplicity of traps of a linear compartmental system](https://doi.org/10.1016/0025-5564(75)90096-6), *Mathematical Biosciences* (1975)
+De Foster & Jacquez, [Multiple zeros for eigenvalues and the multiplicity of traps of a linear compartmental system](https://doi.org/10.1016/0025-5564(75)90096-6), *Mathematical Biosciences* (1975)
 </div>
 
 
 ---
 
-# The not-so-nice case
+# Le cas pas si sympa
 
-Recall that
+Rappelons que
 $$
 \mathbf{N}'=\mathbf{b}-\mathbf{d}\mathbf{N}+\sum_{X\in\{S,L,I,R\}}\mathcal{M}^X\mathbf{X}
 $$
 
-Suppose movement rates **similar for all compartments**, i.e., the zero/nonzero patterns in all matrices are the same but not the entries
+Supposons que les taux de mouvement sont **similaires pour tous les compartiments**, i.e., la structure de zéros/non-zéros dans toutes les matrices est la même, mais les entrées non-nulles peuvent différer
 
-Let
+Soient
 $$
 \underline{\mathcal{M}}=\left[\min_{X\in\{S,L,I,R\}}m_{Xpq}\right]_{pq,p\neq q}\qquad 
 \underline{\mathcal{M}}=\left[\max_{X\in\{S,L,I,R\}}m_{Xpq}\right]_{pq,p=q}
 $$
-and
+et
 $$
 \overline{\mathcal{M}}=\left[\max_{X\in\{S,L,I,R\}}m_{Xpq}\right]_{pq,p\neq q}\qquad
 \overline{\mathcal{M}}=\left[\min_{X\in\{S,L,I,R\}}m_{Xpq}\right]_{pq,p=q}
@@ -532,28 +529,28 @@ $$
 
 --- 
 
-# Cool, no? No!
+# Cool, non ? Non !
 
-Then we have
+On a alors
 $$
 \mathbf{b}-\mathbf{d}\mathbf{N}+\underline{\mathcal{M}}\mathbf{N}\leq\mathbf{N}'\leq\mathbf{b}-\mathbf{d}\mathbf{N}+\overline{\mathcal{M}}\mathbf{N}
 $$
 
-Me, roughly every 6 months: *Oooh, coooool, a linear differential inclusion!*
+Moi, tous les 6 mois: *Oooh, coooool, une inclusion différentielle linéaire !*
 
-Me, roughly 10 minutes after that previous statement: *Quel con!* 
+Moi, 10 minutes plus tard: *Quel con !* 
 
-Indeed $\underline{\mathcal{M}}$ and $\overline{\mathcal{M}}$ are **are not** movement matrices  (in particular, their column sums are not all zero)
+En effet, $\underline{\mathcal{M}}$ et $\overline{\mathcal{M}}$ **ne sont pas** des matrices de mouvement (en particulier, leurs sommes de colonnes ne sont pas toutes nulles)
 
-So no luck there.. 
+Pas d'ouverture de ce côté là, donc.. 
 
-However, *non lasciate ogne speranza*, we can still do stuff!
+Toutefois, *non lasciate ogne speranza*, on peut quand même faire des choses !
 
 ---
 
-# Disease free equilibrium (DFE)
+# L'équilibre sans maladie (ESM)
 
-Assume system at equilibrium and $L_p=I_p=0$ for $p\in\mathcal{P}$. Then $\Phi_p=0$ and 
+Supposons le système à l'équilibre et $L_p=I_p=0$ pour $p\in\mathcal{P}$. Alors $\Phi_p=0$ et 
 
 $$
 \begin{aligned}
@@ -563,63 +560,63 @@ $$
 +\textstyle{\sum_{q\in\mathcal{P}}} m_{Rpq}R_{q}
 \end{aligned}
 $$
-Want to solve for $S_p,R_p$. Here, it is best (crucial in fact) to remember some linear algebra. Write system in vector form:
+On veut résoudre pour $S_p,R_p$. Ici, il est crucial de se souvenir d'un peu d'algèbre linéaire. Écrivons le système en forme vectorielle:
 $$
 \begin{aligned}
 \mathbf{0} &=\mathbf{b}-\mathbf{d}\mathbf{S}+\mathbf{\nu}\mathbf{R}+\mathcal{M}^S\mathbf{S} \\
 \mathbf{0} &=-\left(\mathbf{\nu}+\mathbf{d}\right)\mathbf{R}+\mathcal{M}^R\mathbf{R}
 \end{aligned}
 $$
-where $\mathbf{S},\mathbf{R},\mathbf{b}\in\mathbb{R}^{|\mathcal{P}|}$, $\mathbf{d},\mathbf{\nu},\mathcal{M}^S,\mathcal{M}^R$ $|\mathcal{P}|\times|\mathcal{P}|$-matrices ($\mathbf{d},\mathbf{\nu}$ diagonal)
+où $\mathbf{S},\mathbf{R},\mathbf{b}\in\mathbb{R}^{|\mathcal{P}|}$, $\mathbf{d},\mathbf{\nu},\mathcal{M}^S,\mathcal{M}^R$ $|\mathcal{P}|\times|\mathcal{P}|$-matrices ($\mathbf{d},\mathbf{\nu}$ diagonales)
 
 
 ---
 
-# $\mathbf{R}$ at DFE
+# $\mathbf{R}$ en l'ESM
 
-Recall second equation:
+Rappelons la seconde équation:
 $$
 \mathbf{0} =-\left(\mathbf{\nu}+\mathbf{d}\right)\mathbf{R}+\mathcal{M}^R\mathbf{R} \Leftrightarrow (\mathcal{M}^R-\mathbf{\nu}-\mathbf{d})\mathbf{R}=\mathbf{0}
 $$
 
-So unique solution $\mathbf{R}=\mathbf{0}$ if $\mathcal{M}^R-\mathbf{\nu}-\mathbf{d}$ invertible.
-Is it?
+Donc on a une solution unique $\mathbf{R}=\mathbf{0}$ si $\mathcal{M}^R-\mathbf{\nu}-\mathbf{d}$ inversible.
+L'est-elle ?
 
-We have been here before! 
+Cela me rappelle quelque chose ! 
 
-From spectrum shift, $s(\mathcal{M}^R-\mathbf{\nu}-\mathbf{d})=-\min_{p\in\mathcal{P}}(\nu_p+d_p)<0$
+Par translation du spectre, $s(\mathcal{M}^R-\mathbf{\nu}-\mathbf{d})=-\min_{p\in\mathcal{P}}(\nu_p+d_p)<0$
 
-So, given $\mathbf{L}=\mathbf{I}=\mathbf{0}$, $\mathbf{R}=\mathbf{0}$ is the unique equilibrium and
+Donc, étant donné $\mathbf{L}=\mathbf{I}=\mathbf{0}$, $\mathbf{R}=\mathbf{0}$ est l'unique équilibre et
 $$
 \lim_{t\to\infty}\mathbf{R}(t)=\mathbf{0}
 $$
 
-$\implies$ DFE has $\mathbf{L}=\mathbf{I}=\mathbf{R}=\mathbf{0}$
+$\implies$ en l'ESM, $\mathbf{L}=\mathbf{I}=\mathbf{R}=\mathbf{0}$
 
 ---
 
-# $\mathbf{S}$ at the DFE
+# $\mathbf{S}$ en l'ESM
 
-DFE has $\mathbf{L}=\mathbf{I}=\mathbf{R}=\mathbf{0}$ and $\mathbf{b}-\mathbf{d}\mathbf{S}+\mathcal{M}^S\mathbf{S}=\mathbf{0}$, i.e.,
+ESM a $\mathbf{L}=\mathbf{I}=\mathbf{R}=\mathbf{0}$ et $\mathbf{b}-\mathbf{d}\mathbf{S}+\mathcal{M}^S\mathbf{S}=\mathbf{0}$, i.e.,
 $$
 \mathbf{S}=(\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b}
 $$
-Recall: $-\mathcal{M}^S$ singular M-matrix. From previous reasoning, $\mathbf{d}-\mathcal{M}^S$ has **instability modulus** shifted right by $\min_{p\in\mathcal{P}}d_p$. So:
-- $\mathbf{d}-\mathcal{M}^S$ invertible
-- $\mathbf{d}-\mathcal{M}^S$ nonsingular M-matrix
+Rappel: $-\mathcal{M}^S$ M-matrice singulière. En raisonnant comme avant, $\mathbf{d}-\mathcal{M}^S$ a son **module d'instabilité** translaté vers la droite de $\min_{p\in\mathcal{P}}d_p$. Donc:
+- $\mathbf{d}-\mathcal{M}^S$ inversible
+- $\mathbf{d}-\mathcal{M}^S$ M-matrice non-singulière
 
-Second point $\implies (\mathbf{d}-\mathcal{M}^S)^{-1}>\mathbf{0}\implies (\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b}> \mathbf{0}$  (would have $\gg\mathbf{0}$ if $\mathcal{M}^S$ irreducible)
+Second point $\implies (\mathbf{d}-\mathcal{M}^S)^{-1}>\mathbf{0}\implies (\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b}> \mathbf{0}$  (on aurait $\gg\mathbf{0}$ si $\mathcal{M}^S$ est irréductible)
 
-So DFE makes sense with
+Donc l'ESM a un sens, avec
 $$
 (\mathbf{S},\mathbf{L},\mathbf{I},\mathbf{R})=\left((\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b},\mathbf{0},\mathbf{0},\mathbf{0}\right)
 $$
 
 ---
 
-# Computing the basic reproduction number $\mathcal{R}_0$
+# Calcul de $\mathcal{R}_0$
 
-Use next generation method with $\Xi=\{L_1,\ldots,L_{|\mathcal{P}|},I_1,\ldots,I_{|\mathcal{P}|}\}$, $\Xi'=\mathcal{F}-\mathcal{V}$
+On utilise la matrice de prochaine génération avec $\Xi=\{L_1,\ldots,L_{|\mathcal{P}|},I_1,\ldots,I_{|\mathcal{P}|}\}$, $\Xi'=\mathcal{F}-\mathcal{V}$
 $$
 \mathcal{F}=\left(\Phi_1,\ldots,\Phi_{|\mathcal{P}|},0,\ldots,0\right)^T
 $$
@@ -642,7 +639,7 @@ $$
 
 ---
 
-Differentiate w.r.t. $\Xi$:
+Différentiation p.r. à $\Xi$:
 $$
 D\mathcal{F}
 =
@@ -664,11 +661,11 @@ $$
 
 ---
 
-Note that
+Notons que
 $$
 \frac{\partial\Phi_p}{\partial L_k}=\frac{\partial\Phi_p}{\partial I_k}=0
 $$
-whenever $k\neq p$, so
+dès lors que $k\neq p$, donc
 $$
 D\mathcal{F}
 =
@@ -683,7 +680,7 @@ $$
 
 ---
 
-# Evaluate $D\mathcal{F}$ at DFE
+# Évaluons $D\mathcal{F}$ en l'ESM
 
 <style scoped>
 @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
@@ -692,20 +689,20 @@ $$
 <div class="grid grid-cols-2 gap-4">
 <div>
 
-If $\Phi_p=\beta_pS_pI_p$, then
+Si $\Phi_p=\beta_pS_pI_p$, alors
 - $\dfrac{\partial\Phi_p}{\partial L_p}=0$
 - $\dfrac{\partial\Phi_p}{\partial I_p}=\beta_pS_p$
 </div>
 
 <div>
 
-If $\Phi_p=\beta_p\dfrac{S_pI_p}{N_p}$, then
-- $\dfrac{\partial\Phi_p}{\partial L_p}=\beta_p\dfrac{S_pI_p}{N_p^2}=0$ at DFE
-- $\dfrac{\partial\Phi_p}{\partial I_p}=\beta_p\dfrac{S_p}{N_p}$ at DFE
+Si $\Phi_p=\beta_p\dfrac{S_pI_p}{N_p}$, alors
+- $\dfrac{\partial\Phi_p}{\partial L_p}=\beta_p\dfrac{S_pI_p}{N_p^2}=0$ en l'ESM
+- $\dfrac{\partial\Phi_p}{\partial I_p}=\beta_p\dfrac{S_p}{N_p}$ en l'ESM
 </div>
 </div>
 
-In both cases, $\partial/\partial L$ block is zero so
+Dans les 2 cas, le bloc $\partial/\partial L$ est zéro, donc
 $$
 F=D\mathcal{F}(DFE)=
 \begin{pmatrix}
@@ -717,7 +714,7 @@ $$
 
 ---
 
-# Compute $D\mathcal{V}$ and evaluate at DFE
+# Calculons $D\mathcal{V}$ et évaluons en l'ESM
 
 $$
 V=
@@ -726,7 +723,7 @@ V=
 -\mathsf{diag}_p(\varepsilon_p) & \mathsf{diag}_p(\gamma_p+d_p)-\mathcal{M}^I
 \end{pmatrix}
 $$
-where $\mathsf{diag}_p(z_p)=\mathsf{diag}(z_1,\ldots,z_{|\mathcal{P}|})$. Inverse of $V$ easy ($2\times 2$ block lower triangular):
+où $\mathsf{diag}_p(z_p)=\mathsf{diag}(z_1,\ldots,z_{|\mathcal{P}|})$. Inverse de $V$ facile (bloc triangulaire inférieure $2\times 2$):
 $$
 V^{-1}
 =
@@ -735,7 +732,7 @@ V^{-1}
 \tilde V_{21}^{-1} & \left(\mathsf{diag}_p(\gamma_p+d_p)-\mathcal{M}^I\right)^{-1}
 \end{pmatrix}
 $$
-where
+où
 $$
 \tilde V_{21}^{-1}=
 \left(\mathsf{diag}_p(\varepsilon_p+d_p)-\mathcal{M}^L\right)^{-1} 
@@ -745,9 +742,9 @@ $$
 
 
 ---
-# $\mathcal{R}_0$ as $\rho(FV^{-1})$
+# $\mathcal{R}_0$ comme $\rho(FV^{-1})$
 
-Next generation matrix
+Matrice de prochaine génération
 $$
 FV^{-1}=
 \begin{pmatrix}
@@ -764,7 +761,7 @@ F_{12}\tilde V_{21}^{-1} & F_{12}\tilde V_{22}^{-1} \\
 \mathbf{0} & \mathbf{0}
 \end{pmatrix}
 $$
-where $\tilde V_{ij}^{-1}$ is block $ij$ in $V^{-1}$. So
+où $\tilde V_{ij}^{-1}$ est le bloc $ij$ dans $V^{-1}$. Donc
 $$
 \mathcal{R}_0=\rho\left(F_{12}\tilde{V}_{21}^{-1}\right)
 $$
@@ -782,11 +779,11 @@ $$
 
 --- 
 
-# Local asymptotic stability of the DFE
+# Stabilité asymptotique locale de l'ESM
 
 <div class="theorem">
 
-Define $\mathcal{R}_0$ for the $|\mathcal{P}|$-SLIRS as 
+Définissons $\mathcal{R}_0$ pour le $|\mathcal{P}|$-SLIRS par
 $$
 \mathcal{R}_0=\rho\Biggl(
 \mathsf{diag}\left(
@@ -796,32 +793,24 @@ $$
 \left(\mathsf{diag}_p(\gamma_p+d_p)-\mathcal{M}^I\right)^{-1}
 \Biggr)
 $$
-Then the DFE
+Alors l'ESM
 $$
 (\mathbf{S},\mathbf{L},\mathbf{I},\mathbf{R})=\left((\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b},\mathbf{0},\mathbf{0},\mathbf{0}\right)
 $$
-is locally asymptotically stable if $\mathcal{R}_0<1$ and unstable if $\mathcal{R}_0>1$
+est localement asymptotiquement stable si $\mathcal{R}_0<1$ et instable si $\mathcal{R}_0>1$
 </div>
 
 <div style = "position: relative; bottom: -9%; font-size:20px;">
 
-From PvdD & Watmough, [Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission](https://doi.org/10.1016/S0025-5564(02)00108-6), *Bulletin of Mathematical Biology* **180**(1-2): 29-48 (2002)
+De PvdD & Watmough, [Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission](https://doi.org/10.1016/S0025-5564(02)00108-6), *Bulletin of Mathematical Biology* **180**(1-2): 29-48 (2002)
 </div>
 
 ---
 
-# Global stability considerations
-
-- GAS is much harder 
-- It has been done many times (look at my papers, but also those of Li, Shuai, Thieme, van den Driessche, Wang, Zhao..)
-- I am not aware of a way to do this *generically*
-
----
-
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--- fit ---> $\mathcal{R}_0$ is not the panacea 
+# <!--- fit ---> $\mathcal{R}_0$ n'est pas la panacée 
 
-# An urban centre and satellite cities
+# Un centre urbain et des villes satellites
 
 <div style = "position: relative; bottom: -30%; font-size:20px;">
 
@@ -830,20 +819,20 @@ JA & S Portet. [Epidemiological implications of mobility between a large urban c
 
 ---
 
-# <!--fit-->Context of the study
+# <!--fit-->Context de l'étude
 
-Winnipeg as urban centre and 3 smaller satellite cities: Portage la Prairie, Selkirk and Steinbach
+Winnipeg le centre urbain et 3 villes satellites plus petites: Portage la Prairie, Selkirk et Steinbach
 
-- population density low to very low outside of Winnipeg
-- MB road network well studied by MB Infrastructure Traffic Engineering Branch
+- densité de population basse à très basse hors de Winnipeg
+- Réseau routier du MB bien étudié par MB Infrastructure Traffic Engineering Branch
 
 ![bg right:57%](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/spatial/MB_highways.png)
 
 ---
 
-# Known and estimated quantities
+# Quantités connues et estimées
 
-| City | Pop. (2014) | Pop. (now) | Dist. | Avg. trips/day |
+| Ville | Pop. (2014) | Pop. (2022) | Dist. | # moyen voyages/jour |
 |:------:|:------|:-------|:------|:------|
 | Winnipeg (W) | 663,617 | 749,607 | - | - |
 | Portage la Prairie (1) | 12,996 | 13,270 | 88 | 4,115 |
@@ -856,66 +845,66 @@ Winnipeg as urban centre and 3 smaller satellite cities: Portage la Prairie, Sel
 
 ---
 
-# Estimating movement rates
+# Estimation des taux de mouvement
 
-Assume $m_{yx}$ movement rate from city $x$ to city $y$. *Ceteris paribus*, $N_x'=-m_{yx}N_x$, so $N_x(t)=N_x(0)e^{-m_{yx}t}$. Therefore, after one day, $N_x(1)=N_x(0)e^{-m_{yx}}$, i.e.,
+Supposons que $m_{yx}$ est taux de mouvement de la ville $x$ à la ville $y$. *Ceteris paribus*, $N_x'=-m_{yx}N_x$, donc $N_x(t)=N_x(0)e^{-m_{yx}t}$. Donc, après 1 jour, $N_x(1)=N_x(0)e^{-m_{yx}}$, i.e.,
 $$
 m_{yx}=-\ln\left(\frac{N_x(1)}{N_x(0)}\right)
 $$
-Now, $N_x(1)=N_x(0)-T_{yx}$, where $T_{yx}$ number of individuals going from $x$ to $y$ / day. So
+Maintenant, $N_x(1)=N_x(0)-T_{yx}$, où $T_{yx}$ le nombre d'individus allant de $x$ à $y$ / jour. Donc
 $$
 m_{yx}=-\ln\left(1-\frac{T_{yx}}{N_x(0)}\right)
 $$
-Computed for all pairs $(W,i)$ and $(i,W)$ of cities
+On calcule ça pour toutes les paires $(W,i)$ et $(i,W)$ de villes
 
 
 ---
 
-# Sensitivity of $\mathcal{R}_0$ to variations of $\mathcal{R}_0^x\in[0.5,3]$
+# Sensitivité de $\mathcal{R}_0$ aux variations de $\mathcal{R}_0^x\in[0.5,3]$
 
 ![width:800px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/sensitivity_4cities.png)
-*with disease*: $\mathcal{R}_0^x=1.5$; *without disease*: $\mathcal{R}_0^x=0.5$. Each box and corresponding whiskers are 10,000 simulations
+*with disease*: $\mathcal{R}_0^x=1.5$; *without disease*: $\mathcal{R}_0^x=0.5$. Chaque boite et moustaches correspondantes sont 10,000 simulations
 
 
 ---
 
-# Lower connectivity can drive $\mathcal{R}_0$
+# Une connectivité basse peut contrôler $\mathcal{R}_0$
 
-PLP and Steinbach have comparable populations but with parameters used, only PLP can cause the general $\mathcal{R}_0$ to take values larger than 1 when $\mathcal{R}_0^W<1$
+PLP et Steinbach ont des populations comparables mais avec les paramètres utilisés, seul PLP peut induire des valeurs du $\mathcal{R}_0$ général supérieures à 1 quand $\mathcal{R}_0^W<1$
 
-This is due to the movement rate: if $\mathcal{M}=0$, then
+Ceci est dû aux taux de mouvement: si $\mathcal{M}=0$, alors
 $$
 \mathcal{R}_0=\max\{\mathcal{R}_0^W,\mathcal{R}_0^1,\mathcal{R}_0^2,\mathcal{R}_0^3\},
 $$
-since $FV^{-1}$ is then block diagonal
+puisque $FV^{-1}$ est alors bloc diagonale
 
-Movement rates to and from PLP are lower $\rightarrow$ situation closer to uncoupled case and $\mathcal{R}_0^1$ has more impact on the general $\mathcal{R}_0$
+Les taux de mouvement vers et depuis PLP sont plus bas $\rightarrow$ situation plus proche du découplage et $\mathcal{R}_0^1$ a un impact plus important sur le $\mathcal{R}_0$ général
 
 ---
 
-# $\mathcal{R}_0$ does not tell the whole story!
+# $\mathcal{R}_0$ ne raconte pas toute l'histoire !
 
 ![width:550px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/invasion_WPG_from_satellites_R01_m_caseR0W05_R0.png) ![width:550px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/invasion_WPG_from_satellites_R01_m_caseR0W05_attackRate.png)
-Plots as functions of $\mathcal{R}_0^1$ in PLP and the reduction of movement between Winnipeg and PLP. Left: general $\mathcal{R}_0$. Right: Attack rate in Winnipeg
+Graphiques fonctions de $\mathcal{R}_0^1$ à PLP et de la réduction du mouvement entre Winnipeg et PLP. Gauche: $\mathcal{R}_0$ général. Droite: taux d'attaque à Winnipeg
 
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--- fit --->Problems specific to metapopulations
+# <!--- fit --->Problèmes spécifiques aux métapopulations
 
 ---
 
-# Inherited dynamical properties (a.k.a. I am lazy)
+# <!--fit-->Propriétés dynamiques héritées (a.k.a. je suis flemmard)
 
-Given
+Soit
 $$
 \begin{aligned}
 s_{kp}' &= f_{kp}(S_p,I_p) \\
 i_{\ell p}' &= g_{\ell p}(S_p,I_p)
 \end{aligned}
 $$
-with known properties, what is known of
+avec des propriétés dynamiques connues, que sait-on de des propriétés de
 $$
 \begin{aligned}
 s_{kp}' &= f_{kp}(S_p,I_p)+\textstyle{\sum_{q\in\mathcal{P}}} m_{kpq}s_{kq} \\
@@ -924,61 +913,58 @@ i_{\ell p}' &= g_{\ell p}(S_p,I_p)+\textstyle{\sum_{q\in\mathcal{P}}} m_{\ell pq
 \end{aligned}
 $$
 
-- Existence and uniqueness $\checkmark$
-- Invariance of $\mathbb{R}_+^\bullet$ under the flow $\checkmark$
-- Boundedness $\checkmark$
-- Location of individual $\mathcal{R}_{0i}$ and general $\mathcal{R}_0$?
-- GAS?
+- Existence et unicité $\checkmark$
+- Invariance de $\mathbb{R}_+^\bullet$ sous le flot $\checkmark$
+- Bornitude $\checkmark$
+- Localisation des $\mathcal{R}_{0i}$ individuels et du $\mathcal{R}_0$ général ?
+- SAG ?
 
 ---
 
-# <!--fit-->An inheritance problem - Backward bifurcations
+# <!--fit-->Un problème d'héritage - Bifurcations à revers
 
-- Suppose a model that, isolated in a single patch, undergoes so-called backward bifurcations
-- This means the model admits subthreshold endemic equilibria
-- What happens when you couple many such consistuting units?
+- Supposons un modèle qui, lorsqu'il est isolé dans un patch unique, voit une bifurcation à revers
+- Donc le modèle admet des équilibres endémiques sous-critiques
+- Que se passe-t-il lorsque l'on couple plusieurs telles unités ensemble dans une métapopulation ?
 
 
-*YES*, coupling together backward bifurcating units can lead to a system-level backward bifurcation
+*OUI*, coupler ensemble des unités sujettes à une bifurcation à revers peut conduire à un système qui exhibe une bifurcation à revers
 
 JA, Ducrot & Zongo. [A metapopulation model for malaria with transmission-blocking partial immunity in hosts](https://server.math.umanitoba.ca/~jarino/papers/ArinoDucrotZongo-2011-JMB.pdf). *Journal of Mathematical Biology* **64**(3):423-448 (2012) 
 
 ---
 
-# Metapopulation-induced behaviours ?
+# Comportements induits par les métapopulations
 
-"Converse" problem to inheritance problem. Given
+Problème "complémentaire" du problème d'héritage. Soit
 $$
 \begin{aligned}
 s_{kp}' &= f_{kp}(S_p,I_p) \\
 i_{\ell p}' &= g_{\ell p}(S_p,I_p)
 \end{aligned}
 $$
-with known properties, does
+avec des propriétés connues. Est-ce que
 $$
 \begin{aligned}
 s_{kp}' &= f_{kp}(S_p,I_p)+\textstyle{\sum_{q\in\mathcal{P}}} m_{kpq}s_{kq} \\
 i_{\ell p}' &= g_{\ell p}(S_p,I_p)+\textstyle{\sum_{q\in\mathcal{P}}} m_{\ell pq}i_{\ell q}
 \end{aligned}
 $$
-exhibit some behaviours not observed in the uncoupled system?
+peut exhiber des comportements pas observés dans le unités du système non couplé ?
 
-E.g.: units have $\{\mathcal{R}_0<1\implies$ DFE GAS, $\mathcal{R}_0>1\implies$ 1 GAS EEP$\}$ behaviour, metapopulation has periodic solutions
-
-
----
-
-# Mixed equilibria
-
-Can there be situations where some patches are at the DFE and others at an EEP?
-
-This is the problem of **mixed equilibria**
-
-This is a metapopulation-specific problem, not one of inheritance of dynamical properties!
+E.g.: unités ont un comportement $\{\mathcal{R}_0<1\implies$ ESM GAS, $\mathcal{R}_0>1\implies$ 1 ÉÉ GAS\}$, la métapopulation a des solutions périodiques
 
 ---
 
-# Types of equilibria
+# Comportements induits - Équilibres mixtes
+
+Peut-il y avoir des situations dans lesquelles certains patchs sont en l'ESM tandis que d'autres sont en un ÉÉ ?
+
+Ceci est le problème des **équilibres mixtes**
+
+---
+
+# Types d'équilibres
 
 <div class="definition">
 
@@ -1051,31 +1037,46 @@ required to observe a metapopulation-induced behaviour?
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!-- fit -->Global stability considerations
+# <!-- fit -->Considérations sur la stabilité globale
 
 ---
 
-# $|\mathcal{P}|$-SLIRS model
+# Remarques sur la SAG dans les métapopulations
 
+- Contrairement à l'analyse locale, il n'y a pas d'algorithme permettant de considérer ce problème de façon systématique
+- On procède au cas par cas. Deux exemples dans le reste de ce cours
+- Des éléments de théorie globale systématique: travail de Zhisheng Shuai et collaborateurs, principalement
+- La question, comme souvent: la SAG est-elle vraiment importante ? Cela dépend du contexte du travail..
+
+---
+
+# Modèle $|\mathcal{P}|$-SLIRS
+
+Considérons un cas particulier de $\eqref{sys:pSLIRS_dS}$-$\eqref{sys:pSLIRS_dR}$ avec naissance constante
 $$
-\begin{aligned}
-S_{p}' &=\mathcal{B}_p\left(N_p\right)+\nu_pR_p-\Phi_p-d_pS_p
-\color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Spq}S_{q}} \\
+\begin{align}
+S_{p}' &=b_p+\nu_pR_p-\Phi_p-d_pS_p
++\textstyle{\sum_{q\in\mathcal{P}}} m_{Spq}S_{q}
+\tag{9a}\label{sys:pSLIRS_GAS_dS} \\
 L_{p}' &=\Phi_p-\left( \varepsilon_{p}+d_{p}\right)L_{p}
-\color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Lpq}L_{q}} \\
++\textstyle{\sum_{q\in\mathcal{P}}} m_{Lpq}L_{q}
+\tag{9b}\label{sys:pSLIRS_GAS_dL} \\
 I_{p}' &=\varepsilon_pL_p-(\gamma_p+d_p)I_p
-\color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Ipq}I_{q}} \\
++\textstyle{\sum_{q\in\mathcal{P}}} m_{Ipq}I_{q}
+\tag{9c}\label{sys:pSLIRS_GAS_dI} \\
 R_{p}' &=\gamma _{p}I_{p}-\left(\nu_{p}+d_{p}\right)R_{p}
-\color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Rpq}R_{q}}
-\end{aligned}
++\textstyle{\sum_{q\in\mathcal{P}}} m_{Rpq}R_{q}
+\tag{9d}\label{sys:pSLIRS_GAS_dR}
+\end{align}
+$$
+et incidence standard
+$$
+\tag{9e}
+\Phi_p=\beta_p\frac{S_pI_p}{N_p}
 $$
 
-$$
-\Phi_p=\beta_p\frac{S_pI_p}{N_p^{q_p}},\qquad q_p\in\{0,1\}
-$$
 
-
-<div style = "position: relative; bottom: -20%; font-size:20px;">
+<div style = "position: relative; bottom: -12%; font-size:20px;">
 
 - JA & PvdD. [Disease spread in metapopulations](https://server.math.umanitoba.ca/~jarino/publications/ArinoVdD-2006-FIC48.pdf). *Fields Institute Communications* **48**:1-13 (2006)
 - JA. [Diseases in metapopulations](https://server.math.umanitoba.ca/~jarino/papers/Arino_metapopulations.pdf). In *Modeling and Dynamics of Infectious Diseases*, World Scientific (2009)
@@ -1083,65 +1084,69 @@ $$
 
 ---
 
-The linear stability result for $\mathcal{R}_{0}<1$ can be strengthened to a global result
+Le résultat de SAL de l'ESM lorsque $\mathcal{R}_{0}<1$ peut être rendu global
 
 <div class="theorem">
 
-Let $\mathcal{R}_0$ be computed as explained earlier, and use proportional incidence. If $\mathcal{R}_0<1$, then the DFE of system $|\mathcal{P}|$-SLIRS is globally asymptotically stable
+Calculons $\mathcal{R}_0$ comme expliqué précédemment. Si $\mathcal{R}_0<1$, alors l'ESM du système $|\mathcal{P}|$-SLIRS $\eqref{sys:pSLIRS_GAS_dS}$-$\eqref{sys:pSLIRS_GAS_dR}$ est globalement asymptotiquement stable
 </div>
 
 ---
 
-# Proof 
+# Preuve
 
-Since $\ S_{i}\leq N_{i},$ $\Phi_i\leq\beta_iN_iI_i/N_i$, and the equation for $L'$ gives the inequality
+Puisque $S_{p}\leq N_{p}$ pour tout $t$, il suit que $\Phi_p\leq\beta_pN_pI_p/N_p=\beta_pI_p,$ et l'équation $\eqref{sys:pSLIRS_GAS_dL}$ donne l'inégalité
 $$
 \begin{equation}
-\frac{d}{dt}L_i \leq \beta_iI_i-(\varepsilon_i+d_i)L_i+\sum_{j\in\mathcal{P}}m_{ij}^LL_{j}
--\sum_{j\in\mathcal{P}}m_{ji}^LL_i  \label{eq:14}
+L_p' \leq \beta_pI_p-(\varepsilon_p+d_p)L_p+\sum_{q\in\mathcal{P}}m_{Lpq}L_{q} \tag{10}\label{eq:ineq_dL}
 \end{equation}
 $$
-For comparison, define a linear system given by the equation above and the original equation for $I'$
+Pour utiliser un théorème de comparaison, définissons un système linéaire consistant de $\eqref{eq:ineq_dL}$ et $\eqref{sys:pSLIRS_GAS_dI}$
 $$
-\begin{align*}
-\frac{d}{dt}L_i &= \beta_iI_i-(\varepsilon_i+d_i)L_i+\sum_{j\in\mathcal{P}}m_{ij}^LL_j
--\sum_{j\in\mathcal{P}}m_{ji}^LL_i \\
-\frac{d}{dt}I_i &= \varepsilon_iE_i-(\gamma_i+d_i+\delta_i)I_i+\sum_{j\in\mathcal{P}}m_{ij}^II_j
--\sum_{j\in\mathcal{P}}m_{ji}^II_i
-\end{align*}
+\begin{align}
+L_p' &= \beta_pI_p-(\varepsilon_p+d_p)L_p+\sum_{q\in\mathcal{P}}m_{Lpq}L_q 
+\tag{11a}\label{sys:pSLIRS_bounding_dL} \\
+I_p' &= \varepsilon_pL_p-(\gamma_p+d_p+\delta_p)I_p+\sum_{q\in\mathcal{P}}m_{Ipq}I_q
+\tag{11b}\label{sys:pSLIRS_bounding_dI} 
+\end{align}
 $$
 
 ---
 
-- This system linear has coefficient matrix $F-V$, and so (by some argument in the proof of local stability based on $\mathcal{R}_0$) satisfies $\lim\limits_{t\rightarrow \infty }L_{i}=0$ and $\lim\limits_{t\rightarrow \infty }I_{i}=0$ for $\mathcal{R}_{0}=\rho (FV^{-1})<1$ 
-- Using a comparison theorem, it follows that these limits also hold for the nonlinear system in $L_i'$ and $I_i'$
-- That $\lim\limits_{t\rightarrow \infty }R_{i}=0$ and $\lim\limits_{t\rightarrow \infty }S_{i}=N_{i}^{{}}\,^{\ast }$ follow from the equations for $S_i'$ and $R_i'$
+- Le système linéaire $\eqref{sys:pSLIRS_bounding_dL}$-$\eqref{sys:pSLIRS_bounding_dI}$ a la matrice $F-V$ comme matrice de coefficients, donc (par des arguments dans la preuve du résultat sur $\mathcal{R}_0$ de van den Driessche & Watmough) vérifie $\lim\limits_{t\rightarrow \infty }L_{p}=0$ et $\lim\limits_{t\rightarrow \infty }I_{p}=0$ pour $\mathcal{R}_{0}=\rho (FV^{-1})<1$ 
+- En utilisant un théorème de comparaison, il suit que ces limites sont aussi vérifées pour le sous-système non linéaire $\eqref{sys:pSLIRS_GAS_dL}$-$\eqref{sys:pSLIRS_GAS_dI}$
+- Il suit par le même raisonnement que plus avant que $\lim\limits_{t\rightarrow \infty }R_{p}=0$ et $\lim\limits_{t\rightarrow \infty }S_{p}=N_{p}^\star$
 
-Thus for $\mathcal{R}_{0}<1,$ the disease free equilibrium is globally asymptotically stable and the disease dies out.
+Donc, lorsque $\mathcal{R}_{0}<1,$ l'ESM est GAS, la maladie s'éteint
 
 ---
 
-# $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS (multiple species)
+# $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS (espèces multiples)
 
-$\mathcal{S}$ a set of species
+On considère $\eqref{sys:spSLIRS_dS}$-$\eqref{sys:spSLIRS_dR}$ avec population totale constante, mouvement égal pour tous les états et irréductible
 $$
-\begin{aligned}
-S_{sp}' &= \mathcal{B}_{sp}(N_{sp})+\nu_{sp}R_{sp}-\Phi_{sp}-d_{sp}S_{sp}
-\color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Sspq}S_{sq}} \\
+\begin{align}
+S_{sp}' &= d_{sp}N_{sp}+\nu_{sp}R_{sp}-\Phi_{sp}-d_{sp}S_{sp}
++\textstyle{\sum_{q\in\mathcal{P}}} m_{spq}S_{sq} 
+\tag{12a}\label{sys:spSLIRS_GAS_dS} \\
 L_{sp}' &= \Phi_{sp}-(\varepsilon_{sp}+d_{sp})L_{sp}
-\color{red}{+\textstyle{\sum_{q\in\mathcal{P}}}m_{Lspq}L_{sq}} \\
++\textstyle{\sum_{q\in\mathcal{P}}}m_{spq}L_{sq}
+\tag{12b}\label{sys:spSLIRS_GAS_dL} \\
 I_{sp}' &= \varepsilon_{sp}L_{sp}-(\gamma_{sp}+d_{sp})I_{sp}
-\color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Ispq}I_{sq}} \\
++\textstyle{\sum_{q\in\mathcal{P}}} m_{spq}I_{sq}
+\tag{12c}\label{sys:spSLIRS_GAS_dI} \\
 R_{sp} &= \gamma _{sp}I_{sp}-(\nu_{sp}+d_{sp})R_{sp}
-\color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Rspq}R_{sq}}
-\end{aligned}
++\textstyle{\sum_{q\in\mathcal{P}}} m_{spq}R_{sq}
+\tag{12d}\label{sys:spSLIRS_GAS_dR} 
+\end{align}
+$$
+ et incidence standard
+$$
+\tag{12e}
+\Phi_{sp}=\sum_{k\in\mathcal{S}}\beta_{skp}\frac{S_{sp}I_{kp}}{N_p}
 $$
 
-$$
-\Phi_{sp}=\sum_{k\in\mathcal{S}}\beta_{skp}\frac{S_{sp}I_{kp}}{N_p^{q_p}},\qquad q_p\in\{0,1\}
-$$
-
-<div style = "position: relative; bottom: -8%; font-size:20px;">
+<div style = "position: relative; bottom: -4%; font-size:20px;">
 
 - JA, Davis, Hartley, Jordan, Miller \& PvdD. [A multi-species epidemic model with spatial dynamics](https://server.math.umanitoba.ca/~jarino/papers/ArinoDavisHartleyJordanMillerVdD-2005-MMB22.pdf). *Mathematical Medicine and Biology* **22**(2):129-142 (2005) 
 - JA, Jordan \& PvdD. [Quarantine in a multi-species epidemic model with spatial dynamics](https://server.math.umanitoba.ca/~jarino/publications/ArinoJordanVdD-2007-MBS206.pdf). *Mathematical Biosciences* **206**(1):46-60 (2007)
@@ -1151,105 +1156,92 @@ $$
 
 <div class="theorem">
 
-For the $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS system, with equal movement rates for all states, define $\mathcal{R}_0$ using the method described earlier and use proportional incidence. If $\mathcal{R}_0<1$, then the DFE is globally asymptotically stable
+Pour le modèle $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS $\eqref{sys:spSLIRS_GAS_dS}$-$\eqref{sys:spSLIRS_GAS_dR}$, définissons $\mathcal{R}_0$ en utilisant la méthode décrite plus haut. Si $\mathcal{R}_0<1$, alors l'ESM est GAS
 </div>
 
 ---
 
-# Proof of the result
+# Preuve
 
-To establish the global stability of the DFE, consider the **nonautonomous** system consisting of $L'$, $I'$ and $R'$, with $L'$ written in the form
+Pour établir la SAG de l'ESM lorsque $\mathcal{R}_0<1$, considérons le système **non autonome** consistant de $\eqref{sys:spSLIRS_GAS_dL}$-$\eqref{sys:spSLIRS_GAS_dR}$, dans lequel on écrit $\eqref{sys:spSLIRS_GAS_dL}$ sous la forme
 $$
-\begin{equation}\label{sys:nonauton_E}
+\begin{equation}\label{sys:nonauton_E}\tag{13}
 \begin{aligned}
-\frac{d}{dt}L_{sp} =& \sum_{j\in\mathcal{S}}
+L_{sp}' =& \sum_{j\in\mathcal{S}}
 \beta_{sjp}(N_{sp}-L_{sp}-I_{sp}-R_{sp})\frac{I_{jp}}{N_{jp}} \\
 &-(d_{sp}+\varepsilon_{sp})L_{sp}+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
 -\sum_{q\in\mathcal{P}} m_{sqp}L_{sp}
 \end{aligned}
 \end{equation}
 $$
-in which $S_{sp}$ has been replaced by $N_{sp}-L_{sp}-I_{sp}-R_{sp}$, and $N_{sp}$ is a solution of the equation for the total population
+où l'on a remplacé $S_{sp}$ par $N_{sp}-L_{sp}-I_{sp}-R_{sp}$, et $N_{sp}$ est solution de l'équation pour la population totale
 $$
 \begin{equation}
-\frac{d}{dt}N_{sp}=\sum_{q\in\mathcal{P}}m_{spq}N_{sq}-\sum_{q\in\mathcal{P}}m_{sqp}N_{sp},
+\frac{d}{dt}N_{sp}=
+\sum_{q\in\mathcal{P}}m_{spq}N_{sq}
 \end{equation}
+$$
+On a (par raisonnement similaire à celui de la SAL de l'ESM)
+$$
+\lim_{t\to\infty}N_{sp}(t)=N_{sp}^\star>0
 $$
 
 ---
 
-# To continue, we need this
-
-<div class="theorem">
-
-Suppose movement is identical for all epidemiological states, that disease is not lethal ($\delta_{sp}=0$), and that in each patch, birth compensates natural death, that is, $b_{sp}(N_{sp})=d_{sp}N_{sp}$. Then the movement model is given, for all $s=1,\ldots,|\mathcal{S}|$ and all $p=1,\ldots,|\mathcal{P}|$, by
+Écrivons le système non autonome $\eqref{sys:nonauton_E}$-$\eqref{sys:spSLIRS_GAS_dI}$-$\eqref{sys:spSLIRS_GAS_dR}$ comme
 $$
-\begin{equation}\label{eq:Nsp_spSEIRS}
-\frac{d}{dt}N_{sp}=\sum_{q\in\mathcal{P}}m_{spq}N_{sq}-\sum_{q\in\mathcal{P}}m_{sqp}N_{sp},
-\end{equation}
-$$
-and there holds
-$$
-\lim_{t\to\infty}N_{sp}(t)=N_{sp}^*>0
-$$
-</div>
-
----
-
-Write this system as
-$$
-\begin{equation}\label{sys:nonauton}
+\begin{equation}\label{sys:nonauton}\tag{14}
 x' = f(t,x)
 \end{equation}
 $$
-where $x$ is the $3|\mathcal{S}||\mathcal{P}|$ dimensional vector consisting of the $L_{sp}$, $I_{sp}$ and $R_{sp}$ 
+où $x$ vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel consistant des $L_{sp}$, $I_{sp}$ et $R_{sp}$ 
 
-The DFE of the original system corresponds to the equilibrium $x=0$ in the the nonautonomous system
+L'ESM pour $\eqref{sys:spSLIRS_GAS_dL}$-$\eqref{sys:spSLIRS_GAS_dR}$ correspond à l'équilibre $x=0$ de $\eqref{sys:nonauton}$
 
-System for $N'$ can be solved for $N_{sp}(t)$ independently of the epidemic variables, and result earlier implies that the time dependent functions $N_{sp}(t)\to N^*_{sp}$ as $t\to\infty$
+$\eqref{sys:nonauton}$ dépend de $N_{sp}(t)$, mais $N_{sp}(t)$ peut être considéré independemment des variables épidémiologiques, et l'on a vu que $N_{sp}(t)\to N_{sp}^\star$ quand $t\to\infty$
 
 ---
 
-Substituting this large time limit value $N_{sp}^*$ for $N_{sp}$ in the nonautonomous equation for $L'$ gives  
+Substituons la limite $N_{sp}^\star$ à $N_{sp}$ dans $\eqref{sys:nonauton_E}$
 $$
-\begin{equation}\label{sys:asympt_auton_E}
+\begin{equation}\label{sys:asympt_auton_E}\tag{15}
 \begin{aligned}
-\frac{d}{dt}L_{sp} =& \sum_{j\in\mathcal{S}}
-\beta_{sjp}(N_{sp}^*-L_{sp}-I_{sp}-R_{sp})\frac{I_{jp}}{N_{jp}^*} \\
+L_{sp}' =& \sum_{j\in\mathcal{S}}
+\beta_{sjp}(N_{sp}^\star-L_{sp}-I_{sp}-R_{sp})\frac{I_{jp}}{N_{jp}^\star} \\
 &-(d_{sp}+\varepsilon_{sp})L_{sp}+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
 -\sum_{q\in\mathcal{P}} m_{sqp}L_{sp}
 \end{aligned}
 \end{equation}
 $$
-Therefore, the nonautonomous system is *asymptotically autonomous*, with limit equation
+
+Il suit que le système non autonome $\eqref{sys:nonauton}$ est *asymptotiquement autonome*, avec système limite
 $$
-\begin{equation}\label{sys:asympt_auton}
+\begin{equation}\label{sys:asympt_auton}\tag{16}
 x' = g(x)
 \end{equation}
 $$
 
 ---
 
-To show that 0 is a globally asymptotically stable equilibrium for the limit system, consider the linear system
+Pour montrer que 0 est GAS pour le système limite $\eqref{sys:asympt_auton}$, considérons le système linéaire
 $$
-\begin{equation}\label{sys:linear}
+\begin{equation}\label{sys:linear}\tag{17}
 x'=\mathcal{L}x
 \end{equation}
 $$
-where $x$ is the $3|\mathcal{S}||\mathcal{P}|$ dimensional vector consisting of the $L_{sp}$, $I_{sp}$ and $R_{sp}$. In $\mathcal{L}$, we replace $S_{sp}/N_{jp}$ with $N^*_{sp}/N^*_{jp}$. Equations \eqref{sys:spSEIRS_Isp} and \eqref{sys:spSEIRS_Rsp} are not affected by this transformation, whereas \eqref{sys:spSEIRS_Esp} takes the form
+où $x$ est le vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel consistant des $L_{sp}$, $I_{sp}$ et $R_{sp}$. Dans $\mathcal{L}$, on remplace $S_{sp}/N_{jp}$ par $N_{sp}^\star/N_{jp}^\star$. Les équations $\eqref{sys:spSEIRS_Isp}$ et $\eqref{sys:spSEIRS_Rsp}$ ne sont pas affectées par cette transformation, tandis que $\eqref{sys:spSEIRS_Esp}$ devient
 $$ 
-\begin{equation}\label{sys:lin_E}
-\frac{dL_{sp}}{dt} = \sum_{j\in\mathcal{S}}
+\begin{equation}\label{sys:lin_E}\tag{18}
+L_{sp}' = \sum_{j\in\mathcal{S}}
 \beta_{sjp}\frac{N_{sp}^*}{N_{jp}^*}I_{jp}
 -(d_{sp}+\varepsilon_{sp})L_{sp}+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
--\sum_{q\in\mathcal{P}} m_{sqp}L_{sp}
 \end{equation}
 $$
-Comparing \eqref{sys:asympt_auton_E} and \eqref{sys:lin_E}, we note that $g(x)\leq\mathcal{L}x$ for all $x \in \mathbb{R}_+^{3|\mathcal{S}||\mathcal{P}|}$
+Comparing $\eqref{sys:asympt_auton_E}$ and $\eqref{sys:lin_E}$, we note that $g(x)\leq\mathcal{L}x$ for all $x \in \mathbb{R}_+^{3|\mathcal{S}||\mathcal{P}|}$
 
 ---
 
-In system \eqref{sys:linear}, the equations for $L_{sp}$ and $I_{sp}$ do not involve $R_{sp}$. Let $\tilde x$ be the part of the vector $x$ corresponding to the variables $E_{sp}$ and $I_{sp}$, and $\tilde{\mathcal{L}}$ be the corresponding submatrix of $\mathcal{L}$.
+In system $\eqref{sys:linear}$, the equations for $L_{sp}$ and $I_{sp}$ do not involve $R_{sp}$. Let $\tilde x$ be the part of the vector $x$ corresponding to the variables $E_{sp}$ and $I_{sp}$, and $\tilde{\mathcal{L}}$ be the corresponding submatrix of $\mathcal{L}$.
 
 The method of used to prove local stability can also 
 be applied to study the stability of the $\tilde x=0$ equilibrium of the subsystem $\tilde x'=\tilde{\mathcal{L}}\tilde x$, with $\tilde{\mathcal{L}}=F-V$
@@ -1272,9 +1264,9 @@ Using a standard comparison theorem, it follows that 0 is a globally asymptotica
 
 ---
 
-For $\mathcal{R}_0<1$, the linear system \eqref{sys:lin_E} and \eqref{sys:spSEIRS_Isp} has a unique equilibrium (the DFE) since its coefficient matrix $F-V$ is nonsingular
+Lorsque $\mathcal{R}_0<1$, le système linéaire $\eqref{sys:lin_E}$ et $\eqref{sys:spSEIRS_GAS_dI}$ a un équilibre unique (l'ESM) puisque sa matrice de coefficients $F-V$ est non-singulière
 
-The proof of global stability is completed using results on asymptotically autonomous equations
+La SAG suit par utilisation de résultats sur les systèmes asymptotiquement autonomes
 
 ---
 
