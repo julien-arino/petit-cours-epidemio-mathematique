@@ -17,22 +17,21 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 02: [Introduction à R](cours-02-intro-R.html) 
 - Cours 03: [Collecte et utilisation des données](cours-03-donnees.html) 
 - Cours 04: [Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS](cours-04-modeles-SIS-SIR.html) &#9989;
-- Cours 05: [Résolution numérique des EDO en R](cours-05-EDO-en-R.html) 
-- Cours 06: [Temps de résidence dans les compartiments](cours-06-temps-de-residence.html) &#9989;
-- Cours 07: [Étapes de l'analyse mathématique des modèles](cours-07-etapes-analyse.html) &#9989;
-- Cours 08: [$R_0$ et la taille finale d'une épidémie](cours-08-R0.html) &#9989;
-- Cours 09: [Le modèle SLIRS](cours-09-SLIRS.html) &#9989;
-- Cours 10: [Quelques modèles épidémiques](cours-10-modeles-epidemiques.html) &#9989;
-- Cours 11: [Plus de modélisation](cours-11-plus-de-modelisation.html) 
-- Cours 12: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-12-heterogeneite-groupe-et-spatiale.html) &#9989;
-- Cours 13: [Modèles de groupes](cours-13-modeles-groupes.html) 
-- Cours 14: [Modèles dans des métapopulations](cours-14-modeles-metapopulation.html) 
-- Cours 15: [Types de modèles stochastiques utilisés en épidémiologie](cours-15-stochasticite.html)
-- Cours 16: [Modèles en chaînes de Markov](cours-16-modeles-MC.html) 
-- Cours 17: [Analysis and study of stochastic models in R](cours-17-simulation-stochastique.html) 
-- Cours 18: [Modèles en réseaux](cours-18-modeles-reseaux.html)
-- Cours 19: [Modèles agents-centrés](cours-19-modeles-agents.html) 
-- Cours 20: [Ajustement des paramètres](cours-20-ajustement-parametres.html) 
+- Cours 05: [Temps de résidence dans les compartiments](cours-05-temps-de-residence.html) &#9989;
+- Cours 06: [Étapes de l'analyse mathématique des modèles, $R_0$ et la taille finale d'une épidémie](cours-06-etapes-R0-final-size.html) &#9989;
+- Cours 07: [Le modèle SLIRS](cours-07-SLIRS.html) &#9989;
+- Cours 08: [Quelques modèles épidémiques](cours-08-modeles-epidemiques.html) &#9989;
+- Cours 09: [Plus de modélisation](cours-09-plus-de-modelisation.html) 
+- Cours 10: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-10-heterogeneite-groupe-et-spatiale.html) &#9989;
+- Cours 11: [Modèles de groupes](cours-11-modeles-groupes.html) 
+- Cours 12: [Modèles dans des métapopulations](cours-12-modeles-metapopulation.html) 
+- Cours 13: [Résolution numérique des EDO en R](cours-13-EDO-en-R.html) 
+- Cours 14: [Types de modèles stochastiques utilisés en épidémiologie](cours-14-stochasticite.html)
+- Cours 15: [Modèles en chaînes de Markov](cours-15-modeles-MC.html) 
+- Cours 16: [Analysis and study of stochastic models in R](cours-16-simulation-stochastique.html) 
+- Cours 17: [Modèles en réseaux](cours-17-modeles-reseaux.html)
+- Cours 18: [Modèles agents-centrés](cours-18-modeles-agents.html) 
+- Cours 19: [Ajustement des paramètres](cours-19-ajustement-parametres.html) 
 
 
 <!--- Image credit: Malaria parasite entering a red blood cell. https://flic.kr/p/V8qaYt. National Institute of Allergy and Infectious Diseases, NIH. CC BY NC 2.0 --->
