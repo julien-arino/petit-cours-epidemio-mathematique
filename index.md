@@ -13,17 +13,17 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 
 
 - Cours 00: [Organisation du cours](cours-00-organisation.html) &#9989;
-- Cours 01: [Épidémies, épidémiologie et épidémiologie mathématique](cours-01-introduction.html) 
+- Cours 01: [Épidémies, épidémiologie et épidémiologie mathématique](cours-01-introduction.html) &#9989;
 - Cours 02: [Introduction à R](cours-02-intro-R.html) 
 - Cours 03: [Collecte et utilisation des données](cours-03-donnees.html) 
 - Cours 04: [Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS](cours-04-modeles-SIS-SIR.html) &#9989;
 - Cours 05: [Résolution numérique des EDO en R](cours-05-EDO-en-R.html) 
 - Cours 06: [Temps de résidence dans les compartiments](cours-06-temps-de-residence.html) &#9989;
-- Cours 07: [$R_0$ et la taille finale d'une épidémie](cours-07-R0.html) &#9989;
-- Cours 08: [Le modèle SLIRS](cours-08-SLIRS.html) &#9989;
-- Cours 09: [Quelques modèles épidémiques](cours-09-modeles-epidemiques.html) &#9989;
-- Cours 10: [Plus de modélisation](cours-10-plus-de-modelisation.html) 
-- Cours 11: [Analyse mathématique des modèles](cours-11-analyse.html) 
+- Cours 07: [Étapes de l'analyse mathématique des modèles](cours-07-etapes-analyse.html) &#9989;
+- Cours 08: [$R_0$ et la taille finale d'une épidémie](cours-08-R0.html) &#9989;
+- Cours 09: [Le modèle SLIRS](cours-09-SLIRS.html) &#9989;
+- Cours 10: [Quelques modèles épidémiques](cours-10-modeles-epidemiques.html) &#9989;
+- Cours 11: [Plus de modélisation](cours-11-plus-de-modelisation.html) 
 - Cours 12: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-12-heterogeneite-groupe-et-spatiale.html) &#9989;
 - Cours 13: [Modèles de groupes](cours-13-modeles-groupes.html) 
 - Cours 14: [Modèles dans des métapopulations](cours-14-modeles-metapopulation.html) 

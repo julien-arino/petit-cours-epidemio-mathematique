@@ -67,7 +67,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # Considérations historiques
 
 - Les épisodes épidémiques sont parmi les premiers évenements rapportés dans l'histoire
-- Mise en garde: je discute peu ici de l'aspect spatio-temporel de la propagation, qui fait l'objet de cours spécifiques [Cours 03](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L03_SpreadInGroups_SpreadInSpace.html) et [Cours 05](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L05_MetapopulationModels.html)
+- Mise en garde: je discute peu ici de l'aspect spatio-temporel de la propagation ou bien de la propagation dans des groupes, qui font l'objet d'un [cours spécifique](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-heterogeneite-groupe-et-spatiale.html)
 
 ---
 
@@ -110,24 +110,29 @@ table {
 
 # Définition
 
-> **Epidemiology** is the study and analysis of the distribution (who, when, and where), patterns and determinants of health and disease conditions in defined populations [[Wikipedia](https://en.wikipedia.org/wiki/Epidemiology)]
+> L'**épidémiologie** est une discipline scientifique qui étudie les problèmes de santé dans les populations humaines, leur fréquence, leur distribution dans le temps et dans l’espace, ainsi que les facteurs exerçant une influence sur la santé et les maladies de populations [[Wikipedia](https://fr.wikipedia.org/wiki/Épidémiologie)]
 
 > Epidemiology is the study of how often diseases occur in different groups of people and why. Epidemiological information is used to plan and evaluate strategies to prevent illness and as a guide to the management of patients in whom disease has already developed [[BMJ](https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated/1-what-epidemiology)]
 
-Étymologie: *the study of what is upon the people*, du Grec $\varepsilon\pi\iota$ (*upon, among*), $\delta\varepsilon\mu\omega\sigma$ (*people, district*) and $\lambda\omega\gamma\omega\sigma$ (*study, word, discourse*)
+Étymologie: du Grec *epi* (*au-dessus, parmi*), *demos* (*peuple, district*) et *logos* (*mot, discours*)
 
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# <!--fit-->Qui, quand et où?
+# <!--fit-->Qui, quand et où ?
 
 ---
 
-# Qui, quand et où?
+# Qui, quand et où ?
 
-Recall part of the definition on Wikipedia
-> **Epidemiology** is the study and analysis of the distribution (who, when, and where)
+Rappelons une partie de la définition Wikipedia
+> L'**épidémiologie** est une discipline scientifique qui étudie les problèmes de santé dans les populations humaines, leur fréquence, leur distribution dans le temps et dans l’espace
+
+Ainsi, on cherche à identifier
+- les populations concernées (*qui*)
+- la chronologie de la propagation (*quand*)
+- la localisation de la propagation (*où*)
 
 ---
 
@@ -140,9 +145,9 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 # Qui?
 
 - **Épidémiologie** est le terme typiquement employé lorsque l'on parle d'humains, bien qu'il soit aussi employé parfois quand on cherche une description simple; p.ex., épidémiologie des maladies des plantes
-- **Épizootique**: denoting or relating to a disease that is temporarily prevalent and widespread in an animal population
-- **Panzootic** is like a pandemic for animals
-- **One Health**: considers health of humans, animals and their environment (including plants)
+- **Épizootie**: relatif à une maladie qui est temporairement prévalente et largement répandue dans une population animale
+- **Panzootie** est comme une pandémie pour les animaux
+- **Une seule santé**: considère la santé des humains, des animaux et de leur environnement (y compris les plantes)
 
 ---
 
@@ -218,9 +223,9 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 |:---|:---:|:---|
 | Interpandémie | 1 | Pas de rapports d'infection d'humains par un virus influenza animal circulant dans une population animale |
 | | 2 | Un virus influenza animal circulant dans une population domestiquée ou sauvage a été observé comme causant des infections chez les humains et a par conséquent un potentiel pandémique |
-| Alerte pandémique | 3 | Animal or human-animal influenza reassortant virus has caused sporadic cases or small clusters of disease in people, but has not resulted in H2H transmission sufficient to sustain community-level outbreaks |
-| | 4 | Une transmission humain-à-humain (H2H) d'un virus influenza recombinant animal ou humain-animal capable de propagation soutenue au niveau des communautés, est vérifiée |
-| | 5 | Le virus identifié a provoqué des explosions (*outbreaks*) soutenues au niveau des communautés dans au moins 2 pays dans 1 région OMS |
+| Alerte pandémique | 3 | Un virus influenza recombinant animal ou humain-animal a provoqué des cas sporadiques ou des petits clusters de cas chez l'humain, mais n'a pas entraîné de transmissions humain-à-humain (H2H) à un niveau suffisant pour maintenir des explosions (*outbreaks*) au niveau de la communauté |
+| | 4 | La transmission H2H d'un virus influenza recombinant animal ou humain-animal capable de propagation soutenue au niveau des communautés, est vérifiée |
+| | 5 | Le virus identifié a provoqué des explosions soutenues au niveau des communautés dans au moins 2 pays dans 1 région OMS |
 | Pandémie | 6 | En plus des critères de la Phase 5, le même virus a provoqué des explosions soutenues au niveau des communautés dans au moins 1 autre pays dans une région OMS différente |
 </div>
 

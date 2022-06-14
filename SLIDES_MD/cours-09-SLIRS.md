@@ -948,3 +948,215 @@ $$
 - Si $\mathcal{R}_0>1$, alors $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ a l'équilibre GAS $E^\star$
 - Si $\mathcal{R}_0\leq 1$, alors $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ a l'ESM $E_0$ GAS et $E^\star$ n'est pas valide biologiquement
 </div>
+
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Compound matrices
+
+---
+
+# The compound matrix method
+
+- An extension of Dulac's criterion to higher order systems
+- Useful to rule out the existence of periodic orbits
+- Was very popular for a while, but you must be aware of the main limitation:
+  - Becomes hard to use when dimensionality $\geq 4$
+
+---
+
+Refer for example to Fiedler, 1998 for details
+
+Let $A=(a_{ij})$, $i=1,\ldots,m$, $j=1,\ldots,n$ an $m\times n$-matrix and $k$ an integer, $1\leq k\leq\min(m,n)$
+
+Let $M=\{1,\ldots,m\}$ and $N=\{1,\ldots,n\}$, $M^{(k)}$ and $N^{(k)}$) the lexicographically ordered sets of ordered $k$-tuples of elements of $M$ and $N$, respecti
+
+---
+
+
+The $k$th compound matrix $A^{(k)}$ of $A$ is the $C(m,k)\times C(n,k)$ matrix, with rows indexed by elements of $M^{(k)}$ and columns indexed by the elements of $N^{(k)}$, s.t. element $A^{(k)}(I,J)$, $I\in M^{(k)}$, $J\in N^{(k)}$ is the determinant $\det A(I,J)$
+
+$A(I,J)$ is the submatrix of $A$ consisting of rows in $I$ and columns in $J$
+
+Another interpretation of $A^{(k)}$ is as the $k$th exterior product of matrix $A$
+
+---
+
+
+Suppose now that $A$ is an $n\times n$-matrix. The matrix $(I+tA)^{(k)}$ is a $C(n,k)\times C(n,k)$-matrix, with each entry a polynomial of $t$ with degree at most $k$
+
+Grouping monomials of same degree in $t$
+$$
+(I+tA)^{(k)}=A^{(k,0)}+tA^{(k,1)}+\cdots+t^kA^{(k,k)}
+$$
+where matrices $A^{(k,s)}$ do not depend on $t$
+
+Matrix $A^{(k,1)}$ is the $k$th **additive compound matrix** of $A$ and is denoted $A^{[k]}$. It satisfies
+$$
+A^{[k]}=\lim_{h\to 0}
+\left(\frac 1h\left((I+hA)^{(k)}-I^{(k)}\right)\right)
+$$
+
+The latter equality can be written
+$$
+A^{[k]}=D_+(I+hA)^{(k)}|_{h=0}
+$$
+where $D_+$ is the right derivative
+
+---
+
+
+<div class="theorem">
+
+Suppose $A=(a_{pq})$. Then, for $I,J\in N^{(k)}$
+$$
+A^{[k]}(I,J)=\left\{
+\begin{array}{ll}
+\sum_{p\in I}a_{pp} & \textrm{if } J=I \\
+0 & \textrm{if }|I\cap J|\leq k-2 \\
+(-1)^\sigma a_{pq} & \textrm{if } |I\cap J|=k-1
+\end{array}
+\right.
+$$
+where $p$ is the entry in $I\setminus(I\cap J)$, $q$ is the entry in $J\setminus(I\cap J)$ and $\sigma$ is the number of entries of $I\cap J$ between $p$ and $q$
+</div>
+
+---
+
+When $k=2$, we have
+
+<div class="theorem">
+
+Suppose that $A=(a_{ij})$. For all $i=1,\ldots,C(n,2)$, let $(i)=(i_1,i_2)$ the $i$th element of the lexicographic order of pairs $(i_1,i_2)$ of integers s.t. $1\leq i_1<i_2\leq n$
+
+Then the entry in the $i$th row and $j$th column of $A^{[2]}$ is
+$$
+a_{ij}=\left\{
+\begin{array}{ll}
+a_{i_1i_1}+a_{i_2i_2} & \textrm{if } (j)=(i) \\
+(-1)^{r+s}a_{i_rj_s} & \textrm{if exactly one element  } i_r\textrm{ of }(i)\textrm{ does not appear}\\
+&\textrm{in }(j)\textrm{ and }j_s \textrm{ does not appear in }(i) \\
+0 & \textrm{if no element of }(i)
+\textrm{ appears in }(j) 
+\end{array}
+\right.
+$$
+where $p$ is the entry in $I\setminus(I\cap J)$, $q$ is the entry in $J\setminus(I\cap J)$ and $\sigma$ is the number of elements of $I\cap J$ between $p$ and $q$
+</div>
+
+---
+
+# Example
+
+Let
+$$
+A_2=\left(
+\begin{matrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22} 
+\end{matrix}
+\right),\quad
+A_3=\left(
+\begin{matrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{matrix}
+\right)
+$$
+$$
+A_4=\left(
+\begin{matrix}
+a_{11} & a_{12} & a_{13} & a_{14} \\
+a_{21} & a_{22} & a_{23} & a_{24} \\
+a_{31} & a_{32} & a_{33} & a_{34} \\
+a_{41} & a_{42} & a_{43} & a_{44}
+\end{matrix}
+\right)
+$$
+
+---
+
+Then
+$$
+A_2^{[2]}=a_{11}+a_{22},\quad
+A_3^{[2]}=\left(
+\begin{matrix}
+a_{11}+a_{22} & a_{23} & -a_{13} \\
+a_{32} & a_{11}+a_{33} & a_{12} \\
+-a_{31} & a_{21} & a_{22}+a_{33}
+\end{matrix}
+\right)
+$$
+
+
+---
+
+$$
+A_4^{[2]}=\left(
+\begin{matrix}
+a_{11}+a_{22} & a_{23} & a_{24} & -a_{13} & -a_{14} & 0 \\
+a_{32} & a_{11}+a_{33} & a_{34} & a_{12} & 0 & -a_{14} \\
+a_{42} & a_{43} & a_{11}+a_{44} & 0 & a_{12} & a_{13} \\
+-a_{31} & a_{21} & 0 & a_{22}+a_{33} & a_{34} & -a_{24} \\
+-a_{41} & 0 & a_{21} & a_{43} & a_{22}+a_{44} & a_{23} \\
+0 & -a_{41} & a_{31} & -a_{42} & a_{32} & a_{33}+a_{44}
+\end{matrix}
+\right)
+$$
+$$
+A_3^{[3]}=a_{11}+a_{22}+a_{33}
+$$
+$$
+A_4^{[3]}=\left(
+\right)
+$$
+
+---
+
+<div class="theorem">
+
+Let $A,B$ be two $n\times n$-matrices. Then
+ 
+- The number of nonzero offdiagonal entries of $A^{[k]}$ equals $C(n-2,k-1)$ times the number of nonzero offdiagonal entries of $A$
+- $A^{[1]}=A$, $A^{[n]}=\mathsf{tr} A$
+- $(A+B)^{[k]}=A^{[k]}+B^{[k]}$ (whence the *additive* suffix)
+- Let $S$ be a nonsingular $n\times n$-matrix. Then
+$$
+(SAS)^{[k]}=S^{{k}}A^{[k]}(S^{-1})^{(k)}
+$$
+</div>
+
+---
+
+Let $A$ be an $m\times m$-matrix. Denote $A^{[2]}$ the second additive compound matrix of $A$
+
+<div class="theorem">
+
+Let $A$ be a real $m\times m$-mix. For $A$ to have all its eigenvalues with negative real parts, it is necessary and sufficient that 
+1. the second additive compound matrix $A^{[2]}$ has all its eigevalues with negative real parts
+2. $(-1)^m\det(A)>0$
+</div>
+
+---
+
+# Role in stability
+
+Consider the differential equation
+$$
+\begin{equation}\tag{1}\label{sys:diff_general}
+x'=f(x)
+\end{equation}
+$$
+
+<div class="theorem">
+
+[Li \& Muldowney, 1995]\label{th:LM1}
+A sufficient condition for a periodic orbit $\gamma=\{p(t):0\leq t\leq\omega\}$ of $\eqref{sys:diff_general}$ be asymptotically orbitally stable with asymptotic phase is that the linear system
+$$
+z'(t)=\left(\frac{\partial f^{[2]}}{\partial x}
+  \left(p(t)\right)\right)z(t)
+$$
+be asymptotically stable
+</div>
