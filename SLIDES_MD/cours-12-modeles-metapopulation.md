@@ -1174,7 +1174,7 @@ L_{sp}' =& \sum_{j\in\mathcal{S}}
 \end{aligned}
 \end{equation}
 $$
-où l'on a remplacé $S_{sp}$ par $N_{sp}-L_{sp}-I_{sp}-R_{sp}$, et $N_{sp}$ est solution de l'équation pour la population totale
+i.e., où l'on a remplacé $S_{sp}$ par $N_{sp}-L_{sp}-I_{sp}-R_{sp}$, et $N_{sp}$ est solution de l'équation pour la population totale
 $$
 \begin{equation}
 \frac{d}{dt}N_{sp}=
@@ -1209,7 +1209,6 @@ $$
 L_{sp}' =& \sum_{j\in\mathcal{S}}
 \beta_{sjp}(N_{sp}^\star-L_{sp}-I_{sp}-R_{sp})\frac{I_{jp}}{N_{jp}^\star} \\
 &-(d_{sp}+\varepsilon_{sp})L_{sp}+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
--\sum_{q\in\mathcal{P}} m_{sqp}L_{sp}
 \end{aligned}
 \end{equation}
 $$
@@ -1229,7 +1228,7 @@ $$
 x'=\mathcal{L}x
 \end{equation}
 $$
-où $x$ est le vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel consistant des $L_{sp}$, $I_{sp}$ et $R_{sp}$. Dans $\mathcal{L}$, on remplace $S_{sp}/N_{jp}$ par $N_{sp}^\star/N_{jp}^\star$. Les équations $\eqref{sys:spSEIRS_Isp}$ et $\eqref{sys:spSEIRS_Rsp}$ ne sont pas affectées par cette transformation, tandis que $\eqref{sys:spSEIRS_Esp}$ devient
+où $x$ est le vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel consistant des $L_{sp}$, $I_{sp}$ et $R_{sp}$. Dans $\mathcal{L}$, on remplace $S_{sp}/N_{jp}$ par $N_{sp}^\star/N_{jp}^\star$. Les équations $\eqref{sys:spSLIRS_GAS_dI}$ et $\eqref{sys:spSLIRS_GAS_dR}$ ne sont pas affectées par cette transformation, tandis que $\eqref{sys:spSEIRS_L}$ devient
 $$ 
 \begin{equation}\label{sys:lin_E}\tag{18}
 L_{sp}' = \sum_{j\in\mathcal{S}}
@@ -1237,30 +1236,29 @@ L_{sp}' = \sum_{j\in\mathcal{S}}
 -(d_{sp}+\varepsilon_{sp})L_{sp}+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
 \end{equation}
 $$
-Comparing $\eqref{sys:asympt_auton_E}$ and $\eqref{sys:lin_E}$, we note that $g(x)\leq\mathcal{L}x$ for all $x \in \mathbb{R}_+^{3|\mathcal{S}||\mathcal{P}|}$
+Si l'on compare $\eqref{sys:asympt_auton_E}$ et $\eqref{sys:lin_E}$, on note que $g(x)\leq\mathcal{L}x$ pour tout $x \in \mathbb{R}_+^{3|\mathcal{S}||\mathcal{P}|}$
 
 ---
 
-In system $\eqref{sys:linear}$, the equations for $L_{sp}$ and $I_{sp}$ do not involve $R_{sp}$. Let $\tilde x$ be the part of the vector $x$ corresponding to the variables $E_{sp}$ and $I_{sp}$, and $\tilde{\mathcal{L}}$ be the corresponding submatrix of $\mathcal{L}$.
+Dans $\eqref{sys:linear}$, les équations pour $L_{sp}$ et $I_{sp}$ n'impliquent pas $R_{sp}$. Soit $\tilde x$ la partie du vecteur $x$ correspondant aux variables $E_{sp}$ et $I_{sp}$, et soit $\tilde{\mathcal{L}}$ la sous-matrice de $\mathcal{L}$ correspondante
 
-The method of used to prove local stability can also 
-be applied to study the stability of the $\tilde x=0$ equilibrium of the subsystem $\tilde x'=\tilde{\mathcal{L}}\tilde x$, with $\tilde{\mathcal{L}}=F-V$
+La méthode utilisée pour prouver la SAL peut être appliquée pour prouver la stabilité de $\tilde x=0$ pour le sous-système $\tilde x'=\tilde{\mathcal{L}}\tilde x$, avec $\tilde{\mathcal{L}}=F-V$
 
-Therefore, if $\mathcal{R}_0<1$, then the equilibrium $\tilde x=0$ of the subsystem $\tilde x'=\tilde{\mathcal{L}}\tilde x$ is stable. When $\tilde x=0$, \eqref{sys:spSEIRS_Rsp} takes the form
+Si $\mathcal{R}_0<1$, alors $\tilde x=0$ est un équilibre stable du sous-système $\tilde x'=\tilde{\mathcal{L}}\tilde x$. Quand $\tilde x=0$, $\eqref{sys:spSEIRS_GAS_dR}$ prend la forme
 $$
-\frac{d}{dt}R_s = (M_s-D_s)R_s
+R_s' = (\mathcal{M}_s-D_s)R_s
 $$
-with $R_s=(R_{s1},\ldots,R_{s|\mathcal{P}|})^T$ and $D_s$ is the diagonal matrix with $p$th diagonal entry equal to $d_{sp}$
+avec $R_s=(R_{s1},\ldots,R_{s|\mathcal{P}|})^T$ et $D_s=\mathsf{diag}(d_{s1},\ldots,d_{s|\mathcal{P}|})$
 
 ---
 
-It was shown in the proof of Theorem~\ref{th:GAS_metapop1} that $(-M_s)$ is a singular M-matrix. It follows that $-M_s+D_s$ is a nonsingular M-matrix for each $D_s$
+On sait, par les résultats vus avant, que $-\mathcal{M}_s$ est une M-matrice singulière et que $-\mathcal{M}_s+D_s$ est une M-matrice non-singulière pour tout $D_s$
 
-Thus the equilibrium $R_s=0$ of this linear system in $R_s$ is stable
+Donc l'équilibre $R_s=0$ de ce système linéaire est stable
 
-As a consequence, the equilibrium $x=0$ of \eqref{sys:linear} is stable when $\mathcal{R}_0<1$
+Par conséquent, l'équilibre $x=0$ de $\eqref{sys:linear}$ est stable quand $\mathcal{R}_0<1$
 
-Using a standard comparison theorem, it follows that 0 is a globally asymptotically stable equilibrium of \eqref{sys:asympt_auton}
+En utilisant un théorème de comparaison standard, il suit que 0 est un équilibre GAS de $\eqref{sys:asympt_auton}$
 
 ---
 
@@ -1271,19 +1269,19 @@ La SAG suit par utilisation de résultats sur les systèmes asymptotiquement aut
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--- fit --->Epilogue / Postlude
+# <!--- fit --->Épilogue
 
 ---
 
-# In conclusion
+# En conclusion
 
-- Space is a fundamental component of the epidemic spread process and **cannot** be ignored, both in modelling **and** in public health decision making
+- L'espace est une composante fondamentale du processus de propagation épidémique et **ne peut pas** être ignoré, dans les modèles **et** dans les décisions de santé publique
 
-- One way to model space is to use metapopulation models
+- Une des façons de modéliser l'espace est en utilisant des modèles en métapopulation
 
-- Metapopulation models are easy to analyse locally, give interesting problems at the global level
+- Les modèles en métapopulation sont faciles à analyser localement et donnent des résultats intéressants au niveau global
 
 
-- We will in [Practicum 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html) that simulation (deterministic and stochastic) can be costly in RAM and cycles but is easy
+- Dans le [Cours 13](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-13-EDO-en-R.html), on verra que les simulations déterministes peuvent être couteuses en RAM et en CPU mais sont faciles
 
-- Metapopulation models are not the only solution
+- Les modèles en métapopulation ne sont pas la seule solution, loin de là !!!
