@@ -76,6 +76,7 @@ $$
 p_1(n)+p_2(n)+\cdots+p_r(n)=1
 $$
 
+
 ---
 
 Soit $p_i(n+1)$ la probabilité que le système soit dans l'état $S_i$, $1\leq i\leq r$, à la $(n+1)^\text{eme}$ répétition de l'expérience
@@ -160,48 +161,40 @@ Sot $M$ une matrice stochastique. Alors toutes les valeurs propres $\lambda$ de 
 
 ---
 
-# Discrete-time Markov chains
+# De façon un peu plus générale
 
-$p(t)=(p_1(t),\ldots,p_n(t))^T$: probability vector, with $p_i(t)$ describing the probability that at time $t$, the system is in state $S_i$, $i=1,\ldots,n$
-
-$\sum_i p_i(t)=1$ for al# l $t$, of course
-
-State evolution governed by
-$$
-p(t+\Delta t) = A(\Delta t)p(t)
-$$
-where $A(\Delta t)$ is a stochastic matrix (row sums all equal 1), the *transition* matrix, with entry $a_{ij}=\mathbb{P}(X_{t+\Delta t}=s_i|X_t=s_j)$, where $X_1,\ldots$ sequence of random variables describing the state
-
-If $A(\Delta t)=A$ constant, *homogeneous* DTMC
-
-Time often ''recast'' so that $\Delta t=1$
-
----
-
-# Important remark
-
-The DTMC world lives at the interface between probabilists, who like to think of $p(t)$ as a row vector, $A(\Delta t)$ as a column-stochastic matrix and thus write
+Évolution de l'état régie par
 $$
 p(t+\Delta t) = p(t)A(\Delta t)
 $$
-and linear algebraists, who prefer column vectors and row-stochastic matrices, 
+où $A(\Delta t)$ est une matrice stochastique, la matrice de transition, dont les éléments $a_{ij}=\mathbb{P}(X_{t+\Delta t}=s_j|X_t=s_i)$, où $X_1,\ldots$ est une suite de variables aléatoires décrivant l'état
+
+Si $A(\Delta t)=A$, une constante, la CMTD est *homogène*
+
+On normalise souvent le temps de telle manière que $\Delta t=1$
+
+---
+
+# Remarque importante
+
+Les CMTD vivent à la frontière du monde des probabilistes, qui aiment penser à $p(t)$ comme un vecteur ligne, $A(\Delta t)$ comme une matrice stochastique par ligne et écrivent l'évolution de la chaîne sous la forme
+$$
+p(t+\Delta t) = p(t)A(\Delta t)
+$$
+et des algébristes linéaires, qui préfèrent les vecteur colonnes et les matrices de transition colonne-stochastiques 
 $$
 p(t+\Delta t) = A(\Delta t)p(t)
 $$
 
-So check the direction to understand whether you are using $A$ or $A^T$
+Assurez-vous de la direction utilisée: votre source parle-t-elle de $A$ ou $A^T$ ?
 
 ---
 
-# Advantages of DTMC
+# Avantages des CMTD
 
-As a teacher of modelling: base theory of DTMC uses a lot of linear algebra and graph theory; usually really appreciated by students
+En tant que personne qui enseigne la modélisation: la théorie des CMTD utilise beaucoup d'algèbre linéaire et matricielle et de théorie des graphes, elle est en général bien comprise et appréciée par les étudiants
 
-*Regular* DTMC (with *primitive* transition matrices) allow to consider equilibrium distribution of probability
-
-*Absorbing* DTMC (with *reducible* transition matrices) allow the consideration of time to absorption, mean first passage time, etc.
-
-See for instance book of [Kemeny and Snell](https://www.amazon.com/Finite-Markov-Chains-Laurie-Kemeny/dp/B000KYES0O)
+Une très bonne référence sur le sujet est le livre de [Kemeny & Snell](https://www.amazon.com/Finite-Markov-Chains-Laurie-Kemeny/dp/B000KYES0O)
 
 ---
 
