@@ -48,6 +48,14 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
+<!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
+# Plan de ce cours
+- Simulation et analyse numérique des CMTD
+- Simulation des CMTC
+- Paralléliser son code
+
+---
+
 # Remarques / Ressources
 
 Ceci est un cours *orienté sur l'utilisation*: je touche à peine aux algorithmes, je me concentre sur leur utilisation
@@ -57,7 +65,7 @@ Le code est disponible dans [ce répo Github](https://github.com/julien-arino/pe
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# More on stochastic models in R
+# Simulation et analyse numérique des CMTD
 
 ---
 
@@ -67,7 +75,7 @@ Since $S=P^\star-I$, consider only the infected. To simulate as DTMC, consider a
 
 Denote $\lambda_I = \beta (P^\star-I)I\Delta t$, $\mu_I = \gamma I\Delta t$ and $\sigma_I=1-(\lambda_I+\mu_I)\Delta t$
 
-![width:1200px](figure_SIS_random_walk.png)
+![width:1200px](FIGS/figure_SIS_random_walk.png)
 
 ---
 
@@ -185,7 +193,7 @@ Function | Role
 --- 
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!-- fit -->Continuous time Markov chains
+# <!-- fit -->Simulation des CMTC
 
 ---
 
@@ -400,6 +408,11 @@ $$
 - *Approximation* method (compared to classic Gillespie, which is exact)
 - Roughly: consider "groups" of events instead of individual events
 - Good news: `GillespieSSA2` (which we saw earlier) and `adaptivetau`
+
+--- 
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!-- fit -->Paralléliser son code
 
 ---
 
