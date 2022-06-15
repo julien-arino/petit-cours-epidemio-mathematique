@@ -1,7 +1,8 @@
 theme: jekyll-theme-minimal
 title: Petit cours d'épidémiologie mathématique
-description: Matériel du cours (transparents et code).
+description: Un petit cours d'une vingtaine d'heures
 show_downloads: true
+site_favicon: favicon.ico
 logo: /FIGS/plasmodium_entering_RBC.jpg
 google_analytics: UA-1943806-8
 plugins:
