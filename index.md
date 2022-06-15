@@ -30,7 +30,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 15: [Modèles en chaînes de Markov](cours-15-modeles-MC.html) &#9989;
 - Cours 16: [Simulation des systèmes stochastiques](cours-16-simulation-stochastique.html) 
 - Cours 17: [Modèles en réseaux](cours-17-modeles-reseaux.html)
-- Cours 18: [Modèles agents-centrés](cours-18-modeles-agents.html) 
+- Cours 18: [Modèles agents-centrés](cours-18-modeles-agents.html) &#9989;
 - Cours 19: [Ajustement des paramètres](cours-19-ajustement-parametres.html) 
 
 
