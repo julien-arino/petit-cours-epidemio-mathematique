@@ -49,51 +49,102 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 --- 
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
-- Quels types de systèmes stochastiques?
+# Plan de ce cours
+- Motivation de la stochasticité
+- Quels types de systèmes stochastiques ?
+
+--- 
+
+# Remarque - Remerciement
+
+Certains des transparents ici sont inspirés de transparents que Linda Allen (Texas Tech) m'a donné il y a quelques années. Je recommende les livres et articles de Linda pour plus de détails
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!-- fit -->Quels types de systèmes stochastiques?
+# <!-- fit -->Motivation de la stochasticité
 
 ---
 
-# Chain binomial models
+# Modèle SIS sans démographie
 
-- Reed-Frost model from circa 1920
-  - Infection spread from I individuals to others after adequate contact
-  - Any S individual, after contact with an I individual in a given period, develops the infection and is infectious to others only within the following time period; in subsequent time periods, become R
-  - Each individual has a fixed probability of coming into adequate contact with any other specified individual in the group within one time interval, and this probability is the same for every member of the group
-  - Closed population
-- Many variations since
+Population totale constante $P^\star$
 
----
+<span style="display: block; margin-left: auto; margin-right: auto; width: 25%">![width:400px](figure_SIS_base_no_demography.png)</span>
 
-# Discrete time Markov chains (DTMC)
-
-- Will discuss later
-- Equivalent of discrete time system but includes stochasticity
-- Jump to next state depends only on current state(*memoryless property*)
-- Easy to study using linear algebra
+Nombre de reproduction élémentaire:
+$$\mathcal{R}_0 = \dfrac{\beta}{\gamma}P^\star$$
 
 ---
 
-# Continuous time Markov chains (CTMC)
+# Dans le monde déterministe, $\mathcal{R}_0$ fait la loi
 
-- Almost exact stochastic equivalent to ODE
-- Conversion from ODE to CTMC and vice-versa is very easy for compartmental models
-- Harder to study than DTMC but still quite amenable to analysis
+- Si $\mathcal{R}_0=\beta P^\star/\gamma<1$, la maladie s'éteint (*ESM*)
+- Si $\mathcal{R}_0>1$, la maladie converge vers un équilibre *endémique*
+$$
+I^\star=P^\star-\gamma/\beta=(1-1/\mathcal{R}_0)P^\star
+$$
 
----
-
-# Branching processes
-
-- Special case of CTMC .. or are CTMC special cases of BP?
+Transparents suivants: $P^\star = 100$K, $\gamma=1/5$, $\mathcal{R}_0=\{0.8,1.5,2.5\}$ (et $\beta=\gamma \mathcal{R}_0/P^\star$)
 
 ---
 
-# Stochastic differential equations
+![bg contain](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/stochastic/ODE_SIS.png)
 
-- Will confess some bias against these: "ODEs with noise added"
+---
+
+# <!--fit-->Dans le monde stochastique, $\mathcal{R}_0$ fait la loi ? ($\mathcal{R}_0=1.5$)
+
+![height:600px center](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/stochastic/several_CTMC_sims.png)
+
+---
+
+# <!--fit-->Lorsque $I_0=2$, les extinctions arrivent assez fréquemment
+
+![height:600px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/stochastic/extinctions_fct_R0.png)
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!-- fit -->Quels types de systèmes stochastiques ?
+
+---
+
+# Modèles de chaines binomiales
+
+- Modèle de Reed-Frost (circa 1920)
+  - Infection propagée des individus I vers les autres après contact approprié
+  - Tout individu S, après contact avec un individu I dans une période donnée, développe une infection et est infectieux pour les autres seulement dans la période de temps suivante; dans la période suivante, devient R
+  - Chaque individu a une probabilité donnée d'entrer en contact avec n'importe quel autre individu dans le groupe par intervalle de temps, et cette probabilité est la même pour tout membre du groupe
+  - Population close
+- Nombreuses variations et améliorations depuis
+
+---
+
+# Chaînes de Markov en temps discret (CMTD)
+
+- Présenté en détail dans le [Cours 15](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-15-modeles-MC.html) et, numériquement, le [Cours 16](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-16-simulation-stochastique.html)
+- Équivalent des systèmes en temps discret mais incluent de la stochasticité
+- Saut vers le prochain état dépend seulement de l'état actuel (le système n'a pas de *mémoire*)
+- Facile à étudier en utilisant l'algèbre linéaire
+
+---
+
+# Chaînes de Markov en temps continu (CMTC)
+
+- Équivalent stochastique presque exact des EDO
+- Conversion des ODE vers les CMTC et vice-versa très simple pour les modèles compartimentaux
+- Plus difficiles à étudier que les CMTD mais quand même assez faciles
+
+---
+
+# Processus de branchement
+
+- Cas particulier des CMTC
+
+---
+
+# Équations différentielles stochastiques
+
+- Je vais confesser un certain biais contre les EDS: EDO avec du bruit ajouté, pas grand chose de plus
 

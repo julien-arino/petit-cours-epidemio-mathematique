@@ -294,3 +294,17 @@ $\implies$ understanding contact patterns and frequency would help
 <iframe width="800" height="450" src="https://www.youtube.com/embed/qcWBi17qKnU?start=9&loop=1&modestbranding=1&origin=https://julien-arino.github.io/&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen>
 </iframe>
 
+
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# Simulating agent-based models
+
+
+---
+
+# Some simulation systems
+
+- [AnyLogic](https://www.anylogic.com/). Free (limited) personal edition, not open source
+- [NetLogo](http://ccl.northwestern.edu/netlogo/). GPL
