@@ -586,11 +586,13 @@ Ceci est une matrice de **Toeplitz tridiagonale symmétrique**
 
 (symmétrique: évident; tridiagonale: il y a 3 bandes diagonales; Toeplitz: chaque bande diagonale est constante)
 
+On peut donc inverser explicitement.. pour illustrer, voici comment on s'y prendrait
+
 ---
 
-#  Inverting a symmetric tridiagonal matrix
+#  Inverser une matrice tridiagonale symmétrique
 
-Gérard Meurant [A Review on the Inverse of Symmetric Tridiagonal and Block Tridiagonal Matrices](https://doi-org.uml.idm.oclc.org/10.1137/0613045) (1992): if 
+[Gérard Meurant](https://doi-org.uml.idm.oclc.org/10.1137/0613045) (1992): si 
 $$
 J_k=
 \begin{pmatrix}
@@ -607,7 +609,7 @@ $$
 $$
 d^{(k)}_k=\alpha_k,\quad d^{(k)}_j=\alpha_j-\frac{\beta_j^2}{d^{(k)}_{j+1}},j=k-1,\ldots,1
 $$
-then we have the result on the next slide
+alors on a le résultat sur le transparent suivant
 
 ---
 
@@ -615,7 +617,7 @@ then we have the result on the next slide
 
 <div class="theorem">
 
-The inverse of the symmetric tridiagonal matrix $J_k$ is given by
+L'inverse d'une matrice tridiagonale symmétrique $J_k$ est donnée par
 $$
 (J_k^{-1})_{ij} = (-1)^{j-i}\beta_i\cdots\beta_{j-1}\frac{d_{j+1}^{(k)}\cdots d_k^{(k)}}{\delta_i\cdots\delta_k},\;\forall i,\forall j>i
 $$
@@ -626,11 +628,11 @@ $$
 
 ---
 
-Note that $\alpha_1=\cdots=\alpha_k=1$ and $\beta_1=\cdots=\beta_{k-1}=-1/2$
+Ici, $\alpha_1=\cdots=\alpha_k=1$ et $\beta_1=\cdots=\beta_{k-1}=-1/2$
 
-Write $\alpha:=\alpha_i=1$ and $\beta:=\beta_i=-1/2$
+Écrivons $\alpha:=\alpha_i=1$ et $\beta:=\beta_i=-1/2$
 
-We have $\delta_1 = \alpha = 1$, and the general term takes the form
+On a $\delta_1 = \alpha = 1$, et le terme général prend la forme
 $$
 \delta_j = \alpha-\frac{\beta^2}{\delta_{j-1}}=1-\frac{1}{4\delta_{j-1}},\quad j=2,\ldots,k
 $$
@@ -650,11 +652,11 @@ $$
 
 ---
 
-Taking a look at the few terms in the sequence, we get the feeling that
+En inspectant quelques termes de la suite, on développe le sentiment que 
 $$
 \delta_{2n}=\frac{2n+1}{4n} \textrm{ and } \delta_{2n+1}=\frac{n+1}{2n+1}
 $$
-A little induction should confirm this. Induction hypothesis (changing indices for odd $\delta$):
+Une petite récurrence devrait confirmer ça. Hypothèse de récurrent (en changeant les indices pour $\delta$ impair):
 $$
 \mathcal{P}_n:
 \begin{cases}
@@ -662,50 +664,50 @@ $$
 \delta_{2n} &= \frac{2n+1}{4n}
 \end{cases}
 $$
-$\mathcal{P}_1$ is true. Assume $\mathcal{P}_j$. Then
+$\mathcal{P}_1$ est vrai. Supposons $\mathcal{P}_j$ vrai. Alors
 $$
 \delta_{2j+1} = 1-\frac{1}{4\delta_{2j}}=1-\frac{1}{4\frac{2j+1}{4j}}=1-\frac{j}{2j+1}=\frac{j+1}{2j+1}
 $$
 $$
 \delta_{2j+2} = 1-\frac{1}{4\delta_{2j+1}} = 1-\frac{1}{4\frac{j+1}{2j+1}}=1-\frac{2j+1}{4(j+1)}=\frac{2(j+1)+1}{4(j+1)}
 $$
-So $\mathcal{P}_{j+1}$ holds true
+Donc $\mathcal{P}_{j+1}$ est vrai
 
 ---
 
-In fact, we can go further, by expressing
+En fait, on peut aller plus loin, en exprimant
 $$
 \delta_{2n}=\frac{2n+1}{4n} \textrm{ and } \delta_{2n+1}=\frac{n+1}{2n+1}
 $$
-in terms of odd and even $j$. If $j$ is even,
+en termes de $j$ pair ou impair. Si $j$ est pair
 $$
 \delta_j=\frac{j+1}{2j}
 $$
-while if $j$ is odd,
+tandis que si $j$ est impair
 $$
 \delta_j=\frac{(j+1)/2}{j}
 $$
-But the latter gives
+Mais cette dernière expression donne
 $$
 \delta_j=\frac{j+1}{2j}
 $$
-so this formula holds for all $j$'s
+donc cette formule vaut pour tous les $j$
 
 ---
 
-For the $d_j^{(k)}$'s, we have $d_k^{(k)}=1$ and
+Pour les $d_j^{(k)}$'s, on a $d_k^{(k)}=1$ et
 $$
 d_j^{(k)} = 1-\frac{1}{4d_{j+1}^{(k)}}
 $$
-So $d_k^{(k)}=\delta_1$ and
+Donc $d_k^{(k)}=\delta_1$ et
 $$
 d_{k-j+1}^{(k)} = \delta_j=\frac{j+1}{2j},\quad j=2,\ldots,k
 $$
-The form
+L'expression
 $$
 d_j^{(k)} = \delta_{k-j+1}
 $$
-is also useful
+est également utile
 
 ---
 
@@ -781,7 +783,7 @@ Ici, le temps est dans $\mathbb{R}_+$
 
 ---
 
-Continuant avec l'exemple du modèle SIS, pour $\Delta t$ petit,
+Considérons un processus de naissance et mort. Pour $\Delta t$ petit,
 $$
 \begin{align*}
 p_{ji}(\Delta t) &= \mathbb{P}\left\{I(t+\Delta)=j|I(t)=i\right\} \\
@@ -794,20 +796,20 @@ o(\Delta t) & \textrm{sinon}
 \end{cases}
 \end{align*}
 $$
-with $o(\Delta t)\to 0$ as $\Delta t\to 0$
+avec $o(\Delta t)\to 0$ quand $\Delta t\to 0$
 
 ---
 
-# Forward Kolmogorov equations
+# Équations de Kolmogorov avancées
 
-Assume we know $I(0)=k$. Then
+Supposons connu $I(0)=k$. Alors
 $$
 \begin{multline*}
 p_i(t+\Delta t)= p_{i-1}(t)B(i-1)\Delta t+p_{i+1}(t)D(i+1)\Delta t \\
 +p_i(t)[1-(B(i)+D(i))\Delta t]+o(\Delta t)
 \end{multline*}
 $$
-Compute $(p_i(t+\Delta t)-p_i(t))/\Delta t$ and take $\lim_{\Delta t\to 0}$, giving
+Calculons $(p_i(t+\Delta t)-p_i(t))/\Delta t$ et prennons $\lim_{\Delta t\to 0}$, ce qui donne
 $$
 \begin{align*}
 \frac d{dt}p_0 &= p_1D(1) \\
@@ -815,17 +817,17 @@ $$
 \end{align*}
 $$
 
-**Forward Kolmogorov equations** associated to the CTMC
+Ceci constitue les **équations de Kolmogorov avancées** associées à la CMTC
 
 ---
 
-# In vector form
+# Forme vectorielle
 
-Write previous system as
+Écrivons le système précédent sous la forme
 $$
 p'=Qp
 $$
-with
+avec
 $$
 Q=
 \begin{pmatrix}
@@ -837,7 +839,7 @@ Q=
 &&&& -D(N)
 \end{pmatrix}
 $$
-$Q$ **generator matrix**. Of course,
+$Q$ **matrice génératrice**. Bien sur
 $$
 p(t)=e^{Qt}p(0)
 $$
@@ -845,17 +847,17 @@ $$
 
 ---
 
-# Linking DTMC and CTMC for small $\Delta t$
+# Lien entre CMTD et CMTC pour $\Delta t$ petit
 
-DTMC:
+CMTD:
 $$
 p(t+\Delta t)=P(\Delta t)p(t)
 $$
-for transition matrix $P(\Delta t)$. Let $\Delta t\to 0$, obtain Kolmogorov equations for CTMC
+avec matrice de transition $P(\Delta t)$. Supposons $\Delta t\to 0$, on obtient les équations avancées de Kolmogorov pour la CMTC
 $$
 \frac d{dt} p = Qp
 $$
-where
+où
 $$
 Q=\lim_{\Delta t\to 0}\frac{P(\Delta t)-\mathbb{I}}{\Delta t}=P'(0)
 $$

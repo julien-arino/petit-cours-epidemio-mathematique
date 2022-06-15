@@ -27,7 +27,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 12: [Modèles dans des métapopulations](cours-12-modeles-metapopulation.html) &#9989;
 - Cours 13: [Résolution numérique des EDO en R](cours-13-EDO-en-R.html) 
 - Cours 14: [Types de modèles stochastiques utilisés en épidémiologie](cours-14-stochasticite.html) &#9989;
-- Cours 15: [Modèles en chaînes de Markov](cours-15-modeles-MC.html) 
+- Cours 15: [Modèles en chaînes de Markov](cours-15-modeles-MC.html) &#9989;
 - Cours 16: [Simulation des systèmes stochastiques](cours-16-simulation-stochastique.html) 
 - Cours 17: [Modèles en réseaux](cours-17-modeles-reseaux.html)
 - Cours 18: [Modèles agents-centrés](cours-18-modeles-agents.html) 
