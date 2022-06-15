@@ -160,6 +160,51 @@ Sot $M$ une matrice stochastique. Alors toutes les valeurs propres $\lambda$ de 
 
 ---
 
+# Discrete-time Markov chains
+
+$p(t)=(p_1(t),\ldots,p_n(t))^T$: probability vector, with $p_i(t)$ describing the probability that at time $t$, the system is in state $S_i$, $i=1,\ldots,n$
+
+$\sum_i p_i(t)=1$ for al# l $t$, of course
+
+State evolution governed by
+$$
+p(t+\Delta t) = A(\Delta t)p(t)
+$$
+where $A(\Delta t)$ is a stochastic matrix (row sums all equal 1), the *transition* matrix, with entry $a_{ij}=\mathbb{P}(X_{t+\Delta t}=s_i|X_t=s_j)$, where $X_1,\ldots$ sequence of random variables describing the state
+
+If $A(\Delta t)=A$ constant, *homogeneous* DTMC
+
+Time often ''recast'' so that $\Delta t=1$
+
+---
+
+# Important remark
+
+The DTMC world lives at the interface between probabilists, who like to think of $p(t)$ as a row vector, $A(\Delta t)$ as a column-stochastic matrix and thus write
+$$
+p(t+\Delta t) = p(t)A(\Delta t)
+$$
+and linear algebraists, who prefer column vectors and row-stochastic matrices, 
+$$
+p(t+\Delta t) = A(\Delta t)p(t)
+$$
+
+So check the direction to understand whether you are using $A$ or $A^T$
+
+---
+
+# Advantages of DTMC
+
+As a teacher of modelling: base theory of DTMC uses a lot of linear algebra and graph theory; usually really appreciated by students
+
+*Regular* DTMC (with *primitive* transition matrices) allow to consider equilibrium distribution of probability
+
+*Absorbing* DTMC (with *reducible* transition matrices) allow the consideration of time to absorption, mean first passage time, etc.
+
+See for instance book of [Kemeny and Snell](https://www.amazon.com/Finite-Markov-Chains-Laurie-Kemeny/dp/B000KYES0O)
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
 # <!--fit-->Comportement asymptotique des CMTD
 
