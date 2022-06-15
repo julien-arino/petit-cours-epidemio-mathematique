@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Petit cours d'épidémiologie mathématique - Propagation dans des groupes - Propagation spatio-temporelle
-description: Petit cours d'épidémiologie mathématique - Julien Arino - Cours 06 - Propagation dans des groupes et propagation spatio-temporelle des épidémies
+title: Petit cours d'épidémiologie mathématique - Propagation dans des groupes et propagation spatio-temporelle
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 10 - Propagation dans des groupes et propagation spatio-temporelle des épidémies
 theme: default
 paginate: false
 math: mathjax

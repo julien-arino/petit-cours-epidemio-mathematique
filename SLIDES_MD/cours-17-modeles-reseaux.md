@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Agent-based models
-description: 3MC Course Epidemiological Modelling - Julien Arino - Course 17 - Agent-based models
+title: Petit cours d'épidémiologie mathématique - Modèles en réseaux
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 17 - Modèles en réseaux
 theme: default
 paginate: false
 math: mathjax
@@ -30,7 +30,7 @@ size: 4K
   }
 </style>
 
-# Agent-based models
+# Modèles en réseaux
 
 6 April 2022 
 
@@ -62,21 +62,4 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->What are agent-based models (ABM)
-
----
-
-# ABM $\neq$ IBM
-
-- Early in the life of these models, they were called IBM (individual-based models)
-- Over the years, a "philosophical" distinction has emerged:
-  - IBM are mathematical models that consider individuals as the units; e.g., DTMC, CTMC, branching processes, etc.
-  - ABM are computational models whose study is, for the most part, only possible numerically 
-
----
-
-# ABM vs Network models
-
-- Network models endow vertices with simple systems and couple them through graphs
-- Can be ABM, but some networks can also be studied analytically
-- Not enough time to go into this, a very interesting subject!
 

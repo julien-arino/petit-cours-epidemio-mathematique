@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Petit cours d'épidémiologie mathématique - Résolution numérique des EDO en R
-description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 05 - Résolution numérique des EDO en R
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 13 - Résolution numérique des EDO en R
 theme: default
 paginate: false
 math: mathjax

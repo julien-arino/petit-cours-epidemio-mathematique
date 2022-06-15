@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Stochastic aspects in the spread of epidemics
-description: 3MC Course Epidemiological Modelling - Julien Arino - Lecture 06 - Stochastic aspects in the spread of epidemics
+title: Petit cours d'épidémiologie mathématique - Types de modèles stochastiques utilisés en épidémiologie
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 14 - Types de modèles stochastiques utilisés en épidémiologie
 theme: default
 math: mathjax
 paginate: false

@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Petit cours d'épidémiologie mathématique - Temps de résidence dans les compartiments
-description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 08 - Temps de résidence dans les compartiments
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 05 - Temps de résidence dans les compartiments
 theme: default
 math: mathjax
 paginate: false

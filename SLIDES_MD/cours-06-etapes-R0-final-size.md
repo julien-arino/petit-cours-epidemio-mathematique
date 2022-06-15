@@ -1,7 +1,7 @@
 ---
 marp: true
 title: Petit cours d'épidémiologie mathématique - Analyse des modèles
-description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 07 - Étapes de l'analyse mathématique des modèles, R_0 et la taille finale d'une épidémie
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 06 - Étapes de l'analyse mathématique des modèles, R_0 et la taille finale d'une épidémie
 theme: default
 paginate: false
 math: mathjax

@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Stochastic epidemic models
-description: 3MC Course Epidemiological Modelling - Julien Arino - Lecture 07 - Stochastic epidemic models
+title: Petit cours d'épidémiologie mathématique - Modèles en chaînes de Markov
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 15 - Modèles en chaînes de Markov
 theme: default
 paginate: false
 math: mathjax

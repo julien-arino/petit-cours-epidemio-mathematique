@@ -1,7 +1,7 @@
 ---
 marp: true
-title: Practicum 03 - Analysis, studying stochastic models in R. Simulating agent-based models
-description: 3MC Course on Epidemiological Modelling - Julien Arino - Practicum 03 - Analysis, studying stochastic models in R. Simulating agent-based models
+title: Petit cours d'épidémiologie mathématique - Simulation des systèmes stochastiques
+description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 16 - Simulation des systèmes stochastiques
 theme: default
 paginate: false
 math: mathjax
