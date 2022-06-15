@@ -266,28 +266,25 @@ alors $v$ est le vecteur propre à gauche associé à $\lambda$. À chaque valeu
 
 ---
 
-The vector $w$ is in fact the left eigenvector corresponding to the eigenvalue 1 of $P$. (We already know that the (right) eigenvector corresponding to 1 is $\mathbf{1}$.)
+Le vecteur $w$ dans le résultat précédent est le vecteur propre à gauche associé à la valeur propre 1 de $P$. (Le vecteur propre à droite correspondant à 1 est $\mathbf{1}$ puisque $P\mathbf{1}=\mathbf{1}$)
 
-To see this, remark that, if $p(n)$ converges, then $p(n+1)=p(n)P$, so $w$ is a fixed point of the system. We thus write
+En effet, si $p(n)$ converge, alors à la limite, $p(n+1)=p(n)$, mais puisqu'on a aussi (par la relation de récurrence) $p(n+1)=p(n)P$, il suit que $w$ est un point fixe du système. On écrit donc
 $$
 wP=w
 $$
-and solve for $w$, which amounts to finding $w$ as the left eigenvector corresponding to the eigenvalue 1
+et l'on résoud pour $w$, ce qui revient à trouver un vecteur propre correspondant à la valeur propre 1
 
-Alternatively, we can find $w$ as the (right) eigenvector associated to the eigenvalue 1 for the transpose of $P$
-$$
-P^Tw^T=w^T
-$$
+On peut aussi chercher $w$ comme le vecteur propre à droite associé à la valeur propre 1 de la matrice transposée $P^T$. (Cela peut être utile numériquement si un algorithme ne renvoie que les valeurs propres à droite)
 
 ---
 
-Now remember that when you compute an eigenvector, you get a result that is the eigenvector, to a multiple
+Pour rappel: si $Av=\lambda v$ pour $v\neq 0$, alors $Akv=\lambda kv$ pour tout $k\neq 0$, i.e., si $v$ est un vecteur propre associé à $\lambda$, alors tous ses multiples $kv$ sont aussi des vecteurs propres associés à $\lambda$
 
-So the expression you obtain for $w$ might have to be normalized (you want a probability vector). Once you obtain $w$, check that the norm $\|w\|$ defined by
+L'expression obtenue pour $w$ pourrait ne pas être un vecteur stochastique. Il convient donc de vérifier que 
 $$
-\|w\|=w_1+\cdots+w_r
+\|w\|=w_1+\cdots+w_r = 1
 $$
-is equal to one. If not, use
+Si ce n'est pas le cas, on considère 
 $$
 \frac{w}{\|w\|}
 $$
@@ -389,18 +386,18 @@ Réponses aux autres questions que nous posions:
 
 ---
 
-#  Drunk man's walk 1.0 (regular case)
+#  Marche aléatoire v1.0 (cas régulier)
 
-- chain of states $S_1,\ldots,S_p$
-- if in state $S_i$, $i=2,\ldots,p-1$, probability 1/2 of going left (to $S_{i-1}$) and 1/2 of going right (to $S_{i+1}$)
-- if in state $S_1$, probability 1 of going to $S_2$
-- if in state $S_p$, probability 1 of going to $S_{p-1}$
+- Chaîne (ligne) d'états $S_1,\ldots,S_p$
+- Quand dans l'état $S_i$, $i=2,\ldots,p-1$, probabilité 1/2 d'aller à gauche (vers $S_{i-1}$) et 1/2 d'aller à droite (vers $S_{i+1}$)
+- Dans l'état $S_1$, probabilité 1 d'aller en $S_2$
+- Dans l'état $S_p$, probabilité 1 d'aller en $S_{p-1}$
 
 ![width:100% center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/drunk_mans_walk_regular.png)
 
 ---
 
-#  Transition matrix for DMW 1.0
+# Matrice de transition pour v1.0
 
 $$
 P=\begin{pmatrix}
@@ -413,11 +410,11 @@ P=\begin{pmatrix}
 & & & & 0 & 1 & 0
 \end{pmatrix}
 $$
-Clearly a primitive matrix, so a regular Markov chain
+On montre relativement facilement que $P$ est primitive, donc on a une CMTD régulière
 
 ---
 
-We need to solve $w^TP=w^T$, that is,
+On doit résoudre $w^TP=w^T$, i.e.,
 $$
 \begin{align*}
 \frac 12 w_2 &= w_1 \\
@@ -433,7 +430,7 @@ $$
 
 ---
 
-Express everything in terms of $w_1$:
+Exprimons tout en fonction de $w_1$:
 $$
 \begin{align*}
 w_2 &= 2w_1 \\
@@ -443,17 +440,17 @@ w_1 +\frac 12 w_3 &= w_2 \Leftrightarrow w_3 = 2(w_2-w_1)=2w_1\\
 & \vdots \\
 \frac 12 w_{p-3}+\frac 12 w_{p-1} &= w_{p-2} \Leftrightarrow w_{p-1} = 2w_1 \\
 \frac 12 w_{p-2}+w_p &= w_{p-1} \Leftrightarrow w_p=w_{p-1}-\frac 12 w_{p-2}=w_1\\
-\frac 12 w_{p-1} &= w_p \qquad (\textrm{confirms that }w_p=w_1)
+\frac 12 w_{p-1} &= w_p \qquad (\textrm{confirme que }w_p=w_1)
 \end{align*}
 $$
 
 ---
 
-So we get
+Donc on obtient
 $$
 w^T=\left(w_1,2w_1,\ldots,2w_1,w_1\right)
 $$
-We have
+On a
 $$
 \begin{align*}
 \sum_{i=1}^p w_i &= w_1+\left(\sum_{i=2}^{p-1}2w_1\right)+w_1 \\
@@ -466,44 +463,44 @@ $$
 
 ---
 
-Since 
+Puisque
 $$
 \sum_{i=1}^p w_i = 2w_1(p-1)
 $$
-to get a probability vector, we need to take 
+pour avoir un vecteur de probabilité, il nous faut prendre 
 $$
 w_1=\frac{1}{2(p-1)}
 $$
-So 
+Donc
 $$
 w^T=\left(\frac{1}{2(p-1)},\frac{1}{p-1},\ldots,\frac{1}{p-1},\frac{1}{2(p-1)}\right)
 $$
 
 ---
 
-Now assume we take an initial condition with $p(0)=(1,0,\ldots,0)$, i.e., the walker starts in state 1. Then
+Supposons par exemple une condition initiale avec $p(0)=(1,0,\ldots,0)$, i.e., la marche débute dans l'état 1. Alors
 $$
 \lim_{t\to\infty}p(t)=p(0)W=p(0)w=p(0)\cdot w^T
 $$
-so
+donc
 $$
 \lim_{t\to\infty}p(t)=(1,0,\ldots,0)\cdot\left(\frac{1}{2(p-1)},\frac{1}{p-1},\ldots,\frac{1}{p-1},\frac{1}{2(p-1)}\right)
 $$
 
 ---
 
-#  Drunk man's walk 2.0 (absorbing case)
+#  Marche aléatoire v2.0 (cas absorbant)
 
-- chain of states $S_1,\ldots,S_p$
-- if in state $S_i$, $i=2,\ldots,p-1$, probability 1/2 of going left (to $S_{i-1}$) and 1/2 of going right (to $S_{i+1}$)
-- if in state $S_1$, probability 1 of going to $S_1$
-- if in state $S_p$, probability 1 of going to $S_p$
+- Chaîne (ligne) d'états $S_1,\ldots,S_p$
+- Quand dans l'état $S_i$, $i=2,\ldots,p-1$, probabilité 1/2 d'aller à gauche (vers $S_{i-1}$) et 1/2 d'aller à droite (vers $S_{i+1}$)
+- Dans l'état $S_1$, probabilité 1 d'aller en $S_1$
+- Dans l'état $S_p$, probabilité 1 d'aller en $S_{p}$
 
 ![width:100% center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/drunk_mans_walk_absorbing.png)
 
 ---
 
-#  Transition matrix for DMW 2.0
+# Matrice de transition v2.0
 
 $$
 P=\begin{pmatrix}
@@ -519,9 +516,9 @@ $$
 
 ---
 
-#  Put $P$ in standard form
+# Écrivons $P$ en forme standard
 
-Absorbing states are $S_1$ and $S_p$, write them first, then write other states
+Les états absorbants sont $S_1$ et $S_p$, on les écrit en premier, puis les autres états
 
 |     | $S_1$ | $S_p$ | $S_2$ | $S_3$ | $S_4$ | $\cdots$ | $S_{p-2}$ | $S_{p-1}$ |
 |:---:|:-----:|:-----:|:-----:|:-----:|:-----:|:--------:|:---------:|:---------:|
@@ -535,14 +532,14 @@ $S_{p-1}$ | 0 | 1/2 | 0 | 0 | 0 | $\cdots$ | 1/2 | 0 |
 
 ---
 
-So we find
+On trouve donc
 $$
 P=\begin{pmatrix}
 \mathbb{I}_2 & \mathbf{0} \\
 R & Q
 \end{pmatrix}
 $$
-where $\mathbf{0}$ a $2\times(p-2)$-matrix, $R$ a $(p-2)\times 2$ matrix and $Q$ a $(p-2)\times (p-2)$ matrix
+où $\mathbf{0}$ une $2\times(p-2)$-matrice, $R$ une $(p-2)\times 2$-matrice et $Q$ une $(p-2)\times (p-2)$-matrice
 
 ---
 
@@ -556,7 +553,7 @@ R=
 0 & 1/2   
 \end{pmatrix}
 $$
-and
+et
 $$
 Q=
 \begin{pmatrix}
@@ -585,9 +582,9 @@ $$
 \end{pmatrix}
 $$
 
-This is a **symmetric tridiagonal Toeplitz** matrix 
+Ceci est une matrice de **Toeplitz tridiagonale symmétrique** 
 
-(symmetric: obvious; tridiagonal: there are three diagonal bands; Toeplitz: each diagonal band is constant)
+(symmétrique: évident; tridiagonale: il y a 3 bandes diagonales; Toeplitz: chaque bande diagonale est constante)
 
 ---
 
@@ -614,7 +611,7 @@ then we have the result on the next slide
 
 ---
 
-#  Inverse of a symmetric tridiagonal matrix
+#  Inverse d'une matrice tridiagonale symmétrique
 
 <div class="theorem">
 
@@ -712,27 +709,24 @@ is also useful
 
 ---
 
-In summary
+En résumé
 
 | $\delta_1$ | $\delta_2$ | $\cdots$ | $\delta_j$ | $\cdots$ | $\delta_{k-1}$ | $\delta_k$ |
 |:----------:|:----------:|:--------:|:----------:|:--------:|:--------------:|:----------:|
 | $d_k^{(k)}$ | $d_{k-1}^{(k)}$ | $\cdots$ | $d_{k-j+1}^{(k)}$ | $\cdots$ | $d_2^{(k)}$ | $d_1^{(k)}$ |
 | 1 | $\frac 34$ | $\cdots$ | $\frac{j+1}{2j}$ | $\cdots$ | $\frac{k}{2(k-1)}$ | $\frac{k+1}{2k}$ |
 
----
-
-In $J^{-1}$, the following terms appear
+Dans $J^{-1}$, on trouve les termes suivants
 $$
 \frac{d_{j+1}^{(k)}\cdots d_k^{(k)}}{\delta_i\cdots\delta_k},\;\forall i,\forall j>i
 $$
-and
 $$
 \frac{d_{i+1}^{(k)}\cdots d_k^{(k)}}{\delta_i\cdots\delta_k},\;\forall i
 $$
 
 ---
 
-We have, $\forall i$,
+On a, $\forall i$,
 $$
 \begin{align*}
 \frac{d_{i+1}^{(k)}\cdots d_k^{(k)}}{\delta_i\cdots\delta_k}
@@ -751,46 +745,43 @@ $$
 
 ---
 
-# Continuous-time Markov chains
+# Les CMTC en 2 mots
 
-CTMC similar to DTMC except in way they handle time between events (transitions)
+CMTC sont similaires aux CMTD à part dans leur façon de gérer le temps entre évènements (transitions)
 
-DTMC: transitions occur each $\Delta t$
+CMTD: transitions (ou absence de transitions) ont lieu chaque $\Delta t$
 
-CTMC: $\Delta t\to 0$ and transition times follow an exponential distribution parametrised by the state of the system
+CMTC: $\Delta t\to 0$
 
-CTMC are roughly equivalent to ODE
+CMTC sont globalement équivalentes aux EDO
 
 ---
 
 # <!--fit-->EDO vers CMTC : on considère des choses différentes
 
-![width:600px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/flow-diagrams/figure_SIS_no_demography_ODE.png)  ![width:400px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/flow-diagrams/figure_SIS_no_demography_CTMC.png)
-
----
+![height:250px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/flow-diagrams/figure_SIS_no_demography_ODE.png)  ![height:250px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/flow-diagrams/figure_SIS_no_demography_CTMC.png)
 
 
-Weight | Transition | Effect 
+Poids | Transition | Effet 
 --- | --- | ---
-$\beta SI$ | $S\to S-1$, $I\to I+1$ | new infection of a susceptible 
-$\gamma I$ | $S\to S+1$, $I\to I-1$ | recovery of an infectious 
+$\beta SI$ | $S\to S-1$, $I\to I+1$ | nouvelle infection d'un susceptible 
+$\gamma I$ | $S\to S+1$, $I\to I-1$ | guérison d'un infectieux 
 
-Will use $S=N^*-I$ and omit $S$ dynamics
-
----
-
-# Several ways to formulate CTMC's
-
-A continuous time Markov chain can be formulated in terms of
-- infinitesimal transition probabilities
-- branching process
-- time to next event
-
-Here, time is in $\mathbb{R}_+$
 
 ---
 
-For small $\Delta t$,
+# Plusieurs façons de formulers les CMTC
+
+Une chaîne de Markov en temps continu peut être formulée en termes de
+- probabilités infinitésimales de transition
+- processus de branchement
+- temps jusqu'au prochain évènement
+
+Ici, le temps est dans $\mathbb{R}_+$
+
+---
+
+Continuant avec l'exemple du modèle SIS, pour $\Delta t$ petit,
 $$
 \begin{align*}
 p_{ji}(\Delta t) &= \mathbb{P}\left\{I(t+\Delta)=j|I(t)=i\right\} \\
@@ -799,7 +790,7 @@ p_{ji}(\Delta t) &= \mathbb{P}\left\{I(t+\Delta)=j|I(t)=i\right\} \\
 B(i)\Delta t+o(\Delta t) & j=i+1 \\
 D(i)\Delta t+o(\Delta t) & j=i-1 \\
 1-[B(i)+D(i)]\Delta t+o(\Delta t) & j=i \\
-o(\Delta t) & \textrm{otherwise}
+o(\Delta t) & \textrm{sinon}
 \end{cases}
 \end{align*}
 $$
