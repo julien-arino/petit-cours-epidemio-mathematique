@@ -69,20 +69,74 @@ Le code est disponible dans [ce répo Github](https://github.com/julien-arino/pe
 
 ---
 
-# DTMC for example SIS system
+# Le SIS DTMC
 
-Since $S=P^\star-I$, consider only the infected. To simulate as DTMC, consider a random walk on $I$ ($\simeq$ Gambler's ruin problem)
+On va considérer un modèle SIS en population totale constante $P^\star$. $S(t)$ le nombre de susceptibles, $I(t)$ le nombre d'infectieux. Les transitions suivantes sont possibles entre $t$ et $t+\Delta t$:
+- Nouvelle infection, avec probabilité $\beta S(t)I(t)\Delta t$
+- Guérison, avec probabilité $\gamma I(t)\Delta t$
+- Pas de transition: complément des deux probabilités précédentes, $1-(\beta S(t)+\gamma)I(t)\Delta t$
 
-Denote $\lambda_I = \beta (P^\star-I)I\Delta t$, $\mu_I = \gamma I\Delta t$ and $\sigma_I=1-(\lambda_I+\mu_I)\Delta t$
-
-![width:1200px](FIGS/figure_SIS_random_walk.png)
+Puisque $S(t)=P^\star-I(t)$, on ne considère que les infectés $I(t)$
 
 ---
 
-# Transition matrix
+# Le SIS en marche aléatoire (version simplifiée)
+
+Transitions:
+- Nouvelle infection $\lambda_I:=\beta (P^\star-I)I\ \Delta t$
+- Guérison $\mu_I:=\gamma I\ \Delta t$
+- Pas de transition $\sigma_I:=1-(\lambda_I+\mu_I)\ \Delta t$
+
+On peut donc considérer une marche aléatoire absorbante sur $I$
+
+![width:1200px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_random_walk.png)
+
+---
+
+# Attention à $\Delta t$ !!!
+
+Pour $I\in\{1,\ldots,P^\star\}$, on va calculer $\lambda_I=\beta(P^\star-I)I\Delta t$ et $\mu_I=\gamma I\Delta t$ (pour $I=0$, on sait que toute la masse est sur $\sigma_I$ puisque $I=0$ est absorbant). On veut
+$$
+\forall I\in\{1,\ldots,P^\star\},\quad
+(\beta(P^\star-I)I+\gamma I)\Delta t\leq 1
+$$
+puisque l'on doit avoir des probabilités. $<1$ n'est pas un problème, puisqu'on rattrape les choses avec $\sigma_I=1-(\lambda_I+\gamma_I)\Delta t$
+
+Donc on doit avoir
+$$
+\Delta t \leq \frac{1}{\beta(P^\star-I)I+\gamma I},\quad \forall I\in\{1,\ldots,P^\star\}
+$$
+
+---
+
+# Calcul de la borne sup de $\Delta t$
 
 $$
-A = 
+\forall I\in\{1,\ldots,P^\star\}, \quad \Delta t \leq \frac{1}{\beta(P^\star-I)I+\gamma I}=:f(I)
+$$
+
+On a:
+- $f(1)=1/(\beta(P^\star-1)+\gamma)$
+- $f(P^\star)=1/(\gamma P^\star)$
+- $f'(1)<0$ (pourvu que $P>1$..)
+- $f'(I)=0 \iff \tilde I=(\beta P^\star+\gamma)/(2\beta)$, avec $f(\tilde I)=4\beta/(\beta P^\star+\gamma)^2$
+- $f''(I)>0$
+
+$$\implies
+\Delta t\leq 
+\begin{cases}
+\dfrac{1}{\gamma P^\star} & \text{si } \dfrac{\beta P^\star+\gamma}{2\beta} > P^\star\\
+\dfrac{4\beta}{(\beta P^\star+\gamma)^2} & \text{si } \dfrac{\beta P^\star+\gamma}{2\beta} \leq P^\star
+\end{cases}
+$$
+
+---
+
+# Matrice de transition
+
+$T\in\mathcal{M}_{P^\star +1}$ donnée par
+$$
+T = 
 \begin{pmatrix}
 1 & 0 \\
 \mu_1 & \sigma_1 & \lambda_1 & 0 \\
@@ -119,15 +173,15 @@ diag(T) = 1-rowSums(T)
 
 ---
 
-# Simulating a DTMC
+# Simulation d'une CMTD
 
 ```
 library(DTMCPack)
 sol = MultDTMC(nchains = 20, tmat = T, io = IC, n = t_f)
 ```
-gives 20 realisations of a DTMC with transition matrix ``T``, initial conditions ``IC`` (a vector of initial probabilities of being in the different $I$ states) and final time ``t_f``
+donne 20 réalisations d'une CMTD avec matrice de transition ``T``, conditions initiales ``IC`` (un vecteur de probabilité d'être dans les $P^\star+1$ differents états de $I$) et temps final ``t_f``
 
-See code on [Github](https://github.com/julien-arino/UK-APASI)
+Voir [le code](https://github.com/julien-arino/UK-APASI)
 
 ---
 
@@ -135,9 +189,9 @@ See code on [Github](https://github.com/julien-arino/UK-APASI)
 
 ---
 
-# Going a bit further
+# Aller plus loin
 
-`DTMCPack` is great for obtaining realisations of a DTMC, but to study it in more detail, `markovchain` is much more comprehensive
+`DTMCPack` est bien pour obtenir des réalisation d'une CMTD, mais pour l'étudier plus en détail, `markovchain` est bien plus complet
 
 ```
 library(markovchain)
@@ -147,7 +201,7 @@ mcSIS <- new("markovchain",
              name = "SIS")
 ```
 
-Note that interestingly, `markovchain` overrides the weird default "`*` is Hadamard, `%*%` is usual" `R` matrix product rule, so `mcSIS*mcSIS` does $TT$, not $T\circ T$
+De façon intéressante, `markovchain` redéfinit l'étrange notation de `R`pour les produits matriciels où "`*` est Hadamard, `%*%` est l'habituel", si bien que pour un objet défini comme `markovchain`, `mcSIS*mcSIS` est le produit matriciel usuel
 
 ---
 
@@ -194,44 +248,54 @@ Function | Role
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!-- fit -->Simulation des CMTC
+- Algorithme de Gillespie
+- Utilisation d'une librairie
+- Limitation de Gillespie et tau-leap
 
 ---
 
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Algorithme de Gillespie
 
-Weight | Transition | Effect 
+---
+
+Poids | Transition | Effet 
 --- | --- | ---
-$\beta SI$ | $S\to S-1$, $I\to I+1$ | new infection of a susceptible 
-$\gamma I$ | $S\to S+1$, $I\to I-1$ | recovery of an infectious 
+$\beta SI$ | $S\to S-1$, $I\to I+1$ | nouvelle infection d'un susceptible 
+$\gamma I$ | $S\to S+1$, $I\to I-1$ | guérison d'un infectieux
 
-Will use $S=N^*-I$ and omit $S$ dynamics
+On utilise $S=N^*-I$ et on omet la dynamique de $S$
 
 ---
 
-# Gillespie's algorithm (SIS model with only I eq.)
+# <!--fit-->Algorithme de Gillespie (modèle SIS avec seulement I)
 
-set $t\leftarrow t_0$ and $I(t)\leftarrow I(t_0)$
-while {$t\leq t_f$}
+posons $t\leftarrow t_0$ et $I(t)\leftarrow I(t_0)$
+tant que {$t\leq t_f$}
 - $\xi_t\leftarrow \beta (P^\star-i)i+\gamma i$
-- Draw $\tau_t$ from $T\thicksim \mathcal{E}(\xi_t)$
+- tirer $\tau_t$ de $T\thicksim \mathcal{E}(\xi_t)$
 - $v\leftarrow\left[\beta (P^\star-i)i,\xi_t\right]/\xi_t$
-- Draw $\zeta_t$ from $\mathcal{U}([0,1])$
-- Find $pos$ such that $v_{pos-1}\leq\zeta_t\leq v_{pos}$
-- switch {$pos$}
-  - 1: New infection, $I(t+\tau_t)=I(t)+1$
-  - 2: End of infectious period, $I(t+\tau_t)=I(t)-1$
+- tirer $\zeta_t$ de $\mathcal{U}([0,1])$
+- trouver $pos$ t.q. $v_{pos-1}\leq\zeta_t\leq v_{pos}$
+- selon {$pos$}
+  - 1: nouvelle infection, $I(t+\tau_t)=I(t)+1$
+  - 2: fin de la période infectieuse, $I(t+\tau_t)=I(t)-1$
 - $t\leftarrow t+\tau_t$
 
 ---
 
-# You can also use a package
-
-- You can implement Gillespie's algorithm yourself, it is a good exercise..
-- But in R there also exists a few packages allowing you to do that easily
-- They have the advantage of implementing tau-leaping (more on this later)
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Utilisation d'une librairie
 
 ---
 
-# Simulating a CTMC
+- Vous pouvez implémenter l'algorithme de Gillespie à la main, c'est un bon exercice. On le fait plus loin, d'ailleurs
+- Mais dans `R`, il y a plusieurs librairies permettant de faire ça facilement
+- Ces librairies ont aussi l'avantage qu'elles implémentent le tau-leap (voir plus loin dans ce cours)
+
+---
+
+# Simulation d'une CMTC avec une librairie
 
 ```
 library(GillespieSSA2)
@@ -259,59 +323,61 @@ plot(sol$time, sol$state[,"I"], type = "l",
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/many_CTMC_sims_with_means.png)
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Limitation de Gillespie et tau-leap
 
 ---
 
-# Sometimes in a CTMC things go bad
+# Parfois, simuler une CMTC peut être compliqué
 
-- Recall that the inter-event time is exponentially distributed
-- Critical step of the Gillespie algorithm:
-  -  $\xi_t\leftarrow$ weight of all possible events (*propensity*)
-  - Draw $\tau_t$ from $T\thicksim \mathcal{E}(\xi_t)$
-- So the inter-event time $\tau_t\to 0$ if $\xi_t$ becomes very large for some $t$
-- This can cause the simulation to grind to a halt
-
----
-
-# Example: a birth and death process
-
-- Individuals born at *per capita* rate $b$
-- Individuals die at *per capita* rate $d$
-- Let's implement this using classic Gillespie
+- Le temps inter-évènements est distribué exponentiellement
+- Étape critique de l'algorithme de Gillespie:
+  -  $\xi_t\leftarrow$ poids de tous les évènements possibles (*propensité*)
+  - Tirer $\tau_t$ au hasard d'une $T\thicksim \mathcal{E}(\xi_t)$
+- Donc le temps inter-évènement $\tau_t\to 0$ si $\xi_t$ devient très grand ([Cours 05](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-05-temps-de-residence.html#19): exponentielle de paramètre $\xi_t$ a un temps de séjour moyen $1/\xi_t$)
+- Ceci peut causer un "arrêt" de la simulation
 
 ---
 
-# Gillespie's algorithm (birth-death model)
+# Exemple: un processus de naissance et mort
 
-set $t\leftarrow t_0$ and $N(t)\leftarrow N(t_0)$
-while {$t\leq t_f$}
+- Individus naissent au taux *per capita* $b$
+- Individus meurrent au taux *per capita* $d$
+- Faisons un Gillespie classique "à la main"
+
+---
+
+# <!--fit-->Algorithme de Gillespie (modèle naissance & mort)
+
+posons $t\leftarrow t_0$ et $N(t)\leftarrow N(t_0)$
+tant que {$t\leq t_f$}
 - $\xi_t\leftarrow (b+d)N(t)$
-- Draw $\tau_t$ from $T\thicksim \mathcal{E}(\xi_t)$
+- tirer $\tau_t$ de $T\thicksim \mathcal{E}(\xi_t)$
 - $v\leftarrow\left[bN(t),\xi_t\right]/\xi_t$
-- Draw $\zeta_t$ from $\mathcal{U}([0,1])$
-- Find $pos$ such that $v_{pos-1}\leq\zeta_t\leq v_{pos}$
-- switch {$pos$}
-  - 1: Birth, $N(t+\tau_t)=N(t)+1$
-  - 2: Death, $N(t+\tau_t)=N(t)-1$
+- tirer $\zeta_t$ from $\mathcal{U}([0,1])$
+- trouver $pos$ t.q. $v_{pos-1}\leq\zeta_t\leq v_{pos}$
+- selon {$pos$}
+  - 1: naissance, $N(t+\tau_t)=N(t)+1$
+  - 2: mort, $N(t+\tau_t)=N(t)-1$
 - $t\leftarrow t+\tau_t$
 
 ---
 
 ```
-b = 0.01   # Birth rate
-d = 0.01   # Death rate
-t_0 = 0    # Initial time
-N_0 = 100  # Initial population
+b = 0.01   # Taux de naissance
+d = 0.01   # Taux de mortalité
+t_0 = 0    # Temps initial
+N_0 = 100  # Population initiale
 
-# Vectors to store time and state. Initialise with initial condition.
+# Vecteurs pour stocker le temps et l'état
+# On initialise avec la condition initiale
 t = t_0
 N = N_0
 
-t_f = 1000  # Final time
+t_f = 1000  # Temps final
 
-# We'll track the current time and state (could also just check last entry in t
-# and N, but will take more operations)
+# On garde le temps et l'état actuel en mémoire. On pourrait juste regarder 
+# la fin des vecteurs t et N, mais ça demande plus d'opérations
 t_curr = t_0
 N_curr = N_0
 ```
@@ -321,8 +387,7 @@ N_curr = N_0
 ```
 while (t_curr<=t_f) {
   xi_t = (b+d)*N_curr
-  # The exponential number generator does not like a rate of 0 (when the 
-  # population crashes), so we check if we need to quit
+  # Pour éviter les problèmes lorsque N=0, on finit si c'est le cas
   if (N_curr == 0) {
     break
   }
@@ -347,24 +412,26 @@ while (t_curr<=t_f) {
 
 ---
 
-# <!--fit-->Drawing at random from an exponential distribution
+# <!--fit-->Choisir au hasard une valeur d'une loi exponentielle
 
-If you do not have an exponential distribution random number generator.. We want $\tau_t$ from $T\thicksim\mathcal{E}(\xi_t)$, i.e., $T$ has probability density function
+Si vous n'avez pas accès à un générateur de nombre aléatoires exponentiels (pas de problème en `R`), vous pouvez utiliser une loi uniforme sur $[0,1]$ (ça, ça existe toujoura)
+
+On veut $\tau_t$ de $T\thicksim\mathcal{E}(\xi_t)$, i.e., $T$ a la densité de probabilité
 $$
 f(x,\xi_t)=
 \xi_te^{-\xi_t x}\mathbf{1}_{x\geq 0}
 $$
-Use cumulative distribution function $F(x,\xi_t)=\int_{-\infty}^x f(s,\xi_t)\,ds$
+On utilise l'inverse de la densité cumulative $F(x,\xi_t)=\int_{-\infty}^x f(s,\xi_t)\,ds$
 $$
 F(x,\xi_t)=
 (1-e^{-\xi_t x})\mathbf{1}_{x\geq 0}
 $$
-which has values in $[0,1]$. So draw $\zeta$ from $\mathcal{U}([0,1])$ and solve $F(x,\xi_t)=\zeta$ for $x$
+qui à ses valeurs dans $[0,1]$. Tirons $\zeta$ de $\mathcal{U}([0,1])$ et résolvons $F(x,\xi_t)=\zeta$ pour $x$
 $$
 \begin{align*}
-F(x,\xi_t)=\zeta & \Leftrightarrow 1-e^{-\xi_tx}=\zeta \\
-&\Leftrightarrow e^{-\xi_tx} = 1-\zeta \\
-&\Leftrightarrow \xi_tx = -\ln(1-\zeta) \\
+F(x,\xi_t)=\zeta & \Leftrightarrow 1-e^{-\xi_tx}=\zeta
+\Leftrightarrow e^{-\xi_tx} = 1-\zeta 
+\Leftrightarrow \xi_tx = -\ln(1-\zeta) \\
 &\Leftrightarrow \boxed{x = \frac{-\ln(1-\zeta)}{\xi_t}}
 \end{align*}
 $$
@@ -383,14 +450,14 @@ $$
 
 ---
 
-# Last one did not go well
+# Ce dernier ne s'est pas bien passé
 
-- Wanted 1000 time units (days?)
-- Interrupted around 500 ($t=473.4544$) because I lost patience
-- (Slide before: the sim stopped because the population went extinct, I did not stop it!)
-- At stop time
-  - $|N| = 241,198$ (and $|t|$ as well, of course!)
-  - time was moving slowly
+- Je voulais 1000 unités de temps (jours?)
+- J'ai interrompu lorsque $t=473.4544$ parce que j'ai perdu patience
+- (Transparent $b=0.01,d=0.02$: la simul s'est arrêtée parce que la population s'est éteinte, je ne l'ai pas arreêté!)
+- Au temps d'arrêt
+  - $|N| = 241\ 198$
+  - le temps allait très lentement
 ```
 > tail(diff(t))
 [1] 1.357242e-04 1.291839e-04 5.926044e-05 7.344020e-05 1.401148e-04 4.423529e-04
@@ -402,12 +469,12 @@ $$
 
 ---
 
-# Tau-leaping to the rescue!
+# Le tau-leap au secours !
 
-- Will not go into details
-- *Approximation* method (compared to classic Gillespie, which is exact)
-- Roughly: consider "groups" of events instead of individual events
-- Good news: `GillespieSSA2` (which we saw earlier) and `adaptivetau`
+- Je ne vais pas rentrer dans les détails
+- Méthode d'*approximation* (pas comme Gillespie classique, qui est exact)
+- En gros: considère des "groupes" d'évènements plutôt que des évènements individuels
+- Bonne nouvelle: `GillespieSSA2` (qu'on a vu avant) et `adaptivetau` implémentent le tau-leap
 
 --- 
 
@@ -416,9 +483,16 @@ $$
 
 ---
 
-# Parallelisation
+# Parallélisation
 
-To see multiple realisations: good idea to parallelise, then interpolate results. Write a function, e.g.,  `run_one_sim` that .. runs one simulation, then..
+- Pour faire beaucoup de simulations (voir de multiples réalisations), c'est une bonne idée de paralléliser son code
+- Les réalisations d'une chaîne de Markov (ainsi que bien d'autres problèmes dans ce *petit cours*) sont ce que l'on appelle *embarrassingly parallel*: les réalisations sont indépendantes, donc pourvu d'avoir assez de CPU et assez de RAM, on peut les faire tourner en même temps sans se poser de questions
+- En `R`, on utilisera `parLapply` pour ce genre de simulations
+- Implémentation facile, mais encore plus facile avec un exemple :)
+
+---
+
+On écrit une fonction, e.g.,  `run_one_sim` qui .. fait une simulation, puis on l'appelle avec `parLapply` après avoir "instancié" un cluster
 
 ```
 no_cores <- detectCores()-1
@@ -436,7 +510,22 @@ SIMS = parLapply(cl = cl,
 stopCluster(cl)
 ```
 
-See `simulate_CTMC_parallel.R` on [Github](https://github.com/julien-arino/UK-APASI)
+Voir `simulate_CTMC_parallel.R` sur [Github](https://github.com/julien-arino/UK-APASI)
+
+---
+
+# Bénéfices de la parallélisation
+
+À titre d'exemple, pour montrer à quel point on peut gagner en temps
+
+On fait tourner le code parallèle pour 100 simuls entre `tictoc::tic()` et `tictoc::toc()`, donnant `66.958 sec elapsed`, puis la version séquentielle
+```
+tictoc::tic()
+SIMS = lapply(X = 1:params$number_sims, 
+              FUN =  function(x) run_one_sim(params))
+tictoc::toc()
+```
+qui donne `318.141 sec elapsed` sur une machine Intel Corei9-8950HK 6C/12T @ 2.90GHz (4.75$\times$ plus rapide). Sur une machine plus orientée calcul: `12.067 sec elapsed` versus `258.985 sec elapsed` sur un processeur AMD Ryzen Threadripper 3970X 32C/64T @ 4.15GHz (21.46$\times$ plus rapide !)
 
 ---
 
@@ -444,13 +533,9 @@ See `simulate_CTMC_parallel.R` on [Github](https://github.com/julien-arino/UK-AP
 
 ---
 
-# Benefit of parallelisation
+# Remarque: interpolation des solutions
 
-Run the parallel code for 100 sims between `tictoc::tic()` and `tictoc::toc()`, giving `66.958 sec elapsed`, then the sequential version
-```
-tictoc::tic()
-SIMS = lapply(X = 1:params$number_sims, 
-              FUN =  function(x) run_one_sim(params))
-tictoc::toc()
-```
-which gives `318.141 sec elapsed` on a 6C/12T Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz (4.75$\times$ faster) or `12.067 sec elapsed` versus `258.985 sec elapsed` on a 32C/64T AMD Ryzen Threadripper 3970X 32-Core Processor (21.46$\times$ faster !)
+- Dans la figure sur le transparent précédent, on présente la moyenne et la moyenne conditionnée sur la non extinction
+- C'est un peu plus compliqué qu'il n'y paraît: chaque réalisation a un ensemble d'instants de saut différent, puisque ces temps sont tirés au hasard
+- Pour calculer une moyenne, on doit donc interpoler les solutions
+- Dans le code, c'est ce que fait la fonction `approx`, que l'on utilise sur la solution générée par la fonction `ssa`
