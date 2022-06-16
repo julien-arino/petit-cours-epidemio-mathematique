@@ -4,7 +4,7 @@ Ceci est la version *web* du *Petit cours d'épidémiologie mathématique*, que 
 
 Quelques remarques au sujet de la liste des cours ci-dessous:
 - Certains cours ne sont pas encore finalisés; les cours qui sont finalisés sont suivis d'une marque &#9989;.
-- Tous les cours sont susceptibles de changer (pour corriger des coquilles, améliorer le flux, ajouter du contenu, etc.), même les cours annoncés comme finalisés.
+- Tous les cours sont susceptibles de changer (pour corriger des coquilles, améliorer le flux, ajouter du contenu, etc.), même les cours finalisés.
 - J'ambitionne d'enregistrer tous les cours; les liens seront ajoutés ici lorsque ces enregistrements seront en ligne.
 <!--- Une version plus détaillée de la liste, que j'utilise par exemple pour vérifier que je ne duplique pas de contenu, est disponible [ici](). -->
 
