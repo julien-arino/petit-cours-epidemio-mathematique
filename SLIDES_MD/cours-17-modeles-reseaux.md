@@ -111,7 +111,13 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-\maxFrameImage{../FigsBiodiaspora/Manitoba_network_schema_planar_oriented}
+![bg contain](../FIGS/world_graph-degree.png)
+
+
+---
+
+![bg contain](../FIGS/Manitoba_network_schema_planar_oriented.png)
+
 
 ---
 
