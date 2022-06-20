@@ -95,10 +95,255 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 # Contexte
 
-- $\mathcal{G}(\mathcal{V},\mathcal{A})$ un graphe, orienté ou non (on fera la distinction lorsque c'est nécessaire)
+- $\mathcal{G}(\mathcal{V},\mathcal{E})$ un graphe non orienté
+- $\mathcal{D}(\mathcal{V},\mathcal{A})$ un digraphe (graphe orienté)
 - $\mathcal{V}$ l'ensemble des nœuds (*vertices* en anglais)
-- $\mathcal{A}$ l'ensemble des arcs, i.e., les liens entre nœuds. En anglais, on distingue *arcs* dans le cas orienté et *edges* dans le cas non orienté
+- $\mathcal{E}$ l'ensemble des arcs dans le cas non orienté (*edges* en anglais)
+- $\mathcal{A}$ l'ensemble des arcs dans le graphe orienté (*arcs* en anglais)
 
+---
+
+# Exemple du réseau de transport aérien
+
+- Je vais illustrer avec des données du réseau de transport aérien mondial
+- Données assez bonnes (très bonnes parfois), et un avantage flagrant:
+  - Quand un avion part de quelque part et arrive ailleurs, c'est quelque chose d'assez .. déterministe
+
+---
+
+\maxFrameImage{../FigsBiodiaspora/Manitoba_network_schema_planar_oriented}
+
+---
+
+# Densité du graphe
+
+Un graph (resp. digraphe) est **complet** si toute paire de nœuds est connecté (resp. est connecté par un arc dans chaque direction)
+
+S'il y a $n=|\mathcal{V}|$ nœeuds dans le graphe, alors il y a $n(n-1)/2$ (resp. $n(n-1)$) arcs dans le graphe (resp. digraphe) complet
+
+(On ne compte pas les connections d'un nœud sur lui même)
+
+Densité de $\mathcal{G}$ (graphe non orienté)
+$$
+\mathsf{dens}_\mathcal{G}=\frac{2\ |\mathcal{E}|}{n(n-1)}
+$$
+Densité de $\mathcal{D}$ (graphe orienté)
+$$
+\mathsf{dens}_\mathcal{D}=\frac{|\mathcal{A}|}{n(n-1)}
+$$
+
+---
+
+# Densité des digraphes considérés
+Digraphe du Manitoba
+$$
+\mathsf{dens}_\mathcal{D}=\frac{64}{24\times 23}=0.1159
+$$
+Digraphe du Canada
+$$
+\mathsf{dens}_\mathcal{D}=\frac{804}{222\times 221}=0.0164
+$$
+Digraphe d'Amérique du Nord
+$$
+\mathsf{dens}_\mathcal{D}=\frac{7814}{934\times 933}=0.009
+$$
+Digraphe global
+$$
+\mathsf{dens}_\mathcal{D}=\frac{32576}{3403\times 3402}=0.0028
+$$
+
+---
+
+# Degré
+
+**Degré** $d_\mathcal{G}(v)$ du nœud $v\in\mathcal{V}$ dans $\mathcal{G}$: nombre d'arcs incidents à $v$
+
+**Degré entrant** $d^-_\mathcal{D}(v)$ du nœud $v\in\mathcal{V}$ dans $\mathcal{D}$: nombre d'arcs avec tête $v$
+
+**Degré sortant** $d^+_\mathcal{D}(v)$ du nœud $v\in\mathcal{V}$ dans $\mathcal{D}$: nombre d'arcs avec queue $v$
+
+**Degré** $d_\mathcal{D}(v)$ du nœud $v\in\mathcal{V}$ dans $\mathcal{D}(\mathcal{V},\mathcal{A})$: nombre d'arcs incidents à $v$ dans le graphe non orienté sous-jacent $\mathcal{G}$ de $\mathcal{D}$ (où tout arc est considérée comme un arc "bidirectionnel")
+
+---
+
+# Degré entrant global
+
+| Ville | Pays | Degré entrant | Rang |
+|------|---------|:----------:|:----:| 
+| Londres | GB | 365 | 1 |
+| Paris | France | 294 | 2 |
+| Frankfurt | Allemagne | 287 | 3 |
+| Atlanta | USA | 249 | 4 |
+| New York | USA | 241 | 5 |
+| Moscou | Russie | 225 | 6 |
+| Amsterdam | Pays-Bas | 204 | 7 |
+| Chicago | USA | 203 | 8 |
+| Munich | Allemagne | 200 | 9 |
+| Milan | Italie | 181 | 10 |
+
+---
+
+# Le degré change pendant l'année 
+
+\includegraphics[width=0.7\textwidth]{IATA_outdegree_YEA_2005_to_2010}\newline
+Monthly outdegree of Edmonton (aggregate code YEA), 01/2005 to 12/2010
+
+---
+
+# Plus court chemin
+
+Soit $\mathcal{D}$ un digraphe. Le (ou les) plus court(s) chemin(s) de $i$ à $j$ dans $\mathcal{V}$:
+$$
+d_\mathcal{D}(i,j)=\min_{p\in\mathcal{P}(i,j)} f(p)
+$$
+où $\mathcal{P}(i,j)$ est l'ensemble des chemins de $i$ à $j$ et $f(p)$ est un valuation des arcs dans le chemin $p$. On définit $d_\mathcal{D}(i,j)=\infty$ s'il n'existe pas de chemin de $i$ à $j$ 
+
+$f(p)$ peut être
+- le nombre d'arcs dans $p$ de $i$ à $j$ (**distance géodésique**)
+- Distance du grand cercle des arcs de $p$
+- durée des vols des arcs de $p$
+
+---
+
+# Excentricité
+
+**Excentricité** (ou **nombre de Köonig**) du nœud $v\in\mathcal{V}$ dans $\mathcal{G}(\mathcal{V},\mathcal{E})$
+$$
+e(v)=\max_{v'\in\mathcal{V}}d_\mathcal{D}(v,v')
+$$
+**Excentricité entrante** du nœud $v\in\mathcal{V}$ dans $\mathcal{D}(\mathcal{V},\mathcal{A})$
+$$
+e^-(v)=\max_{v'\in\mathcal{V}}d_\mathcal{D}(v',v)
+$$
+**Excentricité sortante** du nœud $v\in\mathcal{V}$ dans $\mathcal{D}(\mathcal{V},\mathcal{A})$
+$$
+e^+(v)=\max_{v'\in\mathcal{V}}d_\mathcal{D}(v,v')
+$$
+
+---
+
+| Graphe | $e^-(YWG)$ | $e^+(YWG)$ |
+|--------|------------|------------|
+| Manitoba | 2 | 3 (Lynn Lake) |
+| Canada | 7 $^{(*)}$ | 7 $^{(*)}$ |
+| North America | 7 $^{(**)}$| 8 (Stony River) |
+| Global | 7 $^{(***)}$ | 8 (Stony River) |
+
+| <!-- --> | <!-- --> |
+|---|---|
+| ( * ) | Peawanuck (ON), Port Hope Simpson (NL) |
+( ** ) | ( * ) + Lopez Island, Kwethluk, Chuathbaluk |
+( *** ) | ( ** ) + Hooker Creek, Birdsville, Beni, Balalae, Thargomindah |
+
+---
+
+# Rayon
+
+**Rayon** de $\mathcal{G}$
+$$
+\rho_\mathcal{G}=\min_{v\in\mathcal{V}}e(v)
+$$
+**Rayon entrant** de $\mathcal{D}$
+$$
+\rho_\mathcal{D}^-=\min_{v\in\mathcal{V}}e^-(v)
+$$
+**Rayon sortant** de $\mathcal{D}$
+$$
+\rho_\mathcal{D}^+=\min_{v\in\mathcal{V}}e^+(v)
+$$
+
+---
+
+# Rayon des différents graphes
+
+| Graphe | $\rho^-$ | $\rho^+$ |
+|--------|----------|----------|
+| Manitoba | 2 | 3 |
+| Canada | 6 | 6 |
+| Amérique du Nord | 6 | 7 |
+| Global | 7 | 7 |
+
+rayon = min(max(.)) $\rightarrow$ directionalité
+
+---
+
+# Centre d'un graphe
+
+**Centre** de $\mathcal{D}$:
+$$
+\mathcal{C}_\mathcal{D}=\left\{v\in\mathcal{V}:e(v)=\rho_\mathcal{D}\right\}
+$$
+
+---
+
+| Graphe | $\mathcal{C}^-$ | $\left|\mathcal{C}^-\right|$ | $\mathcal{C}^+$ | $\left|\mathcal{C}^+\right|$ |
+|---|---|---|---|---|
+| Manitoba | 2 | 1 (YWG) | 3 | 7 |
+| Canada | 6 | 1 (YTO) | 6 | 1 (YTO) |
+| North America | 6 | 1 (YTO) | 7 | 18 |
+| Global | 7 | 131 | 7 | 20 |
+
+$\{$YYC,YEA,Halifax,Kelowna,Moncton,YMQ,YOW,Quebec,St John's,YTO,YVR, Victoria,YWG$\}\subset\mathcal{C}^-$\\
+
+$\{$Toronto,Vancouver$\}\subset\C^+$\\
+
+only non North American city in $\C^+$: Frankfurt
+
+---
+
+# Diamètre
+
+**Diamètre** de $\mathcal{D}$
+$$
+\mathsf{diam}_\mathcal{D}=\max_{v\in\mathcal{V}}e(v)
+$$
+
+---
+
+
+Graphe | Diamètre |
+|---|---|
+| Manitoba | 5 |
+| Canada | 12 |
+| North America | 13 |
+| Global | 13 |
+
+diamètre = max(max(.)) $\rightarrow$ pas de directionalité
+
+---
+
+# Péripherie d'un graphe
+
+**Péripherie** de $\mathcal{D}$ 
+$$
+\mathcal{P}_\mathcal{D}=\left\{v\in\mathcal{V}:e(v)=\mathsf{diam}_\mathcal{D}\right\}
+$$
+
+---
+
+\begin{tabular}{c||c|c}
+Graph | In-bound periphery | Out-bound periphery \\
+\hline\hline
+Manitoba | Lynn Lake | Cross Lake, Red Sucker Lake,\\
+|| Brandon \\
+\hline
+Canada | Peawanuck, | Peawanuck,\\
+| Port Hope Simpson | Port Hope Simpson \\
+\hline
+North America | Stony River | Peawanuck, \\
+|| Port Hope Simpson \\
+\hline
+Global | Stony River, Hooker Creek, | Hooker Creek, Beni, \\
+| Peawanuck | Peawanuck, Port Hope Simpson
+
+---
+
+# Bien d'autres mesures
+
+- betweenness
+- closeness
+- $k$-cores
+- $\ldots$
 
 ---
 
