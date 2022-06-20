@@ -111,12 +111,12 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![bg contain](../FIGS/world_graph-degree.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world_graph-degree.png)
 
 
 ---
 
-![bg contain](../FIGS/Manitoba_network_schema_planar_oriented.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Manitoba_network_schema_planar_oriented.png)
 
 
 ---
@@ -141,22 +141,13 @@ $$
 ---
 
 # Densité des digraphes considérés
-Digraphe du Manitoba
-$$
-\mathsf{dens}_\mathcal{D}=\frac{64}{24\times 23}=0.1159
-$$
-Digraphe du Canada
-$$
-\mathsf{dens}_\mathcal{D}=\frac{804}{222\times 221}=0.0164
-$$
-Digraphe d'Amérique du Nord
-$$
-\mathsf{dens}_\mathcal{D}=\frac{7814}{934\times 933}=0.009
-$$
-Digraphe global
-$$
-\mathsf{dens}_\mathcal{D}=\frac{32576}{3403\times 3402}=0.0028
-$$
+
+| Digraphe | # nœuds | # arcs | densité |
+|----------|:-------:|:------:|:-------:|
+| Manitoba | 24 | 64 | 0.1159 |
+| Canada | 222 | 804 | 0.0164 |
+| Amérique du Nord | 934 | 7,814 | 0.009 |
+| Global | 3403 | 32,576 | 0.0028 |
 
 ---
 
@@ -191,9 +182,9 @@ $$
 
 # Le degré change pendant l'année 
 
-(Les graphes sont dynamiques !)
+Les graphes sont dynamiques !
 
-![bg right:72%](../FIGS/IATA_outdegree_YEA_2005_to_2010.png)
+![bg right:72%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/IATA_outdegree_YEA_2005_to_2010.png)
 
 
 ---
@@ -260,7 +251,7 @@ $$
 \rho_\mathcal{D}^+=\min_{v\in\mathcal{V}}e^+(v)
 $$
 
-rayon = min(max(.)) $\rightarrow$ directionalité
+rayon = $\min(\max(\cdot))$ $\rightarrow$ directionalité
 
 ---
 
