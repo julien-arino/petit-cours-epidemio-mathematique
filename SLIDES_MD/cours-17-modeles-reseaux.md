@@ -172,7 +172,7 @@ $$
 
 ---
 
-# Degré entrant global
+# Degré entrant global du réseau de transport aérien
 
 | Ville | Pays | Degré entrant | Rang |
 |------|---------|:----------:|:----:| 
@@ -191,8 +191,10 @@ $$
 
 # Le degré change pendant l'année 
 
-\includegraphics[width=0.7\textwidth]{IATA_outdegree_YEA_2005_to_2010}\newline
-Monthly outdegree of Edmonton (aggregate code YEA), 01/2005 to 12/2010
+(Les graphes sont dynamiques !)
+
+![bg right:72%](../FIGS/IATA_outdegree_YEA_2005_to_2010.png)
+
 
 ---
 
@@ -232,7 +234,7 @@ $$
 |--------|------------|------------|
 | Manitoba | 2 | 3 (Lynn Lake) |
 | Canada | 7 $^{(*)}$ | 7 $^{(*)}$ |
-| North America | 7 $^{(**)}$| 8 (Stony River) |
+| Amérique du Nord | 7 $^{(**)}$| 8 (Stony River) |
 | Global | 7 $^{(***)}$ | 8 (Stony River) |
 
 | <!-- --> | <!-- --> |
@@ -258,9 +260,11 @@ $$
 \rho_\mathcal{D}^+=\min_{v\in\mathcal{V}}e^+(v)
 $$
 
+rayon = min(max(.)) $\rightarrow$ directionalité
+
 ---
 
-# Rayon des différents graphes
+# Rayon du réseau de transport aérien
 
 | Graphe | $\rho^-$ | $\rho^+$ |
 |--------|----------|----------|
@@ -269,7 +273,6 @@ $$
 | Amérique du Nord | 6 | 7 |
 | Global | 7 | 7 |
 
-rayon = min(max(.)) $\rightarrow$ directionalité
 
 ---
 
@@ -282,18 +285,18 @@ $$
 
 ---
 
-| Graphe | $\mathcal{C}^-$ | $\left|\mathcal{C}^-\right|$ | $\mathcal{C}^+$ | $\left|\mathcal{C}^+\right|$ |
+# Centre du réseau de transport aérien
+
+| Graphe | $\mathcal{C}^-$ | $\\\|\mathcal{C}^-\\\|$ | $\mathcal{C}^+$ | $\\\|\mathcal{C}^+\\\|$ |
 |---|---|---|---|---|
 | Manitoba | 2 | 1 (YWG) | 3 | 7 |
 | Canada | 6 | 1 (YTO) | 6 | 1 (YTO) |
-| North America | 6 | 1 (YTO) | 7 | 18 |
+| Amérique du Nord | 6 | 1 (YTO) | 7 | 18 |
 | Global | 7 | 131 | 7 | 20 |
 
-$\{$YYC,YEA,Halifax,Kelowna,Moncton,YMQ,YOW,Quebec,St John's,YTO,YVR, Victoria,YWG$\}\subset\mathcal{C}^-$\\
+$\{$YYC,YEA,Halifax,Kelowna,Moncton,YMQ,YOW,Quebec,St John's,YTO,YVR, Victoria,YWG$\}\subset\mathcal{C}^-$
 
-$\{$Toronto,Vancouver$\}\subset\C^+$\\
-
-only non North American city in $\C^+$: Frankfurt
+$\{$Toronto,Vancouver$\}\subset\mathcal{C}^+$
 
 ---
 
@@ -304,17 +307,18 @@ $$
 \mathsf{diam}_\mathcal{D}=\max_{v\in\mathcal{V}}e(v)
 $$
 
+diamètre = max(max(.)) $\rightarrow$ pas de directionalité
+
 ---
 
 
 Graphe | Diamètre |
-|---|---|
+|------|:--------:|
 | Manitoba | 5 |
 | Canada | 12 |
-| North America | 13 |
+| Amérique du Nord | 13 |
 | Global | 13 |
 
-diamètre = max(max(.)) $\rightarrow$ pas de directionalité
 
 ---
 
@@ -327,20 +331,12 @@ $$
 
 ---
 
-\begin{tabular}{c||c|c}
-Graph | In-bound periphery | Out-bound periphery \\
-\hline\hline
-Manitoba | Lynn Lake | Cross Lake, Red Sucker Lake,\\
-|| Brandon \\
-\hline
-Canada | Peawanuck, | Peawanuck,\\
-| Port Hope Simpson | Port Hope Simpson \\
-\hline
-North America | Stony River | Peawanuck, \\
-|| Port Hope Simpson \\
-\hline
-Global | Stony River, Hooker Creek, | Hooker Creek, Beni, \\
-| Peawanuck | Peawanuck, Port Hope Simpson
+| Graphe | Péripherie entrante | Péripherie sortante |
+|--------|---------------------|---------------------|
+| Manitoba | Lynn Lake | Cross Lake, Red Sucker Lake, Brandon |
+| Canada | Peawanuck | Peawanuck, Port Hope Simpson | Port Hope Simpson |
+| Amérique du Nord | Stony River | Peawanuck, Port Hope Simpson |
+| Global | Stony River, Hooker Creek, Peawanuck | Hooker Creek, Beni, Peawanuck, Port Hope Simpson |
 
 ---
 
@@ -358,7 +354,38 @@ Global | Stony River, Hooker Creek, | Hooker Creek, Beni, \\
 
 ---
 
-- Voir par exemple Keeling & Eames, [Networks and epidemic models](https://doi.org/10.1098/rsif.2005.0051), 2005
+- Voir par exemple 
+  - Keeling & Eames. [Networks and epidemic models](https://doi.org/10.1098/rsif.2005.0051), 2005
+  - Meyers, Pourbohloul, Newman, Skowronski & Brunham. [Network theory and SARS: predicting outbreak diversity](https://doi.org/10.1016/j.jtbi.2004.07.026)
+  - Meyers, Newman & Pourohloul. [Predicting epidemics on directed contact networks](https://doi.org/10.1016/j.jtbi.2005.10.004), 2006
+  - Bansal, Read, Pourbohloul & Meyers. [The dynamic nature of contact networks in infectious disease epidemiology](https://doi.org/10.1080/17513758.2010.503376), 2010 
+  - Les autres papiers du [numéro spécial](https://www.tandfonline.com/toc/tjbd20/4/5) de JBD dans lequel est le papier précédent
+
+
+---
+
+- Typiquement, on considère un graphe (ou digraphe selon les cas) dans lequel:
+  - chaque nœud est un individu 
+  - l'existence d'un arc de $i$ vers $j$ indique que $i$ est en contact avec $j$ et peut lui transmettre l'infection
+  - dans le cas non orienté, l'existence d'un arc de $i$ vers $j$ implique celle d'un arc (le même) de $j$ vers $i$ et établit que les deux individus sont connectés
+- La connexion n'est pas permanente, mais décrit plutôt la possibilité d'une connexion: $i$ et $j$ entrent en contact de façon régulière
+
+---
+
+# Matrice d'adjacence
+
+On utilisera souvent la **matrice d'adjacence** $A=[a_{ij}]$, dans laquelle $a_{ij}=1$ si le nœud $i$ a un lien vers le nœud $j$ et $a_{ij}=0$ sinon
+
+On écrit parfois $A(\mathcal{D})$ pour indiquer que $A$ est la matrice d'adjacence du digraphe $\mathcal{D}$, et dans l'autre sens, $\mathcal{D}(A)$ pour indiquer que le graphe est construit en utilisant la matrice d'adjacence
+
+Si le graphe est non orienté, alors $A$ est symmétrique
+
+---
+
+# Nature du réseau
+
+- Parfois on dispose de données précises sur les liens entre individus (sondages, etc.)
+- Souvent on idéalise des réseaux, on choisit des réseaux avec des propriétés données
 
 ---
 
