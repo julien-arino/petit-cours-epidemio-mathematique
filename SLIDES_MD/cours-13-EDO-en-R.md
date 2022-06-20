@@ -53,6 +53,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - Résolution numérique des EDO
 - Quelques exemples
+- Investigation computationnelle des grands systèmes
 
 ---
 
@@ -144,7 +145,7 @@ ode(y, times, func, parms,
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# <!--fit-->Modèle épidémique de Kermack et McKendrick
+# <!--fit-->Modèle épidémique de<br/>Kermack & McKendrick
 
 ---
 
@@ -154,9 +155,9 @@ ode(y, times, func, parms,
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!-- fit -->Numerical investigations of large-scale systems
+# <!-- fit -->Investigation computationnelle</br> des grands systèmes
 
-<div style = "position: relative; bottom: -40%; font-size:20px;">
+<div style = "position: relative; bottom: -30%; font-size:20px;">
 
 - JA. [Spatio-temporal spread of infectious pathogens of humans](https://doi.org/10.1016/j.idm.2017.05.001). *Infectious Disease Modelling* **2**(2):218-228 (2017)
 - JA. [Mathematical epidemiology in a data-rich world](https://doi.org/10.1016/j.idm.2019.12.008). *Infectious Disease Modelling* **5**:161-188 (2020)
@@ -166,14 +167,15 @@ ode(y, times, func, parms,
 
 ---
 
-# Not very difficult
+# Pas très compliqué
 
-- As for the mathematical analysis: if you do things carefully and think about things a bit, numerics are not hard. Well: not harder than numerics in low-D
-- Exploit vector structure
+- Comme pour l'analyse mathématique ([Cours 12](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-modeles-metapopulation.html)), si l'on procède avec attention et que l'on réfléchit un peu, ça n'est pas trop compliqué
+- Enfin, pas plus dur que dans le cas de la basse dimension
+- Important de prendre avantage de la structure vectorielle
 
 ---
 
-# Define the vector field
+# Définissons le champ de vecteurs
 
 ```
 SLIAR_metapop_rhs <- function(t, x, p) {
@@ -197,7 +199,7 @@ SLIAR_metapop_rhs <- function(t, x, p) {
 
 ---
 
-# Set up parameters
+# Mise en place des paramètres
 
 ```
 pop = c(34.017, 1348.932, 1224.614, 173.593, 93.261) * 1e+06
@@ -213,7 +215,7 @@ T = matrix(data =
 
 ---
 
-# Work out movement matrix
+# Calculons la matrice de mouvement
 
 ```
 p = list()
@@ -248,28 +250,29 @@ R_0 = rep(1.5, p$P)
 
 ---
 
-# Set up IC and time
+# Définissons les conditions initiales
 
 ```
-# Set initial conditions. For example, we start with 2
-# infectious individuals in Canada.
+# On fixe les conditions initiales
+# Par exemple, 2 infectieux au Canada
 L0 = mat.or.vec(p$P, 1)
 I0 = mat.or.vec(p$P, 1)
 A0 = mat.or.vec(p$P, 1)
 R0 = mat.or.vec(p$P, 1)
 I0[1] = 2
 S0 = pop - (L0 + I0 + A0 + R0)
-# Vector of initial conditions to be passed to ODE solver.
+# Vecteur de conditions initiales à passer au solveur
 IC = c(S = S0, L = L0, I = I0, A = A0, R = R0)
-# Time span of the simulation (5 years here)
+# Instants auxquels renvoyer une solution 
+# Tous les 0.1 jours pour 5 ans ici
 tspan = seq(from = 0, to = 5 * 365.25, by = 0.1)
 ```
 
 ---
 
-# Set up $\beta$ to avoid blow up
+# On choisit $\beta$ pour éviter une explosion
 
-Let us take $\mathcal{R}_0=1.5$ for patches in isolation. Solve $\mathcal{R}_0$ for $\beta$ 
+On prend $\mathcal{R}_0=1.5$ pour les patchs quand ils sont isolés. Pour cela, on résoud $\mathcal{R}_0$ en fonction de $\beta$ 
 $$
 \beta=\frac{\mathcal{R}_0}{S(0)}
 \left(
@@ -289,10 +292,10 @@ for (i in 1:p$P) {
 
 ---
 
-# And now the problems begin :)
+# Et maintenant les problèmes commencent..
 
 ```
-# Call the ODE solver
+# On appelle le solveur
 sol <- deSolve::ode(y = IC, times = tspan, 
                     func = SLIAR_metapop_rhs, parms = p)
 ## DLSODA- At current T (=R1), MXSTEP (=I1) steps
@@ -302,7 +305,7 @@ sol <- deSolve::ode(y = IC, times = tspan,
 ## In above message, R1 = 117.498
 ```
 
-The output I copy above means the integration went wrong. The problem is the sie difference between countries, in particular China and Canada..
+La sortie au dessus indique un problème numérique lors de l'intégration. Le problème vient certainement de la différence de taille entre les pays, en particulier le Canada et la Chine
 
-Need to play with movement rates and initial conditions. Will not explain here
+Il faut jouer avec les taux de mouvement et les conditions initiales. Je n'explique pas ici
 
