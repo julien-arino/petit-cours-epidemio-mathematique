@@ -51,15 +51,81 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Outline
+# Plan de ce cours
 
-- What are agent-based models (ABM)
-- When to use ABM
-- When not to use ABM
-- Some examples
+- Pourquoi des modèles en réseaux
+- Les réseaux sociaux
+- Cadre général des modèles en réseaux
+- La librairie EpiModel
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->What are agent-based models (ABM)
+# <!--fit-->Pourquoi des modèles en réseaux
 
+---
+
+# Comprendre les processus de contact
+
+- Les modèles classiques permettent une certaine flexibilité (voir par exemple la section dans le [Cours 04](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-04-modeles-SIS-SIR.html) sur les fonctions d'incidence ou le [Cours 11](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-11-modeles-groupes.html) sur les modèles de groupes), mais cela reste limité et une approximation
+- De la même manière que les modèles agents ([Cours 18](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-18-modeles-agents.html)), les modèles en réseaux sont considérés pour rendre plus réaliste la description des processus de contact dans la transmission des agents pathogènes
+
+---
+
+# La vie humaine s'organise en réseaux
+
+- Famille
+- Cercles d'amis
+- Réseau professionel
+- ...
+- Théorie des réseaux sociaux existe et est utilisée depuis des années, par exemple dans le cadre professionnel (e.g., comment fluidifier les interactions dans une entreprise)
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Les réseaux sociaux
+
+---
+
+- Avant de considérer des épidémies dans des réseaux, quelques notions de réseaux sociaux, parce que c'est utile de façon générale pour comprendre les réseaux
+- Les méthodes en réseaux sociaux introduisent des mesures qui permettent d'évaluer certaines propriétés des graphes et qui sont utiles à connaître
+- Un réseau est un graphe (mathématique), orienté ou non, dans lequel les arcs représentent les connections (quelles qu'elles soient) entre les individus, qui sont les nœuds du graphe
+
+---
+
+# Contexte
+
+- $\mathcal{G}(\mathcal{V},\mathcal{A})$ un graphe, orienté ou non (on fera la distinction lorsque c'est nécessaire)
+- $\mathcal{V}$ l'ensemble des nœuds (*vertices* en anglais)
+- $\mathcal{A}$ l'ensemble des arcs, i.e., les liens entre nœuds. En anglais, on distingue *arcs* dans le cas orienté et *edges* dans le cas non orienté
+
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Cadre général des modèles en réseaux
+
+---
+
+- Voir par exemple Keeling & Eames, [Networks and epidemic models](https://doi.org/10.1098/rsif.2005.0051), 2005
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->La librairie EpiModel
+
+<div style = "text-align: justify; position: relative; bottom: -35%; font-size:18px;">
+
+Jenness SM, Goodreau SM and Morris M. [EpiModel: An R Package for Mathematical Modeling of Infectious Disease over Networks](https://doi.org/10.18637%2Fjss.v084.i08). Journal of Statistical Software. 2018; 84(8): 1-47
+</div>
+
+---
+
+# EpiModel
+
+- Librairie R qui fournit des outils pour simuler et analyser des modèles épidémiologiques en réseaux
+- Fournissent deux types d'approches:
+  - Simulation des modèles compartimentaux EDO (pas très intéressant)
+  - Simulation des modèles réseaux
+- Leur [site web](https://www.epimodel.org) contient quelques tutoriaux utiles
+- Fait partie de la méta-librairie [statnet](http://statnet.org/)
