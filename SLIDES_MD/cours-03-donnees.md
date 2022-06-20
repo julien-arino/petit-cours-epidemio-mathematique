@@ -119,7 +119,7 @@ Mouvement récent (5-10 years): gouvernements (locaux ou plus haut) créent des 
 
 # Exemple: population du Tchad
 
-```
+```R
 library(wbstats)
 pop_data_CTRY <- wb_data(country = "TCD", indicator = "SP.POP.TOTL",
                          mrv = 100, return_wide = FALSE)
@@ -164,13 +164,13 @@ crop_figure("pop_TCD.png")
 
 # Obtenir les données des arbres
 
-```
+```R
 allTrees = read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/ro
 ```
 
 Après ça, on a
 
-```
+```R
 dim(allTrees)
 ## [1] 300846
 15
@@ -180,7 +180,7 @@ dim(allTrees)
 
 # Nettoyons un petit peu
 
-```
+```R
 elms_idx = grep("American Elm", allTrees$Common.Name, ignore.case = TRUE)
 elms = allTrees[elms_idx, ]
 ```
@@ -217,7 +217,7 @@ Il nous reste 54,036 ormes américains
 
 # Distances entre tous les arbres
 
-```
+```R
 elms_xy = cbind(elms$X, elms$Y)
 D = dist(elms_xy)
 idx_D = which(D<50)
@@ -227,7 +227,7 @@ idx_D = which(D<50)
 
 On garde un peu plus..
 
-```
+```R
 indices_LT_kept = as.data.frame(cbind(indices_LT[idx_D,],
                                 D[idx_D]))
 colnames(indices_LT_kept) = c("i","j","dist")
@@ -237,7 +237,7 @@ colnames(indices_LT_kept) = c("i","j","dist")
 
 # <!--fit-->Créons des segments de droite entre toutes les paires d'arbres
 
-```
+```R
 tree_locs_orig = cbind(elms_latlon$lon[indices_LT_kept$i],
                        elms_latlon$lat[indices_LT_kept$i])
 tree_locs_dest = cbind(elms_latlon$lon[indices_LT_kept$j],
@@ -263,7 +263,7 @@ tree_pairs = do.call(
 
 # Un peu de carto(graphie)
 
-```
+```R
 library(tidyverse)
 # Polygone envelope de Winnipeg
 bb_poly = osmdata::getbb(place_name = "winnipeg", 
@@ -290,7 +290,7 @@ rivers <- osmdata::opq(bbox = bb_poly) %>%
 - On a les routes et les rivières dans la ville, qui forme un ensemble de segments de droite
 - Si il y a intersection entre une paire d'arbre et une route/rivière, alors on peut oublier cette paire d'arbre, leurs racines ne peuvent être en contact
 
-```
+```R
 st_crs(tree_pairs) = sf::st_crs(roads$osm_lines$geometry)
 iroads = sf::st_intersects(x = roads$osm_lines$geometry,
                            y = tree_pairs)
@@ -300,7 +300,7 @@ irivers = sf::st_intersects(x = rivers$osm_lines$geometry,
 
 ---
 
-```
+```R
 tree_pairs_roads_intersect = c()
 for (i in 1:length(iroads)) {
   if (length(iroads[[i]])>0) {
@@ -331,7 +331,7 @@ to_keep = setdiff(to_keep,tree_pairs_roads_intersect)
 
 ---
 
-```
+```R
 library(sqldf)
 library(dplyr)
 
@@ -352,7 +352,7 @@ SARS_selected = SARS %>%
 
 ---
 
-```
+```R
 # Écrivons l'incidence pour le pays choisi. diff fait les différences une à une,
 # donc génère une entrée de moins que le vecteur à laquelle on l'applique, 
 # donc on ajoute un zéro.

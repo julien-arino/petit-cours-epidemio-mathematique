@@ -79,7 +79,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 Comme avec la majorité des algorithmes, il faut écrire une fonction qui renvoie la valeur des dérivées (droite du signes égal) du système (le champ de vecteurs) en un point donné de l'espace (et potentiellement du temps), puis appeler cette fonction depuis le solveur
 
-```
+```R
 library(deSolve)
 rhs_logistic <- function(t, x, p) {
   with(as.list(x), {
@@ -97,7 +97,7 @@ sol <- ode(IC, times, rhs_logistic, params)
 
 On peut aussi faire la chose suivante: en ajoutant `p` aux arguments de `as.list`, on peut utiliser le contenu de `p` sans avoir besoin de préfixer par `p$`
 
-```
+```R
 library(deSolve)
 rhs_logistic <- function(t, x, p) {
   with(as.list(c(x, p)), {
@@ -121,9 +121,8 @@ sol <- ode(IC, times, rhs_logistic, params)
 
 - Vous pouvez aussi spécifier d'autres méthodes: "lsode", "lsodes", "lsodar", "vode", "daspk", "euler", "rk4", "ode23", "ode45", "radau", "bdf", "bdf_d", "adams", "impAdams" ou "impAdams_d" ,"iteration" (ce dernier pour les systèmes en temps discret)
 
-```
-ode(y, times, func, parms, 
-    method = "ode45")
+```R
+ode(y, times, func, parms, method = "ode45")
 ```
 
 - Vous pouvez même implémenter votre propre méthode
@@ -177,7 +176,7 @@ ode(y, times, func, parms,
 
 # Définissons le champ de vecteurs
 
-```
+```R
 SLIAR_metapop_rhs <- function(t, x, p) {
   with(as.list(x), {
     S = x[p$idx_S]
@@ -201,7 +200,7 @@ SLIAR_metapop_rhs <- function(t, x, p) {
 
 # Mise en place des paramètres
 
-```
+```R
 pop = c(34.017, 1348.932, 1224.614, 173.593, 93.261) * 1e+06
 countries = c("Canada", "China", "India", "Pakistan", "Philippines")
 T = matrix(data = 
@@ -217,7 +216,7 @@ T = matrix(data =
 
 # Calculons la matrice de mouvement
 
-```
+```R
 p = list()
 # Use the approximation explained in Arino & Portet (JMB 2015)
 p$M = mat.or.vec(nr = dim(T)[1], nc = dim(T)[2])
@@ -232,7 +231,7 @@ p$M = p$M - diag(colSums(p$M))
 
 ---
 
-```
+```R
 p$P = dim(p$M)[1]
 p$idx_S = 1:p$P
 p$idx_L = (p$P + 1):(2 * p$P)
@@ -252,7 +251,7 @@ R_0 = rep(1.5, p$P)
 
 # Définissons les conditions initiales
 
-```
+```R
 # On fixe les conditions initiales
 # Par exemple, 2 infectieux au Canada
 L0 = mat.or.vec(p$P, 1)
@@ -283,7 +282,7 @@ $$
 
 <p style="margin-bottom:2cm;"></p> 
 
-```
+```R
 for (i in 1:p$P) {
   p$beta[i] = 
     R_0[i] / S0[i] * 1/((1 - p$pi[i])/p$gammaI[i] + p$pi[i] * p$eta[i]/p$gammaA[i])
@@ -294,7 +293,7 @@ for (i in 1:p$P) {
 
 # Et maintenant les problèmes commencent..
 
-```
+```R
 # On appelle le solveur
 sol <- deSolve::ode(y = IC, times = tspan, 
                     func = SLIAR_metapop_rhs, parms = p)

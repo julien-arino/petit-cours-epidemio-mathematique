@@ -118,13 +118,13 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 Deux façons d'écrire:
 
-```
+```R
 X <- 10
 ```
 
 ou
 
-```
+```R
 X = 10
 ```
 
@@ -136,14 +136,14 @@ La première version est préférrée par les puristes R.. Personnellement, je m
 
 Structure de données très utile, flexible et versatile. Liste vide: `L <- list()`. Très pratique pour stocker des choses comme des paramètres. Par exemple:
 
-```
+```R
 L <- list()
 L$a <- 10
 L$b <- 3
 L[["autre_nom"]] <- "Plouf plouf"
 ```
 
-```
+```R
 > L[1]
 $a
 [1] 10
@@ -161,7 +161,7 @@ $a
 
 # Vecteurs
 
-```
+```R
 x = 1:10
 y <- c(x, 12)
 > y
@@ -180,13 +180,13 @@ Remarquez que dans `z`, puisque les deux premières entrées sont des caractère
 # Matrices
 
 Matrice (ou vecteur) de zéros
-```
+```R
 A <- mat.or.vec(nr = 2, nc = 3)
 ```
 
 Matrice avec entrées assignées
 
-```
+```R
 B <- matrix(c(1,2,3,4), nr = 2, nc = 2)
 > B
      [,1] [,2]
@@ -219,12 +219,12 @@ Par ailleurs
 
 L'addition vectorielle est aussi un peu frustrante. Mettons que vous écriviez `x=1:10`, i.e., implémentiez le vecteur
 
-```
+```R
 > x
  [1]  1  2  3  4  5  6  7  8  9 10
 ```
 Alors `x+1` donne
-```
+```R
 > x+1
  [1]  2  3  4  5  6  7  8  9 10 11
  ```
@@ -252,7 +252,7 @@ Attention en particulier lorsque l'on cherche à accéder à un ensemble d'indic
 
 Une capacité très attrayante de R: il est possible de nommber les entrées dans toute liste (on a déjà vu ça), mais aussi tout vecteur, toute matrice ou data frame
 
-```
+```R
 r$> v = c(alpha = 2, beta = 3, gamma = 4, delta = 5)
 r$> v
 alpha  beta gamma delta 
@@ -264,7 +264,7 @@ est un vecteur, et `v["beta"]` renvoie 3..
 
 # Assigner un nom *a posteriori*
 
-```
+```R
 r$> v = c(1,2,3)
 r$> names(v) = c("alpha", "beta", "gamme")
 r$> v
@@ -272,7 +272,7 @@ alpha   beta  gamme
      1      2      3 
 ```
 Ou encore, pour une matrice
-```
+```R
 r$> A = matrix(c(1,2,3,4), nrow = 2, byrow = TRUE)
 r$> rownames(A) = c("alpha","beta")
 r$> colnames(A) = c("chose","truc")
@@ -291,7 +291,7 @@ r$> A["alpha","truc"]
 
 # Contrôle du flot
 
-```
+```R
 if (condition est vraie) {
   liste de choses à faire
 }
@@ -299,7 +299,7 @@ if (condition est vraie) {
 
 Même si `liste de choses à faire` est une seule chose, il vaut mieux utiliser des accolades { }
 
-```
+```R
 if (condition est vraie) {
   liste de choses à faire
 } else if (une autre condition est vraie) {
@@ -315,7 +315,7 @@ if (condition est vraie) {
 
 `for` s'applique à des listes ou des vecteurs
 
-```
+```R
 for (i in 1:10) {
   quelque chose utilisant l'entier i
 }
@@ -340,7 +340,7 @@ Applique une fonction à chaque élément d'une liste,d'un vecteur  ou d'une mat
 
 Il existe des versions parallèles (p. ex., `parLapply`) que nous verrons plus tard
 
-```
+```R
 l = list()
 for (i in 1:10) {
         l[[i]] = runif(i)
@@ -350,13 +350,13 @@ lapply(X = l, FUN = mean)
 
 ou, pour renvoyer un vecteur
 
-```
+```R
 unlist(lapply(X = l, FUN = mean))
 ```
 
 ou
 
-```
+```R
 sapply(X = l, FUN = mean)
 ```
 
@@ -366,7 +366,7 @@ sapply(X = l, FUN = mean)
 
 On peut choisir des éléments non évidents dans une liste
 
-```
+```R
 l = list()
 for (i in 1:10) {
         l[[i]] = list()
@@ -378,7 +378,7 @@ sapply(X = l, FUN = function(x) length(x$b))
 
 donne
 
-```
+```R
 [1]  2  4  6  8 10 12 14 16 18 20
 ```
 
@@ -388,7 +388,7 @@ Il suffit de se souvenir que l'argument de la fonction est un élément de la li
 
 # <!--fit-->Éviter les boucles de variation de paramètres avec expand.grid
 
-```
+```R
 # Supposon qu'on veuille faire varier 3 paramètres
 variations = list(
     p1 = seq(1, 10, length.out = 10),

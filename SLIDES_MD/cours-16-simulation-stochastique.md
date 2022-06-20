@@ -151,19 +151,19 @@ $$
 
 ---
 
-```
-# Make the transition matrix
+```R
+# Construction de la matrice de transition
 T = mat.or.vec(nr = (Pop+1), nc = (Pop+1))
 for (row in 2:Pop) {
   I = row-1
-  mv_right = gamma*I*Delta_t # Recoveries
+  mv_right = gamma*I*Delta_t # Guérisons
   mv_left = beta*I*(Pop-I)*Delta_t # Infections
   T[row,(row-1)] = mv_right
   T[row,(row+1)] = mv_left
 }
-# Last row only has move left
+# Dernier rang, mouvement vers la gauche uniquement
 T[(Pop+1),Pop] = gamma*(Pop)*Delta_t
-# Check that we don't have too large values
+# On vérifie que les valeurs ne sont pas trop grandes
 if (max(rowSums(T))>1) {
   T = T/max(rowSums(T))
 }
@@ -175,7 +175,7 @@ diag(T) = 1-rowSums(T)
 
 # Simulation d'une CMTD
 
-```
+```R
 library(DTMCPack)
 sol = MultDTMC(nchains = 20, tmat = T, io = IC, n = t_f)
 ```
@@ -193,7 +193,7 @@ Voir [le code](https://github.com/julien-arino/UK-APASI)
 
 `DTMCPack` est bien pour obtenir des réalisation d'une CMTD, mais pour l'étudier plus en détail, `markovchain` est bien plus complet
 
-```
+```R
 library(markovchain)
 mcSIS <- new("markovchain", 
              states = sprintf("I_%d", 0:Pop),
@@ -205,7 +205,7 @@ De façon intéressante, `markovchain` redéfinit l'étrange notation de `R`pour
 
 ---
 
-```
+```R
 > summary(mcSIS)
 SIS  Markov chain that is composed by: 
 Closed classes: 
@@ -297,7 +297,7 @@ tant que {$t\leq t_f$}
 
 # Simulation d'une CMTC avec une librairie
 
-```
+```R
 library(GillespieSSA2)
 IC <- c(S = (Pop-I_0), I = I_0)
 params <- c(gamma = gamma, beta = beta)
@@ -363,14 +363,13 @@ tant que {$t\leq t_f$}
 
 ---
 
-```
+```R
 b = 0.01   # Taux de naissance
 d = 0.01   # Taux de mortalité
 t_0 = 0    # Temps initial
 N_0 = 100  # Population initiale
 
-# Vecteurs pour stocker le temps et l'état
-# On initialise avec la condition initiale
+# Vecteurs pour le temps et l'état, initialisés avec la condition initiale
 t = t_0
 N = N_0
 
@@ -384,10 +383,10 @@ N_curr = N_0
 
 ---
 
-```
+```R
 while (t_curr<=t_f) {
   xi_t = (b+d)*N_curr
-  # Pour éviter les problèmes lorsque N=0, on finit si c'est le cas
+  # Pour éviter les problèmes lorsque N=0, on termine si c'est le cas
   if (N_curr == 0) {
     break
   }
@@ -398,11 +397,11 @@ while (t_curr<=t_f) {
   pos = findInterval(zeta_t, v)+1
   switch(pos,
          { 
-           # Birth
+           # Naissance
            N_curr = N_curr+1
          },
          {
-           # Death
+           # Mort
            N_curr = N_curr-1
          })
   N = c(N, N_curr)
@@ -458,7 +457,7 @@ $$
 - Au temps d'arrêt
   - $|N| = 241\ 198$
   - le temps allait très lentement
-```
+```R
 > tail(diff(t))
 [1] 1.357242e-04 1.291839e-04 5.926044e-05 7.344020e-05 1.401148e-04 4.423529e-04
 ```
@@ -494,15 +493,14 @@ $$
 
 On écrit une fonction, e.g.,  `run_one_sim` qui .. fait une simulation, puis on l'appelle avec `parLapply` après avoir "instancié" un cluster
 
-```
+```R
 no_cores <- detectCores()-1
 cl <- makeCluster(no_cores)
 clusterEvalQ(cl,{
   library(GillespieSSA2)
 })
 clusterExport(cl,
-              c("params",
-                "run_one_sim"),
+              c("params", "run_one_sim"),
               envir = .GlobalEnv)
 SIMS = parLapply(cl = cl, 
                  X = 1:params$number_sims, 
@@ -519,7 +517,8 @@ Voir `simulate_CTMC_parallel.R` sur [Github](https://github.com/julien-arino/UK-
 À titre d'exemple, pour montrer à quel point on peut gagner en temps
 
 On fait tourner le code parallèle pour 100 simuls entre `tictoc::tic()` et `tictoc::toc()`, donnant `66.958 sec elapsed`, puis la version séquentielle
-```
+
+```R
 tictoc::tic()
 SIMS = lapply(X = 1:params$number_sims, 
               FUN =  function(x) run_one_sim(params))
