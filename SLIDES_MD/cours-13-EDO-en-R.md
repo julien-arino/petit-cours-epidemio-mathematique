@@ -143,6 +143,37 @@ ode(y, times, func, parms, method = "ode45")
 
 ---
 
+```R
+library(deSolve)
+rhs_SIS <- function(t, x, p) {
+  with(as.list(c(x, p)), {
+    N = S + I
+    dS = b + gamma * I - d * S - beta * S * I / N
+    dI = beta * S * I / N - (d + gamma) * I
+    return(list(c(dS, dI)))
+  })
+}
+d = 1/(80 * 365.25)
+gamma = 1/14
+# On règle la natalité pour que b/d = 1000
+b = 1000 * d
+# On règle beta pour que R_0 = 1.5
+beta = 1.5 * (d + gamma)
+params = list(b = b, d = d, gamma = gamma, beta = beta)
+IC = c(S = 1000, I = 1)
+times = seq(0, 365, 1)
+sol <- ode(IC, times, rhs_SIS, params)
+```
+
+---
+
+```R
+plot(sol[, "time"], sol[, "I"], type = "l",
+     xlab = "Temps (jours)", ylab = "Prévalence")
+```
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
 # <!--fit-->Modèle épidémique de<br/>Kermack & McKendrick
 
