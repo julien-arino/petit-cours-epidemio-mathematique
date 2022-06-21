@@ -172,6 +172,8 @@ plot(sol[, "time"], sol[, "I"], type = "l",
      xlab = "Temps (jours)", ylab = "Prévalence")
 ```
 
+![height:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/sol_endemic_SIS_R015.png)
+
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
