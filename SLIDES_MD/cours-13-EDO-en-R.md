@@ -344,7 +344,7 @@ $$
 ```R
 for (i in 1:p$P) {
   p$beta[i] = 
-    R_0[i] / S0[i] * 1/((1 - p$pi[i])/p$gammaI[i] + p$pi[i] * p$eta[i]/p$gammaA[i])
+    R_0[i] / S0[i] / ((1 - p$pi[i])/p$gammaI[i] + p$pi[i] * p$eta[i]/p$gammaA[i])
 }
 ```
 
