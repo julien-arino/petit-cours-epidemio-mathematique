@@ -52,6 +52,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # Plan du cours
 
 - Principes généraux
+- Problème de l'identifiabilité des paramètres
 
 ---
 
@@ -60,15 +61,14 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Example - Fitting to data
+# Example - Ajuster un modèle aux données
 
-- Note that this is a super simplified version of what to do
-- Much more elaborate procedures exist
+- Ceci est une version très simplifiée de ce qu'on fait en pratique
+- Il existe des procédures bien plus élaborées
   - Roda. [Bayesian inference for dynamical systems](https://doi.org/10.1016/j.idm.2019.12.007)
   - Portet. [A primer on model selection using the Akaike Information Criterion](https://doi.org/10.1016/j.idm.2019.12.010)
-- Let us grab some epi data online and fit an SIR model to it
+- On va récuperer des données en ligne et ajuster un modèke SIR dessus
 - Don't expect anything funky, as I said, this is the baby version
-- Also, keep in mind that any identification procedure is subject to risks due to *identifiability issues*; see, e.g., Roda et al, [Why is it difficult to accurately predict the COVID-19 epidemic?](https://doi.org/10.1016/j.idm.2020.03.001)
 
 ---
 
@@ -89,8 +89,25 @@ $$
 
 # Que valent $y_i$ et $x(t_i)$ ici?
 
-- In epi data for infectious diseases, we typically have incidence, i.e., number of new cases per unit time
-- In SIR model, this is $\beta SI$, so, if using incidence and Euclidean norm
+- Dans les données pour les maladies infectieuses, on a typiquement l'incidence, i.e., le nombre de nouveaux cas pas unité de temps
+- Dans un modèle SIR, l'incidence est $\beta SI$, donc, si on utilise une incidence en en action de masse et la norme euclidienne
 $$
 E(p)=\sum_{i=1}^N(\beta S(t_i)I(t_i)-y_i)^2
 $$
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Problème de <br>l'identifiabilité<br> des paramètres
+
+Roda et al, [Why is it difficult to accurately predict the COVID-19 epidemic?](https://doi.org/10.1016/j.idm.2020.03.001)
+
+---
+
+- On a vu que l'on cherche $p$ qui minimise la fonction d'erreur
+$$
+E(p) = \sum_{i=1}^N \|x(t_i)-y_i\|
+$$
+- Il est tout à fait possible (et même probable) que plusieurs valeurs de $p$ minimisent la fonction d'erreur
+- Il est aussi possible que l'on trouve plusieurs valeurs de $p$ minimisant $p$ sans être assuré qu'il s'agit d'un minimum global
+- Ces problèmes sont liés à ce que l'on appelle l'**identifiabilité**

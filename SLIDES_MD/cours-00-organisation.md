@@ -53,13 +53,25 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
+# Quelques abbréviations
+
+- PÉ: point d'équilibre
+- ESM: équilibre sans maladie
+- ÉÉ: équilibre endémique
+- LAS: localement asymptotiquement stable
+- SAL: stabilité asymptotique locale
+- GAS: globalement asymptotiquement stable
+- SAG: stabilité asymptotique globale
+
+---
+
 # Pour qui, ce cours?
 
 - Étudiants en mathématiques, physique ou ingénierie désireux d'en savoir plus au sujet de la modélisation mathématique dans le domaine de l'épidémiologie
 - Suppose une certaine connaissance des équations différentielles ordinaires. Je ne vais pas rentrer dans les détails et vais supposer que vous savez pourquoi, par exemple, la stabilité asymptotique locale d'un point d'équilibre est déduite de la localisation dans le plan complexe des valeurs propres de la linéarisation du système
 - Peut être intéressant pour des étudiants moins portés sur les mathématiques mais nécessitera un peu de travail de fond pour comprendre certains concepts
 
-Ce cours reprend et étend les éléments du cours 3MC  .. Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (université de N'Djaména)
+Ce cours reprend et étend les éléments du [cours 3MC](https://julien-arino.github.io/3MC-course-epidemiological-modelling/). Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (université de N'Djaména)
 
 ---
 
@@ -69,15 +81,15 @@ La plupart du matériel pour le cours est disponible depuis ce [répositoire Git
 
 Ceci inclut les transparents, le code et des exemples de données
 
-Ceci *n'inclut pas* le texte des références bibliographiques, pour des raisons de droit de diffusion, mais il y a des liens vers les articles et les livres. J'essaie autant que possible de fournir des articles Open Access
+Ceci *n'inclut pas* les références bibliographiques citées, pour des raisons de droit de diffusion, mais il y a des liens vers les articles et les livres. J'essaie autant que possible de fournir des articles Open Access
 
-Une remarque: je vais par moment référer à des articles sur Wikipedia. Pour le bénéfice des plus jeunes ici: Wikipedia est une source fantastique d'information, et peut être un point de départ pour vos recherches, mais ne peut en aucun cas se substituer à des références "classiques" dans les journaux scientifiques
+Une remarque: je vais parfois référer à des articles sur Wikipedia. Pour le bénéfice des plus jeunes: Wikipedia est une source d'information fantastique, et peut être un point de départ pour vos recherches, mais ne peut en aucun cas se substituer à des références "classiques" dans les journaux scientifiques
 
 ---
 
 # Transparents
 
-- Les transparents sont écrits en `Markdown` et `LaTeX` et sont diffusés en `html`; le code `html` est obtenu en utilisant l'extension [Marp](https://marp.app/) dans l'éditeur [Visual Studio Code](https://code.visualstudio.com/)
+- Les transparents sont en `Markdown` et `LaTeX` et sont diffusés en `html`; le code `html` est obtenu en utilisant l'extension [Marp](https://marp.app/) dans l'éditeur [Visual Studio Code](https://code.visualstudio.com/)
 
 - Les fichiers image sont pour la plupart liés sur le répositoire GitHub et nécessitent par conséquent un accès à Internet. Des copies locales sont toutefois fournies pour la plupart des images, mais demanderont de modifier les chemins 
 
@@ -141,21 +153,21 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 
 # Au sujet de l'analyse mathématique
 
-- Jadis, c'était le seul but de la plupart des papiers
-- Cela reste important, mais évaluez votre audience: prouver la stabilité globale d'un équilibre, c'est bien, mais est-ce vraiment ce sur quoi se focaliser si vous voulez présenter vos résultats à quelqu'un travaillant en santé publique?
-- Au minimum, toutefois, il convient de conduire une analyse locale. Cela permet par exemple de savoir comment régler les valeurs des paramètres lors d'une étude numérique du problème
+- Jadis le seul but de la plupart des papiers
+- Reste important, mais évaluez votre audience: prouver la stabilité globale d'un équilibre, c'est bien, mais est-ce vraiment ce sur quoi se focaliser si vous voulez présenter vos résultats à quelqu'un travaillant en santé publique?
+- Au minimum, il convient de conduire une analyse locale. Permet p. ex. de savoir comment régler les valeurs des paramètres lors de l'étude numérique du problème
 
 ---
 
 # Au sujet du numérique
 
-- Le travail numérique doit complémenter le travail mathématique, pas le confirmer 
+- Le travail numérique complémente le travail mathématique, il ne le confirme pas 
 
-- Si vous avez prouvé la stabilité globale d'un point d'équilibre, il n'est pas nécessaire d'illustrer cela par une simulation dans laquelle on voit une ou plusieurs solutions converger vers ce point d'équilibre
+- Si on a la SAG d'un PÉ, il n'est pas nécessaire d'illustrer cela par une simulation dans laquelle on voit une ou plusieurs solutions converger vers ce point d'équilibre
 
-- Il est en fait rarement utile de montrer une solution. Des exceptions: avant d'aller à zero, le nombre d'infectieux fait quelque chose d'inhabituel, vous observez un doublement de période, etc.
+- Rarement utile de montrer une solution. Des exceptions: avant d'aller à zero, le nombre d'infectieux fait quelque chose d'inhabituel, vous observez un doublement de période, etc.
 
-- Uilisez plutot le numérique pour investiguer des scenarios ou tester l'effet du changement des paramètres du modèle, etc.
+- Utilisez plutôt le numérique pour investiguer des scenarios ou tester l'effet du changement des paramètres du modèle, etc.
 
 - Une bonne figure raconte une histoire, il est bien de passer du temps à réflechir à la façon de produire de bonnes illustrations!
 
@@ -164,44 +176,45 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 # Au sujet des données  
 
 - Obtenir des données est bien plus facile que même il y a 20 ans
-- En tant que modélisateur, il n'est pas nécessaire que tous les travaux soient conduits par les données (*data-driven*), mais il est nécessaire d'être conscient du contexte dans lequel le modèle est formulé (il est bien de savoir quel est l'ordre de magnitude des grandeurs que vous considérez, par exemple)
+- En tant que modélisateur, il n'est pas nécessaire que tous les travaux soient conduits par les données (*data-driven*), mais il est nécessaire d'être conscient du contexte dans lequel le modèle est formulé; e.g., il est bien de savoir l'ordre de magnitude des grandeurs considérées
 
 ---
 
 # Organisation du cours
 
 - C01: Introduction - Épidémies, épidémiologie et épidémiologie mathématique
-- C02: Introduction au langage `R`
+- C02: Introduction au langage R
 - C03: Récupération et utilisation des données
-- C04: Modèle SIS et modèle SIR de Kermack et McKendrick
-- C05: Résolution numérique des EDO en `R`
-- C06: $\mathcal{R}_0$, son calcul et son rôle
+- C04: Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
+- C05: Temps de résidence dans les compartiments
+- C06: Étapes de l'analyse mathématique des modèles, $R_0$ et la taille finale d'une épidémie
 - C07: Le modèle SLIRS
-- C08: Le modèle SLIAR et autres variations sur KMK
+- C08: Quelques modèles épidémiques
 - C09: Plus de modélisation
-- C10: Analyse mathématique des modèles
+- C10: Propagation dans des groupes et propagation spatio-temporelle des épidémies
 
 ---
 
 # Organisation du cours (suite)
 
-- C11: Hétérogénéité de groupe et spatiale
-- C12: Modèles de groupes
-- C13: Modèles en métapopulations
-- C14: Stochasticité
-- C15: Modèles stochastiques
-- C16: Simulations stochastiques
+- C11: Modèles de groupes
+- C12: Modèles dans des métapopulations
+- C13: Résolution numérique des EDO en R
+- C14: Types de modèles stochastiques utilisés en épidémiologie
+- C15: Modèles en chaînes de Markov
+- C16: Simulation des systèmes stochastiques
 - C17: Modèles en réseaux
-- C18: Modèles agents
+- C18: Modèles agents-centrés
 - C19: Ajustement des paramètres
 
 ---
 
 # Note - durée et organisation des unités
 
-- J'ai essayé de construire des unités relativement équilibrées en terme de contenu, mais n'ai pas particulièrement bien réussi 
+- J'ai essayé de construire des unités relativement équilibrées en terme de contenu
+- Je n'ai pas particulièrement bien réussi 
 - Certaines unités sont plus longues que d'autres
-- Les durées des vidéos, postées sur le site web, sont indicatives du poids d'une unité
+<!-- - Les durées des vidéos, postées sur le site web, sont indicatives du poids d'une unité -->
 - Dans le cours d'origine ([lien](https://julien-arino.github.io/3MC-course-epidemiological-modelling/)), les unités étaient divisées entre unités de cours et unités de travaux pratiques. J'ai décidé ici de ne faire que des unités de cours, mais certaines de ces unités de cours doivent être comprises comme relevant plutôt du TP/TD
 
 ---
@@ -211,15 +224,3 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_red.png) 
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_yellow.png) 
 ![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_green.png)
-
----
-
-# Quelques abbréviations
-
-- PÉ: point d'équilibre
-- ESM: équilibre sans maladie
-- ÉÉ: équilibre endémique
-- LAS: localement asymptotiquement stable
-- SAL: stabilité asymptotique locale
-- GAS: globalement asymptotiquement stable
-- SAG: stabilité asymptotique globale

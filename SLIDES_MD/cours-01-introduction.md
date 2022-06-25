@@ -67,7 +67,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # Considérations historiques
 
 - Les épisodes épidémiques sont parmi les premiers évenements rapportés dans l'histoire
-- Mise en garde: je discute peu ici de l'aspect spatio-temporel de la propagation ou bien de la propagation dans des groupes, qui font l'objet d'un [cours spécifique](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-heterogeneite-groupe-et-spatiale.html)
+- Mise en garde: je discute peu ici de l'aspect spatio-temporel de la propagation ou bien de la propagation dans des groupes, qui font l'objet du [Cours 10](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-heterogeneite-groupe-et-spatiale.html)
 
 ---
 

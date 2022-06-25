@@ -1,24 +1,3 @@
-tree_locs_orig = cbind(elms_latlon$lon[indices_LT_kept$i],
-                       elms_latlon$lat[indices_LT_kept$i])
-tree_locs_dest = cbind(elms_latlon$lon[indices_LT_kept$j],
-                       elms_latlon$lat[indices_LT_kept$j])
-tree_pairs = do.call(
-  sf::st_sfc,
-  lapply(
-    1:nrow(tree_locs_orig),
-    function(i){
-      sf::st_linestring(
-        matrix(
-          c(tree_locs_orig[i,],
-            tree_locs_dest[i,]), 
-          ncol=2,
-          byrow=TRUE)
-      )
-    }
-  )
-)
-
-
 library(deSolve)
 rhs_logistic <- function(t, x, p) {
   with(as.list(x), {
