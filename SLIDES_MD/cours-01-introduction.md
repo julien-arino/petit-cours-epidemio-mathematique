@@ -144,7 +144,7 @@ table {
 
 # Les maladies tropicales négligées (NTD)
 
-Souvent des maladies endémiques, parfois causes de mortalité majeure, mais hors de l'œuil des pays riches
+Souvent des maladies endémiques, parfois causes de mortalité majeure, mais hors de l'œuil des pays riches. De [Wikipedia](https://fr.wikipedia.org/wiki/Maladies_tropicales_n%C3%A9glig%C3%A9es), sachant que la liste précise varie selon les auteurs :
 
 <style scoped>
 table {
@@ -156,10 +156,10 @@ table {
 
 | | | | 
 |---|---|---|
-| Buruli ulcer | Maladie de Chagas | Dengue & Chikungunya | 
-| Dracunculiasis| Echinococcosis | Yaws |
-| Fascioliasis | African trypanosomiasis | Leishmaniasis | 
-| Leprosy | Lymphatic filariasis | Onchocerciasis |
+| [Ulcère de Buruli](https://fr.wikipedia.org/wiki/Ulc%C3%A8re_de_Buruli) | [Maladie de Chagas](https://fr.wikipedia.org/wiki/Maladie_de_Chagas) | Dengue & Chikungunya | 
+| [Dracunculose](https://fr.wikipedia.org/wiki/Dracunculose) | Echinococcosis | Yaws |
+| Fascioliasis | [Trypanosomiase](https://fr.wikipedia.org/wiki/Maladie_du_sommeil) | [Leishmaniose](https://fr.wikipedia.org/wiki/Leishmaniose) | 
+| [Lèpre](https://fr.wikipedia.org/wiki/L%C3%A8pre) | [Filariose lymphatique](https://fr.wikipedia.org/wiki/Filariose_de_Bancroft) | Onchocerciasis |
 | Rabies | Schistosomiasis | Soil-transmitted helminthiasis | 
 Cysticercosis | Trachoma | Scabies and other ectoparasites |
 | Snakebite envenoming | Mycetoma and deep mycoses |
@@ -355,7 +355,7 @@ Cas de rougeole (*measles*) aux USA
 
 ---
 
-![bg right:40%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Bernoulli-1760-first_page.jpg)
+![bg right:40%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Bernoulli-1760-first_page.jpg)
 
 # Daniel Bernoulli (1760)
 
@@ -365,7 +365,7 @@ Cas de rougeole (*measles*) aux USA
 
 ---
 
-![bg left:30%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/RonaldRoss_WellcomeCollection.jpg)
+![bg left:30%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/RonaldRoss_WellcomeCollection.jpg)
 # Ross (début 20ème siècle)
 
 - 20 aout 1897: observe des parasites du paludisme (*malaria*) dans le système digestif d'un moustique nourri quelques jours auparavant sur un humain positif au palu
@@ -377,7 +377,7 @@ Cas de rougeole (*measles*) aux USA
 # Kermack et McKendrick (1927+)
 
 - Probablement l'un des plus grands tournants en épi-math
-- Nous passons ceci en détail dans le [Cours 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L02_BasicMathEpi.html)
+- Nous passons ceci en détail dans le [Cours 02](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L02_BasicMathEpi.html)
 - Série de papiers commençant en 1927
   - On considère un cas particulier, le plus connu, mais c'est juste la partie émergée de l'iceberg de leur travail
 

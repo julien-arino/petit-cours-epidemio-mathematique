@@ -71,7 +71,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - Suppose une certaine connaissance des équations différentielles ordinaires. Je ne vais pas rentrer dans les détails et vais supposer que vous savez pourquoi, par exemple, la stabilité asymptotique locale d'un point d'équilibre est déduite de la localisation dans le plan complexe des valeurs propres de la linéarisation du système
 - Peut être intéressant pour des étudiants moins portés sur les mathématiques mais nécessitera un peu de travail de fond pour comprendre certains concepts
 
-Ce cours reprend et étend les éléments du [cours 3MC](https://julien-arino.github.io/3MC-course-epidemiological-modelling/). Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (université de N'Djaména)
+Ce cours reprend et étend les éléments du [cours 3MC](https://julien-arino.github.io/petit-cours-epidemio-mathematique/). Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (université de N'Djaména)
 
 ---
 
@@ -215,12 +215,12 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 - Je n'ai pas particulièrement bien réussi 
 - Certaines unités sont plus longues que d'autres
 <!-- - Les durées des vidéos, postées sur le site web, sont indicatives du poids d'une unité -->
-- Dans le cours d'origine ([lien](https://julien-arino.github.io/3MC-course-epidemiological-modelling/)), les unités étaient divisées entre unités de cours et unités de travaux pratiques. J'ai décidé ici de ne faire que des unités de cours, mais certaines de ces unités de cours doivent être comprises comme relevant plutôt du TP/TD
+- Dans le cours d'origine ([lien](https://julien-arino.github.io/petit-cours-epidemio-mathematique/)), les unités étaient divisées entre unités de cours et unités de travaux pratiques. J'ai décidé ici de ne faire que des unités de cours, mais certaines de ces unités de cours doivent être comprises comme relevant plutôt du TP/TD
 
 ---
 
 # <!--fit-->Code couleur de l'organisation du cours
 
-![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_red.png) 
-![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_yellow.png) 
-![bg](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bg_colour_green.png)
+![bg](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bg_colour_red.png) 
+![bg](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bg_colour_yellow.png) 
+![bg](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bg_colour_green.png)

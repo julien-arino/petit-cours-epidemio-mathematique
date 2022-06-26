@@ -67,8 +67,8 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 # Limitations des modèles EDO pour une population
 
-- Comme discuté dans le [Cours](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L03_SpreadInGroups_SpreadInSpace.html), les modèles EDO élémentaires supposent que tous les individus dans un compartiment sont grosso modo les mêmes
-- Les individus peuvent passer des temps différents dans un compartiment (voir le [Cours](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html)), mais leurs caractéristiques sont plus ou moins les mêmes
+- Comme discuté dans le [Cours](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L03_SpreadInGroups_SpreadInSpace.html), les modèles EDO élémentaires supposent que tous les individus dans un compartiment sont grosso modo les mêmes
+- Les individus peuvent passer des temps différents dans un compartiment (voir le [Cours](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html)), mais leurs caractéristiques sont plus ou moins les mêmes
 - On a vu de façon flagrante avec COVID-19 que, par exemple, des groupes d'âge différents sont affectés différemment
 
 ---
@@ -175,7 +175,7 @@ Preventing tuberculosis in the foreign-born population of Canada: a mathematical
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/VarugheseLangloisklassenLongLi-2014-TB-flow_diagram.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/VarugheseLangloisklassenLongLi-2014-TB-flow_diagram.png)
 
 ---
 
@@ -192,7 +192,7 @@ Preventing tuberculosis in the foreign-born population of Canada: a mathematical
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/importation_model_2variants.jpg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/importation_model_2variants.jpg)
 
 ---
 
@@ -218,7 +218,7 @@ $$
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/importation_model_2variants_import_layer.jpg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/importation_model_2variants_import_layer.jpg)
 
 ---
 
@@ -247,7 +247,7 @@ Global dynamics of a general class of multistage models for infectious diseases.
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/GuoLiShuai-2012-multistage-flow_diagram.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/GuoLiShuai-2012-multistage-flow_diagram.png)
 
 ---
 

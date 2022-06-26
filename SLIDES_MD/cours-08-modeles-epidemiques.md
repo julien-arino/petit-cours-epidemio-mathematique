@@ -32,7 +32,7 @@ math: mathjax
 
 # Petit cours d'épidémiologie mathématique<br/>Quelques modèles épidémiques
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -90,7 +90,7 @@ Arino, Brauer, PvdD, Watmough & Wu. [Simple models for containment of a pandemic
 
 # Modèle SLIAR sans transmission par les latents
 
-![width:1200px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIAR.png)
+![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIAR.png)
 
 ---
 
@@ -128,7 +128,7 @@ $$
 
 ---
 
-![width:1200px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIAR_infectiousL.png)
+![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIAR_infectiousL.png)
 
 ---
 
@@ -243,7 +243,7 @@ avec $S_U(0)=(1-\gamma)S_0$ et $S_V(0)=\gamma S_0$
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIR_epidemic_with_vaccination.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIR_epidemic_with_vaccination.png)
 
 ---
 
@@ -301,7 +301,7 @@ $$
 # Un petit exemple simple
 
 - Travail d'été de Aaron Shalev (U of M)
-- Considère une métapopulation sur 2 patchs (voir [Cours](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L05_MetapopulationModels.html))
+- Considère une métapopulation sur 2 patchs (voir [Cours](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L05_MetapopulationModels.html))
 
 $$
 \begin{align*}

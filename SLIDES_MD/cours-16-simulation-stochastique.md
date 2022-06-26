@@ -437,15 +437,15 @@ $$
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//CTMC_birth_death_sol_b=0_01__d=0_01.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//CTMC_birth_death_sol_b=0_01__d=0_01.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//CTMC_birth_death_sol_b=0_01__d=0_02.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//CTMC_birth_death_sol_b=0_01__d=0_02.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//CTMC_birth_death_sol_b=0_025__d=0_01.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//CTMC_birth_death_sol_b=0_025__d=0_01.png)
 
 ---
 
@@ -464,7 +464,7 @@ $$
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//CTMC_birth_death_ie_vs_t_b=0_025__d=0_01.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//CTMC_birth_death_ie_vs_t_b=0_025__d=0_01.png)
 
 ---
 
@@ -528,7 +528,7 @@ qui donne `318.141 sec elapsed` sur une machine Intel Corei9-8950HK 6C/12T @ 2.9
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/many_CTMC_sims_with_means.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/many_CTMC_sims_with_means.png)
 
 ---
 

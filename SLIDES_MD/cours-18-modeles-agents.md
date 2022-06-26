@@ -154,13 +154,13 @@ D’Agata, Magal, Olivier, Ruand & Webb. [Modeling antibiotic resistance in hosp
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//Dagata_etal_patients_profiles.jpg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//Dagata_etal_patients_profiles.jpg)
 
 <!-- Diagramme de contacts patient–HCW pour 4 patients et 1 HCW pendant la période de travail du HCW. Statut des patients: non infecté (vert), infecté avec la souche non résistante (jaune), infecté avec la souche résistante (rouge). Statut du HCW: non contaminé (______ ), contaminé avec la souche non résistante strain (………), contaminé avec la souche résistante (- - - - - ) -->
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//Dagata_etal_comparisons.jpg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//Dagata_etal_comparisons.jpg)
 
 <!-- La figure de gauche (resp. de droite) correspond à 1 trajectoire (resp. la moyenne de 80 trajectoires) de l'IBM pendant la période de travail, sans sortie ni admission de patients, et pas de changement du statut d'infection des patients -->
 
@@ -176,27 +176,27 @@ Tian, Osgood, Al-Azem & Hoeppner. [Evaluating the Effectiveness of Contact Traci
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//TianOsgood_etal_TB_CT.jpeg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//TianOsgood_etal_TB_CT.jpeg)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//TianOsgood_etal_state_flow_agent.jpeg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//TianOsgood_etal_state_flow_agent.jpeg)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//TianOsgood_etal_model_CT.jpeg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//TianOsgood_etal_model_CT.jpeg)
 
 ---
 
 Ils formulent des scénarios de suivi des cas
 
-![height:60%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//TianOsgood_etal_scenarios.jpeg)
+![height:60%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//TianOsgood_etal_scenarios.jpeg)
 
 Et évaluent ensuite ces scénarios et comparent les résultats
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//TianOsgood_etal_scenario_results.jpeg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//TianOsgood_etal_scenario_results.jpeg)
 
 ---
 
@@ -287,15 +287,15 @@ $\implies$ comprendre les patterns et la fréquence des contact est très import
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//ABM_Hajj_MAH_3Dmodel.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//ABM_Hajj_MAH_3Dmodel.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//ABM_Hajj_setup.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//ABM_Hajj_setup.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//ABM_Hajj_config_tawaf.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//ABM_Hajj_config_tawaf.png)
 
 ---
 

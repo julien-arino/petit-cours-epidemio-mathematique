@@ -336,7 +336,7 @@ Une matrice $M$ est primitive si le graphe de connection associé est fortement 
 </div>
 
 Cela se vérifie directement sur le graphe de transition
-![width:100% center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/graphe_hybride.png)
+![width:100% center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/graphe_hybride.png)
 
 ---
 
@@ -368,7 +368,7 @@ Dans une chaîne de Markov absorbante, un état qui n'est pas absorbant est dit 
 
 Supposons que l'on ait une chaîne absorbante, e.g.,
 
-![width:100% center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/graphe_absorbant.png)
+![width:100% center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/graphe_absorbant.png)
 
 1. Le processus atteint-il toujours un état absorbant ?
 2. Quel est le temps moyen que le processus passe dans un état transient, s'il est initié dans un état transient ?
@@ -431,7 +431,7 @@ Réponses aux autres questions que nous posions:
 - Dans l'état $S_1$, probabilité 1 d'aller en $S_2$
 - Dans l'état $S_p$, probabilité 1 d'aller en $S_{p-1}$
 
-![width:100% center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/drunk_mans_walk_regular.png)
+![width:100% center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/drunk_mans_walk_regular.png)
 
 ---
 
@@ -534,7 +534,7 @@ $$
 - Dans l'état $S_1$, probabilité 1 d'aller en $S_1$
 - Dans l'état $S_p$, probabilité 1 d'aller en $S_{p}$
 
-![width:100% center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/drunk_mans_walk_absorbing.png)
+![width:100% center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/drunk_mans_walk_absorbing.png)
 
 ---
 

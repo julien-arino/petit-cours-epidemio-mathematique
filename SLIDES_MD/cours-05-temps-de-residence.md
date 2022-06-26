@@ -126,7 +126,7 @@ On déduit un modèle, qui dans ce contexte est une **distribution de probabilit
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/random_length_sample.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/random_length_sample.png)
 
 ---
 
@@ -155,7 +155,7 @@ Supposons $T$ v.a.continue; elle a une **fonction de densité** $f$
 - $\int_{-\infty}^{+\infty}f(s)ds=1$
 - $\mathbb{P}(a\leq T\leq b)=\int_a^bf(t)dt$
 
-![width:450px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/distrib_a_b.png)
+![width:450px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/distrib_a_b.png)
 
 ---
 
@@ -166,7 +166,7 @@ $$
 F(s)=\mathbb{P}(T\leq s)=\int_{-\infty}^sf(x)dx
 $$
 
-![width:500px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/cdf_auc.png)
+![width:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/cdf_auc.png)
 
 ---
 
@@ -175,7 +175,7 @@ $$
 - Puisque $f$ est positive, $F$ est croissante
 - Puisque $f$ est une densité de probabilité, $\int_{-\infty}^{+\infty}f(s)ds=1$, et donc $\lim_{t\to\infty}F(t)=1$
 
-![width:550px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/cdf_plot.png)
+![width:550px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/cdf_plot.png)
 
 ---
 
@@ -353,7 +353,7 @@ Ici, $N'=0$ partout sauf lorsque $t=\omega$, où la dérivée n'est pas définie
 
 ---
 
-![bg 80% right:40%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/figure_SIS_base_no_demography_general_recovery_vertical.png)
+![bg 80% right:40%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_base_no_demography_general_recovery_vertical.png)
 
 # <!--fit-->SIS avec guérison "trafiquée"
 
@@ -608,7 +608,7 @@ $\implies$ si on prend $N/\varepsilon=1/\mu$, on a la même moyenne mais le temp
 
 ---
 
-![width:1000px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/expo_vs_erlang.png)
+![width:1000px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/expo_vs_erlang.png)
 
 ---
 
