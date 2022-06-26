@@ -165,7 +165,7 @@ crop_figure("pop_TCD.png")
 # Obtenir les données des arbres
 
 ```R
-allTrees = read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/ro
+allTrees = read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/rows.csv?accessType=DOWNLOAD")
 ```
 
 Après ça, on a
@@ -175,6 +175,8 @@ dim(allTrees)
 ## [1] 300846
 15
 ```
+
+Note: la connexion ici vers Winnipeg n'est pas très bonne. On peut changer la durée du `timeout` (temps pendant lequel le programme essaie de charger), en faisant `options(timeout=300)` par exemple
 
 ---
 
@@ -190,18 +192,6 @@ Il nous reste 54,036 ormes américains
 ---
 
 ![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Recap_Diagram.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/temperature_phase.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/flow_diagram_DED_beetles.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/flow_diagram_DED_trees.png)
 
 ---
 
