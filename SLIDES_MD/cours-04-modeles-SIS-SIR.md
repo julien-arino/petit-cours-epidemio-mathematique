@@ -32,7 +32,7 @@ math: mathjax
 
 # <!--fit-->Petit cours d'épidémiologie mathématique<br/>Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -107,13 +107,13 @@ On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitô
 
 # Diagramme de flot du modèle
 
-![width:600px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/figure_SIS_base_prop_incidence_birthdN.png)
+![width:600px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_base_prop_incidence_birthdN.png)
 
 ---
 
 # Le modèle
 
-![bg right:34% width:400px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/figure_SIS_base_prop_incidence_birthdN_vertical.png)
+![bg right:34% width:400px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_base_prop_incidence_birthdN_vertical.png)
 
 On utilise une fonction d'incidence standard (voir plus loin) et en balançant les flux entrant et sortant dans les deux compartiments, on obtient
 
@@ -620,7 +620,7 @@ où les matrices $F$ et $V$ sont obtainues comme indiqué. Supposons que les con
 - si $\mathcal{R}_0>1$, alors l'ESM est instable
 </div>
 
-(Les conditions (A1)-(A5) sont explicitées dans le [TP 02](2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html) et nous discutons de la raison pour il est important de vérifier ces conditions dans le [Cours](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html))
+(Les conditions (A1)-(A5) sont explicitées dans le [TP 02](2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html) et nous discutons de la raison pour il est important de vérifier ces conditions dans le [Cours](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html))
 
 ---
 
@@ -970,7 +970,7 @@ Substituant dans $\eqref{sys:KMK_2d_dS}$
 - dans le premier cas, $(\bar S,\bar I)=(\gamma/\beta,0)$
 - dans le second cas, n'importe quel $\bar S\geq 0$ est un équilibre (on a un *continuum* d'équilibres)
 
-Le second cas est un **problème**: la linéarisation usuelle ne fonctionne pas puisque les équilibres ne sont pas isolés! (Voir [TP 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html))
+Le second cas est un **problème**: la linéarisation usuelle ne fonctionne pas puisque les équilibres ne sont pas isolés! (Voir [TP 02](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html))
 
 
 ---
@@ -1010,7 +1010,7 @@ $$
 
 Trajectoires dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\gamma=2.5$
 
-![width:1200px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/KMK_planar_trajectories.png)
+![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_planar_trajectories.png)
 
 ---
 

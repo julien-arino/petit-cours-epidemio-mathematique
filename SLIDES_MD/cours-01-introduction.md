@@ -142,7 +142,7 @@ table {
 
 ---
 
-# Les maladies tropicales oubliées (NTD)
+# Les maladies tropicales négligées (NTD)
 
 Souvent des maladies endémiques, parfois causes de mortalité majeure, mais hors de l'œuil des pays riches
 
