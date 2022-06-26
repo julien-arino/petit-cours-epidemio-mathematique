@@ -32,3 +32,4 @@ EpiCurve(SARS_selected,
          date = "toDate", period = "day",
          freq = "incidence",
          title = "SARS-CoV-1 incidence in Canada in 2003")
+

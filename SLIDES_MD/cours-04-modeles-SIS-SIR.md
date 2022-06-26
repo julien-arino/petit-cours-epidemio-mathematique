@@ -56,7 +56,7 @@ img[alt~="center"] {
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
 - Modèle SIS endémique
 - Fonctions d'incidence

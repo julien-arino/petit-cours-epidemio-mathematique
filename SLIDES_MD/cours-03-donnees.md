@@ -49,7 +49,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
 - Les données..
 
@@ -165,15 +165,15 @@ crop_figure("pop_TCD.png")
 # Obtenir les données des arbres
 
 ```R
-allTrees = read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/rows.csv?accessType=DOWNLOAD")
+allTrees = 
+  read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/rows.csv?accessType=DOWNLOAD")
 ```
 
 Après ça, on a
 
 ```R
-dim(allTrees)
-## [1] 300846
-15
+> dim(allTrees)
+[1] 300846 15
 ```
 
 Note: la connexion ici vers Winnipeg n'est pas très bonne. On peut changer la durée du `timeout` (temps pendant lequel le programme essaie de charger), en faisant `options(timeout=300)` par exemple
@@ -329,7 +329,7 @@ SARS = read.csv("../DATA/SARS-CoV-1_data.csv")
 
 ## Trois façons de ne garder les données que d'un pays
 ctry = "Canada"
-# L'habituelle
+# La version de base
 idx = which(SARS$country == ctry)
 SARS_selected = SARS[idx,]
 # La voie sqldf

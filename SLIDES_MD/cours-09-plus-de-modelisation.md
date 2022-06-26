@@ -56,7 +56,7 @@ img[alt~="center"] {
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
 - Un "problème" avec la méthode de l'opérateur de prochaine génération
 - Modèle de tuberculose (TB) avec comportement non-trivial à l'origine

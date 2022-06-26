@@ -58,7 +58,7 @@ Beaucoup de travaux (en particulier depuis COVID-19) ont utilisé des modèles d
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
 - Modèles type SLIAR
 - Un modèle $SL_1L_2I_1I_2A_1A_2R$ "simple" pour COVID-19
