@@ -497,7 +497,7 @@ JA & Portet. [A simple model for COVID-19](http://dx.doi.org/10.1016/j.idm.2020.
 
 ---
 
-![contain](../FIGS/survival_exponential.png)
+![contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/survival_exponential.png)
 
 ---
 
@@ -604,7 +604,7 @@ $\implies$ si on prend $N/\varepsilon=1/\mu$, on a la même moyenne mais le temp
 
 ---
 
-![bg contain 98%](../FIGS/figure_residence_times_expo_Erlang_fr.png)
+![bg contain 98%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_residence_times_expo_Erlang_fr.png)
 
 ---
 
@@ -625,7 +625,7 @@ $\implies$ si on prend $N/\varepsilon=1/\mu$, on a la même moyenne mais le temp
 ---
 
 # <!--fit-->Contexte
-![bg right:41%](../FIGS/figure_competing_risks_vertical.png)
+![bg right:41%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_competing_risks_vertical.png)
 
 On considère un système initialement dans un état $S_0$, et qui peut passer dans 2 états, $S_1$ ou $S_2$
 

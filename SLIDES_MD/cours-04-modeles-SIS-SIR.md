@@ -607,7 +607,7 @@ où $\rho$ est le rayon spectral
 
 ---
 
-# Résultat de PvdD and Watmough (2002)
+# Résultat de PvdD & Watmough (2002)
 
 <div class="theorem">
 
