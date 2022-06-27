@@ -4,7 +4,7 @@ title: Petit cours d'épidémiologie mathématique - Les modèle SIS et SIR
 description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 04 - Le modèle SIS, le modèle de Kermack et McKendrick
 theme: default
 paginate: false
-size: 4K
+size: 16:9
 math: mathjax
 ---
 
