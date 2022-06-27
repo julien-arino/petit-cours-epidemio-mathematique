@@ -292,10 +292,10 @@ La fonction de survie est
 $$
 \mathcal{S}(t)=
 1-\frac{1}{\Gamma(k)}\gamma\left(
-k,\frac{x}{\theta} 
+k,\frac{t}{\theta} 
 \right)
 =1-\frac{1}{\Gamma(k)}\gamma\left(
-k,\beta x
+k,\beta t
 \right)
 $$
 où 
