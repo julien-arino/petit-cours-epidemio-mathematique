@@ -104,6 +104,7 @@ Mouvement récent (5-10 years): gouvernements (locaux ou plus haut) créent des 
 - [Europe](https://data.europa.eu/euodp/data/)
 - [ONU](http://data.un.org/)
 - [Banque Mondiale](https://data.worldbank.org/)
+- [CDC](https://data.cdc.gov/)
 - [OMS](https://www.who.int/gho/database/en/)
 
 ---
