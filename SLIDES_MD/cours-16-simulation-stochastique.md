@@ -30,6 +30,7 @@ size: 16:9
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Simulation des systèmes stochastiques
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
