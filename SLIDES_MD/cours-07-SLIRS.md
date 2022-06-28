@@ -290,6 +290,9 @@ On n'étudiera pas ces systèmes ici!
 
 ---
 
+![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+
+
 $$
 \begin{align}
 S' &= b-f(S,I,N)-dS+\nu R
@@ -324,6 +327,8 @@ Cela permet également d'envisager une approche numérique s'abstrayant des vari
 
 ---
 
+![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+
 Dans la suite, on étudie donc le système
 $$
 \begin{align}
@@ -346,6 +351,9 @@ $$
 - Hiérarchie de modèles
 
 ---
+
+![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+
 
 On étudie le système
 $$
