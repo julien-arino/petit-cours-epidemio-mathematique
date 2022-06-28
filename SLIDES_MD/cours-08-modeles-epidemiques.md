@@ -93,6 +93,7 @@ Arino, Brauer, PvdD, Watmough & Wu. [Simple models for containment of a pandemic
 
 ![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIAR.png)
 
+
 ---
 
 ## Nombre de reproduction élémentaire
@@ -214,7 +215,7 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Un modèle $SL_1L_2I_1I_2A_1A_2R$ "simple" pour COVID-19
+# <!--fit-->Un modèle $SL_1L_2I_1I_2A_1A_2R$ <br> "simple" pour COVID-19
 
 - Arino & Portet. [A simple model for COVID-19](http://dx.doi.org/10.1016/j.idm.2020.04.002) (2020)
 
