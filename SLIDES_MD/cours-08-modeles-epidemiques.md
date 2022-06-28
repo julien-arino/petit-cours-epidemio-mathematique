@@ -62,7 +62,7 @@ Beaucoup de travaux (en particulier depuis COVID-19) ont utilisé des modèles d
 # Plan de ce cours
 
 - Modèles type SLIAR
-- Un modèle $SL_1L_2I_1I_2A_1A_2R$ "simple" pour COVID-19
+- Histoire de l'évolution d'un modèle
 - Un modèle avec vaccination
 - Exemples où la méthode ne marche pas
 
@@ -215,9 +215,21 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Un modèle $SL_1L_2I_1I_2A_1A_2R$ <br> "simple" pour COVID-19
+# <!--fit-->Histoire de l'évolution d'un modèle
 
 - Arino & Portet. [A simple model for COVID-19](http://dx.doi.org/10.1016/j.idm.2020.04.002) (2020)
+
+---
+
+# Les modèles évoluent avec la compréhension du sujet
+
+---
+
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/HPC_UofM_style.png)
+
+---
+
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/flow_diagram_SLLIIAARRD.png)
 
 ---
 
