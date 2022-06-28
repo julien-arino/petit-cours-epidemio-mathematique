@@ -948,16 +948,16 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Compound matrices
+# <!--fit-->Matrices composées
 
 ---
 
-# The compound matrix method
+# La méthode des matrices composées
 
-- An extension of Dulac's criterion to higher order systems
-- Useful to rule out the existence of periodic orbits
-- Was very popular for a while, but you must be aware of the main limitation:
-  - Becomes hard to use when dimensionality $\geq 4$
+- Extension du critère de Dulac à des systèmes en dimension plus élevée
+- Utile pour exclure l'existece d'orbites périodiques
+- Était très populaire pendant quelques années, mais il faut connaître la limitation principale:
+  - Devient difficile d'utilisation lorsque la dimensionalité du système est $\geq 4$
 
 ---
 
