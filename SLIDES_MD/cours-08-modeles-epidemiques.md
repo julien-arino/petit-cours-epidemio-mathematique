@@ -230,15 +230,27 @@ $$
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SL1L2I1I2A1A2R.jpg)
-
----
-
 ![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/HPC_UofM_style.png)
 
 ---
 
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SL1L2I1I2A1A2R.jpg)
+
+---
+
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/HPC_PHAC_style.png)
+
+---
+
 ![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/flow_diagram_SLLIIAARRD.png)
+
+---
+
+![bg contain](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS//flow-diagrams/figure_SLDURM_base_model_with_different_epsilon_and_infectious_compartments.png)
+
+---
+
+![bg contain](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/flow-diagrams/figure_variant_no_importation_1patch.png)
 
 ---
 
