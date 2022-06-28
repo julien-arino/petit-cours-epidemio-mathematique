@@ -221,7 +221,16 @@ $$
 
 ---
 
-# Les modèles évoluent avec la compréhension du sujet
+# <!--fit-->Les modèles évoluent avec la compréhension du sujet
+
+- Février 2020 : mobilisation de la communauté des modélisateurs en épidémiologie mathématique
+- Au Canada, groupe des *experts modélisateurs externes* (à l'agence) mis en place par la division Public Health Risk Science de l'Agence de Santé Publique du Canada (ASPC-PHAC)
+- Je m'occupais du "calcul de trajectoire mondiale", i.e., évaluation des prochains pays les plus à risque de déclarer des cas
+- Il fallait aller vite
+
+---
+
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SL1L2I1I2A1A2R.jpg)
 
 ---
 
