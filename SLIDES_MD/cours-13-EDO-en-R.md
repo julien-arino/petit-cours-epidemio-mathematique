@@ -5,10 +5,9 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 paginate: false
 math: mathjax
-size: 4K
+size: 16:9
 ---
 
-<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 <style>
   .theorem {
     text-align:justify;

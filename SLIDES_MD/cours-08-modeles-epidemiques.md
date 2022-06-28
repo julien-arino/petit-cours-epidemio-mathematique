@@ -4,7 +4,7 @@ title: Petit cours d'épidémiologie mathématique - Quelques modèles épidémi
 description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 08 - Quelques modèles épidémiques
 theme: default
 paginate: false
-size: 4K
+size: 16:9
 math: mathjax
 ---
 
