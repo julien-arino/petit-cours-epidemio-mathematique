@@ -30,6 +30,7 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Le modèle SLIRS
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
@@ -53,7 +54,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - Durée d'incubation
 - Formulation du modèle SLIRS en population constante
-- Effet de la vaccination - Immunité de groupe
+- Effet de la vaccination : Immunité de groupe
 - Propriétés globales du modèle SLIRS
 
 ---
@@ -471,30 +472,16 @@ On a donc deux équations de droite, $\eqref{eq:SIRS_EEP_dS_plus_kI}$ et $\eqref
 
 ---
 
-# The basic reproduction number $\mathcal{R}_0$
-
-Indicator often used in epidemiology. Verbally
-
-> average number of new cases generated when an infectious individual is introduced in a completely susceptible population
- 
-$- If $\mathcal{R}_0>1$, then each infectious individual infects on average more than 1 person and an epidemic is quite likely to occur
-
-
----
-
-# Computation of $\mathcal{R}_0$
-
-Mathematically
-
-> bifurcation parameter aggregating system parameters, such that the DFE loses it *local* asymptotic stability as $\mathcal{R}_0$ crosses 1 from left to right
-
-- Obtained by considering the linearisation of the system at the DFE
-- Quickly becomes unmanageable (matrix size) and we get a non unique form
+- $\mathcal{R}_0$ est le lieu dans l'espace des paramètres où l'ESM passe de LAS lorsque $\mathcal{R}_0<1$ à instable lorsque $\mathcal{R}_0>1$
+- On le caractérise donc en considérant la SAL de l'ESM
+- Donc on calcule la Jacobienne, on l'évalue en l'ESM et on calcule les valeurs propres
+- Typiquement, on va avoir toutes sauf une des v.p. à parties réelles strictement négatives et une dont la partie réelle n'est pas de signe fixe
+- C'est sur cette dernière qu'on agit
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# <!--fit-->$\mathcal{R}_0$ par la matrice de prochaine génération
+# <!--fit-->$\mathcal{R}_0$ par la matrice de  <br /> prochaine génération
 
 ---
 
@@ -682,7 +669,7 @@ $(\bar S,\bar I)$ ESM, notons $\overline{f}_I=\partial f/\partial I(\bar S,\bar 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Effet de la vaccination - Immunité de groupe
+# <!--fit-->Effet de la vaccination :  <br />  Immunité de groupe
 
 ---
 
