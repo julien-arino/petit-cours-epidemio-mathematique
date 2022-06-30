@@ -32,6 +32,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 17: [Modèles en réseaux](cours-17-modeles-reseaux.html) &#9989;
 - Cours 18: [Modèles agents-centrés](cours-18-modeles-agents.html) &#9989;
 - Cours 19: [Ajustement des paramètres](cours-19-ajustement-parametres.html) 
+- Cours 20: [Publier](cours-20-publier.html) &#9989;
 
 
 <!--- Image credit: Malaria parasite entering a red blood cell. https://flic.kr/p/V8qaYt. National Institute of Allergy and Infectious Diseases, NIH. CC BY NC 2.0 --->
