@@ -58,6 +58,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
     - Modèles avec hétérogénéité du pathogène
 - Analyse des modèles de groupes
 - Simulation des modèles de groupes
+- Un exemple en direct
 
 ---
 
@@ -284,3 +285,165 @@ $$
 
 - Activité similaire à la simulation des modèles en métapopulations. Décrit dans le [Cours 13](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-13-EDO-en-R.html)
 - La simulation du modèle avec importation de variant sera discuté dans le [Cours 16](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-16-simulation-stochastique.html) sur la simulation des modèles stochastiques
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Un exemple en direct..
+
+---
+
+# La question scientifique
+
+- COVID-19 semble avoir pour une large partie épargné l'Afrique
+- À quoi peut-on attribuer cela ?
+  - Climat ?
+  - Meilleure immunité ?
+  - Distribution des âges très differente de l'ouest, et une maladie qui attaque principalement les personnes plus agées ?
+
+---
+
+# On affine la question
+
+- On pourrait considérer tous ces facteurs en même temps, mais cela ne serait pas productif (au minimum, il faudrait une analyse de sensitivité)
+- On prend un d'entre eux pour commencer (et seulement, dans cet exemple) : l'âge
+
+---
+
+![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Canada.png) ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Chad.png)
+
+---
+
+# Modélisation
+
+- Il est possible que l'une des causes de la disparité soit plus d'infections asymptomatiques chez les jeunes, on utilise donc un modèle SLIAR
+- On ajoute une stratification par âge
+- On ne travaille pas sur une longue période de temps, donc on suppose que les individus ne changent pas de classe d'âge
+- On suppose qu'il y a $C$ classes d'âge
+
+---
+
+# <!--fit-->Le modèle pour chaque classe d'âge sans mélange
+
+![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIAR.png)
+
+---
+
+# Propriétés du modèle sans mélange
+
+## Nombre de reproduction élémentaire
+$$
+\tag{5}
+\mathcal{R}_0=S_0\beta
+\left(
+\frac{p}{\alpha}+\frac{\delta(1-p)}{\eta}
+\right)
+=\frac{S_0\beta\rho}{\alpha}
+$$
+où
+$$
+\rho = \alpha
+\left(
+\frac{p}{\alpha}+\frac{\delta(1-p)}{\eta}
+\right)
+$$
+
+## Relation de taille finale
+
+$$\tag{6}
+S_0(\ln S_0-\ln S_\infty) =
+\mathcal{R}_0(S_0-S_\infty)+\frac{\mathcal{R}_0I_0}{\rho}
+$$
+
+---
+
+# Découpage en clases d'âge
+
+Pour $i=1,\ldots,C$
+
+$$
+\begin{align}
+S_i' &= -\Phi S_i \\
+L_i' &= \Phi S_i -\kappa_i L_i \\
+I_i' &= p_i\kappa_i L_i - \alpha_i I_i \\
+A_i' &= (1-p_i)\kappa_i L_i - \eta_i A_i \\
+R_i' &= f_i\alpha_i I_i+\eta_i A_i
+\end{align}
+$$
+
+(j'utilise $f_i$ comme c'était fait sur le graphique, par comme - je pense - j'avais écrit au tableau)
+
+---
+
+# La force d'infection
+
+- J'ai utilisé une force d'infection, ici, parce que le même $\Phi$ s'applique à tous les $S_i$
+- On raisonne sur un $S_i$
+
+$$
+S_i\left(
+  \beta_1(I_1+\delta_1A_1)+\cdots\beta_C(I_C+\delta_CA_C)
+\right)
+$$
+
+- Pour faciliter l'analyse, on écrit plutôt
+
+$$
+S_i\beta\left(
+  c_1(I_1+\delta_1A_1)+\cdots c_C(I_C+\delta_CA_C)
+\right)
+$$
+
+---
+
+# Note : inclusion de la mortalité
+
+- Je n'ai pas mis de compartiment pour les morts, même si je devrais, puisque je veux en particulier évaluer la mortalité
+- C'est facile à faire: ils sont au bout de la flèche qui ne va nulle part sur le diagramme de flot, et par conséquent, pour $i=1,\ldots,C$
+
+$$
+D' = (1-f_i)\alpha_i I_i
+$$
+
+- On ajoutera ça au modèle pour compter facilement, et ça ne change rien à la dynamique
+
+---
+
+# Le modèle complet
+
+$$
+\begin{align}
+S_i' &= -\Phi S_i \\
+L_i' &= \Phi S_i -\kappa_i L_i \\
+I_i' &= p_i\kappa_i L_i - \alpha_i I_i \\
+A_i' &= (1-p_i)\kappa_i L_i - \eta_i A_i \\
+R_i' &= f_i\alpha_i I_i+\eta_i A_i \\
+D_i' &= (1-f_i)\alpha_i I_i
+\end{align}
+$$
+avec
+$$
+\Phi = \beta\left(
+  c_1(I_1+\delta_1A_1)+\cdots c_C(I_C+\delta_CA_C)
+\right)
+$$
+
+---
+
+# Analyse (résumé)
+
+- Modèle épidémique, et la méthode du [Cours 06](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-06-etapes-R0-final-size.html) s'applique (dans le cas qu'on a choisi pour la fonction d'incidence)
+
+---
+
+# Utilisation de la méthode du [Cours 06](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-06-etapes-R0-final-size.html)
+
+- On a $m=C$ compartiments susceptibles, $n=3C$ compartiments infectés et $k=C$ compartiments guéris ou retirés
+
+---
+
+# Étude computationnelle
+
+- On récupère les données qui ont été utilisées pour les figures précédentes ([ici](https://PopulationPyramid.net))
+- On récupère aussi des données qui établissent la probabilité de cas en fonction de l'âge [ici](https://www.cdc.gov/coronavirus/2019-ncov/covid-data/investigations-discovery/hospitalization-death-by-age.html)
+

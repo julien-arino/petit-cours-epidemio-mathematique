@@ -92,15 +92,15 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Canada.png) ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Chad.png)
-
----
-
 # Patterns de contact de la population aux USA pendant la pandémie de COVID-19
 
 ![bg right:65%](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-021-20990-2/MediaObjects/41467_2021_20990_Fig3_HTML.png?as=webp)
 
 <!-- https://doi.org/10.1038/s41467-021-20990-2 -->
+
+---
+
+![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Canada.png) ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Chad.png)
 
 ---
 
