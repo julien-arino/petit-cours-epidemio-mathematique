@@ -91,7 +91,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - Shiny : créer facilement un site web interactif avec du `R` tournant en tâche de fond
 - [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/) : fait tourner des applis Shiny sur un serveur Linux, accessible depuis la toile
 - Rmarkdown : `markdown` qui incorpore des commandes `R`. Utile pour générer des rapports en html ou pdf, permet aussi de faire des transparents.. Très utile pour générer des rapports incorporant des données dynamiques
-- RSweave : Code LaTeX incorporant des commandes `R`. Comme Rmarkdown, utile pour générer des rapports. A perdu un peu de popularité depuis l'avènement de Rmarkdown
+- RSweave : Code LaTeX incorporant des commandes `R`. Comme Rmarkdown, utile pour générer des rapports. A perdu un peu de popularité depuis l'avènement de Rmarkdown 
 
 ---
 

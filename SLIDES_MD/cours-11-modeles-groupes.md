@@ -382,7 +382,7 @@ $$
 
 $$
 S_i\left(
-  \beta_1(I_1+\delta_1A_1)+\cdots\beta_C(I_C+\delta_CA_C)
+  \beta_{1i}(I_1+\delta_1A_1)+\cdots\beta_{C}(I_C+\delta_CA_C)
 \right)
 $$
 
@@ -439,6 +439,7 @@ $$
 # Utilisation de la méthode du [Cours 06](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-06-etapes-R0-final-size.html)
 
 - On a $m=C$ compartiments susceptibles, $n=3C$ compartiments infectés et $k=C$ compartiments guéris ou retirés
+- Matrice $D$ 
 
 ---
 
