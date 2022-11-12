@@ -82,6 +82,23 @@ Comme avec la majorité des algorithmes, il faut écrire une fonction qui renvoi
 ```R
 library(deSolve)
 rhs_logistic <- function(t, x, p) {
+  dN <- p$r * x[1] *(1-x[1]/p$K)
+  return(list(dN))
+}
+params = list(r = 0.1, K = 100)
+IC = 50
+times = seq(0, 100, 1)
+sol <- ode(IC, times, rhs_logistic, params)
+```
+
+---
+
+# Deuxième option: `with(as.list(x), {`
+
+On peut aussi faire la chose suivante: en utilisant `with(as.list(x, {`, on peut accéder au contenu de `x` directement, s'il est *nommé*
+
+```R
+rhs_logistic <- function(t, x, p) {
   with(as.list(x), {
     dN <- p$r * N *(1-N/p$K)
     return(list(dN))
@@ -93,9 +110,11 @@ times = seq(0, 100, 1)
 sol <- ode(IC, times, rhs_logistic, params)
 ```
 
+Il est donc important de nommer le contenu de la condition initiale: avant, on avait fait simplement `IC = 50`, ici on doit faire `IC = c(N = 50)`
+
 ---
 
-On peut aussi faire la chose suivante: en ajoutant `p` aux arguments de `as.list`, on peut utiliser le contenu de `p` sans avoir besoin de préfixer par `p$`
+On peut aussi ajouter `p` aux arguments de `as.list` pour utiliser le contenu de `p` sans avoir besoin de préfixer par `p$`
 
 ```R
 library(deSolve)
@@ -111,7 +130,7 @@ times = seq(0, 100, 1)
 sol <- ode(IC, times, rhs_logistic, params)
 ```
 
-(Attention de ne pas avoir une variable et un paramètre avec le même nom..)
+Attention de ne pas avoir une variable et un paramètre avec le même nom..
 
 ---
 

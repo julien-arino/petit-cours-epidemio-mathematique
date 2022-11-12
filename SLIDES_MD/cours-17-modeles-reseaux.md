@@ -346,11 +346,11 @@ $$
 ---
 
 - Voir par exemple 
+  - Newman. [Spread of epidemic disease on networks](https://doi.org/10.1103/PhysRevE.66.016128), 2002
   - Keeling & Eames. [Networks and epidemic models](https://doi.org/10.1098/rsif.2005.0051), 2005
-  - Meyers, Pourbohloul, Newman, Skowronski & Brunham. [Network theory and SARS: predicting outbreak diversity](https://doi.org/10.1016/j.jtbi.2004.07.026)
+  - Meyers, Pourbohloul, Newman, Skowronski & Brunham. [Network theory and SARS: predicting outbreak diversity](https://doi.org/10.1016/j.jtbi.2004.07.026), 2005
   - Meyers, Newman & Pourohloul. [Predicting epidemics on directed contact networks](https://doi.org/10.1016/j.jtbi.2005.10.004), 2006
   - Bansal, Read, Pourbohloul & Meyers. [The dynamic nature of contact networks in infectious disease epidemiology](https://doi.org/10.1080/17513758.2010.503376), 2010 
-  - Les autres papiers du [numéro spécial](https://www.tandfonline.com/toc/tjbd20/4/5) de JBD dans lequel est le papier précédent
 
 
 ---
@@ -377,6 +377,20 @@ Si le graphe est non orienté, alors $A$ est symmétrique
 
 - Parfois on dispose de données précises sur les liens entre individus (sondages, etc.)
 - Souvent on idéalise des réseaux, on choisit des réseaux avec des propriétés données
+
+---
+
+# La distribution des degrés du (di)graphe
+
+La **transmissibilité** $T$ d'une maladie dans un graphe est la probabilité moyenne qu'un individu infectieux transmette la maladie à un individu susceptible avec qui il/elle est en contact
+
+Dans un réseau non corrélé,
+$$
+T_c = \frac{\langle k\rangle}{\langle k^2\rangle-\langle k\rangle}
+$$
+où $\langle k\rangle$ et $\langle k^2\rangle$ sont le degré moyen et la moyenne du carré du degré
+
+Il est nécessaire que $T>T_c$ pour qu'un *outbreak* devienne une épidémie majeure
 
 ---
 
