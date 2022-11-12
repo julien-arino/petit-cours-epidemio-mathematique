@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 math: mathjax
 paginate: false
-size: 4K
+size: 16:9
 ---
 
 <style>
@@ -30,9 +30,10 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Temps de résidence dans les compartiments
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -49,7 +50,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 --- 
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
 - Juste ce qu'il faut de probabilité
 - Distributions utilisées ici
@@ -64,7 +65,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - La vie résulte des interactions entre un nombre colossal de processus
 
-- Chaque processus contient un certain degré d'imprécision. Par exemple, lorsqu'un virus se réplique, il saute une base ici et là; quand une cellule se divise lors de la mitose, le matériau n'est pas partagé 50%-50% entre les cellules filles; vous rencontrez un autre être humain et (en ces temps de COVID-19) oubliez de *ne pas* lui serrer la main)
+- Chaque processus contient un certain degré d'imprécision. Par exemple, lorsqu'un virus se réplique, il saute une base ici et là; quand une cellule se divise lors de la mitose, le matériau n'est pas partagé 50%-50% entre les cellules filles; vous rencontrez un autre être humain et (en ces temps de COVID-19) oubliez de *ne pas* lui serrer la main
 
 - Du fait de la répétition des ces imprécisions, il nait de l'incertitude
 
@@ -126,7 +127,7 @@ On déduit un modèle, qui dans ce contexte est une **distribution de probabilit
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/random_length_sample.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/random_length_sample.png)
 
 ---
 
@@ -155,7 +156,7 @@ Supposons $T$ v.a.continue; elle a une **fonction de densité** $f$
 - $\int_{-\infty}^{+\infty}f(s)ds=1$
 - $\mathbb{P}(a\leq T\leq b)=\int_a^bf(t)dt$
 
-![width:450px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/distrib_a_b.png)
+![width:450px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/distrib_a_b.png)
 
 ---
 
@@ -166,7 +167,7 @@ $$
 F(s)=\mathbb{P}(T\leq s)=\int_{-\infty}^sf(x)dx
 $$
 
-![width:500px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/cdf_auc.png)
+![width:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/cdf_auc.png)
 
 ---
 
@@ -175,7 +176,7 @@ $$
 - Puisque $f$ est positive, $F$ est croissante
 - Puisque $f$ est une densité de probabilité, $\int_{-\infty}^{+\infty}f(s)ds=1$, et donc $\lim_{t\to\infty}F(t)=1$
 
-![width:550px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/cdf_plot.png)
+![width:550px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/cdf_plot.png)
 
 ---
 
@@ -269,6 +270,40 @@ avec une variance $\sigma^2=0$
 
 # La distribution Gamma
 
+Une v.a. $X$ suit une **loi Gamma** de **paramètre de forme** $k$ et **paramètre d'échelle** $\theta$ (ou **paramètre d'intensité** $\beta = 1/\theta$) (tous strictement positifs), et l'on note $X\,\sim\Gamma(k, \theta)$, si sa densité de probabilité est de la forme 
+
+$$
+f(x;k,\theta) = \frac{x^{k-1} \mathrm{e}^{-\frac{x}{\theta}}}{\Gamma ( k)\theta ^k}
+$$
+
+où $x>0$ et $\Gamma$ est la fonction Gamma d'Euler, définie, pour tout $z\in\mathbb{C}$ t.q. $\Re(z) > 0$, par 
+$$
+\Gamma : z \mapsto \int_0^{+\infty}  t^{z-1}\,\mathrm{e}^{-t}\,\mathrm{d}t
+$$
+
+
+---
+
+# Quelques propriétés de la Gamma
+
+L'espérance mathématique est $k\theta$ et la variance $k\theta^2$
+
+La fonction de survie est
+$$
+\mathcal{S}(t)=
+1-\frac{1}{\Gamma(k)}\gamma\left(
+k,\frac{t}{\theta} 
+\right)
+=1-\frac{1}{\Gamma(k)}\gamma\left(
+k,\beta t
+\right)
+$$
+où 
+$$
+\gamma(a,x)=\int_0^x t^{a-1}{\rm e}^{-t}{\rm d}t
+$$
+est une fonction gamma incomplète
+
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
@@ -353,7 +388,7 @@ Ici, $N'=0$ partout sauf lorsque $t=\omega$, où la dérivée n'est pas définie
 
 ---
 
-![bg 80% right:40%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/figure_SIS_base_no_demography_general_recovery_vertical.png)
+![bg 80% right:40%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_base_no_demography_general_recovery_vertical.png)
 
 # <!--fit-->SIS avec guérison "trafiquée"
 
@@ -497,7 +532,7 @@ JA & Portet. [A simple model for COVID-19](http://dx.doi.org/10.1016/j.idm.2020.
 
 ---
 
-![contain](../FIGS/survival_exponential.png)
+![contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/survival_exponential.png)
 
 ---
 
@@ -604,11 +639,11 @@ $\implies$ si on prend $N/\varepsilon=1/\mu$, on a la même moyenne mais le temp
 
 ---
 
-![bg contain 98%](../FIGS/figure_residence_times_expo_Erlang_fr.png)
+![bg contain 98%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_residence_times_expo_Erlang_fr.png)
 
 ---
 
-![width:1000px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/expo_vs_erlang.png)
+![width:1000px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/expo_vs_erlang.png)
 
 ---
 
@@ -625,7 +660,7 @@ $\implies$ si on prend $N/\varepsilon=1/\mu$, on a la même moyenne mais le temp
 ---
 
 # <!--fit-->Contexte
-![bg right:41%](../FIGS/figure_competing_risks_vertical.png)
+![bg right:41%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_competing_risks_vertical.png)
 
 On considère un système initialement dans un état $S_0$, et qui peut passer dans 2 états, $S_1$ ou $S_2$
 

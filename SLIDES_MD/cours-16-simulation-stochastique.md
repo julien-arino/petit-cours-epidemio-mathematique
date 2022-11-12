@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 paginate: false
 math: mathjax
-size: 4K
+size: 16:9
 ---
 
 <style>
@@ -30,9 +30,10 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Simulation des systèmes stochastiques
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -437,15 +438,15 @@ $$
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//CTMC_birth_death_sol_b=0_01__d=0_01.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//CTMC_birth_death_sol_b=0_01__d=0_01.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//CTMC_birth_death_sol_b=0_01__d=0_02.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//CTMC_birth_death_sol_b=0_01__d=0_02.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//CTMC_birth_death_sol_b=0_025__d=0_01.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//CTMC_birth_death_sol_b=0_025__d=0_01.png)
 
 ---
 
@@ -464,7 +465,7 @@ $$
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS//CTMC_birth_death_ie_vs_t_b=0_025__d=0_01.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS//CTMC_birth_death_ie_vs_t_b=0_025__d=0_01.png)
 
 ---
 
@@ -528,7 +529,7 @@ qui donne `318.141 sec elapsed` sur une machine Intel Corei9-8950HK 6C/12T @ 2.9
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/many_CTMC_sims_with_means.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/many_CTMC_sims_with_means.png)
 
 ---
 

@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 paginate: false
 math: mathjax
-size: 4K
+size: 16:9
 ---
 
 <style>
@@ -30,9 +30,10 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Propagation dans des groupes et propagation spatio-temporelle des épidémies
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -85,7 +86,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/malaria-deaths-by-age.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/malaria-deaths-by-age.png)
 
 <!-- Max Roser and Hannah Ritchie (2019) - 'Malaria'. Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/malaria' [Online Resource] -->
 
@@ -96,6 +97,10 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ![bg right:65%](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-021-20990-2/MediaObjects/41467_2021_20990_Fig3_HTML.png?as=webp)
 
 <!-- https://doi.org/10.1038/s41467-021-20990-2 -->
+
+---
+
+![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Canada.png) ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Chad.png)
 
 ---
 
@@ -115,7 +120,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/pnas.202112605fig01.jpg "Within and between classroom transmission patterns of seasonal influenza among primary school students in Matsumoto city, Japan https://doi.org/10.1073/pnas.2112605118")
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/pnas.202112605fig01.jpg "Within and between classroom transmission patterns of seasonal influenza among primary school students in Matsumoto city, Japan https://doi.org/10.1073/pnas.2112605118")
 
 <!-- Within and between classroom transmission patterns of seasonal influenza among primary school students in Matsumoto city, Japan https://doi.org/10.1073/pnas.2112605118 -->
 
@@ -140,11 +145,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/ppat.1008984.g001.png "Characterising the epidemic spread of influenza A/H3N2 within a city through phylogenetics https://doi.org/10.1371/journal.ppat.1008984")
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/ppat.1008984.g001.png "Characterising the epidemic spread of influenza A/H3N2 within a city through phylogenetics https://doi.org/10.1371/journal.ppat.1008984")
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/InfluenzaStrainsCAN_2019-2020.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/InfluenzaStrainsCAN_2019-2020.png)
 
 ---
 

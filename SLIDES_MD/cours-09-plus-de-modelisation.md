@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 paginate: false
 math: mathjax
-size: 4K
+size: 16:9
 ---
 
 <style>
@@ -30,9 +30,10 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Plus de modélisation
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -56,7 +57,7 @@ img[alt~="center"] {
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
 - Un "problème" avec la méthode de l'opérateur de prochaine génération
 - Modèle de tuberculose (TB) avec comportement non-trivial à l'origine
@@ -83,7 +84,7 @@ JA, Bowman, Gumel & Portet. [Effect of pathogen-resistant vectors on the transmi
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/flow_diagram_transgenic_mosquitoes.jpg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/flow_diagram_transgenic_mosquitoes.jpg)
 
 ---
 
@@ -146,7 +147,7 @@ On trouve 2 équilibres frontière $\bar E_0=(S,T)=(0,0)$ et $\bar E_W=(S,T)=(\m
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/transgenic_mosquitoes_stability_regions.jpg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/transgenic_mosquitoes_stability_regions.jpg)
 
 ---
 
@@ -191,7 +192,7 @@ où $B(N)$ satisfait
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SEI_TB.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SEI_TB.png)
 
 ---
 
@@ -341,7 +342,7 @@ $$
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/LiuLevinIwasa_p10.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/LiuLevinIwasa_p10.png)
 
 
 ---
@@ -361,7 +362,7 @@ Arino, McCluskey & PvdD. [Global results for an epidemic model with vaccination 
 
 # Un autre modèle SIRS avec vaccination
 
-![width:1000px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SIRV_newborns.png)
+![width:1000px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SIRV_newborns.png)
 
 ---
 
@@ -441,14 +442,14 @@ $$
 
 # Cas d'une bifurcation *à l'endroit*
 
-![width:550px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/PI_vs_I_forward.png)  ![width:550px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SIRV_bif_forward.png)
+![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/PI_vs_I_forward.png)  ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SIRV_bif_forward.png)
 
 
 ---
 
 # Cas d'une bifurcation *à revers*
 
-![width:550px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/PI_vs_I_backward.png)  ![width:550px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SIRV_bif_backward.png)
+![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/PI_vs_I_backward.png)  ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SIRV_bif_backward.png)
 
 ---
 
@@ -464,7 +465,7 @@ $\implies$ région de bistabilité est $\Delta=B^2-4AC\geq 0$, $B>0$ et $C<0$
 
 # Bifurcation dans le plan $(\sigma,\phi)$
 
-![width:800px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/bif_sigma_vs_phi.png)
+![width:800px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bif_sigma_vs_phi.png)
 
 ---
 
@@ -525,7 +526,7 @@ En linéarisant $\eqref{sys:vacc_3dS}$-$\eqref{sys:vacc_3dR}$ en l'ÉÉ
 
 Abscisse spectrale $s(J)$ (maximum des parties réelles des valeurs propres) de la linéarisation en l'ESM et en les 2 ÉÉ, en fonction de $\theta$
 
-![width:600px center](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/evalues_SIRbif.png)
+![width:600px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/evalues_SIRbif.png)
 
 
 
@@ -609,11 +610,11 @@ Hethcote [A Model for HIV Transmission and AIDS](https://doi.org/10.1007/978-3-6
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Hethcote1989_HIV_part.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Hethcote1989_HIV_part.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Hethcote1989_AIDS_part.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Hethcote1989_AIDS_part.png)
 
 ---
 
@@ -627,7 +628,7 @@ Granich, Gilks, Dye, De Cock & Williams. [Universal voluntary HIV testing with i
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/1-s2.0-S0140673608616979-gr2_lrg.gif)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/1-s2.0-S0140673608616979-gr2_lrg.gif)
 
 <!--Transmission model for HIV infection and antiretroviral therapy (ART) provision
 
@@ -651,7 +652,7 @@ Estill, Kerr, Blaser, Salazar-Vizcaya, Tenthani, Wilson, Keiser. [The Effect of 
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/ofy09201.jpeg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/ofy09201.jpeg)
 
 <!--Schematic representation of the mathematical model. A, Flow of patients in the treatment model. White boxes represent stages with suppressed viral load, and gray boxes represent stages with continuously elevated viral load. “Discordant” immunological failure refers to a decline in CD4 cell count fulfilling the failure criteria under suppressed viral load; this condition will not reverse upon switch to second-line therapy. The flow described on the upper half is applicable to patients on ART, including those who returned after ART interruption. While progressing along the stages of treatment response (upper graph), the patients may also interrupt and restart treatment or die (lower graph). B, Transmission model. The upper graph shows the course of the HIV infection, and the lower graph the flow through age, sex, and risk group. Black arrows show flows between compartments, and gray lines show sexual contact patterns. Abbreviation: ART, antiretroviral therapy.-->
 
@@ -667,19 +668,19 @@ Dietz, Molineaux & Thomas. [A malaria model tested in the African savannah](http
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/DietzMolineauxThomas_flow_diagram.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/DietzMolineauxThomas_flow_diagram.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/DietzMolineauxThomas_equations.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/DietzMolineauxThomas_equations.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/DietzMolineauxThomas_biting_rates.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/DietzMolineauxThomas_biting_rates.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/DietzMolineauxThomas_positives.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/DietzMolineauxThomas_positives.png)
 
 ---
 
@@ -693,11 +694,11 @@ Ngwa & Shu. [A mathematical model for endemic malaria with variable human and mo
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/NgwaShu_contact_scaling.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/NgwaShu_contact_scaling.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/NgwaShu_system.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/NgwaShu_system.png)
 
 ---
 
@@ -711,7 +712,7 @@ Chitnis, Hyman & Cushing. [Determining Important Parameters in the Spread of Mal
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/ChitnisHymanCushing_flow_diagram.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/ChitnisHymanCushing_flow_diagram.png)
 
 ---
 
@@ -721,7 +722,7 @@ Chitnis, Hyman & Cushing. [Determining Important Parameters in the Spread of Mal
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/ChitnisHymanCushing_sensitivity_table.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/ChitnisHymanCushing_sensitivity_table.png)
 
 
 ---
@@ -736,11 +737,11 @@ Tchoumi, Diagne, Rwezaura & Tchuenche. [Malaria and COVID-19 co-dynamics: A math
 
 ---
 
-![bg 90%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Tchoumi_etal_flow1.jpg)
+![bg 90%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Tchoumi_etal_flow1.jpg)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Tchoumi_etal_flow2.jpg)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Tchoumi_etal_flow2.jpg)
 
 ---
 
@@ -758,5 +759,5 @@ where
 
 ---
 
-![bg 75% left](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Tchoumi_etal_optimalC_u1.jpg) ![right](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Tchoumi_etal_optimalC_u2.jpg)
+![bg 75% left](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Tchoumi_etal_optimalC_u1.jpg) ![right](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Tchoumi_etal_optimalC_u2.jpg)
 

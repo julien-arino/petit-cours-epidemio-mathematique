@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 math: mathjax
 paginate: false
-size: 4K
+size: 16:9
 ---
 
 <style>
@@ -30,9 +30,10 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/><!--fit-->Épidémies, épidémiologie et épidémiologie mathématique
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -67,7 +68,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # Considérations historiques
 
 - Les épisodes épidémiques sont parmi les premiers évenements rapportés dans l'histoire
-- Mise en garde: je discute peu ici de l'aspect spatio-temporel de la propagation ou bien de la propagation dans des groupes, qui font l'objet d'un [cours spécifique](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-heterogeneite-groupe-et-spatiale.html)
+- Mise en garde: je discute peu ici de l'aspect spatio-temporel de la propagation ou bien de la propagation dans des groupes, qui font l'objet du [Cours 10](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-heterogeneite-groupe-et-spatiale.html)
 
 ---
 
@@ -97,6 +98,72 @@ table {
 | Peste de 698–701 (1ère pandémie de peste) | 698–701 EC | Empitre Byzantin, Asie de l'Ouest, Syrie, Mésopotamie | Peste bubonique | ? |
 | [Épidémie japonaise de variole de 735–737](https://en.wikipedia.org/wiki/735%E2%80%93737_Japanese_smallpox_epidemic) | 735–737 EC | Japon | Variole | 2 million (approx. 1/3 de la population japonaise) | 
 | Peste de 746–747 (1ère pandémie de peste) | 746–747 EC | Empire Byzantin, Asie de l'Ouest, Afrique | Peste bubonique | ? |
+
+---
+
+# Principales épidémies en termes de coût humain
+
+<style scoped>
+table {
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+</style>
+
+| Rang | Épidémie/pandémie | Maladie | Coût humain | Mortalité globale | Mortalité régionale | Date | Lieux |
+|:---:|---|---|---|---|---|:---:|---|
+| 1 | Grande peste | Peste bubonique | 75-200 M |17-54% | 30-60% de la population européenne | 1346-1353 | Europe, Asie et Afrique du Nord |
+| 2 | Grippe espagnole | Influenza A/H1N1 |  17-100 M |1-5.4% | | 1918-1920 | Monde |
+| 3 | Peste de Justinien | Peste bubonique | 15-100 M |7-56% | 25-60% de la population Européenne | 541-549 |Afrque du Nord, Europe et Asie de l'Est |
+| 4 | VIH/SIDA | VIH/SIDA | 36.3 M (en 2020) | Changement population totale trop important pour calculer | | 1981-présent | Monde |
+| 5 | COVID-19 | SARS-CoV-2 | 6.3-25 M (au 21 mai 2022) | 0.1-0.3% || 2019-présent | Monde |
+| 6 | 3ème pandémie de peste | Peste bubonique | 12-15 M | | | 1855-1960 | Monde |
+| 7 | Épidémie de Cocoliztli de 1545-1548 | Cocoliztli | 5-15 M | 1-3% | 27-80% de la population du Mexique | 1545-1548 | Mexique |
+| 8 | Peste Antonine | Variole ou rougeole | 5-10 M | 3-6 | 25-33% de la population Romaine | 165-180 (peut être 190) | Empire Romain |
+| 9 | Épidémie de variole du Mexique de 1520 | Variole | 5-8 M | 1-2% | 23-37% de la population du Mexique |1519-1520 | Mexique |
+| 10 | Épidémie de typhus de Russie de 1918-1922 | Typhus | 2-3 M | 0.1-0.16% | 1-1.6% de la population Russe |1918-1922 | URSS |
+| 11 | Pandémie d'influenza de 1957-1958 | Influenza A/H2N2 | 1-4 M | 0.03–0.1%| | 1957-1958 | Monde |
+| 12 | Grippe de Hong Kong | Influenza A/H3N2 | 1-4 M | 0.03-0.1% | | 1968-1969 | Monde |
+| 13 | Épidémie de Cocoliztli de 1576 | Cocoliztli | 2-2.5 M | 0.4-0.5% | 50% de la population du Mexique | 1576-1580 | Mexique |
+| 14 | Épidémie japonaise de variole de 735-737 | Variole | 2 M | 1% | 33% de la population du Japon | 735-737 | Japon |
+| 15 | Peste perse de 1772-1773 | Peste bubonique | 2 M | 0.2–0.3% | | 1772-1773 | Perse |
+| 16 | Peste de Naples (1656) | Peste bubonique | 1.25 M | 0.2% | | 1656-1658 | Sud de l'Italie |
+| 17 | Pandémie de choléra de 1846-1860 | Choléra | 1+ M | 0.08% | | 1846-1860 | Monde |
+| 18 | Peste italienne de 1629-1631 | Peste bubonique |1 M | 0.2% | | 1629-1631 | Italie |
+| 19 | Pandémie de grippe de 1889-1890 |Influenza (en doute) | 1 M | 0.07% | | 1889-1890 | Monde |
+
+---
+
+# Les "grandes endémiques"
+
+- Tuberculose (TB). En 2020, on estime 10 M de cas de TB active, entraînant 1.5 M décès
+- Paludisme (*malaria*): 229 M cas et 409 000 décès en 2019
+
+
+---
+
+# Les maladies tropicales négligées (NTD)
+
+Souvent des maladies endémiques, parfois causes de mortalité majeure, mais hors de l'œuil des pays riches. De [Wikipedia](https://fr.wikipedia.org/wiki/Maladies_tropicales_n%C3%A9glig%C3%A9es), sachant que la liste précise varie selon les auteurs :
+
+<style scoped>
+table {
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+</style>
+
+| | | | 
+|---|---|---|
+| [Ulcère de Buruli](https://fr.wikipedia.org/wiki/Ulc%C3%A8re_de_Buruli) | [Maladie de Chagas](https://fr.wikipedia.org/wiki/Maladie_de_Chagas) | Dengue & Chikungunya | 
+| [Dracunculose](https://fr.wikipedia.org/wiki/Dracunculose) | Echinococcosis | Yaws |
+| Fascioliasis | [Trypanosomiase](https://fr.wikipedia.org/wiki/Maladie_du_sommeil) | [Leishmaniose](https://fr.wikipedia.org/wiki/Leishmaniose) | 
+| [Lèpre](https://fr.wikipedia.org/wiki/L%C3%A8pre) | [Filariose lymphatique](https://fr.wikipedia.org/wiki/Filariose_de_Bancroft) | Onchocerciasis |
+| Rabies | Schistosomiasis | Soil-transmitted helminthiasis | 
+Cysticercosis | Trachoma | Scabies and other ectoparasites |
+| Snakebite envenoming | Mycetoma and deep mycoses |
 
 ---
 
@@ -171,11 +238,15 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 ---
 
-![bg contain](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41591-020-1092-0/MediaObjects/41591_2020_1092_Fig1_HTML.png?as=webp "https://doi.org/10.1038/s41591-020-1092-0")
+![bg contain](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41591-020-1092-0/MediaObjects/41591_2020_1092_Fig1_HTML.png?as=webp)
+
+<!-- https://doi.org/10.1038/s41591-020-1092-0 -->
 
 ---
 
-![bg contain](https://www.science.org/cms/10.1126/science.abf8832/asset/c20b60b8-4867-4cbb-80ba-a4e6a80135e1/assets/graphic/371_27_f1.jpeg "https://doi.org/10.1126/science.abf8832")
+![bg contain](https://www.science.org/cms/10.1126/science.abf8832/asset/c20b60b8-4867-4cbb-80ba-a4e6a80135e1/assets/graphic/371_27_f1.jpeg)
+
+<!-- https://doi.org/10.1126/science.abf8832 -->
 
 ---
 
@@ -285,7 +356,7 @@ Cas de rougeole (*measles*) aux USA
 
 ---
 
-![bg right:40%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Bernoulli-1760-first_page.jpg)
+![bg right:40%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Bernoulli-1760-first_page.jpg)
 
 # Daniel Bernoulli (1760)
 
@@ -295,7 +366,7 @@ Cas de rougeole (*measles*) aux USA
 
 ---
 
-![bg left:30%](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/RonaldRoss_WellcomeCollection.jpg)
+![bg left:30%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/RonaldRoss_WellcomeCollection.jpg)
 # Ross (début 20ème siècle)
 
 - 20 aout 1897: observe des parasites du paludisme (*malaria*) dans le système digestif d'un moustique nourri quelques jours auparavant sur un humain positif au palu
@@ -307,7 +378,7 @@ Cas de rougeole (*measles*) aux USA
 # Kermack et McKendrick (1927+)
 
 - Probablement l'un des plus grands tournants en épi-math
-- Nous passons ceci en détail dans le [Cours 02](https://julien-arino.github.io/3MC-course-epidemiological-modelling/2022_04_3MC_EpiModelling_L02_BasicMathEpi.html)
+- Nous passons ceci en détail dans le [Cours 02](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L02_BasicMathEpi.html)
 - Série de papiers commençant en 1927
   - On considère un cas particulier, le plus connu, mais c'est juste la partie émergée de l'iceberg de leur travail
 

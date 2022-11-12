@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 paginate: false
 math: mathjax
-size: 4K
+size: 16:9
 ---
 
 <style>
@@ -30,9 +30,10 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Introduction à R
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -49,15 +50,15 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
-- Avant propos: le langage R
+- Avant propos : le langage R
 - Programmer en R
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Avant propos: le langage R
+# <!--fit-->Avant propos : le langage R
 
 ---
 
@@ -75,9 +76,9 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # Environments de dévelopement 
 
 - Version en terminal, pas très sympa
-- Une version terminal plus agréable: [radian](https://github.com/randy3k/radian)
+- Une version terminal plus agréable : [radian](https://github.com/randy3k/radian)
 - Exécute des scripts R en utilisant `Rscript name_of_script.R`. Utile pour certains tests (voir plus loin) ou faire tourner du code en `cron`, par exemple
-- Utiliser des EDI (environnements de développemen intégrés):
+- Utiliser des EDI (environnements de développemen intégrés) :
     - [RStudio](https://www.rstudio.com/products/rstudio/) est devenu la référence
     - [RKWard](https://invent.kde.org/education/rkward) est utile si vous utilisez par exemple un processeur ARM non Mac (Raspberry Pi, certains Chromebooks..)
 - S'intègre dans un `jupyter notebook`
@@ -86,11 +87,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 #  Pour aller plus loin..
 
-- [RStudio server](https://www.rstudio.com/products/rstudio/#rstudio-server): fait tourner RStudio sur un serveur Linux, permet une connection depuis la toile en utilisant un navigateur web
-- Shiny: créer facilement un site web interactif avec du `R` tournant en tâche de fond
-- [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/): fait tourner des applis Shiny sur un serveur Linux, accessible depuis la toile
-- Rmarkdown: `markdown` qui incorpore des commandes `R`. Utile pour générer des rapports en html ou pdf, permet aussi de faire des transparents.. Très utile pour générer des rapports incorporant des données dynamiques
-- RSweave: Code LaTeX incorporant des commandes `R`. Comme Rmarkdown, utile pour générer des rapports. A perdu un peu de popularité depuis l'avènement de Rmarkdown
+- [RStudio server](https://www.rstudio.com/products/rstudio/#rstudio-server) : fait tourner RStudio sur un serveur Linux, permet une connection depuis la toile en utilisant un navigateur web
+- Shiny : créer facilement un site web interactif avec du `R` tournant en tâche de fond
+- [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/) : fait tourner des applis Shiny sur un serveur Linux, accessible depuis la toile
+- Rmarkdown : `markdown` qui incorpore des commandes `R`. Utile pour générer des rapports en html ou pdf, permet aussi de faire des transparents.. Très utile pour générer des rapports incorporant des données dynamiques
+- RSweave : Code LaTeX incorporant des commandes `R`. Comme Rmarkdown, utile pour générer des rapports. A perdu un peu de popularité depuis l'avènement de Rmarkdown 
 
 ---
 
@@ -98,8 +99,8 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - Interactif
 - Permet de travailler en temps réel, d'évaluer directement l'effet d'une commande
-    - Attention! Ce qui est en mémoire peut avoir été généré par des étapes pas notées dans le script
-    - Pour que les étapes d'un calcul soient reproductibles, il est bien de noter toutes les étapes dans un script et de tester ce script de temps en temps en utilisant `Rscript`: ceci assure que tout ce qui est requis pour faire tourner le script est chargé en mémoire quand celà doit l'être..
+    - Attention ! Ce qui est en mémoire peut avoir été généré par des étapes pas notées dans le script
+    - Pour que les étapes d'un calcul soient reproductibles, il est bien de noter toutes les étapes dans un script et de tester ce script de temps en temps en utilisant `Rscript` : ceci assure que tout ce qui est requis pour faire tourner le script est chargé en mémoire quand celà doit l'être..
 
 ---
 
@@ -116,7 +117,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 # Assignation
 
-Deux façons d'écrire:
+Deux façons d'écrire :
 
 ```R
 X <- 10
@@ -134,7 +135,7 @@ La première version est préférrée par les puristes R.. Personnellement, je m
 
 # Listes
 
-Structure de données très utile, flexible et versatile. Liste vide: `L <- list()`. Très pratique pour stocker des choses comme des paramètres. Par exemple:
+Structure de données très utile, flexible et versatile. Liste vide: `L <- list()`. Très pratique pour stocker des choses comme des paramètres. Par exemple :
 
 ```R
 L <- list()
@@ -173,7 +174,7 @@ z = c(z, 1)
 > z
 [1] "rouge"  "bleu" "1"
 ```
-Remarquez que dans `z`, puisque les deux premières entrées sont des caractères, l'entrée que nous ajoutons après est aussi un caractère. Contrairement aux listes, les vecteurs ont toutes leurs entrées du même type. La même chose est vraie avec les matrices. Attention, ceci est une source d'erreur!!
+Remarquez que dans `z`, puisque les deux premières entrées sont des caractères, l'entrée que nous ajoutons après est aussi un caractère. Contrairement aux listes, les vecteurs ont toutes leurs entrées du même type. La même chose est vraie avec les matrices. Attention, ceci est une source d'erreur !
 
 ---
 
@@ -245,12 +246,44 @@ Attention en particulier lorsque l'on cherche à accéder à un ensemble d'indic
 
 - Spécifiques à R
 - Comme des matrices sous stéroïdes
+- Peuvent contenir des colonnes comprennant des entrées de types différents, e.g., une colonne de nombres et une colonne de caractères, donc idéal pour les données
+
+# Tibbles
+
+- Nouveau format de données qui fait partie du `tidyverse` (ensemble de librairies facilitant la manipulation des données - *data wrangling*)
+- Assez similaires aux data frames, avec des variations
+
+---
+
+```R
+> A = data.frame(colonne_1 = runif(10), colonne_2 = c(rep("rouge", 5), rep("vert", 5)))
+> A
+    colonne_1 colonne_2
+1  0.91636576     rouge
+2  0.61324886     rouge
+3  0.07157395     rouge
+4  0.47366452     rouge
+5  0.32406160     rouge
+6  0.59960934      vert
+7  0.12232243      vert
+8  0.60096836      vert
+9  0.74122462      vert
+10 0.11164494      vert
+> summary(A)
+   colonne_1        colonne_2        
+ Min.   :0.07157   Length:10         
+ 1st Qu.:0.17276   Class :character  
+ Median :0.53664   Mode  :character  
+ Mean   :0.45747                     
+ 3rd Qu.:0.61018                     
+ Max.   :0.91637 
+```
 
 ---
 
 # Nommage des positions/lignes/colonnes/etc.
 
-Une capacité très attrayante de R: il est possible de nommber les entrées dans toute liste (on a déjà vu ça), mais aussi tout vecteur, toute matrice ou data frame
+Une capacité très attrayante de R : il est possible de nommber les entrées dans toute liste (on a déjà vu ça), mais aussi tout vecteur, toute matrice ou data frame
 
 ```R
 r$> v = c(alpha = 2, beta = 3, gamma = 4, delta = 5)

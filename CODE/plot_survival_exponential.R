@@ -1,5 +1,6 @@
- # Plot of the exponential distribution survival function 
- # 
+ # Plots de la fonction de survie de distributions exponentielles
+ 
+source("useful_functions.R")
 
 d_1 = 1/80 
 y_1 = seq(0, 200, 0.1)
@@ -19,7 +20,7 @@ idx_10_days = max(which(y_2<=10))
 
 
 
-png("survival_exponential.png",
+png("../FIGS/survival_exponential.png",
     res = 150,
     width = 1900, height = 1000)
 par(mfrow = c(1,2))
@@ -31,7 +32,7 @@ plot(y_2, S_2,
      type = "l", lwd = 3,
      xaxs = "i", yaxs = "i",
      ylim = c(0, 1.02),
-     xlab = "t (Day)", ylab = "S(t)")
+     xlab = "t (jours)", ylab = "S(t)")
 abline(v = 4, lwd = 2, lty = 3, col = "red")
 lines(x = c(1, 1), y = c(0, S_2[idx_1_days]),
       lty = 3, lwd = 1)
@@ -50,7 +51,7 @@ text(x = 10, y = S_2[idx_10_days],
      labels = paste0(round(S_2[idx_10_days], 2)),
      pos = 3)
 text(x = 4, y = 0.8, 
-     labels = "4 days avg.", col = "red",
+     labels = "Moy. 4 jours", col = "red",
      pos = 4)
 # dev.off()
 # crop_figure("survival_exponential_4days.png")
@@ -62,7 +63,7 @@ plot(y_1, S_1,
      type = "l", lwd = 3,
      xaxs = "i", yaxs = "i",
      ylim = c(0, 1.02),
-     xlab = "t (Year)", ylab = "S(t)")
+     xlab = "t (années)", ylab = "S(t)")
 abline(v = 80, lwd = 2, lty = 3, col = "red")
 lines(x = c(50, 50), y = c(0, S_1[idx_50_years]),
       lty = 3, lwd = 1)
@@ -89,10 +90,10 @@ text(x = 150, y = S_1[idx_150_years],
      labels = paste0(round(S_1[idx_150_years], 2)),
      pos = 3)
 text(x = 80, y = 0.8, 
-     labels = "80 years avg.", col = "red",
+     labels = "Moy. 80 ans", col = "red",
      pos = 4)
 #dev.off()
 #crop_figure("survival_exponential_80years.png")
 
 dev.off()
-crop_figure("survival_exponential.png")
+crop_figure("../FIGS/survival_exponential.png")

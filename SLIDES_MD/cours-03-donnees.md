@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 paginate: false
 math: mathjax
-size: 4K
+size: 16:9
 ---
 
 <style>
@@ -30,9 +30,10 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Collecte et utilisation des données
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -49,7 +50,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
 - Les données..
 
@@ -103,6 +104,7 @@ Mouvement récent (5-10 years): gouvernements (locaux ou plus haut) créent des 
 - [Europe](https://data.europa.eu/euodp/data/)
 - [ONU](http://data.un.org/)
 - [Banque Mondiale](https://data.worldbank.org/)
+- [CDC](https://data.cdc.gov/)
 - [OMS](https://www.who.int/gho/database/en/)
 
 ---
@@ -150,31 +152,33 @@ crop_figure("pop_TCD.png")
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/WinnipegOpenDataPortal.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/WinnipegOpenDataPortal.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/WODTreeMap.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/WODTreeMap.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/WODTreeMapZoom.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/WODTreeMapZoom.png)
 
 ---
 
 # Obtenir les données des arbres
 
 ```R
-allTrees = read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/ro
+allTrees = 
+  read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/rows.csv?accessType=DOWNLOAD")
 ```
 
 Après ça, on a
 
 ```R
-dim(allTrees)
-## [1] 300846
-15
+> dim(allTrees)
+[1] 300846 15
 ```
+
+Note: la connexion ici vers Winnipeg n'est pas très bonne. On peut changer la durée du `timeout` (temps pendant lequel le programme essaie de charger), en faisant `options(timeout=300)` par exemple
 
 ---
 
@@ -189,19 +193,7 @@ Il nous reste 54,036 ormes américains
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/Recap_Diagram.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/temperature_phase.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/flow_diagram_DED_beetles.png)
-
----
-
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/flow_diagram_DED_trees.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/Recap_Diagram.png)
 
 ---
 
@@ -315,11 +307,11 @@ to_keep = setdiff(to_keep,tree_pairs_roads_intersect)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/pairs_postproc_zoom.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/pairs_postproc_zoom.png)
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/selected_trees.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/selected_trees.png)
 
 ---
 
@@ -339,7 +331,7 @@ SARS = read.csv("../DATA/SARS-CoV-1_data.csv")
 
 ## Trois façons de ne garder les données que d'un pays
 ctry = "Canada"
-# L'habituelle
+# La version de base
 idx = which(SARS$country == ctry)
 SARS_selected = SARS[idx,]
 # La voie sqldf
@@ -372,5 +364,5 @@ EpiCurve(SARS_selected,
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SARS-CoV-1_cases_CAN.png)
+![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SARS-CoV-1_cases_CAN.png)
 

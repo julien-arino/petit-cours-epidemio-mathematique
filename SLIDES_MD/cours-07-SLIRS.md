@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 math: mathjax
 paginate: false
-size: 4K
+size: 16:9
 ---
 
 <style>
@@ -30,9 +30,10 @@ size: 4K
   }
 </style>
 
+<!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
 # Petit cours d'épidémiologie mathématique<br/>Le modèle SLIRS
 
-Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/icons/github-icon.png)](https://github.com/julien-arino)
+Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
 Department of Mathematics & Data Science Nexus
 University of Manitoba*
@@ -49,11 +50,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan du cours
+# Plan de ce cours
 
 - Durée d'incubation
 - Formulation du modèle SLIRS en population constante
-- Effet de la vaccination - Immunité de groupe
+- Effet de la vaccination : Immunité de groupe
 - Propriétés globales du modèle SLIRS
 
 ---
@@ -289,6 +290,9 @@ On n'étudiera pas ces systèmes ici!
 
 ---
 
+![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+
+
 $$
 \begin{align}
 S' &= b-f(S,I,N)-dS+\nu R
@@ -323,6 +327,8 @@ Cela permet également d'envisager une approche numérique s'abstrayant des vari
 
 ---
 
+![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+
 Dans la suite, on étudie donc le système
 $$
 \begin{align}
@@ -345,6 +351,9 @@ $$
 - Hiérarchie de modèles
 
 ---
+
+![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+
 
 On étudie le système
 $$
@@ -471,30 +480,16 @@ On a donc deux équations de droite, $\eqref{eq:SIRS_EEP_dS_plus_kI}$ et $\eqref
 
 ---
 
-# The basic reproduction number $\mathcal{R}_0$
-
-Indicator often used in epidemiology. Verbally
-
-> average number of new cases generated when an infectious individual is introduced in a completely susceptible population
- 
-$- If $\mathcal{R}_0>1$, then each infectious individual infects on average more than 1 person and an epidemic is quite likely to occur
-
-
----
-
-# Computation of $\mathcal{R}_0$
-
-Mathematically
-
-> bifurcation parameter aggregating system parameters, such that the DFE loses it *local* asymptotic stability as $\mathcal{R}_0$ crosses 1 from left to right
-
-- Obtained by considering the linearisation of the system at the DFE
-- Quickly becomes unmanageable (matrix size) and we get a non unique form
+- $\mathcal{R}_0$ est le lieu dans l'espace des paramètres où l'ESM passe de LAS lorsque $\mathcal{R}_0<1$ à instable lorsque $\mathcal{R}_0>1$
+- On le caractérise donc en considérant la SAL de l'ESM
+- Donc on calcule la Jacobienne, on l'évalue en l'ESM et on calcule les valeurs propres
+- Typiquement, on va avoir toutes sauf une des v.p. à parties réelles strictement négatives et une dont la partie réelle n'est pas de signe fixe
+- C'est sur cette dernière qu'on agit
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# <!--fit-->$\mathcal{R}_0$ par la matrice de prochaine génération
+# <!--fit-->$\mathcal{R}_0$ par la matrice de  <br /> prochaine génération
 
 ---
 
@@ -682,7 +677,7 @@ $(\bar S,\bar I)$ ESM, notons $\overline{f}_I=\partial f/\partial I(\bar S,\bar 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Effet de la vaccination - Immunité de groupe
+# <!--fit-->Effet de la vaccination :  <br />  Immunité de groupe
 
 ---
 
@@ -953,16 +948,16 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Compound matrices
+# <!--fit-->Matrices composées
 
 ---
 
-# The compound matrix method
+# La méthode des matrices composées
 
-- An extension of Dulac's criterion to higher order systems
-- Useful to rule out the existence of periodic orbits
-- Was very popular for a while, but you must be aware of the main limitation:
-  - Becomes hard to use when dimensionality $\geq 4$
+- Extension du critère de Dulac à des systèmes en dimension plus élevée
+- Utile pour exclure l'existece d'orbites périodiques
+- Était très populaire pendant quelques années, mais il faut connaître la limitation principale:
+  - Devient difficile d'utilisation lorsque la dimensionalité du système est $\geq 4$
 
 ---
 

@@ -1,3 +1,5 @@
+source("useful_functions.R")
+
 gamma = 1/5
 beta = 0.5
 
@@ -22,7 +24,7 @@ for (S0 in seq(1, 0.05, -0.1)) {
 S[[i]] = seq(0, 1, 0.001)
 I[[i]] = 1-S[[i]]
 
-png("KMK_planar_trajectories.png", width = 1000, height = 500)
+png("../FIGS/KMK_planar_trajectories.png", width = 1000, height = 500)
 for (i in 1:length(S)) {
   if (i == 1) {
     plot(S[[i]], I[[i]],
@@ -35,4 +37,4 @@ for (i in 1:length(S)) {
   }
 }
 dev.off()
-crop_figure("KMK_planar_trajectories.png")
+crop_figure("../FIGS/KMK_planar_trajectories.png")
