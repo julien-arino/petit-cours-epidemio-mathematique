@@ -40,8 +40,7 @@ University of Manitoba*
 
 <div style = "font-size:18px; margin-top:-10px; padding-bottom:30px;"></div>
 
-Canadian Centre for Disease Modelling
-Canadian COVID-19 Mathematical Modelling Task Force
+Centre canadien de modélisation des maladies (CCDM/CCMM)
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 <div style = "text-align: justify; position: relative; bottom: -5%; font-size:18px;">
@@ -68,11 +67,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # Considérations historiques
 
 - Les épisodes épidémiques sont parmi les premiers évenements rapportés dans l'histoire
-- Mise en garde: je discute peu ici de l'aspect spatio-temporel de la propagation ou bien de la propagation dans des groupes, qui font l'objet du [Cours 10](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-heterogeneite-groupe-et-spatiale.html)
+- En effet, leur importance et leur effet dévastateur à une époque où la médecine n'existait pour ainsi dire pas était facilement observable
 
 ---
 
-# Premières épidémies connues ([Wikipedia](https://en.wikipedia.org/wiki/List_of_epidemics))
+# Premières épidémies connues ([Wikipedia](https://en.wikipedia.org/wiki/List_of_epidemics) anglais)
 
 <style scoped>
 table {
@@ -138,14 +137,14 @@ table {
 # Les "grandes endémiques"
 
 - Tuberculose (TB). En 2020, on estime 10 M de cas de TB active, entraînant 1.5 M décès
-- Paludisme (*malaria*): 229 M cas et 409 000 décès en 2019
+- Paludisme (*malaria*): 229 M de cas et 409 000 décès en 2019
 
 
 ---
 
 # Les maladies tropicales négligées (NTD)
 
-Souvent des maladies endémiques, parfois causes de mortalité majeure, mais hors de l'œuil des pays riches. De [Wikipedia](https://fr.wikipedia.org/wiki/Maladies_tropicales_n%C3%A9glig%C3%A9es), sachant que la liste précise varie selon les auteurs :
+Souvent des maladies endémiques, parfois causes de mortalité majeure, mais hors de l'œuil des pays riches. De [Wikipedia](https://fr.wikipedia.org/wiki/Maladies_tropicales_négligées), sachant que la liste précise varie selon les auteurs :
 
 <style scoped>
 table {
@@ -261,7 +260,7 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 ![bg left:50%](https://upload.wikimedia.org/wikipedia/commons/c/c7/Snow-cholera-map.jpg)
 
-# <!--fit-->Où? [Épidémie de cholera de 1854](https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak)
+# <!--fit-->Où? [Épidémie de cholera de 1854](https://fr.wikipedia.org/wiki/Épidémie_de_choléra_de_Broad_Street)
 
 Épidémie de cholera près de Broad Street, Londres (GB)
 
@@ -313,6 +312,8 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 # Lutte contre les infections
 
+Revenons à présent sur la définition du [BMJ](https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated/1-what-epidemiology):
+
 > Epidemiological information is used to plan and evaluate **strategies to prevent illness** and as a guide to the **management of patients** in whom disease has already developed
 
 - Prévention des maladies
@@ -341,7 +342,7 @@ L'*immunité de groupe* n'était pas un concept à cette époque, on utilisait d
 Cas de rougeole (*measles*) aux USA
 </div>
 
-![bg contain](https://julien-arino.github.io/assets/img/measles_US_1944_2019.png)
+![bg contain](https://julien-arino.github.io/assets/img/measles_US_1944_2021.png)
 
 --- 
 
@@ -350,9 +351,11 @@ Cas de rougeole (*measles*) aux USA
 
 ---
 
-# Un domaine assez ancient ..
+# Un domaine assez ancien ..
 
 .. mais qui a vraiment émergé seulement assez récemment!
+
+Difficile de faire un historique avant d'avoir introduit les notions élémentaires, donc ici je touche à peine au sujet
 
 ---
 
@@ -360,7 +363,7 @@ Cas de rougeole (*measles*) aux USA
 
 # Daniel Bernoulli (1760)
 
-- [BNF scan](https://gallica.bnf.fr/ark:/12148/bpt6k3558n/f220.item) ou [pdf](https://julien-arino.github.io/assets/pdf/Bernoulli-1760.pdf)
+- [Scan BNF](https://gallica.bnf.fr/ark:/12148/bpt6k3558n/f220.item) ou [pdf](https://julien-arino.github.io/assets/pdf/Bernoulli-1760.pdf)
 - Probablement le premier modèle épidémique
 - Traite de l'inoculation conre la petite vérole (*smallpox*)
 

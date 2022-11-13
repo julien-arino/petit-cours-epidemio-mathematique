@@ -41,7 +41,6 @@ University of Manitoba*
 <div style = "font-size:18px; margin-top:-10px; padding-bottom:30px;"></div>
 
 Centre canadien de modélisation des maladies (CCDM/CCMM)
-Canadian COVID-19 Mathematical Modelling Task Force
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 <div style = "text-align: justify; position: relative; bottom: -5%; font-size:18px;">
@@ -72,7 +71,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - Suppose une certaine connaissance des équations différentielles ordinaires. Je ne vais pas rentrer dans les détails et vais supposer que vous savez pourquoi, par exemple, la stabilité asymptotique locale d'un point d'équilibre est déduite de la localisation dans le plan complexe des valeurs propres de la linéarisation du système
 - Peut être intéressant pour des étudiants moins portés sur les mathématiques mais nécessitera un peu de travail de fond pour comprendre certains concepts
 
-Ce cours reprend et étend les éléments du [cours 3MC](https://julien-arino.github.io/petit-cours-epidemio-mathematique/). Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (université de N'Djaména)
+Ce cours reprend et étend les éléments du [cours 3MC](https://julien-arino.github.io/petit-cours-epidemio-mathematique/). Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (Université de N'Djaména)
 
 ---
 
@@ -188,11 +187,11 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 - C03: Récupération et utilisation des données
 - C04: Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
 - C05: Temps de résidence dans les compartiments
-- C06: Étapes de l'analyse mathématique des modèles, $R_0$ et la taille finale d'une épidémie
+- C06: Analyse mathématique des modèles, $R_0$ et taille finale d'une épidémie
 - C07: Le modèle SLIRS
 - C08: Quelques modèles épidémiques
 - C09: Plus de modélisation
-- C10: Propagation dans des groupes et propagation spatio-temporelle des épidémies
+- C10: Propagation dans des groupes / spatio-temporelle des épidémies
 
 ---
 
@@ -207,6 +206,7 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 - C17: Modèles en réseaux
 - C18: Modèles agents-centrés
 - C19: Ajustement des paramètres
+- C20: Publier un papier
 
 ---
 
@@ -215,8 +215,7 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 - J'ai essayé de construire des unités relativement équilibrées en terme de contenu
 - Je n'ai pas particulièrement bien réussi 
 - Certaines unités sont plus longues que d'autres
-<!-- - Les durées des vidéos, postées sur le site web, sont indicatives du poids d'une unité -->
-- Dans le cours d'origine ([lien](https://julien-arino.github.io/petit-cours-epidemio-mathematique/)), les unités étaient divisées entre unités de cours et unités de travaux pratiques. J'ai décidé ici de ne faire que des unités de cours, mais certaines de ces unités de cours doivent être comprises comme relevant plutôt du TP/TD
+- Les durées des vidéos sont indicatives du poids d'une unité
 
 ---
 
@@ -225,3 +224,8 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 ![bg](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bg_colour_red.png) 
 ![bg](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bg_colour_yellow.png) 
 ![bg](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bg_colour_green.png)
+
+Ce beau drapeau guinéen est accidentel :), mais sert à illustrer comment j'indique les différents niveaux d'organisation du cours:
+- rouge: plus haut niveau (différents chapitres du cours)
+- jaune: sections
+- vert: sous-sections
