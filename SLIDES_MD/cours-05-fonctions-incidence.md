@@ -59,6 +59,7 @@ img[alt~="center"] {
 # Plan de ce cours
 
 - Fonctions d'incidence
+- Un bestiaire de fonctions
 
 ---
 
@@ -186,6 +187,11 @@ $$
 et si le terme de droite est vrai, alors $\eqref{eq:incidence_mass_action}$ et $\eqref{eq:incidence_proportional}$ sont identiques
 
 Rappelez-vous que les unités diffèrent, toutefois
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Un bestiaire de fonctions
 
 ---
 
