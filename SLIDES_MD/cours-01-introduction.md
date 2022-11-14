@@ -270,6 +270,14 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 ---
 
+# Les différentes phases de la propagation
+
+---
+
+![bg contain](https://julien-arino.github.io/petit-cours-epidemio-mathematique/FIGS/resume_outbreak_epidemie_pandemie.png)
+
+---
+
 # [Phases OMS d'une pandémie (influenza)](https://www.ncbi.nlm.nih.gov/books/NBK143061/)
 
 <style>
@@ -298,10 +306,6 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 | | 5 | Le virus identifié a provoqué des explosions soutenues au niveau des communautés dans au moins 2 pays dans 1 région OMS |
 | Pandémie | 6 | En plus des critères de la Phase 5, le même virus a provoqué des explosions soutenues au niveau des communautés dans au moins 1 autre pays dans une région OMS différente |
 </div>
-
----
-
-![bg contain](https://upload.wikimedia.org/wikipedia/commons/c/c1/Difference_between_outbreak%2C_endemic%2C_epidemic_and_pandemic-en.png)
 
 ---
 
@@ -342,7 +346,7 @@ L'*immunité de groupe* n'était pas un concept à cette époque, on utilisait d
 Cas de rougeole (*measles*) aux USA
 </div>
 
-![bg contain](https://julien-arino.github.io/assets/img/measles_US_1944_2021.png)
+![bg contain](https://julien-arino.github.io/assets/img/measles_US_1944_2019.png)
 
 --- 
 
