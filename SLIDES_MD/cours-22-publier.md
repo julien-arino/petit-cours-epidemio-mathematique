@@ -76,7 +76,7 @@ J'ai reviewé (beaucoup) de travaux pour de nombreux journaux différents
 # So what? (et alors ?)
 
 - Si vous soumettez un travail en épidémiologie au Bulletin of Mathematical Biology, il y a des chances que je sois votre éditeur en charge
-- Si vous soumettez un modèle épidémiologique avec une bifurcation à revers, il y a une chance non négligeable qu'on me l'envoie (Arino, McCluskey \& van den Driessche, SIAP, cité + de 350 fois..)
+- Si vous soumettez un modèle épidémiologique avec une bifurcation à revers, il y a une chance non négligeable qu'on me l'envoie (Arino, McCluskey \& van den Driessche, SIAP, cité + de 380 fois..)
 - Si vous soumettez un papier en métapopulation et épidémiologie, il est quasiment assuré que quelqu'un aura la riche idée de me l'envoyer
 
 ---
@@ -104,20 +104,20 @@ En général ..
 
 ---
 
-# Comprendre le rapporteur/la rapporteuse
+# <!--fit-->Comprendre le rapporteur/la rapporteuse
 
 ## Votre papier doit
-- impressioner le rapporteur
-- intéresser le rapporteur
-- le rendre jaloux ("j'aurais aimé avoir cette idée")
+- impressioner la rapporteuse
+- intéresser la rapporteuse
+- la rendre jalouse ("j'aurais aimé avoir cette idée")
 
 ## Votre papier ne doit pas
-- mettre le rapporteur en colère
-- être source de confusion pour le rapporteur
+- mettre la rapporteuse en colère
+- être source de confusion pour la rapporteuse
 
 ---
 
-# Ne pas ! (Vous voulez vous prendre un rateau ?)
+# <!--fit-->Ne pas ! (Vous voulez vous prendre un rateau ?)
 
 Nombre de réjections sont liées à l'édition, pas nécessairement au contenu scientifique
 
@@ -137,20 +137,16 @@ Nombre de réjections sont liées à l'édition, pas nécessairement au contenu 
 
 # Le plus important
 
-- Le processus d'édition n'est pas une façon de faire corriger son papier
-- Les rapporteurs sont en général contents de vous aider à améliorer le contenu et la tenue de votre papier au niveau mathématique ou scientifique, ne leur donnez pas l'impression que ce que vous attendez d'eux c'est qu'ils vous aident à corriger des problèmes éditoriaux. Ils sont certainement en train de faire ça avec leurs propres étudiants, ils n'ont pas besoin de faire ça pour vous
+- Le processus d'édition **n'est pas** une façon de faire corriger son papier
+- Les rapporteurs sont en général contents de vous aider à améliorer le contenu et la tenue de votre papier au niveau mathématique ou scientifique, ne leur donnez pas l'impression que vous attendez d'eux qu'ils vous aident à corriger des problèmes éditoriaux. Ils sont certainement en train de faire ça avec leurs propres étudiants
 - Attention au plagiat: il peut être tentant de copier litéralement du texte qui explique quelque chose bien. Si c'est le cas, indiquez le, sinon, soyez conscients que les bons journaux passent votre papier dans un analyseur syntaxique de copiage ! Score trop élevé (varie selon les journaux) $\implies$ rejet automatique et red-flag 
-
----
-\maxFrameImage{editor_comm}
-\maxFrameImage{report1}
 
 ---
 
 # Ce qu'il faut toujours faire
 
 - Assurez-vous que votre texte a l'air consistant
-    - En particulier si vous utiliser $\LaTeX$, il n'y a pas de raison d'avoir des changements de fontes, de tailles de caractères, des lignes sautant en plein milieu, etc.
+    - En particulier si vous utilisez $\LaTeX$, il n'y a pas de raison d'avoir des changements de fontes, de tailles de caractères, des lignes sautant en plein milieu, etc.
 - Faites attention à vos références bibliographiques
     - Orthographe, orthographe des noms, journaux. Si votre papier est accepté, on va de toute façon vous embêter pour que les références soient correctes, donc autant qu'elles le soient aussi pour le rapporteur
     - Citez bien vos sources. Il n'y a rien de pire que de susciter un soupçon de plagiat
@@ -173,4 +169,4 @@ Nombre de réjections sont liées à l'édition, pas nécessairement au contenu 
 - Puis relisez le papier une dernière fois, à tête reposée. Voyez-vous quelque chose qui cloche de façon criante ?
     - Si oui, correction rapide
     - Si non, soumettez
-- Le meilleur est votre travail en amont de la soumission, les plus élevées sont vos chances de voir le papier être accepté et aussi, le moins de corrections vous aurez à faire plus tard dans le processus
+- Plus vous soignez le travail en amont de la soumission, plus vous augmentez vos chances de voir le papier être accepté. Bonus: vous aurez moins de corrections à faire plus tard dans le processus
