@@ -225,7 +225,7 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 ![bg](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bg_colour_yellow.png) 
 ![bg](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/bg_colour_green.png)
 
-Ce beau drapeau guinéen est accidentel :), mais sert à illustrer comment j'indique les différents niveaux d'organisation du cours:
+Ce beau drapeau guinéen est accidentel ☺️, mais sert à illustrer comment j'indique les différents niveaux d'organisation du cours:
 - rouge: plus haut niveau (différents chapitres du cours)
 - jaune: sections
 - vert: sous-sections
