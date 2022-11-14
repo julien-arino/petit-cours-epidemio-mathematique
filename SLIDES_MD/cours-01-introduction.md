@@ -43,7 +43,7 @@ University of Manitoba*
 Centre canadien de modélisation des maladies (CCDM/CCMM)
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
-<div style = "text-align: justify; position: relative; bottom: -5%; font-size:18px;">
+<div style = "text-align: justify; position: relative; bottom: -5%; font-size:25px;">
 * The University of Manitoba campuses are located on original lands of Anishinaabeg, Cree, Oji-Cree, Dakota and Dene peoples, and on the homeland of the Métis Nation.</div>
 
 ---
@@ -272,6 +272,12 @@ Domaine terminologiquement lourd. Quelques pistes pour les mathématiciens:
 
 # Les différentes phases de la propagation
 
+- Maladie qui se propage: quelques cas isolés
+- Éruption (*outbreak*): le nombre de cas augmente rapidement localement
+- Épidémie: augmentation et propagation rapide d’une maladie infectieuse et contagieuse dans une région donnée
+- Endémie: persistance habituelle d’une maladie infectieuse et contagieuse dans une région donnée
+- Pandémie: épidémie qui s’étend au-delà des frontières des pays et qui peut se répandre sur un continent, un hémisphère ou dans le monde entier
+
 ---
 
 ![bg contain](https://julien-arino.github.io/petit-cours-epidemio-mathematique/FIGS/resume_outbreak_epidemie_pandemie.png)
@@ -388,6 +394,13 @@ Difficile de faire un historique avant d'avoir introduit les notions élémentai
 - Nous passons ceci en détail dans le [Cours 02](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L02_BasicMathEpi.html)
 - Série de papiers commençant en 1927
   - On considère un cas particulier, le plus connu, mais c'est juste la partie émergée de l'iceberg de leur travail
+
+---
+
+# Macdonald, Dietz et le paludisme 
+
+- On lira par exemple [ce papier](https://doi.org/10.1371/journal.ppat.1002588), qui présente une histoire du développement du modèle dit de Ross-Macdonald
+- Klaus Dietz a aussi beaucoup travaillé sur le paludisme
 
 ---
 

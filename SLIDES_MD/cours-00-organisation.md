@@ -43,7 +43,7 @@ University of Manitoba*
 Centre canadien de modélisation des maladies (CCDM/CCMM)
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
-<div style = "text-align: justify; position: relative; bottom: -5%; font-size:18px;">
+<div style = "text-align: justify; position: relative; bottom: -5%; font-size:25px;">
 * The University of Manitoba campuses are located on original lands of Anishinaabeg, Cree, Oji-Cree, Dakota and Dene peoples, and on the homeland of the Métis Nation.</div>
 
 ---

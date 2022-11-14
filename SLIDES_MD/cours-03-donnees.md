@@ -43,7 +43,7 @@ University of Manitoba*
 Centre canadien de modélisation des maladies (CCDM/CCMM)
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
-<div style = "text-align: justify; position: relative; bottom: -5%; font-size:18px;">
+<div style = "text-align: justify; position: relative; bottom: -5%; font-size:25px;">
 * The University of Manitoba campuses are located on original lands of Anishinaabeg, Cree, Oji-Cree, Dakota and Dene peoples, and on the homeland of the Métis Nation.</div>
 
 ---
@@ -51,20 +51,10 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
 # Plan de ce cours
 
-- Les données..
-
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Les données
-
-
-<div style = "position: relative; bottom: -35%; font-size:20px;">
-
-- JA. [Mathematical epidemiology in a data-rich world](http://dx.doi.org/10.1016/j.idm.2019.12.008). *Infectious Disease Modelling* **5**:161-188 (2020)
-- Voir aussi le [répo GitHub](https://github.com/julien-arino/modelling-with-data) pour ce papier..
-
-</div>
+- Le mouvement « données ouvertes »
+- Obtenir des données
+- Exemple - graphiose de l'orme
+- Préparation des données
 
 ---
 
@@ -74,6 +64,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - De plus en plus d'endroits ont une politique Open Data
 - En tant que modélisateur, il n'est pas nécessaire d'avoir des données partout, mais il est très important d'être au minimum conscient du domaine dans lequel on opère
 - Si vous voulez que votre travail ait un impact, par exemple en santé publique, vous ne pouvez pas être complètement déconnecté de la réalité
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Le mouvement « données ouvertes » (Open Data)
 
 ---
 
@@ -108,6 +103,19 @@ Mouvement récent (5-10 years): gouvernements (locaux ou plus haut) créent des 
 
 ---
 
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Obtenir des données
+
+
+<div style = "position: relative; bottom: -35%; font-size:20px;">
+
+- JA. [Mathematical epidemiology in a data-rich world](http://dx.doi.org/10.1016/j.idm.2019.12.008). *Infectious Disease Modelling* **5**:161-188 (2020)
+- Voir aussi le [répo GitHub](https://github.com/julien-arino/modelling-with-data) pour ce papier..
+
+</div>
+
+---
+
 # Méthode de collecte des données
 
 - "À la main"
@@ -138,6 +146,19 @@ crop_figure("pop_TCD.png")
 ---
 
 ![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/pop_TCD.png)
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Exemple - graphiose de l'orme
+
+## (Dutch elm disease)
+
+<div style = "position: relative; bottom: -35%; font-size:20px;">
+
+- Bajeux, JA, Portet & Westwood. [Spread of Dutch elm disease in an urban forest](https://doi.org/10.1016/j.ecolmodel.2020.109293). *Ecological Modelling* **438** (2020)
+
+</div>
 
 ---
 
@@ -311,6 +332,13 @@ to_keep = setdiff(to_keep,tree_pairs_roads_intersect)
 ---
 
 ![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/selected_trees.png)
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Préparation des données
+
+## (Data wrangling)
 
 ---
 
