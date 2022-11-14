@@ -5,7 +5,7 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 paginate: false
 math: mathjax
-size: 16:9
+size: 4:3
 ---
 
 <style>
@@ -31,7 +31,7 @@ size: 16:9
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Se faire publier
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Se faire publier
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -40,24 +40,11 @@ University of Manitoba*
 
 <div style = "font-size:18px; margin-top:-10px; padding-bottom:30px;"></div>
 
-Centre canadien de modélisation des maladies (CCDM/CCMM)
+Centre canadien de modélisation des maladies (CCMM)
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 <div style = "text-align: justify; position: relative; bottom: -5%; font-size:25px;">
 * The University of Manitoba campuses are located on original lands of Anishinaabeg, Cree, Oji-Cree, Dakota and Dene peoples, and on the homeland of the Métis Nation.</div>
-
----
-
-<!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# Plan de ce cours
-
-- Principes généraux
-- Problème de l'identifiabilité des paramètres
-
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# Mes "références"
 
 ---
 
@@ -72,9 +59,7 @@ J'ai reviewé (beaucoup) de travaux pour de nombreux journaux différents
 
 ---
 
-# Travail éditorial
-
-## Membre du bureau éditorial
+# Travail éditorial <br/> Membre du bureau éditorial
 
 - BMC Public Health (2020-2021)
 - [Bulletin of Mathematical Biology](https://link.springer.com/journal/11538)
