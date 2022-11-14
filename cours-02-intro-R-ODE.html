@@ -59,11 +59,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)</p>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="6" data-theme="default" style="--theme:default;" data-size="4:3">
 <h1>Pour aller plus loin..</h1>
 <ul>
-<li><a href="https://www.rstudio.com/products/rstudio/#rstudio-server">RStudio server</a> : fait tourner RStudio sur un serveur Linux, permet une connection depuis la toile en utilisant un navigateur web</li>
+<li><a href="https://www.rstudio.com/products/rstudio/#rstudio-server">RStudio server</a> : fait tourner RStudio sur un serveur Linux, permet une connection depuis un navigateur web</li>
 <li>Shiny : créer facilement un site web interactif avec du <code>R</code> tournant en tâche de fond</li>
 <li><a href="https://www.rstudio.com/products/shiny/shiny-server/">Shiny server</a> : fait tourner des applis Shiny sur un serveur Linux, accessible depuis la toile</li>
 <li>Rmarkdown : <code>markdown</code> qui incorpore des commandes <code>R</code>. Utile pour générer des rapports en html ou pdf, permet aussi de faire des transparents.. Très utile pour générer des rapports incorporant des données dynamiques</li>
-<li>RSweave : Code LaTeX incorporant des commandes <code>R</code>. Comme Rmarkdown, utile pour générer des rapports. A perdu un peu de popularité depuis l'avènement de Rmarkdown</li>
+<li>RSweave : Code LaTeX incorporant des commandes <code>R</code>. Comme Rmarkdown, utile pour générer des rapports. Perdu un peu de popularité depuis  Rmarkdown</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="7" data-theme="default" style="--theme:default;" data-size="4:3">
@@ -196,7 +196,9 @@ C <span class="hljs-operator">&lt;-</span> matrix<span class="hljs-punctuation">
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="18" data-theme="default" style="--theme:default;" data-size="4:3">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-R"><span class="hljs-operator">&gt;</span> A <span class="hljs-operator">=</span> data.frame<span class="hljs-punctuation">(</span>colonne_1 <span class="hljs-operator">=</span> runif<span class="hljs-punctuation">(</span><span class="hljs-number">10</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> colonne_2 <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;rouge&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;vert&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-R"><span class="hljs-operator">&gt;</span> A <span class="hljs-operator">=</span> data.frame<span class="hljs-punctuation">(</span>colonne_1 <span class="hljs-operator">=</span> runif<span class="hljs-punctuation">(</span><span class="hljs-number">10</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> 
+                 colonne_2 <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;rouge&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> 
+                               <span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;vert&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
 <span class="hljs-operator">&gt;</span> A
     colonne_1 colonne_2
 <span class="hljs-number">1</span>  <span class="hljs-number">0.91636576</span>     rouge
@@ -355,15 +357,12 @@ PARAMS <span class="hljs-operator">=</span> <span class="hljs-built_in">list</sp
 <p>Donc vous bénéficiez d'années d'experience: <a href="https://computing.llnl.gov/projects/odepack">ODEPACK</a> est une librairie de solveurs numériques écrits à l'origine en Fortran (77!) développés au Lawrence Livermore National Laboratory (LLNL) à partir des années 70</p>
 </li>
 <li>
-<p>D'autres bons solveurs sont aussi inclus, ceux écris en C</p>
-</li>
-<li>
 <p>Voir <a href="https://cran.r-project.org/web/packages/deSolve/deSolve.pdf">l'aide du package</a> pour des détails</p>
 </li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="28" data-theme="default" style="--theme:default;" data-size="4:3">
-<h1>Utiliser deSolve pour des ODE simples</h1>
+<h1 is="marp-h1" data-auto-scaling>Utiliser deSolve pour des ODE simples</h1>
 <p>Comme avec la majorité des algorithmes, il faut écrire une fonction qui renvoie la valeur des dérivées (droite du signes égal) du système (le champ de vecteurs) en un point donné de l'espace (et potentiellement du temps), puis appeler cette fonction depuis le solveur</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-R">library<span class="hljs-punctuation">(</span>deSolve<span class="hljs-punctuation">)</span>
 rhs_logistic <span class="hljs-operator">&lt;-</span> <span class="hljs-keyword">function</span><span class="hljs-punctuation">(</span>t<span class="hljs-punctuation">,</span> x<span class="hljs-punctuation">,</span> p<span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
@@ -377,7 +376,7 @@ sol <span class="hljs-operator">&lt;-</span> ode<span class="hljs-punctuation">(
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="29" data-theme="default" style="--theme:default;" data-size="4:3">
-<h1>Deuxième option: <code>with(as.list(x), {</code></h1>
+<h1 is="marp-h1" data-auto-scaling>Deuxième option: <code>with(as.list(x), {</code></h1>
 <p>On peut aussi faire la chose suivante: en utilisant <code>with(as.list(x, {</code>, on peut accéder au contenu de <code>x</code> directement, s'il est <em>nommé</em></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-R">rhs_logistic <span class="hljs-operator">&lt;-</span> <span class="hljs-keyword">function</span><span class="hljs-punctuation">(</span>t<span class="hljs-punctuation">,</span> x<span class="hljs-punctuation">,</span> p<span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
   with<span class="hljs-punctuation">(</span>as.list<span class="hljs-punctuation">(</span>x<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-punctuation">{</span>

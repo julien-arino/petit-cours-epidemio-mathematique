@@ -87,11 +87,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 #  Pour aller plus loin..
 
-- [RStudio server](https://www.rstudio.com/products/rstudio/#rstudio-server) : fait tourner RStudio sur un serveur Linux, permet une connection depuis la toile en utilisant un navigateur web
+- [RStudio server](https://www.rstudio.com/products/rstudio/#rstudio-server) : fait tourner RStudio sur un serveur Linux, permet une connection depuis un navigateur web
 - Shiny : créer facilement un site web interactif avec du `R` tournant en tâche de fond
 - [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/) : fait tourner des applis Shiny sur un serveur Linux, accessible depuis la toile
 - Rmarkdown : `markdown` qui incorpore des commandes `R`. Utile pour générer des rapports en html ou pdf, permet aussi de faire des transparents.. Très utile pour générer des rapports incorporant des données dynamiques
-- RSweave : Code LaTeX incorporant des commandes `R`. Comme Rmarkdown, utile pour générer des rapports. A perdu un peu de popularité depuis l'avènement de Rmarkdown 
+- RSweave : Code LaTeX incorporant des commandes `R`. Comme Rmarkdown, utile pour générer des rapports. Perdu un peu de popularité depuis  Rmarkdown 
 
 ---
 
@@ -256,7 +256,9 @@ Attention en particulier lorsque l'on cherche à accéder à un ensemble d'indic
 ---
 
 ```R
-> A = data.frame(colonne_1 = runif(10), colonne_2 = c(rep("rouge", 5), rep("vert", 5)))
+> A = data.frame(colonne_1 = runif(10), 
+                 colonne_2 = c(rep("rouge", 5), 
+                               rep("vert", 5)))
 > A
     colonne_1 colonne_2
 1  0.91636576     rouge
@@ -456,13 +458,11 @@ Il reste une boucle, mais une fois la liste constituée, on peut la découper po
 
 - Donc vous bénéficiez d'années d'experience: [ODEPACK](https://computing.llnl.gov/projects/odepack) est une librairie de solveurs numériques écrits à l'origine en Fortran (77!) développés au Lawrence Livermore National Laboratory (LLNL) à partir des années 70
 
-- D'autres bons solveurs sont aussi inclus, ceux écris en C
-
 - Voir [l'aide du package](https://cran.r-project.org/web/packages/deSolve/deSolve.pdf) pour des détails
 
 ---
 
-# Utiliser deSolve pour des ODE simples
+# <!--fit-->Utiliser deSolve pour des ODE simples
 
 Comme avec la majorité des algorithmes, il faut écrire une fonction qui renvoie la valeur des dérivées (droite du signes égal) du système (le champ de vecteurs) en un point donné de l'espace (et potentiellement du temps), puis appeler cette fonction depuis le solveur
 
@@ -480,7 +480,7 @@ sol <- ode(IC, times, rhs_logistic, params)
 
 ---
 
-# Deuxième option: `with(as.list(x), {`
+# <!--fit-->Deuxième option: `with(as.list(x), {`
 
 On peut aussi faire la chose suivante: en utilisant `with(as.list(x, {`, on peut accéder au contenu de `x` directement, s'il est *nommé*
 
