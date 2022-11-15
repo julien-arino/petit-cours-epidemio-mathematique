@@ -66,6 +66,9 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # Plan de ce cours
 
 - Modèle SIS endémique
+- Analyse mathématique (version 1)
+- Le nombre de reproduction élémentaire
+- Analyse mathématique (version 2)
 
 ---
 
@@ -166,13 +169,18 @@ Par exemple, supposons un modèle pour l'immunodéficience humaine (VIH) dans un
 
 ---
 
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Analyse mathématique (version 1)
+
+---
+
 # Analyse du système
 
 Le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est planaire non-linéaire
 
 En principe, on devrait appliquer les méthodes usuelles dans le plan. Et on le fera plus tard
 
-Toutefois, il est ici possible de trouver une solution explicite
+Toutefois, il est ici possible de trouver une solution explicite, sous certaines conditions
 
 **NB:** Ceci est une illustration utile, mais est une exception!! Pratiquement aucun autre modèle que nous rencontrerons ne sera intégrable de cette façon
 
@@ -180,8 +188,9 @@ Toutefois, il est ici possible de trouver une solution explicite
 
 # Le système est-il bien posé?
 
-- Normalement, on devrait commencer par vérifier que le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est bien posé
-- On note toutefois que l'on a une fonction de la forme $\beta SI/N$, donc voyons tout d'abord si cela peut poser problème
+- On note que l'on a une fonction de la forme $\beta SI/N$, donc cela peut poser problème si $N\to 0$
+- Normalement, on commence par vérifier que le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est bien posé
+- Cela fait partie de l'arsenal classique
 
 ---
 
@@ -190,64 +199,22 @@ Toutefois, il est ici possible de trouver une solution explicite
 On a
 $$
 \begin{align*}
-N' &= (S+N)' \\
-&= dN-dS\beta\frac{SI}{N}
+N' &= (S+I)' \\
+&= bN-dS\beta\frac{SI}{N}
 +\gamma I+\beta\frac{SI}{N}-dI-\gamma I \\
-&= dN-d(S+I) \\
-&=0
-\end{align*} 
+&= bN-d(S+I) \\
+&= (b-d)N
+\end{align*}
 $$
-Par conséquent, pour tout $t$, $N(t)\equiv N_0:=S_0+I_0$
+Supposons que $b=d$, alors $N'=0$ et par conséquent, pour tout $t$, $N(t)\equiv N_0:=S_0+I_0$
 
----
-
-# Le système est-il bien posé? (bis)
-
-- On va éviter le cas $N\equiv 0$, qui ne sert à rien
-- Donc le champ de vecteur est toujours $C^1$, ce qui entraîne que les solutions existent et sont uniques
-- Vérifions maintenant que le cône positif est invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
-
----
-
-# Invariance sous le flot (1)
-
-Supposons pour commencer que $I=0$. Alors le système se réduit à l'équation scalaire
-$$
-S' = bN-dS=0
-$$
-puisque $N=S$ ici. Il suit que l'axe $\{I=0\}$ est invariant et toute solution initiée dans cet ensemble est constante. Cela implique qu'une solution avec $S(0)>0$ et $I(0)>0$ ne peut atteindre l'axe $\{I=0\}$
-
-En effet, supposons que $S(0)=S_0>0$ et $I(0)=I_0>0$, et qu'il existe $t_*>0$ tel que $S(t_*)=S_*$ et $I(t_*)=0$
-
-Mais en $S=S_*$ et $I=0$, il passe une autre solution, celle telle que $S(0)=S_*$ et $I(0)=0$, puisqu'avec ces conditions initiales, on a $S(t)=S_*$ et $I(t)=0$ pour tout $t\geq 0$
-
-Cela contredit l'unicité des solutions $\implies$ $I(t)>0$ si $I(0)>0$
-
----
-
-# Invariance sous le flot (2)
-
-On a vu que $I(t)>0$ si $I(0)>0$
-
-Supposons alors que $S=0$. L'équation $\eqref{sys:SIS_base_dS}$ est alors
-$$
-S' = \gamma I>0
-$$
-
-$\implies$ $S$ ne peut pas devenir nul
-
----
-
-# Remarque
-
-Ce genre de raisonnement a toute sa place dans une thèse de MSc ou de PhD: il faut montrer que vous savez faire
-
-Dans un papier de recherche, cela n'est pas vraiment nécessaire, c'est souvent même superflu
+On suppose dorénavant que $b=d$ et que $N_0>0$ (le cas $N\equiv 0$ n'est pas très captivant)
 
 ---
 
 # Les variables en proportions
 
+Puisque $N\equiv N_0>0$, on peut considérer
 $$
 s=\frac{S}{N}\quad\quad i=\frac{I}{N}
 $$
@@ -255,7 +222,14 @@ Remarquons que $s+i=(S+I)/N=1$. La dérivée de $i$ est
 $$
 i' = \frac{I'N-IN'}{N^2}=\frac{I'}{N}-\frac{iN'}{N}
 $$
-Puisque $N'=0$, 
+
+---
+
+On a
+$$
+i' = \frac{I'}{N}-\frac{iN'}{N}
+$$
+mais, puisque $N'=0$, 
 $$
 i'=\frac{I'}{N}
 $$
@@ -269,7 +243,9 @@ $$
 
 # Le système en proportions
 
-Puisque $s+i=1$, on peut utiliser $s=1-i$ dans l'équation $\eqref{eq:SIS_proportion_di}$, ce qui donne $i'=\beta(1-i)i-(d+\gamma)i$. Par conséquent, le **système en proportions** est
+Puisque $s+i=1$, on peut utiliser $s=1-i$ dans l'équation $\eqref{eq:SIS_proportion_di}$, ce qui donne $i'=\beta(1-i)i-(d+\gamma)i$
+
+Par conséquent, le **système en proportions** est
 $$
 \begin{align}
 s &= 1-i
@@ -348,25 +324,33 @@ $$
 ---
 
 En résumé, la solution du système en proportions est donnée par
+
 $$
+\small
+\begin{align}
+s(t) &= 
+1-\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
++(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}} 
 \tag{6a}\label{sys:SIS_solution_s}
-s(t)=1-\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
-  +(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
-$$
-et
-$$
+\\
+i(t) &=
+\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
++(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
 \tag{6b}\label{sys:SIS_solution_i}
-i(t)=\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
-  +(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
+\end{align}
 $$
 
 ---
 
 En observant $\eqref{sys:SIS_solution_s}$-$\eqref{sys:SIS_solution_i}$, on déduit deux cas: 
  
-- Si $\beta-(d+\gamma)<0$, alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=+\infty$, donc $\lim_{t\to\infty}s(t)=1$ et $\lim_{t\to\infty}i(t)=0$
-- Si $\beta-(d+\gamma)>0$, alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=0$; donc $\lim_{t\to\infty}s(t)=1-(\beta-(d+\gamma))/\beta$ et $\lim_{t\to\infty}i(t)=(\beta-(d+\gamma))/\beta$
+- Si $\beta-(d+\gamma)<0$, alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=+\infty,$ donc $\lim_{t\to\infty}s(t)=1$ et $\lim_{t\to\infty}i(t)=0$
+- Si $\beta-(d+\gamma)>0,$ alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=0;$ donc $\lim_{t\to\infty}s(t)=1-(\beta-(d+\gamma))/\beta$ et $\lim_{t\to\infty}i(t)=(\beta-(d+\gamma))/\beta$
 
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Le nombre de reproduction élémentaire
 
 
 ---
@@ -398,12 +382,12 @@ On a prouvé le résultat suivant
 
 L'alternative suivante a lieu pour le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
  
-- Si $\mathcal{R}_0< 1$, alors
+- Si $\mathcal{R}_0< 1$, alors la maladie **s'éteint**:
   - $\lim_{t\to\infty}s(t)=1$
-  - $\lim_{t\to\infty}i(t)=0$, la maladie **s'éteint**
-- Si $\mathcal{R}_0>1$, alors
+  - $\lim_{t\to\infty}i(t)=0$
+- Si $\mathcal{R}_0>1$, alors la maladie devient **endémique**:
   - $\lim_{t\to\infty}s(t)={1}/{\mathcal{R}_0}$
-  - $\lim_{t\to\infty}i(t)=1-1/{\mathcal{R}_0}$, la maladie devient **endémique**
+  - $\lim_{t\to\infty}i(t)=1-1/{\mathcal{R}_0}$
 </div>
 
 On dit que le modèle SIS est un **modèle endémique** du fait de la possibilité d'observer ce second équilibre
@@ -433,9 +417,45 @@ On dit que le modèle SIS est un **modèle endémique** du fait de la possibilit
 
 ---
 
-# Méthode classique d'analyse du système SIS
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Analyse mathématique (version 2)
+
+---
+
+# <!--fit-->Méthode classique d'analyse du système SIS
 
 On considère le système
+$$
+\begin{align}
+S' &= b(N-S)-\beta\frac{SI}{N}+\gamma I \tag{1a} \\
+I' &= \left(\beta \frac SN-(d+\gamma)\right)I \tag{1b}
+\end{align}
+$$
+
+---
+
+# <!--fit-->Comportement de la population totale
+
+On a déjà vu que 
+$$
+N'=(b-d)N
+$$
+La solution de cette EDO scalaire est facile:
+$$
+N(t)=N_0e^{(b-d)t},\quad t\geq 0
+$$
+Donc il y a 3 possibilités:
+- si $b>d$, $N(t)\to\infty$, la population totale explose
+- si $b=d$, $N(t)\equiv N_0$, la population totale reste constante
+- si $b<d$, $N(t)\to 0$, la population s'effondre
+
+---
+
+# Donc on suppose que $b=d$
+
+- On veut un cas raisonable, on suppose donc que $b=d$
+
+- Le système est donc
 $$
 \begin{align}
 S' &= d(N-S)-\beta\frac{SI}{N}+\gamma I \tag{1a} \\
@@ -443,7 +463,56 @@ I' &= \left(\beta \frac SN-(d+\gamma)\right)I \tag{1b}
 \end{align}
 $$
 
-Puisque $N$ est constant, on pourrait simplifier et étudier le système avec seulement l'une des deux équations. On choisit toutefois de garder le système en l'état
+- Puisque $N$ est constant, on pourrait simplifier et étudier le système avec seulement l'une des deux équations. On choisit toutefois de garder le système en l'état
+
+---
+
+# Le système est-il bien posé?
+
+- On va éviter le cas $N\equiv 0$, qui ne sert à rien
+- Donc le champ de vecteur est toujours $C^1$, ce qui entraîne que les solutions existent et sont uniques
+- Vérifions maintenant que le cône positif est invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
+
+---
+
+# Invariance sous le flot (1)
+
+Supposons pour commencer que $I=0$. Alors le système se réduit à l'équation scalaire
+$$
+S' = bN-dS=0
+$$
+puisque $N=S$ ici. Il suit que l'axe $\{I=0\}$ est invariant et toute solution initiée dans cet ensemble est constante. Cela implique qu'une solution avec $S(0)>0$ et $I(0)>0$ ne peut atteindre l'axe $\{I=0\}$
+
+---
+
+# Invariance sous le flot (2)
+
+En effet, supposons que $S(0)=S_0>0$ et $I(0)=I_0>0$, et qu'il existe $t_*>0$ tel que $S(t_*)=S_*$ et $I(t_*)=0$
+
+Mais en $S=S_*$ et $I=0$, il passe une autre solution, celle telle que $S(0)=S_*$ et $I(0)=0$, puisqu'avec ces conditions initiales, on a $S(t)=S_*$ et $I(t)=0$ pour tout $t\geq 0$
+
+Cela contredit l'unicité des solutions $\implies$ $I(t)>0$ si $I(0)>0$
+
+---
+
+# Invariance sous le flot (3)
+
+On a vu que $I(t)>0$ si $I(0)>0$
+
+Supposons alors que $S=0$. L'équation $\eqref{sys:SIS_base_dS}$ est alors
+$$
+S' = \gamma I>0
+$$
+
+$\implies$ $S$ ne peut pas devenir nul
+
+---
+
+# Remarque
+
+Ce genre de raisonnement a toute sa place dans une thèse de MSc ou de PhD: il faut montrer que vous savez faire
+
+Dans un papier de recherche, cela n'est pas vraiment nécessaire, c'est souvent même superflu
 
 ---
 

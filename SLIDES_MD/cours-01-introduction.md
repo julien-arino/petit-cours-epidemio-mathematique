@@ -85,7 +85,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Premières épidémies connues ([Wikipedia](https://en.wikipedia.org/wiki/List_of_epidemics) anglais)
+# <!--fit-->Premières épidémies connues ([Wikipedia](https://en.wikipedia.org/wiki/List_of_epidemics) anglais)
 
 <style scoped>
 table {
@@ -98,7 +98,7 @@ table {
 | Evènement | Date | Lieu | Maladie | Mortalité (estimée) |
 |---|---|---|---|---|
 | Peste de Megiddo | 1350 AEC | Megiddo, terre de Canaan | ? | ? | 
-| [Peste d'Athène](https://en.wikipedia.org/wiki/Plague_of_Athens) | 429–426 AEC | Grèce, Libye, Égypte, Éthiopie | Typhus, fièvre typhoide ou FHV ? |  75 000–10 000 |
+| [Peste d'Athène](https://en.wikipedia.org/wiki/Plague_of_Athens) | 429–426 AEC | Grèce, Libye, Égypte, Éthiopie | Typhus, fièvre typhoide ou FHV ? |  75 000–100 000 |
 | [Épidémie 412 AEC](https://en.wikipedia.org/wiki/412_BC_epidemic) |412 AEC | Grèce, République romaine | Influenza ? | ? |
 | [Antonine Plague](https://en.wikipedia.org/wiki/Antonine_Plague) | 165–180 EC (jusqu'à 190 EC ?) | Empire romain | Variole ? | 5–10 million |
 | Peste de Jian'an | 217 EC | Dynastie Han | Fièvre typhoide ou FHV ? | ? |
@@ -114,7 +114,7 @@ table {
 
 ---
 
-# Principales épidémies en termes de coût humain
+# <!--fit-->Principales épidémies en termes de coût humain
 
 <style scoped>
 table {
