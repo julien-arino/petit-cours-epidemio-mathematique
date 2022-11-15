@@ -11,8 +11,8 @@ math: mathjax
 <style>
   section {
   font-size: 28px;
-  padding-left: 40px;
-  padding-right: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-top: 20px;
   padding-bottom: 20px;
   }
@@ -60,13 +60,6 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 <div style = "text-align: justify; position: relative; bottom: -5%; font-size:25px;">
 * The University of Manitoba campuses are located on original lands of Anishinaabeg, Cree, Oji-Cree, Dakota and Dene peoples, and on the homeland of the Métis Nation.</div>
 
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
-
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
@@ -108,11 +101,24 @@ On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitô
 - Meurent au taux *per capita* $d$, proportionnel à la population susceptible $S$
 - Les nouveaux nés sont susceptibles (on ignore la *transmission verticale*)
 
+---
+
 ## Individus infectieux
 
 - Meurent au taux *per capita* $d$, proportionnel à la population infectieuse $I$
 - Guérissent au taux *per capita* $\gamma$
 - On ne considère pas la mortalité induite par la maladie
+
+---
+
+# Fonction d'incidence
+
+- On revient sur les fonctions d'incidence plus tard
+- Pour le moment, on suppose juste que l'incidence est de la forme
+$$
+f(S,I) = \beta\frac{SI}{S+I}
+$$
+que l'on appelle *incidence proportionnelle* ou *incidence standard*
 
 ---
 
