@@ -202,7 +202,7 @@ Il est primordial de conduire ces quatres activités interactivement
 
 - Cours 00: [Organisation du cours](cours-00-organisation.html)
 - Cours 01: [Épidémies, épidémiologie et épidémiologie mathématique](cours-01-introduction.html)
-- Cours 02: [Introduction à R et résolution numérique des ODE](cours-02-intro-R-ODE.html)
+- Cours 02: [Introduction à R et résolution numérique des EDO](cours-02-intro-R-EDO.html)
 - Cours 03: [Collecte et utilisation des données](cours-03-donnees.html)
 - Cours 04: [Le modèle SIS](cours-04-modele-SIS.html)
 - Cours 05: [Fonctions d'incidence](cours-05-fonctions-incidence.html)
