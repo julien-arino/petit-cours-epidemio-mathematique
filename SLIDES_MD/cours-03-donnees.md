@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Collecte et utilisation des données
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Collecte et utilisation des données
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -72,7 +72,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Il est important d'être au courant des données
+# <!--fit-->Il est important d'être au courant des données
 
 - Avec R (ou Python), il est très facile de récupérer des données sur le web, e.g., depuis des sources Open Data
 - De plus en plus d'endroits ont une politique Open Data
@@ -82,21 +82,21 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Le mouvement « données ouvertes » (Open Data)
+# <!--fit-->Le mouvement « données ouvertes » <br/>(Open Data)
 
 ---
 
-# Les données sont partout
+## Les données sont partout
 
-## Données fermées (a.k.a. données propriétaires)
+### <!--fit-->Données fermées (a.k.a. données propriétaires)
 
 - Générées par des compagnies, gouvernements, laboratoires de recherche
-- Quand elles sont disponibles, sont utilisables avec de multiples restrictions
+- Quand elles sont disponibles, utilisables avec de multiples restrictions
 
-## Données ouvertes ou libres (Open Data)
+### Données ouvertes ou libres (Open Data)
 
 - Souvent générées par les mêmes entités mais "libérées" après une certaine période
-- De plus en plus fréquent avec les gouvernements/entités publiques
+- De plus en plus fréquent avec les gouvernements
 - Grande variété de licenses, attention! (Libre $\neq$ utilisables n'importe comment)
 - La qualité varie beaucoup, attention!
 
@@ -144,7 +144,8 @@ Mouvement récent (5-10 years): gouvernements (locaux ou plus haut) créent des 
 
 ```R
 library(wbstats)
-pop_data_CTRY <- wb_data(country = "TCD", indicator = "SP.POP.TOTL",
+pop_data_CTRY <- wb_data(country = "TCD", 
+                         indicator = "SP.POP.TOTL",
                          mrv = 100, return_wide = FALSE)
 y_range = range(pop_data_CTRY$value)
 y_axis <- make_y_axis(y_range)
@@ -176,7 +177,7 @@ crop_figure("pop_TCD.png")
 
 ---
 
-![bg right:35%](https://upload.wikimedia.org/wikipedia/commons/f/f4/Eastern_forest_insects_%281175%29_%2820946246870%29.jpg)
+![bg right:44%](https://upload.wikimedia.org/wikipedia/commons/f/f4/Eastern_forest_insects_%281175%29_%2820946246870%29.jpg)
 # Graphiose de l'orme 
 
 - Maladie fungique qui affecte les ormes
@@ -201,8 +202,11 @@ crop_figure("pop_TCD.png")
 # Obtenir les données des arbres
 
 ```R
+url = "https://data.winnipeg.ca/"
+suffix = "api/views/hfwk-jp4h/"
 allTrees = 
-  read.csv("https://data.winnipeg.ca/api/views/hfwk-jp4h/rows.csv?accessType=DOWNLOAD")
+  read.csv(paste0(url, suffix,
+                  "rows.csv?accessType=DOWNLOAD")
 ```
 
 Après ça, on a
@@ -219,7 +223,9 @@ Note: la connexion ici vers Winnipeg n'est pas très bonne. On peut changer la d
 # Nettoyons un petit peu
 
 ```R
-elms_idx = grep("American Elm", allTrees$Common.Name, ignore.case = TRUE)
+elms_idx = grep("American Elm", 
+                allTrees$Common.Name, 
+                ignore.case = TRUE)
 elms = allTrees[elms_idx, ]
 ```
 
@@ -330,13 +336,16 @@ irivers = sf::st_intersects(x = rivers$osm_lines$geometry,
 tree_pairs_roads_intersect = c()
 for (i in 1:length(iroads)) {
   if (length(iroads[[i]])>0) {
-    tree_pairs_roads_intersect = c(tree_pairs_roads_intersect,
-                                   iroads[[i]])
+    tree_pairs_roads_intersect = 
+        c(tree_pairs_roads_intersect,
+          iroads[[i]])
   }
 }
-tree_pairs_roads_intersect = sort(tree_pairs_roads_intersect)
+tree_pairs_roads_intersect = 
+    sort(tree_pairs_roads_intersect)
 to_keep = 1:dim(tree_locs_orig)[1]
-to_keep = setdiff(to_keep,tree_pairs_roads_intersect)
+to_keep = 
+    setdiff(to_keep,tree_pairs_roads_intersect)
 ```
 
 ---
@@ -376,8 +385,9 @@ ctry = "Canada"
 idx = which(SARS$country == ctry)
 SARS_selected = SARS[idx,]
 # La voie sqldf
-SARS_selected = sqldf(paste0("SELECT * FROM SARS WHERE country = '", 
-                             ctry, "'"))
+SARS_selected = 
+    sqldf(paste0("SELECT * FROM SARS WHERE country = '", 
+                 ctry, "'"))
 # La voie dplyr
 SARS_selected = SARS %>%
   filter(country == ctry)
@@ -386,16 +396,19 @@ SARS_selected = SARS %>%
 ---
 
 ```R
-# Écrivons l'incidence pour le pays choisi. diff fait les différences une à une,
-# donc génère une entrée de moins que le vecteur à laquelle on l'applique, 
+# Écrivons l'incidence pour le pays choisi. diff fait 
+# les différences une à une, donc génère une entrée de 
+# moins que le vecteur à laquelle on l'applique, 
 # donc on ajoute un zéro.
-SARS_selected$incidence = c(0, diff(SARS_selected$totalNumberCases))
+SARS_selected$incidence = 
+    c(0, diff(SARS_selected$totalNumberCases))
 # Gardons seulement les incidences strictement positives
 SARS_selected = SARS_selected %>%
   filter(incidence > 0)
 
 # Représentons graphiquement le résultat.
-# Avant ça, nous devons faire en sorte que les dates soient reconnues comme telles
+# Avant ça, nous devons faire en sorte que les dates soient
+# reconnues comme telles
 SARS_selected$toDate = lubridate::ymd(SARS_selected$toDate)
 EpiCurve(SARS_selected,
          date = "toDate", period = "day",
