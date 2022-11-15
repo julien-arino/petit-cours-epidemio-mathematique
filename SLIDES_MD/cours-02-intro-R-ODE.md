@@ -369,11 +369,13 @@ for (m in list("truc", "muche", "chose", 1, 2)) {
 
 # lapply
 
-Fonction très utile (d'autres dans la même veine: `sapply`, `vapply`, `mapply`)
+Fonction très utile (et autres fonctions dans la même veine, `sapply`, `vapply`, `mapply`)
 
 Applique une fonction à chaque élément d'une liste,d'un vecteur  ou d'une matrice
 
 Il existe des versions parallèles (p. ex., `parLapply`) que nous verrons plus tard
+
+---
 
 ```R
 l = list()
