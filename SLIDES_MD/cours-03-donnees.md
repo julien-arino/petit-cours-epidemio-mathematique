@@ -365,7 +365,7 @@ to_keep =
 
 ---
 
-# ¨Data wrangling¨: `dplyr` vs `sqldf`
+# "Data wrangling": `dplyr` vs `sqldf`
 
 `dplyr` fait partie du `tidyverse` (ensemble de librairies). Charger en particulier `magrittr` et sa pipe `%>%`
 
