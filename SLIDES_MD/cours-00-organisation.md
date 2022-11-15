@@ -5,10 +5,24 @@ description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 
 theme: default
 math: mathjax
 paginate: false
-size: 16:9
+size: 4:3
 ---
 
 <style>
+  section {
+  font-size: 28px;
+  padding-left: 40px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+  h1 {
+  font-size: 35px;
+  # color: #09c;
+  }
+  h2 {
+  font-size: 40px;
+  }
   .theorem {
     text-align:justify;
     background-color:#16a085;
@@ -31,7 +45,7 @@ size: 16:9
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Organisation du cours
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Organisation du cours
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -40,7 +54,7 @@ University of Manitoba*
 
 <div style = "font-size:18px; margin-top:-10px; padding-bottom:30px;"></div>
 
-Centre canadien de modélisation des maladies (CCDM/CCMM)
+Centre canadien de modélisation des maladies (CCMM)
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 <div style = "text-align: justify; position: relative; bottom: -5%; font-size:25px;">
@@ -71,7 +85,10 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - Suppose une certaine connaissance des équations différentielles ordinaires. Je ne vais pas rentrer dans les détails et vais supposer que vous savez pourquoi, par exemple, la stabilité asymptotique locale d'un point d'équilibre est déduite de la localisation dans le plan complexe des valeurs propres de la linéarisation du système
 - Peut être intéressant pour des étudiants moins portés sur les mathématiques mais nécessitera un peu de travail de fond pour comprendre certains concepts
 
-Ce cours reprend et étend les éléments du [cours 3MC](https://julien-arino.github.io/petit-cours-epidemio-mathematique/). Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (Université de N'Djaména)
+---
+
+- Ce cours reprend et étend les éléments du [cours 3MC](https://julien-arino.github.io/petit-cours-epidemio-mathematique/)
+- Cette amélioration et traduction ont été réalisées à la demande de Mahamat Saleh Daoussa Haggar (Université de N'Djaména)
 
 ---
 
@@ -79,7 +96,7 @@ Ce cours reprend et étend les éléments du [cours 3MC](https://julien-arino.gi
 
 La plupart du matériel pour le cours est disponible depuis ce [répositoire GitHub]()
 
-Ceci inclut les transparents, le code et des exemples de données
+Ceci inclut les transparents, le code et des données
 
 Ceci *n'inclut pas* les références bibliographiques citées, pour des raisons de droit de diffusion, mais il y a des liens vers les articles et les livres. J'essaie autant que possible de fournir des articles Open Access
 
@@ -87,11 +104,11 @@ Une remarque: je vais parfois référer à des articles sur Wikipedia. Pour le b
 
 ---
 
-# Transparents
+# Ces transparents
 
 - Les transparents sont en `Markdown` et `LaTeX` et sont diffusés en `html`; le code `html` est obtenu en utilisant l'extension [Marp](https://marp.app/) dans l'éditeur [Visual Studio Code](https://code.visualstudio.com/)
 
-- Les fichiers image sont pour la plupart liés sur le répositoire GitHub et nécessitent par conséquent un accès à Internet. Des copies locales sont toutefois fournies pour la plupart des images, mais demanderont de modifier les chemins 
+- Les fichiers image sont pour la plupart liés sur le répositoire GitHub et nécessitent un accès à Internet. Des copies locales sont fournies pour la plupart des images, mais demanderont de modifier les chemins 
 
 - Autant que faire se peut, j'ai indiqué la provenance des images, en liant vers l'image sur le site original ou en indicant le site d'origine en commentaire dans le fichier; ces commentaires sont visibles en tant que "notes de présentation" lorsque l'on utilise la version de présentation
 
@@ -106,16 +123,15 @@ Une remarque: je vais parfois référer à des articles sur Wikipedia. Pour le b
 
 ---
 
-# Recommendations de lecture (épi mathématique)
+# Recommendations de lecture
 
-Ce qui suit sont *mes* références préférées, il y en a bien d'autres tout aussi valables. Notez que ces livres ne sont pas en accès libre.
+Ce qui suit sont *mes* références préférées. Notez que ces livres ne sont pas en accès libre.
 
 - Waltman. [Deterministic threshold models in the theory of epidemics](https://doi.org/10.1007/978-3-642-80820-3) (1974)
 - Capasso. [Mathematical structures of epidemic systems](https://doi.org/10.1007/978-3-540-70514-7) (1993)
 - Hethcote. [The mathematics of infectious diseases](https://doi.org/10.1137/S0036144500371907) SIAM Review (2000)
 - Daley & Gani. [Epidemic modelling]() (2001)
 - Brauer, PvdD & Wu. [Mathematical Epidemiology](https://doi.org/10.1007/978-3-540-78911-6) (2008)
-- Brauer & C$^3$. [Mathematical Models in Population Biology and Epidemiology](https://doi.org/10.1007/978-1-4614-1686-9) (2012)
 - Brauer, C$^3$ & Feng. [Mathematical Models in Epidemiology](https://doi.org/10.1007/978-1-4939-9828-9) (2019)
 
 ---
@@ -143,11 +159,13 @@ Il est primordial de conduire ces quatres activités interactivement
 - Prennez le temps
 - Essayez de produire des modèles simples
 
+---
+
 # Étape clé: identifiez la question scientifique
 
-Un bon travail répond à une ou plusieurs questions. Si vous travaillez avec des praticiens, c'est ici que le gros du boulot réside. Quelle est leur question? Comment formuler un modèle qui soit à même de répondre à cette question? 
-
-Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne vendez pas la lune!
+- Un bon travail répond à une ou plusieurs questions
+- Si vous travaillez avec des praticiens, c'est ici que le gros du boulot réside. Quelle est leur question? Comment formuler un modèle qui soit à même de répondre à cette question? 
+- Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne vendez pas la lune!
 
 ---
 
@@ -161,11 +179,11 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 
 # Au sujet du numérique
 
-- Le travail numérique complémente le travail mathématique, il ne le confirme pas 
+- Le travail numérique complémente les maths 
 
-- Si on a la SAG d'un PÉ, il n'est pas nécessaire d'illustrer cela par une simulation dans laquelle on voit une ou plusieurs solutions converger vers ce point d'équilibre
+- Si on a la SAG d'un PÉ, il n'est pas nécessaire d'illustrer cela par une simulation dans laquelle on voit une ou plusieurs solutions converger vers ce PÉ
 
-- Rarement utile de montrer une solution. Des exceptions: avant d'aller à zero, le nombre d'infectieux fait quelque chose d'inhabituel, vous observez un doublement de période, etc.
+- Rarement utile de montrer une solution. Des exceptions: vous observez un truc étrange avant la convergence, etc.
 
 - Utilisez plutôt le numérique pour investiguer des scenarios ou tester l'effet du changement des paramètres du modèle, etc.
 
@@ -182,31 +200,39 @@ Important également de clarifier ce que vous pouvez et ne pouvez pas faire: ne 
 
 # Organisation du cours
 
-- C01: Introduction - Épidémies, épidémiologie et épidémiologie mathématique
-- C02: Introduction au langage R
-- C03: Récupération et utilisation des données
-- C04: Le modèle SIS, le modèle de Kermack et McKendrick, le modèle SIRS
-- C05: Temps de résidence dans les compartiments
-- C06: Analyse mathématique des modèles, $R_0$ et taille finale d'une épidémie
-- C07: Le modèle SLIRS
-- C08: Quelques modèles épidémiques
-- C09: Plus de modélisation
-- C10: Propagation dans des groupes / spatio-temporelle des épidémies
+- Cours 00: [Organisation du cours](cours-00-organisation.html)
+- Cours 01: [Épidémies, épidémiologie et épidémiologie mathématique](cours-01-introduction.html)
+- Cours 02: [Introduction à R et résolution numérique des ODE](cours-02-intro-R-ODE.html)
+- Cours 03: [Collecte et utilisation des données](cours-03-donnees.html)
+- Cours 04: [Le modèle SIS](cours-04-modele-SIS.html)
+- Cours 05: [Fonctions d'incidence](cours-05-fonctions-incidence.html)
+- Cours 06: [Le modèle de Kermack et McKendrick](cours-06-modele-KMK.html)
+- Cours 07: [Étapes de l'analyse mathématique des modèles, $R_0$ et la taille finale d'une épidémie](cours-07-etapes-R0-final-size.html)
+- Cours 08: [Le modèle SLIRS](cours-08-modele-SLIRS.html)
 
 ---
 
 # Organisation du cours (suite)
 
-- C11: Modèles de groupes
-- C12: Modèles dans des métapopulations
-- C13: Résolution numérique des EDO en R
-- C14: Types de modèles stochastiques utilisés en épidémiologie
-- C15: Modèles en chaînes de Markov
-- C16: Simulation des systèmes stochastiques
-- C17: Modèles en réseaux
-- C18: Modèles agents-centrés
-- C19: Ajustement des paramètres
-- C20: Publier un papier
+- Cours 09: [Temps de résidence dans les compartiments](cours-09-temps-de-residence.html)
+- Cours 10: [Quelques modèles épidémiques](cours-10-modeles-epidemiques.html)
+- Cours 11: [Plus de modélisation](cours-11-plus-de-modelisation.html) 
+- Cours 12: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-10-heterogeneite-groupe-et-spatiale.html)
+- Cours 13: [Modèles de groupes](cours-13-modeles-groupes.html)
+- Cours 14: [Modèles dans des métapopulations](cours-14-modeles-metapopulation.html)
+- Cours 15: [Modèles spatiaux en EDP](cours-15-modeles-EDP.html)
+- Cours 16: [Types de modèles stochastiques utilisés en épidémiologie](cours-16-stochasticite.html)
+
+---
+
+# Organisation du cours (suite)
+
+- Cours 17: [Modèles en chaînes de Markov](cours-17-modeles-MC.html)
+- Cours 18: [Simulation des systèmes stochastiques](cours-18-simulation-stochastique.html)
+- Cours 19: [Modèles en réseaux](cours-19-modeles-reseaux.html)
+- Cours 20: [Modèles agents-centrés](cours-20-modeles-agents.html)
+- Cours 21: [Ajustement des paramètres](cours-21-ajustement-parametres.html) 
+- Cours 22: [Publier](cours-22-publier.html)
 
 ---
 

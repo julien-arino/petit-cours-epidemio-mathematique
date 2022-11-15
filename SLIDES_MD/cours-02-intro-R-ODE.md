@@ -1,6 +1,6 @@
 ---
 marp: true
-title: Petit cours d'épidémiologie mathématique - Introduction à R et résolution numérique des ODE
+title: Petit cours d'épidémiologie mathématique - Introduction à R et résolution numérique des EDO
 description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 02 - Introduction à R et résolution numérique des équations différentielles ordinaires
 theme: default
 paginate: false
@@ -31,7 +31,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Introduction à R et résolution numérique des ODE
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Introduction à R et résolution numérique des EDO
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -44,7 +44,7 @@ Centre canadien de modélisation des maladies (CCMM)
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 
-<div style = "text-align: justify; position: relative; bottom: -5%; font-size:18px;">
+<div style = "text-align: justify; position: relative; bottom: -5%; font-size:24px;">
 * The University of Manitoba campuses are located on original lands of Anishinaabeg, Cree, Oji-Cree, Dakota and Dene peoples, and on the homeland of the Métis Nation.</div>
 
 ---
@@ -54,7 +54,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - Avant propos : le langage R
 - Programmer en R
-- Résolution numérique des ODE en R
+- Résolution numérique des EDO en R
 
 ---
 
@@ -138,7 +138,6 @@ La première version est préférrée par les puristes R.. Personnellement, je m
 Structure de données très utile, flexible et versatile. Liste vide: `L <- list()`. Très pratique pour stocker des choses comme des paramètres. Par exemple :
 
 ```R
-L <- list()
 L$a <- 10
 L$b <- 3
 L[["autre_nom"]] <- "Plouf plouf"
@@ -449,7 +448,7 @@ Il reste une boucle, mais une fois la liste constituée, on peut la découper po
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Résolution numérique des ODE en R
+# <!--fit-->Résolution numérique des EDO en R
 
 ---
 
@@ -464,7 +463,7 @@ Il reste une boucle, mais une fois la liste constituée, on peut la découper po
 
 ---
 
-# <!--fit-->Utiliser deSolve pour des ODE simples
+# <!--fit-->Utiliser deSolve pour des EDO simples
 
 Comme avec la majorité des algorithmes, il faut écrire une fonction qui renvoie la valeur des dérivées (droite du signes égal) du système (le champ de vecteurs) en un point donné de l'espace (et potentiellement du temps), puis appeler cette fonction depuis le solveur
 
