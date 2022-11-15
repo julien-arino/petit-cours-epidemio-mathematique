@@ -130,25 +130,20 @@ que l'on appelle *incidence proportionnelle* ou *incidence standard*
 
 # Le modèle
 
-![bg right:34% width:400px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_base_prop_incidence_birthdN_vertical.png)
+![bg right:30% width:300px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_base_prop_incidence_birthdN_vertical.png)
 
-On utilise une fonction d'incidence standard (voir plus loin) et en balançant les flux entrant et sortant dans les deux compartiments, on obtient
+En balançant les flux entrant et sortant dans les deux compartiments, on obtient
 
 $$
 \begin{align}
-S' &= \underbrace{dN}_\textrm{naissance}
--\underbrace{dS}_\textrm{mort} 
--\underbrace{\beta\frac{SI}{N}}_\textrm{infection}
-+\underbrace{\gamma I}_\textrm{gu\'erison}
+S' &= bN-dS-\beta\frac{SI}{N}+\gamma I
 \tag{1a}\label{sys:SIS_base_dS}\\
-I' &= \underbrace{\beta\frac{SI}{N}}_\textrm{infection}
--\underbrace{dI}_\textrm{mort} 
--\underbrace{\gamma I}_\textrm{gu\'erison} 
+I' &= \beta\frac{SI}{N}-dI-\gamma I
 \tag{1b}\label{sys:SIS_base_dI}
 \end{align}
 $$
 
-On considère le problème de Cauchy consistant en ce système auquel on adjoint les conditions initiales $S(0)=S_0\geq 0$ et $I(0)=I_0\geq 0$
+On considère le problème de Cauchy consistant en $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ auquel on adjoint les conditions initiales $S(0)=S_0\geq 0$ et $I(0)=I_0\geq 0$
 
 ---
 
@@ -161,7 +156,7 @@ On considère le problème de Cauchy consistant en ce système auquel on adjoint
 
 ---
 
-# La naissance et la mort sont *relatives*
+# <!--fit-->La naissance et la mort sont *relatives*
 
 Les notions de *naissance* et *mort* se réfèrent à la population que l'on considère
 
@@ -175,7 +170,7 @@ Par exemple, supposons un modèle pour l'immunodéficience humaine (VIH) dans un
 
 Le système $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est planaire non-linéaire
 
-En principe, on devrait appliquer les méthodes usuelles dans le plan. 
+En principe, on devrait appliquer les méthodes usuelles dans le plan. Et on le fera plus tard
 
 Toutefois, il est ici possible de trouver une solution explicite
 
@@ -224,7 +219,7 @@ puisque $N=S$ ici. Il suit que l'axe $\{I=0\}$ est invariant et toute solution i
 
 En effet, supposons que $S(0)=S_0>0$ et $I(0)=I_0>0$, et qu'il existe $t_*>0$ tel que $S(t_*)=S_*$ et $I(t_*)=0$
 
-Mais en S=S_*$ et $I=0$, il passe une autre solution, celle telle que $S(0)=S_*$ et $I(0)=0$, puisqu'avec ces conditions initiales, on a $S(t)=S_*$ et $I(t)=0$ pour tout $t\geq 0$
+Mais en $S=S_*$ et $I=0$, il passe une autre solution, celle telle que $S(0)=S_*$ et $I(0)=0$, puisqu'avec ces conditions initiales, on a $S(t)=S_*$ et $I(t)=0$ pour tout $t\geq 0$
 
 Cela contredit l'unicité des solutions $\implies$ $I(t)>0$ si $I(0)>0$
 
