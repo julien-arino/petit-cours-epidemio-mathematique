@@ -236,7 +236,7 @@ Il est primordial de conduire ces quatres activités interactivement
 
 ---
 
-# Note - durée et organisation des unités
+# <!--fit-->Note - durée et organisation des unités
 
 - J'ai essayé de construire des unités relativement équilibrées en terme de contenu
 - Je n'ai pas particulièrement bien réussi 

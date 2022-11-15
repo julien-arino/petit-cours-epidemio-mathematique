@@ -4,11 +4,25 @@ title: Petit cours d'épidémiologie mathématique - Le modèle de Kermack et Mc
 description: Julien Arino - Petit cours d'épidémiologie mathématique - Cours 06 - Le modèle de Kermack et McKendrick
 theme: default
 paginate: false
-size: 16:9
+size: 4:3
 math: mathjax
 ---
 
 <style>
+  section {
+  font-size: 28px;
+  padding-left: 40px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+  h1 {
+  font-size: 35px;
+  # color: #09c;
+  }
+  h2 {
+  font-size: 40px;
+  }
   .theorem {
     text-align:justify;
     background-color:#16a085;

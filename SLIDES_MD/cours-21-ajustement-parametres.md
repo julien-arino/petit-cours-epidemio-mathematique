@@ -9,6 +9,20 @@ size: 16:9
 ---
 
 <style>
+  section {
+  font-size: 28px;
+  padding-left: 40px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+  h1 {
+  font-size: 35px;
+  # color: #09c;
+  }
+  h2 {
+  font-size: 40px;
+  }
   .theorem {
     text-align:justify;
     background-color:#16a085;
