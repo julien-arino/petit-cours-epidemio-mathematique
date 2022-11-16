@@ -69,6 +69,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - Analyse mathématique (version 1)
 - Le nombre de reproduction élémentaire
 - Analyse mathématique (version 2)
+- Un peu de computationnel 
 
 ---
 
@@ -155,7 +156,7 @@ On considère le problème de Cauchy consistant en $\eqref{sys:SIS_base_dS}$-$\e
 - $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est un modèle SIS (Susceptible-Infectieux-Susceptible)
 - Si $\gamma=0$ (pas de guérison), le modèle est un modèle SI
   - Dans ce cas, un individu infectieux reste infectieux toute sa vie
-- Des maladies présentant ce type de charactéristiques sont des maladies bactériennes telles que celles causées par  *staphylococcus aureus*, *streptococcus pyogenes*, *chlamydia pneumoniae* ou *neisseria gonorrhoeae*
+- Des maladies présentant ce type de caractéristiques sont des maladies bactériennes telles que celles causées par  *staphylococcus aureus*, *streptococcus pyogenes*, *chlamydia pneumoniae* ou *neisseria gonorrhoeae*
 
 ---
 
@@ -259,7 +260,7 @@ Puisque $N$ est constant, les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys
 
 ---
 
-Réecrivons $\eqref{sys:SIS_proportion_di}$ comme
+Réécrivons $\eqref{sys:SIS_proportion_di}$ comme
 $$
 \begin{equation} 
 \tag{4}\label{eq:SIS_i_as_Bernoulli}
@@ -456,7 +457,7 @@ Donc il y a 3 possibilités:
 
 # Donc on suppose que $b=d$
 
-- On veut un cas raisonable, on suppose donc que $b=d$
+- On veut un cas raisonnable, on suppose donc que $b=d$
 
 - Le système est donc
 $$
@@ -563,7 +564,7 @@ De l'invariance et du fait que la population totale $N$ est bornée (constante, 
 
 # Recherche des équilibres
 
-On cherche les equilibres du système en supposant $S'=I'=0$. $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ devient
+On cherche les équilibres du système en supposant $S'=I'=0$. $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ devient
 $$
 \begin{align}
 0 &= d(N-S)-\beta\frac{SI}{N}+\gamma I 
@@ -669,7 +670,7 @@ Matrice triangulaire $\implies$ valeurs propres sont $-d<0$ et $\beta-(d+\gamma)
 
 # <!--fit-->Méthode plus efficace de calcul de $\mathcal{R}_0$
 
-Diekmann & Heesterbeek, caracterisé dans le cas ODE par PvdD & Watmough (2002)
+Diekmann & Heesterbeek, caractérisé dans le cas ODE par PvdD & Watmough (2002)
 
 On considère seulement les compartiments $x$ avec des  *individus infectés* et écrivons
 $$
@@ -700,7 +701,7 @@ Supposons que l'ESM existe et notons alors
 $$
 \mathcal{R}_0=\rho(FV^{-1})
 $$
-où les matrices $F$ et $V$ sont obtainues comme indiqué. Supposons que les conditions (A1) à (A5) soient satisfaites. Alors
+où les matrices $F$ et $V$ sont obtenues comme indiqué. Supposons que les conditions (A1) à (A5) soient satisfaites. Alors
 - si $\mathcal{R}_0<1$, alors l'ESM est LAS
 - si $\mathcal{R}_0>1$, alors l'ESM est instable
 </div>
@@ -724,7 +725,7 @@ avec $x=I$, $\mathcal{F}$ les nouvelles infections, i.e.,
 $$
 \mathcal{F}=\beta \frac{SI}N
 $$
-et $\mathcal{V}$ tous les autres flux, en prennant garde au signe $-$:
+et $\mathcal{V}$ tous les autres flux, en prenant garde au signe $-$:
 $$
 \mathcal{V}=(d+\gamma)I
 $$
@@ -760,7 +761,12 @@ $$
 =\frac{\beta}{d+\gamma}
 $$
 
-Intérêt pas forcémment évident ici, mais on verra plus loin à quel point cette méthode peut simplifier les calculs
+Intérêt pas forcément évident ici, mais on verra plus loin à quel point cette méthode peut simplifier les calculs
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Un peu de computationel 
 
 ---
 
@@ -790,10 +796,18 @@ sol <- ode(y = IC, times = times, func = rhs_SIS,
 
 ---
 
-![height:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/sol_endemic_SIS_R015.png)
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/sol_endemic_SIS_R015.png)
 
 ---
 
 # Je viens de faire ...
 
 ce que je préconise de ne pas faire: illustrer un résultat mathématique sans rien vraiment ajouter au résultat lui même
+
+Améliorons les choses un peu. Voir le [code](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/CODE/ODE_SIS_multiple_solutions.R)
+
+---
+
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/sol_endemic_SIS_several.png)
+
+---
