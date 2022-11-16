@@ -4,6 +4,16 @@
 .Ruserdata
 .aux
 .fdb_latexmk
-.synctex.gz
 .fls
 .log
+.synctex.gz
+.vscode
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.nav
+**/*.snm
+**/*.synctex.gz
+**/*.toc
+**/*.vrb

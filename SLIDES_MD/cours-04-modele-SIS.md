@@ -487,13 +487,13 @@ Dans le cadre d'un modèle épidémiologique:
 
 ---
 
-# Invariance sous le flot (1)
+# Invariance de $\mathbb{R}_+^2$ sous le flot (1)
 
 Supposons pour commencer que $I=0$. Alors le système se réduit à l'équation scalaire
 $$
 S' = bN-dS=0
 $$
-puisque $N=S$ ici
+puisque $S=N-I=N$ ici
 
 Il suit que l'axe $\{I=0\}$ est invariant et toute solution initiée dans cet ensemble est constante
 
@@ -501,32 +501,47 @@ Cela implique qu'une solution avec $S(0)>0$ et $I(0)>0$ ne peut atteindre l'axe 
 
 ---
 
-# Invariance sous le flot (2)
+# Invariance de $\mathbb{R}_+^2$ sous le flot (2)
 
 > Cela implique qu'une solution avec $S(0)>0$ et $I(0)>0$ ne peut atteindre l'axe $\{I=0\}$
 
-En effet, supposons que $S(0)=S_0>0$ et $I(0)=I_0>0$, et qu'il existe $t_\star>0$ tel que $S(t_\star)=S_\star$ et $I(t_\star)=0$
+Supposons que $S(0)=S_0>0$ et $I(0)=I_0>0$, et qu'il existe $t_\star>0$ tel que $S(t_\star)=S_\star$ et $I(t_\star)=0$
 
 ![width:400px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/invariance_orthant_positif.png)
 
 ---
 
-Mais en $S=S_*$ et $I=0$, il passe une autre solution, celle telle que $S(0)=S_*$ et $I(0)=0$, puisqu'avec ces conditions initiales, on a $S(t)=S_*$ et $I(t)=0$ pour tout $t\geq 0$
+# Invariance de $\mathbb{R}_+^2$ sous le flot (3)
 
-Cela contredit l'unicité des solutions $\implies$ $I(t)>0$ si $I(0)>0$
+Mais en $S=S_\star$ et $I=0$, il passe une autre solution, celle telle que $S(0)=S_\star$ et $I(0)=0$, puisqu'avec ces conditions initiales, on a $S(t)=S_\star$ et $I(t)=0$ pour tout $t\geq 0$
+
+Cela contredit l'unicité des solutions $\Rightarrow$ $I(t)>0$ si $I(0)>0$
 
 ---
 
-# Invariance sous le flot (3)
+# Invariance de $\mathbb{R}_+^2$ sous le flot (4)
 
 On a vu que $I(t)>0$ si $I(0)>0$
 
 Supposons alors que $S=0$. L'équation $\eqref{sys:SIS_base_dS}$ est alors
 $$
-S' = \gamma I>0
+S' = dN+\gamma I>0
 $$
 
+Donc si $S(0)>0$, alors $S(t)>0$ pour tout $t$. Si, d'autre part $S(0)=0$, alors $S(t)>0$ pour $t>0$ petit; par ce qui précède, cela est aussi vrai pour tout $t>0$
+
+On dit que le champ est *entrant*
+
 $\implies$ $S$ ne peut pas devenir nul
+
+---
+
+# En résumé, pour l'invariance
+
+- Si $(S(0),I(0))\in\mathbb{R}_+\times(\mathbb{R}_+\setminus\{0\})$, alors $(S(t),I(t))\in(\mathbb{R}_+\setminus\{0\})^2$ pour tout $t>0$
+- Si $(S(0),I(0))\in\mathbb{R}_+\times\{0\}$, alors $(S(t),I(t))=(S(0),0)$ pour tout $t>0$
+
+Le modèle est donc satisfaisant, en ce qu'il n'autorise pas des solutions à changer de signe
 
 ---
 
@@ -538,37 +553,9 @@ Dans un papier de recherche, cela n'est pas vraiment nécessaire, c'est souvent 
 
 ---
 
-# Invariance de $\mathbb{R}_+^2$ sous le flot du système
-
-Tout d'abord, remarquons que $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ est $C^1$, ce qui implique que les solutions existent et sont uniques
-
-Si $S=0$, alors $\eqref{sys:SIS_base_dS}$ devient
-$$
-S' = dN+\gamma I >0
-$$
-$\implies$ $S$ ne peut jamais devenir nul: si $S(0)>0$, alors $S(t)>0$ pour tout $t$. Si, d'autre part $S(0)=0$, alors $S(t)>0$ pour $t>0$ petit; par ce qui précède, cela est aussi vrai pour tout $t>0$
-
----
-
-Pour $I$, on remarque que si $I=0$, alors $I'=0$ $\implies$ $\{I=0\}$ est positivement invariant: si $I(0)=0$, alors $I(t)=0$ pour tout $t>0$. 
-
-En pratique, les valeurs de $S(t)$ de toute solution dans $\{I=0\}$ sont "portée" par l'une des 4 solutions suivantes:
-1. $S(0)=0$: reste identiquement nulle
-2. $S(0)\in(0,N)$: augmente vers $S=N$
-3. $S(0)=N$: reste égale à $N$
-4. $S(0)>N$: décroit vers $S=N$
-
-Par conséquent, aucune solution avec $I(0)>0$ ne peut pénétrer dans $\{I=0\}$. Supposons $I(0)>0$ et $\exists t_*>0$ t.q. $I(t_*)=0$ et notons $S(t_*)$ la valeur de $S$ lorsque $I$ devient nul
-
-L'existence de $t_*$ contredit l'unicité des solutions, puisque en $(S(t_*),I(t_*))$, il passe alors deux solutions: celle initiée dans $\{I=0\}$ et celle initiée avec $I(0)>0$
-
----
-
 # Bornitude
 
 Il suit de ce qui précède que le quadrant positif $\mathbb{R}_+^2$ est (positivement) invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
-
-On pourrait détailler plus (strictement positif $\implies$..) mais c'est suffisant ici
 
 De l'invariance et du fait que la population totale $N$ est bornée (constante, en fait), on déduit que les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ sont bornées
 
@@ -665,6 +652,9 @@ J_{(S,I)} =
 \beta \frac IN & \beta\frac SN-(d+\gamma)
 \end{pmatrix}
 $$
+
+---
+
 La stabilité asymptotique locale de ESM dépend du signe de la partie réelle des valeurs propres de $\eqref{eq:SIS_Jacobian_SI}$ en cet équilibre, donc on évalue
 $$
 J_{E_0} =
@@ -677,7 +667,7 @@ Matrice triangulaire $\implies$ valeurs propres sont $-d<0$ et $\beta-(d+\gamma)
 
 ---
 
-# Méthode plus efficace de calcul de $\mathcal{R}_0$
+# <!--fit-->Méthode plus efficace de calcul de $\mathcal{R}_0$
 
 Diekmann & Heesterbeek, caracterisé dans le cas ODE par PvdD & Watmough (2002)
 
@@ -688,6 +678,8 @@ $$
  
 - $\mathcal{F}$ entrée au sein des compartiments infectés du fait de nouvelles infections
 - $\mathcal{V}$ contient tous les autres flux (attention au signe $-$)
+
+---
 
 On calcule les dérivées (de Fréchet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les Jacobiennes) et on évalue en l'ESM
 
@@ -700,7 +692,7 @@ où $\rho$ est le rayon spectral
 
 ---
 
-# Résultat de PvdD & Watmough (2002)
+# <!--fit-->Résultat de PvdD & Watmough (2002)
 
 <div class="theorem">
 
@@ -713,7 +705,7 @@ où les matrices $F$ et $V$ sont obtainues comme indiqué. Supposons que les con
 - si $\mathcal{R}_0>1$, alors l'ESM est instable
 </div>
 
-(Les conditions (A1)-(A5) sont explicitées dans le [TP 02](2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html) et nous discutons de la raison pour il est important de vérifier ces conditions dans le [Cours](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html))
+(Les conditions (A1)-(A5) sont explicitées dans le [Cours 07](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-07-etapes-R0-final-size.html) et nous discutons de la raison pour il est important de vérifier ces conditions dans le [Cours 11](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-11-plus-de-modelisation.html))
 
 ---
 
