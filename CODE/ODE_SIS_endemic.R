@@ -1,6 +1,7 @@
 library(deSolve)
 source("useful_functions.R")
 
+# Le terme de droite des EDO
 rhs_SIS <- function(t, x, p) {
   with(as.list(c(x, p)), {
     N = S + I

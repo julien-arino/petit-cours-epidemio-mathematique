@@ -792,3 +792,8 @@ sol <- ode(y = IC, times = times, func = rhs_SIS,
 
 ![height:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/sol_endemic_SIS_R015.png)
 
+---
+
+# Je viens de faire ...
+
+ce que je préconise de ne pas faire: illustrer un résultat mathématique sans rien vraiment ajouter au résultat lui même
