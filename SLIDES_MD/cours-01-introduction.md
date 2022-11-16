@@ -80,7 +80,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 # Considérations historiques
 
-- Les épisodes épidémiques sont parmi les premiers évenements rapportés dans l'histoire
+- Les épisodes épidémiques sont parmi les premiers événements rapportés dans l'histoire
 - En effet, leur importance et leur effet dévastateur à une époque où la médecine n'existait pour ainsi dire pas était facilement observable
 
 ---
@@ -95,20 +95,20 @@ table {
 }
 </style>
 
-| Evènement | Date | Lieu | Maladie | Mortalité (estimée) |
+| Évènement | Date | Lieu | Maladie | Mortalité (estimée) |
 |---|---|---|---|---|
 | Peste de Megiddo | 1350 AEC | Megiddo, terre de Canaan | ? | ? | 
-| [Peste d'Athène](https://en.wikipedia.org/wiki/Plague_of_Athens) | 429–426 AEC | Grèce, Libye, Égypte, Éthiopie | Typhus, fièvre typhoide ou FHV ? |  75 000–100 000 |
+| [Peste d’Athènes](https://en.wikipedia.org/wiki/Plague_of_Athens) | 429–426 AEC | Grèce, Libye, Égypte, Éthiopie | Typhus, fièvre typhoïde ou FHV ? |  75 000–100 000 |
 | [Épidémie 412 AEC](https://en.wikipedia.org/wiki/412_BC_epidemic) |412 AEC | Grèce, République romaine | Influenza ? | ? |
-| [Antonine Plague](https://en.wikipedia.org/wiki/Antonine_Plague) | 165–180 EC (jusqu'à 190 EC ?) | Empire romain | Variole ? | 5–10 million |
-| Peste de Jian'an | 217 EC | Dynastie Han | Fièvre typhoide ou FHV ? | ? |
-| [Plague of Cyprian](https://en.wikipedia.org/wiki/Plague_of_Cyprian) | 250–266 EC | Europe | Variole ? | ? |
-| [Plague of Justinian](https://en.wikipedia.org/wiki/Plague_of_Justinian) (1ère pandémie de peste) | 541–549 EC | Europe et Asie de l'Ouest | Peste bubonique | 15–100 million (25–60% de la population Européenne) | 
-| [Roman Plague of 590](https://en.wikipedia.org/wiki/Roman_Plague_of_590) (1ère pandémie de peste) | 590 EC | Rome, Empire Byzantin | Peste bubonique | ? |
-| [Plague of Sheroe](https://en.wikipedia.org/wiki/Plague_of_Sheroe) (1ère pandémie de peste) | 627–628 EC | Bilad al-Sham | Peste bubonique | 25 000+ |
-| [Plague of Amwas](https://en.wikipedia.org/wiki/Plague_of_Amwas) (1ère pandémie de peste) | 638–639 EC | Empire Byzantin, Asie de l'Ouest, Afrique | Peste bubonique | 25 000+ |
-| [Plague of 664](https://en.wikipedia.org/wiki/Plague_of_664) (1ère pandémie de peste)  | 664–689 EC | Iles Britiniques | Peste bubonique | ? |
-| Peste de 698–701 (1ère pandémie de peste) | 698–701 EC | Empitre Byzantin, Asie de l'Ouest, Syrie, Mésopotamie | Peste bubonique | ? |
+| [Peste Antonine](https://en.wikipedia.org/wiki/Antonine_Plague) | 165–180 EC (jusqu'à 190 EC ?) | Empire romain | Variole ? | 5–10 million |
+| Peste de Jian'an | 217 EC | Dynastie Han | Fièvre typhoïde ou FHV ? | ? |
+| [Peste de Cyprien](https://en.wikipedia.org/wiki/Plague_of_Cyprian) | 250–266 EC | Europe | Variole ? | ? |
+| [Peste de Justinien](https://en.wikipedia.org/wiki/Plague_of_Justinian) (1ère pandémie de peste) | 541–549 EC | Europe et Asie de l'Ouest | Peste bubonique | 15–100 million (25–60% de la population Européenne) | 
+| [Peste romaine de 590](https://en.wikipedia.org/wiki/Roman_Plague_of_590) (1ère pandémie de peste) | 590 EC | Rome, Empire Byzantin | Peste bubonique | ? |
+| [Peste de Sheroe](https://en.wikipedia.org/wiki/Plague_of_Sheroe) (1ère pandémie de peste) | 627–628 EC | Bilad al-Sham | Peste bubonique | 25 000+ |
+| [Peste de Amwas](https://en.wikipedia.org/wiki/Plague_of_Amwas) (1ère pandémie de peste) | 638–639 EC | Empire Byzantin, Asie de l'Ouest, Afrique | Peste bubonique | 25 000+ |
+| [Peste de 664](https://en.wikipedia.org/wiki/Plague_of_664) (1ère pandémie de peste)  | 664–689 EC | Îles Britanniques | Peste bubonique | ? |
+| Peste de 698–701 (1ère pandémie de peste) | 698–701 EC | Empire Byzantin, Asie de l'Ouest, Syrie, Mésopotamie | Peste bubonique | ? |
 | [Épidémie japonaise de variole de 735–737](https://en.wikipedia.org/wiki/735%E2%80%93737_Japanese_smallpox_epidemic) | 735–737 EC | Japon | Variole | 2 million (approx. 1/3 de la population japonaise) | 
 | Peste de 746–747 (1ère pandémie de peste) | 746–747 EC | Empire Byzantin, Asie de l'Ouest, Afrique | Peste bubonique | ? |
 
@@ -128,7 +128,7 @@ table {
 |:---:|---|---|---|---|---|:---:|---|
 | 1 | Grande peste | Peste bubonique | 75-200 M |17-54% | 30-60% de la population européenne | 1346-1353 | Europe, Asie et Afrique du Nord |
 | 2 | Grippe espagnole | Influenza A/H1N1 |  17-100 M |1-5.4% | | 1918-1920 | Monde |
-| 3 | Peste de Justinien | Peste bubonique | 15-100 M |7-56% | 25-60% de la population Européenne | 541-549 |Afrque du Nord, Europe et Asie de l'Est |
+| 3 | Peste de Justinien | Peste bubonique | 15-100 M |7-56% | 25-60% de la population Européenne | 541-549 |Afrique du Nord, Europe et Asie de l'Est |
 | 4 | VIH/SIDA | VIH/SIDA | 36.3 M (en 2020) | Changement population totale trop important pour calculer | | 1981-présent | Monde |
 | 5 | COVID-19 | SARS-CoV-2 | 6.3-25 M (au 21 mai 2022) | 0.1-0.3% || 2019-présent | Monde |
 | 6 | 3ème pandémie de peste | Peste bubonique | 12-15 M | | | 1855-1960 | Monde |
@@ -158,7 +158,7 @@ table {
 
 # Les maladies tropicales négligées (NTD)
 
-Souvent des maladies endémiques, parfois causes de mortalité majeure, mais hors de l'œuil des pays riches. De [Wikipedia](https://fr.wikipedia.org/wiki/Maladies_tropicales_négligées), sachant que la liste précise varie selon les auteurs :
+Souvent des maladies endémiques, parfois causes de mortalité majeure, mais hors de l’œil des pays riches. De [Wikipedia](https://fr.wikipedia.org/wiki/Maladies_tropicales_négligées), sachant que la liste précise varie selon les auteurs :
 
 <style scoped>
 table {
@@ -353,7 +353,7 @@ Revenons à présent sur la définition du [BMJ](https://www.bmj.com/about-bmj/r
 
 - Variole première maladie pour laquelle le procédé est connu
 - Mentionné dans un livre chinois de 1549
-- Chine: vésicules pulvérisées soufflées dans le nez des individus sains; mortalité induite par la variolation non négligeable (0.5-2%) mais plus bas que normal (20%)
+- Chine: vésicules pulvérisées soufflées dans le nez des individus sains; mortalité induite par la variolisation non négligeable (0.5-2%) mais plus bas que normal (20%)
 - 1798:  Edward Jenner introduit une inoculation plus sûre avec la variole de la vache (vaccination)
 - 1880s: Pasteur étend la vaccination au cholera du poulet et l'anthrax chez l'animal et la rage chez l'humain
 
@@ -389,15 +389,15 @@ Difficile de faire un historique avant d'avoir introduit les notions élémentai
 
 - [Scan BNF](https://gallica.bnf.fr/ark:/12148/bpt6k3558n/f220.item) ou [pdf](https://julien-arino.github.io/assets/pdf/Bernoulli-1760.pdf)
 - Probablement le premier modèle épidémique
-- Traite de l'inoculation conre la petite vérole (*smallpox*)
+- Traite de l'inoculation contre la petite vérole (*smallpox*)
 
 ---
 
 ![bg left:30%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/RonaldRoss_WellcomeCollection.jpg)
 # Ross (début 20ème siècle)
 
-- 20 aout 1897: observe des parasites du paludisme (*malaria*) dans le système digestif d'un moustique nourri quelques jours auparavant sur un humain positif au palu
-- Prix Nobel de médicine 1902
+- 20 août 1897: observe des parasites du paludisme (*malaria*) dans le système digestif d'un moustique nourri quelques jours auparavant sur un humain positif au palu
+- Prix Nobel de médecine 1902
 - S'intéresse à des modèles mathématiques pour l'éradication du palu; voir [ce papier de 2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3320609/pdf/ppat.1002588.pdf) pour un peu d'histoire
 
 ---
@@ -421,7 +421,7 @@ Difficile de faire un historique avant d'avoir introduit les notions élémentai
 # <!--fit-->De l'activité plus tard, mais peu avant les années 1990
 
 - Notons toutefois que les grandes lignes directrices ont été déjà mises en évidence depuis les années 1970
-- Une erreur terminologique sur laquelle je reviendrai ($E$ pour *individus exposés* qui devraient être *individus latents*) date de cette première *période héroique* :)
+- Une erreur terminologique sur laquelle je reviendrai ($E$ pour *individus exposés* qui devraient être *individus latents*) date de cette première *période héroïque* :)
 - Explosion ces dernières années
 - Depuis le début de COVID-19: c'est dingue..!
 
@@ -451,7 +451,7 @@ Difficile de faire un historique avant d'avoir introduit les notions élémentai
 
 - L'épidémiologie a depuis longtemps utilisé et nécessité des données
 - Bien des avancées en statistiques y ont leur motivation
-- Les données sont en général meilleures pour les maladies chroniques que pour les maladies infecieuses
+- Les données sont en général meilleures pour les maladies chroniques que pour les maladies infectieuses
 - Surveillance quasi-temps-réel des maladies infectieuses a lieu depuis les années 1980 (p.ex., Réseau Sentinelles)
 - SARS-CoV-1 a vu le début d'un mouvement vers une disponibilité temps-réel des données de maladies infectieuses
-- Avec SARS-CoV-2, le système a vraiment progressé et impliquee maintenant de la "science citoyenne" et des initiatives gouvernementales type Open Data
+- Avec SARS-CoV-2, le système a vraiment progressé et implique maintenant de la "science citoyenne" et des initiatives gouvernementales type Open Data

@@ -180,7 +180,7 @@ crop_figure("pop_TCD.png")
 ![bg right:44%](https://upload.wikimedia.org/wikipedia/commons/f/f4/Eastern_forest_insects_%281175%29_%2820946246870%29.jpg)
 # Graphiose de l'orme 
 
-- Maladie fungique qui affecte les ormes
+- Maladie fongique qui affecte les ormes
 - Causée par le fungus *Ophiostoma ulmi* 
 - Transmise par le scolyte américain de l'orme (*Hylurgopinus rufipes*) et d'autres espèces (*Scolytus schevyrewi*)
 - A décimé les forêts urbaines d'ormes en Amérique du Nord

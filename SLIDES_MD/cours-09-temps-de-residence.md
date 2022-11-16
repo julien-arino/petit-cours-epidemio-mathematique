@@ -80,7 +80,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 - Chaque processus contient un certain degré d'imprécision. Par exemple, lorsqu'un virus se réplique, il saute une base ici et là; quand une cellule se divise lors de la mitose, le matériau n'est pas partagé 50%-50% entre les cellules filles; vous rencontrez un autre être humain et (en ces temps de COVID-19) oubliez de *ne pas* lui serrer la main
 
-- Du fait de la répétition des ces imprécisions, il nait de l'incertitude
+- Du fait de la répétition des ces imprécisions, il naît de l'incertitude
 
 ---
 
@@ -332,7 +332,7 @@ Supposons
 
 - Au temps $t=0$, il y a $N_0>0$ individus
 - On regroupe toutes les causes de mortalité
-- La durée de la vie d'un individu avant son décés est une variable aléatoire continue $T$, avec densité $f(t)$ et fonction de survie $P(t)$
+- La durée de la vie d'un individu avant son décès est une variable aléatoire continue $T$, avec densité $f(t)$ et fonction de survie $P(t)$
 
 ---
 
@@ -458,7 +458,7 @@ En intégrant sur $[0,t]$, on obtient le nombre d'individus infectés au temps $
 
 ---
 
-# <!--fit-->Cas d'un temps de guérison exponentiallement distribué
+# <!--fit-->Cas d'un temps de guérison exponentiellement distribué
 
 Supposons que $P(t)$ t.q. le temps de séjour dans l'état infecté a une distribution exponentielle de moyenne $1/\gamma$, i.e., $P(t)=e^{-\gamma t}$
 
@@ -509,7 +509,7 @@ $$
 I(t)=I_0(t)+\int_{t-\omega}^t \beta\ \frac{(N-I(u))I(u)}{N}\ du
 \end{equation}
 $$
-L'expression de $I_0(t)$ est plus compliquée à obtenir ici. On suppose toutefois que $I_0(t)$ disparait pour $t>\omega$
+L'expression de $I_0(t)$ est plus compliquée à obtenir ici. On suppose toutefois que $I_0(t)$ disparaît pour $t>\omega$
 
 ---
 
@@ -518,7 +518,7 @@ $$
 I'(t)=I_0'(t)+\beta\frac{(N-I(t))I(t)}{N}
 -\beta\frac{\left(N-I(t-\omega)\right)I(t-\omega)}{N}
 $$
-Puisque $I_0(t)$ disparait pour $t>\omega$, on obtient l'équation differentielle à retard (EDR)
+Puisque $I_0(t)$ disparaît pour $t>\omega$, on obtient l'équation différentielle à retard (EDR)
 $$
 I'(t)=\beta\frac{(N-I(t))I(t)}{N}
 -\beta\frac{(N-I(t-\omega))I(t-\omega)}{N}
@@ -529,7 +529,7 @@ $$
 # Ce que l'on sait à ce stade
 
 - Le temps de séjour dans les compartiments joue un rôle important dans la détermination du type de modèle que l'on considère
-- Tous les modèles EDO compartimentaux, quand ils utilisent des termes de la forme $\kappa X$, font l'hypothèse que le temps de séjour dans les compartiments est distribué exponentiellement avec moyenne $1/\kappa$
+- Tous les modèles EDO en compartiments, quand ils utilisent des termes de la forme $\kappa X$, font l'hypothèse que le temps de séjour dans les compartiments est distribué exponentiellement avec moyenne $1/\kappa$
 - À l'autre extrémité du spectre, les EDR à retard discret $\tau$ font l'hypothèse d'un temps de séjour constant $\tau$, égal pour tous les individus
 - Les deux sont probablement vrais parfois, mais la réalité est sans nul doute souvent quelque part entre les deux
 
@@ -623,7 +623,7 @@ $$
 
 ---
 
-# <!--fit-->Comment utiliser dans un modèle compartimental?
+# <!--fit-->Comment utiliser dans un modèle en compartiments?
 
 - Supposons un processus à modéliser avec une durée moyenne $1/\mu$
 - Si on prend un compartiment

@@ -65,13 +65,13 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
 # Plan de ce cours
 
-- Biais
+- Un processus biaisé
 - Quelques recommendations
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Les biais
+# <!--fit-->Un processus biaisé
 
 ---
 
@@ -192,14 +192,14 @@ J'ai reviewé (beaucoup) de travaux pour de nombreux journaux différents
 - On pioche aussi dans les références bibliographiques
 - Les maisons d'édition ont aussi des bases bibliographiques avec domaines de recherche, que l'on consulte
 
-On choisit 6-8 personnes, sachant qu'une immense majortité ne répond pas ou refuse
+On choisit 6-8 personnes, sachant qu'une immense majorité ne répond pas ou refuse
 
 ---
 
 # Comprendre les rapporteurs
 
 ### Votre papier doit
-- impressioner les rapporteurs
+- impressionner les rapporteurs
 - intéresser les rapporteurs
 - les rendre jaloux ("j'aurais aimé avoir cette idée")
 
@@ -214,7 +214,7 @@ On choisit 6-8 personnes, sachant qu'une immense majortité ne répond pas ou re
 
 Nombre de réjections sont liées à l'édition, pas nécessairement au contenu scientifique
 
-- Si l'édtion est très mauvaise, vous serez rejeté
+- Si l'édition est très mauvaise, vous serez rejeté
 - Ne laissez pas de phrases non terminées (fréquent)
 - N'ayez pas des notations hétérogènes
 - Ne faites pas deviner: la première fois que vous utilisez une variable, un paramètre, etc., définissez la
@@ -236,7 +236,7 @@ Nombre de réjections sont liées à l'édition, pas nécessairement au contenu 
 - Faites attention à vos références bibliographiques
 - Orthographe, orthographe des noms, journaux. Si votre papier est accepté, on va de toute façon vous embêter pour que les références soient correctes, donc autant qu'elles le soient aussi pour le rapporteur
 - Citez bien vos sources. Il n'y a rien de pire que de susciter un soupçon de plagiat
-- Il n'est pas impossible que vos rapporteurs soit quelqu'un que vous citez dans la bibliographie (c'est une façcon pour l'éditeur de choisir des rapporteurs). Si son nom est Xyz, ne l'appelez pas Zyx
+- Il n'est pas impossible que vos rapporteurs soit quelqu'un que vous citez dans la bibliographie (c'est une façon pour l'éditeur de choisir des rapporteurs). Si son nom est Xyz, ne l'appelez pas Zyx
 
 ---
 
@@ -247,7 +247,7 @@ Nombre de réjections sont liées à l'édition, pas nécessairement au contenu 
 
 ---
 
-# <!--fit-->Ecoutez les rapporteurs/les éditeurs
+# <!--fit-->Écoutez les rapporteurs/les éditeurs
 
 - Il n'y a rien de plus énervant, pour un rapporteur, que de voir une papier revenir pour un second round sans aucun changement ni aucune justification pour l'absence de changement
 - De façon générale, si votre papier change de journal, il n'est pas impossible que certains de rapporteurs soient les mêmes

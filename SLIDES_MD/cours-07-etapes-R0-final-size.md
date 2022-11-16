@@ -144,7 +144,7 @@ Si $\mathcal{R}_0>1$, alors chaque individu infectieux infecte en moyenne plus d
 
 # Calcul de $\mathcal{R}_0$
 
-Mathematiquement, $\mathcal{R}_0$ est
+Mathématiquement, $\mathcal{R}_0$ est
 
 > un paramètre de bifurcation qui agrège les paramètres du système, et tel que l'équilibre sans maladie (ESM) perd sa stabilité *locale* lorsque l'on franchit $\mathcal{R}_0=1$ de gauche à droite
 
@@ -184,7 +184,7 @@ $$
 - $\mathcal{F}$ flux entrant du fait des nouvelles infections
 - $\mathcal{V}$ tous les autres flux (¡attention au signe!)
 
-On calcule les dérivées (Frechet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les matrices jacobiennes) et on évalue en l'ESM
+On calcule les dérivées (Fréchet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les matrices jacobiennes) et on évalue en l'ESM
 
 Alors
 $$

@@ -87,12 +87,12 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Environments de dévelopement 
+# Environments de développement  
 
 - Version en terminal, pas très sympa
 - Une version terminal plus agréable : [radian](https://github.com/randy3k/radian)
 - Exécute des scripts R en utilisant `Rscript name_of_script.R`. Utile pour certains tests (voir plus loin) ou faire tourner du code en `cron`, par exemple
-- Utiliser des EDI (environnements de développemen intégrés) :
+- Utiliser des EDI (environnements de développement intégrés) :
     - [RStudio](https://www.rstudio.com/products/rstudio/) est devenu la référence
     - [RKWard](https://invent.kde.org/education/rkward) est utile si vous utilisez par exemple un processeur ARM non Mac (Raspberry Pi, certains Chromebooks..)
 - S'intègre dans un `jupyter notebook`
@@ -114,7 +114,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - Interactif
 - Permet de travailler en temps réel, d'évaluer directement l'effet d'une commande
     - Attention ! Ce qui est en mémoire peut avoir été généré par des étapes pas notées dans le script
-    - Pour que les étapes d'un calcul soient reproductibles, il est bien de noter toutes les étapes dans un script et de tester ce script de temps en temps en utilisant `Rscript` : ceci assure que tout ce qui est requis pour faire tourner le script est chargé en mémoire quand celà doit l'être..
+    - Pour que les étapes d'un calcul soient reproductibles, il est bien de noter toutes les étapes dans un script et de tester ce script de temps en temps en utilisant `Rscript` : ceci assure que tout ce qui est requis pour faire tourner le script est chargé en mémoire quand cela doit l'être..
 
 ---
 
@@ -143,7 +143,7 @@ ou
 X = 10
 ```
 
-La première version est préférrée par les puristes R.. Personnellement, je m'en fiche un peu
+La première version est préférée par les puristes R.. Personnellement, je m'en fiche un peu
 
 ---
 
@@ -259,7 +259,7 @@ Attention en particulier lorsque l'on cherche à accéder à un ensemble d'indic
 
 - Spécifiques à R
 - Comme des matrices sous stéroïdes
-- Peuvent contenir des colonnes comprennant des entrées de types différents, e.g., une colonne de nombres et une colonne de caractères, donc idéal pour les données
+- Peuvent contenir des colonnes comprenant des entrées de types différents, e.g., une colonne de nombres et une colonne de caractères, donc idéal pour les données
 
 # Tibbles
 
@@ -298,7 +298,7 @@ Attention en particulier lorsque l'on cherche à accéder à un ensemble d'indic
 
 # Nommage des positions/lignes/colonnes/etc.
 
-Une capacité très attrayante de R : il est possible de nommber les entrées dans toute liste (on a déjà vu ça), mais aussi tout vecteur, toute matrice ou data frame
+Une capacité très attrayante de R : il est possible de nommer les entrées dans toute liste (on a déjà vu ça), mais aussi tout vecteur, toute matrice ou data frame
 
 ```R
 r$> v = c(alpha = 2, beta = 3, gamma = 4, delta = 5)

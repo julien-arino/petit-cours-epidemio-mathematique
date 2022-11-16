@@ -67,7 +67,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Quelques abbréviations
+# Quelques abbreviations
 
 - PÉ: point d'équilibre
 - ESM: équilibre sans maladie
@@ -92,9 +92,9 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Répositoire GitHub pour le cours
+# Dépôt GitHub pour le cours
 
-La plupart du matériel pour le cours est disponible depuis ce [répositoire GitHub]()
+La plupart du matériel pour le cours est disponible depuis ce [dépôt GitHub]()
 
 Ceci inclut les transparents, le code et des données
 
@@ -108,7 +108,7 @@ Une remarque: je vais parfois référer à des articles sur Wikipedia. Pour le b
 
 - Les transparents sont en `Markdown` et `LaTeX` et sont diffusés en `html`; le code `html` est obtenu en utilisant l'extension [Marp](https://marp.app/) dans l'éditeur [Visual Studio Code](https://code.visualstudio.com/)
 
-- Les fichiers image sont pour la plupart liés sur le répositoire GitHub et nécessitent un accès à Internet. Des copies locales sont fournies pour la plupart des images, mais demanderont de modifier les chemins 
+- Les fichiers image sont pour la plupart liés sur le dépôt GitHub et nécessitent un accès à Internet. Des copies locales sont fournies pour la plupart des images, mais demanderont de modifier les chemins 
 
 - Autant que faire se peut, j'ai indiqué la provenance des images, en liant vers l'image sur le site original ou en indicant le site d'origine en commentaire dans le fichier; ces commentaires sont visibles en tant que "notes de présentation" lorsque l'on utilise la version de présentation
 
@@ -117,8 +117,8 @@ Une remarque: je vais parfois référer à des articles sur Wikipedia. Pour le b
 # Code
 
 - J'utilise `R`
-- Des instructions pour installer `R` et se préparer pour le cours sont disponibles dans le répositoire GitHub
-- Vous trouverez du code dans le répositoire, dans le sous-répertoire `CODE`
+- Des instructions pour installer `R` et se préparer pour le cours sont disponibles dans le dépôt GitHub
+- Vous trouverez du code dans le dépôt, dans le sous-répertoire `CODE`
 - Pour le côté "épidémiologie classique, une référence ouverte en anglais très utile: [R for applied epidemiology and public health](https://epirhandbook.com/en/index.html)
 
 ---
@@ -145,10 +145,10 @@ Introduction à l'épidémiologie mathématique
 Nous aurons les problèmes suivants en tête:
 1. Techniques de modélisation
 2. Analyse mathématique des modèles
-3. Analyse computationelle des modèles
+3. Analyse computationnelle des modèles
 4. Utilisation des données
 
-Il est primordial de conduire ces quatres activités interactivement
+Il est primordial de conduire ces quatre activités interactivement
 
 ---
 
@@ -156,7 +156,7 @@ Il est primordial de conduire ces quatres activités interactivement
 
 - C'est une étape clé, ne la négligez pas
 - Soyez créatifs, ne vous laissez pas enfermer dans un dogme
-- Prennez le temps
+- Prenez le temps
 - Essayez de produire des modèles simples
 
 ---
@@ -187,7 +187,7 @@ Il est primordial de conduire ces quatres activités interactivement
 
 - Utilisez plutôt le numérique pour investiguer des scenarios ou tester l'effet du changement des paramètres du modèle, etc.
 
-- Une bonne figure raconte une histoire, il est bien de passer du temps à réflechir à la façon de produire de bonnes illustrations!
+- Une bonne figure raconte une histoire, il est bien de passer du temps à réfléchir à la façon de produire de bonnes illustrations!
 
 ---
 

@@ -225,7 +225,7 @@ S' &= -\beta SI \tag{21a} \\
 I' &= (\beta S-\gamma)I  \tag{21b} 
 \end{align}
 $$
-prennons la somme de $\eqref{sys:KMK_dS}$ et $\eqref{sys:KMK_dI}$, en prennant garde de bien faire apparaître la dépendance en le temps
+calculons la somme de $\eqref{sys:KMK_dS}$ et $\eqref{sys:KMK_dI}$, en prenant garde de bien faire apparaître la dépendance en le temps
 $$
 \frac{d}{dt}(S(t)+I(t))=-\gamma I(t)
 $$
@@ -339,13 +339,13 @@ plot(sol[, "time"], sol[, "I"], type = "l",
 - Dans les deux modèles, puisque la population totale est constante, on aurait pu normaliser à $N=1$
 - Cela simplifie pas mal certains calculs
 - Toutefois, je ne suis pas très fan: je pense qu'il est important de toujours garder en tête les grandeurs biologiques
-- Si vous normalisez, en tout cas, pour un papier à visée biomathématique, pensez à exprimer vos ŕesultats en grandeur réelle
+- Si vous normalisez, en tout cas, pour un papier à visée biomathématique, pensez à exprimer vos résultats en grandeur réelle
 
 
 ---
 
 # Là où nous en sommes
 - Un modèle SIS *endémique* dans lequel le seuil $\mathcal{R}_0=1$ est t.q. quand $\mathcal{R}_0<1$, la maladie s'éteint, tandis que lorsque $\mathcal{R}_0>1$, la maladie s'établit dans la population
-- Un modèle SIR *épidémique* (le KMK SIR) dans lequel la présence ou absence de vague épidémique est caracterisée par la valeur de $\mathcal{R}_0$
+- Un modèle SIR *épidémique* (le KMK SIR) dans lequel la présence ou absence de vague épidémique est caractérisée par la valeur de $\mathcal{R}_0$
 - Le SIS et le KMK SIR sont intégrables dans un certain sens. **C'est une exception!!!**
 

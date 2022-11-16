@@ -42,12 +42,12 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)</p>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="5" data-theme="default" style="--theme:default;" data-size="4:3">
-<h1>Environments de dévelopement</h1>
+<h1>Environments de développement</h1>
 <ul>
 <li>Version en terminal, pas très sympa</li>
 <li>Une version terminal plus agréable : <a href="https://github.com/randy3k/radian">radian</a></li>
 <li>Exécute des scripts R en utilisant <code>Rscript name_of_script.R</code>. Utile pour certains tests (voir plus loin) ou faire tourner du code en <code>cron</code>, par exemple</li>
-<li>Utiliser des EDI (environnements de développemen intégrés) :
+<li>Utiliser des EDI (environnements de développement intégrés) :
 <ul>
 <li><a href="https://www.rstudio.com/products/rstudio/">RStudio</a> est devenu la référence</li>
 <li><a href="https://invent.kde.org/education/rkward">RKWard</a> est utile si vous utilisez par exemple un processeur ARM non Mac (Raspberry Pi, certains Chromebooks..)</li>
@@ -73,7 +73,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)</p>
 <li>Permet de travailler en temps réel, d'évaluer directement l'effet d'une commande
 <ul>
 <li>Attention ! Ce qui est en mémoire peut avoir été généré par des étapes pas notées dans le script</li>
-<li>Pour que les étapes d'un calcul soient reproductibles, il est bien de noter toutes les étapes dans un script et de tester ce script de temps en temps en utilisant <code>Rscript</code> : ceci assure que tout ce qui est requis pour faire tourner le script est chargé en mémoire quand celà doit l'être..</li>
+<li>Pour que les étapes d'un calcul soient reproductibles, il est bien de noter toutes les étapes dans un script et de tester ce script de temps en temps en utilisant <code>Rscript</code> : ceci assure que tout ce qui est requis pour faire tourner le script est chargé en mémoire quand cela doit l'être..</li>
 </ul>
 </li>
 </ul>
@@ -93,7 +93,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)</p>
 <p>ou</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-R">X <span class="hljs-operator">=</span> <span class="hljs-number">10</span>
 </code></pre>
-<p>La première version est préférrée par les puristes R.. Personnellement, je m'en fiche un peu</p>
+<p>La première version est préférée par les puristes R.. Personnellement, je m'en fiche un peu</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="11" data-theme="default" style="--theme:default;" data-size="4:3">
 <h1>Listes</h1>
@@ -186,7 +186,7 @@ C <span class="hljs-operator">&lt;-</span> matrix<span class="hljs-punctuation">
 <ul>
 <li>Spécifiques à R</li>
 <li>Comme des matrices sous stéroïdes</li>
-<li>Peuvent contenir des colonnes comprennant des entrées de types différents, e.g., une colonne de nombres et une colonne de caractères, donc idéal pour les données</li>
+<li>Peuvent contenir des colonnes comprenant des entrées de types différents, e.g., une colonne de nombres et une colonne de caractères, donc idéal pour les données</li>
 </ul>
 <h1>Tibbles</h1>
 <ul>
@@ -222,7 +222,7 @@ C <span class="hljs-operator">&lt;-</span> matrix<span class="hljs-punctuation">
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="19" data-theme="default" style="--theme:default;" data-size="4:3">
 <h1>Nommage des positions/lignes/colonnes/etc.</h1>
-<p>Une capacité très attrayante de R : il est possible de nommber les entrées dans toute liste (on a déjà vu ça), mais aussi tout vecteur, toute matrice ou data frame</p>
+<p>Une capacité très attrayante de R : il est possible de nommer les entrées dans toute liste (on a déjà vu ça), mais aussi tout vecteur, toute matrice ou data frame</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-R">r<span class="hljs-operator">$</span><span class="hljs-operator">&gt;</span> v <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span>alpha <span class="hljs-operator">=</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span> beta <span class="hljs-operator">=</span> <span class="hljs-number">3</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">gamma</span> <span class="hljs-operator">=</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span> delta <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span>
 r<span class="hljs-operator">$</span><span class="hljs-operator">&gt;</span> v
 alpha  beta <span class="hljs-built_in">gamma</span> delta 
