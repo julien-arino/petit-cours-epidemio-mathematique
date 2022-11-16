@@ -9,7 +9,7 @@ math: mathjax
 ---
 
 <style>
-  section {
+  /* section {
   font-size: 28px;
   padding-left: 30px;
   padding-right: 30px;
@@ -22,7 +22,7 @@ math: mathjax
   }
   h2 {
   font-size: 40px;
-  }
+  } */
   .theorem {
     text-align:justify;
     background-color:#16a085;
@@ -323,29 +323,32 @@ $$
 
 ---
 
-En résumé, la solution du système en proportions est donnée par
+La solution du système en proportions est donc donnée par
 
 $$
-\small
-\begin{align}
-s(t) &= 
-1-\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
-+(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}} 
-\tag{6a}\label{sys:SIS_solution_s}
-\\
-i(t) &=
-\frac{i_0(\beta-(d+\gamma))}{i_0\beta(1-e^{-(\beta-(d+\gamma))t})
-+(\beta-(d+\gamma))e^{-(\beta-(d+\gamma))t}}
-\tag{6b}\label{sys:SIS_solution_i}
-\end{align}
+s(t) = 
+1-\frac{i_0({\color{red}\beta-(d+\gamma)})}{i_0\beta(1-e^{-({\color{red}\beta-(d+\gamma)})t})
++({\color{red}\beta-(d+\gamma)})e^{-({\color{red}\beta-(d+\gamma)})t}} 
 $$
+$$
+i(t) =
+\frac{i_0({\color{red}\beta-(d+\gamma)})}{i_0\beta(1-e^{-({\color{red}\beta-(d+\gamma)})t})
++({\color{red}\beta-(d+\gamma)})e^{-({\color{red}\beta-(d+\gamma)})t}}
+$$
+et l'on voit que le terme $\beta-(d+\gamma)$ joue un rôle important, et l'on identifie deux cas selon le signe de cette quantité
 
 ---
 
-En observant $\eqref{sys:SIS_solution_s}$-$\eqref{sys:SIS_solution_i}$, on déduit deux cas: 
- 
-- Si $\beta-(d+\gamma)<0$, alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=+\infty,$ donc $\lim_{t\to\infty}s(t)=1$ et $\lim_{t\to\infty}i(t)=0$
-- Si $\beta-(d+\gamma)>0,$ alors $\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=0;$ donc $\lim_{t\to\infty}s(t)=1-(\beta-(d+\gamma))/\beta$ et $\lim_{t\to\infty}i(t)=(\beta-(d+\gamma))/\beta$
+- Si $\beta-(d+\gamma)<0$, alors 
+$$
+\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=+\infty
+$$ 
+donc $\lim_{t\to\infty}s(t)=1$ et $\lim_{t\to\infty}i(t)=0$
+- Si $\beta-(d+\gamma)>0,$ alors 
+$$
+\lim_{t\to\infty}e^{-(\beta-(d+\gamma))t}=0
+$$ 
+donc $\lim_{t\to\infty}s(t)=1-(\beta-(d+\gamma))/\beta$ et $\lim_{t\to\infty}i(t)=(\beta-(d+\gamma))/\beta$
 
 ---
 
@@ -427,7 +430,7 @@ On dit que le modèle SIS est un **modèle endémique** du fait de la possibilit
 On considère le système
 $$
 \begin{align}
-S' &= b(N-S)-\beta\frac{SI}{N}+\gamma I \tag{1a} \\
+S' &= bN-dS-\beta\frac{SI}{N}+\gamma I \tag{1a} \\
 I' &= \left(\beta \frac SN-(d+\gamma)\right)I \tag{1b}
 \end{align}
 $$
@@ -467,9 +470,18 @@ $$
 
 ---
 
-# Le système est-il bien posé?
+# Le système est-il bien posé ?
+
+Dans le cadre d'un modèle épidémiologique:
+- les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ existent-elles et sont-elles uniques ?
+- le cône positif (quadrant ici) est-il invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ ?
+- les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ sont-elles bornées ?
+  - Il peut se trouver des modèles sans bornitude, mais ils sont plutôt rares et devront être considérés à part
+
+---
 
 - On va éviter le cas $N\equiv 0$, qui ne sert à rien
+- $b=d$ et $N_0>0$ $\Rightarrow$ on évite également le cas $N\to 0$
 - Donc le champ de vecteur est toujours $C^1$, ce qui entraîne que les solutions existent et sont uniques
 - Vérifions maintenant que le cône positif est invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
 
@@ -513,16 +525,6 @@ $\implies$ $S$ ne peut pas devenir nul
 Ce genre de raisonnement a toute sa place dans une thèse de MSc ou de PhD: il faut montrer que vous savez faire
 
 Dans un papier de recherche, cela n'est pas vraiment nécessaire, c'est souvent même superflu
-
----
-
-# Le système est-il bien posé ?
-
-Dans le cadre d'un modèle épidémiologique:
-- les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ existent-elles et sont-elles uniques ?
-- le cône positif (quadrant ici) est-il invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ ?
-- les solutions de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$ sont-elles bornées ?
-  - Il peut se trouver des modèles sans bornitude, mais ils sont plutôt rares et devront être considérés à part
 
 ---
 

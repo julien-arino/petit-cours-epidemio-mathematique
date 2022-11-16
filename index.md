@@ -15,7 +15,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 00: [Organisation du cours](cours-00-organisation.html) ([video](https://youtu.be/nz6QfTPdOoE))
 - Cours 01: [Épidémies, épidémiologie et épidémiologie mathématique](cours-01-introduction.html) ([video](https://youtu.be/EXndll66wOk))
 - Cours 02: [Introduction à R et résolution numérique des EDO](cours-02-intro-R-EDO.html) ([video](https://youtu.be/MdvboD80RAY))
-- Cours 03: [Collecte et utilisation des données](cours-03-donnees.html)
+- Cours 03: [Collecte et utilisation des données](cours-03-donnees.html) ([video](https://youtu.be/O8eK_44s6HQ))
 - Cours 04: [Le modèle SIS](cours-04-modele-SIS.html)
 - Cours 05: [Fonctions d'incidence](cours-05-fonctions-incidence.html)
 - Cours 06: [Le modèle de Kermack et McKendrick](cours-06-modele-KMK.html)
