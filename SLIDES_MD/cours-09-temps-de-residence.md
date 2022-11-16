@@ -9,7 +9,7 @@ size: 4:3
 ---
 
 <style>
-  section {
+  /* section {
   font-size: 28px;
   padding-left: 40px;
   padding-right: 50px;
@@ -22,7 +22,7 @@ size: 4:3
   }
   h2 {
   font-size: 40px;
-  }
+  } */
   .theorem {
     text-align:justify;
     background-color:#16a085;
@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Temps de résidence dans les compartiments
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Temps de résidence dans les compartiments
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -74,7 +74,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Pourquoi considérer la stochasticité?
+# <!--fit-->Pourquoi considérer la stochasticité?
 
 - La vie résulte des interactions entre un nombre colossal de processus
 
@@ -144,7 +144,7 @@ On déduit un modèle, qui dans ce contexte est une **distribution de probabilit
 
 ---
 
-# Variables aléatoires discrètes ou continues
+# <!--fit-->Variables aléatoires discrètes ou continues
 
 On suppose que $T$ est une v.a. **continue**, i.e., $T$ prend des valeurs continues. Exemples: 
 
@@ -180,11 +180,11 @@ $$
 F(s)=\mathbb{P}(T\leq s)=\int_{-\infty}^sf(x)dx
 $$
 
-![width:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/cdf_auc.png)
+![width:450px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/cdf_auc.png)
 
 ---
 
-# Propriétés de la fonction de répartition
+# <!--fit-->Propriétés de la fonction de répartition
 
 - Puisque $f$ est positive, $F$ est croissante
 - Puisque $f$ est une densité de probabilité, $\int_{-\infty}^{+\infty}f(s)ds=1$, et donc $\lim_{t\to\infty}F(t)=1$
@@ -350,7 +350,7 @@ $P(t)$ donne la proportion de la cohorte toujours vivante au temps $t$, donc $N_
 
 ---
 
-# Cas où $T$ est distribuée exponentiellement
+# <!--fit-->Cas où $T$ est distribuée exponentiellement
 
 Supposons que $T$ a une distribution exponentielle de moyenne $1/d$ (ou de paramètre $d$), $f(t)=de^{-dt}$. Alors la fonction de survie est $P(t)=e^{-dt}$, et $\eqref{eq:N_general}$ s'écrit
 
@@ -372,7 +372,7 @@ $\implies$ L'ODE $N'=-dN$ fait (implicitement) l'hypothèse que l'espérance de 
 
 ---
 
-# Cas où $T$ a une distribution delta de Dirac
+# <!--fit-->Cas où $T$ a une distribution delta de Dirac
 
 Supposons que $T$ a une distribution delta de Dirac à $t=\omega$, soit la fonction de survie
 $$
@@ -549,7 +549,7 @@ JA & Portet. [A simple model for COVID-19](http://dx.doi.org/10.1016/j.idm.2020.
 
 ---
 
-# Des problèmes de la distribution exponentielle
+# <!--fit-->Des problèmes de la distribution exponentielle
 
 - La survie tombe vite
 - La survie continue bien après la moyenne
@@ -605,7 +605,7 @@ est Erlang distribuée avec paramètre d'intensité $\theta$ et paramètre de fo
 
 ---
 
-# Propriétés de la distribution d'Erlang
+# <!--fit-->Propriétés de la distribution d'Erlang
 
 Une Erlang est une Gamma avec un paramètre de forme $k\in\mathbb{N}$ et récupère donc les propriétés de la Gamma. Densité ($k$ paramètre de forme, $\lambda$ paramètre d'intensité):
 $$
@@ -648,6 +648,8 @@ $$
 - Temps moyen passé dans $X_i$ est $1/\varepsilon$
 - Temps moyen passé dans l'ensemble des compartiments est $N/\varepsilon$
 
+---
+
 $\implies$ si on prend $N/\varepsilon=1/\mu$, on a la même moyenne mais le temps passé dans l'ensemble des compartiments est Erlang-distribué au lieu d'être exponentiellement distribué
 
 ---
@@ -673,7 +675,7 @@ $\implies$ si on prend $N/\varepsilon=1/\mu$, on a la même moyenne mais le temp
 ---
 
 # <!--fit-->Contexte
-![bg right:41%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_competing_risks_vertical.png)
+![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_competing_risks_vertical.png)
 
 On considère un système initialement dans un état $S_0$, et qui peut passer dans 2 états, $S_1$ ou $S_2$
 
