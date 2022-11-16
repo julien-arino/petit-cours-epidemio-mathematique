@@ -249,7 +249,9 @@ Nombre de réjections sont liées à l'édition, pas nécessairement au contenu 
 
 # <!--fit-->Ecoutez les rapporteurs/les éditeurs
 
-- Chez les grands éditeurs (Springer, Elsevier, etc.), il est fréquent qu'un papier soit "suivi" par les mêmes rapporteurs dans plusieurs journaux. Soumettre ailleurs sans tenir aucunement compte des rapports dans un autre journal est une erreur...
+- Il n'y a rien de plus énervant, pour un rapporteur, que de voir une papier revenir pour un second round sans aucun changement ni aucune justification pour l'absence de changement
+- De façon générale, si votre papier change de journal, il n'est pas impossible que certains de rapporteurs soient les mêmes
+- Chez les grands éditeurs (Springer, Elsevier, etc.), il est fréquent qu'un papier soit "suivi" par les mêmes rapporteurs dans plusieurs journaux
 
 ---
 
@@ -275,4 +277,4 @@ Nombre de réjections sont liées à l'édition, pas nécessairement au contenu 
 
 - Le processus d'édition peut être frustrant, mais il ne faut pas le voir comme un combat
 - Si votre papier est "carré", il sera lu avec attention et le processus le rendra meilleur
-- Mais il est important de mettre toutes les chances de votre côté, pour que justement, il ait une chance d'être lu
+- Il est important de mettre toutes les chances de votre côté, pour que justement, il ait une chance d'être lu
