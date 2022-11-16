@@ -769,29 +769,26 @@ library(deSolve)
 rhs_SIS <- function(t, x, p) {
   with(as.list(c(x, p)), {
     N = S + I
-    dS = b + gamma * I - d * S - beta * S * I / N
+    dS = d*(N-S) + gamma * I - d * S - beta * S * I / N
     dI = beta * S * I / N - (d + gamma) * I
     return(list(c(dS, dI)))
   })
 }
+# Paramètres "connus"
 d = 1/(80 * 365.25)
 gamma = 1/14
-# On règle la natalité pour que b/d = 1000
-b = 1000 * d
 # On règle beta pour que R_0 = 1.5
-beta = 1.5 * (d + gamma)
-params = list(b = b, d = d, gamma = gamma, beta = beta)
+R_0 = 1.5
+beta = R_0 * (d + gamma)
+params = list(d = d, gamma = gamma, beta = beta)
 IC = c(S = 1000, I = 1)
 times = seq(0, 365, 1)
-sol <- ode(IC, times, rhs_SIS, params)
+# On appelle l'intégrateur numérique
+sol <- ode(y = IC, times = times, func = rhs_SIS, 
+           parms = params, method = "ode45")
 ```
 
 ---
-
-```R
-plot(sol[, "time"], sol[, "I"], type = "l",
-     xlab = "Temps (jours)", ylab = "Prévalence")
-```
 
 ![height:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/sol_endemic_SIS_R015.png)
 
