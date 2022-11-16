@@ -480,7 +480,7 @@ Dans le cadre d'un modèle épidémiologique:
 
 ---
 
-- On va éviter le cas $N\equiv 0$, qui ne sert à rien
+- On évite le cas $N\equiv 0$, qui ne sert à rien
 - $b=d$ et $N_0>0$ $\Rightarrow$ on évite également le cas $N\to 0$
 - Donc le champ de vecteur est toujours $C^1$, ce qui entraîne que les solutions existent et sont uniques
 - Vérifions maintenant que le cône positif est invariant sous le flot de $\eqref{sys:SIS_base_dS}$-$\eqref{sys:SIS_base_dI}$
@@ -493,13 +493,23 @@ Supposons pour commencer que $I=0$. Alors le système se réduit à l'équation 
 $$
 S' = bN-dS=0
 $$
-puisque $N=S$ ici. Il suit que l'axe $\{I=0\}$ est invariant et toute solution initiée dans cet ensemble est constante. Cela implique qu'une solution avec $S(0)>0$ et $I(0)>0$ ne peut atteindre l'axe $\{I=0\}$
+puisque $N=S$ ici
+
+Il suit que l'axe $\{I=0\}$ est invariant et toute solution initiée dans cet ensemble est constante
+
+Cela implique qu'une solution avec $S(0)>0$ et $I(0)>0$ ne peut atteindre l'axe $\{I=0\}$
 
 ---
 
 # Invariance sous le flot (2)
 
-En effet, supposons que $S(0)=S_0>0$ et $I(0)=I_0>0$, et qu'il existe $t_*>0$ tel que $S(t_*)=S_*$ et $I(t_*)=0$
+> Cela implique qu'une solution avec $S(0)>0$ et $I(0)>0$ ne peut atteindre l'axe $\{I=0\}$
+
+En effet, supposons que $S(0)=S_0>0$ et $I(0)=I_0>0$, et qu'il existe $t_\star>0$ tel que $S(t_\star)=S_\star$ et $I(t_\star)=0$
+
+![width:400px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/invariance_orthant_positif.png)
+
+---
 
 Mais en $S=S_*$ et $I=0$, il passe une autre solution, celle telle que $S(0)=S_*$ et $I(0)=0$, puisqu'avec ces conditions initiales, on a $S(t)=S_*$ et $I(t)=0$ pour tout $t\geq 0$
 
