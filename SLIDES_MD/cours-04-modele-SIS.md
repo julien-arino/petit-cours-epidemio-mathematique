@@ -816,8 +816,8 @@ On pourrait continuer, mais pour un modèle aussi simple, il y a peu de choses �
 
 On va toutefois représenter une chose importante: le schéma de bifurcation
 
-On a vu que lorsque $\mathcal{R}_0<1$, $I\to 0$ tandis que lorsque $\mathcal{R}_0>1$, $I\to (1-1/\mathcal{R}_0)N$. Représentons ceci
-
-Voir le [code](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/CODE/SIS_PEI_vs_R0.R)
+On a vu que lorsque $\mathcal{R}_0<1$, $I\to 0$ tandis que lorsque $\mathcal{R}_0>1$, $I\to (1-1/\mathcal{R}_0)N$. Représentons ceci ([code](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/CODE/SIS_PEI_vs_R0.R))
 
 ---
+
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/endemic_SIS_EE_vs_R0.png)
