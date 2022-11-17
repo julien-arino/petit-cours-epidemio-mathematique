@@ -811,3 +811,13 @@ Améliorons les choses un peu. Voir le [code](https://raw.githubusercontent.com/
 ![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/sol_endemic_SIS_several.png)
 
 ---
+
+On pourrait continuer, mais pour un modèle aussi simple, il y a peu de choses à faire: les 3 paramètres du système se combinent dans $\mathcal{R}_0$ et ce dernier résume bien la dynamique
+
+On va toutefois représenter une chose importante: le schéma de bifurcation
+
+On a vu que lorsque $\mathcal{R}_0<1$, $I\to 0$ tandis que lorsque $\mathcal{R}_0>1$, $I\to (1-1/\mathcal{R}_0)N$. Représentons ceci
+
+Voir le [code](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/CODE/SIS_PEI_vs_R0.R)
+
+---
