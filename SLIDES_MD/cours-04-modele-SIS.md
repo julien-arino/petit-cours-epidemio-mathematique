@@ -78,7 +78,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
  
-- On considère une population close dans laquelle il n'y a ni naissance ni mort
+- On considère une population close dans laquelle il n'entre pas d'individus venus de l'extérieur
 - Supposons que les individus dans la population sont dans l'un de deux états:
   - **susceptibles** (à la maladie) s'ils ne sont pas en ce moment porteurs du pathogène
   - **infectieux** (et *infectés*) s'ils ont été infectés par la maladie et participent à sa propagation
