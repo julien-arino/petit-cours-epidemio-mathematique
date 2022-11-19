@@ -65,11 +65,44 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
 # Plan de ce cours
 
+- Modèles en compartiments
 - Modèle SIS endémique
 - Analyse mathématique (version 1)
 - Le nombre de reproduction élémentaire
 - Analyse mathématique (version 2)
 - Un peu de computationnel 
+
+---
+
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Modèles en compartiments
+
+---
+
+# Modèles en compartiments
+
+- Devenus synonymes des modèles épidémiologiques
+- Bien des modèles épidémiologiques sont en compartiments, mais le développement des modèles en compartiments dans les années 1970s-1980s n'était pas spécifique à l'épidémiologie
+- Voir en particulier les travaux de John Jacquez, Carl Simon, GG Walter
+- Un peu oubliés, de façon injuste: il y a de très jolis résultats dans le domaine
+
+---
+
+# Compartiment ([Jacquez 1979](https://doi-org.uml.idm.oclc.org/10.1016/B978-0-12-434180-7.50021-8))
+
+> A **compartment** is an amount of some material which acts kinetically like a distinct, homogeneous, well-mixed amount of material. A **compartmental system** consists of one or more compartments which interact by exchanging the material. There may be inputs into one or more compartments from outside the system and there may be excretions from the compartments of the system. 
+
+---
+
+![bg left:40% height:600px](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/compartmental_model_vertical_blackBG.png)
+
+# <!--fit-->Un compartiment
+
+- $q_i$ taille du compartiment, i.e., quantité de matériau cynetiquement homogène présent dans $i$; $q_i\geq 0$
+- $f_{ij}$ et $f_{ji}$ coefficients/fonctions de transfert
+- $f_{0i}$ coefficient/fonction d'excrétion
+- $i_i(t)$ entrées d'en dehors du système
 
 ---
 
@@ -111,24 +144,39 @@ On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitô
 
 - Meurent au taux *per capita* $d$, proportionnel à la population infectieuse $I$
 - Guérissent au taux *per capita* $\gamma$
-- On ne considère pas la mortalité induite par la maladie
+- On ne considère pas de mortalité induite par la maladie
 
 ---
 
 # Fonction d'incidence
 
-- On revient sur les fonctions d'incidence plus tard ([Cours 05](cours-05-fonctions-incidence.html))
-- Pour le moment, on suppose juste que l'incidence est de la forme
+- On revient sur les fonctions d'incidence dans le [Cours 05](cours-05-fonctions-incidence.html)
+- Pour le moment, on suppose juste que l'incidence est une *incidence proportionnelle* (ou *incidence standard*) de la forme
 $$
 f(S,I) = \beta\frac{SI}{S+I}
 $$
-que l'on appelle *incidence proportionnelle* ou *incidence standard*
 
 ---
 
 # Diagramme de flot du modèle
 
 ![width:600px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_base_prop_incidence_birthdN.png)
+
+---
+
+# Le modèle
+
+En balançant les flux entrant et sortant dans les deux compartiments, on obtient
+
+$$
+\begin{align}
+\frac{d}{dt}S(t) &= bN(t)-dS(t)-\beta\frac{S(t)I(t)}{N(t)}+\gamma I(t)
+\tag{1a}\\
+\frac{d}{dt}I(t) &= \beta\frac{S(t)I(t)}{N(t)}-dI(t)-\gamma I(t)
+\tag{1b}
+\end{align}
+$$
+Comme souvent en EDO, on omet la dépendance en la variable indépendante (le temps $t$), et on note $dX(t)/dt=X'$, ce qui donne ..
 
 ---
 
@@ -539,9 +587,9 @@ $\implies$ $S$ ne peut pas devenir nul
 
 # En résumé, pour l'invariance
 
-- Si $(S(0),I(0))\in\mathbb{R}_+\times(\mathbb{R}_+\setminus\{0\})$, alors pour tout $t>0$,
+- Si $(S(0),I(0))\in\mathbb{R}_+\times(\mathbb{R}_+\setminus\{0\})$, alors $\forall t>0$,
 $$(S(t),I(t))\in(\mathbb{R}_+\setminus\{0\})^2$$
-- Si $(S(0),I(0))\in\mathbb{R}_+\times\{0\}$, alors pour tout $t\geq 0$, 
+- Si $(S(0),I(0))\in\mathbb{R}_+\times\{0\}$, alors $\forall t\geq 0$, 
 $$(S(t),I(t))=(S(0),0)$$
 
 Le modèle est donc satisfaisant, en ce qu'il n'autorise pas des solutions à changer de signe

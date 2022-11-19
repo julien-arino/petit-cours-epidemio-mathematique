@@ -83,14 +83,18 @@ img[alt~="center"] {
 
 # Ceci est un cas particulier !
 
-K-MK ont formulé un modèle beaucoup plus général que le modèle qui suit, qui est un cas particulier
-
-Cela vaut vraiment le coup de regarder la série de papiers!
+La série de papiers vaut le coup
 - Kermack & McKendrick. [A contribution to the mathematical theory of epidemics](https://doi.org/10.1098/rspa.1927.0118) (1927)
+
+Suivi de "Contributions to the mathematical theory of epidemics."
+- [II. The problem of endemicity](https://doi.org/10.1098/rspa.1932.0171) (1932)
+- [III. Further studies of the problem of endemicity](https://doi.org/10.1098/rspa.1933.0106) (1933)
+- [IV. Analysis of experimental epidemics of the virus disease mouse ectromelia](https://doi.org/10.1017/S0022172400034902) (1937)
+- [V. Analysis of experimental epidemics of mouse-typhoid; a bacterial disease conferring incomplete immunity](https://doi.org/10.1017/S0022172400011918) (1939)
 
 ---
 
-# <!--fit-->Question sous-jacente: quelle est la *taille* d'une épidémie?
+# <!--fit-->Quelle est la *taille* d'une épidémie?
 
 - Si l'on s'intéresse à la possibilité d'un pic épidémique
   - A-t-il toujours lieu?
@@ -199,7 +203,13 @@ Trajectoires dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\g
 
 ---
 
-# Le nombre de reproduction élémentaire $\mathcal{R}_0$
+Trajectoires dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\gamma=2.5$
+
+![width:1200px center](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/KMK_planar_trajectories.png)
+
+---
+
+# <!--fit-->Le nombre de reproduction élémentaire $\mathcal{R}_0$
 
 Supposons que la population totale $N$ soit normalisée, i.e., $N=1$. Alors $R=1-(S+I)$
 
@@ -336,9 +346,9 @@ plot(sol[, "time"], sol[, "I"], type = "l",
 
 # Normaliser ou pas?
 
-- Dans les deux modèles, puisque la population totale est constante, on aurait pu normaliser à $N=1$
+- Dans le SIS du [Cours 04]() et ici, puisque la population totale est constante, on peut normaliser à $N=1$
 - Cela simplifie pas mal certains calculs
-- Toutefois, je ne suis pas très fan: je pense qu'il est important de toujours garder en tête les grandeurs biologiques
+- Toutefois, je ne suis pas très fan: il est important de toujours garder en tête les grandeurs biologiques
 - Si vous normalisez, en tout cas, pour un papier à visée biomathématique, pensez à exprimer vos résultats en grandeur réelle
 
 

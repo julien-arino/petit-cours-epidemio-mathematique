@@ -88,7 +88,7 @@ Voir en particulier McCallum, Barlow & Hone, [How should pathogen transmission b
 
 ---
 
-# <!--fit-->Remarque - Fonction d'incidence versus force d'infection
+# <!--fit-->Fonction d'incidence versus force d'infection
 
 Deux formes différentes de la fonction représentant le taux de mouvement d'individus du compartiment $S$ vers les compartiments infectés:
 
@@ -103,25 +103,28 @@ Les deux sont équivalentes, c'est le contexte qui tend à conduire au choix de 
 
 - Le taux auquel des nouveaux cas apparaissent est la **fonction d'incidence**
 $$
-\tag{12}
+\tag{1}
 f(S,I,N)
 $$
 - Depend du nombre $S$ de susceptibles, $I$ d'infectieux et parfois, de la population totale $N$
 - Une fonction d'incidence inclut deux composantes:
   - un décompte du nombre de contacts ayant lieu
   - une description de la probabilité qu'un tel contact, quand il a lieu, entraîne la transmission du pathogène
-- Le choix d'une bonne fonction est difficile et est probablement l'une des parties les plus "instables" dans la modélisation de la propagation des maladies infectieuses
+
+---
+
+Le choix d'une bonne fonction est difficile et est probablement l'une des parties les plus "instables" dans la modélisation de la propagation des maladies infectieuses
 
 ---
 
 # Les deux fonctions d'incidence les plus usitées
 
 Les deux fonctions d'incidence les plus usitées sont   l'**incidence en action de masse**
-$$\tag{13}
+$$\tag{2}
 f(S,I)=\beta SI
 $$
 et l'**incidence standard** (ou **proportionnelle**)
-$$\tag{14}
+$$\tag{3}
 f(S,I)=\beta\frac{SI}{S+I}
 $$
 
@@ -131,9 +134,15 @@ Dans les deux cas, $\beta$ est le **coefficient de transmission de la maladie**,
 
 # Des unités de $\beta$
 
-Si $X(t)$ est la population du compartiment $X$ au temps $t$, alors $X'$ a pour unités $\text{nombre}/\text{temps}$
+Si $X(t)$ est la population du compartiment $X$ au temps $t$, alors $X'$ a pour unités nombre/temps
 
-Dans une équation différentielle, les termes à gauche et à droite du signe $=$ doivent avoir les mêmes unités, donc..
+Dans une équation différentielle, les termes à gauche et à droite du signe "$=$" doivent avoir les mêmes unités
+
+La fonction d'incidence a donc unités nombre/temps
+
+(Et si on utilise une force d'infection, les unités sont 1/temps)
+
+---
 
 ### Incidence en action de masse
 
@@ -153,11 +162,11 @@ a pour unités nombre/temps si $\beta$ a pour unités $1/\text{temps}$
 
 ---
 
-# Mass action incidence
+# Incidence en action de masse
 
 $$
 \begin{equation}
-\tag{13}\label{eq:incidence_mass_action}
+\tag{2}\label{eq:incidence_mass_action}
 f(S,I)=\beta SI
 \end{equation}
  $$
@@ -171,12 +180,12 @@ Quand la population est grande, cette hypothèse devient irréaliste
 
 ---
 
-# Incidence standard (proportionnelle) 
+# <!--fit-->Incidence standard (proportionnelle) 
 
 Autre forme de fonction d'incidence très utilisée
 $$
 \begin{equation}
-\tag{14}\label{eq:incidence_proportional}
+\tag{3}\label{eq:incidence_proportional}
 f(S,I,N)=\beta\frac{SI}{N}
 \end{equation}
 $$
@@ -189,16 +198,16 @@ Cas d'une population plus grande
 
 ---
 
-# Population constante $\implies$ $\eqref{eq:incidence_mass_action}$ $\equiv$ $\eqref{eq:incidence_proportional}$
+# <!--fit-->Population constante $\implies$ $\eqref{eq:incidence_mass_action}$ $\equiv$ $\eqref{eq:incidence_proportional}$
 
-Quand la population totale est constante, bien des fonctions d'incidence sont équivalentes qualitativement (aux unités près)
+Quand la population totale est constante, bien des fonctions d'incidence sont équivalentes qualitativement 
 
 Supposons que $N(t)\equiv N_0$, alors
 $$
 \beta SI = \tilde\beta\frac{SI}{N}
 \iff \tilde\beta=N_0\beta
 $$
-et si le terme de droite est vrai, alors $\eqref{eq:incidence_mass_action}$ et $\eqref{eq:incidence_proportional}$ sont identiques
+avec ce $\tilde\beta$, $\eqref{eq:incidence_mass_action}$ et $\eqref{eq:incidence_proportional}$ sont identiques
 
 Rappelez-vous que les unités diffèrent, toutefois
 
@@ -212,7 +221,7 @@ Rappelez-vous que les unités diffèrent, toutefois
 # Incidence générale
 
 $$
-\tag{15}
+\tag{4}
 f(S,I,N)=\beta S^q I^p
 $$
 Ces fonctions furent introduites avec pour but l'ajustement aux données: pour ajuster, cela ajoute deux paramètres $p,q$. On verra toutefois que bien du travail théorique utilise cette incidence
@@ -224,13 +233,12 @@ Ces fonctions furent introduites avec pour but l'ajustement aux données: pour a
 Effet de refuge; une proportion $0<q<1$ de la population est vraiment susceptible, par exemple du fait d'hétérogénéités spatiales
 
 $$
-\tag{16}
+\tag{5}
 f(S,I,N)=
 \begin{cases}
 \beta I\left(N-\dfrac Iq\right),&\textrm{si }I<qN \\
 0,&\textrm{si }I\geq qN
 \end{cases}
-\qquad\qquad
 $$
 
 
@@ -239,7 +247,7 @@ $$
 # Incidence binomiale négative
 
 $$
-\tag{17}
+\tag{6}
 f(S,I,N)=kS\ln\left(1+\beta\frac Ik\right)
 $$
 Pour des petites valeurs de $k$, ceci décrit un processus d'infection très concentré, tandis que lorsque $k\to\infty$, on tend vers une incidence en action de masse
@@ -249,7 +257,7 @@ Pour des petites valeurs de $k$, ceci décrit un processus d'infection très con
 # Contact asymptotique
 
 $$
-\tag{18}
+\tag{7}
 f(S,I,N)
 =\frac{N}{1-\varepsilon+\varepsilon N}
 \frac{F(S,I)}{N}
@@ -263,7 +271,7 @@ Quand $\varepsilon=0$, les contacts sont proportionnels à $N$, tandis que lorsq
 # Transmission asymptomatique 
 
 $$
-\tag{19}
+\tag{8}
 f(S,I,N)
 =\beta\frac{SI}{c+S+I}
 $$
@@ -278,7 +286,7 @@ avec $C(N)=N/(1-\varepsilon+\varepsilon N)$ la fonction décrivant le taux de co
 # Incidence changeante
 
 $$
-\tag{20}
+\tag{9}
 F(S,I,N) = 
 \begin{cases}
 \beta SI & \textrm{if }N\leq \hat N \\
@@ -286,7 +294,7 @@ F(S,I,N) =
 \end{cases}
 $$
 
-<div style = "position: relative; bottom: -40%; font-size:20px;">
+<div style = "position: relative; bottom: -35%; font-size:20px;">
 
 Arino & McCluskey, [Effect of a sharp change of the incidence function on the dynamics of a simple disease](https://doi.org/10.1080/17513751003793017), *Journal of Biological Dynamics* (2010)
 </div>
