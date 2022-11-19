@@ -78,7 +78,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
  
-- On considère une population close dans laquelle il n'entre pas d'individus venus de l'extérieur
+- On considère une population close (pas d'entrées ni de sorties de la population)
 - Supposons que les individus dans la population sont dans l'un de deux états:
   - **susceptibles** (à la maladie) s'ils ne sont pas en ce moment porteurs du pathogène
   - **infectieux** (et *infectés*) s'ils ont été infectés par la maladie et participent à sa propagation
@@ -117,7 +117,7 @@ On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitô
 
 # Fonction d'incidence
 
-- On revient sur les fonctions d'incidence plus tard
+- On revient sur les fonctions d'incidence plus tard ([Cours 05](cours-05-fonctions-incidence.html))
 - Pour le moment, on suppose juste que l'incidence est de la forme
 $$
 f(S,I) = \beta\frac{SI}{S+I}
@@ -539,8 +539,10 @@ $\implies$ $S$ ne peut pas devenir nul
 
 # En résumé, pour l'invariance
 
-- Si $(S(0),I(0))\in\mathbb{R}_+\times(\mathbb{R}_+\setminus\{0\})$, alors $(S(t),I(t))\in(\mathbb{R}_+\setminus\{0\})^2$ pour tout $t>0$
-- Si $(S(0),I(0))\in\mathbb{R}_+\times\{0\}$, alors $(S(t),I(t))=(S(0),0)$ pour tout $t>0$
+- Si $(S(0),I(0))\in\mathbb{R}_+\times(\mathbb{R}_+\setminus\{0\})$, alors pour tout $t>0$,
+$$(S(t),I(t))\in(\mathbb{R}_+\setminus\{0\})^2$$
+- Si $(S(0),I(0))\in\mathbb{R}_+\times\{0\}$, alors pour tout $t\geq 0$, 
+$$(S(t),I(t))=(S(0),0)$$
 
 Le modèle est donc satisfaisant, en ce qu'il n'autorise pas des solutions à changer de signe
 
