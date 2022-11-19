@@ -71,6 +71,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - Le nombre de reproduction élémentaire
 - Analyse mathématique (version 2)
 - Un peu de computationnel 
+- Un peu plus au sujet de la stabilité
 
 ---
 
@@ -871,3 +872,9 @@ On a vu que lorsque $\mathcal{R}_0<1$, $I\to 0$ tandis que lorsque $\mathcal{R}_
 ---
 
 ![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/endemic_SIS_EE_vs_R0.png)
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Un peu plus au sujet de la stabilité
+
