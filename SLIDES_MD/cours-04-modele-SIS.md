@@ -878,3 +878,14 @@ On a vu que lorsque $\mathcal{R}_0<1$, $I\to 0$ tandis que lorsque $\mathcal{R}_
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->Un peu plus au sujet de la stabilité
 
+---
+
+# Ici, j'ai triché !
+
+![width:800px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/endemic_SIS_EE_vs_R0.png)
+
+Tout ce qu'on a montré, c'est la stabilité/instabilité locale de l'ESM. Enfin, on a tout montré avec la premiere analyse, mais pas avec la deuxieme
+
+---
+
+# Ce qui reste a faire (2eme analyse)
