@@ -96,7 +96,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![bg left:40% height:600px](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/compartmental_model_vertical_blackBG.png)
+![bg left:40% height:500px](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/compartmental_model_vertical_blackBG.png)
 
 # <!--fit-->Un compartiment
 
@@ -135,7 +135,7 @@ On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitô
 
 ## Individus susceptibles
 
-- Naissent au taux *per capita* $d$ proportionnel à la population totale $N$
+- Naissent au taux *per capita* $b$ proportionnel à la population totale $N$
 - Meurent au taux *per capita* $d$, proportionnel à la population susceptible $S$
 - Les nouveaux nés sont susceptibles (on ignore la *transmission verticale*)
 
@@ -653,7 +653,7 @@ De la relation
 $$
 S=\frac{d+\gamma}\beta N
 $$
-on déduit l'équilibre endémique $E_\star $: substituant cette valeur de $S$ dans $\eqref{sys:SIS_DFE_S}$,
+on déduit l'équilibre endémique $E_\star$: substituant cette valeur de $S$ dans $\eqref{sys:SIS_DFE_S}$,
 $$
 \begin{aligned}
 0 &= d\left(N-\frac{d+\gamma}\beta N\right)
