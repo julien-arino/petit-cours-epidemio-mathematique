@@ -653,7 +653,7 @@ De la relation
 $$
 S=\frac{d+\gamma}\beta N
 $$
-on déduit l'équilibre endémique $E_*$: substituant cette valeur de $S$ dans $\eqref{sys:SIS_DFE_S}$,
+on déduit l'équilibre endémique $E_\star $: substituant cette valeur de $S$ dans $\eqref{sys:SIS_DFE_S}$,
 $$
 \begin{aligned}
 0 &= d\left(N-\frac{d+\gamma}\beta N\right)
@@ -672,7 +672,7 @@ $$
 
 Par conséquent, l'équilibre endémique est
 $$
-E_*:(S,I)
+E_\star :(S,I)
 =\left(
   \frac{d+\gamma}\beta N, 
   1-\frac{d+\gamma}\beta N
@@ -682,7 +682,7 @@ $$
 Notant que $(d+\gamma)/\beta=1/\mathcal{R}_0$, il vient
 $$
 \tag{10}\label{eq:SIS_EEP}
-E_*:(S,I)
+E_\star :(S,I)
 =\left(
   \frac{1}{\mathcal{R}_0}N, 
   \left(1-\frac{1}{\mathcal{R}_0}\right)N
@@ -884,8 +884,108 @@ On a vu que lorsque $\mathcal{R}_0<1$, $I\to 0$ tandis que lorsque $\mathcal{R}_
 
 ![width:800px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/endemic_SIS_EE_vs_R0.png)
 
-Tout ce qu'on a montré, c'est la stabilité/instabilité locale de l'ESM. Enfin, on a tout montré avec la premiere analyse, mais pas avec la deuxieme
+Dans cette 2ème analyse, tout ce qu'on a montré, c'est la stabilité/instabilité locale de l'ÉSM. (On a tout montré avec la première analyse...)
 
 ---
 
-# Ce qui reste a faire (2eme analyse)
+# Ce qui reste à faire (2ème analyse)
+
+- Stabilité asymptotique locale de l'ÉE lorsqu'il est relevant biologiquement
+- Stabilité asymptotique globale de l'ÉSM lorsque $\mathcal{R}_0\leq 1$
+- Stability asymptotique globale de l'ÉE lorsque $\mathcal{R}_0>1$
+
+---
+
+# Équilibre relevant biologiquement
+
+On se souvient que l'on avait trouvé
+$$
+\tag{10}
+E_\star :(S,I)
+=\left(
+  \frac{1}{\mathcal{R}_0}N, 
+  \left(1-\frac{1}{\mathcal{R}_0}\right)N
+\right)
+$$
+
+Ici, la valeur de $I_\star$ n'a de sens comme équilibre d'un système en compartiments que si $I_\star\geq 0$, i.e., si $\mathcal{R}_0\geq 1$. On dit alors que l'ÉE est **relevant biologiquement**
+
+---
+
+# <!--fit-->SAL de l'ÉE lorsqu'il est relevant biologiquement
+
+Outre l'ÉE
+$$
+\tag{10}
+E_\star :(S,I)
+=\left(
+  \frac{1}{\mathcal{R}_0}N, 
+  \left(1-\frac{1}{\mathcal{R}_0}\right)N
+\right)
+$$
+on avait aussi calculé la Jacobienne en un point arbitraire
+$$
+\tag{11}
+J_{(S,I)} =
+\begin{pmatrix}
+-d -\beta \frac IN & \gamma-\beta\frac SN \\
+\beta \frac IN & \beta\frac SN-(d+\gamma)
+\end{pmatrix}
+$$
+
+---
+
+Évaluons $J$ en $E_\star$:
+$$
+\begin{align*}
+J_{E_\star} &=
+\begin{pmatrix}
+-d -\beta \frac {\left(1-\frac{1}{\mathcal{R}_0}\right)N}{N} & \gamma-\beta\frac {\frac{1}{\mathcal{R}_0}N}{N} \\
+\beta \frac {\left(1-\frac{1}{\mathcal{R}_0}\right)N}{N} & \beta\frac {\frac{1}{\mathcal{R}_0}N}{N}-(d+\gamma)
+\end{pmatrix} \\
+ &=
+\begin{pmatrix}
+-d -\beta \left(1-\frac{1}{\mathcal{R}_0}\right) & \gamma-\frac{\beta}{\mathcal{R}_0} \\
+\beta \left(1-\frac{1}{\mathcal{R}_0}\right) & \frac{\beta}{\mathcal{R}_0}-(d+\gamma)
+\end{pmatrix}
+\end{align*}
+$$
+On trouve les valeurs propres $-d<0$ et $2\beta/\mathcal{R}_0-(\beta+d+\gamma)$, soit, puisque $\mathcal{R}_0=\beta/(d+\gamma)$, $d+\gamma-\beta$. La 2ème valeur propre est donc $<0$ lorsque $\mathcal{R}_0>1$, donc $E_\star$ est LAS lorsqu'il est biologiquement relevant
+
+--- 
+
+# <!--fit-->Stabilité globale de l'ÉSM lorsque $\mathcal{R}_0<1$
+
+On utilise un truc tout simple: choisissons $L(S,I)=I$ comme fonction de Lyapunov. Clairement, $L(S,I)>0$ hormis lorsque $I=0$. On a
+$$
+I' = \left(\beta \frac SN-(d+\gamma)\right)I
+$$
+Notons que $S/N\leq 1$ et par conséquent
+$$
+I' \leq \left(\beta-(d+\gamma)\right)I
+$$
+Si $I(0)>0$ et $\mathcal{R}_0<1$, on a donc, pour tout $t>0$,
+$$
+I'<0
+$$
+et $L(S,I)=I$ est une fonction de Lyapunov pour le système $\implies$ ÉSM est GAS lorsque $\mathcal{R}_0<1$
+
+---
+
+# Cas $\mathcal{R}_0=1$
+
+Lorsque $\mathcal{R}_0=1$, avec le raisonnement précédent on a seulement
+$$
+I'\leq 0
+$$
+Notons toutefois que si $I(0)>0$, alors $I(t)>0$ pour tout $t$ et par conséquent, on a en fait que $S/N<1$, d'où 
+$$
+I'<(\beta-(d+\gamma))I=0 \text{ lorsque }\mathcal{R}_0=1
+$$
+donc $L(S,I)=I$ est encore une fonction de Lyapunov
+
+---
+
+# <!--fit-->Stabilité globale de l'ÉE lorsque $\mathcal{R}_0>1$
+
+Un peu plus compliqué, j'ajouterai aux transparents plus tard
