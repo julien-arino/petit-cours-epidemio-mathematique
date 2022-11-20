@@ -65,11 +65,45 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
 # Plan de ce cours
 
+- Modèles en compartiments
 - Modèle SIS endémique
 - Analyse mathématique (version 1)
 - Le nombre de reproduction élémentaire
 - Analyse mathématique (version 2)
 - Un peu de computationnel 
+- Un peu plus au sujet de la stabilité
+
+---
+
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Modèles en compartiments
+
+---
+
+# Modèles en compartiments
+
+- Devenus synonymes des modèles épidémiologiques
+- Bien des modèles épidémiologiques sont en compartiments, mais le développement des modèles en compartiments dans les années 1970s-1980s n'était pas spécifique à l'épidémiologie
+- Voir en particulier les travaux de John Jacquez, Carl Simon, GG Walter
+- Un peu oubliés, de façon injuste: il y a de très jolis résultats dans le domaine
+
+---
+
+# Compartiment ([Jacquez 1979](https://doi-org.uml.idm.oclc.org/10.1016/B978-0-12-434180-7.50021-8))
+
+> A **compartment** is an amount of some material which acts kinetically like a distinct, homogeneous, well-mixed amount of material. A **compartmental system** consists of one or more compartments which interact by exchanging the material. There may be inputs into one or more compartments from outside the system and there may be excretions from the compartments of the system. 
+
+---
+
+![bg left:40% height:600px](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/compartmental_model_vertical_blackBG.png)
+
+# <!--fit-->Un compartiment
+
+- $q_i$ taille du compartiment, i.e., quantité de matériau cynetiquement homogène présent dans $i$; $q_i\geq 0$
+- $f_{ij}$ et $f_{ji}$ coefficients/fonctions de transfert
+- $f_{0i}$ coefficient/fonction d'excrétion
+- $i_i(t)$ entrées d'en dehors du système
 
 ---
 
@@ -78,7 +112,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
  
-- On considère une population close dans laquelle il n'y a ni naissance ni mort
+- On considère une population close (pas d'entrées ni de sorties de la population)
 - Supposons que les individus dans la population sont dans l'un de deux états:
   - **susceptibles** (à la maladie) s'ils ne sont pas en ce moment porteurs du pathogène
   - **infectieux** (et *infectés*) s'ils ont été infectés par la maladie et participent à sa propagation
@@ -111,24 +145,39 @@ On suppose aussi que l'infection ne persiste pas chez un individu et qu'aussitô
 
 - Meurent au taux *per capita* $d$, proportionnel à la population infectieuse $I$
 - Guérissent au taux *per capita* $\gamma$
-- On ne considère pas la mortalité induite par la maladie
+- On ne considère pas de mortalité induite par la maladie
 
 ---
 
 # Fonction d'incidence
 
-- On revient sur les fonctions d'incidence plus tard
-- Pour le moment, on suppose juste que l'incidence est de la forme
+- On revient sur les fonctions d'incidence dans le [Cours 05](cours-05-fonctions-incidence.html)
+- Pour le moment, on suppose juste que l'incidence est une *incidence proportionnelle* (ou *incidence standard*) de la forme
 $$
 f(S,I) = \beta\frac{SI}{S+I}
 $$
-que l'on appelle *incidence proportionnelle* ou *incidence standard*
 
 ---
 
 # Diagramme de flot du modèle
 
 ![width:600px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_SIS_base_prop_incidence_birthdN.png)
+
+---
+
+# Le modèle
+
+En balançant les flux entrant et sortant dans les deux compartiments, on obtient
+
+$$
+\begin{align}
+\frac{d}{dt}S(t) &= bN(t)-dS(t)-\beta\frac{S(t)I(t)}{N(t)}+\gamma I(t)
+\tag{1a}\\
+\frac{d}{dt}I(t) &= \beta\frac{S(t)I(t)}{N(t)}-dI(t)-\gamma I(t)
+\tag{1b}
+\end{align}
+$$
+Comme souvent en EDO, on omet la dépendance en la variable indépendante (le temps $t$), et on note $dX(t)/dt=X'$, ce qui donne ..
 
 ---
 
@@ -539,8 +588,10 @@ $\implies$ $S$ ne peut pas devenir nul
 
 # En résumé, pour l'invariance
 
-- Si $(S(0),I(0))\in\mathbb{R}_+\times(\mathbb{R}_+\setminus\{0\})$, alors $(S(t),I(t))\in(\mathbb{R}_+\setminus\{0\})^2$ pour tout $t>0$
-- Si $(S(0),I(0))\in\mathbb{R}_+\times\{0\}$, alors $(S(t),I(t))=(S(0),0)$ pour tout $t>0$
+- Si $(S(0),I(0))\in\mathbb{R}_+\times(\mathbb{R}_+\setminus\{0\})$, alors $\forall t>0$,
+$$(S(t),I(t))\in(\mathbb{R}_+\setminus\{0\})^2$$
+- Si $(S(0),I(0))\in\mathbb{R}_+\times\{0\}$, alors $\forall t\geq 0$, 
+$$(S(t),I(t))=(S(0),0)$$
 
 Le modèle est donc satisfaisant, en ce qu'il n'autorise pas des solutions à changer de signe
 
@@ -602,7 +653,7 @@ De la relation
 $$
 S=\frac{d+\gamma}\beta N
 $$
-on déduit l'équilibre endémique $E_*$: substituant cette valeur de $S$ dans $\eqref{sys:SIS_DFE_S}$,
+on déduit l'équilibre endémique $E_\star $: substituant cette valeur de $S$ dans $\eqref{sys:SIS_DFE_S}$,
 $$
 \begin{aligned}
 0 &= d\left(N-\frac{d+\gamma}\beta N\right)
@@ -621,7 +672,7 @@ $$
 
 Par conséquent, l'équilibre endémique est
 $$
-E_*:(S,I)
+E_\star :(S,I)
 =\left(
   \frac{d+\gamma}\beta N, 
   1-\frac{d+\gamma}\beta N
@@ -631,7 +682,7 @@ $$
 Notant que $(d+\gamma)/\beta=1/\mathcal{R}_0$, il vient
 $$
 \tag{10}\label{eq:SIS_EEP}
-E_*:(S,I)
+E_\star :(S,I)
 =\left(
   \frac{1}{\mathcal{R}_0}N, 
   \left(1-\frac{1}{\mathcal{R}_0}\right)N
@@ -821,3 +872,120 @@ On a vu que lorsque $\mathcal{R}_0<1$, $I\to 0$ tandis que lorsque $\mathcal{R}_
 ---
 
 ![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/endemic_SIS_EE_vs_R0.png)
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Un peu plus au sujet de la stabilité
+
+---
+
+# Ici, j'ai triché !
+
+![width:800px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/endemic_SIS_EE_vs_R0.png)
+
+Dans cette 2ème analyse, tout ce qu'on a montré, c'est la stabilité/instabilité locale de l'ÉSM. (On a tout montré avec la première analyse...)
+
+---
+
+# Ce qui reste à faire (2ème analyse)
+
+- Stabilité asymptotique locale de l'ÉE lorsqu'il est relevant biologiquement
+- Stabilité asymptotique globale de l'ÉSM lorsque $\mathcal{R}_0\leq 1$
+- Stability asymptotique globale de l'ÉE lorsque $\mathcal{R}_0>1$
+
+---
+
+# Équilibre relevant biologiquement
+
+On se souvient que l'on avait trouvé
+$$
+\tag{10}
+E_\star :(S,I)
+=\left(
+  \frac{1}{\mathcal{R}_0}N, 
+  \left(1-\frac{1}{\mathcal{R}_0}\right)N
+\right)
+$$
+
+Ici, la valeur de $I_\star$ n'a de sens comme équilibre d'un système en compartiments que si $I_\star\geq 0$, i.e., si $\mathcal{R}_0\geq 1$. On dit alors que l'ÉE est **relevant biologiquement**
+
+---
+
+# <!--fit-->SAL de l'ÉE lorsqu'il est relevant biologiquement
+
+Outre l'ÉE
+$$
+\tag{10}
+E_\star :(S,I)
+=\left(
+  \frac{1}{\mathcal{R}_0}N, 
+  \left(1-\frac{1}{\mathcal{R}_0}\right)N
+\right)
+$$
+on avait aussi calculé la Jacobienne en un point arbitraire
+$$
+\tag{11}
+J_{(S,I)} =
+\begin{pmatrix}
+-d -\beta \frac IN & \gamma-\beta\frac SN \\
+\beta \frac IN & \beta\frac SN-(d+\gamma)
+\end{pmatrix}
+$$
+
+---
+
+Évaluons $J$ en $E_\star$:
+$$
+\begin{align*}
+J_{E_\star} &=
+\begin{pmatrix}
+-d -\beta \frac {\left(1-\frac{1}{\mathcal{R}_0}\right)N}{N} & \gamma-\beta\frac {\frac{1}{\mathcal{R}_0}N}{N} \\
+\beta \frac {\left(1-\frac{1}{\mathcal{R}_0}\right)N}{N} & \beta\frac {\frac{1}{\mathcal{R}_0}N}{N}-(d+\gamma)
+\end{pmatrix} \\
+ &=
+\begin{pmatrix}
+-d -\beta \left(1-\frac{1}{\mathcal{R}_0}\right) & \gamma-\frac{\beta}{\mathcal{R}_0} \\
+\beta \left(1-\frac{1}{\mathcal{R}_0}\right) & \frac{\beta}{\mathcal{R}_0}-(d+\gamma)
+\end{pmatrix}
+\end{align*}
+$$
+On trouve les valeurs propres $-d<0$ et $2\beta/\mathcal{R}_0-(\beta+d+\gamma)$, soit, puisque $\mathcal{R}_0=\beta/(d+\gamma)$, $d+\gamma-\beta$. La 2ème valeur propre est donc $<0$ lorsque $\mathcal{R}_0>1$, donc $E_\star$ est LAS lorsqu'il est biologiquement relevant
+
+--- 
+
+# <!--fit-->Stabilité globale de l'ÉSM lorsque $\mathcal{R}_0<1$
+
+On utilise un truc tout simple: choisissons $L(S,I)=I$ comme fonction de Lyapunov. Clairement, $L(S,I)>0$ hormis lorsque $I=0$. On a
+$$
+I' = \left(\beta \frac SN-(d+\gamma)\right)I
+$$
+Notons que $S/N\leq 1$ et par conséquent
+$$
+I' \leq \left(\beta-(d+\gamma)\right)I
+$$
+Si $I(0)>0$ et $\mathcal{R}_0<1$, on a donc, pour tout $t>0$,
+$$
+I'<0
+$$
+et $L(S,I)=I$ est une fonction de Lyapunov pour le système $\implies$ ÉSM est GAS lorsque $\mathcal{R}_0<1$
+
+---
+
+# Cas $\mathcal{R}_0=1$
+
+Lorsque $\mathcal{R}_0=1$, avec le raisonnement précédent on a seulement
+$$
+I'\leq 0
+$$
+Notons toutefois que si $I(0)>0$, alors $I(t)>0$ pour tout $t$ et par conséquent, on a en fait que $S/N<1$, d'où 
+$$
+I'<(\beta-(d+\gamma))I=0 \text{ lorsque }\mathcal{R}_0=1
+$$
+donc $L(S,I)=I$ est encore une fonction de Lyapunov
+
+---
+
+# <!--fit-->Stabilité globale de l'ÉE lorsque $\mathcal{R}_0>1$
+
+Un peu plus compliqué, j'ajouterai aux transparents plus tard
