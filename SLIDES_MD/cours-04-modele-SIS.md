@@ -250,7 +250,7 @@ On a
 $$
 \begin{align*}
 N' &= (S+I)' \\
-&= bN-dS\beta\frac{SI}{N}
+&= bN-dS-\beta\frac{SI}{N}
 +\gamma I+\beta\frac{SI}{N}-dI-\gamma I \\
 &= bN-d(S+I) \\
 &= (b-d)N
