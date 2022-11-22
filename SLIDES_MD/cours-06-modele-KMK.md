@@ -108,7 +108,7 @@ Suivi de "Contributions to the mathematical theory of epidemics."
 
 - La période de temps que l'on considère est suffisamment courte que l'on peut négliger la démographie (on parle aussi de modèle *sans dynamique vitale*)
 - Différent du modèle précédent, qui incorpore la démographie mais la considère constante
-- Les individus dans la populations sont soit *susceptibles* ($S$), soit *infectieux* avec la maladie ($I$). Après guérison ou mort, on les *retire* du compartiment infectieux ($R$)
+- Les individus dans la populations sont soit *susceptibles*, soit *infectieux* avec la maladie. Après guérison ou mort, on les *retire* du compartiment infectieux ($R$)
 - Incidence du type action de masse $\beta SI$
 
 ---
@@ -121,6 +121,8 @@ I' &= (\beta S-\gamma)I  \tag{1b}\label{sys:KMK_dI} \\
 R' &= \gamma I  \tag{1c}\label{sys:KMK_dR}
 \end{align}
 $$
+
+![width:600px center](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/SIR_KMK_ODE.png)
 
 ---
 
