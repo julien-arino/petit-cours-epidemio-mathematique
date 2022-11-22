@@ -27,14 +27,15 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 12: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-10-heterogeneite-groupe-et-spatiale.html)
 - Cours 13: [Modèles de groupes](cours-13-modeles-groupes.html)
 - Cours 14: [Modèles dans des métapopulations](cours-14-modeles-metapopulation.html)
-- Cours 15: [Modèles spatiaux en EDP](cours-15-modeles-EDP.html)
-- Cours 16: [Types de modèles stochastiques utilisés en épidémiologie](cours-16-stochasticite.html)
-- Cours 17: [Modèles en chaînes de Markov](cours-17-modeles-MC.html)
-- Cours 18: [Simulation des systèmes stochastiques](cours-18-simulation-stochastique.html)
-- Cours 19: [Modèles en réseaux](cours-19-modeles-reseaux.html)
-- Cours 20: [Modèles agents-centrés](cours-20-modeles-agents.html)
-- Cours 21: [Ajustement des paramètres](cours-21-ajustement-parametres.html) 
-- Cours 22: [Publier](cours-22-publier.html) ([video](https://youtu.be/XTQ__r-s3WQ))
+- Cours 15: [Un peu plus sur les métapopulations](cours-15-plus-de-metapopulations.html)
+- Cours 16: [Modèles spatiaux en EDP](cours-16-modeles-EDP.html)
+- Cours 17: [Types de modèles stochastiques utilisés en épidémiologie](cours-17-stochasticite.html)
+- Cours 18: [Modèles en chaînes de Markov](cours-18-modeles-MC.html)
+- Cours 19: [Simulation des systèmes stochastiques](cours-19-simulation-stochastique.html)
+- Cours 20: [Modèles en réseaux](cours-20-modeles-reseaux.html)
+- Cours 21: [Modèles agents-centrés](cours-21-modeles-agents.html)
+- Cours 22: [Ajustement des paramètres](cours-22-ajustement-parametres.html) 
+- Cours 23: [Publier](cours-23-publier.html) ([video](https://youtu.be/XTQ__r-s3WQ))
 
 
 <!--- Image credit: Malaria parasite entering a red blood cell. https://flic.kr/p/V8qaYt. National Institute of Allergy and Infectious Diseases, NIH. CC BY NC 2.0 --->
