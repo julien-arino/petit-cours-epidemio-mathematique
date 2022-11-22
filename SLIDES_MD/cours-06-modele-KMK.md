@@ -9,7 +9,7 @@ math: mathjax
 ---
 
 <style>
-  section {
+  /* section {
   font-size: 28px;
   padding-left: 40px;
   padding-right: 50px;
@@ -22,7 +22,7 @@ math: mathjax
   }
   h2 {
   font-size: 40px;
-  }
+  } */
   .theorem {
     text-align:justify;
     background-color:#16a085;
@@ -201,7 +201,7 @@ $$
 
 Trajectoires dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\gamma=2.5$
 
-![width:1200px center](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/KMK_planar_trajectories.png)
+![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_planar_trajectories.png)
 
 ---
 
@@ -215,6 +215,22 @@ $$
 \mathcal{R}_0=\frac{\beta}{\gamma}
 \end{equation}
 $$
+
+---
+
+<div class="theorem">
+
+Soit $(S(t),I(t))$ une solution à $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ en proportions et $\mathcal{R}_0$ défini par $\eqref{eq:R0_KMK}$
+
+- Si $\mathcal{R}_0
+S_0\leq 1$, alors $I(t)\to 0$ quand $t\to\infty$ en étant toujours décroissant
+- Si $\mathcal{R}_0
+S_0>1$, alors $I(t)$ atteint d'abord un maximum 
+$$
+1-\frac 1{\mathcal{R}_0}-\frac{\ln(\mathcal{R}_0 S_0)}{\mathcal{R}_0}
+$$
+puis tend vers 0 quand $t\to\infty$
+</div>
 
 ---
 
@@ -294,11 +310,7 @@ $$
 
 <div class="theorem">
 
-Soit $(S(t),I(t))$ une solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ en proportions et $\mathcal{R}_0$ défini comme dans $\eqref{eq:R0_KMK}$. Si $\mathcal{R}_0 S_0\leq 1$, alors $I(t)$ tend vers 0 quand $t\to\infty.$ Si $\mathcal{R}_0 S_0>1$, alors $I(t)$ atteint d'abord un maximum
-$$
-1-\frac 1{\mathcal{R}_0}-\frac{\ln(\mathcal{R}_0 S_0)}{\mathcal{R}_0}
-$$
-puis tend vers 0 quand $t\to\infty$
+Soit $(S(t),I(t))$ une solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ en proportions et $\mathcal{R}_0$ défini comme dans $\eqref{eq:R0_KMK}$.
 
 La proportion $S(t)$ de susceptibles est une fonction décroissante et sa limite $S(\infty)$ est l'unique solution dans $(0,1/\mathcal{R}_0)$ de l'équation 
 $$
