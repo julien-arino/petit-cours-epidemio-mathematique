@@ -9,7 +9,7 @@ size: 4:3
 ---
 
 <style>
-  section {
+  /* section {
   font-size: 28px;
   padding-left: 40px;
   padding-right: 50px;
@@ -22,7 +22,7 @@ size: 4:3
   }
   h2 {
   font-size: 40px;
-  }
+  } */
   .theorem {
     text-align:justify;
     background-color:#16a085;
@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Modèles dans des métapopulations
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Modèles dans des métapopulations
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -84,14 +84,14 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-<div style = "position: relative; top: -47%; font-size:40px">
+<div style = "position: relative; top: -47%; font-size:30px">
 
 **Propagation des maladies dans un monde juridictionnel**
 </div>
 
 ![bg 90%](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/importations/importation_process3.png)
 
-<div style = "position: relative; bottom: -51%; font-size:18px;">
+<div style = "position: relative; bottom: -45%; font-size:18px;">
 
 - JA, Bajeux, Portet & Watmough. [Quarantine and the risk of COVID-19 importation](https://doi.org/10.1017/S0950268820002988). *Epidemiology & Infection* **148**:e298 (2020)
 - JA, Bolle, Milliken & Portet. [Risk of COVID-19 variant importation - How useful are travel control measures?](https://doi.org/10.1016/j.idm.2021.06.006). *Infectious Disease Modelling* **6**:875-897 (2021)
@@ -103,7 +103,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Principes généraux (1)
+# <!--fit-->Principes généraux (1)
 
 - $|\mathcal{P}|$ lieux géographiques (*patchs*) dans un ensemble $\mathcal{P}$  (ville, région, pays..)
 - Les patchs sont les noeuds d'un graphe
@@ -113,7 +113,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 	- différentes espèces affectées par la maladie
 	- etc.
 
-![bg right:32%](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/metapopulations/simple_graph.svg)
+![bg right:32% width:300px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/metapopulations/simple_graph.svg)
 
 ---
 
@@ -144,10 +144,7 @@ N_{cp}' &=  \sum_{q\in\mathcal{P}} m_{cpq}N_{cq}
 \qquad \tag{1}\label{eq:dNcp}
 \end{align}
 $$
-si l'on écrit
-$$
-m_{cpp}=-\sum_{q\in\mathcal{P}\setminus\{p\}} m_{cqp}
-$$
+si l'on écrit $m_{cpp}=-\sum_{q\in\mathcal{P}\setminus\{p\}} m_{cqp}$
 
 ---
 
@@ -165,7 +162,7 @@ $L$ = infectés de façon latente ($\simeq E$ exposés, bien que ce terme soit a
 
 $$
 \begin{align}
-S_{p}' &=\mathcal{B}_p\left(N_p\right)+\nu_pR_p-\Phi_p-d_pS_p 
+S_{p}' &=b_p+\nu_pR_p-\Phi_p-d_pS_p 
 \color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Spq}S_{q}} \tag{2a}\label{sys:pSLIRS_dS} \\
 L_{p}' &=\Phi_p-\left( \varepsilon_{p}+d_{p}\right)L_{p}
 \color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Lpq}L_{q}} \tag{2b}\label{sys:pSLIRS_dL} \\
@@ -183,7 +180,7 @@ $$
 $$
 
 
-<div style = "position: relative; bottom: -15%; font-size:20px;">
+<div style = "position: relative; bottom: -12%; font-size:20px;">
 
 - JA & PvdD. [Disease spread in metapopulations](https://server.math.umanitoba.ca/~jarino/publications/ArinoVdD-2006-FIC48.pdf). *Fields Institute Communications* **48**:1-13 (2006)
 - JA. [Diseases in metapopulations](https://server.math.umanitoba.ca/~jarino/papers/Arino_metapopulations.pdf). In *Modeling and Dynamics of Infectious Diseases*, World Scientific (2009)
@@ -196,7 +193,7 @@ $$
 $\mathcal{S}$ un ensemble d'espèces
 $$
 \begin{align}
-S_{sp}' &= \mathcal{B}_{sp}(N_{sp})+\nu_{sp}R_{sp}-\Phi_{sp}-d_{sp}S_{sp}
+S_{sp}' &= b_{sp}+\nu_{sp}R_{sp}-\Phi_{sp}-d_{sp}S_{sp}
 \color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Sspq}S_{sq}} \tag{3a}\label{sys:spSLIRS_dS} \\
 L_{sp}' &= \Phi_{sp}-(\varepsilon_{sp}+d_{sp})L_{sp}
 \color{red}{+\textstyle{\sum_{q\in\mathcal{P}}}m_{Lspq}L_{sq}} \tag{3b}\label{sys:spSLIRS_dL} \\
@@ -226,7 +223,7 @@ $$
 $$
 \begin{align}
 S_{pq}' =& 
-\mathcal{B}_{pq}\left(N_p^r\right)+\nu_{pq} R_{pq}-\Phi_{pq}-d_{pq}S_{pq} \color{red}{+\textstyle{\sum_{k\in\mathcal{P}}} m_{Spqk}S_{pk}} 
+b_{pq}+\nu_{pq} R_{pq}-\Phi_{pq}-d_{pq}S_{pq} \color{red}{+\textstyle{\sum_{k\in\mathcal{P}}} m_{Spqk}S_{pk}} 
 \tag{4a}\label{sys:ppSLIRS_dS} \\
 L_{pq}' =& \Phi_{pq}
 -(\varepsilon_{pq}+d_{pq})L_{pq}
@@ -249,7 +246,7 @@ $$
 \tag{4e}\label{sys:ppSLIRS_incidence} 
 $$
 
-<div style = "position: relative; bottom: -10%; font-size:20px;">
+<div style = "position: relative; bottom: -6%; font-size:20px;">
 
 - Sattenspiel & Dietz. [A structured epidemic model incorporating geographic mobility among regions](https://doi.org/10.1016/0025-5564(94)00068-B) (1995)
 - JA \& PvdD. [A multi-city epidemic model](https://server.math.umanitoba.ca/~jarino/publications/ArinoVdD-2003-MPS10.correct.pdf). *Mathematical Population Studies* **10**(3):175-193 (2003)
@@ -282,10 +279,10 @@ où $S_p=(s_{1p},\ldots,s_{|\mathcal{U}|p})$ et $I_p=(i_{1p},\ldots,i_{|\mathcal
 
 # Analyse - Système illustratif
 
-Par simplicité, considérons $|\mathcal{P}|$-SLIRS avec $\mathcal{B}_p(N_p)=\mathcal{B}_p$
+Considérons le $|\mathcal{P}|$-SLIRS 
 $$
 \begin{align}
-S_{p}' &=\mathcal{B}_p-\Phi_p-d_pS_p+\nu_pR_p
+S_{p}' &=b_p-\Phi_p-d_pS_p+\nu_pR_p
 +\textstyle{\sum_{q\in\mathcal{P}}} m_{Spq}S_{q} 
 \tag{6a}\label{sys:pSLIRS_toy_dS} \\
 L_{p}' &=\Phi_p-\left( \varepsilon_{p}+d_{p}\right)L_{p}
@@ -325,7 +322,7 @@ $\implies$ Un bon cas de système de grande taille (l'analyse matricielle est tr
 
 # Notations dans ce qui suit
 
-- $M\in\mathcal{M}_n(\mathbb{R})=\mathbb{R}^{n\times n}$ une matrice carrée avec éléments notés $m_{ij}$
+- $M=[m_{ij}]\in\mathcal{M}_n(\mathbb{R})=\mathbb{R}^{n\times n}$ une matrice carrée
 
 - $M\geq\mathbf{0}$ si $m_{ij}\geq 0$ pour tout $i,j$ (pourrait être la matrice nulle); $M>\mathbf{0}$ si $M\geq\mathbf{0}$ et $\exists i,j$ avec $m_{ij}>0$; $M\gg\mathbf{0}$ si $m_{ij}>0$ $\forall i,j=1,\ldots,n$. Même notations pour les vecteurs
 
@@ -339,12 +336,12 @@ $\implies$ Un bon cas de système de grande taille (l'analyse matricielle est tr
 
 ---
 
-# Comportement de la population totale
+# <!--fit-->Comportement de la population totale
 
 Considérons le comportement de $N_p=S_p+L_p+I_p+R_p$. On a
 $$
 \begin{aligned}
-N_p' &=\mathcal{B}_p\cancel{-\Phi_p}-d_pS_p\cancel{+\nu_pR_p}
+N_p' &=b_p\cancel{-\Phi_p}-d_pS_p\cancel{+\nu_pR_p}
 +\textstyle{\sum_{q\in\mathcal{P}}} m_{Spq}S_{q} \\
 &\quad \cancel{+\Phi_p}-\left(\cancel{\varepsilon_{p}}
 +d_{p}\right)L_{p}
@@ -359,17 +356,17 @@ $$
 
 Donc
 $$
-N_p'=\mathcal{B}_p-d_pN_p
+N_p'=b_p-d_pN_p
 +\sum_{X\in\{S,L,I,R\}}\sum_{q\in\mathcal{P}} m_{Xpq}X_{q}
 $$
 
 ---
 
-# Forme vectorielle / matricielle de l'équation
+# <!--fit-->Forme vectorielle / matricielle de l'équation
 
 On a
 $$
-N_p'=\mathcal{B}_p-d_pN_p
+N_p'=b_p-d_pN_p
 +\sum_{X\in\{S,L,I,R\}}\sum_{q\in\mathcal{P}} m_{Xpq}X_{q}
 $$
 En forme vectorielle
@@ -377,7 +374,7 @@ $$
 \tag{7}\label{sys:pSLIRS_dN_general} 
 \mathbf{N}'=\mathbf{b}-\mathbf{d}\mathbf{N}+\sum_{X\in\{S,L,I,R\}}\mathcal{M}^X\mathbf{X}
 $$
-où $\mathbf{b}=(\mathcal{B}_1,\ldots,\mathcal{B}_{|\mathcal{P}|})^T,\mathbf{N}=(N_1,\ldots,N_{|\mathcal{P}|})^T,\mathbf{X}=(X_1,\ldots,X_{|\mathcal{P}|})^T\in\mathbb{R}^{|\mathcal{P}|},$ $\mathbf{d},\mathcal{M}^X$ $|\mathcal{P}|\times|\mathcal{P}|$-matrices avec 
+où $\mathbf{b}=(\mathcal{B}_1,\ldots,\mathcal{B}_{|\mathcal{P}|})^T,$ $\mathbf{N}=(N_1,\ldots,N_{|\mathcal{P}|})^T,$ $\mathbf{X}=(X_1,\ldots,X_{|\mathcal{P}|})^T\in\mathbb{R}^{|\mathcal{P}|},$ $\mathbf{d},\mathcal{M}^X$ $|\mathcal{P}|\times|\mathcal{P}|$-matrices avec 
 $$
 \mathbf{d}=\mathsf{diag}\left(d_1,\ldots,d_{|\mathcal{P}|}\right)
 $$
@@ -396,6 +393,8 @@ m_{c|\mathcal{P}|1} & m_{c|\mathcal{P}|2} & & -\sum_{q\in\mathcal{P}} m_{cq|\mat
 \end{pmatrix}
 $$
 
+---
+
 <div class="theorem">
 
 Soit un compartiment $c\in\mathcal{C}$. Alors les propriétés suivantes sont vraies:
@@ -405,7 +404,7 @@ Soit un compartiment $c\in\mathcal{C}$. Alors les propriétés suivantes sont vr
 4. $\mathcal{M}^c$ irréductible $\implies$ $s(\mathcal{M}^c)$ de multiplicité 1
 </div>
 
-<div style = "position: relative; bottom: -6%; font-size:20px;">
+<div style = "position: relative; bottom: -15%; font-size:20px;">
 
 - JA, Bajeux \& Kirkland. [Number of source patches required for population persistence in a source-sink metapopulation with explicit movement](https://link.springer.com/epdf/10.1007/s11538-019-00593-1?author_access_token=EExdAOC94_0nwG8LMCIoG_e4RwlQNchNByi7wbcMAY6UprpSQ2NEwJhyTjNQrHljtlg8X5E8XM5_iLMsJpxIq750BJ9YXGT6yuMgh65TUuKDb_Z-g1pn0m6w5XILLO0RRY0pzrazec5gcY_GZHE85Q%3D%3D). *Bulletin of Mathematical Biology* **81**(6):1916-1942 (2019)
 </div>
@@ -452,18 +451,16 @@ si, bien sur, $\mathbf{d}-\mathcal{M}$ (ou, de façon équivalente, $\mathcal{M}
 
 ---
 
-# Perturbations des matrices de mouvement
-
 <div class="theorem">
 
-$\mathcal{M}$ une matrice de mouvement matrix et $D$ une matrice diagonale. Les résultats suivants sont vrais:
+$\mathcal{M}$ une matrice de mouvement et $D$ une matrice diagonale. Les résultats suivants sont vrais:
 1. $s(\mathcal{M}+d\mathbb{I})=d$ pour tout $d\in\mathbb{R}$
 2. $s(\mathcal{M}+D)\in\sigma(\mathcal{M}+D)$ et est associé à un vecteur propre $\mathbf{v}>\mathbf{0}$. Si, de plus, $\mathcal{M}$ est irréductible, alors $s(\mathcal{M}+D)$ a multiplicité 1 et est associé à $\mathbf{v}\gg\mathbf{0}$
 3. $\mathsf{diag}(D)\gg\mathbf{0}$ $\implies$ $D-\mathcal{M}$ M-matrice non singulière et $(D-\mathcal{M})^{-1}>\mathbf{0}$
 4. $\mathcal{M}$ irréductible et $\mathsf{diag}(D)>\mathbf{0}$ $\implies$ $D-\mathcal{M}$ M-matrice non singulière irréductible et $(D-\mathcal{M})^{-1}\gg\mathbf{0}$
 </div>
 
-<div style = "position: relative; bottom: -10%; font-size:20px;">
+<div style = "position: relative; bottom: -3%; font-size:20px;">
 
 - JA, Bajeux \& Kirkland. [Number of source patches required for population persistence in a source-sink metapopulation with explicit movement](https://link.springer.com/epdf/10.1007/s11538-019-00593-1?author_access_token=EExdAOC94_0nwG8LMCIoG_e4RwlQNchNByi7wbcMAY6UprpSQ2NEwJhyTjNQrHljtlg8X5E8XM5_iLMsJpxIq750BJ9YXGT6yuMgh65TUuKDb_Z-g1pn0m6w5XILLO0RRY0pzrazec5gcY_GZHE85Q%3D%3D). *Bulletin of Mathematical Biology* **81**(6):1916-1942 (2019)
 </div>
@@ -484,7 +481,7 @@ Supposons qu'ils le sont (en d'autres termes, supposons que $\mathbf{d}$ non-sin
 
 ---
 
-# Comportement de la population totale<br/>Cas des mouvements égaux
+# <!--fit-->Comportement de la population totale<br/>Cas des mouvements égaux
 
 $\mathbf{N}^\star=(\mathbf{d}-\mathcal{M})^{-1}\mathbf{b}$ attire les solutions de
 $$
@@ -502,7 +499,7 @@ $\mathcal{M}$ irréductible $\rightarrow$ $\mathbf{N}^\star\gg 0$ (pourvu que $\
 
 ---
 
-# Comportement de la population totale<br>Mouvement réductible
+# <!--fit-->Comportement de la population totale<br>Mouvement réductible
 
 <div class="theorem">
 
@@ -513,7 +510,7 @@ Supposons $\mathcal{M}$ réductible. Soit $a$ le nombre d'ensembles minimaux abs
 	- $v_i=0$ si $i$ est un nœud transient (au sens Markov)
 </div>
 
-<div style = "position: relative; bottom: -8%; font-size:20px;">
+<div style = "position: relative; bottom: -5%; font-size:20px;">
 
 De Foster & Jacquez, [Multiple zeros for eigenvalues and the multiplicity of traps of a linear compartmental system](https://doi.org/10.1016/0025-5564(75)90096-6), *Mathematical Biosciences* (1975)
 </div>
@@ -529,7 +526,6 @@ $$
 $$
 
 Supposons que les taux de mouvement sont **similaires pour tous les compartiments**, i.e., la structure de zéros/non-zéros dans toutes les matrices est la même, mais les entrées non-nulles peuvent différer
-
 Soient
 $$
 \underline{\mathcal{M}}=\left[\min_{X\in\{S,L,I,R\}}m_{Xpq}\right]_{pq,p\neq q}\qquad 
@@ -562,13 +558,13 @@ Toutefois, *non lasciate ogne speranza*, on peut quand même faire des choses !
 
 ---
 
-# L'équilibre sans maladie (ESM)
+# L'équilibre sans maladie (ÉSM)
 
 Supposons le système à l'équilibre et $L_p=I_p=0$ pour $p\in\mathcal{P}$. Alors $\Phi_p=0$ et 
 
 $$
 \begin{aligned}
-0 &=\mathcal{B}_p-d_pS_p+\nu_pR_p
+0 &=b_p-d_pS_p+\nu_pR_p
 +\textstyle{\sum_{q\in\mathcal{P}}} m_{Spq}S_{q} \\
 0 &=-\left(\nu_{p}+d_{p}\right)R_{p}
 +\textstyle{\sum_{q\in\mathcal{P}}} m_{Rpq}R_{q}
@@ -581,12 +577,12 @@ $$
 \mathbf{0} &=-\left(\mathbf{\nu}+\mathbf{d}\right)\mathbf{R}+\mathcal{M}^R\mathbf{R}
 \end{aligned}
 $$
-où $\mathbf{S},\mathbf{R},\mathbf{b}\in\mathbb{R}^{|\mathcal{P}|}$, $\mathbf{d},\mathbf{\nu},\mathcal{M}^S,\mathcal{M}^R$ $|\mathcal{P}|\times|\mathcal{P}|$-matrices ($\mathbf{d},\mathbf{\nu}$ diagonales)
+où $\mathbf{S},\mathbf{R},\mathbf{b}\in\mathbb{R}^{|\mathcal{P}|}$, $\mathbf{d},\mathbf{\nu},\mathcal{M}^S,\mathcal{M}^R$ $|\mathcal{P}|\times|\mathcal{P}|$-matrices, $\mathbf{d},\mathbf{\nu}$ diagonales
 
 
 ---
 
-# $\mathbf{R}$ en l'ESM
+# $\mathbf{R}$ en l'ÉSM
 
 Rappelons la seconde équation:
 $$
@@ -605,13 +601,13 @@ $$
 \lim_{t\to\infty}\mathbf{R}(t)=\mathbf{0}
 $$
 
-$\implies$ en l'ESM, $\mathbf{L}=\mathbf{I}=\mathbf{R}=\mathbf{0}$
+$\implies$ en l'ÉSM, $\mathbf{L}=\mathbf{I}=\mathbf{R}=\mathbf{0}$
 
 ---
 
-# $\mathbf{S}$ en l'ESM
+# $\mathbf{S}$ en l'ÉSM
 
-ESM a $\mathbf{L}=\mathbf{I}=\mathbf{R}=\mathbf{0}$ et $\mathbf{b}-\mathbf{d}\mathbf{S}+\mathcal{M}^S\mathbf{S}=\mathbf{0}$, i.e.,
+ÉSM a $\mathbf{L}=\mathbf{I}=\mathbf{R}=\mathbf{0}$ et $\mathbf{b}-\mathbf{d}\mathbf{S}+\mathcal{M}^S\mathbf{S}=\mathbf{0}$, i.e.,
 $$
 \mathbf{S}=(\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b}
 $$
@@ -619,9 +615,9 @@ Rappel: $-\mathcal{M}^S$ M-matrice singulière. En raisonnant comme avant, $\mat
 - $\mathbf{d}-\mathcal{M}^S$ inversible
 - $\mathbf{d}-\mathcal{M}^S$ M-matrice non-singulière
 
-Second point $\implies (\mathbf{d}-\mathcal{M}^S)^{-1}>\mathbf{0}\implies (\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b}> \mathbf{0}$  (on aurait $\gg\mathbf{0}$ si $\mathcal{M}^S$ est irréductible)
+Second point $\implies$ $(\mathbf{d}-\mathcal{M}^S)^{-1}>\mathbf{0}$ $\implies$ $(\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b}> \mathbf{0}$  (on aurait $\gg\mathbf{0}$ si $\mathcal{M}^S$ est irréductible)
 
-Donc l'ESM a un sens, avec
+Donc l'ÉSM a un sens, avec
 $$
 (\mathbf{S},\mathbf{L},\mathbf{I},\mathbf{R})=\left((\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b},\mathbf{0},\mathbf{0},\mathbf{0}\right)
 $$
@@ -694,7 +690,7 @@ $$
 
 ---
 
-# Évaluons $D\mathcal{F}$ en l'ESM
+# Évaluons $D\mathcal{F}$ en l'ÉSM
 
 <style scoped>
 @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
@@ -711,8 +707,8 @@ Si $\Phi_p=\beta_pS_pI_p$, alors
 <div>
 
 Si $\Phi_p=\beta_p\dfrac{S_pI_p}{N_p}$, alors
-- $\dfrac{\partial\Phi_p}{\partial L_p}=\beta_p\dfrac{S_pI_p}{N_p^2}=0$ en l'ESM
-- $\dfrac{\partial\Phi_p}{\partial I_p}=\beta_p\dfrac{S_p}{N_p}$ en l'ESM
+- $\dfrac{\partial\Phi_p}{\partial L_p}=\beta_p\dfrac{S_pI_p}{N_p^2}=0$ en l'ÉSM
+- $\dfrac{\partial\Phi_p}{\partial I_p}=\beta_p\dfrac{S_p}{N_p}$ en l'ÉSM
 </div>
 </div>
 
@@ -728,7 +724,7 @@ $$
 
 ---
 
-# Calculons $D\mathcal{V}$ et évaluons en l'ESM
+# Calculons $D\mathcal{V}$ et évaluons en l'ÉSM
 
 $$
 V=
@@ -781,40 +777,44 @@ $$
 $$
 i.e.,
 $$
+\begin{multline}
 \mathcal{R}_0=\rho\Biggl(
 \mathsf{diag}\left(
 \frac{\partial\Phi_1}{\partial I_1},\ldots,\frac{\partial\Phi_{|\mathcal{P}|}}{\partial I_{|\mathcal{P}|}}\right)
-\left(\mathsf{diag}_p(\varepsilon_p+d_p)-\mathcal{M}^L\right)^{-1} 
+\left(\mathsf{diag}_p(\varepsilon_p+d_p)-\mathcal{M}^L\right)^{-1} \\
 \mathsf{diag}_p(\varepsilon_p)
 \left(\mathsf{diag}_p(\gamma_p+d_p)-\mathcal{M}^I\right)^{-1}
 \Biggr)
+\end{multline}
 $$
 
 
 --- 
 
-# Stabilité asymptotique locale de l'ESM
+# <!--fit-->Stabilité asymptotique locale de l'ÉSM
 
 <div class="theorem">
 
 Définissons $\mathcal{R}_0$ pour le $|\mathcal{P}|$-SLIRS par
 $$
+\begin{multline}
 \mathcal{R}_0=\rho\Biggl(
 \mathsf{diag}\left(
 \frac{\partial\Phi_1}{\partial I_1},\ldots,\frac{\partial\Phi_{|\mathcal{P}|}}{\partial I_{|\mathcal{P}|}}\right)
-\left(\mathsf{diag}_p(\varepsilon_p+d_p)-\mathcal{M}^L\right)^{-1}  
+\left(\mathsf{diag}_p(\varepsilon_p+d_p)-\mathcal{M}^L\right)^{-1}  \\
 \mathsf{diag}_p(\varepsilon_p)
 \left(\mathsf{diag}_p(\gamma_p+d_p)-\mathcal{M}^I\right)^{-1}
 \Biggr)
+\end{multline}
 $$
-Alors l'ESM
+Alors l'ÉSM
 $$
 (\mathbf{S},\mathbf{L},\mathbf{I},\mathbf{R})=\left((\mathbf{d}-\mathcal{M}^S)^{-1}\mathbf{b},\mathbf{0},\mathbf{0},\mathbf{0}\right)
 $$
 est localement asymptotiquement stable si $\mathcal{R}_0<1$ et instable si $\mathcal{R}_0>1$
 </div>
 
-<div style = "position: relative; bottom: -9%; font-size:20px;">
+<div style = "position: relative; bottom: -8%; font-size:20px;">
 
 De PvdD & Watmough, [Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission](https://doi.org/10.1016/S0025-5564(02)00108-6), *Bulletin of Mathematical Biology* **180**(1-2): 29-48 (2002)
 </div>
@@ -822,9 +822,9 @@ De PvdD & Watmough, [Reproduction numbers and sub-threshold endemic equilibria f
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--- fit ---> $\mathcal{R}_0$ n'est pas la panacée 
+# <!--- fit --->$\mathcal{R}_0$ n'est pas la panacée 
 
-# Un centre urbain et des villes satellites
+# <!--- fit --->Un centre urbain et des villes satellites
 
 <div style = "position: relative; bottom: -30%; font-size:20px;">
 
@@ -835,7 +835,7 @@ JA & S Portet. [Epidemiological implications of mobility between a large urban c
 
 # <!--fit-->Contexte de l'étude
 
-Winnipeg le centre urbain et 3 villes satellites plus petites: Portage la Prairie, Selkirk et Steinbach
+Winnipeg centre urbain, 3 villes satellites plus petites: Portage la Prairie, Selkirk et Steinbach
 
 - densité de population basse à très basse hors de Winnipeg
 - Réseau routier du MB bien étudié par MB Infrastructure Traffic Engineering Branch
@@ -855,7 +855,7 @@ Winnipeg le centre urbain et 3 villes satellites plus petites: Portage la Prairi
 
 ---
 
-![bg contain 75%](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/SIR_flow_diagram_UrbanCentre_Satellite.png)
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/SIR_flow_diagram_UrbanCentre_Satellite.png)
 
 ---
 
@@ -874,7 +874,7 @@ On calcule ça pour toutes les paires $(W,i)$ et $(i,W)$ de villes
 
 ---
 
-# Sensitivité de $\mathcal{R}_0$ aux variations de $\mathcal{R}_0^x\in[0.5,3]$
+# <!--fit-->Sensitivité de $\mathcal{R}_0$ aux variations de $\mathcal{R}_0^x\in[0.5,3]$
 
 ![width:800px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/sensitivity_4cities.png)
 *with disease*: $\mathcal{R}_0^x=1.5$; *without disease*: $\mathcal{R}_0^x=0.5$. Chaque boite et moustaches correspondantes sont 10,000 simulations
@@ -882,7 +882,7 @@ On calcule ça pour toutes les paires $(W,i)$ et $(i,W)$ de villes
 
 ---
 
-# Une connectivité basse peut contrôler $\mathcal{R}_0$
+# <!--fit-->Une connectivité basse peut contrôler $\mathcal{R}_0$
 
 PLP et Steinbach ont des populations comparables mais avec les paramètres utilisés, seul PLP peut induire des valeurs du $\mathcal{R}_0$ général supérieures à 1 quand $\mathcal{R}_0^W<1$
 
@@ -898,7 +898,7 @@ Les taux de mouvement vers et depuis PLP sont plus bas $\rightarrow$ situation p
 
 # $\mathcal{R}_0$ ne raconte pas toute l'histoire !
 
-![width:550px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/invasion_WPG_from_satellites_R01_m_caseR0W05_R0.png) ![width:550px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/invasion_WPG_from_satellites_R01_m_caseR0W05_attackRate.png)
+![width:390px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/invasion_WPG_from_satellites_R01_m_caseR0W05_R0.png) ![width:390px](https://raw.githubusercontent.com/julien-arino/presentations/main/FIGS/satellite_cities/invasion_WPG_from_satellites_R01_m_caseR0W05_attackRate.png)
 Graphiques fonctions de $\mathcal{R}_0^1$ à PLP et de la réduction du mouvement entre Winnipeg et PLP. Gauche: $\mathcal{R}_0$ général. Droite: taux d'attaque à Winnipeg
 
 
@@ -944,11 +944,15 @@ $$
 
 *OUI*, coupler ensemble des unités sujettes à une bifurcation à revers peut conduire à un système qui exhibe une bifurcation à revers
 
+<div style = "position: relative; bottom: -10%; font-size:20px;">
+
 JA, Ducrot & Zongo. [A metapopulation model for malaria with transmission-blocking partial immunity in hosts](https://server.math.umanitoba.ca/~jarino/papers/ArinoDucrotZongo-2011-JMB.pdf). *Journal of Mathematical Biology* **64**(3):423-448 (2012) 
+</div>
+
 
 ---
 
-# Comportements induits par les métapopulations
+# <!--fit-->Comportements induits par les métapopulations
 
 Problème "complémentaire" du problème d'héritage. Soit
 $$
@@ -969,33 +973,37 @@ peut exhiber des comportements pas observés dans le unités du système non cou
 E.g.: les unités ont un comportement 
 $$
 \{
-  \mathcal{R}_0<1\implies\text{ ESM GAS},\ \mathcal{R}_0>1\implies 1 \text{ ÉÉ GAS}
+  \mathcal{R}_0<1\implies\text{ ÉSM GAS},\ \mathcal{R}_0>1\implies 1 \text{ ÉÉ GAS}
 \}
 $$
 tandis que la métapopulation a des solutions périodiques
 
 ---
 
-# Comportements induits - Équilibres mixtes
+# <!--fit-->Comportements induits - Équilibres mixtes
 
-Peut-il y avoir des situations dans lesquelles certains patchs sont en l'ESM tandis que d'autres sont en un ÉÉ ?
+Peut-il y avoir des situations dans lesquelles certains patchs sont en l'ÉSM tandis que d'autres sont en un ÉÉ ?
 
 Ceci est le problème des **équilibres mixtes**
 
 ---
 
-# Types d'équilibres
+# Types d'équilibres (niveau patch)
 
 <div class="definition">
 
-**[Niveau du patch]** Un patch $p\in\mathcal{P}$ à l'équilibre est **vide** si $X_p^\star=0$, à l'**équilibre sans maladie** si $X_p^\star=(s_{k_1p}^\star,\ldots,s_{k_up}^\star,0,\ldots,0)$, où $k_1,\ldots,k_u$ sont des indices avec $1\leq u\leq|\mathcal{U}|$ et $s_{k_1p}^\star,\ldots,s_{k_up}^\star$ sont strictement positifs, et à un **équilibre endémique** si $X_p\gg 0$
+Un patch $p\in\mathcal{P}$ à l'équilibre est **vide** si $X_p^\star=0$, à l'**équilibre sans maladie** si $X_p^\star=(s_{k_1p}^\star,\ldots,s_{k_up}^\star,0,\ldots,0)$, où $k_1,\ldots,k_u$ sont des indices avec $1\leq u\leq|\mathcal{U}|$ et $s_{k_1p}^\star,\ldots,s_{k_up}^\star$ sont strictement positifs, et à un **équilibre endémique** si $X_p\gg 0$
 </div>
+
+---
+
+# <!--fit-->Types d'équilibres (niveau métapopulation)
 
 <p style="margin-bottom:1cm;"></p> 
 
 <div class="definition">
 
-**[Niveau de la métapopulation]** Un **équilibre sans population de métapopulation** corresponds à un équilibre où tous les patchs sont vides. Un **équilibre sans maladie de métapopulation** a tous les patchs en un ESM impliquant les mêmes compartiments pour tous les patchs. Un **équilibre endémique de métapopulation** a tous les patchs à un équilibre endémique
+Un **équilibre de métapopulation sans population** corresponds à un équilibre où tous les patchs sont vides. Un **équilibre de métapopulation sans maladie** a tous les patchs en un ÉSM impliquant les mêmes compartiments pour tous les patchs. Un **équilibre de métapopulation endémique** a tous les patchs à un équilibre endémique
 </div>
 
 --- 
@@ -1005,8 +1013,8 @@ Ceci est le problème des **équilibres mixtes**
 <div class="definition">
 
 Un **équilibre mixte** est un équilibre de métapopulation t.q.
-- tous les patchs sont à un ESM mais le système n'est pas à un ESM de métapopulation
-- ou il y a au moins 2 patchs qui sont à un équilibre de type différent (vide, ESM ou ÉÉ)
+- tous les patchs sont à un ÉSM mais le système n'est pas à un ÉSM de métapopulation
+- ou il y a au moins 2 patchs qui sont à un équilibre de type différent (vide, ÉSM ou ÉÉ)
 </div>
 
 <p style="margin-bottom:1cm;"></p> 
@@ -1028,7 +1036,7 @@ $$
 Supposons que le mouvement soit similaire pour tous les compartiments (MSTC) et que le système soit à l'équilibre
 
 - Si le patch $p\in\mathcal{P}$ est vide, tous les patchs dans $\mathcal{A}(p)$ (ancêtres de $p$) sont également vides
-- Si le patch $p\in\mathcal{P}$ est en un ESM, alors le sous-système consistant de tous les patchs dans $\{p,\mathcal{A}(p)\}$ est en un ESM de métapopulation
+- Si le patch $p\in\mathcal{P}$ est en un ÉSM, alors le sous-système consistant de tous les patchs dans $\{p,\mathcal{A}(p)\}$ est en un ÉSM de métapopulation
 - Si le patch $p\in\mathcal{P}$ est en un ÉÉ, alors tous les patchs dans $\mathcal{D}(p)$ (descendants de $p$) sont aussi en un ÉÉ
 - Si $\mathcal{G}^c$ est fortement connexe pour un compartiment $c\in\mathcal{C}$, alors il n'existe pas d'équilibres mixtes
 </div>
@@ -1096,7 +1104,7 @@ $$
 $$
 
 
-<div style = "position: relative; bottom: -12%; font-size:20px;">
+<div style = "position: relative; bottom: -4%; font-size:20px;">
 
 - JA & PvdD. [Disease spread in metapopulations](https://server.math.umanitoba.ca/~jarino/publications/ArinoVdD-2006-FIC48.pdf). *Fields Institute Communications* **48**:1-13 (2006)
 - JA. [Diseases in metapopulations](https://server.math.umanitoba.ca/~jarino/papers/Arino_metapopulations.pdf). In *Modeling and Dynamics of Infectious Diseases*, World Scientific (2009)
@@ -1104,11 +1112,11 @@ $$
 
 ---
 
-Le résultat de SAL de l'ESM lorsque $\mathcal{R}_{0}<1$ peut être rendu global
+Le résultat de SAL de l'ÉSM lorsque $\mathcal{R}_{0}<1$ peut être rendu global
 
 <div class="theorem">
 
-Calculons $\mathcal{R}_0$ comme expliqué précédemment. Si $\mathcal{R}_0<1$, alors l'ESM du système $|\mathcal{P}|$-SLIRS $\eqref{sys:pSLIRS_GAS_dS}$-$\eqref{sys:pSLIRS_GAS_dR}$ est globalement asymptotiquement stable
+Calculons $\mathcal{R}_0$ comme expliqué précédemment. Si $\mathcal{R}_0<1$, alors l'ÉSM du système $|\mathcal{P}|$-SLIRS $\eqref{sys:pSLIRS_GAS_dS}$-$\eqref{sys:pSLIRS_GAS_dR}$ est globalement asymptotiquement stable
 </div>
 
 ---
@@ -1137,13 +1145,14 @@ $$
 - En utilisant un théorème de comparaison, il suit que ces limites sont aussi vérifées pour le sous-système non linéaire $\eqref{sys:pSLIRS_GAS_dL}$-$\eqref{sys:pSLIRS_GAS_dI}$
 - Il suit par le même raisonnement que plus avant que $\lim\limits_{t\rightarrow \infty }R_{p}=0$ et $\lim\limits_{t\rightarrow \infty }S_{p}=N_{p}^\star$
 
-Donc, lorsque $\mathcal{R}_{0}<1,$ l'ESM est GAS, la maladie s'éteint
+Donc, lorsque $\mathcal{R}_{0}<1,$ l'ÉSM est GAS, la maladie s'éteint
 
 ---
 
 # $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS (espèces multiples)
 
 On considère $\eqref{sys:spSLIRS_dS}$-$\eqref{sys:spSLIRS_dR}$ avec population totale constante, mouvement égal pour tous les états et irréductible
+
 $$
 \begin{align}
 S_{sp}' &= d_{sp}N_{sp}+\nu_{sp}R_{sp}-\Phi_{sp}-d_{sp}S_{sp}
@@ -1160,13 +1169,14 @@ R_{sp} &= \gamma _{sp}I_{sp}-(\nu_{sp}+d_{sp})R_{sp}
 \tag{12d}\label{sys:spSLIRS_GAS_dR} 
 \end{align}
 $$
- et incidence standard
+
+et incidence standard
 $$
 \tag{12e}
 \Phi_{sp}=\sum_{k\in\mathcal{S}}\beta_{skp}\frac{S_{sp}I_{kp}}{N_p}
 $$
 
-<div style = "position: relative; bottom: -4%; font-size:20px;">
+<div style = "position: relative; bottom: -3%; font-size:20px;">
 
 - JA, Davis, Hartley, Jordan, Miller \& PvdD. [A multi-species epidemic model with spatial dynamics](https://server.math.umanitoba.ca/~jarino/papers/ArinoDavisHartleyJordanMillerVdD-2005-MMB22.pdf). *Mathematical Medicine and Biology* **22**(2):129-142 (2005) 
 - JA, Jordan \& PvdD. [Quarantine in a multi-species epidemic model with spatial dynamics](https://server.math.umanitoba.ca/~jarino/publications/ArinoJordanVdD-2007-MBS206.pdf). *Mathematical Biosciences* **206**(1):46-60 (2007)
@@ -1176,14 +1186,14 @@ $$
 
 <div class="theorem">
 
-Pour le modèle $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS $\eqref{sys:spSLIRS_GAS_dS}$-$\eqref{sys:spSLIRS_GAS_dR}$, définissons $\mathcal{R}_0$ en utilisant la méthode décrite plus haut. Si $\mathcal{R}_0<1$, alors l'ESM est GAS
+Pour le modèle $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS $\eqref{sys:spSLIRS_GAS_dS}$-$\eqref{sys:spSLIRS_GAS_dR}$, définissons $\mathcal{R}_0$ en utilisant la méthode décrite plus haut. Si $\mathcal{R}_0<1$, alors l'ÉSM est GAS
 </div>
 
 ---
 
 # Preuve
 
-Pour établir la SAG de l'ESM lorsque $\mathcal{R}_0<1$, considérons le système **non autonome** consistant de $\eqref{sys:spSLIRS_GAS_dL}$-$\eqref{sys:spSLIRS_GAS_dR}$, dans lequel on écrit $\eqref{sys:spSLIRS_GAS_dL}$ sous la forme
+Pour établir la SAG de l'ÉSM lorsque $\mathcal{R}_0<1$, considérons le système **non autonome** consistant de $\eqref{sys:spSLIRS_GAS_dL}$-$\eqref{sys:spSLIRS_GAS_dR}$, dans lequel on écrit $\eqref{sys:spSLIRS_GAS_dL}$ sous la forme
 $$
 \begin{equation}\label{sys:nonauton_E}\tag{13}
 \begin{aligned}
@@ -1201,7 +1211,7 @@ $$
 \sum_{q\in\mathcal{P}}m_{spq}N_{sq}
 \end{equation}
 $$
-On a (par raisonnement similaire à celui de la SAL de l'ESM)
+On a (par raisonnement similaire à celui de la SAL de l'ÉSM)
 $$
 \lim_{t\to\infty}N_{sp}(t)=N_{sp}^\star>0
 $$
@@ -1216,7 +1226,7 @@ x' = f(t,x)
 $$
 où $x$ vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel consistant des $L_{sp}$, $I_{sp}$ et $R_{sp}$ 
 
-L'ESM pour $\eqref{sys:spSLIRS_GAS_dL}$-$\eqref{sys:spSLIRS_GAS_dR}$ correspond à l'équilibre $x=0$ de $\eqref{sys:nonauton}$
+L'ÉSM pour $\eqref{sys:spSLIRS_GAS_dL}$-$\eqref{sys:spSLIRS_GAS_dR}$ correspond à l'équilibre $x=0$ de $\eqref{sys:nonauton}$
 
 $\eqref{sys:nonauton}$ dépend de $N_{sp}(t)$, mais $N_{sp}(t)$ peut être considéré independemment des variables épidémiologiques, et l'on a vu que $N_{sp}(t)\to N_{sp}^\star$ quand $t\to\infty$
 
@@ -1282,7 +1292,7 @@ En utilisant un théorème de comparaison standard, il suit que 0 est un équili
 
 ---
 
-Lorsque $\mathcal{R}_0<1$, le système linéaire $\eqref{sys:lin_E}$ et $\eqref{sys:spSEIRS_GAS_dI}$ a un équilibre unique (l'ESM) puisque sa matrice de coefficients $F-V$ est non-singulière
+Lorsque $\mathcal{R}_0<1$, le système linéaire $\eqref{sys:lin_E}$ et $\eqref{sys:spSEIRS_GAS_dI}$ a un équilibre unique (l'ÉSM) puisque sa matrice de coefficients $F-V$ est non-singulière
 
 La SAG suit par utilisation de résultats sur les systèmes asymptotiquement autonomes
 
@@ -1450,15 +1460,12 @@ Il faut jouer avec les taux de mouvement et les conditions initiales. Je n'expli
 
 ---
 
-# En conclusion
-
 - L'espace est une composante fondamentale du processus de propagation épidémique et **ne peut pas** être ignoré, dans les modèles **et** dans les décisions de santé publique
 
 - Une des façons de modéliser l'espace est en utilisant des modèles en métapopulation
 
 - Les modèles en métapopulation sont faciles à analyser localement et donnent des résultats intéressants au niveau global
 
-
-- Dans le [Cours 13](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-13-EDO-en-R.html), on verra que les simulations déterministes peuvent être couteuses en RAM et en CPU mais sont faciles
+- Les simulations déterministes peuvent être couteuses en RAM et en CPU mais sont faciles
 
 - Les modèles en métapopulation ne sont pas la seule solution, loin de là !!!

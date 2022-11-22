@@ -54,7 +54,7 @@ University of Manitoba*
 
 <div style = "font-size:18px; margin-top:-10px; padding-bottom:30px;"></div>
 
-Centre canadien de modélisation des maladies (CCDM/CCMM)
+Centre canadien de modélisation des maladies (CCMM)
 NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 <div style = "text-align: justify; position: relative; bottom: -5%; font-size:25px;">
@@ -73,6 +73,7 @@ img[alt~="center"] {
 # Plan de ce cours
 
 - Modèle SIR épidémique de Kermack et McKendrick
+- Taille finale d'une épidémie
 
 ---
 
@@ -110,12 +111,14 @@ Suivi de "Contributions to the mathematical theory of epidemics."
 - Les individus dans la populations sont soit *susceptibles* ($S$), soit *infectieux* avec la maladie ($I$). Après guérison ou mort, on les *retire* du compartiment infectieux ($R$)
 - Incidence du type action de masse $\beta SI$
 
+---
+
 Le modèle que nous considérons maintenant est typiquement appelé modèle SIR de Kermack-McKendrick (KMK)
 $$
 \begin{align}
-S' &= -\beta SI \tag{21a}\label{sys:KMK_dS} \\
-I' &= (\beta S-\gamma)I  \tag{21b}\label{sys:KMK_dI} \\
-R' &= \gamma I  \tag{21c}\label{sys:KMK_dR}
+S' &= -\beta SI \tag{1a}\label{sys:KMK_dS} \\
+I' &= (\beta S-\gamma)I  \tag{1b}\label{sys:KMK_dI} \\
+R' &= \gamma I  \tag{1c}\label{sys:KMK_dR}
 \end{align}
 $$
 
@@ -125,17 +128,16 @@ $$
 
 3 compartiments, mais quand on inspecte en détail, on remarque que les *retirés* n'ont pas d'influence directe sur la dynamique de $S$ ou $I$, dans le sens où $R$ n'apparaît pas dans $\eqref{sys:KMK_dS}$ ou $\eqref{sys:KMK_dI}$
 
-De plus, la population totale (incluant potentiellement les morts qui sont aussi classés dans $R$) $N=S+I+R$ satisfait
+De plus, la population totale (incluant les morts qui sont aussi classés dans $R$) $N=S+I+R$ satisfait
 $$
 N'=(S+I+R)'=0
 $$
 Par conséquent, $N$ est constant et la dynamique de $R$ peut être déduite de $R=N-(S+I)$
-
 Donc on considère à présent
 $$
 \begin{align}
-S' &= -\beta SI \tag{22a}\\
-I' &= (\beta S-\gamma)I  \tag{22b}
+S' &= -\beta SI \tag{2a}\\
+I' &= (\beta S-\gamma)I  \tag{2b}
 \end{align}
 $$
 
@@ -146,8 +148,8 @@ $$
 Considérons les équilibres de
 $$
 \begin{align}
-S' &= -\beta SI \tag{22a}\label{sys:KMK_2d_dS} \\
-I' &= (\beta S-\gamma)I  \tag{22b}\label{sys:KMK_2d_dI}
+S' &= -\beta SI \tag{2a}\label{sys:KMK_2d_dS} \\
+I' &= (\beta S-\gamma)I  \tag{2b}\label{sys:KMK_2d_dI}
 \end{align}
 $$
 
@@ -159,16 +161,16 @@ Substituant dans $\eqref{sys:KMK_2d_dS}$
 - dans le premier cas, $(\bar S,\bar I)=(\gamma/\beta,0)$
 - dans le second cas, n'importe quel $\bar S\geq 0$ est un équilibre (on a un *continuum* d'équilibres)
 
-Le second cas est un **problème**: la linéarisation usuelle ne fonctionne pas puisque les équilibres ne sont pas isolés! (Voir [TP 02](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_P02_Analysis_LargeScaleModels.html))
+Le second cas est un **problème**: la linéarisation usuelle ne fonctionne pas puisque les équilibres ne sont pas isolés!
 
 
 ---
 
-# Une autre approche - On étudie $dI/dS$
+# <!--fit-->Une autre approche - On étudie $dI/dS$
 
 Quelle est la dynamique de $dI/dS$? On a
 $$
-\tag{23}\label{eq:KMK_dI_over_dS}
+\tag{3}\label{eq:KMK_dI_over_dS}
 \frac{dI}{dS}
 =\frac{dI}{dt}\frac{dt}{dS}
 =\frac{I'}{S'}
@@ -199,12 +201,6 @@ $$
 
 Trajectoires dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\gamma=2.5$
 
-![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_planar_trajectories.png)
-
----
-
-Trajectoires dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\gamma=2.5$
-
 ![width:1200px center](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/KMK_planar_trajectories.png)
 
 ---
@@ -215,14 +211,19 @@ Supposons que la population totale $N$ soit normalisée, i.e., $N=1$. Alors $R=1
 
 Définissons
 $$
-\begin{equation}\label{eq:R0_KMK}\tag{24}
+\begin{equation}\label{eq:R0_KMK}\tag{4}
 \mathcal{R}_0=\frac{\beta}{\gamma}
 \end{equation}
 $$
 
 ---
 
-# Calcul de la taille finale de l'épidémie
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Taille finale d'une épidémie
+
+---
+
+# <!--fit-->Calcul de la taille finale de l'épidémie
 
 Pour la fonction à valeurs positives et intégrable $w(t)$,  notons
 $$
