@@ -122,7 +122,7 @@ R' &= \gamma I  \tag{1c}\label{sys:KMK_dR}
 \end{align}
 $$
 
-![width:600px center](https://raw.githubusercontent.com/julien-arino/omni-course-part1/main/FIGS/SIR_KMK_ODE.png)
+![width:600px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SIR_KMK_ODE.png)
 
 ---
 
@@ -303,7 +303,7 @@ $$
 =
 \frac{S_\infty-S_0-I_0}{\gamma}
 $$
-On a donc (**vérifier** $\mathcal{R}_0$ ou avec un $S_0$)
+On a donc
 $$
 S_0+I_0-S_\infty+\frac{\ln S_0-\ln S_\infty}{\mathcal{R}_0} = 0
 $$

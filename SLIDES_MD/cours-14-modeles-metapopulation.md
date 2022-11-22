@@ -192,6 +192,7 @@ $$
 
 $\mathcal{S}$ un ensemble d'espèces
 $$
+\small
 \begin{align}
 S_{sp}' &= b_{sp}+\nu_{sp}R_{sp}-\Phi_{sp}-d_{sp}S_{sp}
 \color{red}{+\textstyle{\sum_{q\in\mathcal{P}}} m_{Sspq}S_{sq}} \tag{3a}\label{sys:spSLIRS_dS} \\
@@ -221,6 +222,7 @@ $$
 # $|\mathcal{P}|^2$-SLIRS (résidents-voyageurs)
 
 $$
+\small
 \begin{align}
 S_{pq}' =& 
 b_{pq}+\nu_{pq} R_{pq}-\Phi_{pq}-d_{pq}S_{pq} \color{red}{+\textstyle{\sum_{k\in\mathcal{P}}} m_{Spqk}S_{pk}} 
@@ -255,7 +257,7 @@ $$
 
 ---
 
-# Modèles généraux en metapopulation
+# <!--fit-->Modèles généraux en metapopulation
 
 $\mathcal{U}\subsetneq\mathcal{C}$ compartiments **non infectés** et $\mathcal{I}\subsetneq\mathcal{C}$ compartiments **infectés**, $\mathcal{U}\cup\mathcal{I}=\mathcal{C}$ et $\mathcal{U}\cap\mathcal{I}=\emptyset$
 
@@ -589,8 +591,7 @@ $$
 \mathbf{0} =-\left(\mathbf{\nu}+\mathbf{d}\right)\mathbf{R}+\mathcal{M}^R\mathbf{R} \Leftrightarrow (\mathcal{M}^R-\mathbf{\nu}-\mathbf{d})\mathbf{R}=\mathbf{0}
 $$
 
-Donc on a une solution unique $\mathbf{R}=\mathbf{0}$ si $\mathcal{M}^R-\mathbf{\nu}-\mathbf{d}$ inversible.
-L'est-elle ?
+Donc on a une solution unique $\mathbf{R}=\mathbf{0}$ si $\mathcal{M}^R-\mathbf{\nu}-\mathbf{d}$ inversible. L'est-elle ?
 
 Cela me rappelle quelque chose ! 
 
@@ -1069,7 +1070,7 @@ requise pour observer des comportements induits par la stucture de métapopulati
 
 ---
 
-# Remarques sur la SAG dans les métapopulations
+# <!--fit-->Remarques sur la SAG dans les métapopulations
 
 - Contrairement à l'analyse locale, il n'y a pas d'algorithme permettant de considérer ce problème de façon systématique
 - On procède au cas par cas. Deux exemples dans le reste de ce cours
@@ -1116,7 +1117,7 @@ Le résultat de SAL de l'ÉSM lorsque $\mathcal{R}_{0}<1$ peut être rendu globa
 
 <div class="theorem">
 
-Calculons $\mathcal{R}_0$ comme expliqué précédemment. Si $\mathcal{R}_0<1$, alors l'ÉSM du système $|\mathcal{P}|$-SLIRS $\eqref{sys:pSLIRS_GAS_dS}$-$\eqref{sys:pSLIRS_GAS_dR}$ est globalement asymptotiquement stable
+Calculons $\mathcal{R}_0$ comme expliqué précédemment. Si $\mathcal{R}_0<1,$ alors l'ÉSM du système $|\mathcal{P}|$-SLIRS $\eqref{sys:pSLIRS_GAS_dS}$-$\eqref{sys:pSLIRS_GAS_dR}$ est globalement asymptotiquement stable
 </div>
 
 ---
@@ -1199,7 +1200,8 @@ $$
 \begin{aligned}
 L_{sp}' =& \sum_{j\in\mathcal{S}}
 \beta_{sjp}(N_{sp}-L_{sp}-I_{sp}-R_{sp})\frac{I_{jp}}{N_{jp}} \\
-&-(d_{sp}+\varepsilon_{sp})L_{sp}+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
+&-(d_{sp}+\varepsilon_{sp})L_{sp} \\
+&+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
 -\sum_{q\in\mathcal{P}} m_{sqp}L_{sp}
 \end{aligned}
 \end{equation}
@@ -1211,22 +1213,22 @@ $$
 \sum_{q\in\mathcal{P}}m_{spq}N_{sq}
 \end{equation}
 $$
+
+--- 
+
 On a (par raisonnement similaire à celui de la SAL de l'ÉSM)
 $$
 \lim_{t\to\infty}N_{sp}(t)=N_{sp}^\star>0
 $$
-
----
-
 Écrivons le système non autonome $\eqref{sys:nonauton_E}$-$\eqref{sys:spSLIRS_GAS_dI}$-$\eqref{sys:spSLIRS_GAS_dR}$ comme
 $$
 \begin{equation}\label{sys:nonauton}\tag{14}
 x' = f(t,x)
 \end{equation}
 $$
-où $x$ vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel consistant des $L_{sp}$, $I_{sp}$ et $R_{sp}$ 
+où $x$ vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel des $L_{sp}$, $I_{sp}$ et $R_{sp}$ 
 
-L'ÉSM pour $\eqref{sys:spSLIRS_GAS_dL}$-$\eqref{sys:spSLIRS_GAS_dR}$ correspond à l'équilibre $x=0$ de $\eqref{sys:nonauton}$
+L'ÉSM pour $\eqref{sys:spSLIRS_GAS_dL}$-$\eqref{sys:spSLIRS_GAS_dR}$ correspond au PÉ $x=0$ de $\eqref{sys:nonauton}$
 
 $\eqref{sys:nonauton}$ dépend de $N_{sp}(t)$, mais $N_{sp}(t)$ peut être considéré independemment des variables épidémiologiques, et l'on a vu que $N_{sp}(t)\to N_{sp}^\star$ quand $t\to\infty$
 
@@ -1258,12 +1260,15 @@ $$
 x'=\mathcal{L}x
 \end{equation}
 $$
-où $x$ est le vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel consistant des $L_{sp}$, $I_{sp}$ et $R_{sp}$. Dans $\mathcal{L}$, on remplace $S_{sp}/N_{jp}$ par $N_{sp}^\star/N_{jp}^\star$. Les équations $\eqref{sys:spSLIRS_GAS_dI}$ et $\eqref{sys:spSLIRS_GAS_dR}$ ne sont pas affectées par cette transformation, tandis que $\eqref{sys:spSEIRS_L}$ devient
+où $x$ est le vecteur $3|\mathcal{S}||\mathcal{P}|$-dimensionnel consistant des $L_{sp}$, $I_{sp}$ et $R_{sp}$. Dans $\mathcal{L}$, on remplace $S_{sp}/N_{jp}$ par $N_{sp}^\star/N_{jp}^\star$. Les équations $\eqref{sys:spSLIRS_GAS_dI}$ et $\eqref{sys:spSLIRS_GAS_dR}$ ne sont pas affectées par cette transformation, tandis que $\eqref{sys:spSLIRS_GAS_dL}$ devient
 $$ 
 \begin{equation}\label{sys:lin_E}\tag{18}
-L_{sp}' = \sum_{j\in\mathcal{S}}
+\begin{aligned}
+L_{sp}' &= \sum_{j\in\mathcal{S}}
 \beta_{sjp}\frac{N_{sp}^*}{N_{jp}^*}I_{jp}
--(d_{sp}+\varepsilon_{sp})L_{sp}+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
+-(d_{sp}+\varepsilon_{sp})L_{sp}\\
+&+\sum_{q\in\mathcal{P}} m_{spq}L_{sq}
+\end{aligned}
 \end{equation}
 $$
 Si l'on compare $\eqref{sys:asympt_auton_E}$ et $\eqref{sys:lin_E}$, on note que $g(x)\leq\mathcal{L}x$ pour tout $x \in \mathbb{R}_+^{3|\mathcal{S}||\mathcal{P}|}$
@@ -1274,11 +1279,11 @@ Dans $\eqref{sys:linear}$, les équations pour $L_{sp}$ et $I_{sp}$ n'impliquent
 
 La méthode utilisée pour prouver la SAL peut être appliquée pour prouver la stabilité de $\tilde x=0$ pour le sous-système $\tilde x'=\tilde{\mathcal{L}}\tilde x$, avec $\tilde{\mathcal{L}}=F-V$
 
-Si $\mathcal{R}_0<1$, alors $\tilde x=0$ est un équilibre stable du sous-système $\tilde x'=\tilde{\mathcal{L}}\tilde x$. Quand $\tilde x=0$, $\eqref{sys:spSEIRS_GAS_dR}$ prend la forme
+Si $\mathcal{R}_0<1$, alors $\tilde x=0$ est un équilibre stable du sous-système $\tilde x'=\tilde{\mathcal{L}}\tilde x$. Quand $\tilde x=0$, $\eqref{sys:spSLIRS_GAS_dR}$ prend la forme
 $$
 R_s' = (\mathcal{M}_s-D_s)R_s
 $$
-avec $R_s=(R_{s1},\ldots,R_{s|\mathcal{P}|})^T$ et $D_s=\mathsf{diag}(d_{s1},\ldots,d_{s|\mathcal{P}|})$
+avec $R_s=(R_{s1},\ldots,R_{s|\mathcal{P}|})^T,$ $D_s=\mathsf{diag}(d_{s1},\ldots,d_{s|\mathcal{P}|})$
 
 ---
 
