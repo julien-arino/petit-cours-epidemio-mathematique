@@ -27,7 +27,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 12: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-10-heterogeneite-groupe-et-spatiale.html)
 - Cours 13: [Modèles de groupes](cours-13-modeles-groupes.html)
 - Cours 14: [Modèles dans des métapopulations](cours-14-modeles-metapopulation.html) ([video](https://youtu.be/8SPp7I6UHfk))
-- Cours 15: [Un peu plus sur les métapopulations](cours-15-plus-de-metapopulations.html)
+- Cours 15: [Un peu plus sur les métapopulations](cours-15-plus-de-metapopulation.html)
 - Cours 16: [Modèles spatiaux en EDP](cours-16-modeles-EDP.html)
 - Cours 17: [Types de modèles stochastiques utilisés en épidémiologie](cours-17-stochasticite.html)
 - Cours 18: [Modèles en chaînes de Markov](cours-18-modeles-MC.html)
