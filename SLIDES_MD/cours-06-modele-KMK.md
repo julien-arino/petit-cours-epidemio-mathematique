@@ -389,6 +389,62 @@ $$
 
 ---
 
+On va résoudre numériquement. Il faut une fonction
+```R
+final_size = function(S_inf, S0 = 999, I0 = 1, R_0 = 2.5) {
+  OUT = S0*(log(S0)-log(S_inf)) - (S0+I0-S_inf)*R_0
+  return(OUT)
+}
+```
+et on résoud facilement en utilisant `uniroot`, ici avec les valeurs par défaut qu'on a mis dans la fonction:
+```R
+uniroot(f = final_size, interval = c(0.05, 999))
+$root
+[1] 106.8819
+$f.root
+[1] -2.649285e-07
+$iter
+[1] 10
+$init.it
+[1] NA
+$estim.prec
+[1] 6.103516e-05
+```
+
+---
+
+Pour passer des valeurs différentes, on peut par exemple faire
+```R
+N0 = 1000
+I0 = 1
+S0 = N0-I0
+R_0 = 2.4
+uniroot(
+  f = function(x) 
+    final_size(S_inf = x, 
+               S0 = S0, I0 = I0, 
+               R_0 = R_0),
+  interval = c(0.05, S0))
+```
+
+---
+
+# <!--fit-->Une figure avec toutes les informations
+```R
+S = seq(0.1, S0, by = 0.1)
+fs = final_size(S, S0 = S0, I0 = I0, R_0 = R_0)
+S_inf = uniroot(f = function(x) final_size(S_inf = x, 
+                                           S0 = S0, I0 = I0, 
+                                           R_0 = R_0),
+                interval = c(0.05, S0))
+plot(S, fs, type = "l", ylab = "Valeur de l'équation (8)")
+abline(h = 0)
+points(x = S_inf$root, y = 0, pch = 19)
+text(x = S_inf$root, y = 0, labels = "S_inf", adj = c(-0.25,-1))
+```
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->En conclusion
 
