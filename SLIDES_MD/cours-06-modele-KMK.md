@@ -445,6 +445,10 @@ text(x = S_inf$root, y = 0, labels = "S_inf", adj = c(-0.25,-1))
 
 ---
 
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_final_size.png)
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->En conclusion
 

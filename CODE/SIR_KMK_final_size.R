@@ -19,11 +19,11 @@ S_inf = uniroot(f = function(x) final_size(S_inf = x,
                                            R_0 = R_0),
                 interval = c(0.05, S0))
 
-png("../FIGS/KMK_final_size.png", width = 1200, height = 800, res = 200)
+png("../FIGS/KMK_final_size_R0_2p4.png", width = 1200, height = 800, res = 200)
 plot(S, fs, type = "l", ylab = "Valeur de l'équation (8)")
 abline(h = 0)
 points(x = S_inf$root, y = 0, pch = 19)
 text(x = S_inf$root, y = 0, labels = "S_inf", adj = c(-0.25,-1))
 dev.off()
-crop_figure("../FIGS/KMK_final_size.png")
+crop_figure("../FIGS/KMK_final_size_2p4.png")
 
