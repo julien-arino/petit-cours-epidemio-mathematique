@@ -117,7 +117,7 @@ Le modèle que nous considérons maintenant est typiquement appelé modèle SIR 
 $$
 \begin{align}
 S' &= -\beta SI \tag{1a}\label{sys:KMK_dS} \\
-I' &= (\beta S-\gamma)I  \tag{1b}\label{sys:KMK_dI} \\
+I' &= \beta SI-\gamma I  \tag{1b}\label{sys:KMK_dI} \\
 R' &= \gamma I  \tag{1c}\label{sys:KMK_dR}
 \end{align}
 $$
@@ -139,7 +139,7 @@ Donc on considère à présent
 $$
 \begin{align}
 S' &= -\beta SI \tag{2a}\\
-I' &= (\beta S-\gamma)I  \tag{2b}
+I' &= \beta SI-\gamma I  \tag{2b}
 \end{align}
 $$
 
@@ -161,16 +161,23 @@ De $\eqref{sys:KMK_2d_dI}$
 
 Substituant dans $\eqref{sys:KMK_2d_dS}$
 - dans le premier cas, $(\bar S,\bar I)=(\gamma/\beta,0)$
-- dans le second cas, n'importe quel $\bar S\geq 0$ est un équilibre (on a un *continuum* d'équilibres)
+- dans le second cas, n'importe quel $\bar S\geq 0$ est un équilibre
 
-Le second cas est un **problème**: la linéarisation usuelle ne fonctionne pas puisque les équilibres ne sont pas isolés!
+Le second cas est un **problème**: la linéarisation usuelle ne fonctionne pas lorsque l'on a un *continuum* d'équilibres, puisque les équilibres ne sont pas isolés!
 
 
 ---
 
 # <!--fit-->Une autre approche - On étudie $dI/dS$
 
-Quelle est la dynamique de $dI/dS$? On a
+$$
+\begin{align}
+S' &= -\beta SI \tag{2a}\\
+I' &= \beta SI-\gamma I  \tag{2b}
+\end{align}
+$$
+
+Quelle est la dynamique de $dI/dS$? 
 $$
 \tag{3}\label{eq:KMK_dI_over_dS}
 \frac{dI}{dS}
@@ -191,133 +198,57 @@ I(S)=\frac\gamma\beta \ln S-S+C
 $$
 avec $C\in\mathbb{R}$
 
-La condition initiale $I(S_0)=I_0$ donne $C=S_0+I_0-\dfrac \gamma\beta \ln S_0$, et la solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ est, en tant que fonction de $S$
+CI $I(S_0)=I_0$ $\Rightarrow$ $C=S_0+I_0-\dfrac \gamma\beta \ln S_0$, et la solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ est, en tant que fonction de $S$
 $$
 \begin{align*}
 I(S)&=S_0+I_0-S+\frac\gamma\beta \ln \frac S{S_0} \\
 R(S)&=N-S-I(S)=R_0-\frac\gamma\beta \ln \frac S{S_0}
 \end{align*}
 $$
+(puisque $N_0=S_0+I_0+R_0$)
 
 ---
 
-Trajectoires dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\gamma=2.5$
+Trajectoires du système $(S,I)$ normalisé dans l'espace des phases $(S,I)$ avec CI $(S_0,1-S_0)$ et $\beta/\gamma=2.5$
 
 ![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_planar_trajectories.png)
 
 ---
 
-# <!--fit-->Le nombre de reproduction élémentaire $\mathcal{R}_0$
+Étudions 
+$$
+I(S)=S_0+I_0-S+\frac\gamma\beta \ln \frac S{S_0} 
+$$
+On a
+$$
+\frac{d}{dS}I(S) = \frac{\gamma}{\beta S}-1
+$$
+Donc dans les courbes précédentes, le max de $I(S)$ a lieu lorsque $S=\gamma/\beta$ ($S=0.4$ dans l'exemple). En ce point,
+$$
+I(S) = I_0+\left(
+  1-\frac{1}{\mathcal{R}_0} - \frac{\ln(\mathcal{R}_0)}{\mathcal{R}_0}
+\right)S_0
+$$
 
-Supposons que la population totale $N$ soit normalisée, i.e., $N=1$. Alors $R=1-(S+I)$
+---
 
-Définissons
+<div class="theorem">
+
+Soit $(S(t),I(t))$ une solution à $\eqref{sys:KMK_2d_dS}$-$\eqref{sys:KMK_2d_dI}$ et $\mathcal{R}_0$ défini par 
 $$
 \begin{equation}\label{eq:R0_KMK}\tag{4}
-\mathcal{R}_0=\frac{\beta}{\gamma}
+\mathcal{R}_0=\frac{\beta}{\gamma}S_0
 \end{equation}
 $$
 
----
-
-<div class="theorem">
-
-Soit $(S(t),I(t))$ une solution à $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ en proportions et $\mathcal{R}_0$ défini par $\eqref{eq:R0_KMK}$
-
-- Si $\mathcal{R}_0
-S_0\leq 1$, alors $I(t)\to 0$ quand $t\to\infty$ en étant toujours décroissant
-- Si $\mathcal{R}_0
-S_0>1$, alors $I(t)$ atteint d'abord un maximum 
+- Si $\mathcal{R}_0\leq 1$, alors $I(t)\searrow 0$ quand $t\to\infty$
+- Si $\mathcal{R}_0>1$, alors $I(t)$ atteint d'abord un maximum 
 $$
-1-\frac 1{\mathcal{R}_0}-\frac{\ln(\mathcal{R}_0 S_0)}{\mathcal{R}_0}
+I_0+\left(
+1-\frac{1}{\mathcal{R}_0} - \frac{\ln(\mathcal{R}_0)}{\mathcal{R}_0}
+\right)S_0
 $$
 puis tend vers 0 quand $t\to\infty$
-</div>
-
----
-
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Taille finale d'une épidémie
-
----
-
-# <!--fit-->Calcul de la taille finale de l'épidémie
-
-Pour la fonction à valeurs positives et intégrable $w(t)$,  notons
-$$
-w_\infty = \lim_{t\to\infty}w(t),\qquad\hat w = \int_0^\infty w(t)\ dt
-$$
-On note aussi $w_0=w(0)$. Dans le sous-système
-$$
-\begin{align}
-S' &= -\beta SI \tag{21a} \\
-I' &= (\beta S-\gamma)I  \tag{21b} 
-\end{align}
-$$
-calculons la somme de $\eqref{sys:KMK_dS}$ et $\eqref{sys:KMK_dI}$, en prenant garde de bien faire apparaître la dépendance en le temps
-$$
-\frac{d}{dt}(S(t)+I(t))=-\gamma I(t)
-$$
-
----
-
-Intégrons de 0 à $\infty$:
-$$
-\int_0^\infty\frac{d}{dt}(S(t)+I(t))\ dt=-\int_0^\infty\gamma I(t)dt 
-$$
-Le terme de gauche donne
-$$
-\int_0^\infty\frac{d}{dt}(S(t)+I(t))\ dt
-= S_\infty+I_\infty-S_0-I_0 = S_\infty-S_0-I_0
-$$
-car $I_\infty=0$
-
-Le terme de droite prend la forme
-$$
--\int_0^\infty\gamma I(t)dt = -\gamma \hat I
-$$
-On a donc
-$$
-\tag{22}\label{eq:KMK_final_size_step1}
-S_\infty-S_0-I_0 = -\gamma\hat I
-$$
-
----
-
-Considérons maintenant $\eqref{sys:KMK_dS}$:
-$$
-S' = -\beta SI
-$$
-Divisons les deux cotés par $S$:
-$$
-\frac{S'(t)}{S(t)} = -\beta I(t)
-$$
-Intégrons de 0 a $\infty$:
-$$
-\tag{23}\label{eq:KMK_final_size_step2}
-\ln S_0-\ln S_\infty = -\beta \hat I
-$$
-Exprimons $\eqref{eq:KMK_final_size_step1}$ et $\eqref{eq:KMK_final_size_step2}$ en termes de $-\hat I$ et égalisons
-$$
-\frac{\ln S_0-\ln S_\infty}{\beta}
-=
-\frac{S_\infty-S_0-I_0}{\gamma}
-$$
-On a donc
-$$
-S_0+I_0-S_\infty+\frac{\ln S_0-\ln S_\infty}{\mathcal{R}_0} = 0
-$$
-
----
-
-<div class="theorem">
-
-Soit $(S(t),I(t))$ une solution de $\eqref{sys:KMK_dS}$-$\eqref{sys:KMK_dR}$ en proportions et $\mathcal{R}_0$ défini comme dans $\eqref{eq:R0_KMK}$.
-
-La proportion $S(t)$ de susceptibles est une fonction décroissante et sa limite $S(\infty)$ est l'unique solution dans $(0,1/\mathcal{R}_0)$ de l'équation 
-$$
-1-S(\infty)+\frac{\ln[S(\infty)/S_0]}{\mathcal{R}_0}=0
-$$
 </div>
 
 ---
@@ -351,6 +282,110 @@ plot(sol[, "time"], sol[, "I"], type = "l",
 ```
 
 ![height:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/sol_SIR_KMK_R015.png)
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Taille finale d'une épidémie
+
+---
+
+# <!--fit-->Calcul de la taille finale de l'épidémie
+
+Pour la fonction à valeurs positives et intégrable $w(t)$,  notons
+$$
+w_\infty = \lim_{t\to\infty}w(t),\qquad\hat w = \int_0^\infty w(t)\ dt
+$$
+On note aussi $w_0=w(0)$. Dans le sous-système
+$$
+\begin{align}
+S' &= -\beta SI \tag{2a} \\
+I' &= \beta SI-\gamma I  \tag{2b} 
+\end{align}
+$$
+calculons la somme de $\eqref{sys:KMK_2d_dS}$ et $\eqref{sys:KMK_2d_dI}$, en prenant garde de bien faire apparaître la dépendance en le temps
+$$
+\frac{d}{dt}(S(t)+I(t))=-\gamma I(t)
+$$
+
+---
+
+Intégrons de 0 à $\infty$:
+$$
+\int_0^\infty\frac{d}{dt}(S(t)+I(t))\ dt=-\int_0^\infty\gamma I(t)dt 
+$$
+Le terme de gauche donne
+$$
+\int_0^\infty\frac{d}{dt}(S(t)+I(t))\ dt
+= S_\infty+I_\infty-S_0-I_0 = S_\infty-S_0-I_0
+$$
+car $I_\infty=0$
+
+Le terme de droite prend la forme
+$$
+-\int_0^\infty\gamma I(t)dt = -\gamma\int_0^\infty I(t)dt = -\gamma \hat I
+$$
+On a donc
+$$
+\tag{5}\label{eq:KMK_final_size_step1}
+S_\infty-S_0-I_0 = -\gamma\hat I
+$$
+
+---
+
+Considérons maintenant $\eqref{sys:KMK_2d_dS}$:
+$$
+S' = -\beta SI
+$$
+Divisons les deux cotés par $S$:
+$$
+\frac{S'(t)}{S(t)} = -\beta I(t)
+$$
+Intégrons de 0 a $\infty$:
+$$
+\tag{6}\label{eq:KMK_final_size_step2}
+\ln S_\infty-\ln S_0 = -\beta \hat I
+$$
+Exprimons $\eqref{eq:KMK_final_size_step1}$ et $\eqref{eq:KMK_final_size_step2}$ en termes de $-\hat I$ et égalisons
+$$
+\frac{\ln S_\infty-\ln S_0}{\beta}
+=
+\frac{S_\infty-S_0-I_0}{\gamma}
+$$
+On a donc
+$$
+\tag{7}\label{eq:final_size}
+(\ln S_0-\ln S_\infty)S_0 = (S_0-S_\infty)\mathcal{R}_0+I_0\mathcal{R}_0
+$$
+
+---
+
+# <!--fit-->L'équation (transcendante) de la taille finale
+
+$$
+\tag{7}
+(\ln S_0-\ln S_\infty)S_0 = (S_0-S_\infty)\mathcal{R}_0+I_0\mathcal{R}_0
+$$
+que l'on écrit
+$$
+\tag{8}\label{eq:final_size_2}
+(\ln S_0-\ln S_\infty)S_0 - (S_0-S_\infty)\mathcal{R}_0-I_0\mathcal{R}_0 = 0
+$$
+
+Différentiant $\eqref{eq:final_size_2}$ par rapport à $S_\infty$, on obtient $\mathcal{R}_0-S_0/S_\infty$. On cherche une solution $S_\infty$ dans $(0,S_0)$. Lorsque $S_\infty$ est petit, $\mathcal{R}_0-S_0/S_\infty<0$, donc $\eqref{eq:final_size_2}$ décroit jusqu'à $S_\infty=S_0/\mathcal{R}_0$
+
+---
+
+<div class="theorem">
+
+Soit $(S(t),I(t))$ une solution de $\eqref{sys:KMK_2d_dS}$-$\eqref{sys:KMK_2d_dI}$ et $\mathcal{R}_0$ défini par $\eqref{eq:R0_KMK}$.
+
+Le nombre $S(t)$ de susceptibles est une fonction décroissante et sa limite $S_\infty$ est l'unique solution dans $(0,S_0/\mathcal{R}_0)$ de l'équation transcendante
+$$
+\tag{7}
+(\ln S_0-\ln S_\infty)S_0 = (S_0-S_\infty)\mathcal{R}_0+I_0\mathcal{R}_0
+$$
+</div>
 
 ---
 
