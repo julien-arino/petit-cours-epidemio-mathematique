@@ -445,7 +445,13 @@ text(x = S_inf$root, y = 0, labels = "S_inf", adj = c(-0.25,-1))
 
 ---
 
-![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_final_size.png)
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_final_size_R0_2p4.png)
+
+---
+
+# $\mathcal{R}_0=0.8$
+
+![width:900px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_final_size_R0_0p8.png)
 
 ---
 
