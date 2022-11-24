@@ -360,6 +360,19 @@ $$
 
 ---
 
+<div class="theorem">
+
+Soit $(S(t),I(t))$ une solution de $\eqref{sys:KMK_2d_dS}$-$\eqref{sys:KMK_2d_dI}$ et $\mathcal{R}_0$ défini par $\eqref{eq:R0_KMK}$.
+
+Le nombre $S(t)$ de susceptibles est une fonction décroissante et sa limite $S_\infty$ est l'unique solution dans $(0,S_0)$ de l'équation transcendante
+$$
+\tag{7}
+(\ln S_0-\ln S_\infty)S_0 = (S_0-S_\infty)\mathcal{R}_0+I_0\mathcal{R}_0
+$$
+</div>
+
+---
+
 # <!--fit-->L'équation (transcendante) de la taille finale
 
 $$
@@ -374,18 +387,7 @@ $$
 
 Différentiant $\eqref{eq:final_size_2}$ par rapport à $S_\infty$, on obtient $\mathcal{R}_0-S_0/S_\infty$. On cherche une solution $S_\infty$ dans $(0,S_0)$. Lorsque $S_\infty$ est petit, $\mathcal{R}_0-S_0/S_\infty<0$, donc $\eqref{eq:final_size_2}$ décroit jusqu'à $S_\infty=S_0/\mathcal{R}_0$
 
----
-
-<div class="theorem">
-
-Soit $(S(t),I(t))$ une solution de $\eqref{sys:KMK_2d_dS}$-$\eqref{sys:KMK_2d_dI}$ et $\mathcal{R}_0$ défini par $\eqref{eq:R0_KMK}$.
-
-Le nombre $S(t)$ de susceptibles est une fonction décroissante et sa limite $S_\infty$ est l'unique solution dans $(0,S_0/\mathcal{R}_0)$ de l'équation transcendante
-$$
-\tag{7}
-(\ln S_0-\ln S_\infty)S_0 = (S_0-S_\infty)\mathcal{R}_0+I_0\mathcal{R}_0
-$$
-</div>
+Donc si $\mathcal{R}_0\leq 1$, la fonction est toujours décroissante sur $(0,S_0)$, tandis qu'elle a un minimum si $\mathcal{R}_0>1$
 
 ---
 
@@ -445,13 +447,15 @@ text(x = S_inf$root, y = 0, labels = "S_inf", adj = c(-0.25,-1))
 
 ---
 
-![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_final_size_R0_2p4.png)
+# $\mathcal{R}_0=0.8$
+
+![width:1000px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_final_size_R0_0p8.png)
 
 ---
 
-# $\mathcal{R}_0=0.8$
+# $\mathcal{R}_0=2.4$
 
-![width:900px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_final_size_R0_0p8.png)
+![width:1000px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_final_size_R0_2p4.png)
 
 ---
 
