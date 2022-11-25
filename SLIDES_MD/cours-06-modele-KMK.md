@@ -440,8 +440,14 @@ T(S_\infty) =(\ln S_0-\ln S_\infty)S_0
 $$
 
 - On a vu que $T$ est décroissante sur $(0,S_0/\mathcal{R}_0]$
-- Pour $S_\infty\in[S_0/\mathcal{R}_0]$
 
+- Pour $S_\infty\in[S_0/\mathcal{R}_0]$, $T'>0$
+
+- Comme précédemment, $T(S_\infty)=-I_0\mathcal{R}_0$
+
+- $T$ est continue
+
+$\implies$ il existe un $S_\infty$ unique dans $(0,S_0]$ t.q. $T(S_\infty)=0$. Plus précisemment, dans ce cas, $S_\infty\in(0,S_0/\mathcal{R}_0)$
 
 ---
 
