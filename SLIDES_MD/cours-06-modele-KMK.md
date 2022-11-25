@@ -74,6 +74,7 @@ img[alt~="center"] {
 
 - Modèle SIR épidémique de Kermack et McKendrick
 - Taille finale d'une épidémie
+- Dernières remarques
 
 ---
 
@@ -382,12 +383,65 @@ $$
 que l'on écrit
 $$
 \tag{8}\label{eq:final_size_2}
-(\ln S_0-\ln S_\infty)S_0 - (S_0-S_\infty)\mathcal{R}_0-I_0\mathcal{R}_0 = 0
+\begin{aligned}
+T(S_\infty) &=(\ln S_0-\ln S_\infty)S_0 \\
+& \quad - (S_0-S_\infty)\mathcal{R}_0 -I_0\mathcal{R}_0
+\end{aligned}
 $$
 
-Différentiant $\eqref{eq:final_size_2}$ par rapport à $S_\infty$, on obtient $\mathcal{R}_0-S_0/S_\infty$. On cherche une solution $S_\infty$ dans $(0,S_0)$. Lorsque $S_\infty$ est petit, $\mathcal{R}_0-S_0/S_\infty<0$, donc $\eqref{eq:final_size_2}$ décroit jusqu'à $S_\infty=S_0/\mathcal{R}_0$
+On cherche par conséquent les zéros de la fonction $T(S_\infty)$
 
-Donc si $\mathcal{R}_0\leq 1$, la fonction est toujours décroissante sur $(0,S_0)$, tandis qu'elle a un minimum si $\mathcal{R}_0>1$
+---
+
+On cherche $S_\infty$ dans $(0,S_0]$ t.q. $T(S_\infty)=0$ pour
+$$
+T(S_\infty) =(\ln S_0-\ln S_\infty)S_0
+- (S_0-S_\infty)\mathcal{R}_0 -I_0\mathcal{R}_0
+$$
+
+Notons pour commencer que lorsque 
+$$
+\lim_{S_\infty\to 0}T(S_\infty)=\lim_{S_\infty\to 0}-S_0\ln(S_\infty)=\infty
+$$
+
+Différentiant $T$ par rapport à $S_\infty$, on obtient 
+$$
+T'(S_\infty)=\mathcal{R}_0-S_0/S_\infty
+$$ 
+
+Lorsque $S_\infty\to 0$, $\mathcal{R}_0-S_0/S_\infty<0$, donc $T$ décroit jusqu'à $S_\infty=S_0/\mathcal{R}_0$
+
+Donc si $\mathcal{R}_0\leq 1$, la fonction $T$ est décroissante sur $(0,S_0)$, tandis qu'elle a un minimum si $\mathcal{R}_0>1$
+
+---
+
+# Cas $\mathcal{R}_0\leq 1$
+
+$$
+T(S_\infty) =(\ln S_0-\ln S_\infty)S_0
+- (S_0-S_\infty)\mathcal{R}_0 -I_0\mathcal{R}_0
+$$
+
+- On a vu que $T$ est décroissante sur $(0,S_0]$
+
+- Par ailleurs, $T(S_0)=-I_0\mathcal{R}_0<0$ (le cas $I_0=0$ est exclu car trivial)
+
+- Du reste, $T$ est continue
+
+$\implies$ il existe un $S_\infty$ unique dans $(0,S_0]$ t.q. $T(S_\infty)=0$
+
+---
+
+# Cas $\mathcal{R}_0> 1$
+
+$$
+T(S_\infty) =(\ln S_0-\ln S_\infty)S_0
+- (S_0-S_\infty)\mathcal{R}_0 -I_0\mathcal{R}_0
+$$
+
+- On a vu que $T$ est décroissante sur $(0,S_0/\mathcal{R}_0]$
+- Pour $S_\infty\in[S_0/\mathcal{R}_0]$
+
 
 ---
 
@@ -490,7 +544,7 @@ levelplot(taux_attaque ~ R_0*I0, data = valeurs,
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->En conclusion
+# <!--fit-->Dernières remarques
 
 ---
 
