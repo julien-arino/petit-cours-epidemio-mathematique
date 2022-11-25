@@ -471,7 +471,7 @@ L = split(valeurs, 1:nrow(valeurs))
 
 valeurs$S_inf = sapply(X = L, FUN = final_size)
 
-valeurs$taille_finale = valeurs$S0-valeurs$S_inf
+valeurs$taille_finale = valeurs$S0-valeurs$S_inf+valeurs$I0
 valeurs$taux_attaque = (valeurs$taille_finale / N0)*100
 
 levelplot(taux_attaque ~ R_0*I0, data = valeurs, 
@@ -479,6 +479,13 @@ levelplot(taux_attaque ~ R_0*I0, data = valeurs,
           col.regions = viridis(100))
 ```
 (requiert les librairies `lattice` et `viridis`)
+
+---
+
+# Taux d'attaque (en %)
+
+![width:1000px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/KMK_taux_attaque.png)
+
 
 ---
 

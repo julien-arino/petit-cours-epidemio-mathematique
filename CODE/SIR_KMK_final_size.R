@@ -43,17 +43,19 @@ crop_figure("../FIGS/KMK_final_size_R0_0p8.png")
 
 valeurs = expand.grid(
   R_0 = seq(0.01, 3, by = 0.01),
-  I0 = 1:100
+  I0 = seq(1, 100, 1)
 )
 valeurs$S0 = N0-valeurs$I0
 L = split(valeurs, 1:nrow(valeurs))
 valeurs$S_inf = sapply(X = L, FUN = final_size)
-valeurs$taille_finale = valeurs$S0-valeurs$S_inf
+valeurs$taille_finale = valeurs$S0-valeurs$S_inf+valeurs$I0
 valeurs$taux_attaque = (valeurs$taille_finale / N0)*100
 
-png("../FIGS/KMK_taux_attaque.png", width = 1200, height = 800, res = 200)
-levelplot(taux_attaque ~ R_0*I0, data = valeurs, 
-          xlab="R_0", ylab = "I0",
-          col.regions = viridis(100))
+png("../FIGS/KMK_taux_attaque.png", 
+    width = 1200, height = 800, res = 200)
+p = levelplot(taux_attaque ~ R_0*I0, data = valeurs, 
+              xlab="R_0", ylab = "I0",
+              col.regions = viridis(100))
+print(p)
 dev.off()
 crop_figure("../FIGS/KMK_taux_attaque.png")
