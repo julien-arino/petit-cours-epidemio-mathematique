@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Le modèle SLIRS
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Le modèle SLIRS
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -336,6 +336,8 @@ est facile à intégrer ou à étudier qualitativement. Qualitativement: $\eqref
 
 Notons que cette convergence est indépendante du comportement de $\eqref{sys:SLIR_b_dS}$-$\eqref{sys:SLIR_b_dR}$. On peut donc remplacer $N(t)$ par sa limite $N^\star$
 
+---
+
 Cela permet également d'envisager une approche numérique s'abstrayant des variations dues à la démographie: en choisissant une condition initiale $(S(0),L(0),I(0),R(0))$ t.q. $N(0)=N^\star$, on est assuré que les variations dans les variables d'état sont uniquement dues aux facteurs épidémiologiques, puisque $N(t)$ reste constant
 
 ---
@@ -397,7 +399,7 @@ $$
 
 ---
 
-Le même genre de raisonement que l'on a conduit lors de l'étude du modèle SIS dans le [Cours 02]() permet de conclure que le système est bien posé, en ce que
+Le même genre de raisonement que l'on a conduit lors de l'étude du modèle SIS dans le [Cours 04](cours-04-modele-SIS.html) permet de conclure que le système est bien posé, en ce que
 
 - il y a existence et unicité des solutions de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$
 - le cône positif $\mathbb{R}_+^4$ est positivement invariant sous le flot de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$
@@ -423,21 +425,29 @@ $$
 \end{align}
 $$
 
-De $\eqref{sys:SIRS_EP_I}$, $L=(d+\gamma)I/\varepsilon$, et de $\eqref{sys:SIRS_EP_R}$, $R=\gamma I/(d+\nu)$. On en déduit en particulier qu'en un équilibre sans maladie (ESM), $L=I=R=0$
+De $\eqref{sys:SIRS_EP_I}$, $L=(d+\gamma)I/\varepsilon$, et de $\eqref{sys:SIRS_EP_R}$, $R=\gamma I/(d+\nu)$. On en déduit en particulier qu'en un équilibre sans maladie (ÉSM), $L=I=R=0$
 
-Considérons d'abord ESM, où, comme on vient de voir $L=I=R=0$. L'équation $\eqref{sys:SIRS_EP_L}$ n'est pas utile, elle dit seulement que la maladie ne se transmet pas en ESM. On considère donc $\eqref{sys:SIRS_EP_S}$, qui s'écrit
+Considérons d'abord ÉSM, où, comme on vient de voir $L=I=R=0$. L'équation $\eqref{sys:SIRS_EP_L}$ n'est pas utile, elle dit seulement que la maladie ne se transmet pas en ÉSM. On considère donc $\eqref{sys:SIRS_EP_S}$, qui s'écrit
 $$
 f(S,0,N^\star)=b-dS
 $$
-On obtient la valeur de $S$ en ESM en résolvant cette équation. Mais, *en général*, $f(S,0,N^\star)=0$ (il n'y a pas transmission sans infectieux) et donc $S=b/d=N^\star$ à ESM. On aurait aussi pu raisonner que puisque $N\equiv N^\star$ et que $L=I=R=0$, alors nécessairement, $S=N^\star$
 
 ---
 
-On a donc ESM
+On obtient la valeur de $S$ en ÉSM en résolvant cette équation
+
+Mais, *en général*, $f(S,0,N^\star)=0$ (il n'y a pas transmission sans infectieux) et donc $S=b/d=N^\star$ à l'ÉSM
+
+On aurait aussi pu raisonner que puisque $N\equiv N^\star$ et que $L=I=R=0$, alors nécessairement, $S=N^\star$
+
+---
+
+On a donc l'ÉSM
 $$
 \tag{8}\label{eq:SLIRS_DFE}
 E_0:(S,L,I,R)=(N^\star,0,0,0)
 $$
+
 Trouver l'équilibre ou les équilibres endémiques (EE) est impossible sans plus d'information sur la forme de la fonction d'incidence $f$, mais on peut quand même faire quelques inférences
 
 ---
@@ -493,9 +503,9 @@ On a donc deux équations de droite, $\eqref{eq:SIRS_EEP_dS_plus_kI}$ et $\eqref
 
 ---
 
-- $\mathcal{R}_0$ est le lieu dans l'espace des paramètres où l'ESM passe de LAS lorsque $\mathcal{R}_0<1$ à instable lorsque $\mathcal{R}_0>1$
-- On le caractérise donc en considérant la SAL de l'ESM
-- Donc on calcule la Jacobienne, on l'évalue en l'ESM et on calcule les valeurs propres
+- $\mathcal{R}_0$ est le lieu dans l'espace des paramètres où l'ÉSM passe de LAS lorsque $\mathcal{R}_0<1$ à instable lorsque $\mathcal{R}_0>1$
+- On le caractérise donc en considérant la SAL de l'ÉSM
+- Donc on calcule la Jacobienne, on l'évalue en l'ÉSM et on calcule les valeurs propres
 - Typiquement, on va avoir toutes sauf une des v.p. à parties réelles strictement négatives et une dont la partie réelle n'est pas de signe fixe
 - C'est sur cette dernière qu'on agit
 
@@ -609,11 +619,11 @@ $$
 $$
 
 Alors 
-- si $\mathcal{R}_0<1$, ESM est LAS
-- si $\mathcal{R}_0>1$, ESM est instable
+- si $\mathcal{R}_0<1$, ÉSM est LAS
+- si $\mathcal{R}_0>1$, ÉSM est instable
 </div>
 
-Important d'insister sur la nature *locale* de la stabilité qui est déduite de ce résultat. On verra un exemple où lorsque $\mathcal{R}_0<1$, il peut y avoir plusieurs équilibres strictement positifs, et un autre où plusieurs ESM ont lieu en même temps
+Important d'insister sur la nature *locale* de la stabilité qui est déduite de ce résultat. On verra un exemple où lorsque $\mathcal{R}_0<1$, il peut y avoir plusieurs équilibres strictement positifs, et un autre où plusieurs ÉSM ont lieu en même temps
 
 ---
 
@@ -679,7 +689,7 @@ $$
 
 # Expressions de $\mathcal{R}_0$
 
-$(\bar S,\bar I)$ ESM, notons $\overline{f}_I=\partial f/\partial I(\bar S,\bar I)$
+$(\bar S,\bar I)$ ÉSM, notons $\overline{f}_I=\partial f/\partial I(\bar S,\bar I)$
 
 | Modèle | $\mathcal{R}_0$ | Modèle | $\mathcal{R}_0$ | Modèle | $\mathcal{R}_0$ |
 |:---|:---:|:---|:---:|:---|:---:|
@@ -715,11 +725,11 @@ $$
 
 # Calcul de $\mathcal{R}_0$
  
-- Pour rappel, ESM du SLIR (comme SLIRS):
+- Pour rappel, ÉSM du SLIR (comme SLIRS):
 $$
 (\bar S,\bar L, \bar I,\bar R)=(N,0,0,0)
 $$
-- ESM du SLIR avec vaccination
+- ÉSM du SLIR avec vaccination
 $$
 (\bar S,\bar L, \bar I,\bar R)=
 \left((1-p)\frac bd,0,p\frac bd\right)
@@ -923,7 +933,7 @@ $$
 
 # Équilibres
  
-- ESM: $E_0=(1,0,0)$
+- ÉSM: $E_0=(1,0,0)$
 - EE: $E^\star =(S^\star,L^\star,I^\star)$ avec
 $$
 S^\star =\frac 1{\mathcal{R}_0^v}\quad L^\star =\frac{d}{\varepsilon+d}\left(1-\frac
@@ -954,7 +964,7 @@ $$
 <div class="theorem">
  
 - Si $\mathcal{R}_0>1$, alors $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ a l'équilibre GAS $E^\star$
-- Si $\mathcal{R}_0\leq 1$, alors $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ a l'ESM $E_0$ GAS et $E^\star$ n'est pas valide biologiquement
+- Si $\mathcal{R}_0\leq 1$, alors $\eqref{sys:SEIR_vert_transmission_dS}$-$\eqref{sys:SEIR_vert_transmission_dI}$ a l'ÉSM $E_0$ GAS et $E^\star$ n'est pas valide biologiquement
 </div>
 
 
