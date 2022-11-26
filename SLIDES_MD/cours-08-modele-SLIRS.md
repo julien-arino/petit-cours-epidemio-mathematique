@@ -971,7 +971,7 @@ $$
 
 ---
 
-<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
 # <!--fit-->Matrices composées
 
 ---
@@ -1134,12 +1134,12 @@ $$
 
 <div class="theorem">
 
-Let $A,B$ be two $n\times n$-matrices. Then
+Soient $A,B$ deux $n\times n$-matrices. Alors
  
-- The number of nonzero offdiagonal entries of $A^{[k]}$ equals $C(n-2,k-1)$ times the number of nonzero offdiagonal entries of $A$
+- Le nombre d'éléments non nuls hors de la diagonale de $A^{[k]}$ est égal à $C(n-2,k-1)$ fois le nombre d'éléments non nuls hors de la diagonale de $A$
 - $A^{[1]}=A$, $A^{[n]}=\mathsf{tr} A$
-- $(A+B)^{[k]}=A^{[k]}+B^{[k]}$ (whence the *additive* suffix)
-- Let $S$ be a nonsingular $n\times n$-matrix. Then
+- $(A+B)^{[k]}=A^{[k]}+B^{[k]}$ (d'où le suffixe *additif*)
+- Soit $S$ une $n\times n$-matrice non singulière. Alors
 $$
 (SAS)^{[k]}=S^{{k}}A^{[k]}(S^{-1})^{(k)}
 $$
