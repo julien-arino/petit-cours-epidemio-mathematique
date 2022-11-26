@@ -80,7 +80,6 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 # <!--fit-->Pourquoi prendre en compte la durée de la période d'incubation
 
 - Modèles SIS et SIR: on progresse instantanément de $S$ à $I$
-- Exemple de quelques durées d'incubation:
 
 | Maladie | Durée d'incubation |
 |:----|:----|
@@ -260,7 +259,7 @@ $$
 
 ---
 
-# Fonctions d'incidence classiques en proportion
+# <!--fit-->Fonctions d'incidence classiques en proportion
 
 Si $f(S,I,N)=\beta SI$, alors
 $$
@@ -272,7 +271,7 @@ Si $f(S,I,N)=\beta\dfrac{SI}N$, alors
 $$
 \frac{f(S,I,N)}{N} = \beta si
 $$
-On garde alors les équations pour $s,\ell,i,r$ et omet celle pour $N$
+On garde alors les équations pour $s,\ell,i,r$ et omet celle de $N$
 
 ---
 
@@ -303,7 +302,7 @@ On n'étudiera pas ces systèmes ici!
 
 ---
 
-![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+![bg right:28% width:250px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
 
 
 $$
@@ -342,15 +341,15 @@ Cela permet également d'envisager une approche numérique s'abstrayant des vari
 
 ---
 
-![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+![bg right:26% width:250px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
 
 Dans la suite, on étudie donc le système
 $$
 \begin{align}
-S' &= b-f(S,I,N^\star)-dS+\nu R \\
-L' &= f(S,I,N^\star) -(d+\varepsilon)L \\
-I' &= \varepsilon L -(d+\gamma)I \\
-R' &= \gamma I-(d+\nu)R 
+S' &= b-f(S,I,N^\star)-dS+\nu R \tag{6a}\\
+L' &= f(S,I,N^\star) -(d+\varepsilon)L \tag{6b}\\
+I' &= \varepsilon L -(d+\gamma)I \tag{6c}\\
+R' &= \gamma I-(d+\nu)R \tag{6d}
 \end{align}
 $$
 
@@ -367,7 +366,7 @@ $$
 
 ---
 
-![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+![bg right:26% width:250px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
 
 
 On étudie le système
@@ -775,7 +774,7 @@ On verra ailleurs ([Cours 11](cours-11-plus-de-modelisation.html)) une autre fa�
 
 ---
 
-# SLIRS - Mukherjee, Chattopadhyay & Tapaswi
+# <!--fit-->SLIRS - Mukherjee, Chattopadhyay & Tapaswi
 
 SLIRS (SEIRS) avec naissance constante $d$, mortalité *per capita* $d$ et fonction d'incidence
 $$
@@ -907,12 +906,12 @@ $$
 et $\epsilon_0$ est défini comme précédemment. Alors il n'y a pas de courbe fermée rectifiable qui soit invariante sous le flot de SEIRS. De plus, toute semi-trajectoire de SEIRS dans $\Gamma$ converge vers un équilibre
 </div>
 
-La preuve utilise les matrices composées (voir [Cours 11]())
+La preuve utilise les matrices composées (voir plus loin)
 
 
 ---
 
-# Fonction de Liapounoff pour SLIR et SLIS
+# <!--fit-->Fonction de Liapounoff pour SLIR et SLIS
 
 Andrei Korobeinikov. Considère un SLIR avec population constante normalisée à 1 et avec transmission verticale
 
