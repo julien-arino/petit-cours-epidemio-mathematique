@@ -655,7 +655,7 @@ $$
 
 ---
 
-# On dérive beaucoup de modèles du SLIRS
+# <!--fit-->On dérive beaucoup de modèles du SLIRS
 
 <style scoped>
 @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
@@ -709,6 +709,8 @@ On reprend le modèle SLIRS de tantôt, mais on le modifie comme suit:
 - La vaccination prend une proportion $p$ des nouveaux susceptibles et les place directement dans le compartiment $R$ des guéris, sans jamais les laisser devenir infectés
 - Une fraction $1-p$ des nouveaux nés n'est pas vaccinée à la naissance
 - $f(S,I,N)=\beta SI$
+
+---
 
 On a donc le modèle qui suit
 
@@ -764,7 +766,7 @@ C'est l'**immunité de groupe**
 
 ---
 
-On verra ailleurs ([Cours ]()) une autre façon de modéliser la vaccination, ainsi que des conséquences inattendues de la vaccination
+On verra ailleurs ([Cours 11](cours-11-plus-de-modelisation.html)) une autre façon de modéliser la vaccination, ainsi que des conséquences inattendues de la vaccination
 
 ---
 
