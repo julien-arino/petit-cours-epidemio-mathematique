@@ -1001,25 +1001,25 @@ Une autre interprétation de $A^{(k)}$ est en tant que $k$ème produit extérieu
 
 ---
 
-Suppose now that $A$ is an $n\times n$-matrix. The matrix $(I+tA)^{(k)}$ is a $C(n,k)\times C(n,k)$-matrix, with each entry a polynomial of $t$ with degree at most $k$
+Supposons que $A$ soit une $n\times n$-matrice. La matrice $(I+tA)^{(k)}$ est une $C(n,k)\times C(n,k)$-matrice dont chaque élément est un polynome en $t$ de degré au plus $k$
 
-Grouping monomials of same degree in $t$
+En regroupant les monomes de même degré en $t$
 $$
 (I+tA)^{(k)}=A^{(k,0)}+tA^{(k,1)}+\cdots+t^kA^{(k,k)}
 $$
-where matrices $A^{(k,s)}$ do not depend on $t$
+où les matrices $A^{(k,s)}$ ne dépendent pas de $t$
 
-Matrix $A^{(k,1)}$ is the $k$th **additive compound matrix** of $A$ and is denoted $A^{[k]}$. It satisfies
+La matrice $A^{(k,1)}$ est la $k$ème **matrice composée additive** de $A$ et est notée $A^{[k]}$. Elle vérifie
 $$
 A^{[k]}=\lim_{h\to 0}
 \left(\frac 1h\left((I+hA)^{(k)}-I^{(k)}\right)\right)
 $$
 
-The latter equality can be written
+Cette dernière égalité peut s'écrire
 $$
 A^{[k]}=D_+(I+hA)^{(k)}|_{h=0}
 $$
-where $D_+$ is the right derivative
+où $D_+$ est la dérivée à droite
 
 ---
 
