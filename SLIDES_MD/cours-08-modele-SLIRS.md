@@ -510,6 +510,99 @@ On a donc deux équations de droite, $\eqref{eq:SIRS_EEP_dS_plus_kI}$ et $\eqref
 
 ---
 
+# La matrice jacobienne de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$
+
+On a, en un point arbitraire $(S,L,I,R)$
+$$
+J_{(S,L,I,R)} =
+\begin{pmatrix}
+-f_S(S,I,N^\star)-d & 0 & -f_I(S,I,N^\star) & \nu \\
+f_S(S,I,N^\star) & -(d+\varepsilon) & f_I(S,I,N^\star) & 0 \\
+0 & \varepsilon & -(d+\gamma) & 0 \\
+0 & 0 & \gamma & -(d+\nu)
+\end{pmatrix}
+$$
+où 
+$$
+f_X(S,I,N^\star):=
+\left.
+  \frac{\partial f}{\partial X}
+\right|_{(S,I,N^\star)}
+$$ 
+
+On observe que toutes les colonnes somment à $-d$, ce qui entraîne que $-d$ est valeur propre (puisque $\mathbb{1}^TJ=-d\mathbb{1}^T$, avec $\mathbb{1}=(1,\ldots,1)^T$)
+
+---
+
+# <!--fit-->La matrice jacobienne de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$ en l'ÉSM
+
+$$
+J_{E_0} =
+\begin{pmatrix}
+-f_S(E_0)-d & 0 & -f_I(E_0) & \nu \\
+f_S(E_0) & -(d+\varepsilon) & f_I(E_0) & 0 \\
+0 & \varepsilon & -(d+\gamma) & 0 \\
+0 & 0 & \gamma & -(d+\nu)
+\end{pmatrix}
+$$
+
+Mais $f_S(E_0)=0$, donc
+$$
+J_{E_0} =
+\begin{pmatrix}
+-d & 0 & -f_I(E_0) & \nu \\
+0 & -(d+\varepsilon) & f_I(E_0) & 0 \\
+0 & \varepsilon & -(d+\gamma) & 0 \\
+0 & 0 & \gamma & -(d+\nu)
+\end{pmatrix}
+$$
+
+---
+
+$$
+J_{E_0} =
+\begin{pmatrix}
+-d & 0 & -f_I(E_0) & \nu \\
+0 & -(d+\varepsilon) & f_I(E_0) & 0 \\
+0 & \varepsilon & -(d+\gamma) & 0 \\
+0 & 0 & \gamma & -(d+\nu)
+\end{pmatrix}
+$$
+Matrice bloc triangulaire supérieure, donc valeurs propres sont $-d$ (on savait déjà) et les valeurs propres de 
+$$
+\begin{pmatrix}
+-(d+\varepsilon) & f_I(E_0) & 0 \\
+\varepsilon & -(d+\gamma) & 0 \\
+0 & \gamma & -(d+\nu)
+\end{pmatrix}
+$$
+
+---
+
+Valeurs propres de 
+$$
+\begin{pmatrix}
+-(d+\varepsilon) & f_I(E_0) & 0 \\
+\varepsilon & -(d+\gamma) & 0 \\
+0 & \gamma & -(d+\nu)
+\end{pmatrix}\quad?
+$$
+Bloc triangulaire inférieure $\Rightarrow$ $-(d+\nu)$ et valeurs propres de 
+$$
+\begin{pmatrix}
+-(d+\varepsilon) & f_I(E_0) \\
+\varepsilon & -(d+\gamma) 
+\end{pmatrix}
+$$
+Polynome caractéristique:
+$$
+P(\lambda) = 
+\lambda^2+(2d+\varepsilon+\gamma)\lambda
++(d+\varepsilon)(d+\gamma)-\varepsilon f_I(E_0)
+$$
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
 # <!--fit-->$\mathcal{R}_0$ par la matrice de  <br /> prochaine génération
 
@@ -551,8 +644,8 @@ On calcule les matrices Jacobiennes associées aux vecteurs $\mathcal{F}$ et $\m
 $$
 F=\left(
 \begin{matrix}
-\dfrac{\partial\overline{f}}{\partial L}
-& \dfrac{\partial\overline{f}}{\partial I} \\
+f_L(E_0)
+& f_I(E_0) \\
 0 & 0
 \end{matrix}
 \right),\quad
@@ -565,12 +658,21 @@ V=\left(
 $$
 où
 $$
-\dfrac{\partial\overline{f}}{\partial I}:=
+f_I(E_0):=
 \left.\dfrac{\partial f}{\partial I}\right|_{E_0}
 \quad\quad 
-\dfrac{\partial\overline{f}}{\partial L}:=
+f_L(E_0):=
 \left.\dfrac{\partial f}{\partial L}
 \right|_{E_0}
+$$
+Mais $f_L(E_0)=0$ (puisque $N=N^\star$), donc
+$$
+F=\left(
+\begin{matrix}
+0 & f_I(E_0) \\
+0 & 0
+\end{matrix}
+\right)
 $$
 
 ---
@@ -585,11 +687,9 @@ d+\gamma & 0 \\
 \end{matrix}
 \right)
 $$
-
-Aussi, puisque $N$ est constant, $\partial f/\partial
-L=0$. Par conséquent
+Par conséquent
 $$
-FV^{-1}=\frac{{\partial\overline{f}}/{\partial I}}
+FV^{-1}=\frac{f_I(E_0)}
 {(d+\varepsilon)(d+\gamma)}
 \left(
 \begin{matrix}
@@ -602,7 +702,7 @@ $$
 et donc
 $$
 \mathcal{R}_0=\varepsilon
-\frac{{\partial\overline{f}}/{\partial I}}
+\frac{f_I(E_0)}
 {(d+\varepsilon)(d+\gamma)}
 $$
 
@@ -613,7 +713,7 @@ $$
 Soit
 $$
 \mathcal{R}_0=
-\dfrac{\varepsilon\dfrac{\partial\overline{f}}{\partial I}}
+\dfrac{\varepsilon f_I(E_0)}
 {(d+\varepsilon)(d+\gamma)}
 $$
 
@@ -630,12 +730,12 @@ Important d'insister sur la nature *locale* de la stabilité qui est déduite de
 
 - Incidence en action de masse
 $$
-\frac{\partial\overline{f}}{\partial I}=\beta\bar S \Rightarrow\mathcal{R}_0 =
-\frac{\varepsilon\beta N}{(\varepsilon+d)(\gamma+d)} 
+f_I(E_0)=\beta\bar S \Rightarrow\mathcal{R}_0 =
+\frac{\varepsilon\beta N^\star}{(\varepsilon+d)(\gamma+d)} 
 $$
 - Incidence standard
 $$
-\frac{\partial\overline{f}}{\partial I}=\frac{\beta\bar S}{N}
+f_I(E_0)=\frac{\beta\bar S}{N^\star}
 \Rightarrow\mathcal{R}_0 = \frac{\varepsilon\beta}{(\varepsilon+d)(\gamma+d)}
 $$
 
@@ -645,7 +745,7 @@ $$
 
 - N'utilisez pas les deux méthodes!
 
-- La méthode de matrice de prochaine génération s'applique facilement à des modèles plus complexes, comme on le verra dans le reste du cours
+- La méthode de la matrice de prochaine génération s'applique facilement à des modèles plus complexes, comme on le verra dans le reste du cours
 
 ---
 
