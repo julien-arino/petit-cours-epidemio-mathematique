@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Étapes de l'analyse mathématique des modèles, $\mathcal{R}_0$ et la taille finale d'une épidémie
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Étapes de l'analyse mathématique des modèles, <br/>$\mathcal{R}_0$ et la taille finale d'une épidémie
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -103,7 +103,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - En général: **ne pas** considérer les propriétés de SAL de l'ESM, elles sont données (tout y va)
 - Calculez une taille finale (si possible)
 
-# Step 2 - Cas d'un modèle endémique
+# Étape 2 - Cas d'un modèle endémique
 
 - Calculer $\mathcal{R}_0$ et en déduire les propriétés de SAL de l'ESM
 - (Optionnel) Déterminez la direction de la bifurcation en $\mathcal{R}_0=1$
@@ -122,6 +122,8 @@ et notons $x(t,x_0)$ sa solution au temps $t\geq t_0$ passant par la condition i
 $x^\star$ est un **point d'équilibre** si $f(x^\star)=0$
 
 $x^\star$ est LAS si $\exists\mathcal{S}\ni x^\star$ ouvert dans le domaine de $f$ t.q. pour tout $x_0\in\mathcal{S}$, $x(t,x_0)\in\mathcal{S}$ pour tout $t\geq 0$ et, de plus, $\lim_{t\to\infty}x(t,x_0)=x^\star$
+
+---
 
 S'il y a un continuum de PE, alors $x^\star\in\mathcal{C}$, où $\mathcal{C}$ est une courbe dans le domaine de $f$ t.q. $f(y^\star)=0$ pour tout $y^\star\in\mathcal{C}$. On dit que $x^\star$ n'est **pas isolé**. Mais alors tout voisinage ouvert de $x^\star$ contient des éléments de $\mathcal{C}$ et prendre $x_0\in\mathcal{C}$, $x_0\neq x^\star$, implique que $\lim_{t\to\infty}x(t,x_0)=x_0\neq x^\star$. $x^\star$ est *localement stable* mais pas *localement asymptotiquement stable* !
 
@@ -172,7 +174,7 @@ Mathématiquement, $\mathcal{R}_0$ est
 
 ---
 
-# TL;DR - Matrice de prochaine génération
+# <!--fit-->TL;DR - Matrice de prochaine génération
 
 Diekmann & Heesterbeek, caractérisé dans le cas ODE par [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6)
 
@@ -183,6 +185,8 @@ $$
  
 - $\mathcal{F}$ flux entrant du fait des nouvelles infections
 - $\mathcal{V}$ tous les autres flux (¡attention au signe!)
+
+---
 
 On calcule les dérivées (Fréchet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les matrices jacobiennes) et on évalue en l'ESM
 
@@ -207,6 +211,8 @@ Distinguons nouvelles infections des autres facteurs de changement de la populat
 - $F_i(x)$ taux d'apparition de nouvelles infections dans le compartiment $i$
 - $V_i^+(x)$ taux de transfer d'individus vers le compartiment $i$ par tout autre moyen
 - $V_i^-(x)$ taux de transfer d'individus hors du compartiment $i$
+
+---
 
 Fonctions continuement différentiables au moins 2 fois par rapport à chaque variable
 
@@ -253,7 +259,7 @@ Note: si la méthode devait ne pas fonctionner, c'est en général parce que (A5
 
 ---
 
-# Un résultat de van den Driessche & Watmough
+# <!--fit-->Un résultat de van den Driessche & Watmough
 
 
 <div align=justify 
@@ -310,15 +316,18 @@ Soit $[\alpha_{\ell k}]$, $\ell=m+1,\ldots,n$, $k=1,\ldots,m$ le $(\ell-m,k)$-é
 Soient
 $$
 \tag{7}\label{eq:PvdDW_a}
+\begin{aligned}
 a =\sum_{i,j,k=1}^m
 v_iw_jw_k
-\left(
+\Biggl(
 \frac 12 
 \frac{\partial^2f_i}{\partial x_j\partial x_k}(x_0,0)
+\\
 +\sum_{\ell=m+1}^n
 \alpha_{\ell k}
 \frac{\partial^2f_i}{\partial x_j\partial x_\ell}(x_0,0)
-\right)
+\Biggr)
+\end{aligned}
 $$
 
 $$
