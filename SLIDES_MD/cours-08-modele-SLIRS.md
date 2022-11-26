@@ -79,9 +79,9 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 # <!--fit-->Pourquoi prendre en compte la durée de la période d'incubation
 
-- Modèles SIS et SIR: on progresse instantanément de $S$ à $I$
+- Modèles SIS et SIR: progression instantanée de $S$ à $I$
 
-| Maladie | Durée d'incubation |
+| Maladie | Incubation |
 |:----|:----|
 | Yersinia Pestis | 2-6 jours |
 | Fièvre hémorragique virale (FHV) Ebola | 2-21 jours |
@@ -302,7 +302,7 @@ On n'étudiera pas ces systèmes ici!
 
 ---
 
-![bg right:28% width:250px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+![bg right:25% width:250px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
 
 
 $$
@@ -331,17 +331,23 @@ $$
 \tag{5}
 N'=b-dN
 $$
-est facile à intégrer ou à étudier qualitativement. Qualitativement: $\eqref{eq:SLIRS_b_dN}$ est scalaire autonome, ses solutions sont donc monotones. Les solutions sont strictement positives pour des conditions initiales positives et toutes tendent vers $N^\star = b/d$
+est facile à intégrer ou à étudier qualitativement 
+
+Qualitativement: $\eqref{eq:SLIRS_b_dN}$ est scalaire autonome, ses solutions sont donc monotones. Les solutions sont strictement positives pour des conditions initiales positives et toutes tendent vers $N^\star = b/d$
 
 Notons que cette convergence est indépendante du comportement de $\eqref{sys:SLIR_b_dS}$-$\eqref{sys:SLIR_b_dR}$. On peut donc remplacer $N(t)$ par sa limite $N^\star$
 
 ---
 
-Cela permet également d'envisager une approche numérique s'abstrayant des variations dues à la démographie: en choisissant une condition initiale $(S(0),L(0),I(0),R(0))$ t.q. $N(0)=N^\star$, on est assuré que les variations dans les variables d'état sont uniquement dues aux facteurs épidémiologiques, puisque $N(t)$ reste constant
+Cela permet également d'envisager une approche numérique s'abstrayant des variations dues à la démographie:
+
+- on choisit une condition initiale $(S(0),L(0),I(0),R(0))$ t.q. $N(0)=N^\star$
+
+- on est alors assuré que les variations des variables d'état sont uniquement dues aux facteurs épidémiologiques, puisque $N(t)$ reste constant
 
 ---
 
-![bg right:26% width:250px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+![bg right:23% width:230px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
 
 Dans la suite, on étudie donc le système
 $$
