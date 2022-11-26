@@ -1026,17 +1026,17 @@ where $D_+$ is the right derivative
 
 <div class="theorem">
 
-Suppose $A=(a_{pq})$. Then, for $I,J\in N^{(k)}$
+Supposons que $A=(a_{pq})$. Alors, pour $I,J\in N^{(k)}$
 $$
 A^{[k]}(I,J)=\left\{
 \begin{array}{ll}
-\sum_{p\in I}a_{pp} & \textrm{if } J=I \\
-0 & \textrm{if }|I\cap J|\leq k-2 \\
-(-1)^\sigma a_{pq} & \textrm{if } |I\cap J|=k-1
+\sum_{p\in I}a_{pp} & \textrm{si } J=I \\
+0 & \textrm{si }|I\cap J|\leq k-2 \\
+(-1)^\sigma a_{pq} & \textrm{si } |I\cap J|=k-1
 \end{array}
 \right.
 $$
-where $p$ is the entry in $I\setminus(I\cap J)$, $q$ is the entry in $J\setminus(I\cap J)$ and $\sigma$ is the number of entries of $I\cap J$ between $p$ and $q$
+où $p$ est l'élément de $I\setminus(I\cap J)$, $q$ est l'élément de  $J\setminus(I\cap J)$ et $\sigma$ est le nombre d'éléments de $I\cap J$ entre $p$ et $q$
 </div>
 
 ---
