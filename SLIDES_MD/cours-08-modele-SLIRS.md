@@ -9,7 +9,7 @@ size: 4:3
 ---
 
 <style>
-  section {
+  /* section {
   font-size: 28px;
   padding-left: 40px;
   padding-right: 50px;
@@ -22,7 +22,7 @@ size: 4:3
   }
   h2 {
   font-size: 40px;
-  }
+  } */
   .theorem {
     text-align:justify;
     background-color:#16a085;
@@ -455,15 +455,15 @@ Les relations déduites de $\eqref{sys:SIRS_EP_I}$ et $\eqref{sys:SIRS_EP_R}$ pe
 $$
 \begin{align}
 0 &= b-f(S,I,N^\star)-dS+\frac{\nu\gamma}{d+\nu} I
-\tag{8a}\label{sys:SIRS_EEP_S} \\
+\tag{9a}\label{sys:SIRS_EEP_S} \\
 0 &= f(S,I,N^\star) -\frac{(d+\varepsilon)(d+\gamma)}{\varepsilon}I
-\tag{8b}\label{sys:SIRS_EEP_L}
+\tag{9b}\label{sys:SIRS_EEP_L}
 \end{align}
 $$
 
 De $\eqref{sys:SIRS_EEP_L}$
 $$
-\tag{9}\label{eq:SIRS_EEP_f_eq_I}
+\tag{10}\label{eq:SIRS_EEP_f_eq_I}
 f(S,I,N^\star)=\frac{(d+\varepsilon)(d+\gamma)}{\varepsilon}I
 $$
 Substituant $\eqref{eq:SIRS_EEP_f_eq_I}$ dans $\eqref{sys:SIRS_EEP_S}$,
@@ -475,7 +475,7 @@ dS+\left(
 \frac{(d+\varepsilon)(d+\gamma)}\varepsilon
 -\frac{\nu\gamma}{d+\nu}
 \right)I = b
-\tag{10}\label{eq:SIRS_EEP_dS_plus_kI}
+\tag{11}\label{eq:SIRS_EEP_dS_plus_kI}
 \end{align}
 $$
 
@@ -487,7 +487,7 @@ $$
 \begin{align}
 N^\star &= S+\frac{d+\gamma}{\varepsilon}I+I+\frac{\gamma}{d+\nu}I \\
 &= S+\frac{(d+\gamma)(d+\nu)+\varepsilon(d+\nu)+\gamma\varepsilon}{\varepsilon(d+\nu)} I
-\tag{11}\label{eq:SIRS_EEP_lineSI}
+\tag{12}\label{eq:SIRS_EEP_lineSI}
 \end{align}
 $$
 
@@ -755,7 +755,7 @@ Par conséquent
 - $\mathcal{R}_0^\textrm{v}<\mathcal{R}_0$ si $p>0$: le nombre de reproduction avec vaccination est toujours meilleur (plus petit) que celui sans vaccination
 - Pour contrôler la maladie, $\mathcal{R}_0^\text{v}$ doit prendre une valeur inférieure à 1, i.e.,
 $$
-\tag{12}
+\tag{13}
 \mathcal{R}_0^\text{v}<1 \iff p> 1-\frac{1}{\mathcal{R}_0}
 $$
 
@@ -829,13 +829,13 @@ Clairement, dur à verifier en pratique, donc le système est étudié d'autres 
 $$
 \begin{align}
 S' &= d-\beta S^qI^p-dS 
-\tag{26a}\label{sys:SLIR_LiMuldowney_dS} \\
+\tag{14a}\label{sys:SLIR_LiMuldowney_dS} \\
 L' &= \beta S^qI^p -(\varepsilon+d)L
-\tag{26b}\label{sys:SLIR_LiMuldowney_dL} \\
+\tag{14b}\label{sys:SLIR_LiMuldowney_dL} \\
 I' &= \varepsilon L-(\gamma+d)I 
-\tag{26c}\label{sys:SLIR_LiMuldowney_dI} \\
+\tag{14c}\label{sys:SLIR_LiMuldowney_dI} \\
 R' &= \gamma I-dR
-\tag{26d}\label{sys:SLIR_LiMuldowney_dR} 
+\tag{14d}\label{sys:SLIR_LiMuldowney_dR} 
 \end{align}
 $$
 
@@ -918,11 +918,11 @@ Andrei Korobeinikov. Considère un SLIR avec population constante normalisée à
 $$
 \begin{align}
 S' &= d-\beta SI -pdI-qdL-dS 
-\tag{23a}\label{sys:SEIR_vert_transmission_dS} \\
+\tag{15a}\label{sys:SEIR_vert_transmission_dS} \\
 L' &= \beta SI +pdI-(\varepsilon+d-qd)L 
-\tag{23b}\label{sys:SEIR_vert_transmission_dL} \\
+\tag{15b}\label{sys:SEIR_vert_transmission_dL} \\
 I' &= \varepsilon L-(\gamma+d)I 
-\tag{23c}\label{sys:SEIR_vert_transmission_dI}
+\tag{15c}\label{sys:SEIR_vert_transmission_dI}
 \end{align}
 $$
 
@@ -945,7 +945,7 @@ I^\star =\frac{d\varepsilon}{(\varepsilon+d)(\gamma+d)}\left(1-\frac
 $$
 où
 $$
-\tag{24}
+\tag{16}
 \mathcal{R}_0^v=\frac{\beta\varepsilon}
 {(\gamma+d)(\varepsilon+d)-qd(\varepsilon+d)-pd\varepsilon}
 $$
@@ -958,7 +958,7 @@ $E^\star$ est biologiquement valide seulement lorsque $\mathcal{R}_0^v>1$
 
 Utilisons la fonction
 $$
-\tag{25}
+\tag{17}
 V=\sum a_i(x_i-x_i^\star  \ln x_i)
 $$
 
@@ -985,23 +985,21 @@ $$
 
 ---
 
-Refer for example to Fiedler, 1998 for details
+Voir Fiedler (1998) pour les détails
 
-Let $A=(a_{ij})$, $i=1,\ldots,m$, $j=1,\ldots,n$ an $m\times n$-matrix and $k$ an integer, $1\leq k\leq\min(m,n)$
+Soit $A=(a_{ij})$, $i=1,\ldots,m$, $j=1,\ldots,n$ une $m\times n$-matrice et $k$ un entier, $1\leq k\leq\min(m,n)$
 
-Let $M=\{1,\ldots,m\}$ and $N=\{1,\ldots,n\}$, $M^{(k)}$ and $N^{(k)}$) the lexicographically ordered sets of ordered $k$-tuples of elements of $M$ and $N$, respecti
-
----
-
-
-The $k$th compound matrix $A^{(k)}$ of $A$ is the $C(m,k)\times C(n,k)$ matrix, with rows indexed by elements of $M^{(k)}$ and columns indexed by the elements of $N^{(k)}$, s.t. element $A^{(k)}(I,J)$, $I\in M^{(k)}$, $J\in N^{(k)}$ is the determinant $\det A(I,J)$
-
-$A(I,J)$ is the submatrix of $A$ consisting of rows in $I$ and columns in $J$
-
-Another interpretation of $A^{(k)}$ is as the $k$th exterior product of matrix $A$
+Soient $M=\{1,\ldots,m\}$ et $N=\{1,\ldots,n\}$, $M^{(k)}$ et $N^{(k)}$) les ensemble de $k$-tuples d'éléments de $M$ et $N$ ordonnés lexicographiquement, respectivement
 
 ---
 
+La $k$ème matrice composée $A^{(k)}$ de $A$ est la $C(m,k)\times C(n,k)$-matrice, avec rangs indicés par les éléments de $M^{(k)}$ et colonnes indicées par les éléments de $N^{(k)}$, t.q. l'élément $A^{(k)}(I,J)$, $I\in M^{(k)}$, $J\in N^{(k)}$ est le déterminant $\det A(I,J)$
+
+$A(I,J)$ est la sous-matrice de $A$ consistant des rangs dans $I$ et des colonnes dans $J$
+
+Une autre interprétation de $A^{(k)}$ est en tant que $k$ème produit extérieur de la matrice $A$
+
+---
 
 Suppose now that $A$ is an $n\times n$-matrix. The matrix $(I+tA)^{(k)}$ is a $C(n,k)\times C(n,k)$-matrix, with each entry a polynomial of $t$ with degree at most $k$
 
@@ -1043,32 +1041,32 @@ where $p$ is the entry in $I\setminus(I\cap J)$, $q$ is the entry in $J\setminus
 
 ---
 
-When $k=2$, we have
+Lorsque $k=2$, on a
 
 <div class="theorem">
 
-Suppose that $A=(a_{ij})$. For all $i=1,\ldots,C(n,2)$, let $(i)=(i_1,i_2)$ the $i$th element of the lexicographic order of pairs $(i_1,i_2)$ of integers s.t. $1\leq i_1<i_2\leq n$
+Supposons que $A=(a_{ij})$. Pour tout $i=1,\ldots,C(n,2)$, soit $(i)=(i_1,i_2)$ le $i$ème élément de l'ordre lexicographique de paires $(i_1,i_2)$ d'entiers t.q. $1\leq i_1<i_2\leq n$
 
-Then the entry in the $i$th row and $j$th column of $A^{[2]}$ is
+Alors l'élément $(i,j)$ de $A^{[2]}$ est
 $$
 a_{ij}=\left\{
 \begin{array}{ll}
-a_{i_1i_1}+a_{i_2i_2} & \textrm{if } (j)=(i) \\
-(-1)^{r+s}a_{i_rj_s} & \textrm{if exactly one element  } i_r\textrm{ of }(i)\textrm{ does not appear}\\
-&\textrm{in }(j)\textrm{ and }j_s \textrm{ does not appear in }(i) \\
-0 & \textrm{if no element of }(i)
-\textrm{ appears in }(j) 
+a_{i_1i_1}+a_{i_2i_2} & \textrm{si } (j)=(i) \\
+(-1)^{r+s}a_{i_rj_s} & \textrm{si exactement un élément  } i_r\textrm{ de }(i)\textrm{ n'apparait pas}\\
+&\textrm{dans }(j)\textrm{ et }j_s \textrm{ n'apparait pas dans }(i) \\
+0 & \textrm{si aucun élément de }(i)
+\textrm{ apparait dans }(j) 
 \end{array}
 \right.
 $$
-where $p$ is the entry in $I\setminus(I\cap J)$, $q$ is the entry in $J\setminus(I\cap J)$ and $\sigma$ is the number of elements of $I\cap J$ between $p$ and $q$
+où $p$ est l'élément dans $I\setminus(I\cap J)$, $q$ est l'élément dans $J\setminus(I\cap J)$ et $\sigma$ est le nombre d'éléments de $I\cap J$ entre $p$ et $q$
 </div>
 
 ---
 
-# Example
+# Exemple
 
-Let
+Soient
 $$
 A_2=\left(
 \begin{matrix}
@@ -1097,7 +1095,7 @@ $$
 
 ---
 
-Then
+Alors
 $$
 A_2^{[2]}=a_{11}+a_{22},\quad
 A_3^{[2]}=\left(
@@ -1149,33 +1147,35 @@ $$
 
 ---
 
-Let $A$ be an $m\times m$-matrix. Denote $A^{[2]}$ the second additive compound matrix of $A$
+Soit $A$ une $m\times m$-matrice. Notons $A^{[2]}$ la deuxième matrice composée additive de $A$
 
 <div class="theorem">
 
-Let $A$ be a real $m\times m$-mix. For $A$ to have all its eigenvalues with negative real parts, it is necessary and sufficient that 
-1. the second additive compound matrix $A^{[2]}$ has all its eigevalues with negative real parts
+Soit $A$ une matrice $m\times m$ réelle. Pour que $A$ ait toutes ses valeurs propres à parties réelles strictement négatives, il faut et il suffit que
+1. la deuxième matrice composée additive $A^{[2]}$ a toutes ses valeurs propres à parties réelles strictement négatives
 2. $(-1)^m\det(A)>0$
 </div>
 
 ---
 
-# Role in stability
+# Rôle dans la stabilité
 
-Consider the differential equation
+Considérons l'équation différentielle
 $$
-\begin{equation}\tag{1}\label{sys:diff_general}
+\begin{equation}\tag{18}\label{sys:diff_general}
 x'=f(x)
 \end{equation}
 $$
 
 <div class="theorem">
 
-[Li \& Muldowney, 1995]\label{th:LM1}
-A sufficient condition for a periodic orbit $\gamma=\{p(t):0\leq t\leq\omega\}$ of $\eqref{sys:diff_general}$ be asymptotically orbitally stable with asymptotic phase is that the linear system
+Une condition suffisante pour qu'une orbite périodique $\gamma=\{p(t):0\leq t\leq\omega\}$ de $\eqref{sys:diff_general}$ soit asymptotiquement orbitalement stable avec phase asymptotique est que le système linéaire
 $$
 z'(t)=\left(\frac{\partial f^{[2]}}{\partial x}
   \left(p(t)\right)\right)z(t)
 $$
-be asymptotically stable
+soit asymptotiquement stable
 </div>
+
+
+Li & Muldowney (1995)
