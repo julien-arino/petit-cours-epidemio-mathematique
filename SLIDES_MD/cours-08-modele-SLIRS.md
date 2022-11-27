@@ -612,11 +612,55 @@ $$
 
 ---
 
-Polynome caractéristique:
+Polynôme caractéristique:
 $$
 P(\lambda) = 
 \lambda^2+(2d+\varepsilon+\gamma)\lambda
 +(d+\varepsilon)(d+\gamma)-\varepsilon f_I(E_0)
+$$
+De la règle des signes de Descartes, on déduit que la nature des valeurs propres dépend du signe de 
+$$
+\tag{13}\label{eq:signe_vps}
+\psi(E_0)=(d+\varepsilon)(d+\gamma)-\varepsilon f_I(E_0)
+$$
+- Si $\psi(E_0)<0$, il y a une valeur propre réelle strictement positive et $E_0$ est instable
+- Si $\psi(E_0)=0$, les valeurs propres sont $-2d-\varepsilon-\gamma$ et 0 (par inspection du polynôme caractéristique)
+- Si $\psi(E_0)> 0$, il n'y a pas de valeurs propres réelles strictement positives 
+
+---
+
+Attention: à ce stade, rien dans le cas $\psi(E_0)>0$ ne dit qu'on ne peut pas avoir deux valeurs propres complexes conjuguées à parties réelles positives
+
+Pour lever l'incertitude, on calcule le discriminant
+$$
+\begin{align}
+\Delta &= (2d+\varepsilon+\gamma)^2
+-4(d+\varepsilon)(d+\gamma)+4\varepsilon f_I(E_0) \\
+&= (\gamma-\varepsilon)^2+4\varepsilon f_I(E_0) \\
+&>0
+\end{align}
+$$
+
+Il suit que le cas $\psi(E_0)>0$ correspond bien au cas où les deux valeurs propres sont réelles et négatives et $E_0$ est LAS
+
+---
+
+# Expression de $\mathcal{R}_0$
+
+On veut une expression telle que si $\mathcal{R}_0<1$, l'ÉSM est LAS, et si $\mathcal{R}_0>1$, l'ÉSM est instable
+
+On a vu que, étant donné
+$$
+\tag{13}
+\psi(E_0)=(d+\varepsilon)(d+\gamma)-\varepsilon f_I(E_0)
+$$
+
+- si $\psi(E_0)>0$, l'ÉSM est LAS
+- si $\psi(E_0)<0$, l'ÉSM est instable
+
+On utilise donc
+$$
+\mathcal{R}_0 = \frac{\varepsilon f_I(E_0)}{(d+\varepsilon)(d+\gamma)}
 $$
 
 ---
@@ -719,8 +763,8 @@ FV^{-1}=\frac{f_I(E_0)}
 $$
 et donc
 $$
-\mathcal{R}_0=\varepsilon
-\frac{f_I(E_0)}
+\mathcal{R}_0=
+\frac{\varepsilon f_I(E_0)}
 {(d+\varepsilon)(d+\gamma)}
 $$
 
@@ -765,6 +809,28 @@ $$
 
 - La méthode de la matrice de prochaine génération s'applique facilement à des modèles plus complexes, comme on le verra dans le reste du cours
 
+- Si vous considérez la SAL de l'ÉE, alors il faudra utiliser la jacobienne
+
+---
+
+# Les grandeurs impliquées dans $\mathcal{R}_0$
+
+On revient sur les temps de résidence dans le [Cours 09](cours-09-temps-de-residence.html), mais en prélude à ce cours, réécrivons $\mathcal{R}_0$
+
+- Incidence en action de masse
+$$
+f_I(E_0)=
+\frac{\varepsilon}{\varepsilon+d} 
+\frac{\beta N^\star}{\gamma+d} 
+$$
+- Incidence standard
+$$
+f_I(E_0)= 
+\frac{\varepsilon}{\varepsilon+d}
+\frac{\beta}{\gamma+d}
+$$
+$1/(d+\varepsilon)$ et $1/(d+\gamma)$ sont les temps moyens de séjour dans les compartiments $L$ et $I$, respectivement
+
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
@@ -806,13 +872,11 @@ $$
 
 # Expressions de $\mathcal{R}_0$
 
-$(\bar S,\bar I)$ ÉSM, notons $\overline{f}_I=\partial f/\partial I(\bar S,\bar I)$
-
 | Modèle | $\mathcal{R}_0$ | Modèle | $\mathcal{R}_0$ | Modèle | $\mathcal{R}_0$ |
 |:---|:---:|:---|:---:|:---|:---:|
-| SLIRS | $\dfrac{\varepsilon\overline{f}_I}{(d+\varepsilon)(d+\gamma)}$ | SIRS | $\dfrac{\varepsilon\overline{f}_I}{d+\gamma}$ | SIS | $\dfrac{\overline{f}_I}{d+\gamma}$ |
-| SIR | $\dfrac{\overline{f}_I}{d+\gamma}$ | SLIS | $\dfrac{\varepsilon\overline{f}_I}{(d+\varepsilon)(d+\gamma)}$ | SI | $\dfrac{\overline{f}_I}{d+\gamma}$ | 
-| SLI | $\dfrac{\varepsilon\overline{f}_I}{(d+\varepsilon)(d+\gamma)}$ | SLIR | $\dfrac{\varepsilon\overline{f}_I}{(d+\varepsilon)(d+\gamma)}$ | 
+| SLIRS | $\dfrac{\varepsilon f_I(E_0)}{(d+\varepsilon)(d+\gamma)}$ | SIRS | $\dfrac{\varepsilon f_I(E_0)}{d+\gamma}$ | SIS | $\dfrac{f_I(E_0)}{d+\gamma}$ |
+| SIR | $\dfrac{f_I(E_0)}{d+\gamma}$ | SLIS | $\dfrac{\varepsilon f_I(E_0)}{(d+\varepsilon)(d+\gamma)}$ | SI | $\dfrac{f_I(E_0)}{d+\gamma}$ | 
+| SLI | $\dfrac{\varepsilon f_I(E_0)}{(d+\varepsilon)(d+\gamma)}$ | SLIR | $\dfrac{\varepsilon f_I(E_0)}{(d+\varepsilon)(d+\gamma)}$ | 
 
 ---
 
