@@ -125,7 +125,6 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIRS_birth_bofN.png)
 
-
 ---
 
 # Les deux modèles SLIRS
@@ -818,6 +817,10 @@ On reprend le modèle SLIRS de tantôt, mais on le modifie comme suit:
 - La vaccination prend une proportion $p$ des nouveaux susceptibles et les place directement dans le compartiment $R$ des guéris, sans jamais les laisser devenir infectés
 - Une fraction $1-p$ des nouveaux nés n'est pas vaccinée à la naissance
 - $f(S,I,N)=\beta SI$
+
+---
+
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIRS_constantbirth_and_vacc.png)
 
 ---
 
