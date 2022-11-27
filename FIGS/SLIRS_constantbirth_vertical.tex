@@ -1,0 +1,32 @@
+\documentclass[crop=true,tikz,border=1pt,varwidth=8in]{standalone}
+
+%\makeatletter
+%%%%%%%%%%%%%%%%%
+\PassOptionsToPackage{force}{filehook}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{positioning}
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=0.87cm,
+minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\usetikzlibrary{shapes.symbols,shapes.callouts,patterns}
+\usetikzlibrary{calc}
+
+
+\begin{document}
+\begin{tikzpicture}[auto, %node distance = 2cm, auto,
+	cloud/.style={minimum width={width("N-1")+2pt},
+		draw, ellipse,fill=gray!20}]
+    \node [cloud, fill=green!90] (S) {$S$};
+    \node [cloud, above=of S, draw=none, fill=white] (b) {}; 
+    \node [cloud, below=of S, fill=red!30] (L) {$L$};
+	\node [cloud, below=of L, fill=red!90] (I) {$I$};
+	\node [cloud, below=of I, fill=blue!90] (R) {$R$};
+	%% Arrows
+    \path [line, very thick] (b) to node [midway, right] (TextNode) {$b$} (S);
+	\path [line, very thick] (S) to node [midway, right] (TextNode) {$f(S,I,N)$} (L);
+	\path [line, very thick] (L) to node [midway, right] (TextNode) {$\varepsilon L$} (I);
+	\path [line, very thick] (I) to node [midway, right] (TextNode) {$\gamma I$} (R);
+    \path [line, very thick, bend left] (R) to node [midway, above, sloped] (TextNode) {$\nu R$} (S);
+\end{tikzpicture}
+\end{document}
