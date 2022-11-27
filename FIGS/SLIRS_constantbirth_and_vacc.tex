@@ -18,7 +18,7 @@ minimum height=2em]
 	cloud/.style={minimum width={width("N-1")+2pt},
 		draw, ellipse,fill=gray!20}]
     \node [cloud, fill=green!90] (S) {$S$};
-    \node [cloud, right=2cm of S, fill=red!30] (L) {$L$};
+    \node [cloud, right=of S, fill=red!30] (L) {$L$};
 	\node [cloud, right=of L, fill=red!90] (I) {$I$};
 	\node [cloud, right=of I, fill=blue!90] (R) {$R$};
     \node [cloud, above=of S, draw=none, fill=white] (bS) {};
@@ -28,12 +28,12 @@ minimum height=2em]
     \node [cloud, below=of I, draw=none, fill=white] (dI) {}; 
     \node [cloud, below=of R, draw=none, fill=white] (dR) {}; 
 	%% Arrows
-	\path [line, very thick] (S) to node [midway, below] (TextNode) {$f(S,I,N)$} (L);
+	\path [line, very thick] (S) to node [midway, below] (TextNode) {$\beta SI$} (L);
 	\path [line, very thick] (L) to node [midway, below] (TextNode) {$\varepsilon L$} (I);
 	\path [line, very thick] (I) to node [midway, below] (TextNode) {$\gamma I$} (R);
 	%% Birth and death
-	\path [line, very thick] (bS) to node [pos=0.2, right] (TextNode) {$(1-p)b$} (S);
-	\path [line, very thick] (bR) to node [pos=0.2, right] (TextNode) {$pb$} (R);
+	\path [line, very thick] (bS) to node [right] (TextNode) {$(1-p)b$} (S);
+	\path [line, very thick] (bR) to node [left] (TextNode) {$pb$} (R);
     \path [line, very thick] (S) to node [midway, right] (TextNode) {$dS$} (dS);
     \path [line, very thick] (L) to node [midway, right] (TextNode) {$dL$} (dL);
     \path [line, very thick] (I) to node [midway, right] (TextNode) {$dI$} (dI);
