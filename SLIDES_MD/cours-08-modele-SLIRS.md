@@ -112,7 +112,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 # Hypothèses
 
-- Il y de la démographie
+- Il y de la démographie: naissance au taux $b(N)$ et mort au taux *per capita* $d$
 - On regardera deux cas pour commencer: naissance constante et *per capita*
 - Maladie pas transmise aux nouveaux nés (pas de *transmission verticale*): toutes les naissances sont dans le compartiment $S$
 - La maladie ne cause pas de mortalité additionnelle
@@ -120,6 +120,11 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 - Il y a une période d'incubation
 - Après guérison, les individus sont immunisés à la maladie
 - L'immunité est perdue après un certain temps
+
+---
+
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIRS_birth_bofN.png)
+
 
 ---
 
