@@ -78,40 +78,40 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Étape 1 - Modèle épidémique ou endémique ?
+# <!--fit-->Étape 1 - Modèle épidémique ou endémique ?
 
 - Souvent source de confusion: l'analyse d'un modèle épidémique diffère de celle d'un modèle endémique !
 - Important de déterminer ce que vous avez
 - Premier test simple (pas forcément sans erreur): y-t-il de la démographie ? 
   - La démographie peut être présente malgré une population totale constante, s'il y a un flux au travers du système (avec, e.g., naissance = mort)
-- Autre test (plus complexe): quelle est la nature de l'ESM ?
+- Autre test (plus complexe): quelle est la nature de l'ÉSM ?
 
 ---
 
-# Étape 1 et demie - Calcul de l'ESM
+# Étape 1 et demie - Calcul de l'ÉSM
 
-- Si vous ne savez pas encore si vous avez un modèle épidémique ou endémique, il faudra calculer l'ESM; il faudra le(s) calculer de toute façon
+- Si vous ne savez pas encore si vous avez un modèle épidémique ou endémique, il faudra calculer l'ÉSM; il faudra le(s) calculer de toute façon
 - **En général**: on suppose que toutes les variables *infectées* sont égales à 0 (I, L et I, etc.)
   - Si vous trouvez un PE unique ou une quantité dénombrable d'équilibres, c'est un modèle endémique
   - Si votre solution est de la forme "toute valeur de $S$ marche", le modèle est épidémique
 
 ---
 
-# Étape 2 - Cas d'un modèle épidémique
+# <!--fit-->Étape 2 - Cas d'un modèle épidémique
 
 - Calcul de $\mathcal{R}_0$
-- En général: **ne pas** considérer les propriétés de SAL de l'ESM, elles sont données (tout y va)
+- En général: **ne pas** considérer les propriétés de SAL de l'ÉSM, elles sont données (tout y va)
 - Calculez une taille finale (si possible)
 
-# Étape 2 - Cas d'un modèle endémique
+# <!--fit-->Étape 2 - Cas d'un modèle endémique
 
-- Calculer $\mathcal{R}_0$ et en déduire les propriétés de SAL de l'ESM
+- Calculer $\mathcal{R}_0$ et en déduire les propriétés de SAL de l'ÉSM
 - (Optionnel) Déterminez la direction de la bifurcation en $\mathcal{R}_0=1$
-- (Souvent très compliqué voire impossible) Déterminer les propriétés de SAG de l'ESM ou de l'ÉÉ
+- (Souvent très compliqué voire impossible) Déterminer les propriétés de SAG de l'ÉSM ou de l'ÉÉ
 
 ---
 
-# <!--fit-->Ne considérez pas la SAL de l'ESM d'un modèle endémique!
+# <!--fit-->Ne considérez pas la SAL de l'ÉSM d'un modèle endémique!
 
 Considérons le PVI
 $$
@@ -125,7 +125,16 @@ $x^\star$ est LAS si $\exists\mathcal{S}\ni x^\star$ ouvert dans le domaine de $
 
 ---
 
-S'il y a un continuum de PE, alors $x^\star\in\mathcal{C}$, où $\mathcal{C}$ est une courbe dans le domaine de $f$ t.q. $f(y^\star)=0$ pour tout $y^\star\in\mathcal{C}$. On dit que $x^\star$ n'est **pas isolé**. Mais alors tout voisinage ouvert de $x^\star$ contient des éléments de $\mathcal{C}$ et prendre $x_0\in\mathcal{C}$, $x_0\neq x^\star$, implique que $\lim_{t\to\infty}x(t,x_0)=x_0\neq x^\star$. $x^\star$ est *localement stable* mais pas *localement asymptotiquement stable* !
+S'il y a un continuum de PE, alors $x^\star\in\mathcal{C}$, où $\mathcal{C}$ est une courbe dans le domaine de $f$ t.q. $f(y^\star)=0$ pour tout $y^\star\in\mathcal{C}$
+
+On dit que $x^\star$ n'est **pas isolé**
+
+Mais alors tout voisinage ouvert de $x^\star$ contient des éléments de $\mathcal{C}$ et prendre $x_0\in\mathcal{C}$, $x_0\neq x^\star$, implique que 
+$$
+\lim_{t\to\infty}x(t,x_0)=x_0\neq x^\star
+$$
+
+$x^\star$ est *localement stable* mais pas *localement asymptotiquement stable* !
 
 ---
 
@@ -148,9 +157,9 @@ Si $\mathcal{R}_0>1$, alors chaque individu infectieux infecte en moyenne plus d
 
 Mathématiquement, $\mathcal{R}_0$ est
 
-> un paramètre de bifurcation qui agrège les paramètres du système, et tel que l'équilibre sans maladie (ESM) perd sa stabilité *locale* lorsque l'on franchit $\mathcal{R}_0=1$ de gauche à droite
+> un paramètre de bifurcation qui agrège les paramètres du système, et tel que l'équilibre sans maladie (ÉSM) perd sa stabilité *locale* lorsque l'on franchit $\mathcal{R}_0=1$ de gauche à droite
 
-- Obtenu en considérant la linéarisation du système en l'ESM
+- Obtenu en considérant la linéarisation du système en l'ÉSM
 - Devient rapidement ingérable (taille de la matrice) et on obtient une forme souvent non unique (pas grave en tant que seuil, mais peu indicatif en dehors du seuil)
 
 ---
@@ -188,7 +197,7 @@ $$
 
 ---
 
-On calcule les dérivées (Fréchet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les matrices jacobiennes) et on évalue en l'ESM
+On calcule les dérivées (Fréchet) $F=D\mathcal{F}$ et $V=D\mathcal{V}$ par rapport aux variables infectées $x$ (les matrices jacobiennes) et on évalue en l'ÉSM
 
 Alors
 $$
@@ -209,12 +218,12 @@ $$
 
 Distinguons nouvelles infections des autres facteurs de changement de la population
 - $F_i(x)$ taux d'apparition de nouvelles infections dans le compartiment $i$
-- $V_i^+(x)$ taux de transfer d'individus vers le compartiment $i$ par tout autre moyen
-- $V_i^-(x)$ taux de transfer d'individus hors du compartiment $i$
+- $V_i^+(x)$ taux de transfert d'individus vers le compartiment $i$ par tout autre moyen
+- $V_i^-(x)$ taux de transfert hors du compartiment $i$
 
 ---
 
-Fonctions continuement différentiables au moins 2 fois par rapport à chaque variable
+Fonctions continûment différentiables au moins 2 fois par rapport à chaque variable
 
 $$
 x_i' = f_i(x)=F_i(x)-V_i(x),\quad i=1,\ldots,n
@@ -249,7 +258,7 @@ où $V_i=V_i^--V_i^+$
 
 # Une dernière petite hypothèse pour la route?
 
-Soit $x_0$ un ESM du système, i.e., un équilibre (localement) asymptotiquement stable du modèle sans maladie, i.e., le système restreint à $X_s$. Il n'est pas nécessaire de supposer que le modèle a un ESM unique
+Soit $x_0$ un ÉSM du système, i.e., un équilibre (localement) asymptotiquement stable du modèle sans maladie, i.e., le système restreint à $X_s$. Il n'est pas nécessaire de supposer que le modèle a un ÉSM unique
 
 Soit $Df(x_0)$ la matrice Jacobienne $[\partial f_i/\partial x_j]$. Certaines des dérivées sont d'un seul côté puisque $x_0$ est sur la frontière du domaine
 
@@ -268,13 +277,13 @@ border-radius:20px;
 padding:10px 20px 10px 20px;
 box-shadow: 0px 1px 5px #999;">
 
-Supposons que l'ESM existe. Soit alors
+Supposons que l'ÉSM existe. Soit alors
 $$
 \mathcal{R}_0=\rho(FV^{-1})
 $$
 où les matrices $F$ et $V$ sont obtenues comme indiqué. Supposons vérifiées les conditions (A1) à (A5) hold. Alors
-- si $\mathcal{R}_0<1$, alors l'ESM est LAS
-- si $\mathcal{R}_0>1$, alors l'ESM est instable
+- si $\mathcal{R}_0<1$, alors l'ÉSM est LAS
+- si $\mathcal{R}_0>1$, alors l'ÉSM est instable
 </div>
 
 Important de noter la nature *locale* de la stabilité qui est déduite de ce résultat. On verra plus tard que même lorsque $\mathcal{R}_0<1$, il peut y avoir plusieurs équilibres
@@ -283,7 +292,7 @@ Important de noter la nature *locale* de la stabilité qui est déduite de ce r�
 
 # Direction de la bifurcation en $\mathcal{R}_0=1$
 
-$\mu$ un paramètre de bifurcation t.q. $\mathcal{R}_0<1$ pour $\mu<0$ et $\mathcal{R}_0>1$ pour $\mu>0$ et $x_0$ soit un ESM $\forall\mu$. On considère le système
+$\mu$ un paramètre de bifurcation t.q. $\mathcal{R}_0<1$ pour $\mu<0$ et $\mathcal{R}_0>1$ pour $\mu>0$ et $x_0$ soit un ÉSM $\forall\mu$. On considère le système
 $$
 \tag{6}\label{eq:sys_PvdDW}
 x'=f(x,\mu)
@@ -424,7 +433,7 @@ $$
 
 ---
 
-Supposons que $\mathbf{E}_0$ soit un ESM LAS du système sans maladie, i.e., un point d'équilibre de
+Supposons que $\mathbf{E}_0$ soit un ÉSM LAS du système sans maladie, i.e., un point d'équilibre de
 $$
 \begin{align*}
 \mathbf{S}' &= \mathbf{b}(\mathbf{S},\mathbf{0},\mathbf{R}) \\
@@ -441,8 +450,8 @@ $$
 \mathbf{h}\mathbf{V}^{-1}
 \mathbf{\Pi}\mathbf{D}\mathbf{S}_0
 $$
-- Si $\mathcal{R}_0<1$, l'ESM $\mathbf{E}_0$ est un équilibre LAS de $\eqref{sys:SIR_general_dS}$-$\eqref{sys:SIR_general_dR}$
-- Si $\mathcal{R}_0>1$, l'ESM $\mathbf{E}_0$ de $\eqref{sys:SIR_general_dS}$-$\eqref{sys:SIR_general_dR}$ est instable
+- Si $\mathcal{R}_0<1$, l'ÉSM $\mathbf{E}_0$ est un équilibre LAS de $\eqref{sys:SIR_general_dS}$-$\eqref{sys:SIR_general_dR}$
+- Si $\mathcal{R}_0>1$, l'ÉSM $\mathbf{E}_0$ de $\eqref{sys:SIR_general_dS}$-$\eqref{sys:SIR_general_dR}$ est instable
 </div>
 
 En l'absence de démographie (modèle épidémique), alors pas de conclusion sur la stabilité, bien sur
@@ -537,7 +546,7 @@ où $K$ est la population totale initiale
 
 ---
 
-# Pour aller plus loins au sujet de la taille finale
+# <!--fit-->Pour aller plus loin au sujet de la taille finale
 
 - Dans certains des cas où la méthode ici ne s'applique pas parce que le modèle ne peut pas s'écrire sous la forme standard $\eqref{sys:SIR_epi_dS}$-$\eqref{sys:SIR_epi_dR}$, on consultera, e.g.,
   - Andreasen. [The final size of an epidemic and its relation to the basic reproduction number](https://doi.org/10.1007/s11538-010-9623-3). *Bulletin of Mathematical Biology* **73**(10):2305-2321 (2011)

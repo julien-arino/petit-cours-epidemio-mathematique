@@ -79,7 +79,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 # <!--fit-->Pourquoi prendre en compte la durée de la période d'incubation
 
-- Modèles SIS et SIR: progression instantanée de $S$ à $I$
+(De [Wikipedia](https://fr.wikipedia.org/wiki/Période_d'incubation))
 
 | Maladie | Incubation |
 |:----|:----|
@@ -92,7 +92,13 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Plus sur l'incubation
+# Incubation versus latence
+
+La période d'**incubation** est le période entre le moment où un individu est infecté par la maladie et le moment où ses symptômes deviennent visible
+
+La période de **latence** est la période entre le moment où un individu est infecté par la maladie et le moment où il devient infectieux
+
+Ces périodes peuvent être identiques ou bien différer un peu (souvent, l'infectiosité commence avant les symptômes)
 
 ---
 
@@ -407,7 +413,7 @@ $$
 
 ---
 
-Le même genre de raisonement que l'on a conduit lors de l'étude du modèle SIS dans le [Cours 04](cours-04-modele-SIS.html) permet de conclure que le système est bien posé, en ce que
+Le même genre de raisonnement que l'on a conduit lors de l'étude du modèle SIS dans le [Cours 04](cours-04-modele-SIS.html) permet de conclure que le système est bien posé, en ce que
 
 - il y a existence et unicité des solutions de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$
 - le cône positif $\mathbb{R}_+^4$ est positivement invariant sous le flot de $\eqref{sys:SLIRS_dS}$-$\eqref{sys:SLIRS_dR}$
@@ -603,7 +609,7 @@ $$
 \varepsilon & -(d+\gamma) 
 \end{pmatrix}
 $$
-Polynome caractéristique:
+Polynôme caractéristique:
 $$
 P(\lambda) = 
 \lambda^2+(2d+\varepsilon+\gamma)\lambda
@@ -945,7 +951,7 @@ $$
 \mathcal{R}_0^\text{v}<1 \iff p> 1-\frac{1}{\mathcal{R}_0}
 $$
 
-En vaccinant une fraction $p>1-1/\mathcal{R}_0$ de nouveaux nés, on se place dans une situation dans laquelle la maladie est éradicable
+En vaccinant une fraction $p>1-1/\mathcal{R}_0$ de nouveaux nés, on se place dans une situation dans laquelle la maladie peut être éradiquée
 
 C'est l'**immunité de groupe**
 
@@ -1027,7 +1033,7 @@ $$
 
 ---
 
-# Li, Muldowney & PvdD - CAMQ (1999)
+# <!--fit-->Li, Muldowney & PvdD - CAMQ (1999)
 
 SLIRS (SEIRS) avec incidence
 $$
@@ -1078,7 +1084,7 @@ Supposons que l'incidence $f(S,I,N)=\beta S^q I^p$ satisfait **(H)** et que
 $$
 |g'(I)|I\leq g(I) \textrm{ pour }I\in(0,1]
 $$
-Supposons additionnallement que $\mathcal{R}_0>1$ et que l'une des conditions
+Supposons additionnellement que $\mathcal{R}_0>1$ et que l'une des conditions
 $$
 \begin{gather*}
 \gamma\nu<\epsilon_0(\beta\eta_0+\gamma+d)(\beta\eta_0+\nu+d) \\
@@ -1165,9 +1171,9 @@ $$
 # La méthode des matrices composées
 
 - Extension du critère de Dulac à des systèmes en dimension plus élevée
-- Utile pour exclure l'existece d'orbites périodiques
+- Utile pour exclure l’existence d'orbites périodiques
 - Était très populaire pendant quelques années, mais il faut connaître la limitation principale:
-  - Devient difficile d'utilisation lorsque la dimensionalité du système est $\geq 4$
+  - Devient difficile d'utilisation lorsque la dimensionnalité du système est $\geq 4$
 
 ---
 
@@ -1187,9 +1193,9 @@ Une autre interprétation de $A^{(k)}$ est en tant que $k$ème produit extérieu
 
 ---
 
-Supposons que $A$ soit une $n\times n$-matrice. La matrice $(I+tA)^{(k)}$ est une $C(n,k)\times C(n,k)$-matrice dont chaque élément est un polynome en $t$ de degré au plus $k$
+Supposons que $A$ soit une $n\times n$-matrice. La matrice $(I+tA)^{(k)}$ est une $C(n,k)\times C(n,k)$-matrice dont chaque élément est un polynôme en $t$ de degré au plus $k$
 
-En regroupant les monomes de même degré en $t$
+En regroupant les monômes de même degré en $t$
 $$
 (I+tA)^{(k)}=A^{(k,0)}+tA^{(k,1)}+\cdots+t^kA^{(k,k)}
 $$
@@ -1238,10 +1244,10 @@ $$
 a_{ij}=\left\{
 \begin{array}{ll}
 a_{i_1i_1}+a_{i_2i_2} & \textrm{si } (j)=(i) \\
-(-1)^{r+s}a_{i_rj_s} & \textrm{si exactement un élément  } i_r\textrm{ de }(i)\textrm{ n'apparait pas}\\
-&\textrm{dans }(j)\textrm{ et }j_s \textrm{ n'apparait pas dans }(i) \\
+(-1)^{r+s}a_{i_rj_s} & \textrm{si exactement un élément  } i_r\textrm{ de }(i)\textrm{ n’apparaît pas}\\
+&\textrm{dans }(j)\textrm{ et }j_s \textrm{ n’apparaît pas dans }(i) \\
 0 & \textrm{si aucun élément de }(i)
-\textrm{ apparait dans }(j) 
+\textrm{ apparaît dans }(j) 
 \end{array}
 \right.
 $$
