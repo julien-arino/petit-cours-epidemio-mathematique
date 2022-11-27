@@ -612,6 +612,15 @@ $$
 
 ---
 
+Polynome caractéristique:
+$$
+P(\lambda) = 
+\lambda^2+(2d+\varepsilon+\gamma)\lambda
++(d+\varepsilon)(d+\gamma)-\varepsilon f_I(E_0)
+$$
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
 # <!--fit-->$\mathcal{R}_0$ par la matrice de  <br /> prochaine génération
 
