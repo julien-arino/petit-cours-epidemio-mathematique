@@ -841,7 +841,7 @@ $$
  
 - Pour rappel, ÉSM du SLIR (comme SLIRS):
 $$
-(\bar S,\bar L, \bar I,\bar R)=(N,0,0,0)
+(\bar S,\bar L, \bar I,\bar R)=(N^\star,0,0,0)
 $$
 - ÉSM du SLIR avec vaccination
 $$
@@ -1098,7 +1098,7 @@ $$
 
 ---
 
-Voir Fiedler (1998) pour les détails
+Voir Fiedler [Special Matrices and Their Applications in Numerical Mathematics](https://books.google.ca/books?id=SwzDAgAAQBAJ) (2013) pour les détails
 
 Soit $A=(a_{ij})$, $i=1,\ldots,m$, $j=1,\ldots,n$ une $m\times n$-matrice et $k$ un entier, $1\leq k\leq\min(m,n)$
 
