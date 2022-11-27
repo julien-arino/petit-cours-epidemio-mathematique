@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pdfcrop $1.pdf
+mv $1-crop.pdf $1.pdf
+convert -quality 300 -density 600 $1.pdf $1.png

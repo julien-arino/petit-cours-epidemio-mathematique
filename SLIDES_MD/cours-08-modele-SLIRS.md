@@ -302,8 +302,7 @@ On n'étudiera pas ces systèmes ici!
 
 ---
 
-![bg right:25% width:250px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
-
+![bg right:25% width:230px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIRS_constantbirth_vertical.png)
 
 $$
 \begin{align}
@@ -347,7 +346,7 @@ Cela permet également d'envisager une approche numérique s'abstrayant des vari
 
 ---
 
-![bg right:23% width:230px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+![bg right:21% width:200px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIRS_constantbirth_incidenceNstar_vertical.png)
 
 Dans la suite, on étudie donc le système
 $$
@@ -372,7 +371,7 @@ $$
 
 ---
 
-![bg right:26% width:250px](https://raw.githubusercontent.com/julien-arino/3MC-course-epidemiological-modelling/main/FIGS/SLIRS_ODE_vertical.png)
+![bg right:21% width:200px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIRS_constantbirth_incidenceNstar_vertical.png)
 
 
 On étudie le système
@@ -1095,7 +1094,7 @@ Voir Fiedler (1998) pour les détails
 
 Soit $A=(a_{ij})$, $i=1,\ldots,m$, $j=1,\ldots,n$ une $m\times n$-matrice et $k$ un entier, $1\leq k\leq\min(m,n)$
 
-Soient $M=\{1,\ldots,m\}$ et $N=\{1,\ldots,n\}$, $M^{(k)}$ et $N^{(k)}$) les ensemble de $k$-tuples d'éléments de $M$ et $N$ ordonnés lexicographiquement, respectivement
+Soient $M=\{1,\ldots,m\}$ et $N=\{1,\ldots,n\}$, $M^{(k)}$ et $N^{(k)})$ les ensemble de $k$-tuples d'éléments de $M$ et $N$ ordonnés lexicographiquement, respectivement
 
 ---
 
