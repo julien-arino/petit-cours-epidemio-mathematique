@@ -6,7 +6,6 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Je suis en train d'enregistrer les vidéos, celles qui sont disponibles sont indiquées par la présence d'un lien. On peut aussi les trouver directement dans [cette liste](https://youtube.com/playlist?list=PLfRaznSpWo2sxYq-sjX8p7AThI9OkFrji) YouTube.
 - Tous les transparents ci-dessous sont susceptibles de changer (pour corriger des coquilles, améliorer le flux, ajouter du contenu, etc.). 
 - En particulier, il est fréquent que les transparents diffèrent un peu de la version utilisée lors de l'enregistrement de la vidéo. Si la variation devient trop grande, je ré-enregisterai la vidéo. 
-<!--- Une version plus détaillée de la liste, que j'utilise par exemple pour vérifier que je ne duplique pas de contenu, est disponible [ici](). -->
 
 
 ## Liste des cours
