@@ -743,7 +743,15 @@ où $\mathbb{P}(T<t+\Delta t, S=S_j | T\geq t)$ est la probabilité d'échec due
 
 ---
 
-Par la loi de la probabilité totale, puisque un seul des évènements peut avoir lieu
+Par la loi de la probabilité totale, puisque un seul des évènements peut avoir lieu, si on a $n$ risques, alors
 $$
 h(t) = \sum_{i=1}^n h_j(t)
+$$
+ou, identiquement,
+$$
+\mathcal{S}(t)
+=
+\exp\left(
+  -\int_0^t \sum\textstyle_{j=1}^n h_j(s)\ ds
+\right)
 $$
