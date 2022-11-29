@@ -122,6 +122,7 @@ Considérons un système $\Sigma$ qui peut être dans 2 états, $S_1$ et $S_2$
 Supposons que
 - au temps $t=0$, $\Sigma$ est dans l'état $S_1$
 - à un instant $t=\tau$, quelque chose se passe, entraînant le passage de $\Sigma$ de l'état $S_1$ à l'état $S_2$
+- l'état $S_2$ est *absorbant*, on ne peut pas le quitter
 
 Une **variable aléatoire** (v.a.) est une variable qui prend des valeurs .. aléatoires
 
@@ -140,7 +141,7 @@ On déduit un modèle, qui dans ce contexte est une **distribution de probabilit
 
 ---
 
-![bg contain](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/random_length_sample.png)
+![bg contain 60%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/random_length_sample.png)
 
 ---
 
@@ -248,14 +249,14 @@ $$
 La v.a. $T$ a une **distribution exponentielle** si sa densité est de la forme
 
 $$
-\begin{equation}\label{eq:exp_distrib}
+\begin{equation}\tag{5}\label{eq:exp_distrib}
 f(t)=\begin{cases}0&\textrm{si }t<0,\\
 \theta e^{-\theta t}&\textrm{si }t\geq 0,
 \end{cases}
 \end{equation}
 $$
 avec $\theta>0$. Alors la fonction de survie est de la forme $\mathcal{S}(t)=e^{-\theta t}$, pour $t\geq 0$, et le temps moyen de séjour est
-$$
+$$\tag{6}\label{eq:exp_distrib_mean_survival}
 \tau=\int_0^\infty e^{-\theta t}dt=\frac 1\theta
 $$
 
@@ -265,6 +266,7 @@ $$
 
 Soit $\omega>0$ donné. Si la survie prend la forme
 $$
+\tag{7}\label{eq:dirac_distrib}
 \mathcal{S}(t)=
 \left\{
 \begin{array}{ll}
@@ -275,6 +277,7 @@ $$
 $$
 alors $T$ a une distribution delta de Dirac delta $\delta_\omega(t)$, et le temps moyen de séjour est
 $$
+\tag{8}\label{eq:dirac_mean_sojourn}
 \tau=\int_0^\omega dt=\omega
 $$
 avec une variance $\sigma^2=0$
@@ -286,6 +289,7 @@ avec une variance $\sigma^2=0$
 Une v.a. $X$ suit une **loi Gamma** de **paramètre de forme** $k$ et **paramètre d'échelle** $\theta$ (ou **paramètre d'intensité** $\beta = 1/\theta$) (tous strictement positifs), et l'on note $X\,\sim\Gamma(k, \theta)$, si sa densité de probabilité est de la forme 
 
 $$
+\tag{9}\label{eq:gamma_distrib}
 f(x;k,\theta) = \frac{x^{k-1} \mathrm{e}^{-\frac{x}{\theta}}}{\Gamma ( k)\theta ^k}
 $$
 
@@ -341,7 +345,7 @@ Supposons
 Soit $N(t)$ la population au temps $t\geq 0$. Alors
 
 $$
-\begin{equation}\label{eq:N_general}\tag{8}
+\begin{equation}\label{eq:N_general}\tag{10}
 N(t)=N_0P(t)
 \end{equation}
 $$
@@ -432,7 +436,7 @@ Integral equation for the number of infective individuals:
 $$
 \begin{equation}
 I(t) = I_0(t)+ \int_0^t\beta\frac{(N-I(u))I(u)}{N} P(t-u)\ du
-\label{eq:SIS_I}\tag{10}
+\label{eq:SIS_I}\tag{11}
 \end{equation}
 $$
 
@@ -470,9 +474,11 @@ avec $I_0(0)$ le nombre d'infectieux au temps $t=0$. Cela vient en considérant 
 
 $\eqref{eq:SIS_I}$ devient
 $$
-\begin{equation}\label{eq:I_ODE}\tag{11}
-I(t)=I_0(0)e^{-\gamma t}+\int_0^t \beta\ \frac{(N-I(u))I(u)}{N}\ e^{-\gamma (t-u)}\ du
-\end{equation}
+\tag{12}\label{eq:I_ODE}
+\begin{align}
+I(t) &=I_0(0)e^{-\gamma t} \\
+&\quad+\int_0^t \beta\ \frac{(N-I(u))I(u)}{N}\ e^{-\gamma (t-u)}\ du
+\end{align}
 $$
 
 ---
@@ -505,7 +511,7 @@ i.e., le temps de séjour dans le compartiment infecté est distribué selon une
  
 Dans ce cas, $\eqref{eq:SIS_I}$ devient
 $$
-\begin{equation}\label{eq:I_DDE}\tag{12}
+\begin{equation}\label{eq:I_DDE}\tag{13}
 I(t)=I_0(t)+\int_{t-\omega}^t \beta\ \frac{(N-I(u))I(u)}{N}\ du
 \end{equation}
 $$
@@ -674,12 +680,14 @@ $\implies$ si on prend $N/\varepsilon=1/\mu$, on a la même moyenne mais le temp
 
 ---
 
-# <!--fit-->Contexte
+# Contexte
 ![bg right:35% width:300px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/figure_competing_risks_vertical.png)
 
 On considère un système initialement dans un état $S_0$, et qui peut passer dans 2 états, $S_1$ ou $S_2$
 
 Ce sont des **risques compétitifs**
+
+On s’intéresse à la survenue du premier évènement: si $S_1$ a lieu avant $S_2$, $S_2$ ne peut pas avoir lieu, et vice versa
 
 ---
 
@@ -694,11 +702,48 @@ h(t) &= \lim_{\Delta t\to 0}\frac{\mathcal{S}(t)-\mathcal{S}(t+\Delta t)}{\Delta
 \end{align*}
 $$
 
-Donne la probabilité d'échec entre $t$ et $t+\Delta t$, sachant qu'on a survécu jusqu'à $t$
+Donne la probabilité instantanée d'échec entre $t$ et $t+\Delta t$, sachant qu'on a survécu jusqu'à $t$
 
 On a
 $$
-\tag{5}\label{eq:hazard_rate}
+\tag{14}\label{eq:hazard_rate}
 h(t)=-\frac{d}{dt}\ln\mathcal{S}(t)
 $$
 
+---
+
+# Fonction de hasard cumulé
+
+La **fonction de hasard cumulé** est donnée par
+$$
+H(t) = \int_0^t h(s)\ ds
+$$
+On a alors
+$$
+F(t)=1-\mathcal{S}(t) = 1-e^{-H(t)}
+$$
+ou encore
+$$
+\mathcal{S}(t) = e^{-H(t)}
+$$
+Donc on a une autre façon de caractériser une distribution
+
+---
+
+# Taux d'échec par type d'évènement
+
+Ici, on a deux (ou plus) risques et on doit considérer des taux d'échec pour chaque type d'évènement
+
+$$
+\begin{align*}
+h_j(t) &= \lim_{\Delta t\to 0} \frac{\mathbb{P}( T<t+\Delta t, S=S_j | T\geq t)}{\Delta t} 
+\end{align*}
+$$
+où $\mathbb{P}(T<t+\Delta t, S=S_j | T\geq t)$ est la probabilité d'échec due à la cause $S_j$ ($j=1,2$ ici), i.e., $S$ est une v.a. discrete représentant l'évènement qui a lieu
+
+---
+
+Par la loi de la probabilité totale, puisque un seul des évènements peut avoir lieu
+$$
+h(t) = \sum_{i=1}^n h_j(t)
+$$
