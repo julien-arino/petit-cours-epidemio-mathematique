@@ -21,7 +21,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 05: [Fonctions d'incidence](cours-05-fonctions-incidence.html)
 - Cours 06: [Le modèle de Kermack et McKendrick](cours-06-modele-KMK.html) ([video](https://youtu.be/87YdudDzy_8))
 - Cours 07: [Étapes de l'analyse mathématique des modèles, $R_0$ et la taille finale d'une épidémie](cours-07-etapes-R0-final-size.html) ([video](https://youtu.be/UVCqVQS1jeI))
-- Cours 08: [Le modèle SLIRS](cours-08-modele-SLIRS.html) ([video](https://youtu.be/acaPuzSNEU8))
+- Cours 08: [Le modèle SLIRS/SEIRS](cours-08-modele-SLIRS.html) ([video](https://youtu.be/acaPuzSNEU8))
 - Cours 09: [Temps de résidence dans les compartiments](cours-09-temps-de-residence.html)
 - Cours 10: [Quelques modèles épidémiques](cours-10-modeles-epidemiques.html)
 - Cours 11: [Plus de modélisation](cours-11-plus-de-modelisation.html) 
