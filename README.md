@@ -1,5 +1,5 @@
 # Petit cours d'épidémiologie mathématique
-Vous trouverez ici le matériel pour un *Petit cours d'épidémiologie mathématique* que je donnerai à N'Djaména fin juin 2022. La majorité du matériel de cours est dans cinq sous-répertoires principaux, qui sont expliqués plus bas. Vous pouvez aussi acccéder à une version *web* de ce site en cliquant sur [ce lien](https://julien-arino.github.io/petit-cours-epidemio-mathematique/). Dans la version web, les transparents du cours seront utilisables dans un navigateur web classique.
+Vous trouverez ici le matériel pour un *Petit cours d'épidémiologie mathématique* que j'ai donné à N'Djaména fin juin 2022. La majorité du matériel de cours est dans cinq sous-répertoires principaux, qui sont expliqués plus bas. Vous pouvez aussi acccéder à une version *web* de ce site en cliquant sur [ce lien](https://julien-arino.github.io/petit-cours-epidemio-mathematique/). Dans la version web, les transparents du cours seront utilisables dans un navigateur web classique.
 
 - `CODE` contient le code `R` qui sera utilisé pendant le cours ainsi que du code additionnel qui pourrait être utile.. 
 - `DATA` contient quelques (très peu) jeux de données qui seront utilisés pendant le cours. Ces jeux de données sont également accessibles en ligne, mais pour faciliter les choses pour les participants, ils sont dupliqués ici.
