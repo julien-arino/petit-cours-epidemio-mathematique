@@ -1,8 +1,8 @@
 # Petit cours d'épidémiologie mathématique
 
-Ceci est la version *web* etendue d'un *Petit cours d'épidémiologie mathématique*, que j'ai donné à N'Djaména fin juin 2022. D'ici, vous avez accès à la version `html` des cours ainsi qu'aux vidéos du cours. 
+Ceci est la version *web* étendue d'un *Petit cours d'épidémiologie mathématique*, que j'ai donné à N'Djaména fin juin 2022. D'ici, vous avez accès à la version `html` des cours ainsi qu'aux vidéos du cours. 
 
-Pour voir les fichiers dans un autre format, pour accéder au code, etc., cliquez sur le bouton *View on GitHub* pour avoir accès au répositoire. Vous pouvez également charger tout le répositoire en cliquant sur les boutons à gauche. (Vous pouvez aussi cloner le répositoire, mais il faudra faire celà depuis la version GitHub.)
+Pour voir les fichiers dans un autre format, pour accéder au code, etc., cliquez sur le bouton *View on GitHub* pour avoir accès au dépôt. Vous pouvez également charger tout le dépôt en cliquant sur les boutons à gauche. (Vous pouvez aussi cloner le dépôt, mais il faudra faire cela depuis la version GitHub.)
 
 Quelques remarques au sujet de la liste des cours ci-dessous:
 - Je suis en train d'enregistrer les vidéos, celles qui sont disponibles sont indiquées par la présence d'un lien. On peut aussi les trouver directement dans [cette liste](https://youtube.com/playlist?list=PLfRaznSpWo2sxYq-sjX8p7AThI9OkFrji) YouTube.
