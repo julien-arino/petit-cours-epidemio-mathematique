@@ -432,7 +432,7 @@ Donc on utilise $I(t)$ uniquement
 
 # Modèle pour les individus infectieux
 
-Integral equation for the number of infective individuals:
+Équation intégrale pour le nombre d'individus infectieux:
 $$
 \begin{equation}
 I(t) = I_0(t)+ \int_0^t\beta\frac{(N-I(u))I(u)}{N} P(t-u)\ du
@@ -613,7 +613,7 @@ est Erlang distribuée avec paramètre d'intensité $\theta$ et paramètre de fo
 
 # <!--fit-->Propriétés de la distribution d'Erlang
 
-Une Erlang est une Gamma avec un paramètre de forme $k\in\mathbb{N}$ et récupère donc les propriétés de la Gamma. Densité ($k$ paramètre de forme, $\lambda$ paramètre d'intensité):
+Une Erlang est une Gamma avec un paramètre de forme $k\in\mathbb{N}$ et récupère donc les propriétés de la Gamma. Densité $(k$ paramètre de forme, $\lambda$ paramètre d'intensité):
 $$
 f(t; k,\lambda)={\lambda^k t^{k-1} e^{-\lambda t} \over (k-1)!},\quad t,\lambda \geq 0
 $$
@@ -754,4 +754,11 @@ $$
 \exp\left(
   -\int_0^t \sum\textstyle_{j=1}^n h_j(s)\ ds
 \right)
+$$
+
+---
+
+Par conséquent, si un processus est soumis à deux risques compétitifs exponentiels de distributions respectives $\theta_1$ et $\theta_2$, alors le temps de séjour moyen dans l'état initial avant d'être soumis à l'un des deux risques est
+$$
+\frac{1}{\theta_1+\theta_2}
 $$
