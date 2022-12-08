@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Types de modèles stochastiques utilisés en épidémiologie
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Types de modèles stochastiques utilisés en épidémiologie
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -91,7 +91,7 @@ $$\mathcal{R}_0 = \dfrac{\beta}{\gamma}P^\star$$
 
 ---
 
-# Dans le monde déterministe, $\mathcal{R}_0$ fait la loi
+# <!--fit-->Dans le monde déterministe, $\mathcal{R}_0$ fait la loi
 
 - Si $\mathcal{R}_0=\beta P^\star/\gamma<1$, la maladie s'éteint (*ESM*)
 - Si $\mathcal{R}_0>1$, la maladie converge vers un équilibre *endémique*
@@ -135,7 +135,7 @@ Transparents suivants: $P^\star = 100$K, $\gamma=1/5$, $\mathcal{R}_0=\{0.8,1.5,
 
 ---
 
-# Chaînes de Markov en temps discret (CMTD)
+# <!--fit-->Chaînes de Markov en temps discret (CMTD)
 
 - Présenté en détail dans le [Cours 15](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-15-modeles-MC.html) et, numériquement, le [Cours 16](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-16-simulation-stochastique.html)
 - Équivalent des systèmes en temps discret mais incluent de la stochasticité
@@ -144,7 +144,7 @@ Transparents suivants: $P^\star = 100$K, $\gamma=1/5$, $\mathcal{R}_0=\{0.8,1.5,
 
 ---
 
-# Chaînes de Markov en temps continu (CMTC)
+# <!--fit-->Chaînes de Markov en temps continu (CMTC)
 
 - Équivalent stochastique presque exact des EDO
 - Conversion des ODE vers les CMTC et vice-versa très simple pour les modèles compartimentaux
@@ -158,7 +158,7 @@ Transparents suivants: $P^\star = 100$K, $\gamma=1/5$, $\mathcal{R}_0=\{0.8,1.5,
 
 ---
 
-# Équations différentielles stochastiques
+# <!--fit-->Équations différentielles stochastiques
 
 - Je vais confesser un certain biais contre les EDS: EDO avec du bruit ajouté, pas grand chose de plus
 

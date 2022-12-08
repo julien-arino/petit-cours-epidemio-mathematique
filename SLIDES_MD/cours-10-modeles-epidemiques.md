@@ -45,7 +45,7 @@ math: mathjax
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Quelques modèles épidémiques
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Quelques modèles épidémiques
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -102,7 +102,7 @@ Arino, Brauer, PvdD, Watmough & Wu. [Simple models for containment of a pandemic
 
 ---
 
-# Modèle SLIAR sans transmission par les latents
+# <!--fit-->Modèle SLIAR sans transmission par les latents
 
 ![width:1200px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SLIAR.png)
 
@@ -194,7 +194,7 @@ $$
 
 ---
 
-Pour la taille finale, puisque $m=1$, on peut utiliser $\eqref{eq:final_size_m1}$:
+Pour la taille finale, puisque $m=1$, on peut utiliser la taille finale du [Cours 07]():
 $$
 \ln\left(
 \frac{S_0}{S_\infty}
