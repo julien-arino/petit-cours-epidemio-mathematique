@@ -545,6 +545,27 @@ $$
 
 ---
 
+<div class="theorem">
+
+Soit
+$$
+N_\Delta=\delta(d+\delta+\gamma)/\beta(d+\delta-b)
+$$
+Pour toutes les valeurs des paramètres, l'ÉSM est
+$$
+e_0:=(i_0,N_0)=(0,0)
+$$
+- Si $b<d$, il n'y a pas d'autre PÉ et $e_0$ est GAS
+- Si $d<b$, $e_0$ est instable
+- Si $d<b<d+\delta$, alors la présence d'ÉE $e_\star=(i_\star,N_\star)$, $i_\star=b-d/\delta$ dépend de 
+  - Si $N_\Delta<1$, $e_\star=(i_\star,N_\Delta)$ LAS
+  - Si $N_\Delta=1$, $e_\star=(i_\star,N)$ pour tout $N\geq 1$
+  - Si $N_\Delta>1$, $e_\star$ n'existe pas
+- Si $d+\delta\leq b$, il n'y a pas d'ÉE
+</div>
+
+---
+
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
 # <!--fit-->Cas où l'infection dépasse les capacités de traitement
 
