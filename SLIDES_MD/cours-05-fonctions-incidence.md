@@ -331,6 +331,8 @@ $$
 $$
 Ces fonctions représentent la saturation de façon différente
 
+![center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/1-s2.0-S0025556404001555-gr1.gif)
+
 ---
 
 # Le modèle
@@ -351,8 +353,8 @@ Soient $\bar N=(1-\frac{d}{b})K$, $i=I/N$ et $n=N/\bar N.$ Alors
 $$
 \begin{align}
 i' &= (\beta(\bar N n)-\delta)i(1-i)-(b+\gamma)i
-+(b-d)xn \\
-n' &= (b-d)n(1-n)-\delta xn
++(b-d)xn \tag{12a}\\
+n' &= (b-d)n(1-n)-\delta xn\tag{12b}
 \end{align}
 $$
 
@@ -360,6 +362,7 @@ $$
 
 # <!--fit-->Le nombre de reproduction élémentaire
 
+Quelle que soit la fonction d'incidence utilisée
 $$
 \mathcal{R}_0
 =\frac{\beta(\bar N)}{d+\gamma+\delta}
@@ -382,20 +385,51 @@ Avec $\beta = \beta_{sw}$, il y a 2 sous-modèles
 
 ---
 
-We now consider the behavior of the switching model. If , then all equilibria fall under the switch point, and the switching model reduces to the Case I (unsaturated) model. We therefore define , so that the situation above corresponds to a > 1. If, however, a < 1, then considering the switch point we can see that there is still only one disease-free equilibrium (as well as the unstable trivial equilibrium), and we can show with some algebra that there is a unique endemic equilibrium, which is the Case I endemic equilibrium iff
-and is the Case II endemic equilibrium otherwise (they coincide at the threshold). Interestingly, the switching model does not have the extinction equilibrium of the Case II model. That is, the possibility of extinction predicted by the Case II model cannot come to pass because as extinction nears, the contact rate drops, so new infections drop, as does the overall death rate. However, the population size at the Case I endemic equilibrium dwindles toward zero for large R0 and small r. The switching model also has
+Soit $a=A/\bar N$
+
+Si $a>1$, tous les équilibres sont sous le point de changement et le modèle se réduit au Cas I (modèle sans saturation)
+
+Si $a<1$, il y a un seul ÉSM (ainsi que l'équilibre trivial instable) et il y a un ÉE unique qui est l'ÉE du Cas I ssi 
+$$
+a>1-\frac 1k\left(1-\frac{d+\gamma+\delta}{\beta_0}\right)
+$$
+et l'ÉE du Cas II sinon
+
+Le modèle avec switch n'a pas le PÉ d'extinction du Cas II
 
 ---
 
-The smooth saturation model using βsm has instead , and, along with the [unstable] trivial equilibrium and disease-free equilibrium (globally stable when R0 < 1), a unique endemic equilibrium with
-(5)
-(6)
-which exists and is locally stable when R0 > 1.
+Dans le modèle avec switch
+$$
+\mathcal{R}_0
+=\frac{\beta_0}{d+\gamma+\delta}
+\;
+\frac{1}{\max(a,1)}
+$$
 
---- 
+---
 
-The principal difference in results between the switching and smooth saturation models is quantitative (compare the respective criteria R0 < 1), reflecting the fact that βsm < βsw. Both predict eradication of the disease for a larger region of parameter space than either of the Case I, II component models (mass-action and standard incidence, respectively), and exclude the possibility of extinction allowed in the standard incidence model. It is also interesting to note that the endemic equilibrium in both models has
-that is, for $k < 1$ ($r < μ + α$) the disease prevalence in the endemic state never approaches 100% because the population’s reproductive resilience is so low that the population size becomes too small for the disease to spread to everyone, no matter how high R0.
+Dans le modèle avec saturation différentiable $\eqref{eq:CK_1}$
+$$
+\mathcal{R}_0
+=\frac{\beta_0}{d+\gamma+\delta}
+\;
+\frac{1}{\delta+1}
+$$
+
+On a le PÉ trivial (instable), l'ÉSM (GAS lorsque $\mathcal{R}_0<1$) et un ÉE unique qui existe et est LAS lorsque $\mathcal{R}_0>1$
+
+---
+
+La $\neq$ principale entre les modèles est quantitative: le lieu où $\mathcal{R}_0<1$ change; ceci reflète que $\beta_{sm}<\beta_{sw}$
+
+Les deux modèles prédisent l'éradication de la maladie pour une grande région de l'espace des paramètres et excluent la possibilité d'extinction que permet le modèle classique avec incidence standard
+
+Aussi, dans les 2 cas, l'ÉE est t.q. 
+$$
+\lim_{\mathcal{R}_0\to\infty}i^\star = \min(k,1)
+$$
+i.e., pour $k < 1$ (i.e., $r < d + \delta$), la prévalence en l'ÉE n'approche jamais 100% parce que la résilience reproductrice de la population est si basse que la population devient trop petite pour que la maladie se propage à tous, quelle que soit la valeur de $\mathcal{R}_0$
 
 ---
 
