@@ -402,10 +402,19 @@ that is, for $k < 1$ ($r < μ + α$) the disease prevalence in the endemic state
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # <!--fit-->Un peu plus sur les changements d'incidence
 
+- Le modèle de base
+- Incidence dépendante de la densité de population
+- Cas où l'infection dépasse les capacités de traitement
+
 <div style = "position: relative; bottom: -35%; font-size:20px;">
 
 JA & McCluskey [Effect of a sharp change of the incidence function on the dynamics of a simple disease](https://doi.org/10.1080/17513751003793017), *Journal of Biological Dynamics* (2010)
 </div>
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Le modèle de base
 
 ---
 
@@ -459,6 +468,11 @@ existent pour tout $t>0$
 
 ---
 
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Incidence dépendante de la densité de population
+
+---
+
 # <!--fit-->Incidence dépendante de la densité de population
 
 Le premier cas qu'on considère est celui avec une incidence de la forme qu'on a déjà vu
@@ -497,6 +511,11 @@ $$
 
 ---
 
+<!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
+# <!--fit-->Cas où l'infection dépasse les capacités de traitement
+
+---
+
 # <!--fit-->Cas où l'infection dépasse les capacités de traitement
 
 Supposons
@@ -527,9 +546,19 @@ Ici, le changement ne se fait pas pour une valeur de $N$ mais le long de l'hyper
 
 # Équilibres
 
-On a potentiellement 3 PÉ:
+On a potentiellement 3 PÉ
 $$
-e_0=(0,0)\quad \bar e=(i_{LS},0)\quad e_*=(i_N,N_{HS}(i_N))
+e_0=(0,0)\quad \bar e=(i_{LS},0)\quad e_\star=(i_N,N_{HS}(i_N))
+$$
+avec
+$$
+i_{LS}=1-\frac{b+\gamma}{\beta_1-\delta},
+\quad i_N=\frac{b-d}{\delta}
+$$
+et
+$$
+N_{HS}(i) = \frac{\hat I}{i}+\frac{b+\gamma}{\beta_2(1-i)}
+-\frac{\beta_1-\delta}{\beta_2}
 $$
 
 ---
@@ -558,10 +587,10 @@ $$
         background: grey;
     }
     .heatMap tr:nth-child(1) { background: lightgreen;}
-    .heatMap tr:nth-child(2) { background: orange;}
+    .heatMap tr:nth-child(2) { background: lightgreen;}
     .heatMap tr:nth-child(3) { background: lightblue;}
-    .heatMap tr:nth-child(4) { background: yellow;}
-    .heatMap tr:nth-child(5) { background: orange;}
+    .heatMap tr:nth-child(4) { background: lightblue;;}
+    .heatMap tr:nth-child(5) { background: lightblue;;}
     .heatMap tr:nth-child(6) { background: yellow;}
 </style>
 
@@ -578,6 +607,8 @@ $$
 |$d+\delta<b$ | Instable | Instable | N'existe pas |
 </div>
 </div>
+
+La SAG est obtenue en utilisant une extension du Théorème de Dulac prennant en compte l'existence, dans un champ $C^1$, d'une courbe sur laquelle le champ est $C^0$
 
 ---
 
@@ -609,3 +640,11 @@ On se place dans le cas
 
 Pour tout $\varepsilon>0$ et tout $\mathcal{S}_N^0>0$, il existe $\bar{\mathcal{S}}_N\in ]-\mathcal{S}_N^0,0[$ t.q. le système $\eqref{sys:switch_JACCMC_prop_di}$-$\eqref{sys:switch_JACCMC_prop_dN}$ avec incidence $\eqref{eq:overcome_capacity_proportions}$ a une orbite périodique non triviale dans $\mathcal{B}_\varepsilon(e_\star)$ (boule ouverte centrée en $e_\star$ et de rayon $\varepsilon$) pour $\mathcal{S}_N=\bar{\mathcal{S}}_N$
 </div>
+
+---
+
+![bg contain 50%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/tjbd_a_479823_o_f0002g.jpeg)
+
+---
+
+![bg contain 95%](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/tjbd_a_479823_o_f0003g.jpeg)
