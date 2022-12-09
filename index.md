@@ -1,8 +1,8 @@
 # Petit cours d'épidémiologie mathématique
 
-Ceci est la version *web* etendue d'un *Petit cours d'épidémiologie mathématique*, que j'ai donné à N'Djaména fin juin 2022. D'ici, vous avez accès à la version `html` des cours ainsi qu'aux vidéos du cours. 
+Ceci est la version *web* étendue d'un *Petit cours d'épidémiologie mathématique*, que j'ai donné à N'Djaména fin juin 2022. D'ici, vous avez accès à la version `html` des cours ainsi qu'aux vidéos du cours. 
 
-Pour voir les fichiers dans un autre format, pour accéder au code, etc., cliquez sur le bouton *View on GitHub* pour avoir accès au répositoire. Vous pouvez également charger tout le répositoire en cliquant sur les boutons à gauche. (Vous pouvez aussi cloner le répositoire, mais il faudra faire celà depuis la version GitHub.)
+Pour voir les fichiers dans un autre format, pour accéder au code, etc., cliquez sur le bouton *View on GitHub* pour avoir accès au dépôt. Vous pouvez également charger tout le dépôt en cliquant sur les boutons à gauche. (Vous pouvez aussi cloner le dépôt, mais il faudra faire cela depuis la version GitHub.)
 
 Quelques remarques au sujet de la liste des cours ci-dessous:
 - Je suis en train d'enregistrer les vidéos, celles qui sont disponibles sont indiquées par la présence d'un lien. On peut aussi les trouver directement dans [cette liste](https://youtube.com/playlist?list=PLfRaznSpWo2sxYq-sjX8p7AThI9OkFrji) YouTube.
@@ -22,7 +22,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 06: [Le modèle de Kermack et McKendrick](cours-06-modele-KMK.html) ([vidéo](https://youtu.be/87YdudDzy_8))
 - Cours 07: [Étapes de l'analyse mathématique des modèles, $R_0$ et la taille finale d'une épidémie](cours-07-etapes-R0-final-size.html) ([vidéo](https://youtu.be/UVCqVQS1jeI))
 - Cours 08: [Le modèle SLIRS/SEIRS](cours-08-modele-SLIRS.html) ([vidéo](https://youtu.be/acaPuzSNEU8))
-- Cours 09: [Temps de résidence dans les compartiments](cours-09-temps-de-residence.html)
+- Cours 09: [Temps de résidence dans les compartiments](cours-09-temps-de-residence.html) ([vidéo](https://youtu.be/47H3z0hAaE8))
 - Cours 10: [Quelques modèles épidémiques](cours-10-modeles-epidemiques.html)
 - Cours 11: [Plus de modélisation](cours-11-plus-de-modelisation.html) 
 - Cours 12: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-10-heterogeneite-groupe-et-spatiale.html)
@@ -30,7 +30,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 14: [Modèles dans des métapopulations](cours-14-modeles-metapopulation.html) ([vidéo](https://youtu.be/8SPp7I6UHfk))
 - Cours 15: [Un peu de stabilité globale](cours-15-SAG.html)
 - Cours 16: [Modèles spatiaux en EDP](cours-16-modeles-EDP.html)
-- Cours 17: [Types de modèles stochastiques utilisés en épidémiologie](cours-17-stochasticite.html)
+- Cours 17: [Types de modèles stochastiques utilisés en épidémiologie](cours-17-stochasticite.html)([vidéo](https://youtu.be/ZPBZN-9x9Yo))
 - Cours 18: [Modèles en chaînes de Markov](cours-18-modeles-MC.html)
 - Cours 19: [Simulation des systèmes stochastiques](cours-19-simulation-stochastique.html)
 - Cours 20: [Modèles en réseaux](cours-20-modeles-reseaux.html)
