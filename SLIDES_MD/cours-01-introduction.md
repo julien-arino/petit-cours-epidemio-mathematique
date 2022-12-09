@@ -9,7 +9,7 @@ size: 4:3
 ---
 
 <style>
-  section {
+  /* section {
   font-size: 28px;
   padding-left: 40px;
   padding-right: 50px;
@@ -22,7 +22,7 @@ size: 4:3
   }
   h2 {
   font-size: 40px;
-  }
+  } */
   .theorem {
     text-align:justify;
     background-color:#16a085;

@@ -9,7 +9,7 @@ math: mathjax
 ---
 
 <style>
-  section {
+  /* section {
   font-size: 28px;
   padding-left: 40px;
   padding-right: 50px;
@@ -22,7 +22,7 @@ math: mathjax
   }
   h2 {
   font-size: 40px;
-  }
+  } */
   .theorem {
     text-align:justify;
     background-color:#16a085;
@@ -291,8 +291,8 @@ $$
 \tag{9}
 F(S,I,N) = 
 \begin{cases}
-\beta SI & \textrm{if }N\leq \hat N \\
-\beta \dfrac{SI}{N} & \textrm{if }N> \hat N
+\beta SI & \textrm{si }N\leq \hat N \\
+\beta \dfrac{SI}{N} & \textrm{si }N> \hat N
 \end{cases}
 $$
 
@@ -426,4 +426,186 @@ et le système a des ÉE ssi $d<b<d+\delta$
 
 ---
 
-On passe au système en proportions $s=S/N$ et $i=I/N$
+On passe au système en proportions $s=S/N$ et $i=I/N$. La population totale n'est pas constante et on considère donc
+
+$$
+\begin{align}
+i' &= f(i,N)-(b+\delta+\gamma)i+\delta i^2 \tag{14a}\label{sys:switch_JACCMC_prop_di} \\
+N' &= (b-d-\delta i)N \label{sys:switch_JACCMC_prop_dN}\tag{14b}
+\end{align}
+$$
+avec
+$$
+f(i,N) = \frac{F(S,I)}{N}
+$$
+et où on définit
+$$
+f(i,0)=\lim_{N\to 0}f(i,N)
+$$
+et l'on suppose que cette limite existe (on exclut par exemple que $F(\alpha S,\alpha I)$ soit sous-linéaire en $\alpha$ près de 0)
+
+---
+
+<div class="theorem">
+
+Les solutions de $\eqref{sys:switch_JACCMC_prop_di}$-$\eqref{sys:switch_JACCMC_prop_dN}$ dans la bande positivement invariante
+$$
+\mathcal{D}=\left\{
+(i,N):\quad 0\leq i\leq 1,\;N\geq 0  
+\right\}
+$$
+existent pour tout $t>0$
+</div>
+
+---
+
+# <!--fit-->Incidence dépendante de la densité de population
+
+Le premier cas qu'on considère est celui avec une incidence de la forme qu'on a déjà vu
+$$
+\tag{9}
+F(S,I,N) = 
+\begin{cases}
+\beta SI & \textrm{si }N\leq \hat N \\
+\beta \dfrac{SI}{N} & \textrm{si }N> \hat N
+\end{cases}
+$$
+où l'on normalise pour que $\hat N=1$
+
+On note $\mathcal{D}_L$ la partie de $\mathcal{D}$ où $N\leq 1$ et $\mathcal{D}_H$ celle où $N\geq 1$
+
+---
+
+Dans $\mathcal{D}_H$, on a une solution explicite
+
+<div class="theorem">
+
+Supposons qu'à l'instant $t=\tau\geq 0$, on ait $(i_\tau,N_\tau):=(i(\tau),N(\tau))\in\mathcal{D}_H$. Alors il existe un intervalle potentiellement infini $\mathcal{I}$ avec extremité gauche le point $t=\tau$, tel que pour tout $t\in\mathcal{I}$, on a $(i(t),N(t))\in\mathcal{D}_H$ avec
+$$
+\begin{align}
+i(t) &= \frac{Ki_\tau}{\Psi(t-\tau)} \\
+N(t) &= N_\tau e^{(b-d)(t-\tau)}\exp\left(
+  -\delta Ki_\tau\int_\tau^t\frac{du}{\Psi(u-\tau)}
+\right)
+\end{align}
+$$
+où $K=\beta-(d+\gamma+\delta)$ et 
+$$
+\Psi(u)=i_\tau(\beta-\delta)(1-e^{-Ku})+Ke^{-Ku}
+$$
+</div>
+
+---
+
+# <!--fit-->Cas où l'infection dépasse les capacités de traitement
+
+Supposons
+$$
+\tag{15}\label{eq:overcome_capacity}
+F(S,I,N) = 
+\begin{cases}
+\beta_1 \dfrac{SI}{N} & \textrm{si }I\leq \hat I \\
+\beta_1 \dfrac{SI}{N}+\beta_2 S(I-\hat I) & \textrm{si }I> \hat I
+\end{cases}
+$$
+soit, en proportions, $f(i,N)$ est de la forme
+$$
+\tag{16}\label{eq:overcome_capacity_proportions}
+\begin{cases}
+\beta_1 (1-i)i & \textrm{si }iN\leq \hat I \\
+\beta_1 (1-i)i+\beta_2 (1-i)(iN-\hat I) & \textrm{si }iN> \hat I
+\end{cases}
+$$
+
+---
+
+# Les régions dans le plan
+
+Ici, le changement ne se fait pas pour une valeur de $N$ mais le long de l'hyperbole $N=\hat I/i$, pour $i\in]0,1]$, et on adapte les régions $\mathcal{D}_L$ et $\mathcal{D}_H$
+
+---
+
+# Équilibres
+
+On a potentiellement 3 PÉ:
+$$
+e_0=(0,0)\quad \bar e=(i_{LS},0)\quad e_*=(i_N,N_{HS}(i_N))
+$$
+
+---
+
+<div class="theorem">
+
+Le système  $\eqref{sys:switch_JACCMC_prop_di}$-$\eqref{sys:switch_JACCMC_prop_dN}$ avec incidence $\eqref{eq:overcome_capacity_proportions}$ a, potentiellement, 3 PÉ, dont la stabilité est donnée par la table sur le transparent suivant, dans laquelle on utilise
+$$
+\mathcal{E}=\frac{\beta_1}{b+\delta+\gamma}
+$$
+et 
+$$
+\mathcal{S}_N=
+\frac{(b+\gamma)(b-d)}{d+\delta-b}
++\frac{\beta_2\hat I(d+\delta-b)}{d-b}
+$$
+</div>
+
+---
+<style>
+    .heatMap {
+        overflow:scroll;
+        font-size: 21px;
+    }
+    .heatMap th {
+        background: grey;
+    }
+    .heatMap tr:nth-child(1) { background: lightgreen;}
+    .heatMap tr:nth-child(2) { background: orange;}
+    .heatMap tr:nth-child(3) { background: lightblue;}
+    .heatMap tr:nth-child(4) { background: yellow;}
+    .heatMap tr:nth-child(5) { background: orange;}
+    .heatMap tr:nth-child(6) { background: yellow;}
+</style>
+
+<div class="theorem">
+<div class="heatMap">
+
+|| $e_0$ | $\bar e$ | $e_\star$ |
+|---|:---:|:---:|:---:|
+| $b<d,\mathcal{E}<1$ | GAS | N'existe pas | N'existe pas |
+|$b<d,\mathcal{E}>1$ | Instable | GAS | N'existe pas |
+|$d<b<d+\delta$, $i_{LS}<i_N$, $\mathcal{S}_N>0$ | Instable | Instable | LAS |
+|$d<b<d+\delta$, $i_{LS}<i_N$, $\mathcal{S}_N<0$ | Instable | Instable | Instable |
+|$d<b<d+\delta$, $i_{LS}>i_N$ | Instable | GAS | N'existe pas |
+|$d+\delta<b$ | Instable | Instable | N'existe pas |
+</div>
+</div>
+
+---
+
+# <!--fit-->Ce système admet des solutions périodiques
+
+<style>
+  .table2 {
+        overflow:scroll;
+        font-size: 25px;
+  }
+  .table2 th {
+    background: grey;
+  }
+  .table2 tr:nth-child(1) { background: lightblue;}
+  .table2 tr:nth-child(2) { background: yellow;}
+</style>
+
+On se place dans le cas
+
+<div class="table2">
+
+|| $e_0$ | $\bar e$ | $e_\star$ |
+|---|:---:|:---:|:---:|
+|$d<b<d+\delta$, $i_{LS}<i_N$, $\mathcal{S}_N>0$ | Instable | Instable | LAS |
+|$d<b<d+\delta$, $i_{LS}<i_N$, $\mathcal{S}_N<0$ | Instable | Instable | Instable |
+</div>
+
+<div class="theorem">
+
+Pour tout $\varepsilon>0$ et tout $\mathcal{S}_N^0>0$, il existe $\bar{\mathcal{S}}_N\in ]-\mathcal{S}_N^0,0[$ t.q. le système $\eqref{sys:switch_JACCMC_prop_di}$-$\eqref{sys:switch_JACCMC_prop_dN}$ avec incidence $\eqref{eq:overcome_capacity_proportions}$ a une orbite périodique non triviale dans $\mathcal{B}_\varepsilon(e_\star)$ (boule ouverte centrée en $e_\star$ et de rayon $\varepsilon$) pour $\mathcal{S}_N=\bar{\mathcal{S}}_N$
+</div>
