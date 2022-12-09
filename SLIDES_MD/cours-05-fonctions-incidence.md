@@ -74,6 +74,8 @@ img[alt~="center"] {
 
 - Fonctions d'incidence
 - Un bestiaire de fonctions
+- Exemple de problème lié aux fonctions d'incidence
+- Un peu plus sur les changements d'incidence
 
 ---
 
@@ -318,7 +320,7 @@ $$
 \beta_{sm}(N)=\beta_0\frac{N}{N+A}
 \tag{10}\label{eq:CK_1}
 $$
-et une continue mais avec un *switch*
+et une continue mais avec un *switch* (transition abrupte?)
 $$
 \beta_{sw}(N)=
 \begin{cases}
@@ -327,7 +329,7 @@ $$
 \end{cases}
 \tag{11}\label{eq:CK_2}
 $$
-Ces deux fonctions représentent une saturation, mais de façon différente
+Ces fonctions représentent la saturation de façon différente
 
 ---
 
@@ -355,6 +357,8 @@ n' &= (b-d)n(1-n)-\delta xn
 $$
 
 ---
+
+# <!--fit-->Le nombre de reproduction élémentaire
 
 $$
 \mathcal{R}_0
@@ -391,4 +395,35 @@ which exists and is locally stable when R0 > 1.
 --- 
 
 The principal difference in results between the switching and smooth saturation models is quantitative (compare the respective criteria R0 < 1), reflecting the fact that βsm < βsw. Both predict eradication of the disease for a larger region of parameter space than either of the Case I, II component models (mass-action and standard incidence, respectively), and exclude the possibility of extinction allowed in the standard incidence model. It is also interesting to note that the endemic equilibrium in both models has
-that is, for k < 1 (r < μ + α) the disease prevalence in the endemic state never approaches 100% because the population’s reproductive resilience is so low that the population size becomes too small for the disease to spread to everyone, no matter how high R0.
+that is, for $k < 1$ ($r < μ + α$) the disease prevalence in the endemic state never approaches 100% because the population’s reproductive resilience is so low that the population size becomes too small for the disease to spread to everyone, no matter how high R0.
+
+---
+
+<!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
+# <!--fit-->Un peu plus sur les changements d'incidence
+
+<div style = "position: relative; bottom: -35%; font-size:20px;">
+
+JA & McCluskey [Effect of a sharp change of the incidence function on the dynamics of a simple disease](https://doi.org/10.1080/17513751003793017), *Journal of Biological Dynamics* (2010)
+</div>
+
+---
+
+# Le modèle de base
+
+$$
+\begin{align}
+S' &= bN-dS-F(S,I)+\gamma I \tag{13a} \\
+I' &= F(S,I)-(d+\delta+\gamma) I \tag{13b}
+\end{align}
+$$
+
+Donc la dynamique de la population totale est
+$$
+N' = (b-d)N-\delta I
+$$
+et le système a des ÉE ssi $d<b<d+\delta$
+
+---
+
+On passe au système en proportions $s=S/N$ et $i=I/N$
