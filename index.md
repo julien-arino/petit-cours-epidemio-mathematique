@@ -18,7 +18,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 02: [Introduction à R et résolution numérique des EDO](cours-02-intro-R-EDO.html) ([vidéo](https://youtu.be/MdvboD80RAY))
 - Cours 03: [Collecte et utilisation des données](cours-03-donnees.html) ([vidéo](https://youtu.be/O8eK_44s6HQ))
 - Cours 04: [Le modèle SIS](cours-04-modele-SIS.html) ([vidéo](https://youtu.be/_BeVY1uapIw))
-- Cours 05: [Fonctions d'incidence](cours-05-fonctions-incidence.html)
+- Cours 05: [Fonctions d'incidence](cours-05-fonctions-incidence.html) ([vidéo](https://youtu.be/4QtDqjszoQQ))
 - Cours 06: [Le modèle de Kermack et McKendrick](cours-06-modele-KMK.html) ([vidéo](https://youtu.be/87YdudDzy_8))
 - Cours 07: [Étapes de l'analyse mathématique des modèles, $R_0$ et la taille finale d'une épidémie](cours-07-etapes-R0-final-size.html) ([vidéo](https://youtu.be/UVCqVQS1jeI))
 - Cours 08: [Le modèle SLIRS/SEIRS](cours-08-modele-SLIRS.html) ([vidéo](https://youtu.be/acaPuzSNEU8))
