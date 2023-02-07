@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Propagation dans des groupes et propagation spatio-temporelle des épidémies
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Propagation dans des groupes et <br>propagation spatio-temporelle des épidémies
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -93,7 +93,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ![bg left:69%](https://www.cdc.gov/mmwr/preview/mmwrhtml/figures/m6013a1f.gif "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6013a1.htm")
 
-# Cas de rougeole parmi des voyageurs rentrant aux USA
+Cas de rougeole parmi des voyageurs rentrant aux USA
 
 <!-- Measles cases among travellers returning to the US https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6013a1.htm -->
 
@@ -105,7 +105,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Patterns de contact de la population aux USA pendant la pandémie de COVID-19
+Patterns de contact de la population aux USA pendant la pandémie de COVID-19
 
 ![bg right:65%](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-021-20990-2/MediaObjects/41467_2021_20990_Fig3_HTML.png?as=webp)
 
@@ -113,7 +113,7 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Canada.png) ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Chad.png)
+![width:390px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Canada.png) ![width:390px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Chad.png)
 
 ---
 
@@ -139,9 +139,9 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-![bg right:71%](https://erj.ersjournals.com/content/erj/38/4/895/F1.large.jpg "https://doi.org/10.1183/09031936.00196610")
+![bg right:70%](https://erj.ersjournals.com/content/erj/38/4/895/F1.large.jpg "https://doi.org/10.1183/09031936.00196610")
 
-# Arrivées au CAN depuis des pays dans des groupes ayant une incidence par 100K ..
+Arrivées au CAN depuis des pays dans des groupes ayant une incidence par 100K ..
 
 ---
 
@@ -174,14 +174,14 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# La mobilité et la propagation spatio-temporelle des maladies infectieuses
+# La mobilité et la propagation <br>spatio-temporelle des maladies infectieuses
 
 ---
 
-# <!-- fit -->On sait les pathogènes mobile depuis longtemps
+# <!-- fit -->On sait les pathogènes <br>mobiles depuis longtemps
 
 <!--<div style = "text-align: justify">-->
-Le mal, dit-on, fit son apparition en **Ethiopie**, au-dessus de l'Egypte : de là il descendit en **Egypte** et en **Libye** et se répandit sur la majeure partie des territoires du Roi [de **Perse**]. Il se déclara subitement à **Athènes** et, comme il fit au **Pirée** ses premières victimes, on colporta le bruit que les Péloponnésiens avaient empoisonné les puits ; car au Pirée il n'y avait pas encore de fontaines. Il atteignit ensuite la **ville haute** et c'est là que la mortalité fut de beaucoup la plus élevée.
+Le mal, dit-on, fit son apparition en **Ethiopie**, au-dessus de l'Egypte : de là il descendit en **Egypte** et en **Libye** et se répandit sur la majeure partie des territoires du Roi [de **Perse**]. Il se déclara subitement à **Athènes** [..]]. Il atteignit ensuite la **ville haute** et c'est là que la mortalité fut de beaucoup la plus élevée.
 <!--</div>-->
 
 <div style = "text-align: right; position: relative; bottom: -10%; ">
@@ -194,17 +194,14 @@ Le mal, dit-on, fit son apparition en **Ethiopie**, au-dessus de l'Egypte : de l
 
 ---
 
-# <!-- fit -->La mobilité est compliquée et induit la spatialisation des maladies
-
-**La mobilité est compliquée**:
+**La mobilité est compliquée**
 
 - Nombreuses modalités: marche, vélo, véhicule personnel, bus, train, bateau, avion
 - Durées variées: épicier du coin $\neq$ aller au travail $\neq$ voyages de plusieurs jours (travail ou plaisir) $\neq$ relocalisation, immigration ou demande d'asile
-- Volumes difficiles à appréhender
 
-Néanmoins, la **mobilité conduit la propagation spatio-temporelle**:
+mais **conduit la propagation spatio-temporelle**:
 - La grande peste (1347-1353) est arrivée en Europe et s'est propagée le long des routes commerciales
-- SARS-CoV-1 s'est répandu depuis HKG en suivant le réseau aérien
+- SARS-CoV-1 répandu depuis HKG par le réseau aérien
 - Khan, Arino, Hu *et al*, [Spread of a novel influenza A (H1N1) virus via global airline transportation](https://www.nejm.org/doi/pdf/10.1056/NEJMc0904559), *New England Journal of Medicine* (2009)
 </div>
 
@@ -234,11 +231,11 @@ Néanmoins, la **mobilité conduit la propagation spatio-temporelle**:
 
 ---
 
-# Mesures de contrôle de la peste
+# <!--fit-->Mesures de contrôle de la peste
 
-- Lazzarettos de Dubrovnik 1377 (30 jours)
-- Quarantena de Venise 1448 (40 jours)
-- Isolation des cas connus ou suspectés et de toute personne ayant été en contact avec eux, d'abord pour 14 jours puis graduellemt augmenté à 40 jours
+- Lazzarettos, Dubrovnik 1377 (30 jours)
+- Quarantena, Venise 1448 (40 jours)
+- Isolation des cas connus ou suspectés et toute personne ayant été en contact avec eux, d'abord pour 14 jours puis graduellemt augmenté à 40 jours
 - Amélioration des conditions sanitaires: alimentation en eau propre, collecte des déchets, inspection de la nourriture
 - .. Trouvez et tuez un serpent, coupez le en bouts et badigeonnez les bubons avec. (Le serpent, associé à Satan, attire le mal hors du corps, puisque le mal attire le mal)
 
@@ -308,13 +305,12 @@ Les pathogènes ignorent les frontières et la politique
 
 ---
 
-# SARS-CoV-1 (2002-2003)
+# <!--fit-->SARS-CoV-1 (2002-2003)
 
-## Impact global
 
-- Cas index pour la propagation internationale arrive à HKG le 21 février 2003
+- Cas index (propagation internationale) arrive à HKG le 21 février 2003
 
-- Dernier pays (Taiwan) avec de la transmission locale retiré de la liste le 5 juillet 2003
+- Dernier pays (Taiwan) avec transmission locale retiré de la liste le 5 juillet 2003
 
 - 8273 cas dans 28 pays
 
@@ -360,17 +356,17 @@ JA. [Describing, modelling and forecasting the spatial and temporal spread of CO
 
 ---
 
-# Amplification à Wuhan (Province du Hubei)
+# <!--fit-->Amplification à Wuhan (Province du Hubei)
 
-- Détails de l'émergence et timeline précis avant début de l'amplification inconnus
+- Détails de l'émergence et parcours précis avant début de l'amplification inconnus
 - Amplification à Wuhan
-	- Cluster de cas de pneumonie principalement liés auHuanan Seafood Market
-	- 27 décembre 2019: premier rapport au gouvernement local
-	- 31 décembre 2019: publication
-	- 8 janvier 2020: identification du SARS-CoV-2 cmme agent causatif
--  $\sim$ 23 January 2020: lockdown Wuhan et province du Hubei + mandats de masques
+	- Cluster de cas de pneumonie principalement liés au Huanan Seafood Market
+	- 2019-12-27: 1er rapport au gouvernement local
+	- 2019-12-31: publication
+	- 2020-01-08: identification du SARS-CoV-2 cmme agent causatif
+-  $\sim$ 2020-01-23: lockdown Wuhan et province du Hubei + mandats de masques
 
-Le 29 janvier, le virus est présent dans toutes les proinces de Chine
+2020-01-29: virus présent dans toutes les proinces de Chine
 
 ---
 
@@ -399,7 +395,7 @@ table {
 
 ---
 
-# Un bémol : évidence de propagation plus tôt
+# <!--fit-->Un bémol : évidence de propagation plus tôt
 
 - Rapport aux autorités de Wuhan le 27 décembre 2019
 - Premières exportation détectées en Thailande et au Japon les 13 et 16 janvier 2020 (avec importations les 8 et 6 janvier)
