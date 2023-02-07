@@ -186,7 +186,7 @@ $\implies$ (A5) ne peut jamais être satisfaite en $\bar E_0$ et la condition po
 # Modèle de tuberculose (TB) avec comportement non-trivial à l'origine
 
 
-# (Modèle avec recrutement compliqué)
+## (Modèle avec recrutement compliqué)
 
 <div style = "position: relative; bottom: -35%; font-size:20px;">
 
@@ -367,7 +367,7 @@ $$
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # États bistables
 
-# (Conséquences indésirées de la vaccination)
+### (Conséquences indésirées de la vaccination)
 
 <div style = "position: relative; bottom: -35%; font-size:20px;">
 
@@ -459,14 +459,14 @@ $$
 
 # Cas d'une bifurcation *à l'endroit*
 
-![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/PI_vs_I_forward.png)  ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SIRV_bif_forward.png)
+![width:390px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/PI_vs_I_forward.png) ![width:390px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SIRV_bif_forward.png)
 
 
 ---
 
 # Cas d'une bifurcation *à revers*
 
-![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/PI_vs_I_backward.png)  ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SIRV_bif_backward.png)
+![width:390px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/PI_vs_I_backward.png)  ![width:390px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/SIRV_bif_backward.png)
 
 ---
 
@@ -543,7 +543,7 @@ En linéarisant $\eqref{sys:vacc_3dS}$-$\eqref{sys:vacc_3dR}$ en l'ÉÉ
 
 Abscisse spectrale $s(J)$ (maximum des parties réelles des valeurs propres) de la linéarisation en l'ESM et en les 2 ÉÉ, en fonction de $\theta$
 
-![width:600px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/evalues_SIRbif.png)
+![width:500px center](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/evalues_SIRbif.png)
 
 
 
@@ -553,7 +553,7 @@ Abscisse spectrale $s(J)$ (maximum des parties réelles des valeurs propres) de 
 
 <div class="theorem">
 
-Supposons que dans $\eqref{sys:SIR_vacc}$, les paramètres vérifient
+Supposons que dans $\eqref{sys:vacc_3dS}$-$\eqref{sys:vacc_3dR}$, les paramètres vérifient
 $$
 \begin{aligned}
   \theta &< d + 2 \nu                   \\
@@ -561,36 +561,36 @@ $$
   \gamma &< d + \phi + \nu
 \end{aligned}
 $$
-Alors toutes les semi-trajectories strictement positives de $\eqref{sys3dS}$-$\eqref{sys3dR}$ dans $\bar D$, où
+Alors toutes les semi-trajectories strictement positives de $\eqref{sys:vacc_3dS}$-$\eqref{sys:vacc_3dR}$ dans $\bar D$, où
 $$
 D=\{(S,I,R): S,R\geq 0, I>0, S+I+R\leq 1\}
 $$
-limitent en un PE unique
+limitent en un PÉ unique
 </div>
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #85110d, 20%, white)" -->
-# <!--fit-->A few (recent?) models
+# <!--fit-->Quelques modèles (récents?)
 
 ---
 
 <!-- _backgroundImage: "radial-gradient(white,80%,#f1c40f)" -->
-# A few (recent?) models
+# Quelques modèles (récents?)
 
-- HIV: Sex, drugs and matrices
-- HIV: An early complex model
-- HIV: Universal HIV testing followed by ART
-- HIV: viral load monitoring and patient tracing in Malawi
-- Malaria: A super classic model
-- Malaria: A classic model
-- Malaria: Sensitivity analysis
-- Malaria and COVID-19: Optimal control
+- VIH: sexe, drogue et matrices
+- VIH: un modèle complexe ancien
+- VIH: test universel pour le VIH suivi de TAR
+- VIH: suivi de la charge virale et des patients au Malawi
+- Paludisme: un modèle très classique
+- Paludisme: un modèle classique
+- Paludisme: analyse de sensitivité
+- Paludisme et COVID-19: contrôle optimal
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->HIV: Sex, drugs and matrices
+# <!--fit-->VIH: sexe, drogue et matrices
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -618,7 +618,7 @@ Study is only numerical
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->HIV: An early complex model
+# <!--fit-->VIH: un modèle complexe ancien
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -636,7 +636,7 @@ Hethcote [A Model for HIV Transmission and AIDS](https://doi.org/10.1007/978-3-6
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->HIV: Universal HIV testing followed by ART
+# <!--fit-->VIH: test universel pour le VIH suivi de TAR
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -654,7 +654,7 @@ N represents population aged 15 years and above. People enter into the susceptib
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->HIV: viral load monitoring and patient tracing in Malawi
+# <!--fit-->VIH: suivi de la charge virale et des patients au Malawi
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -676,7 +676,7 @@ Estill, Kerr, Blaser, Salazar-Vizcaya, Tenthani, Wilson, Keiser. [The Effect of 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Malaria: A super classic model
+# <!--fit-->Paludisme: un modèle très classique
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -702,7 +702,7 @@ Dietz, Molineaux & Thomas. [A malaria model tested in the African savannah](http
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Malaria: A classic model
+# <!--fit-->Paludisme: un modèle classique
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -720,7 +720,7 @@ Ngwa & Shu. [A mathematical model for endemic malaria with variable human and mo
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Malaria: Sensitivity analysis
+# <!--fit-->Paludisme: analyse de sensitivité
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -733,9 +733,9 @@ Chitnis, Hyman & Cushing. [Determining Important Parameters in the Spread of Mal
 
 ---
 
-- Consider two transmission scenarios for areas of *high* and *low* transmission
-- Perform sensitivity analysis
-- Very good paper if you are looking for parameters for malaria models
+- Considèrent deux scénarios de transmission pour des régions à taux de transmission *élevé* et *bas*
+- Font une analyse de sensitivité
+- Très bon papier si vous cherchez des valeurs pour paramétriser un modèle de paludisme
 
 ---
 
@@ -745,7 +745,7 @@ Chitnis, Hyman & Cushing. [Determining Important Parameters in the Spread of Mal
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
-# <!--fit-->Malaria and COVID-19: Optimal control
+# <!--fit-->Paludisme et COVID-19: contrôle optimal
 
 <div style = "position: relative; bottom: -40%; font-size:20px;">
 
@@ -762,17 +762,17 @@ Tchoumi, Diagne, Rwezaura & Tchuenche. [Malaria and COVID-19 co-dynamics: A math
 
 ---
 
-- Various considerations
-- Optimal control using cost functional
+- Considérations variées
+- Contrôle optimal utilisant la fonctionnelle de coût
 $$
 J(u_1,u_2) =
 \int_0^T
 A_1(I_m+I_{mE_c})+A_2(I_c+I_{cE_m})+A_3I_{mc}+A_4N_{v}
 +B_1u_1^2(t)+B_2u_2^2(t)\; dt
 $$
-where
-1. $u_1(t)$ use of PPM to prevent mosquitoes bites during the day and the night, such as insecticide-treated nets, application of repellents to skin or spraying of insecticides
-2. $u_2(t)$ use of PPM to protect against SARS-CoV-2:  facial mask, hydro alcoholic gel, hand-washing with soap, etc.
+où
+1. $u_1(t)$ utilisation de mesures de protection personnelle (MPP) pour empêcher les piqures de moustiques pendant le jour et la nuit, p.ex. utilisation de moustiquaires de lit imprégnées d'insecticide, insectifuge sur la peau ou insecticide
+2. $u_2(t)$ utilisation de MPP pour se protéger contre SARS-CoV-2: masques, gel hydro alcoolique, lavage des mains au savon, etc.
 
 ---
 
