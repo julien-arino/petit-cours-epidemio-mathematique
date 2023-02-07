@@ -599,13 +599,14 @@ Abramson & Rothschild. [Sex, drugs and matrices: Mathematical prediction of HIV 
 
 ---
 
-- Data related to sexual encounters and practices are often unreliable or ambiguous
-- Use a simple model to illustrate this
-- Suggest that epidemiology of AIDS is particularly sensitive to the limitations in the assessment of sexuality/drug‐related behavior
+- Les données liées aux contacts sexuels et aux pratiques sexuelles sont souvent peu fiables ou ambiguës
+- Un modèle simple pour illustrer ca
+- Suggère que l'épidémiologie du VIH/SIDA est particulièrement sensible aux limitations dans l'évaluation des comportements sexuels ou de prise de drogues
+- Étude numérique uniquement
 
 ---
 
-For group $G_i$, $i=1,\ldots,m$, $n_i$ is size of group and $x_i$ number of members of $G_i$ who are seropositive. $Q=[q_{ij}]$ rate at which uninfected members of $G_i$ are infected by interaction with infected member of $G_j$; rate proportional to number of uninfected in $G_i$ and proportion of $G_j$ that is seropositive. $B_{ij}$ recruitment into $G_i$ from other groups (e.g., from different risk group), $a_i$ death rate due to AIDS, $d_i$ death for all other causes. (All births and deaths are "relative to the group", might not be real birth/death)
+Pour le groupe $G_i$, $i=1,\ldots,m$, $n_i$ est la taille du groupe et $x_i$ est le nombre d'individus de $G_i$ qui sont séropositifs. $Q=[q_{ij}]$ taux auquel des individus sains de $G_i$ sont infectés lors d'interactions avec des individus infectés de $G_j$; taux proportionnel au nombre d'individus sains dans $G_i$ et la proportion de $G_j$ qui est séropositive. $B_{ij}$ recrutement dans $G_i$ depuis les autres groupes (e.g., d'un groupe de risque différent), $a_i$ taux de mortalité dû au SIDA, $d_i$ mort pour tout autre cause. (Les naissances sont relatives au groupe, par forcément une vraie naissance/mort)
 $$
 \begin{aligned}
 x_i' &= (n_i-x_i)\sum_{j=1}^m q_{ij}\frac{x_j}{n_j}-(d_i+a_i)x_i \\
@@ -613,7 +614,7 @@ n_i' &= \sum_{j=1}^m b_{ij}n_j -d_in_i-a_ix_i
 \end{aligned}
 $$
 
-Study is only numerical
+
 
 ---
 
