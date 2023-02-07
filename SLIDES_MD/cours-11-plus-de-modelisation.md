@@ -664,9 +664,9 @@ Estill, Kerr, Blaser, Salazar-Vizcaya, Tenthani, Wilson, Keiser. [The Effect of 
 
 ---
 
-- Individual-based simulation of disease progression and a deterministic transmission model
-- Used the R package gems to develop an individual-based simulation model for disease progression in patients who have started ART
-- Deterministic transmission model to represent the HIV epidemic in Malawi between 1975 and 2050: 40 compartments representing HIV status (susceptible; primary, asymptomatic chronic, or symptomatic chronic infection; ART; AIDS), age (children <15 years, adults 15–49 years, adults ≥50 years), sex (not distinguished for children), and risk behavior (high or low, except for children, older adults, and AIDS patients)
+- Simulations individus-centrées de la progression de la maladie et modèle déterministe de transmission
+- Utilise le paquet `R` `gems` pour déveloper un modèle de simulation IBM de progression de la maladie dans les patients sous TAR (traitement antirétroviral)
+- Modèle de transmission déterministe pour représenter l'épidémie de VIH au Malawi de 1975 à 2050: 40 compartiments representant le status VIH (susceptible; infection primaire, chronique asymptomatique ou chronique symptomatique; TAR; SIDA), âge (enfants <15 ans, adultes 15–49 ans, adultes ≥50 ans), sexe (non différencié pour les enfants), comportement de risque (haut ou faible, à part pour les enfant, les adultes agés et les patients SIDA)
 
 ---
 
