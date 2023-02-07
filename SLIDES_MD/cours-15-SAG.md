@@ -499,7 +499,7 @@ Li & Muldowney (1995)
 
 # Modèle $|\mathcal{P}|$-SLIRS
 
-Considérons un cas particulier de $\eqref{sys:pSLIRS_dS}$-$\eqref{sys:pSLIRS_dR}$ avec naissance constante
+Considérons un cas particulier du $|\mathcal{P}|$-SLIRS avec naissance constante
 $$
 \begin{align}
 S_{p}' &=b_p+\nu_pR_p-\Phi_p-d_pS_p
@@ -570,32 +570,33 @@ Donc, lorsque $\mathcal{R}_{0}<1,$ l'ÉSM est GAS, la maladie s'éteint
 
 # $|\mathcal{S}|\;|\mathcal{P}|$-SLIRS (espèces multiples)
 
-On considère $\eqref{sys:spSLIRS_dS}$-$\eqref{sys:spSLIRS_dR}$ avec population totale constante, mouvement égal pour tous les états et irréductible
+Mouvement égal pour tous les états et irréductible
 
 $$
+{\small
 \begin{align}
 S_{sp}' &= d_{sp}N_{sp}+\nu_{sp}R_{sp}-\Phi_{sp}-d_{sp}S_{sp}
-+\textstyle{\sum_{q\in\mathcal{P}}} m_{spq}S_{sq} 
++\sum_{q\in\mathcal{P}} m_{spq}S_{sq} 
 \tag{12a}\label{sys:spSLIRS_GAS_dS} \\
 L_{sp}' &= \Phi_{sp}-(\varepsilon_{sp}+d_{sp})L_{sp}
-+\textstyle{\sum_{q\in\mathcal{P}}}m_{spq}L_{sq}
++\sum_{q\in\mathcal{P}}m_{spq}L_{sq}
 \tag{12b}\label{sys:spSLIRS_GAS_dL} \\
 I_{sp}' &= \varepsilon_{sp}L_{sp}-(\gamma_{sp}+d_{sp})I_{sp}
-+\textstyle{\sum_{q\in\mathcal{P}}} m_{spq}I_{sq}
++\sum_{q\in\mathcal{P}} m_{spq}I_{sq}
 \tag{12c}\label{sys:spSLIRS_GAS_dI} \\
 R_{sp} &= \gamma _{sp}I_{sp}-(\nu_{sp}+d_{sp})R_{sp}
-+\textstyle{\sum_{q\in\mathcal{P}}} m_{spq}R_{sq}
++\sum_{q\in\mathcal{P}} m_{spq}R_{sq}
 \tag{12d}\label{sys:spSLIRS_GAS_dR} 
-\end{align}
+\end{align}}
 $$
-
-et incidence standard
 $$
+{\small
 \tag{12e}
 \Phi_{sp}=\sum_{k\in\mathcal{S}}\beta_{skp}\frac{S_{sp}I_{kp}}{N_p}
+}
 $$
 
-<div style = "position: relative; bottom: -3%; font-size:20px;">
+<div style = "position: relative; bottom: -0%; font-size:20px;">
 
 - JA, Davis, Hartley, Jordan, Miller \& PvdD. [A multi-species epidemic model with spatial dynamics](https://server.math.umanitoba.ca/~jarino/papers/ArinoDavisHartleyJordanMillerVdD-2005-MMB22.pdf). *Mathematical Medicine and Biology* **22**(2):129-142 (2005) 
 - JA, Jordan \& PvdD. [Quarantine in a multi-species epidemic model with spatial dynamics](https://server.math.umanitoba.ca/~jarino/publications/ArinoJordanVdD-2007-MBS206.pdf). *Mathematical Biosciences* **206**(1):46-60 (2007)
@@ -715,7 +716,7 @@ En utilisant un théorème de comparaison standard, il suit que 0 est un équili
 
 ---
 
-Lorsque $\mathcal{R}_0<1$, le système linéaire $\eqref{sys:lin_E}$ et $\eqref{sys:spSEIRS_GAS_dI}$ a un équilibre unique (l'ÉSM) puisque sa matrice de coefficients $F-V$ est non-singulière
+Lorsque $\mathcal{R}_0<1$, le système linéaire $\eqref{sys:lin_E}$ et $\eqref{sys:spSLIRS_GAS_dI}$ a un équilibre unique (l'ÉSM) puisque sa matrice de coefficients $F-V$ est non-singulière
 
 La SAG suit par utilisation de résultats sur les systèmes asymptotiquement autonomes
 
