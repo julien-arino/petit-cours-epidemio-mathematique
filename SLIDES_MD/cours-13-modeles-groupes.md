@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Modèles de groupes
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Modèles de groupes
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -97,9 +97,9 @@ Les groupes permettent d'introduire de la structure sans utiliser des EDP
 - Hétérogénéité du pathogène
 - Hétérogénéité des hôtes (e.g., *super spreaders*)
 
-Dans ce cours, on ne considère pas l'*hétérogénéité spatiale*, qui fait l'objet du [Cours 12](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-modeles-metapopulation.html)
+Dans ce cours, on ne considère pas l'*hétérogénéité spatiale*, qui fait l'objet du [Cours 14](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-14-modeles-metapopulation.html)
 
-On décrira peu l'analyse, qui est assez similaire à celle des métapopulations du [Cours 12](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-12-modeles-metapopulation.html), mais on montrera quelques exemples
+On décrira peu l'analyse, qui est assez similaire à celle des métapopulations du [Cours 14](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-14-modeles-metapopulation.html), mais on montrera quelques exemples
 
 ---
 
@@ -171,12 +171,12 @@ $$
 # Prennons la voie EDO
 
 - Les EDO sont moins satisfaisantes que les EDP mais peuvent être utilisées en l'état et sont beaucoup plus faciles numériquement
-- Un **bémol -** Comme discuté plus tôt, les modèles EDO avec structuration en âge sont *intrinsiquement faux*, puisque les temps de séjour dans les classes d'âge sont distribués exponentiellement plutôt que selon une Dirac ! (Voir le [Cours 05](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-05-temps-de-residence.html) sur les temps de résidence)
+- Un **bémol -** Comme discuté plus tôt, les modèles EDO avec structuration en âge sont *intrinsiquement faux*, puisque les temps de séjour dans les classes d'âge sont distribués exponentiellement plutôt que selon une Dirac ! (Voir le [Cours 09](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-09-temps-de-residence.html) sur les temps de résidence)
 
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Modèles incorporant une structure sociale
+# <!--fit-->Modèles incorporant une structure sociale
 
 ---
 
@@ -195,7 +195,7 @@ Preventing tuberculosis in the foreign-born population of Canada: a mathematical
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Modèles avec hétérogénéité du pathogène
+# <!--fit-->Modèles avec hétérogénéité du pathogène
 
 ---
 
@@ -296,8 +296,8 @@ $$
 
 ---
 
-- Activité similaire à la simulation des modèles en métapopulations. Décrit dans le [Cours 13](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-13-EDO-en-R.html)
-- La simulation du modèle avec importation de variant sera discuté dans le [Cours 16](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-16-simulation-stochastique.html) sur la simulation des modèles stochastiques
+- Activité similaire à la simulation des modèles en métapopulations. Décrit dans le [Cours 14](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-14-modeles-metapopulation.html)
+- La simulation du modèle avec importation de variant sera discuté dans le [Cours 19](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-19-simulation-stochastique.html) sur la simulation des modèles stochastiques
 
 ---
 
@@ -323,7 +323,7 @@ $$
 
 ---
 
-![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Canada.png) ![width:550px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Chad.png)
+![width:390px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Canada.png) ![width:390px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/age_pyramid_Chad.png)
 
 ---
 
@@ -445,11 +445,11 @@ $$
 
 # Analyse (résumé)
 
-- Modèle épidémique, et la méthode du [Cours 06](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-06-etapes-R0-final-size.html) s'applique (dans le cas qu'on a choisi pour la fonction d'incidence)
+- Modèle épidémique, et la méthode du [Cours 07](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-07-etapes-R0-final-size.html) s'applique (dans le cas qu'on a choisi pour la fonction d'incidence)
 
 ---
 
-# Utilisation de la méthode du [Cours 06](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-06-etapes-R0-final-size.html)
+# <!--fit--> Utilisation de la méthode du [Cours 07](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-07-etapes-R0-final-size.html)
 
 - On a $m=C$ compartiments susceptibles, $n=3C$ compartiments infectés et $k=C$ compartiments guéris ou retirés
 - Matrice $D$ 
