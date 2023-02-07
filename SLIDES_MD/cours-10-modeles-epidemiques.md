@@ -349,7 +349,7 @@ $$
 # Un petit exemple simple
 
 - Travail d'été de Aaron Shalev (U of M)
-- Considère une métapopulation sur 2 patchs (voir [Cours](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L05_MetapopulationModels.html))
+- Considère une métapopulation sur 2 patchs ([Cours 14](https://julien-arino.github.io/petit-cours-epidemio-mathematique/cours-14-modeles-metapopulation.html))
 
 $$
 \begin{align*}

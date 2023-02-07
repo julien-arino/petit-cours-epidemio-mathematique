@@ -45,7 +45,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Plus de modélisation
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Plus de modélisation
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -82,7 +82,7 @@ img[alt~="center"] {
 <!-- _backgroundImage: "linear-gradient(to bottom, #f1c40f, 20%, white)" -->
 # Un "problème" avec la méthode de l'opérateur de prochaine génération
 
-# (Modèle de malaria avec vecteurs transgéniques)
+### (Modèle de malaria avec vecteurs transgéniques)
 
 <div style = "position: relative; bottom: -35%; font-size:20px;">
 
@@ -174,7 +174,11 @@ On peut utiliser la méthode de [PvdD & Watmough (2002)](https://doi.org/10.1016
 
 En $\bar E_0$, on trouve $\mathcal{R}_0=0$, ce qui n'a pas de sens. Qu'est-ce qui cloche?
 
-Problème avec (A5): si on calcule la Jacobienne du système en $(S,T)$ et qu'on évalue en $\bar E_0$, on trouve les valeurs propres $\lambda_1=\kappa_S\mathbb{F}_S>0$ et $\lambda_2=\kappa_T\mathbb{F}_T$, donc $\bar E_0$ est toujours instable $\implies$ (A5) ne peut jamais être satisfaite en $\bar E_0$ et la condition pour la SAL donnée par [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6) n'est pas utilisable
+---
+
+Problème avec (A5): si on calcule la Jacobienne du système en $(S,T)$ et qu'on évalue en $\bar E_0$, on trouve les valeurs propres $\lambda_1=\kappa_S\mathbb{F}_S>0$ et $\lambda_2=\kappa_T\mathbb{F}_T$, donc $\bar E_0$ est toujours instable 
+
+$\implies$ (A5) ne peut jamais être satisfaite en $\bar E_0$ et la condition pour la SAL donnée par [PvdD & Watmough (2002)](https://doi.org/10.1016/S0025-5564(02)00108-6) n'est pas utilisable
 
 ---
 
