@@ -230,7 +230,7 @@ $$
 N' &= \left(\frac{B(N)}{N}-d-\delta i\right)N \tag{2a}\label{sys:SEI_TB_prop_dN} \\
 e' &=
 c\beta(1-e-i)i-\left(\varepsilon+\rho_1+\frac{B(N)}{N}+di\right)e  \tag{2a}\label{sys:SEI_TB_prop_de} \\
-I' &= \varepsilon e-\left(\delta+\rho_2+\frac{B(N)}{N}+\delta
+i' &= \varepsilon e-\left(\delta+\rho_2+\frac{B(N)}{N}+\delta
   i\right)i \tag{2a}\label{sys:SEI_TB_prop_di} 
 \end{align}
 $$
@@ -523,7 +523,7 @@ $$
 
 # Stabilité - ESM
  
-- Using a theorem of PvdD & Watmough (2002), l'ESM est
+- Par le théorème de PvdD & Watmough (2002), l'ESM est
   - LAS si $\mathcal{R}_\phi<1$
   - instable si $\mathcal{R}_\phi>1$
 - De plus, lorsque $\mathcal{R}_0<1$, en utilisant $I$ comme fonction de Liapounoff, il est facile de montrer que l'ESM est GAS
