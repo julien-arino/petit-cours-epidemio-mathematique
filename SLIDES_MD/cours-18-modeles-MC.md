@@ -44,7 +44,7 @@ size: 4:3
 </style>
 
 <!-- _backgroundImage: "linear-gradient(to top, #85110d, 1%, white)" -->
-# Petit cours d'épidémiologie mathématique<br/>Modèles en chaînes de Markov
+# <!--fit-->Petit cours d'épidémiologie mathématique<br/>Modèles en chaînes de Markov
 
 Julien Arino [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/email-round.png)](mailto:Julien.Arino@umanitoba.ca) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/world-wide-web.png)](https://julien-arino.github.io/) [![width:32px](https://raw.githubusercontent.com/julien-arino/petit-cours-epidemio-mathematique/main/FIGS/github-icon.png)](https://github.com/julien-arino)
 
@@ -100,6 +100,8 @@ Il y a $r$ façons d'être dans l'état $S_i$ à l'étape $n+1$:
 - Étape $n$ dans l'état $S_2$, et étape $n+1$ dans l'état $S_i$. Alors $\mathbb{P}(S_i|S_2)=p_{2i}p_2(n)$
 - ...
 -  Probabilité d'être dans l'état $S_i$ à l'étape $n+1$ si on est dans l'état $S_r$ à l'étape $n$ est $\mathbb{P}(S_i|S_r)=p_{ri}p_r(n)$
+
+---
 
 Donc $p_i(n+1)$ est la somme de toutes ces probabilités
 $$
@@ -259,7 +261,7 @@ Donc en tout cas, $P^n$ dans la limite est stochastique.. le comportement dépen
 
 ---
 
-# CMTD régulières pas très utiles en épidémiologie
+# <!--fit-->CMTD régulières pas très utiles en épidémiologie
 
 - Dans les modèles épidémiologiques, l'état $I=0$ est presque toujours *absorbant*, donc les chaînes ne sont pas *régulières* mais *absorbantes*
 - Cela vaut le coup de jeter un œil, toutefois
@@ -343,7 +345,7 @@ $$
 
 ---
 
-# Une autre façon de vérifier la primitivité
+# <!--fit-->Une autre façon de vérifier la primitivité
 <div class="theorem">
 
 Une matrice $M$ est primitive si le graphe de connection associé est fortement connexe (il y a un chemin entre tous les nœuds), et il y a au moins une entrée strictement positive sur la diagonale de $M$
@@ -359,7 +361,7 @@ Cela se vérifie directement sur le graphe de transition
 
 ---
 
-#  États absorbants, chaînes absorbantes
+#  <!--fit-->États absorbants, chaînes absorbantes
 
 <div class="definition">
 
@@ -378,7 +380,7 @@ Dans une chaîne de Markov absorbante, un état qui n'est pas absorbant est dit 
 
 ---
 
-#  Quelques questions sur les chaînes absorbantes
+#  <!--fit-->Quelques questions sur les chaînes absorbantes
 
 Supposons que l'on ait une chaîne absorbante, e.g.,
 
@@ -391,7 +393,7 @@ Supposons que l'on ait une chaîne absorbante, e.g.,
 
 ---
 
-#  Atteindre un état absorbant (question 1)
+#  <!--fit-->Atteindre un état absorbant (question 1)
 
 <div class="theorem">
 
@@ -400,7 +402,7 @@ Dans une chaîne de Markov absorbante, la probabilité d'atteindre un état abso
 
 ---
 
-# Forme standard de la matrice de transition
+# <!--fit-->Forme standard de la matrice de transition
 
 La matrice de transition d'une chaîne absorbante avec $k$ états absorbants et $r-k$ états transients peut s'écrire sous la forme
 $$
@@ -409,6 +411,8 @@ P=\begin{pmatrix}
 R & Q
 \end{pmatrix}
 $$
+
+---
 
 |     | États absorbants | États transients |
 |:---:|:---:|:---:|
@@ -424,6 +428,8 @@ La matrice $\mathbb{I}_{r-k}-Q$ est inversible. Soit
 - $N=(\mathbb{I}_{r-k}-Q)^{-1}$ la **matrice fondamentale** de la chaîne de Markov
 - $T_i$ la somme des éléments sur la ligne $i$ de $N$
 - $B=NR$
+
+---
 
 Réponses aux autres questions que nous posions:
 
@@ -541,7 +547,7 @@ $$
 
 ---
 
-#  Marche aléatoire v2.0 (cas absorbant)
+#  <!--fit-->Marche aléatoire v2.0 (cas absorbant)
 
 - Chaîne (ligne) d'états $S_1,\ldots,S_p$
 - Quand dans l'état $S_i$, $i=2,\ldots,p-1$, probabilité 1/2 d'aller à gauche (vers $S_{i-1}$) et 1/2 d'aller à droite (vers $S_{i+1}$)
@@ -642,7 +648,7 @@ On peut donc inverser explicitement.. pour illustrer, voici comment on s'y prend
 
 ---
 
-#  Inverser une matrice tridiagonale symmétrique
+#   <!--fit-->Inverser une matrice tridiagonale symétrique
 
 [Gérard Meurant](https://doi-org.uml.idm.oclc.org/10.1137/0613045) (1992): si 
 $$
@@ -665,11 +671,11 @@ alors on a le résultat sur le transparent suivant
 
 ---
 
-#  Inverse d'une matrice tridiagonale symmétrique
+#  <!--fit-->Inverse d'une matrice tridiagonale symétrique
 
 <div class="theorem">
 
-L'inverse d'une matrice tridiagonale symmétrique $J_k$ est donnée par
+L'inverse d'une matrice tridiagonale symétrique $J_k$ est donnée par
 $$
 (J_k^{-1})_{ij} = (-1)^{j-i}\beta_i\cdots\beta_{j-1}\frac{d_{j+1}^{(k)}\cdots d_k^{(k)}}{\delta_i\cdots\delta_k},\;\forall i,\forall j>i
 $$
@@ -824,7 +830,7 @@ $\gamma I$ | $S\to S+1$, $I\to I-1$ | guérison d'un infectieux
 
 ---
 
-# Plusieurs façons de formulers les CMTC
+# <!--fit-->Plusieurs façons de formuler les CMTC
 
 Une chaîne de Markov en temps continu peut être formulée en termes de
 - probabilités infinitésimales de transition
@@ -899,7 +905,7 @@ $$
 
 ---
 
-# Lien entre CMTD et CMTC pour $\Delta t$ petit
+# <!--fit-->Lien entre CMTD et CMTC pour $\Delta t$ petit
 
 CMTD:
 $$

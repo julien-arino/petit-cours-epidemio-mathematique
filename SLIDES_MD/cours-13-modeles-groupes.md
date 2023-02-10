@@ -273,8 +273,8 @@ Global dynamics of a general class of multistage models for infectious diseases.
 
 # Modèle de Guo, Li & Shuai
 
-- Pour des considérations générales sur une méthodologie, voir Lu & Shuai, [Global-stability problem for coupled systems of differential equations on networks](https://doi.org/10.1016/j.jde.2009.09.003), *JDE* **248** (2010)
-- Techniques utilisent une combinaise de théorie "classique" des EDO, de l'algèbre linéaire et de la théorie des graphes
+- Pour des considérations générales sur une méthodologie, voir Li & Shuai, [Global-stability problem for coupled systems of differential equations on networks](https://doi.org/10.1016/j.jde.2009.09.003), *JDE* **248** (2010)
+- Techniques utilisent une combinaison de théorie "classique" des EDO, de l'algèbre linéaire et de la théorie des graphes
 - Ils montrent SAG quand $\mathcal{R}_0\leq 1$ et SAG sous conditions lorsque $\mathcal{R}_0>1$
 - Utilisent fonction de Liapounoff $L=\sum_{i=1}^nw_iI_i$ pour l'ESM quand $\mathcal{R}_0\leq 1$
 - Pour l'ÉÉ, utilisent une fonction de Liapounoff de type Goh
@@ -312,7 +312,7 @@ $$
 - À quoi peut-on attribuer cela ?
   - Climat ?
   - Meilleure immunité ?
-  - Distribution des âges très differente de l'ouest, et une maladie qui attaque principalement les personnes plus agées ?
+  - Distribution des âges très différente de l'ouest, et une maladie qui attaque principalement les personnes plus âgées ?
 
 ---
 
