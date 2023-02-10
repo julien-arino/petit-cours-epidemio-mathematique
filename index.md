@@ -24,7 +24,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 08: [Le modèle SLIRS/SEIRS](cours-08-modele-SLIRS.html) ([vidéo](https://youtu.be/acaPuzSNEU8))
 - Cours 09: [Temps de résidence dans les compartiments](cours-09-temps-de-residence.html) ([vidéo](https://youtu.be/47H3z0hAaE8))
 - Cours 10: [Quelques modèles épidémiques](cours-10-modeles-epidemiques.html) ([vidéo](https://youtu.be/IHoqkPAJE4c))
-- Cours 11: [Plus de modélisation](cours-11-plus-de-modelisation.html) 
+- Cours 11: [Plus de modélisation](cours-11-plus-de-modelisation.html) ([vidéo](https://youtu.be/Sw7Okzo8uD8))
 - Cours 12: [Propagation dans des groupes et propagation spatio-temporelle des épidémies](cours-10-heterogeneite-groupe-et-spatiale.html)
 - Cours 13: [Modèles de groupes](cours-13-modeles-groupes.html)
 - Cours 14: [Modèles dans des métapopulations](cours-14-modeles-metapopulation.html) ([vidéo](https://youtu.be/8SPp7I6UHfk))
