@@ -243,7 +243,7 @@ mais **conduit la propagation spatio-temporelle**:
 
 ---
 
-# La propagation spatio-temporelle des pathogènes a évolué avec la mobilité
+# <!--fit-->La propagation spatio-temporelle <br>des pathogènes a évolué avec la mobilité
 
 - Les pathogènes suivent les routes de commerce
 

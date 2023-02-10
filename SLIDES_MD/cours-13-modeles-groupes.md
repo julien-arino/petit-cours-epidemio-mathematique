@@ -80,10 +80,10 @@ NSERC-PHAC EID Modelling Consortium (CANMOD, MfPH, OMNI/RÉUNIS)
 
 ---
 
-# Limitations des modèles EDO pour une population
+# <!--fit-->Limitations des modèles EDO pour une population
 
-- Comme discuté dans le [Cours](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L03_SpreadInGroups_SpreadInSpace.html), les modèles EDO élémentaires supposent que tous les individus dans un compartiment sont grosso modo les mêmes
-- Les individus peuvent passer des temps différents dans un compartiment (voir le [Cours](https://julien-arino.github.io/petit-cours-epidemio-mathematique/2022_04_3MC_EpiModelling_L09_RecentMathematicalModels.html)), mais leurs caractéristiques sont plus ou moins les mêmes
+- Comme discuté dans le [Cours 12](cours-12-heterogeneite-groupe-et-spatiale.html), les modèles EDO élémentaires supposent que tous les individus dans un compartiment sont grosso modo les mêmes
+- Les individus peuvent passer des temps différents dans un compartiment (voir le [Cours 09](cours-09-temps-de-residence.html)), mais leurs caractéristiques sont plus ou moins les mêmes
 - On a vu de façon flagrante avec COVID-19 que, par exemple, des groupes d'âge différents sont affectés différemment
 
 ---
@@ -180,7 +180,7 @@ $$
 
 ---
 
-# TB dans la population canadienne née à l'étranger
+# <!--fit-->TB dans la population canadienne née à l'étranger
 
 Preventing tuberculosis in the foreign-born population of Canada: a mathematical modelling study.  Varughese, Langlois-Klassen, Long, & Li. [International Journal of Tuberculosis and Lung Disease](https://doi.org/10.5588/ijtld.13.0625) **18** (2014)
 
@@ -199,7 +199,7 @@ Preventing tuberculosis in the foreign-born population of Canada: a mathematical
 
 ---
 
-# Importation d'un nouveau variant de SARS-CoV-2
+# <!--fit-->Importation d'un nouveau variant de SARS-CoV-2
 
 [Risk of COVID-19 variant importation – How useful are travel control measures?](https://doi.org/10.1016/j.idm.2021.06.006) Arino, Boëlle, Milliken & Portet. *Infectious Disease Modelling* **6** (2021)
 
@@ -224,7 +224,7 @@ $$
 
 ---
 
-# Ajoutons des groupes - La "couche d'importation"
+# <!--fit-->Ajoutons des groupes - La "couche d'importation"
 
 - Comment évaluer la contribution des "importations" à la propagation dans un lieu ?
 - Si un individu arrive dans un nouveau lieu en étant porteur de la maladie, on le place dans un groupe spécial, la *couche d'importation*
@@ -237,7 +237,7 @@ $$
 
 ---
 
-# Force d'infection avec couche d'importation
+# <!--fit-->Force d'infection avec couche d'importation
 
 Pour $X\in\{O,N\}$
 $$
@@ -253,7 +253,7 @@ $$
 ---
 
 <!-- _backgroundImage: "linear-gradient(to bottom, #156C26, 20%, white)" -->
-# Modèles avec composante immunologique
+# <!--fit-->Modèles avec composante immunologique
 
 Global dynamics of a general class of multistage models for infectious diseases. Guo, Li & Shuai. [SIAM Journal on Applied Mathematics](https://doi.org/10.1137/110827028) **72** (2012)
 
