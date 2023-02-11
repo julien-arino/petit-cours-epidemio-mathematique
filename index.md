@@ -31,7 +31,7 @@ Quelques remarques au sujet de la liste des cours ci-dessous:
 - Cours 15: [Un peu de stabilité globale](cours-15-SAG.html)
 - Cours 16: [Modèles spatiaux en EDP](cours-16-modeles-EDP.html)
 - Cours 17: [Types de modèles stochastiques utilisés en épidémiologie](cours-17-stochasticite.html) ([vidéo](https://youtu.be/ZPBZN-9x9Yo))
-- Cours 18: [Modèles en chaînes de Markov](cours-18-modeles-MC.html)
+- Cours 18: [Modèles en chaînes de Markov](cours-18-modeles-MC.html) ([vidéo](https://youtu.be/ewWzRf-5NAg))
 - Cours 19: [Simulation des systèmes stochastiques](cours-19-simulation-stochastique.html)
 - Cours 20: [Modèles en réseaux](cours-20-modeles-reseaux.html)
 - Cours 21: [Modèles agents-centrés](cours-21-modeles-agents.html)
